@@ -13,4 +13,4 @@ example/github_evdi-prefix
 example/libevdipp
 example/usbdisp-prefix
 example/stage
-html/
+html/*

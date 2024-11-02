@@ -588,6 +588,7 @@ void load_data_units_from_buffer(cinfo_t *cinfo,WORD xpos,WORD ypos)
     SBYTE CbDU[64];
     SBYTE CrDU[64];
     
+	// 轉INT64後把後面8byte都拿到（也就是一行）
     for (i=0;i<8;i++) {
         *(INT64*) &YDU[pos]  = *(INT64*) &cinfo->Y_buffer[location]; // move 8 bytes to DU
         *(INT64*) &CbDU[pos] = *(INT64*) &cinfo->Cb_buffer[location];

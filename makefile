@@ -1,6 +1,6 @@
 # 定義變數
 CXX = g++
-CXXFLAGS = -Wall -O2
+# CXXFLAGS = -Wall -O2
 LDFLAGS = -lm              # 需要的話可添加其他庫
 SRC_DIR = src
 TEST_DIR = test

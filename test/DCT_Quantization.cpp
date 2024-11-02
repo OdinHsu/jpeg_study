@@ -3,6 +3,31 @@
 
 #define N 8 // DCT 块的大小
 
+//These are the sample quantization tables given in JPEG spec section K.1.
+//	The spec says that the values given produce "good" quality, and
+//	when divided by 2, "very good" quality
+static unsigned char std_luminance_qt[64] = {
+	16,  11,  10,  16,  24,  40,  51,  61,
+	12,  12,  14,  19,  26,  58,  60,  55,
+	14,  13,  16,  24,  40,  57,  69,  56,
+	14,  17,  22,  29,  51,  87,  80,  62,
+	18,  22,  37,  56,  68, 109, 103,  77,
+	24,  35,  55,  64,  81, 104, 113,  92,
+	49,  64,  78,  87, 103, 121, 120, 101,
+	72,  92,  95,  98, 112, 100, 103,  99
+};
+
+static unsigned char std_chrominance_qt[64] = {
+	17,  18,  24,  47,  99,  99,  99,  99,
+	18,  21,  26,  66,  99,  99,  99,  99,
+	24,  26,  56,  99,  99,  99,  99,  99,
+	47,  66,  99,  99,  99,  99,  99,  99,
+	99,  99,  99,  99,  99,  99,  99,  99,
+	99,  99,  99,  99,  99,  99,  99,  99,
+	99,  99,  99,  99,  99,  99,  99,  99,
+	99,  99,  99,  99,  99,  99,  99,  99
+};
+
 void dct(int input[N][N], int output[N][N]);
 
 int main() {
@@ -25,6 +50,14 @@ int main() {
     for (int u = 0; u < N; u++) {
         for (int v = 0; v < N; v++) {
             printf("%4d ", dct_output[u][v]);
+        }
+        printf("\n");
+    }
+    // 打印 DCT 量化輸出
+    printf("DCT 量化结果:\n");
+    for (int u = 0; u < N; u++) {
+        for (int v = 0; v < N; v++) {
+            printf("%4d", (int)(dct_output[u][v] / *(std_luminance_qt + u*N + v)) * *(std_luminance_qt + u*N + v));
         }
         printf("\n");
     }

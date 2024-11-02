@@ -1,0 +1,147 @@
+.TH "evdi_painter" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+evdi_painter
+.SH SYNOPSIS
+.br
+.PP
+.SS "公開屬性"
+
+.in +1c
+.ti -1c
+.RI "bool \fBis_connected\fP"
+.br
+.ti -1c
+.RI "struct edid * \fBedid\fP"
+.br
+.ti -1c
+.RI "unsigned \fBint\fP \fBedid_length\fP"
+.br
+.ti -1c
+.RI "struct mutex \fBlock\fP"
+.br
+.ti -1c
+.RI "struct drm_clip_rect \fBdirty_rects\fP [\fBMAX_DIRTS\fP]"
+.br
+.ti -1c
+.RI "\fBint\fP \fBnum_dirts\fP"
+.br
+.ti -1c
+.RI "struct \fBevdi_framebuffer\fP * \fBscanout_fb\fP"
+.br
+.ti -1c
+.RI "struct drm_file * \fBdrm_filp\fP"
+.br
+.ti -1c
+.RI "struct drm_device * \fBdrm_device\fP"
+.br
+.ti -1c
+.RI "bool \fBwas_update_requested\fP"
+.br
+.ti -1c
+.RI "bool \fBneeds_full_modeset\fP"
+.br
+.ti -1c
+.RI "struct drm_crtc * \fBcrtc\fP"
+.br
+.ti -1c
+.RI "struct drm_pending_vblank_event * \fBvblank\fP"
+.br
+.ti -1c
+.RI "struct list_head \fBpending_events\fP"
+.br
+.ti -1c
+.RI "struct delayed_work \fBsend_events_work\fP"
+.br
+.ti -1c
+.RI "struct completion \fBddcci_response_received\fP"
+.br
+.ti -1c
+.RI "\fBchar\fP * \fBddcci_buffer\fP"
+.br
+.ti -1c
+.RI "unsigned \fBint\fP \fBddcci_buffer_length\fP"
+.br
+.in -1c
+.SH "詳細描述"
+.PP 
+定義在 evdi_painter\&.c 檔案之第 83 行\&.
+.SH "資料成員說明文件"
+.PP 
+.SS "struct drm_crtc* evdi_painter::crtc"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 98 行\&.
+.SS "\fBchar\fP* evdi_painter::ddcci_buffer"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 105 行\&.
+.SS "unsigned \fBint\fP evdi_painter::ddcci_buffer_length"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 106 行\&.
+.SS "struct completion evdi_painter::ddcci_response_received"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 99 行\&.
+.SS "struct drm_clip_rect evdi_painter::dirty_rects[\fBMAX_DIRTS\fP]"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 86 行\&.
+.SS "struct drm_device* evdi_painter::drm_device"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 94 行\&.
+.SS "struct drm_file* evdi_painter::drm_filp"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 93 行\&.
+.SS "struct edid* evdi_painter::edid"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 85 行\&.
+.SS "unsigned \fBint\fP evdi_painter::edid_length"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 86 行\&.
+.SS "bool evdi_painter::is_connected"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 84 行\&.
+.SS "struct mutex evdi_painter::lock"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 86 行\&.
+.SS "bool evdi_painter::needs_full_modeset"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 97 行\&.
+.SS "\fBint\fP evdi_painter::num_dirts"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 90 行\&.
+.SS "struct list_head evdi_painter::pending_events"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 99 行\&.
+.SS "struct \fBevdi_framebuffer\fP* evdi_painter::scanout_fb"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 91 行\&.
+.SS "struct delayed_work evdi_painter::send_events_work"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 99 行\&.
+.SS "struct drm_pending_vblank_event* evdi_painter::vblank"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 99 行\&.
+.SS "bool evdi_painter::was_update_requested"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 96 行\&.
+
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

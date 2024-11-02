@@ -1,0 +1,56 @@
+.TH "evdi_fbdev" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+evdi_fbdev
+.SH SYNOPSIS
+.br
+.PP
+.SS "公開屬性"
+
+.in +1c
+.ti -1c
+.RI "struct drm_fb_helper \fBhelper\fP"
+.br
+.ti -1c
+.RI "struct \fBevdi_framebuffer\fP \fBefb\fP"
+.br
+.ti -1c
+.RI "struct list_head \fBfbdev_list\fP"
+.br
+.ti -1c
+.RI "struct fb_ops \fBfb_ops\fP"
+.br
+.ti -1c
+.RI "\fBint\fP \fBfb_count\fP"
+.br
+.in -1c
+.SH "詳細描述"
+.PP 
+定義在 evdi_fb\&.c 檔案之第 34 行\&.
+.SH "資料成員說明文件"
+.PP 
+.SS "struct \fBevdi_framebuffer\fP evdi_fbdev::efb"
+
+.PP
+定義在 evdi_fb\&.c 檔案之第 562 行\&.
+.SS "\fBint\fP evdi_fbdev::fb_count"
+
+.PP
+定義在 evdi_fb\&.c 檔案之第 39 行\&.
+.SS "struct fb_ops evdi_fbdev::fb_ops"
+
+.PP
+定義在 evdi_fb\&.c 檔案之第 562 行\&.
+.SS "struct list_head evdi_fbdev::fbdev_list"
+
+.PP
+定義在 evdi_fb\&.c 檔案之第 562 行\&.
+.SS "struct drm_fb_helper evdi_fbdev::helper"
+
+.PP
+定義在 evdi_fb\&.c 檔案之第 562 行\&.
+
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

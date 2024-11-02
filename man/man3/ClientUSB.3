@@ -1,0 +1,152 @@
+.TH "ClientUSB" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ClientUSB
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ClientUSB\&.h>\fP
+.PP
+被 \fBusbdev\fP繼承\&.
+.SS "公開方法(Public Methods)"
+
+.in +1c
+.ti -1c
+.RI "\fBClientUSB\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~ClientUSB\fP ()"
+.br
+.ti -1c
+.RI "\fBBOOL\fP \fBIsConnected\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBBOOL\fP \fBGetStatus\fP (\fBUSHORT\fP *status)=0"
+.br
+.ti -1c
+.RI "virtual \fBBOOL\fP \fBGetEDIDSize\fP (\fBUSHORT\fP *size)=0"
+.br
+.ti -1c
+.RI "virtual \fBBOOL\fP \fBGetEDIDData\fP (\fBUCHAR\fP *buff, \fBint\fP bank)=0"
+.br
+.ti -1c
+.RI "virtual \fBBOOL\fP \fBGetTargetVersion\fP (\fBchar\fP *data, \fBint\fP len)=0"
+.br
+.ti -1c
+.RI "virtual \fBBOOL\fP \fBSetResolution\fP (\fBULONG\fP width, \fBULONG\fP height)=0"
+.br
+.ti -1c
+.RI "virtual \fBBOOL\fP \fBSetQuantTable\fP (\fBUCHAR\fP *table, \fBULONG\fP len, \fBUSHORT\fP index)=0"
+.br
+.ti -1c
+.RI "virtual \fBBOOL\fP \fBSetCommand\fP (\fBUSHORT\fP cmd)=0"
+.br
+.ti -1c
+.RI "virtual \fBBOOL\fP \fBWrite\fP (\fBUCHAR\fP *data, \fBULONG\fP SendLen, \fBULONG\fP *ActLen)=0"
+.br
+.ti -1c
+.RI "virtual \fBUSHORT\fP \fBgetUSBVersion\fP ()=0"
+.br
+.ti -1c
+.RI "virtual \fBBOOL\fP \fBSetISPmode\fP ()=0"
+.br
+.ti -1c
+.RI "virtual \fBBOOL\fP \fBSetReConfig\fP (\fBUSHORT\fP flag)=0"
+.br
+.ti -1c
+.RI "virtual \fBBOOL\fP \fBGetPowerStatus\fP (\fBUSHORT\fP *status)=0"
+.br
+.ti -1c
+.RI "virtual void \fBResetDevice\fP ()=0"
+.br
+.in -1c
+.SS "保護屬性"
+
+.in +1c
+.ti -1c
+.RI "\fBBOOL\fP \fBm_connected\fP"
+.br
+.in -1c
+.SH "詳細描述"
+.PP 
+定義在 ClientUSB\&.h 檔案之第 11 行\&.
+.SH "建構子與解構子說明文件"
+.PP 
+.SS "ClientUSB::ClientUSB ()\fC [inline]\fP"
+
+.PP
+定義在 ClientUSB\&.h 檔案之第 17 行\&.
+.SS "virtual ClientUSB::~ClientUSB ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+定義在 ClientUSB\&.h 檔案之第 18 行\&.
+.SH "函式成員說明文件"
+.PP 
+.SS "virtual \fBBOOL\fP ClientUSB::GetEDIDData (\fBUCHAR\fP * buff, \fBint\fP bank)\fC [pure virtual]\fP"
+
+.PP
+實作於 \fBusbdev\fP\&.
+.SS "virtual \fBBOOL\fP ClientUSB::GetEDIDSize (\fBUSHORT\fP * size)\fC [pure virtual]\fP"
+
+.PP
+實作於 \fBusbdev\fP\&.
+.SS "virtual \fBBOOL\fP ClientUSB::GetPowerStatus (\fBUSHORT\fP * status)\fC [pure virtual]\fP"
+
+.PP
+實作於 \fBusbdev\fP\&.
+.SS "virtual \fBBOOL\fP ClientUSB::GetStatus (\fBUSHORT\fP * status)\fC [pure virtual]\fP"
+
+.PP
+實作於 \fBusbdev\fP\&.
+.SS "virtual \fBBOOL\fP ClientUSB::GetTargetVersion (\fBchar\fP * data, \fBint\fP len)\fC [pure virtual]\fP"
+
+.PP
+實作於 \fBusbdev\fP\&.
+.SS "virtual \fBUSHORT\fP ClientUSB::getUSBVersion ()\fC [pure virtual]\fP"
+
+.PP
+實作於 \fBusbdev\fP\&.
+.SS "\fBBOOL\fP ClientUSB::IsConnected ()\fC [inline]\fP"
+
+.PP
+定義在 ClientUSB\&.h 檔案之第 20 行\&.
+.SS "virtual void ClientUSB::ResetDevice ()\fC [pure virtual]\fP"
+
+.PP
+實作於 \fBusbdev\fP\&.
+.SS "virtual \fBBOOL\fP ClientUSB::SetCommand (\fBUSHORT\fP cmd)\fC [pure virtual]\fP"
+
+.PP
+實作於 \fBusbdev\fP\&.
+.SS "virtual \fBBOOL\fP ClientUSB::SetISPmode ()\fC [pure virtual]\fP"
+
+.PP
+實作於 \fBusbdev\fP\&.
+.SS "virtual \fBBOOL\fP ClientUSB::SetQuantTable (\fBUCHAR\fP * table, \fBULONG\fP len, \fBUSHORT\fP index)\fC [pure virtual]\fP"
+
+.PP
+實作於 \fBusbdev\fP\&.
+.SS "virtual \fBBOOL\fP ClientUSB::SetReConfig (\fBUSHORT\fP flag)\fC [pure virtual]\fP"
+
+.PP
+實作於 \fBusbdev\fP\&.
+.SS "virtual \fBBOOL\fP ClientUSB::SetResolution (\fBULONG\fP width, \fBULONG\fP height)\fC [pure virtual]\fP"
+
+.PP
+實作於 \fBusbdev\fP\&.
+.SS "virtual \fBBOOL\fP ClientUSB::Write (\fBUCHAR\fP * data, \fBULONG\fP SendLen, \fBULONG\fP * ActLen)\fC [pure virtual]\fP"
+
+.PP
+實作於 \fBusbdev\fP\&.
+.SH "資料成員說明文件"
+.PP 
+.SS "\fBBOOL\fP ClientUSB::m_connected\fC [protected]\fP"
+
+.PP
+定義在 ClientUSB\&.h 檔案之第 14 行\&.
+
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

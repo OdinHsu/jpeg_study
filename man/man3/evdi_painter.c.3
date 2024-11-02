@@ -1,0 +1,317 @@
+.TH "/home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_painter.c" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_painter.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'linux/thread_info\&.h'\fP
+.br
+\fC#include 'linux/mm\&.h'\fP
+.br
+\fC#include <linux/version\&.h>\fP
+.br
+\fC#include <drm/drm_file\&.h>\fP
+.br
+\fC#include <drm/drm_vblank\&.h>\fP
+.br
+\fC#include <drm/drm_ioctl\&.h>\fP
+.br
+\fC#include <drm/drm_edid\&.h>\fP
+.br
+\fC#include 'evdi_drm\&.h'\fP
+.br
+\fC#include 'evdi_drm_drv\&.h'\fP
+.br
+\fC#include 'evdi_cursor\&.h'\fP
+.br
+\fC#include 'evdi_params\&.h'\fP
+.br
+\fC#include 'evdi_i2c\&.h'\fP
+.br
+\fC#include <linux/mutex\&.h>\fP
+.br
+\fC#include <linux/compiler\&.h>\fP
+.br
+\fC#include <linux/platform_device\&.h>\fP
+.br
+\fC#include <linux/completion\&.h>\fP
+.br
+\fC#include <linux/dma\-buf\&.h>\fP
+.br
+\fC#include <drm/drm_probe_helper\&.h>\fP
+.br
+
+.SS "複合項目"
+
+.in +1c
+.ti -1c
+.RI "struct \fBevdi_event_cursor_set_pending\fP"
+.br
+.ti -1c
+.RI "struct \fBevdi_event_cursor_move_pending\fP"
+.br
+.ti -1c
+.RI "struct \fBevdi_event_update_ready_pending\fP"
+.br
+.ti -1c
+.RI "struct \fBevdi_event_dpms_pending\fP"
+.br
+.ti -1c
+.RI "struct \fBevdi_event_mode_changed_pending\fP"
+.br
+.ti -1c
+.RI "struct \fBevdi_event_crtc_state_pending\fP"
+.br
+.ti -1c
+.RI "struct \fBevdi_event_ddcci_data_pending\fP"
+.br
+.ti -1c
+.RI "struct \fBevdi_painter\fP"
+.br
+.in -1c
+.SS "定義"
+
+.in +1c
+.ti -1c
+.RI "#define \fBMAX_DIRTS\fP   16"
+.br
+.ti -1c
+.RI "#define \fBEDID_EXT_BLOCK_SIZE\fP   128"
+.br
+.ti -1c
+.RI "#define \fBMAX_EDID_SIZE\fP   (255 * \fBEDID_EXT_BLOCK_SIZE\fP + \fBsizeof\fP(struct edid))"
+.br
+.ti -1c
+.RI "#define \fBI2C_ADDRESS_DDCCI\fP   0x37"
+.br
+.ti -1c
+.RI "#define \fBDDCCI_TIMEOUT_MS\fP   50"
+.br
+.ti -1c
+.RI "#define \fBpainter_lock\fP(painter)"
+.br
+.ti -1c
+.RI "#define \fBpainter_unlock\fP(painter)"
+.br
+.in -1c
+.SS "函式"
+
+.in +1c
+.ti -1c
+.RI "\fBMODULE_IMPORT_NS\fP (DMA_BUF)"
+.br
+.ti -1c
+.RI "bool \fBevdi_painter_is_connected\fP (struct \fBevdi_painter\fP *painter)"
+.br
+.ti -1c
+.RI "u8 * \fBevdi_painter_get_edid_copy\fP (struct \fBevdi_device\fP *evdi)"
+.br
+.ti -1c
+.RI "void \fBevdi_painter_send_cursor_set\fP (struct \fBevdi_painter\fP *painter, struct \fBevdi_cursor\fP *cursor)"
+.br
+.ti -1c
+.RI "void \fBevdi_painter_send_cursor_move\fP (struct \fBevdi_painter\fP *painter, struct \fBevdi_cursor\fP *cursor)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_painter_get_num_dirts\fP (struct \fBevdi_painter\fP *painter)"
+.br
+.ti -1c
+.RI "struct drm_clip_rect \fBevdi_painter_framebuffer_size\fP (struct \fBevdi_painter\fP *painter)"
+.br
+.ti -1c
+.RI "void \fBevdi_painter_mark_dirty\fP (struct \fBevdi_device\fP *evdi, const struct drm_clip_rect *dirty_rect)"
+.br
+.ti -1c
+.RI "void \fBevdi_painter_set_vblank\fP (struct \fBevdi_painter\fP *painter, struct drm_crtc *crtc, struct drm_pending_vblank_event *vblank)"
+.br
+.ti -1c
+.RI "void \fBevdi_painter_send_update_ready_if_needed\fP (struct \fBevdi_painter\fP *painter)"
+.br
+.ti -1c
+.RI "void \fBevdi_painter_dpms_notify\fP (struct \fBevdi_device\fP *evdi, \fBint\fP mode)"
+.br
+.ti -1c
+.RI "void \fBevdi_painter_mode_changed_notify\fP (struct \fBevdi_device\fP *evdi, struct drm_display_mode *new_mode)"
+.br
+.ti -1c
+.RI "void \fBevdi_painter_close\fP (struct \fBevdi_device\fP *evdi, struct drm_file *file)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_painter_connect_ioctl\fP (struct drm_device *drm_dev, void *data, struct drm_file *file)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_painter_grabpix_ioctl\fP (struct drm_device *drm_dev, void *data, __always_unused struct drm_file *file)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_painter_request_update_ioctl\fP (struct drm_device *drm_dev, __always_unused void *data, __always_unused struct drm_file *file)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_painter_init\fP (struct \fBevdi_device\fP *dev)"
+.br
+.ti -1c
+.RI "void \fBevdi_painter_cleanup\fP (struct \fBevdi_painter\fP *painter)"
+.br
+.ti -1c
+.RI "void \fBevdi_painter_set_scanout_buffer\fP (struct \fBevdi_painter\fP *painter, struct \fBevdi_framebuffer\fP *newfb)"
+.br
+.ti -1c
+.RI "bool \fBevdi_painter_needs_full_modeset\fP (struct \fBevdi_painter\fP *painter)"
+.br
+.ti -1c
+.RI "void \fBevdi_painter_force_full_modeset\fP (struct \fBevdi_painter\fP *painter)"
+.br
+.ti -1c
+.RI "bool \fBevdi_painter_i2c_data_notify\fP (struct \fBevdi_painter\fP *painter, struct i2c_msg *msg)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_painter_ddcci_response_ioctl\fP (struct drm_device *drm_dev, void *data, __always_unused struct drm_file *file)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_painter_enable_cursor_events_ioctl\fP (struct drm_device *drm_dev, void *data, __always_unused struct drm_file *file)"
+.br
+.in -1c
+.SH "定義巨集說明文件"
+.PP 
+.SS "#define DDCCI_TIMEOUT_MS   50"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 81 行\&.
+.SS "#define EDID_EXT_BLOCK_SIZE   128"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 78 行\&.
+.SS "#define I2C_ADDRESS_DDCCI   0x37"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 80 行\&.
+.SS "#define MAX_DIRTS   16"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 77 行\&.
+.SS "#define MAX_EDID_SIZE   (255 * \fBEDID_EXT_BLOCK_SIZE\fP + \fBsizeof\fP(struct edid))"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 79 行\&.
+.SS "#define painter_lock(painter)"
+\fB巨集內容:\fP
+.PP
+.nf
+  do {                                            \
+        EVDI_VERBOSE("Painter lock\n");         \
+        mutex_lock(&painter->lock);             \
+    } while (0)
+.fi
+.PP
+定義在 evdi_painter\&.c 檔案之第 218 行\&.
+.SS "#define painter_unlock(painter)"
+\fB巨集內容:\fP
+.PP
+.nf
+ do {                                            \
+        EVDI_VERBOSE("Painter unlock\n");       \
+        mutex_unlock(&painter->lock);           \
+    } while (0)
+.fi
+.PP
+定義在 evdi_painter\&.c 檔案之第 224 行\&.
+.SH "函式說明文件"
+.PP 
+.SS "void evdi_painter_cleanup (struct \fBevdi_painter\fP * painter)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 1198 行\&.
+.SS "void evdi_painter_close (struct \fBevdi_device\fP * evdi, struct drm_file * file)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 959 行\&.
+.SS "\fBint\fP evdi_painter_connect_ioctl (struct drm_device * drm_dev, void * data, struct drm_file * file)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 967 行\&.
+.SS "\fBint\fP evdi_painter_ddcci_response_ioctl (struct drm_device * drm_dev, void * data, __always_unused struct drm_file * file)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 1329 行\&.
+.SS "void evdi_painter_dpms_notify (struct \fBevdi_device\fP * evdi, \fBint\fP mode)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 699 行\&.
+.SS "\fBint\fP evdi_painter_enable_cursor_events_ioctl (struct drm_device * drm_dev, void * data, __always_unused struct drm_file * file)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 1367 行\&.
+.SS "void evdi_painter_force_full_modeset (struct \fBevdi_painter\fP * painter)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 1247 行\&.
+.SS "struct drm_clip_rect evdi_painter_framebuffer_size (struct \fBevdi_painter\fP * painter)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 544 行\&.
+.SS "u8* evdi_painter_get_edid_copy (struct \fBevdi_device\fP * evdi)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 235 行\&.
+.SS "\fBint\fP evdi_painter_get_num_dirts (struct \fBevdi_painter\fP * painter)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 544 行\&.
+.SS "\fBint\fP evdi_painter_grabpix_ioctl (struct drm_device * drm_dev, void * data, __always_unused struct drm_file * file)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 998 行\&.
+.SS "bool evdi_painter_i2c_data_notify (struct \fBevdi_painter\fP * painter, struct i2c_msg * msg)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 1308 行\&.
+.SS "\fBint\fP evdi_painter_init (struct \fBevdi_device\fP * dev)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 1177 行\&.
+.SS "bool evdi_painter_is_connected (struct \fBevdi_painter\fP * painter)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 230 行\&.
+.SS "void evdi_painter_mark_dirty (struct \fBevdi_device\fP * evdi, const struct drm_clip_rect * dirty_rect)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 589 行\&.
+.SS "void evdi_painter_mode_changed_notify (struct \fBevdi_device\fP * evdi, struct drm_display_mode * new_mode)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 740 行\&.
+.SS "bool evdi_painter_needs_full_modeset (struct \fBevdi_painter\fP * painter)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 1241 行\&.
+.SS "\fBint\fP evdi_painter_request_update_ioctl (struct drm_device * drm_dev, __always_unused void * data, __always_unused struct drm_file * file)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 1136 行\&.
+.SS "void evdi_painter_send_cursor_move (struct \fBevdi_painter\fP * painter, struct \fBevdi_cursor\fP * cursor)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 474 行\&.
+.SS "void evdi_painter_send_cursor_set (struct \fBevdi_painter\fP * painter, struct \fBevdi_cursor\fP * cursor)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 440 行\&.
+.SS "void evdi_painter_send_update_ready_if_needed (struct \fBevdi_painter\fP * painter)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 677 行\&.
+.SS "void evdi_painter_set_scanout_buffer (struct \fBevdi_painter\fP * painter, struct \fBevdi_framebuffer\fP * newfb)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 1222 行\&.
+.SS "void evdi_painter_set_vblank (struct \fBevdi_painter\fP * painter, struct drm_crtc * crtc, struct drm_pending_vblank_event * vblank)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 652 行\&.
+.SS "MODULE_IMPORT_NS (DMA_BUF)"
+
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['_5f_5fattribute_5f_5f_0',['__attribute__',['../jpeg__enc_8h.html#ac7517c95a09f1d674b724f9ef165c1ec',1,'jpeg_enc.h']]],
+  ['_5f_5fread_5fmostly_1',['__read_mostly',['../evdi__params_8c.html#a51db961ea5badd87a70ebb7795921895',1,'evdi_params.c']]],
+  ['_5f_5fuser_2',['__user',['../evdi__lib_8c.html#ace6f17999da4ea3b93c4227beafcab95',1,'evdi_lib.c']]],
+  ['_5fchanges_3',['_changes',['../xrandr_8c.html#afef13f6ab47c180a1bb4f607297e206d',1,'xrandr.c']]],
+  ['_5fcrtc_4',['_crtc',['../struct__crtc.html',1,'']]],
+  ['_5fmonitors_5',['_monitors',['../struct__monitors.html',1,'']]],
+  ['_5fname_5fkind_6',['_name_kind',['../xrandr_8c.html#a3b56090b475f41fa88920087a0f8169b',1,'xrandr.c']]],
+  ['_5foutput_7',['_output',['../struct__output.html',1,'']]],
+  ['_5foutput_5fprop_8',['_output_prop',['../struct__output__prop.html',1,'']]],
+  ['_5fpack_9',['_PACK',['../_encoder_8h.html#a72392578c82996165021d3a2aba3cf81',1,'Encoder.h']]],
+  ['_5fprovider_10',['_provider',['../struct__provider.html',1,'']]],
+  ['_5frelation_11',['_relation',['../xrandr_8c.html#a2a32a993584e6f26b94df7e38cc51a69',1,'xrandr.c']]],
+  ['_5fresv_12',['_resv',['../structevdi__gem__object.html#aeb42858c8bf2779605e621128eb19183',1,'evdi_gem_object']]],
+  ['_5ftransform_13',['_transform',['../struct__transform.html',1,'']]],
+  ['_5fumode_14',['_umode',['../struct__umode.html',1,'']]],
+  ['_5fumode_5faction_15',['_umode_action',['../xrandr_8c.html#ac6037d99af1f72f20fd34726e1fc1efb',1,'xrandr.c']]],
+  ['_5fumonitor_16',['_umonitor',['../struct__umonitor.html',1,'']]],
+  ['_5funpack_17',['_UNPACK',['../_encoder_8h.html#a780d3f29138fa73a7844d8db598129c9',1,'Encoder.h']]]
+];

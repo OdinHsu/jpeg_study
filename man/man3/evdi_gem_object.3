@@ -1,0 +1,93 @@
+.TH "evdi_gem_object" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+evdi_gem_object
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <evdi_drm_drv\&.h>\fP
+.SS "公開屬性"
+
+.in +1c
+.ti -1c
+.RI "struct drm_gem_object \fBbase\fP"
+.br
+.ti -1c
+.RI "struct page ** \fBpages\fP"
+.br
+.ti -1c
+.RI "unsigned \fBint\fP \fBpages_pin_count\fP"
+.br
+.ti -1c
+.RI "struct mutex \fBpages_lock\fP"
+.br
+.ti -1c
+.RI "void * \fBvmapping\fP"
+.br
+.ti -1c
+.RI "bool \fBvmap_is_iomem\fP"
+.br
+.ti -1c
+.RI "struct sg_table * \fBsg\fP"
+.br
+.ti -1c
+.RI "struct dma_resv * \fBresv\fP"
+.br
+.ti -1c
+.RI "struct dma_resv \fB_resv\fP"
+.br
+.ti -1c
+.RI "bool \fBallow_sw_cursor_rect_updates\fP"
+.br
+.in -1c
+.SH "詳細描述"
+.PP 
+定義在 evdi_drm_drv\&.h 檔案之第 64 行\&.
+.SH "資料成員說明文件"
+.PP 
+.SS "struct dma_resv evdi_gem_object::_resv"
+
+.PP
+定義在 evdi_drm_drv\&.h 檔案之第 75 行\&.
+.SS "bool evdi_gem_object::allow_sw_cursor_rect_updates"
+
+.PP
+定義在 evdi_drm_drv\&.h 檔案之第 81 行\&.
+.SS "struct drm_gem_object evdi_gem_object::base"
+
+.PP
+定義在 evdi_drm_drv\&.h 檔案之第 61 行\&.
+.SS "struct page** evdi_gem_object::pages"
+
+.PP
+定義在 evdi_drm_drv\&.h 檔案之第 66 行\&.
+.SS "struct mutex evdi_gem_object::pages_lock"
+
+.PP
+定義在 evdi_drm_drv\&.h 檔案之第 67 行\&.
+.SS "unsigned \fBint\fP evdi_gem_object::pages_pin_count"
+
+.PP
+定義在 evdi_drm_drv\&.h 檔案之第 67 行\&.
+.SS "struct dma_resv* evdi_gem_object::resv"
+
+.PP
+定義在 evdi_drm_drv\&.h 檔案之第 75 行\&.
+.SS "struct sg_table* evdi_gem_object::sg"
+
+.PP
+定義在 evdi_drm_drv\&.h 檔案之第 73 行\&.
+.SS "bool evdi_gem_object::vmap_is_iomem"
+
+.PP
+定義在 evdi_drm_drv\&.h 檔案之第 71 行\&.
+.SS "void* evdi_gem_object::vmapping"
+
+.PP
+定義在 evdi_drm_drv\&.h 檔案之第 69 行\&.
+
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

@@ -1,0 +1,822 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: /home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/library/evdi_lib.c 檔案參考文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 產生者: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜尋','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜尋');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_9075f4783833d2193daf99d175bda543.html">usbdisp_linux</a></li><li class="navelem"><a class="el" href="dir_9a57f247e9479574bdd4d89e6fadae2c.html">libusbdisp</a></li><li class="navelem"><a class="el" href="dir_c177418391c6082701191d849c92e04e.html">deb_install</a></li><li class="navelem"><a class="el" href="dir_9beb4c8f8cede0cdbcde00f25fd8d8b8.html">com.racertech.usbdisp-1.0.0</a></li><li class="navelem"><a class="el" href="dir_c556d2293237b66c763aa1c38400309a.html">opt</a></li><li class="navelem"><a class="el" href="dir_98656f11af99d476e6250cd584e59b42.html">apps</a></li><li class="navelem"><a class="el" href="dir_365d2588cc5b1a689601eb68794b1216.html">com.racertech.usbdisp</a></li><li class="navelem"><a class="el" href="dir_74b907b0cf0dd8424a599bb4aefb2ba6.html">files</a></li><li class="navelem"><a class="el" href="dir_501b6d2d1a5ea8e4a705bf28822605ee.html">evdi</a></li><li class="navelem"><a class="el" href="dir_c29d0bf31eb920f0cc4f84af7372f35e.html">library</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">複合項目</a> &#124;
+<a href="#define-members">定義</a> &#124;
+<a href="#func-members">函式</a> &#124;
+<a href="#var-members">變數</a>  </div>
+  <div class="headertitle">
+<div class="title">evdi_lib.c 檔案參考文件</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;libdrm/drm.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="evdi__drm_8h_source.html">evdi_drm.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="evdi__lib_8h_source.html">evdi_lib.h</a>&quot;</code><br />
+<code>#include &lt;assert.h&gt;</code><br />
+<code>#include &lt;dirent.h&gt;</code><br />
+<code>#include &lt;errno.h&gt;</code><br />
+<code>#include &lt;fcntl.h&gt;</code><br />
+<code>#include &lt;poll.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;sys/ioctl.h&gt;</code><br />
+<code>#include &lt;sys/mman.h&gt;</code><br />
+<code>#include &lt;sys/stat.h&gt;</code><br />
+<code>#include &lt;sys/types.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+evdi_lib.c的包含相依圖:</div>
+<div class="dyncontent">
+<div class="center"><img src="evdi__lib_8c__incl.png" border="0" usemap="#a_2home_2odin_2_desktop_2program_2usbdisp__linux_2libusbdisp_2deb__install_2com_8racertech_8usbdisp-1_80_80_2opt_2apps_2com_8racertech_8usbdisp_2files_2evdi_2library_2evdi__lib_8c" alt=""/></div>
+<map name="a_2home_2odin_2_desktop_2program_2usbdisp__linux_2libusbdisp_2deb__install_2com_8racertech_8usbdisp-1_80_80_2opt_2apps_2com_8racertech_8usbdisp_2files_2evdi_2library_2evdi__lib_8c" id="a_2home_2odin_2_desktop_2program_2usbdisp__linux_2libusbdisp_2deb__install_2com_8racertech_8usbdisp-1_80_80_2opt_2apps_2com_8racertech_8usbdisp_2files_2evdi_2library_2evdi__lib_8c">
+<area shape="rect" title=" " alt="" coords="805,5,1038,105"/>
+<area shape="rect" title=" " alt="" coords="5,153,80,180"/>
+<area shape="rect" title=" " alt="" coords="105,153,175,180"/>
+<area shape="rect" title=" " alt="" coords="200,153,307,180"/>
+<area shape="rect" href="evdi__drm_8h.html" title=" " alt="" coords="331,153,426,180"/>
+<area shape="rect" href="evdi__lib_8h.html" title=" " alt="" coords="451,153,536,180"/>
+<area shape="rect" title=" " alt="" coords="560,153,635,180"/>
+<area shape="rect" title=" " alt="" coords="659,153,731,180"/>
+<area shape="rect" title=" " alt="" coords="755,153,823,180"/>
+<area shape="rect" title=" " alt="" coords="847,153,910,180"/>
+<area shape="rect" title=" " alt="" coords="935,153,993,180"/>
+<area shape="rect" title=" " alt="" coords="1017,153,1084,180"/>
+<area shape="rect" title=" " alt="" coords="1109,153,1179,180"/>
+<area shape="rect" title=" " alt="" coords="1203,153,1274,180"/>
+<area shape="rect" title=" " alt="" coords="1299,153,1387,180"/>
+<area shape="rect" title=" " alt="" coords="1411,153,1514,180"/>
+<area shape="rect" title=" " alt="" coords="1539,153,1624,180"/>
+<area shape="rect" title=" " alt="" coords="1648,153,1744,180"/>
+<area shape="rect" title=" " alt="" coords="1768,153,1843,180"/>
+<area shape="rect" title=" " alt="" coords="452,228,535,255"/>
+</map>
+</div>
+</div>
+<p><a href="evdi__lib_8c_source.html">查看本檔案的原始碼.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+複合項目</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structevdi__frame__buffer__node.html">evdi_frame_buffer_node</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structevdi__device__context.html">evdi_device_context</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+定義</h2></td></tr>
+<tr class="memitem:ace6f17999da4ea3b93c4227beafcab95"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__lib_8c.html#ace6f17999da4ea3b93c4227beafcab95">__user</a></td></tr>
+<tr class="separator:ace6f17999da4ea3b93c4227beafcab95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af955a6c65439ab0dfa068038b145a020"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__lib_8c.html#af955a6c65439ab0dfa068038b145a020">MAX_DIRTS</a>&#160;&#160;&#160;16</td></tr>
+<tr class="separator:af955a6c65439ab0dfa068038b145a020"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac371b72ab24b0abc7da14fa68e67260e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__lib_8c.html#ac371b72ab24b0abc7da14fa68e67260e">EVDI_INVALID_DEVICE_INDEX</a>&#160;&#160;&#160;-1</td></tr>
+<tr class="separator:ac371b72ab24b0abc7da14fa68e67260e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a271c7db519a4b57e84a34ec22becc9ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__lib_8c.html#a271c7db519a4b57e84a34ec22becc9ac">EVDI_MODULE_COMPATIBILITY_VERSION_MAJOR</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a271c7db519a4b57e84a34ec22becc9ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2808a89520b6a4c5bc268028c5d4084"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__lib_8c.html#ab2808a89520b6a4c5bc268028c5d4084">EVDI_MODULE_COMPATIBILITY_VERSION_MINOR</a>&#160;&#160;&#160;9</td></tr>
+<tr class="separator:ab2808a89520b6a4c5bc268028c5d4084"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67796081b9a4a90e37166ea746c5112e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__lib_8c.html#a67796081b9a4a90e37166ea746c5112e">EVDI_MODULE_COMPATIBILITY_VERSION_PATCH</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a67796081b9a4a90e37166ea746c5112e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c44d8ad56442ac04527faca74573c3c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__lib_8c.html#a4c44d8ad56442ac04527faca74573c3c">evdi_log</a>(...)</td></tr>
+<tr class="separator:a4c44d8ad56442ac04527faca74573c3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a039bdf81dd0d4561123619f7958d5e94"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__lib_8c.html#a039bdf81dd0d4561123619f7958d5e94">EVDI_USAGE_LEN</a>&#160;&#160;&#160;64</td></tr>
+<tr class="separator:a039bdf81dd0d4561123619f7958d5e94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函式</h2></td></tr>
+<tr class="memitem:a22f9baafbffa240d03b8f47f6f09c929"><td class="memItemLeft" align="right" valign="top"><a class="el" href="evdi__lib_8h.html#a3111032ff8e32c04ed2f747a13af6316">evdi_handle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__lib_8c.html#a22f9baafbffa240d03b8f47f6f09c929">evdi_open</a> (<a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> device)</td></tr>
+<tr class="separator:a22f9baafbffa240d03b8f47f6f09c929"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2871484b85ee7a047fcd8b9002e8167"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="evdi__lib_8h.html#a00a649446b891bc7effb5ad284f41fa8">evdi_device_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__lib_8c.html#ad2871484b85ee7a047fcd8b9002e8167">evdi_check_device</a> (<a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> device)</td></tr>
+<tr class="separator:ad2871484b85ee7a047fcd8b9002e8167"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af130aa027bde8000489600ecf17c4126"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__lib_8c.html#af130aa027bde8000489600ecf17c4126">evdi_add_device</a> (void)</td></tr>
+<tr class="separator:af130aa027bde8000489600ecf17c4126"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8506540c9f632d795d4bd4523374530"><td class="memItemLeft" align="right" valign="top"><a class="el" href="evdi__lib_8h.html#a3111032ff8e32c04ed2f747a13af6316">evdi_handle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__lib_8c.html#af8506540c9f632d795d4bd4523374530">evdi_open_attached_to</a> (const <a class="el" href="jsimdcfg_8inc_8h.html#a8b272214e498a4cb09dde135bb4d7d03">char</a> *sysfs_parent_device)</td></tr>
+<tr class="separator:af8506540c9f632d795d4bd4523374530"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb2dcc7c0febdd8c281af5c6a77434fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__lib_8c.html#adb2dcc7c0febdd8c281af5c6a77434fe">evdi_close</a> (<a class="el" href="evdi__lib_8h.html#a3111032ff8e32c04ed2f747a13af6316">evdi_handle</a> <a class="el" href="main_8c.html#a96cd449c4b349daaf3ec8700056aa462">handle</a>)</td></tr>
+<tr class="separator:adb2dcc7c0febdd8c281af5c6a77434fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4979d9eb79303294d583b8589b26957e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__lib_8c.html#a4979d9eb79303294d583b8589b26957e">evdi_connect</a> (<a class="el" href="evdi__lib_8h.html#a3111032ff8e32c04ed2f747a13af6316">evdi_handle</a> <a class="el" href="main_8c.html#a96cd449c4b349daaf3ec8700056aa462">handle</a>, const unsigned <a class="el" href="jsimdcfg_8inc_8h.html#a8b272214e498a4cb09dde135bb4d7d03">char</a> *edid, const unsigned <a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> edid_length, const uint32_t pixel_area_limit, const uint32_t pixel_per_second_limit)</td></tr>
+<tr class="separator:a4979d9eb79303294d583b8589b26957e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ecaba53f53b98d0ffba0d1977a0b36e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__lib_8c.html#a5ecaba53f53b98d0ffba0d1977a0b36e">evdi_disconnect</a> (<a class="el" href="evdi__lib_8h.html#a3111032ff8e32c04ed2f747a13af6316">evdi_handle</a> <a class="el" href="main_8c.html#a96cd449c4b349daaf3ec8700056aa462">handle</a>)</td></tr>
+<tr class="separator:a5ecaba53f53b98d0ffba0d1977a0b36e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c9240a8bd859f865c975db9f5805ac8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__lib_8c.html#a2c9240a8bd859f865c975db9f5805ac8">evdi_enable_cursor_events</a> (<a class="el" href="evdi__lib_8h.html#a3111032ff8e32c04ed2f747a13af6316">evdi_handle</a> <a class="el" href="main_8c.html#a96cd449c4b349daaf3ec8700056aa462">handle</a>, bool enable)</td></tr>
+<tr class="separator:a2c9240a8bd859f865c975db9f5805ac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9a44f261bd62709bf2132ee188fc039"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__lib_8c.html#ad9a44f261bd62709bf2132ee188fc039">evdi_grab_pixels</a> (<a class="el" href="evdi__lib_8h.html#a3111032ff8e32c04ed2f747a13af6316">evdi_handle</a> <a class="el" href="main_8c.html#a96cd449c4b349daaf3ec8700056aa462">handle</a>, struct <a class="el" href="structevdi__rect.html">evdi_rect</a> *rects, <a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> *num_rects)</td></tr>
+<tr class="separator:ad9a44f261bd62709bf2132ee188fc039"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55b8cd2dec9571ba2ad484dc12e8644d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__lib_8c.html#a55b8cd2dec9571ba2ad484dc12e8644d">evdi_register_buffer</a> (<a class="el" href="evdi__lib_8h.html#a3111032ff8e32c04ed2f747a13af6316">evdi_handle</a> <a class="el" href="main_8c.html#a96cd449c4b349daaf3ec8700056aa462">handle</a>, struct <a class="el" href="structevdi__buffer.html">evdi_buffer</a> <a class="el" href="jsimdcfg_8inc_8h.html#abdb77e53de4261715ec5f4783a343ec3">buffer</a>)</td></tr>
+<tr class="separator:a55b8cd2dec9571ba2ad484dc12e8644d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04802a3a4fc9acef1a02c02b9379e6b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__lib_8c.html#a04802a3a4fc9acef1a02c02b9379e6b1">evdi_unregister_buffer</a> (<a class="el" href="evdi__lib_8h.html#a3111032ff8e32c04ed2f747a13af6316">evdi_handle</a> <a class="el" href="main_8c.html#a96cd449c4b349daaf3ec8700056aa462">handle</a>, <a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> bufferId)</td></tr>
+<tr class="separator:a04802a3a4fc9acef1a02c02b9379e6b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1365a0f99d801521828b8d7e789ee190"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__lib_8c.html#a1365a0f99d801521828b8d7e789ee190">evdi_request_update</a> (<a class="el" href="evdi__lib_8h.html#a3111032ff8e32c04ed2f747a13af6316">evdi_handle</a> <a class="el" href="main_8c.html#a96cd449c4b349daaf3ec8700056aa462">handle</a>, <a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> bufferId)</td></tr>
+<tr class="separator:a1365a0f99d801521828b8d7e789ee190"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7252cf9a8397e2ab5cfbe14856cd36d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__lib_8c.html#a7252cf9a8397e2ab5cfbe14856cd36d7">evdi_ddcci_response</a> (<a class="el" href="evdi__lib_8h.html#a3111032ff8e32c04ed2f747a13af6316">evdi_handle</a> <a class="el" href="main_8c.html#a96cd449c4b349daaf3ec8700056aa462">handle</a>, const unsigned <a class="el" href="jsimdcfg_8inc_8h.html#a8b272214e498a4cb09dde135bb4d7d03">char</a> *<a class="el" href="jsimdcfg_8inc_8h.html#abdb77e53de4261715ec5f4783a343ec3">buffer</a>, const uint32_t buffer_length, const bool result)</td></tr>
+<tr class="separator:a7252cf9a8397e2ab5cfbe14856cd36d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33915ec8a6e0947d5465e1e70d0cf4f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__lib_8c.html#a33915ec8a6e0947d5465e1e70d0cf4f6">evdi_handle_events</a> (<a class="el" href="evdi__lib_8h.html#a3111032ff8e32c04ed2f747a13af6316">evdi_handle</a> <a class="el" href="main_8c.html#a96cd449c4b349daaf3ec8700056aa462">handle</a>, struct <a class="el" href="structevdi__event__context.html">evdi_event_context</a> *evtctx)</td></tr>
+<tr class="separator:a33915ec8a6e0947d5465e1e70d0cf4f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28d1c460204b49714ce3273bc85e0b46"><td class="memItemLeft" align="right" valign="top"><a class="el" href="evdi__lib_8h.html#a58a9920383ad607e07b75d8cd1280897">evdi_selectable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__lib_8c.html#a28d1c460204b49714ce3273bc85e0b46">evdi_get_event_ready</a> (<a class="el" href="evdi__lib_8h.html#a3111032ff8e32c04ed2f747a13af6316">evdi_handle</a> <a class="el" href="main_8c.html#a96cd449c4b349daaf3ec8700056aa462">handle</a>)</td></tr>
+<tr class="separator:a28d1c460204b49714ce3273bc85e0b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a550ce0f7caf0a555f07c0f8365301350"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__lib_8c.html#a550ce0f7caf0a555f07c0f8365301350">evdi_get_lib_version</a> (struct <a class="el" href="structevdi__lib__version.html">evdi_lib_version</a> *version)</td></tr>
+<tr class="separator:a550ce0f7caf0a555f07c0f8365301350"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecf4840d3b6e77b4f267c876ec166eb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__lib_8c.html#aecf4840d3b6e77b4f267c876ec166eb5">evdi_set_logging</a> (struct <a class="el" href="structevdi__logging.html">evdi_logging</a> <a class="el" href="structevdi__logging.html">evdi_logging</a>)</td></tr>
+<tr class="separator:aecf4840d3b6e77b4f267c876ec166eb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+變數</h2></td></tr>
+<tr class="memitem:aa655f0621f4a57e08b63523a848e479a"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structevdi__logging.html">evdi_logging</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__lib_8c.html#aa655f0621f4a57e08b63523a848e479a">g_evdi_logging</a></td></tr>
+<tr class="separator:aa655f0621f4a57e08b63523a848e479a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">定義巨集說明文件</h2>
+<a id="ace6f17999da4ea3b93c4227beafcab95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace6f17999da4ea3b93c4227beafcab95">&#9670;&nbsp;</a></span>__user</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __user</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__lib_8c_source.html">evdi_lib.c</a> 檔案之第 <a class="el" href="evdi__lib_8c_source.html#l00008">8</a> 行.</p>
+
+</div>
+</div>
+<a id="ac371b72ab24b0abc7da14fa68e67260e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac371b72ab24b0abc7da14fa68e67260e">&#9670;&nbsp;</a></span>EVDI_INVALID_DEVICE_INDEX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EVDI_INVALID_DEVICE_INDEX&#160;&#160;&#160;-1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__lib_8c_source.html">evdi_lib.c</a> 檔案之第 <a class="el" href="evdi__lib_8c_source.html#l00029">29</a> 行.</p>
+
+</div>
+</div>
+<a id="a4c44d8ad56442ac04527faca74573c3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c44d8ad56442ac04527faca74573c3c">&#9670;&nbsp;</a></span>evdi_log</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define evdi_log</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>巨集內容:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> {                        \</div>
+<div class="line">    if (<a class="code" href="evdi__lib_8c.html#aa655f0621f4a57e08b63523a848e479a">g_evdi_logging</a>.<a class="code" href="structevdi__logging.html#a6e30e77e16295d985f3d11b9dad9e777">function</a>) {                  \</div>
+<div class="line">        g_evdi_logging.function(<a class="code" href="evdi__lib_8c.html#aa655f0621f4a57e08b63523a848e479a">g_evdi_logging</a>.<a class="code" href="structevdi__logging.html#ac29a964d80abac7d028c442fe2b5db05">user_data</a>,   \</div>
+<div class="line">                    __VA_ARGS__);           \</div>
+<div class="line">    } <span class="keywordflow">else</span> {                            \</div>
+<div class="line">        printf(<span class="stringliteral">&quot;[libevdi] &quot;</span> __VA_ARGS__);           \</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\n&quot;</span>);                       \</div>
+<div class="line">    }                               \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="aevdi__lib_8c_html_aa655f0621f4a57e08b63523a848e479a"><div class="ttname"><a href="evdi__lib_8c.html#aa655f0621f4a57e08b63523a848e479a">g_evdi_logging</a></div><div class="ttdeci">struct evdi_logging g_evdi_logging</div><div class="ttdef"><b>Definition:</b> <a href="evdi__lib_8c_source.html#l00001">evdi_lib.c:45</a></div></div>
+<div class="ttc" id="astructevdi__logging_html_a6e30e77e16295d985f3d11b9dad9e777"><div class="ttname"><a href="structevdi__logging.html#a6e30e77e16295d985f3d11b9dad9e777">evdi_logging::function</a></div><div class="ttdeci">void(* function)(void *user_data, const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__lib_8h_source.html#l00096">evdi_lib.h:96</a></div></div>
+<div class="ttc" id="astructevdi__logging_html_ac29a964d80abac7d028c442fe2b5db05"><div class="ttname"><a href="structevdi__logging.html#ac29a964d80abac7d028c442fe2b5db05">evdi_logging::user_data</a></div><div class="ttdeci">void * user_data</div><div class="ttdef"><b>Definition:</b> <a href="evdi__lib_8h_source.html#l00097">evdi_lib.h:97</a></div></div>
+</div><!-- fragment -->
+<p class="definition">定義在 <a class="el" href="evdi__lib_8c_source.html">evdi_lib.c</a> 檔案之第 <a class="el" href="evdi__lib_8c_source.html#l00035">35</a> 行.</p>
+
+</div>
+</div>
+<a id="a271c7db519a4b57e84a34ec22becc9ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a271c7db519a4b57e84a34ec22becc9ac">&#9670;&nbsp;</a></span>EVDI_MODULE_COMPATIBILITY_VERSION_MAJOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EVDI_MODULE_COMPATIBILITY_VERSION_MAJOR&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__lib_8c_source.html">evdi_lib.c</a> 檔案之第 <a class="el" href="evdi__lib_8c_source.html#l00031">31</a> 行.</p>
+
+</div>
+</div>
+<a id="ab2808a89520b6a4c5bc268028c5d4084"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2808a89520b6a4c5bc268028c5d4084">&#9670;&nbsp;</a></span>EVDI_MODULE_COMPATIBILITY_VERSION_MINOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EVDI_MODULE_COMPATIBILITY_VERSION_MINOR&#160;&#160;&#160;9</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__lib_8c_source.html">evdi_lib.c</a> 檔案之第 <a class="el" href="evdi__lib_8c_source.html#l00032">32</a> 行.</p>
+
+</div>
+</div>
+<a id="a67796081b9a4a90e37166ea746c5112e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67796081b9a4a90e37166ea746c5112e">&#9670;&nbsp;</a></span>EVDI_MODULE_COMPATIBILITY_VERSION_PATCH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EVDI_MODULE_COMPATIBILITY_VERSION_PATCH&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__lib_8c_source.html">evdi_lib.c</a> 檔案之第 <a class="el" href="evdi__lib_8c_source.html#l00033">33</a> 行.</p>
+
+</div>
+</div>
+<a id="a039bdf81dd0d4561123619f7958d5e94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a039bdf81dd0d4561123619f7958d5e94">&#9670;&nbsp;</a></span>EVDI_USAGE_LEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EVDI_USAGE_LEN&#160;&#160;&#160;64</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__lib_8c_source.html">evdi_lib.c</a> 檔案之第 <a class="el" href="evdi__lib_8c_source.html#l00062">62</a> 行.</p>
+
+</div>
+</div>
+<a id="af955a6c65439ab0dfa068038b145a020"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af955a6c65439ab0dfa068038b145a020">&#9670;&nbsp;</a></span>MAX_DIRTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_DIRTS&#160;&#160;&#160;16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__lib_8c_source.html">evdi_lib.c</a> 檔案之第 <a class="el" href="evdi__lib_8c_source.html#l00028">28</a> 行.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函式說明文件</h2>
+<a id="af130aa027bde8000489600ecf17c4126"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af130aa027bde8000489600ecf17c4126">&#9670;&nbsp;</a></span>evdi_add_device()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> evdi_add_device </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__lib_8c_source.html">evdi_lib.c</a> 檔案之第 <a class="el" href="evdi__lib_8c_source.html#l00637">637</a> 行.</p>
+
+</div>
+</div>
+<a id="ad2871484b85ee7a047fcd8b9002e8167"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2871484b85ee7a047fcd8b9002e8167">&#9670;&nbsp;</a></span>evdi_check_device()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="evdi__lib_8h.html#a00a649446b891bc7effb5ad284f41fa8">evdi_device_status</a> evdi_check_device </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td>
+          <td class="paramname"><em>device</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__lib_8c_source.html">evdi_lib.c</a> 檔案之第 <a class="el" href="evdi__lib_8c_source.html#l00575">575</a> 行.</p>
+
+</div>
+</div>
+<a id="adb2dcc7c0febdd8c281af5c6a77434fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb2dcc7c0febdd8c281af5c6a77434fe">&#9670;&nbsp;</a></span>evdi_close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_close </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="evdi__lib_8h.html#a3111032ff8e32c04ed2f747a13af6316">evdi_handle</a>&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__lib_8c_source.html">evdi_lib.c</a> 檔案之第 <a class="el" href="evdi__lib_8c_source.html#l00661">661</a> 行.</p>
+
+</div>
+</div>
+<a id="a4979d9eb79303294d583b8589b26957e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4979d9eb79303294d583b8589b26957e">&#9670;&nbsp;</a></span>evdi_connect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_connect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="evdi__lib_8h.html#a3111032ff8e32c04ed2f747a13af6316">evdi_handle</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned <a class="el" href="jsimdcfg_8inc_8h.html#a8b272214e498a4cb09dde135bb4d7d03">char</a> *&#160;</td>
+          <td class="paramname"><em>edid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned <a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td>
+          <td class="paramname"><em>edid_length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint32_t&#160;</td>
+          <td class="paramname"><em>pixel_area_limit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint32_t&#160;</td>
+          <td class="paramname"><em>pixel_per_second_limit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__lib_8c_source.html">evdi_lib.c</a> 檔案之第 <a class="el" href="evdi__lib_8c_source.html#l00675">675</a> 行.</p>
+
+</div>
+</div>
+<a id="a7252cf9a8397e2ab5cfbe14856cd36d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7252cf9a8397e2ab5cfbe14856cd36d7">&#9670;&nbsp;</a></span>evdi_ddcci_response()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_ddcci_response </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="evdi__lib_8h.html#a3111032ff8e32c04ed2f747a13af6316">evdi_handle</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned <a class="el" href="jsimdcfg_8inc_8h.html#a8b272214e498a4cb09dde135bb4d7d03">char</a> *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint32_t&#160;</td>
+          <td class="paramname"><em>buffer_length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__lib_8c_source.html">evdi_lib.c</a> 檔案之第 <a class="el" href="evdi__lib_8c_source.html#l00804">804</a> 行.</p>
+
+</div>
+</div>
+<a id="a5ecaba53f53b98d0ffba0d1977a0b36e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ecaba53f53b98d0ffba0d1977a0b36e">&#9670;&nbsp;</a></span>evdi_disconnect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_disconnect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="evdi__lib_8h.html#a3111032ff8e32c04ed2f747a13af6316">evdi_handle</a>&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__lib_8c_source.html">evdi_lib.c</a> 檔案之第 <a class="el" href="evdi__lib_8c_source.html#l00693">693</a> 行.</p>
+
+</div>
+</div>
+<a id="a2c9240a8bd859f865c975db9f5805ac8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c9240a8bd859f865c975db9f5805ac8">&#9670;&nbsp;</a></span>evdi_enable_cursor_events()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_enable_cursor_events </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="evdi__lib_8h.html#a3111032ff8e32c04ed2f747a13af6316">evdi_handle</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__lib_8c_source.html">evdi_lib.c</a> 檔案之第 <a class="el" href="evdi__lib_8c_source.html#l00700">700</a> 行.</p>
+
+</div>
+</div>
+<a id="a28d1c460204b49714ce3273bc85e0b46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28d1c460204b49714ce3273bc85e0b46">&#9670;&nbsp;</a></span>evdi_get_event_ready()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="evdi__lib_8h.html#a58a9920383ad607e07b75d8cd1280897">evdi_selectable</a> evdi_get_event_ready </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="evdi__lib_8h.html#a3111032ff8e32c04ed2f747a13af6316">evdi_handle</a>&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__lib_8c_source.html">evdi_lib.c</a> 檔案之第 <a class="el" href="evdi__lib_8c_source.html#l01001">1001</a> 行.</p>
+
+</div>
+</div>
+<a id="a550ce0f7caf0a555f07c0f8365301350"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a550ce0f7caf0a555f07c0f8365301350">&#9670;&nbsp;</a></span>evdi_get_lib_version()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_get_lib_version </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structevdi__lib__version.html">evdi_lib_version</a> *&#160;</td>
+          <td class="paramname"><em>version</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__lib_8c_source.html">evdi_lib.c</a> 檔案之第 <a class="el" href="evdi__lib_8c_source.html#l01006">1006</a> 行.</p>
+
+</div>
+</div>
+<a id="ad9a44f261bd62709bf2132ee188fc039"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9a44f261bd62709bf2132ee188fc039">&#9670;&nbsp;</a></span>evdi_grab_pixels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_grab_pixels </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="evdi__lib_8h.html#a3111032ff8e32c04ed2f747a13af6316">evdi_handle</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structevdi__rect.html">evdi_rect</a> *&#160;</td>
+          <td class="paramname"><em>rects</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> *&#160;</td>
+          <td class="paramname"><em>num_rects</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__lib_8c_source.html">evdi_lib.c</a> 檔案之第 <a class="el" href="evdi__lib_8c_source.html#l00713">713</a> 行.</p>
+
+</div>
+</div>
+<a id="a33915ec8a6e0947d5465e1e70d0cf4f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33915ec8a6e0947d5465e1e70d0cf4f6">&#9670;&nbsp;</a></span>evdi_handle_events()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_handle_events </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="evdi__lib_8h.html#a3111032ff8e32c04ed2f747a13af6316">evdi_handle</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structevdi__event__context.html">evdi_event_context</a> *&#160;</td>
+          <td class="paramname"><em>evtctx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__lib_8c_source.html">evdi_lib.c</a> 檔案之第 <a class="el" href="evdi__lib_8c_source.html#l00980">980</a> 行.</p>
+
+</div>
+</div>
+<a id="a22f9baafbffa240d03b8f47f6f09c929"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22f9baafbffa240d03b8f47f6f09c929">&#9670;&nbsp;</a></span>evdi_open()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="evdi__lib_8h.html#a3111032ff8e32c04ed2f747a13af6316">evdi_handle</a> evdi_open </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td>
+          <td class="paramname"><em>device</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__lib_8c_source.html">evdi_lib.c</a> 檔案之第 <a class="el" href="evdi__lib_8c_source.html#l00575">575</a> 行.</p>
+
+</div>
+</div>
+<a id="af8506540c9f632d795d4bd4523374530"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8506540c9f632d795d4bd4523374530">&#9670;&nbsp;</a></span>evdi_open_attached_to()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="evdi__lib_8h.html#a3111032ff8e32c04ed2f747a13af6316">evdi_handle</a> evdi_open_attached_to </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="jsimdcfg_8inc_8h.html#a8b272214e498a4cb09dde135bb4d7d03">char</a> *&#160;</td>
+          <td class="paramname"><em>sysfs_parent_device</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__lib_8c_source.html">evdi_lib.c</a> 檔案之第 <a class="el" href="evdi__lib_8c_source.html#l00642">642</a> 行.</p>
+
+</div>
+</div>
+<a id="a55b8cd2dec9571ba2ad484dc12e8644d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55b8cd2dec9571ba2ad484dc12e8644d">&#9670;&nbsp;</a></span>evdi_register_buffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_register_buffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="evdi__lib_8h.html#a3111032ff8e32c04ed2f747a13af6316">evdi_handle</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structevdi__buffer.html">evdi_buffer</a>&#160;</td>
+          <td class="paramname"><em>buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__lib_8c_source.html">evdi_lib.c</a> 檔案之第 <a class="el" href="evdi__lib_8c_source.html#l00767">767</a> 行.</p>
+
+</div>
+</div>
+<a id="a1365a0f99d801521828b8d7e789ee190"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1365a0f99d801521828b8d7e789ee190">&#9670;&nbsp;</a></span>evdi_request_update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool evdi_request_update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="evdi__lib_8h.html#a3111032ff8e32c04ed2f747a13af6316">evdi_handle</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td>
+          <td class="paramname"><em>bufferId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__lib_8c_source.html">evdi_lib.c</a> 檔案之第 <a class="el" href="evdi__lib_8c_source.html#l00787">787</a> 行.</p>
+
+</div>
+</div>
+<a id="aecf4840d3b6e77b4f267c876ec166eb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecf4840d3b6e77b4f267c876ec166eb5">&#9670;&nbsp;</a></span>evdi_set_logging()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_set_logging </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structevdi__logging.html">evdi_logging</a> <a class="el" href="structevdi__logging.html">evdi_logging</a> <a class="el" href="structevdi__logging.html">evdi_logging</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__lib_8c_source.html">evdi_lib.c</a> 檔案之第 <a class="el" href="evdi__lib_8c_source.html#l01015">1015</a> 行.</p>
+
+</div>
+</div>
+<a id="a04802a3a4fc9acef1a02c02b9379e6b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04802a3a4fc9acef1a02c02b9379e6b1">&#9670;&nbsp;</a></span>evdi_unregister_buffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_unregister_buffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="evdi__lib_8h.html#a3111032ff8e32c04ed2f747a13af6316">evdi_handle</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td>
+          <td class="paramname"><em>bufferId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__lib_8c_source.html">evdi_lib.c</a> 檔案之第 <a class="el" href="evdi__lib_8c_source.html#l00775">775</a> 行.</p>
+
+</div>
+</div>
+<h2 class="groupheader">變數說明文件</h2>
+<a id="aa655f0621f4a57e08b63523a848e479a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa655f0621f4a57e08b63523a848e479a">&#9670;&nbsp;</a></span>g_evdi_logging</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structevdi__logging.html">evdi_logging</a> g_evdi_logging</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>初值:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    .function = NULL,</div>
+<div class="line">    .user_data = NULL</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p class="definition">定義在 <a class="el" href="evdi__lib_8c_source.html">evdi_lib.c</a> 檔案之第 <a class="el" href="evdi__lib_8c_source.html#l00001">1</a> 行.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+產生者:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

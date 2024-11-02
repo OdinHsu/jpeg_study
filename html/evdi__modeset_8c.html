@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: /home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_modeset.c 檔案參考文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 產生者: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜尋','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜尋');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_9075f4783833d2193daf99d175bda543.html">usbdisp_linux</a></li><li class="navelem"><a class="el" href="dir_9a57f247e9479574bdd4d89e6fadae2c.html">libusbdisp</a></li><li class="navelem"><a class="el" href="dir_c177418391c6082701191d849c92e04e.html">deb_install</a></li><li class="navelem"><a class="el" href="dir_9beb4c8f8cede0cdbcde00f25fd8d8b8.html">com.racertech.usbdisp-1.0.0</a></li><li class="navelem"><a class="el" href="dir_c556d2293237b66c763aa1c38400309a.html">opt</a></li><li class="navelem"><a class="el" href="dir_98656f11af99d476e6250cd584e59b42.html">apps</a></li><li class="navelem"><a class="el" href="dir_365d2588cc5b1a689601eb68794b1216.html">com.racertech.usbdisp</a></li><li class="navelem"><a class="el" href="dir_74b907b0cf0dd8424a599bb4aefb2ba6.html">files</a></li><li class="navelem"><a class="el" href="dir_501b6d2d1a5ea8e4a705bf28822605ee.html">evdi</a></li><li class="navelem"><a class="el" href="dir_611f9203c5b70a3412d8aed75ef95d23.html">module</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函式</a>  </div>
+  <div class="headertitle">
+<div class="title">evdi_modeset.c 檔案參考文件</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;linux/version.h&gt;</code><br />
+<code>#include &lt;drm/drm_vblank.h&gt;</code><br />
+<code>#include &lt;drm/drm_damage_helper.h&gt;</code><br />
+<code>#include &lt;drm/drm_atomic.h&gt;</code><br />
+<code>#include &lt;drm/drm_crtc.h&gt;</code><br />
+<code>#include &lt;drm/drm_crtc_helper.h&gt;</code><br />
+<code>#include &lt;drm/drm_plane_helper.h&gt;</code><br />
+<code>#include &lt;drm/drm_atomic_helper.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="evdi__drm_8h_source.html">evdi_drm.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="evdi__drm__drv_8h_source.html">evdi_drm_drv.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="evdi__cursor_8h_source.html">evdi_cursor.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="evdi__params_8h_source.html">evdi_params.h</a>&quot;</code><br />
+<code>#include &lt;drm/drm_gem_atomic_helper.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+evdi_modeset.c的包含相依圖:</div>
+<div class="dyncontent">
+<div class="center"><img src="evdi__modeset_8c__incl.png" border="0" usemap="#a_2home_2odin_2_desktop_2program_2usbdisp__linux_2libusbdisp_2deb__install_2com_8racertech_8usbdisp-1_80_80_2opt_2apps_2com_8racertech_8usbdisp_2files_2evdi_2module_2evdi__modeset_8c" alt=""/></div>
+<map name="a_2home_2odin_2_desktop_2program_2usbdisp__linux_2libusbdisp_2deb__install_2com_8racertech_8usbdisp-1_80_80_2opt_2apps_2com_8racertech_8usbdisp_2files_2evdi_2module_2evdi__modeset_8c" id="a_2home_2odin_2_desktop_2program_2usbdisp__linux_2libusbdisp_2deb__install_2com_8racertech_8usbdisp-1_80_80_2opt_2apps_2com_8racertech_8usbdisp_2files_2evdi_2module_2evdi__modeset_8c">
+<area shape="rect" title=" " alt="" coords="1045,5,1290,105"/>
+<area shape="rect" title=" " alt="" coords="5,243,124,269"/>
+<area shape="rect" title=" " alt="" coords="435,243,577,269"/>
+<area shape="rect" title=" " alt="" coords="1205,161,1402,187"/>
+<area shape="rect" title=" " alt="" coords="1427,161,1569,187"/>
+<area shape="rect" title=" " alt="" coords="148,243,269,269"/>
+<area shape="rect" title=" " alt="" coords="601,243,769,269"/>
+<area shape="rect" title=" " alt="" coords="1593,161,1773,187"/>
+<area shape="rect" title=" " alt="" coords="1798,161,1987,187"/>
+<area shape="rect" href="evdi__drm_8h.html" title=" " alt="" coords="2012,161,2107,187"/>
+<area shape="rect" href="evdi__drm__drv_8h.html" title=" " alt="" coords="1007,161,1130,187"/>
+<area shape="rect" href="evdi__params_8h.html" title=" " alt="" coords="1583,317,1701,344"/>
+<area shape="rect" href="evdi__cursor_8h.html" title=" " alt="" coords="249,161,357,187"/>
+<area shape="rect" title=" " alt="" coords="2131,153,2297,195"/>
+<area shape="rect" title=" " alt="" coords="293,243,412,269"/>
+<area shape="rect" title=" " alt="" coords="1081,243,1193,269"/>
+<area shape="rect" title=" " alt="" coords="1217,243,1331,269"/>
+<area shape="rect" title=" " alt="" coords="1355,243,1473,269"/>
+<area shape="rect" title=" " alt="" coords="1497,243,1635,269"/>
+<area shape="rect" title=" " alt="" coords="1659,243,1785,269"/>
+<area shape="rect" title=" " alt="" coords="1809,243,1947,269"/>
+<area shape="rect" title=" " alt="" coords="1971,243,2094,269"/>
+<area shape="rect" title=" " alt="" coords="2119,243,2245,269"/>
+<area shape="rect" title=" " alt="" coords="793,243,923,269"/>
+<area shape="rect" href="evdi__debug_8h.html" title=" " alt="" coords="947,243,1057,269"/>
+</map>
+</div>
+</div>
+<p><a href="evdi__modeset_8c_source.html">查看本檔案的原始碼.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函式</h2></td></tr>
+<tr class="memitem:af162d8add86d1253243406d14002c90d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__modeset_8c.html#af162d8add86d1253243406d14002c90d">evdi_modeset_init</a> (struct drm_device *dev)</td></tr>
+<tr class="separator:af162d8add86d1253243406d14002c90d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b861da7850155584dfbb88caa8e248c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__modeset_8c.html#a0b861da7850155584dfbb88caa8e248c">evdi_modeset_cleanup</a> (__maybe_unused struct drm_device *dev)</td></tr>
+<tr class="separator:a0b861da7850155584dfbb88caa8e248c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">函式說明文件</h2>
+<a id="a0b861da7850155584dfbb88caa8e248c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b861da7850155584dfbb88caa8e248c">&#9670;&nbsp;</a></span>evdi_modeset_cleanup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_modeset_cleanup </td>
+          <td>(</td>
+          <td class="paramtype">__maybe_unused struct drm_device *&#160;</td>
+          <td class="paramname"><em>dev</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__modeset_8c_source.html">evdi_modeset.c</a> 檔案之第 <a class="el" href="evdi__modeset_8c_source.html#l00539">539</a> 行.</p>
+
+</div>
+</div>
+<a id="af162d8add86d1253243406d14002c90d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af162d8add86d1253243406d14002c90d">&#9670;&nbsp;</a></span>evdi_modeset_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_modeset_init </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_device *&#160;</td>
+          <td class="paramname"><em>dev</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__modeset_8c_source.html">evdi_modeset.c</a> 檔案之第 <a class="el" href="evdi__modeset_8c_source.html#l00511">511</a> 行.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+產生者:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

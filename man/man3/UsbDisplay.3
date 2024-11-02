@@ -1,0 +1,51 @@
+.TH "UsbDisplay" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UsbDisplay
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <usbDisplay\&.h>\fP
+.SS "公開方法(Public Methods)"
+
+.in +1c
+.ti -1c
+.RI "\fBint\fP \fBjxInit\fP (libusb_device *dev)"
+.br
+.ti -1c
+.RI "void \fBjxDelete\fP ()"
+.br
+.ti -1c
+.RI "void \fBjxStartEncode\fP (\fBchar\fP *in, \fBint\fP width, \fBint\fP height, \fBint\fP pitch)"
+.br
+.ti -1c
+.RI "void \fBjxSetResolution\fP (\fBint\fP width, \fBint\fP height)"
+.br
+.in -1c
+.SH "詳細描述"
+.PP 
+定義在 usbDisplay\&.h 檔案之第 7 行\&.
+.SH "函式成員說明文件"
+.PP 
+.SS "void UsbDisplay::jxDelete ()"
+
+.PP
+定義在 usbDisplay\&.cpp 檔案之第 36 行\&.
+.SS "\fBint\fP UsbDisplay::jxInit (libusb_device * dev)"
+
+.PP
+定義在 usbDisplay\&.cpp 檔案之第 15 行\&.
+.SS "void UsbDisplay::jxSetResolution (\fBint\fP width, \fBint\fP height)"
+
+.PP
+定義在 usbDisplay\&.cpp 檔案之第 56 行\&.
+.SS "void UsbDisplay::jxStartEncode (\fBchar\fP * in, \fBint\fP width, \fBint\fP height, \fBint\fP pitch)"
+
+.PP
+定義在 usbDisplay\&.cpp 檔案之第 45 行\&.
+
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

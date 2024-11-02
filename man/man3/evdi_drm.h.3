@@ -1,0 +1,228 @@
+.TH "/home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_drm.h" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_drm.h
+.SH SYNOPSIS
+.br
+.PP
+.SS "複合項目"
+
+.in +1c
+.ti -1c
+.RI "struct \fBdrm_evdi_event_update_ready\fP"
+.br
+.ti -1c
+.RI "struct \fBdrm_evdi_event_dpms\fP"
+.br
+.ti -1c
+.RI "struct \fBdrm_evdi_event_mode_changed\fP"
+.br
+.ti -1c
+.RI "struct \fBdrm_evdi_event_crtc_state\fP"
+.br
+.ti -1c
+.RI "struct \fBdrm_evdi_connect\fP"
+.br
+.ti -1c
+.RI "struct \fBdrm_evdi_request_update\fP"
+.br
+.ti -1c
+.RI "struct \fBdrm_evdi_grabpix\fP"
+.br
+.ti -1c
+.RI "struct \fBdrm_evdi_event_cursor_set\fP"
+.br
+.ti -1c
+.RI "struct \fBdrm_evdi_event_cursor_move\fP"
+.br
+.ti -1c
+.RI "struct \fBdrm_evdi_ddcci_response\fP"
+.br
+.ti -1c
+.RI "struct \fBdrm_evdi_enable_cursor_events\fP"
+.br
+.ti -1c
+.RI "struct \fBdrm_evdi_event_ddcci_data\fP"
+.br
+.in -1c
+.SS "定義"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDRM_EVDI_EVENT_UPDATE_READY\fP   0x80000000"
+.br
+.ti -1c
+.RI "#define \fBDRM_EVDI_EVENT_DPMS\fP   0x80000001"
+.br
+.ti -1c
+.RI "#define \fBDRM_EVDI_EVENT_MODE_CHANGED\fP   0x80000002"
+.br
+.ti -1c
+.RI "#define \fBDRM_EVDI_EVENT_CRTC_STATE\fP   0x80000003"
+.br
+.ti -1c
+.RI "#define \fBDRM_EVDI_EVENT_CURSOR_SET\fP   0x80000004"
+.br
+.ti -1c
+.RI "#define \fBDRM_EVDI_EVENT_CURSOR_MOVE\fP   0x80000005"
+.br
+.ti -1c
+.RI "#define \fBDRM_EVDI_EVENT_DDCCI_DATA\fP   0x80000006"
+.br
+.ti -1c
+.RI "#define \fBDDCCI_BUFFER_SIZE\fP   64"
+.br
+.ti -1c
+.RI "#define \fBDRM_EVDI_CONNECT\fP   0x00"
+.br
+.ti -1c
+.RI "#define \fBDRM_EVDI_REQUEST_UPDATE\fP   0x01"
+.br
+.ti -1c
+.RI "#define \fBDRM_EVDI_GRABPIX\fP   0x02"
+.br
+.ti -1c
+.RI "#define \fBDRM_EVDI_DDCCI_RESPONSE\fP   0x03"
+.br
+.ti -1c
+.RI "#define \fBDRM_EVDI_ENABLE_CURSOR_EVENTS\fP   0x04"
+.br
+.ti -1c
+.RI "#define \fBDRM_IOCTL_EVDI_CONNECT\fP"
+.br
+.ti -1c
+.RI "#define \fBDRM_IOCTL_EVDI_REQUEST_UPDATE\fP"
+.br
+.ti -1c
+.RI "#define \fBDRM_IOCTL_EVDI_GRABPIX\fP"
+.br
+.ti -1c
+.RI "#define \fBDRM_IOCTL_EVDI_DDCCI_RESPONSE\fP"
+.br
+.ti -1c
+.RI "#define \fBDRM_IOCTL_EVDI_ENABLE_CURSOR_EVENTS\fP"
+.br
+.in -1c
+.SS "列舉型態"
+
+.in +1c
+.ti -1c
+.RI "enum \fBdrm_evdi_grabpix_mode\fP { \fBEVDI_GRABPIX_MODE_RECTS\fP = 0, \fBEVDI_GRABPIX_MODE_DIRTY\fP = 1 }"
+.br
+.in -1c
+.SH "定義巨集說明文件"
+.PP 
+.SS "#define DDCCI_BUFFER_SIZE   64"
+
+.PP
+定義在 evdi_drm\&.h 檔案之第 103 行\&.
+.SS "#define DRM_EVDI_CONNECT   0x00"
+
+.PP
+定義在 evdi_drm\&.h 檔案之第 114 行\&.
+.SS "#define DRM_EVDI_DDCCI_RESPONSE   0x03"
+
+.PP
+定義在 evdi_drm\&.h 檔案之第 117 行\&.
+.SS "#define DRM_EVDI_ENABLE_CURSOR_EVENTS   0x04"
+
+.PP
+定義在 evdi_drm\&.h 檔案之第 118 行\&.
+.SS "#define DRM_EVDI_EVENT_CRTC_STATE   0x80000003"
+
+.PP
+定義在 evdi_drm\&.h 檔案之第 16 行\&.
+.SS "#define DRM_EVDI_EVENT_CURSOR_MOVE   0x80000005"
+
+.PP
+定義在 evdi_drm\&.h 檔案之第 18 行\&.
+.SS "#define DRM_EVDI_EVENT_CURSOR_SET   0x80000004"
+
+.PP
+定義在 evdi_drm\&.h 檔案之第 17 行\&.
+.SS "#define DRM_EVDI_EVENT_DDCCI_DATA   0x80000006"
+
+.PP
+定義在 evdi_drm\&.h 檔案之第 19 行\&.
+.SS "#define DRM_EVDI_EVENT_DPMS   0x80000001"
+
+.PP
+定義在 evdi_drm\&.h 檔案之第 14 行\&.
+.SS "#define DRM_EVDI_EVENT_MODE_CHANGED   0x80000002"
+
+.PP
+定義在 evdi_drm\&.h 檔案之第 15 行\&.
+.SS "#define DRM_EVDI_EVENT_UPDATE_READY   0x80000000"
+
+.PP
+定義在 evdi_drm\&.h 檔案之第 13 行\&.
+.SS "#define DRM_EVDI_GRABPIX   0x02"
+
+.PP
+定義在 evdi_drm\&.h 檔案之第 116 行\&.
+.SS "#define DRM_EVDI_REQUEST_UPDATE   0x01"
+
+.PP
+定義在 evdi_drm\&.h 檔案之第 115 行\&.
+.SS "#define DRM_IOCTL_EVDI_CONNECT"
+\fB巨集內容:\fP
+.PP
+.nf
+ DRM_IOWR(DRM_COMMAND_BASE +  \
+    DRM_EVDI_CONNECT, struct drm_evdi_connect)
+.fi
+.PP
+定義在 evdi_drm\&.h 檔案之第 121 行\&.
+.SS "#define DRM_IOCTL_EVDI_DDCCI_RESPONSE"
+\fB巨集內容:\fP
+.PP
+.nf
+   DRM_IOWR(DRM_COMMAND_BASE +  \
+    DRM_EVDI_DDCCI_RESPONSE, struct drm_evdi_ddcci_response)
+.fi
+.PP
+定義在 evdi_drm\&.h 檔案之第 127 行\&.
+.SS "#define DRM_IOCTL_EVDI_ENABLE_CURSOR_EVENTS"
+\fB巨集內容:\fP
+.PP
+.nf
+ DRM_IOWR(DRM_COMMAND_BASE +  \
+    DRM_EVDI_ENABLE_CURSOR_EVENTS, struct drm_evdi_enable_cursor_events)
+.fi
+.PP
+定義在 evdi_drm\&.h 檔案之第 129 行\&.
+.SS "#define DRM_IOCTL_EVDI_GRABPIX"
+\fB巨集內容:\fP
+.PP
+.nf
+  DRM_IOWR(DRM_COMMAND_BASE +  \
+    DRM_EVDI_GRABPIX, struct drm_evdi_grabpix)
+.fi
+.PP
+定義在 evdi_drm\&.h 檔案之第 125 行\&.
+.SS "#define DRM_IOCTL_EVDI_REQUEST_UPDATE"
+\fB巨集內容:\fP
+.PP
+.nf
+   DRM_IOWR(DRM_COMMAND_BASE +  \
+    DRM_EVDI_REQUEST_UPDATE, struct drm_evdi_request_update)
+.fi
+.PP
+定義在 evdi_drm\&.h 檔案之第 123 行\&.
+.SH "列舉型態說明文件"
+.PP 
+.SS "enum \fBdrm_evdi_grabpix_mode\fP"
+
+.PP
+\fB列舉值\fP
+.in +1c
+.TP
+\fB\fIEVDI_GRABPIX_MODE_RECTS \fP\fP
+.TP
+\fB\fIEVDI_GRABPIX_MODE_DIRTY \fP\fP
+.PP
+定義在 evdi_drm\&.h 檔案之第 58 行\&.
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

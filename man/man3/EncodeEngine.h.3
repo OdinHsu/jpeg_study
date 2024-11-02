@@ -1,0 +1,121 @@
+.TH "/home/odin/Desktop/program/usbdisp_linux/libusbdisp/libenc/EncodeEngine.h" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/odin/Desktop/program/usbdisp_linux/libusbdisp/libenc/EncodeEngine.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'ThreadBase\&.h'\fP
+.br
+\fC#include 'event\&.h'\fP
+.br
+\fC#include 'ClientUSB\&.h'\fP
+.br
+\fC#include 'Encoder\&.h'\fP
+.br
+\fC#include <sys/time\&.h>\fP
+.br
+
+.SS "複合項目"
+
+.in +1c
+.ti -1c
+.RI "struct \fBtask_t\fP"
+.br
+.ti -1c
+.RI "class \fBEncodeEngine\fP"
+.br
+.in -1c
+.SS "定義"
+
+.in +1c
+.ti -1c
+.RI "#define \fBEVENT_ENCODE\fP   0x00000001"
+.br
+.ti -1c
+.RI "#define \fBEVENT_REMOVE\fP   0x00000002"
+.br
+.ti -1c
+.RI "#define \fBEVENT_ALL\fP   (\fBEVENT_ENCODE\fP | \fBEVENT_REMOVE\fP)"
+.br
+.ti -1c
+.RI "#define \fBPROFILE\fP   0"
+.br
+.ti -1c
+.RI "#define \fBEnter_Critical_Section\fP(mutex)   pthread_mutex_lock(&mutex)"
+.br
+.ti -1c
+.RI "#define \fBLeave_Critical_Section\fP(mutex)   pthread_mutex_unlock(&mutex)"
+.br
+.ti -1c
+.RI "#define \fBNUM_THREADS\fP   3"
+.br
+.ti -1c
+.RI "#define \fBPIPE_ANALYSIS\fP   2"
+.br
+.ti -1c
+.RI "#define \fBPIPE_COMPRESS\fP   1"
+.br
+.ti -1c
+.RI "#define \fBPIPE_TRANSMIT\fP   0"
+.br
+.in -1c
+.SS "變數"
+
+.in +1c
+.ti -1c
+.RI "\fBevent_t\fP \fBsync_event\fP"
+.br
+.in -1c
+.SH "定義巨集說明文件"
+.PP 
+.SS "#define Enter_Critical_Section(mutex)   pthread_mutex_lock(&mutex)"
+
+.PP
+定義在 EncodeEngine\&.h 檔案之第 17 行\&.
+.SS "#define EVENT_ALL   (\fBEVENT_ENCODE\fP | \fBEVENT_REMOVE\fP)"
+
+.PP
+定義在 EncodeEngine\&.h 檔案之第 13 行\&.
+.SS "#define EVENT_ENCODE   0x00000001"
+
+.PP
+定義在 EncodeEngine\&.h 檔案之第 11 行\&.
+.SS "#define EVENT_REMOVE   0x00000002"
+
+.PP
+定義在 EncodeEngine\&.h 檔案之第 12 行\&.
+.SS "#define Leave_Critical_Section(mutex)   pthread_mutex_unlock(&mutex)"
+
+.PP
+定義在 EncodeEngine\&.h 檔案之第 18 行\&.
+.SS "#define NUM_THREADS   3"
+
+.PP
+定義在 EncodeEngine\&.h 檔案之第 43 行\&.
+.SS "#define PIPE_ANALYSIS   2"
+
+.PP
+定義在 EncodeEngine\&.h 檔案之第 45 行\&.
+.SS "#define PIPE_COMPRESS   1"
+
+.PP
+定義在 EncodeEngine\&.h 檔案之第 46 行\&.
+.SS "#define PIPE_TRANSMIT   0"
+
+.PP
+定義在 EncodeEngine\&.h 檔案之第 47 行\&.
+.SS "#define PROFILE   0"
+
+.PP
+定義在 EncodeEngine\&.h 檔案之第 15 行\&.
+.SH "變數說明文件"
+.PP 
+.SS "\fBevent_t\fP sync_event\fC [extern]\fP"
+
+.PP
+定義在 EncodeEngine\&.cpp 檔案之第 10 行\&.
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

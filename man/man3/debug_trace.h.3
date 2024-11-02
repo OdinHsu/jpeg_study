@@ -1,0 +1,111 @@
+.TH "/home/odin/Desktop/program/usbdisp_linux/libusbdisp/libenc/debug_trace.h" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/odin/Desktop/program/usbdisp_linux/libusbdisp/libenc/debug_trace.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdarg\&.h>\fP
+.br
+
+.SS "定義"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDBG_USB\fP   0x00000001"
+.br
+.ti -1c
+.RI "#define \fBDBG_ENCODER\fP   0x00000002"
+.br
+.ti -1c
+.RI "#define \fBDBG_THREAD\fP   0x00000004"
+.br
+.ti -1c
+.RI "#define \fBDBG_ENGINE\fP   0x00000008"
+.br
+.ti -1c
+.RI "#define \fBDBG_CAPTURE\fP   0x00000010"
+.br
+.ti -1c
+.RI "#define \fBDBG_PROFILE\fP   0x00000020"
+.br
+.ti -1c
+.RI "#define \fBDBG_JNI\fP   0x00000040"
+.br
+.ti -1c
+.RI "#define \fBDBG_ALL\fP   0xFFFFFFFF"
+.br
+.in -1c
+.SS "函式"
+
+.in +1c
+.ti -1c
+.RI "void \fBDBGTRACE\fP (\fBint\fP mask, const \fBchar\fP *fmt,\&.\&.\&.)"
+.br
+.ti -1c
+.RI "void \fBMSG\fP (const \fBchar\fP *fmt,\&.\&.\&.)"
+.br
+.in -1c
+.SS "變數"
+
+.in +1c
+.ti -1c
+.RI "unsigned \fBint\fP \fBdebug_mask\fP"
+.br
+.in -1c
+.SH "定義巨集說明文件"
+.PP 
+.SS "#define DBG_ALL   0xFFFFFFFF"
+
+.PP
+定義在 debug_trace\&.h 檔案之第 36 行\&.
+.SS "#define DBG_CAPTURE   0x00000010"
+
+.PP
+定義在 debug_trace\&.h 檔案之第 32 行\&.
+.SS "#define DBG_ENCODER   0x00000002"
+
+.PP
+定義在 debug_trace\&.h 檔案之第 29 行\&.
+.SS "#define DBG_ENGINE   0x00000008"
+
+.PP
+定義在 debug_trace\&.h 檔案之第 31 行\&.
+.SS "#define DBG_JNI   0x00000040"
+
+.PP
+定義在 debug_trace\&.h 檔案之第 34 行\&.
+.SS "#define DBG_PROFILE   0x00000020"
+
+.PP
+定義在 debug_trace\&.h 檔案之第 33 行\&.
+.SS "#define DBG_THREAD   0x00000004"
+
+.PP
+定義在 debug_trace\&.h 檔案之第 30 行\&.
+.SS "#define DBG_USB   0x00000001"
+
+.PP
+定義在 debug_trace\&.h 檔案之第 28 行\&.
+.SH "函式說明文件"
+.PP 
+.SS "void DBGTRACE (\fBint\fP mask, const \fBchar\fP * fmt,  \&.\&.\&.)"
+
+.PP
+定義在 debug_trace\&.c 檔案之第 7 行\&.
+.SS "void MSG (const \fBchar\fP * fmt,  \&.\&.\&.)"
+
+.PP
+定義在 debug_trace\&.c 檔案之第 25 行\&.
+.SH "變數說明文件"
+.PP 
+.SS "unsigned \fBint\fP debug_mask\fC [extern]\fP"
+
+.PP
+定義在 debug_trace\&.c 檔案之第 5 行\&.
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

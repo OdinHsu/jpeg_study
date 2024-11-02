@@ -1,0 +1,118 @@
+.TH "/home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_gem.c" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_gem.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <linux/sched\&.h>\fP
+.br
+\fC#include <linux/version\&.h>\fP
+.br
+\fC#include <drm/drm_prime\&.h>\fP
+.br
+\fC#include <drm/drm_file\&.h>\fP
+.br
+\fC#include 'evdi_drm_drv\&.h'\fP
+.br
+\fC#include 'evdi_params\&.h'\fP
+.br
+\fC#include <linux/shmem_fs\&.h>\fP
+.br
+\fC#include <linux/dma\-buf\&.h>\fP
+.br
+\fC#include <drm/drm_cache\&.h>\fP
+.br
+
+.SS "函式"
+
+.in +1c
+.ti -1c
+.RI "\fBMODULE_IMPORT_NS\fP (DMA_BUF)"
+.br
+.ti -1c
+.RI "uint32_t \fBevdi_gem_object_handle_lookup\fP (struct drm_file *filp, struct drm_gem_object *obj)"
+.br
+.ti -1c
+.RI "struct \fBevdi_gem_object\fP * \fBevdi_gem_alloc_object\fP (struct drm_device *dev, size_t size)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_dumb_create\fP (struct drm_file *file, struct drm_device *dev, struct drm_mode_create_dumb *args)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_drm_gem_mmap\fP (struct file *filp, struct vm_area_struct *vma)"
+.br
+.ti -1c
+.RI "vm_fault_t \fBevdi_gem_fault\fP (struct vm_fault *vmf)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_gem_vmap\fP (struct \fBevdi_gem_object\fP *obj)"
+.br
+.ti -1c
+.RI "void \fBevdi_gem_vunmap\fP (struct \fBevdi_gem_object\fP *obj)"
+.br
+.ti -1c
+.RI "void \fBevdi_gem_free_object\fP (struct drm_gem_object *gem_obj)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_gem_mmap\fP (struct drm_file *file, struct drm_device *dev, uint32_t \fBhandle\fP, uint64_t *offset)"
+.br
+.ti -1c
+.RI "struct drm_gem_object * \fBevdi_prime_import_sg_table\fP (struct drm_device *dev, struct dma_buf_attachment *attach, struct sg_table *sg)"
+.br
+.ti -1c
+.RI "struct sg_table * \fBevdi_prime_get_sg_table\fP (struct drm_gem_object *obj)"
+.br
+.in -1c
+.SH "函式說明文件"
+.PP 
+.SS "\fBint\fP evdi_drm_gem_mmap (struct file * filp, struct vm_area_struct * vma)"
+
+.PP
+定義在 evdi_gem\&.c 檔案之第 184 行\&.
+.SS "\fBint\fP evdi_dumb_create (struct drm_file * file, struct drm_device * dev, struct drm_mode_create_dumb * args)"
+
+.PP
+定義在 evdi_gem\&.c 檔案之第 175 行\&.
+.SS "struct \fBevdi_gem_object\fP* evdi_gem_alloc_object (struct drm_device * dev, size_t size)"
+
+.PP
+定義在 evdi_gem\&.c 檔案之第 90 行\&.
+.SS "vm_fault_t evdi_gem_fault (struct vm_fault * vmf)"
+
+.PP
+定義在 evdi_gem\&.c 檔案之第 199 行\&.
+.SS "void evdi_gem_free_object (struct drm_gem_object * gem_obj)"
+
+.PP
+定義在 evdi_gem\&.c 檔案之第 361 行\&.
+.SS "\fBint\fP evdi_gem_mmap (struct drm_file * file, struct drm_device * dev, uint32_t handle, uint64_t * offset)"
+
+.PP
+定義在 evdi_gem\&.c 檔案之第 389 行\&.
+.SS "uint32_t evdi_gem_object_handle_lookup (struct drm_file * filp, struct drm_gem_object * obj)"
+
+.PP
+定義在 evdi_gem\&.c 檔案之第 71 行\&.
+.SS "\fBint\fP evdi_gem_vmap (struct \fBevdi_gem_object\fP * obj)"
+
+.PP
+定義在 evdi_gem\&.c 檔案之第 288 行\&.
+.SS "void evdi_gem_vunmap (struct \fBevdi_gem_object\fP * obj)"
+
+.PP
+定義在 evdi_gem\&.c 檔案之第 324 行\&.
+.SS "struct sg_table* evdi_prime_get_sg_table (struct drm_gem_object * obj)"
+
+.PP
+定義在 evdi_gem\&.c 檔案之第 470 行\&.
+.SS "struct drm_gem_object* evdi_prime_import_sg_table (struct drm_device * dev, struct dma_buf_attachment * attach, struct sg_table * sg)"
+
+.PP
+定義在 evdi_gem\&.c 檔案之第 422 行\&.
+.SS "MODULE_IMPORT_NS (DMA_BUF)"
+
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

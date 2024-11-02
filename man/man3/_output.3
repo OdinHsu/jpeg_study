@@ -1,0 +1,225 @@
+.TH "_output" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+_output
+.SH SYNOPSIS
+.br
+.PP
+.SS "公開屬性"
+
+.in +1c
+.ti -1c
+.RI "struct \fB_output\fP * \fBnext\fP"
+.br
+.ti -1c
+.RI "\fBchanges_t\fP \fBchanges\fP"
+.br
+.ti -1c
+.RI "\fBoutput_prop_t\fP * \fBprops\fP"
+.br
+.ti -1c
+.RI "\fBname_t\fP \fBoutput\fP"
+.br
+.ti -1c
+.RI "XRROutputInfo * \fBoutput_info\fP"
+.br
+.ti -1c
+.RI "\fBname_t\fP \fBcrtc\fP"
+.br
+.ti -1c
+.RI "\fBcrtc_t\fP * \fBcrtc_info\fP"
+.br
+.ti -1c
+.RI "\fBcrtc_t\fP * \fBcurrent_crtc_info\fP"
+.br
+.ti -1c
+.RI "\fBname_t\fP \fBmode\fP"
+.br
+.ti -1c
+.RI "double \fBrefresh\fP"
+.br
+.ti -1c
+.RI "XRRModeInfo * \fBmode_info\fP"
+.br
+.ti -1c
+.RI "\fBname_t\fP \fBaddmode\fP"
+.br
+.ti -1c
+.RI "\fBrelation_t\fP \fBrelation\fP"
+.br
+.ti -1c
+.RI "\fBchar\fP * \fBrelative_to\fP"
+.br
+.ti -1c
+.RI "\fBint\fP \fBx\fP"
+.br
+.ti -1c
+.RI "\fBint\fP \fBy\fP"
+.br
+.ti -1c
+.RI "Rotation \fBrotation\fP"
+.br
+.ti -1c
+.RI "XRRPanning \fBpanning\fP"
+.br
+.ti -1c
+.RI "Bool \fBautomatic\fP"
+.br
+.ti -1c
+.RI "\fBint\fP \fBscale_from_w\fP"
+.br
+.ti -1c
+.RI "\fBint\fP \fBscale_from_h\fP"
+.br
+.ti -1c
+.RI "\fBtransform_t\fP \fBtransform\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   float \fBred\fP"
+.br
+.ti -1c
+.RI "   float \fBgreen\fP"
+.br
+.ti -1c
+.RI "   float \fBblue\fP"
+.br
+.ti -1c
+.RI "} \fBgamma\fP"
+.br
+.ti -1c
+.RI "float \fBbrightness\fP"
+.br
+.ti -1c
+.RI "Bool \fBprimary\fP"
+.br
+.ti -1c
+.RI "Bool \fBfound\fP"
+.br
+.in -1c
+.SH "詳細描述"
+.PP 
+定義在 xrandr\&.c 檔案之第 222 行\&.
+.SH "資料成員說明文件"
+.PP 
+.SS "\fBname_t\fP _output::addmode"
+
+.PP
+定義在 xrandr\&.c 檔案之第 240 行\&.
+.SS "Bool _output::automatic"
+
+.PP
+定義在 xrandr\&.c 檔案之第 250 行\&.
+.SS "float _output::blue"
+
+.PP
+定義在 xrandr\&.c 檔案之第 257 行\&.
+.SS "float _output::brightness"
+
+.PP
+定義在 xrandr\&.c 檔案之第 260 行\&.
+.SS "\fBchanges_t\fP _output::changes"
+
+.PP
+定義在 xrandr\&.c 檔案之第 225 行\&.
+.SS "\fBname_t\fP _output::crtc"
+
+.PP
+定義在 xrandr\&.c 檔案之第 232 行\&.
+.SS "\fBcrtc_t\fP* _output::crtc_info"
+
+.PP
+定義在 xrandr\&.c 檔案之第 233 行\&.
+.SS "\fBcrtc_t\fP* _output::current_crtc_info"
+
+.PP
+定義在 xrandr\&.c 檔案之第 234 行\&.
+.SS "Bool _output::found"
+
+.PP
+定義在 xrandr\&.c 檔案之第 264 行\&.
+.SS "struct { \&.\&.\&. }  _output::gamma"
+
+.SS "float _output::green"
+
+.PP
+定義在 xrandr\&.c 檔案之第 256 行\&.
+.SS "\fBname_t\fP _output::mode"
+
+.PP
+定義在 xrandr\&.c 檔案之第 236 行\&.
+.SS "XRRModeInfo* _output::mode_info"
+
+.PP
+定義在 xrandr\&.c 檔案之第 238 行\&.
+.SS "struct \fB_output\fP* _output::next"
+
+.PP
+定義在 xrandr\&.c 檔案之第 223 行\&.
+.SS "\fBname_t\fP _output::output"
+
+.PP
+定義在 xrandr\&.c 檔案之第 229 行\&.
+.SS "XRROutputInfo* _output::output_info"
+
+.PP
+定義在 xrandr\&.c 檔案之第 230 行\&.
+.SS "XRRPanning _output::panning"
+
+.PP
+定義在 xrandr\&.c 檔案之第 248 行\&.
+.SS "Bool _output::primary"
+
+.PP
+定義在 xrandr\&.c 檔案之第 262 行\&.
+.SS "\fBoutput_prop_t\fP* _output::props"
+
+.PP
+定義在 xrandr\&.c 檔案之第 227 行\&.
+.SS "float _output::red"
+
+.PP
+定義在 xrandr\&.c 檔案之第 255 行\&.
+.SS "double _output::refresh"
+
+.PP
+定義在 xrandr\&.c 檔案之第 237 行\&.
+.SS "\fBrelation_t\fP _output::relation"
+
+.PP
+定義在 xrandr\&.c 檔案之第 242 行\&.
+.SS "\fBchar\fP* _output::relative_to"
+
+.PP
+定義在 xrandr\&.c 檔案之第 243 行\&.
+.SS "Rotation _output::rotation"
+
+.PP
+定義在 xrandr\&.c 檔案之第 246 行\&.
+.SS "\fBint\fP _output::scale_from_h"
+
+.PP
+定義在 xrandr\&.c 檔案之第 251 行\&.
+.SS "\fBint\fP _output::scale_from_w"
+
+.PP
+定義在 xrandr\&.c 檔案之第 251 行\&.
+.SS "\fBtransform_t\fP _output::transform"
+
+.PP
+定義在 xrandr\&.c 檔案之第 252 行\&.
+.SS "\fBint\fP _output::x"
+
+.PP
+定義在 xrandr\&.c 檔案之第 245 行\&.
+.SS "\fBint\fP _output::y"
+
+.PP
+定義在 xrandr\&.c 檔案之第 245 行\&.
+
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

@@ -1,0 +1,183 @@
+.TH "/home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_debug.h" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_debug.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'evdi_params\&.h'\fP
+.br
+
+.SS "定義"
+
+.in +1c
+.ti -1c
+.RI "#define \fBEVDI_LOGLEVEL_FATAL\fP   1"
+.br
+.ti -1c
+.RI "#define \fBEVDI_LOGLEVEL_ERROR\fP   2"
+.br
+.ti -1c
+.RI "#define \fBEVDI_LOGLEVEL_WARN\fP   3"
+.br
+.ti -1c
+.RI "#define \fBEVDI_LOGLEVEL_INFO\fP   4"
+.br
+.ti -1c
+.RI "#define \fBEVDI_LOGLEVEL_DEBUG\fP   5"
+.br
+.ti -1c
+.RI "#define \fBEVDI_LOGLEVEL_VERBOSE\fP   6"
+.br
+.ti -1c
+.RI "#define \fBEVDI_PRINTK\fP(KERN_LEVEL,  LEVEL,  FORMAT_STR, \&.\&.\&.)"
+.br
+.ti -1c
+.RI "#define \fBEVDI_FATAL\fP(FORMAT_STR, \&.\&.\&.)"
+.br
+.ti -1c
+.RI "#define \fBEVDI_ERROR\fP(FORMAT_STR, \&.\&.\&.)"
+.br
+.ti -1c
+.RI "#define \fBEVDI_WARN\fP(FORMAT_STR, \&.\&.\&.)"
+.br
+.ti -1c
+.RI "#define \fBEVDI_INFO\fP(FORMAT_STR, \&.\&.\&.)"
+.br
+.ti -1c
+.RI "#define \fBEVDI_DEBUG\fP(FORMAT_STR, \&.\&.\&.)"
+.br
+.ti -1c
+.RI "#define \fBEVDI_VERBOSE\fP(FORMAT_STR, \&.\&.\&.)"
+.br
+.ti -1c
+.RI "#define \fBEVDI_CHECKPT\fP()   \fBEVDI_VERBOSE\fP('\\n')"
+.br
+.ti -1c
+.RI "#define \fBEVDI_ENTER\fP()   \fBEVDI_VERBOSE\fP('enter\\n')"
+.br
+.ti -1c
+.RI "#define \fBEVDI_EXIT\fP()   \fBEVDI_VERBOSE\fP('exit\\n')"
+.br
+.in -1c
+.SS "函式"
+
+.in +1c
+.ti -1c
+.RI "void \fBevdi_log_process\fP (\fBchar\fP *buf, size_t size)"
+.br
+.in -1c
+.SH "定義巨集說明文件"
+.PP 
+.SS "#define EVDI_CHECKPT()   \fBEVDI_VERBOSE\fP('\\n')"
+
+.PP
+定義在 evdi_debug\&.h 檔案之第 51 行\&.
+.SS "#define EVDI_DEBUG(FORMAT_STR,  \&.\&.\&.)"
+\fB巨集內容:\fP
+.PP
+.nf
+  EVDI_PRINTK(KERN_DEFAULT, EVDI_LOGLEVEL_DEBUG,\
+            "[D] %s:%d " FORMAT_STR, __func__, __LINE__, ##__VA_ARGS__)
+.fi
+.PP
+定義在 evdi_debug\&.h 檔案之第 43 行\&.
+.SS "#define EVDI_ENTER()   \fBEVDI_VERBOSE\fP('enter\\n')"
+
+.PP
+定義在 evdi_debug\&.h 檔案之第 52 行\&.
+.SS "#define EVDI_ERROR(FORMAT_STR,  \&.\&.\&.)"
+\fB巨集內容:\fP
+.PP
+.nf
+  EVDI_PRINTK(KERN_ERR, EVDI_LOGLEVEL_ERROR,\
+            "[E] %s:%d " FORMAT_STR, __func__, __LINE__, ##__VA_ARGS__)
+.fi
+.PP
+定義在 evdi_debug\&.h 檔案之第 31 行\&.
+.SS "#define EVDI_EXIT()   \fBEVDI_VERBOSE\fP('exit\\n')"
+
+.PP
+定義在 evdi_debug\&.h 檔案之第 53 行\&.
+.SS "#define EVDI_FATAL(FORMAT_STR,  \&.\&.\&.)"
+\fB巨集內容:\fP
+.PP
+.nf
+    EVDI_PRINTK(KERN_CRIT, EVDI_LOGLEVEL_FATAL,\
+            "[F] %s:%d " FORMAT_STR, __func__, __LINE__, ##__VA_ARGS__)
+.fi
+.PP
+定義在 evdi_debug\&.h 檔案之第 27 行\&.
+.SS "#define EVDI_INFO(FORMAT_STR,  \&.\&.\&.)"
+\fB巨集內容:\fP
+.PP
+.nf
+   EVDI_PRINTK(KERN_DEFAULT, EVDI_LOGLEVEL_INFO,\
+            "[I] " FORMAT_STR, ##__VA_ARGS__)
+.fi
+.PP
+定義在 evdi_debug\&.h 檔案之第 39 行\&.
+.SS "#define EVDI_LOGLEVEL_DEBUG   5"
+
+.PP
+定義在 evdi_debug\&.h 檔案之第 18 行\&.
+.SS "#define EVDI_LOGLEVEL_ERROR   2"
+
+.PP
+定義在 evdi_debug\&.h 檔案之第 15 行\&.
+.SS "#define EVDI_LOGLEVEL_FATAL   1"
+
+.PP
+定義在 evdi_debug\&.h 檔案之第 14 行\&.
+.SS "#define EVDI_LOGLEVEL_INFO   4"
+
+.PP
+定義在 evdi_debug\&.h 檔案之第 17 行\&.
+.SS "#define EVDI_LOGLEVEL_VERBOSE   6"
+
+.PP
+定義在 evdi_debug\&.h 檔案之第 19 行\&.
+.SS "#define EVDI_LOGLEVEL_WARN   3"
+
+.PP
+定義在 evdi_debug\&.h 檔案之第 16 行\&.
+.SS "#define EVDI_PRINTK(KERN_LEVEL, LEVEL, FORMAT_STR,  \&.\&.\&.)"
+\fB巨集內容:\fP
+.PP
+.nf
+    do { \
+    if (evdi_loglevel >= LEVEL) {\
+        printk(KERN_LEVEL "evdi: " FORMAT_STR, ##__VA_ARGS__); \
+    } \
+} while (0)
+.fi
+.PP
+定義在 evdi_debug\&.h 檔案之第 21 行\&.
+.SS "#define EVDI_VERBOSE(FORMAT_STR,  \&.\&.\&.)"
+\fB巨集內容:\fP
+.PP
+.nf
+    EVDI_PRINTK(KERN_DEFAULT, EVDI_LOGLEVEL_VERBOSE,\
+            "[V] %s:%d " FORMAT_STR, __func__, __LINE__, ##__VA_ARGS__)
+.fi
+.PP
+定義在 evdi_debug\&.h 檔案之第 47 行\&.
+.SS "#define EVDI_WARN(FORMAT_STR,  \&.\&.\&.)"
+\fB巨集內容:\fP
+.PP
+.nf
+   EVDI_PRINTK(KERN_WARNING, EVDI_LOGLEVEL_WARN,\
+            "[W] %s:%d " FORMAT_STR, __func__, __LINE__, ##__VA_ARGS__)
+.fi
+.PP
+定義在 evdi_debug\&.h 檔案之第 35 行\&.
+.SH "函式說明文件"
+.PP 
+.SS "void evdi_log_process (\fBchar\fP * buf, size_t size)"
+
+.PP
+定義在 evdi_debug\&.c 檔案之第 13 行\&.
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

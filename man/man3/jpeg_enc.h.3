@@ -1,0 +1,305 @@
+.TH "/home/odin/Desktop/program/usbdisp_linux/libusbdisp/libenc/jpeg_enc.h" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/odin/Desktop/program/usbdisp_linux/libusbdisp/libenc/jpeg_enc.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'mm_type\&.h'\fP
+.br
+\fC#include 'debug_trace\&.h'\fP
+.br
+
+.SS "複合項目"
+
+.in +1c
+.ti -1c
+.RI "struct \fBAPP0infotype\fP"
+.br
+.ti -1c
+.RI "struct \fBSOF0infotype\fP"
+.br
+.ti -1c
+.RI "struct \fBSOSinfotype\fP"
+.br
+.ti -1c
+.RI "struct \fBDQTinfotype\fP"
+.br
+.ti -1c
+.RI "struct \fBDHTinfotype\fP"
+.br
+.ti -1c
+.RI "struct \fBcolorRGB\fP"
+.br
+.ti -1c
+.RI "struct \fBHuffmanTable_t\fP"
+.br
+.ti -1c
+.RI "struct \fBjpeg_stream_t\fP"
+.br
+.in -1c
+.SS "定義"
+
+.in +1c
+.ti -1c
+.RI "#define \fBBUF_BITS\fP   32"
+.br
+.ti -1c
+.RI "#define \fBBUF_BYTES\fP   (\fBBUF_BITS\fP/8)"
+.br
+.ti -1c
+.RI "#define \fBwritebyte\fP(jpeg_stream,  b)   (jpeg_stream)\->pbitstream[(jpeg_stream)\->pos++]=(b)"
+.br
+.ti -1c
+.RI "#define \fBwriteword\fP(jpeg_stream,  w)   \fBwritebyte\fP(jpeg_stream,(unsigned \fBchar\fP)((w)/256));\fBwritebyte\fP(jpeg_stream,(unsigned \fBchar\fP)((w)%256));"
+.br
+.ti -1c
+.RI "#define \fBDCTSIZE2\fP   64"
+.br
+.ti -1c
+.RI "#define \fBCONST_BITS\fP   14"
+.br
+.ti -1c
+.RI "#define \fBONE\fP   ((\fBINT32\fP) 1)"
+.br
+.ti -1c
+.RI "#define \fBRIGHT_SHIFT\fP(x,  shft)   ((x) >> (shft))"
+.br
+.ti -1c
+.RI "#define \fBDESCALE\fP(x,  n)   \fBRIGHT_SHIFT\fP((x) + (\fBONE\fP << ((n)\-1)), n)"
+.br
+.ti -1c
+.RI "#define \fBDBG_MAIN\fP   0x01"
+.br
+.ti -1c
+.RI "#define \fBDBG_DUMP_QTABLE\fP   0x02"
+.br
+.ti -1c
+.RI "#define \fBDEBUG_LEVEL\fP   (0)"
+.br
+.ti -1c
+.RI "#define \fBclz\fP(x)   __builtin_clz(x)"
+.br
+.ti -1c
+.RI "#define \fBctz\fP(x)   __builtin_ctz(x)"
+.br
+.in -1c
+.SS "型態定義"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBDWORD\fP \fBbitstring\fP"
+.br
+.ti -1c
+.RI "typedef unsigned \fBint\fP \fBJDIMENSION\fP"
+.br
+.ti -1c
+.RI "typedef unsigned \fBchar\fP \fBJSAMPLE\fP"
+.br
+.ti -1c
+.RI "typedef \fBJSAMPLE\fP * \fBJSAMPROW\fP"
+.br
+.ti -1c
+.RI "typedef \fBJSAMPROW\fP * \fBJSAMPARRAY\fP"
+.br
+.ti -1c
+.RI "typedef \fBJSAMPARRAY\fP * \fBJSAMPIMAGE\fP"
+.br
+.ti -1c
+.RI "typedef \fBshort\fP \fBDCTELEM\fP"
+.br
+.ti -1c
+.RI "typedef unsigned \fBshort\fP \fBUDCTELEM\fP"
+.br
+.ti -1c
+.RI "typedef unsigned \fBint\fP \fBUDCTELEM2\fP"
+.br
+.in -1c
+.SS "函式"
+
+.in +1c
+.ti -1c
+.RI "struct \fB__attribute__\fP ((aligned(16)))"
+.br
+.ti -1c
+.RI "void \fBInitialize\fP (\fBcinfo_t\fP *cinfo, unsigned \fBchar\fP scalefactor)"
+.br
+.ti -1c
+.RI "void \fBDeInitialize\fP ()"
+.br
+.ti -1c
+.RI "void \fBWriteHeader\fP (\fBcinfo_t\fP *cinfo, \fBint\fP width, \fBint\fP height)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBGetDQTinfo\fP (\fBcinfo_t\fP *cinfo, \fBjpeg_stream_t\fP *stream)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBwrite_DHTinfo\fP (\fBjpeg_stream_t\fP *stream)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBencode\fP (\fBcinfo_t\fP *cinfo)"
+.br
+.ti -1c
+.RI "void \fBjsimd_extbgrx_ycc_convert\fP (\fBJDIMENSION\fP img_width, \fBJSAMPARRAY\fP input_buf, \fBJSAMPIMAGE\fP output_buf, \fBJDIMENSION\fP output_row, \fBint\fP num_rows)"
+.br
+.ti -1c
+.RI "void \fBjsimd_extbgr_ycc_convert\fP (\fBJDIMENSION\fP img_width, \fBJSAMPARRAY\fP input_buf, \fBJSAMPIMAGE\fP output_buf, \fBJDIMENSION\fP output_row, \fBint\fP num_rows)"
+.br
+.ti -1c
+.RI "void \fBjsimd_quantize\fP (\fBINT16\fP *coef_block, \fBINT16\fP *divisors, \fBINT16\fP *workspace)"
+.br
+.ti -1c
+.RI "void \fBjsimd_fdct_ifast\fP (\fBINT16\fP *data)"
+.br
+.in -1c
+.SS "變數"
+
+.in +1c
+.ti -1c
+.RI "\fBcinfo_t\fP"
+.br
+.in -1c
+.SH "定義巨集說明文件"
+.PP 
+.SS "#define BUF_BITS   32"
+
+.PP
+定義在 jpeg_enc\&.h 檔案之第 37 行\&.
+.SS "#define BUF_BYTES   (\fBBUF_BITS\fP/8)"
+
+.PP
+定義在 jpeg_enc\&.h 檔案之第 40 行\&.
+.SS "#define clz(x)   __builtin_clz(x)"
+
+.PP
+定義在 jpeg_enc\&.h 檔案之第 277 行\&.
+.SS "#define CONST_BITS   14"
+
+.PP
+定義在 jpeg_enc\&.h 檔案之第 160 行\&.
+.SS "#define ctz(x)   __builtin_ctz(x)"
+
+.PP
+定義在 jpeg_enc\&.h 檔案之第 278 行\&.
+.SS "#define DBG_DUMP_QTABLE   0x02"
+
+.PP
+定義在 jpeg_enc\&.h 檔案之第 215 行\&.
+.SS "#define DBG_MAIN   0x01"
+
+.PP
+定義在 jpeg_enc\&.h 檔案之第 214 行\&.
+.SS "#define DCTSIZE2   64"
+
+.PP
+定義在 jpeg_enc\&.h 檔案之第 148 行\&.
+.SS "#define DEBUG_LEVEL   (0)"
+
+.PP
+定義在 jpeg_enc\&.h 檔案之第 217 行\&.
+.SS "#define DESCALE(x, n)   \fBRIGHT_SHIFT\fP((x) + (\fBONE\fP << ((n)\-1)), n)"
+
+.PP
+定義在 jpeg_enc\&.h 檔案之第 163 行\&.
+.SS "#define ONE   ((\fBINT32\fP) 1)"
+
+.PP
+定義在 jpeg_enc\&.h 檔案之第 161 行\&.
+.SS "#define RIGHT_SHIFT(x, shft)   ((x) >> (shft))"
+
+.PP
+定義在 jpeg_enc\&.h 檔案之第 162 行\&.
+.SS "#define writebyte(jpeg_stream, b)   (jpeg_stream)\->pbitstream[(jpeg_stream)\->pos++]=(b)"
+
+.PP
+定義在 jpeg_enc\&.h 檔案之第 131 行\&.
+.SS "#define writeword(jpeg_stream, w)   \fBwritebyte\fP(jpeg_stream,(unsigned \fBchar\fP)((w)/256));\fBwritebyte\fP(jpeg_stream,(unsigned \fBchar\fP)((w)%256));"
+
+.PP
+定義在 jpeg_enc\&.h 檔案之第 132 行\&.
+.SH "型態定義說明文件"
+.PP 
+.SS "typedef \fBDWORD\fP \fBbitstring\fP"
+
+.PP
+定義在 jpeg_enc\&.h 檔案之第 129 行\&.
+.SS "typedef \fBshort\fP \fBDCTELEM\fP"
+
+.PP
+定義在 jpeg_enc\&.h 檔案之第 156 行\&.
+.SS "typedef unsigned \fBint\fP \fBJDIMENSION\fP"
+
+.PP
+定義在 jpeg_enc\&.h 檔案之第 150 行\&.
+.SS "typedef \fBJSAMPROW\fP* \fBJSAMPARRAY\fP"
+
+.PP
+定義在 jpeg_enc\&.h 檔案之第 153 行\&.
+.SS "typedef \fBJSAMPARRAY\fP* \fBJSAMPIMAGE\fP"
+
+.PP
+定義在 jpeg_enc\&.h 檔案之第 154 行\&.
+.SS "typedef unsigned \fBchar\fP \fBJSAMPLE\fP"
+
+.PP
+定義在 jpeg_enc\&.h 檔案之第 151 行\&.
+.SS "typedef \fBJSAMPLE\fP* \fBJSAMPROW\fP"
+
+.PP
+定義在 jpeg_enc\&.h 檔案之第 152 行\&.
+.SS "typedef unsigned \fBshort\fP \fBUDCTELEM\fP"
+
+.PP
+定義在 jpeg_enc\&.h 檔案之第 157 行\&.
+.SS "typedef unsigned \fBint\fP \fBUDCTELEM2\fP"
+
+.PP
+定義在 jpeg_enc\&.h 檔案之第 158 行\&.
+.SH "函式說明文件"
+.PP 
+.SS "struct __attribute__ ((aligned(16)))"
+
+.PP
+定義在 jpeg_enc\&.h 檔案之第 158 行\&.
+.SS "void DeInitialize ()"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 640 行\&.
+.SS "\fBint\fP encode (\fBcinfo_t\fP * cinfo)"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 661 行\&.
+.SS "\fBint\fP GetDQTinfo (\fBcinfo_t\fP * cinfo, \fBjpeg_stream_t\fP * stream)"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 231 行\&.
+.SS "void Initialize (\fBcinfo_t\fP * cinfo, unsigned \fBchar\fP scalefactor)"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 628 行\&.
+.SS "void jsimd_extbgr_ycc_convert (\fBJDIMENSION\fP img_width, \fBJSAMPARRAY\fP input_buf, \fBJSAMPIMAGE\fP output_buf, \fBJDIMENSION\fP output_row, \fBint\fP num_rows)"
+
+.SS "void jsimd_extbgrx_ycc_convert (\fBJDIMENSION\fP img_width, \fBJSAMPARRAY\fP input_buf, \fBJSAMPIMAGE\fP output_buf, \fBJDIMENSION\fP output_row, \fBint\fP num_rows)"
+
+.SS "void jsimd_fdct_ifast (\fBINT16\fP * data)"
+
+.SS "void jsimd_quantize (\fBINT16\fP * coef_block, \fBINT16\fP * divisors, \fBINT16\fP * workspace)"
+
+.SS "\fBint\fP write_DHTinfo (\fBjpeg_stream_t\fP * stream)"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 248 行\&.
+.SS "void WriteHeader (\fBcinfo_t\fP * cinfo, \fBint\fP width, \fBint\fP height)"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 645 行\&.
+.SH "變數說明文件"
+.PP 
+.SS "cinfo_t"
+
+.PP
+定義在 jpeg_enc\&.h 檔案之第 212 行\&.
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

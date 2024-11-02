@@ -1,0 +1,114 @@
+.TH "EncodeEngine" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+EncodeEngine
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <EncodeEngine\&.h>\fP
+.PP
+繼承自 \fBThreadBase\fP\&.
+.PP
+被 \fBAndroidEngine\fP繼承\&.
+.SS "公開方法(Public Methods)"
+
+.in +1c
+.ti -1c
+.RI "\fBEncodeEngine\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~EncodeEngine\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBRun\fP ()"
+.br
+.ti -1c
+.RI "bool \fBDeviceReset\fP ()"
+.br
+.ti -1c
+.RI "bool \fBSetResolution\fP (\fBint\fP width, \fBint\fP height)"
+.br
+.ti -1c
+.RI "bool \fBWrite\fP (unsigned \fBchar\fP *\fBbuffer\fP, \fBint\fP len)"
+.br
+.ti -1c
+.RI "void \fBStartEncode\fP (\fBint\fP width, \fBint\fP height, \fBint\fP pitch, unsigned \fBchar\fP *framebuffer)"
+.br
+.ti -1c
+.RI "void \fBAnalysis\fP ()"
+.br
+.ti -1c
+.RI "void \fBCompress\fP ()"
+.br
+.ti -1c
+.RI "void \fBTransmit\fP ()"
+.br
+.in -1c
+.SS "保護屬性"
+
+.in +1c
+.ti -1c
+.RI "\fBClientUSB\fP * \fBm_device\fP"
+.br
+.in -1c
+.SH "詳細描述"
+.PP 
+定義在 EncodeEngine\&.h 檔案之第 49 行\&.
+.SH "建構子與解構子說明文件"
+.PP 
+.SS "EncodeEngine::EncodeEngine ()"
+
+.PP
+定義在 EncodeEngine\&.cpp 檔案之第 15 行\&.
+.SS "EncodeEngine::~EncodeEngine ()\fC [virtual]\fP"
+
+.PP
+定義在 EncodeEngine\&.cpp 檔案之第 50 行\&.
+.SH "函式成員說明文件"
+.PP 
+.SS "void EncodeEngine::Analysis ()"
+
+.PP
+定義在 EncodeEngine\&.cpp 檔案之第 247 行\&.
+.SS "void EncodeEngine::Compress ()"
+
+.PP
+定義在 EncodeEngine\&.cpp 檔案之第 327 行\&.
+.SS "bool EncodeEngine::DeviceReset ()"
+
+.PP
+定義在 EncodeEngine\&.cpp 檔案之第 135 行\&.
+.SS "void EncodeEngine::Run ()\fC [virtual]\fP"
+
+.PP
+實作 \fBThreadBase\fP\&.
+.PP
+定義在 EncodeEngine\&.cpp 檔案之第 96 行\&.
+.SS "bool EncodeEngine::SetResolution (\fBint\fP width, \fBint\fP height)"
+
+.PP
+定義在 EncodeEngine\&.cpp 檔案之第 151 行\&.
+.SS "void EncodeEngine::StartEncode (\fBint\fP width, \fBint\fP height, \fBint\fP pitch, unsigned \fBchar\fP * framebuffer)"
+
+.PP
+定義在 EncodeEngine\&.cpp 檔案之第 171 行\&.
+.SS "void EncodeEngine::Transmit ()"
+
+.PP
+定義在 EncodeEngine\&.cpp 檔案之第 369 行\&.
+.SS "bool EncodeEngine::Write (unsigned \fBchar\fP * buffer, \fBint\fP len)"
+
+.PP
+定義在 EncodeEngine\&.cpp 檔案之第 159 行\&.
+.SH "資料成員說明文件"
+.PP 
+.SS "\fBClientUSB\fP* EncodeEngine::m_device\fC [protected]\fP"
+
+.PP
+定義在 EncodeEngine\&.h 檔案之第 81 行\&.
+
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

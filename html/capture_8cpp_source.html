@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: /home/odin/Desktop/program/usbdisp_linux/libusbdisp/capture.cpp 原始程式檔</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 產生者: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜尋','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜尋');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_9075f4783833d2193daf99d175bda543.html">usbdisp_linux</a></li><li class="navelem"><a class="el" href="dir_9a57f247e9479574bdd4d89e6fadae2c.html">libusbdisp</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">capture.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="capture_8cpp.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="capture_8h.html">capture.h</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="class_capture.html#a97036b5d271238bd4852da79a0091b57">    4</a></span>&#160;<a class="code" href="class_capture.html#a97036b5d271238bd4852da79a0091b57">Capture::Capture</a>()</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    printf(<span class="stringliteral">&quot;Capture::Capture()\n&quot;</span>);</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    pEncodeEngine = <span class="keyword">new</span> <a class="code" href="class_android_engine.html">AndroidEngine</a>();</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="event_8c.html#a78412450f3046cd03fb578d8e75ab1a2">init_event</a>(&amp;<a class="code" href="_encode_engine_8cpp.html#abea69858a53184329d466106598f8937">sync_event</a>); <span class="comment">// test</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;};</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_capture.html#ab5b3fac467fa47592126d782f9375250">   13</a></span>&#160;<a class="code" href="class_capture.html#ab5b3fac467fa47592126d782f9375250">Capture::~Capture</a>()</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    pEncodeEngine-&gt;<a class="code" href="class_encode_engine.html#a441375e73897c15499b257ad1414f8f0">DeviceReset</a>();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">/*if( pEncodeEngine )</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">    {</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">        delete pEncodeEngine;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">        pEncodeEngine = NULL;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">    };*/</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="event_8c.html#a83b0816fa4639d9a1554d7c3977ea5bd">uninit_event</a>(&amp;<a class="code" href="_encode_engine_8cpp.html#abea69858a53184329d466106598f8937">sync_event</a>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    printf(<span class="stringliteral">&quot;Capture::~Capture()\n&quot;</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;};</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_capture.html#ada2b91a69570edbb2bbb22a49c055021">   28</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_capture.html#ada2b91a69570edbb2bbb22a49c055021">Capture::CreateDevice</a>(<span class="keywordtype">int</span> fd)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">if</span>( pEncodeEngine-&gt;<a class="code" href="class_android_engine.html#ac89eebe1929f619ff46692181686d010">CreateDevice</a>(fd) ) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        printf(<span class="stringliteral">&quot;Capture::CreateDevice(fd), OK\n&quot;</span>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">return</span> pEncodeEngine-&gt;<a class="code" href="class_thread_base.html#a4a1f6b181ec4fdd376d824caf5b5adaa">Start</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        printf(<span class="stringliteral">&quot;Capture::CreateDevice(%d), Fail\n&quot;</span>,fd);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_capture.html#a5ba3f09f236f97e9ef842134045e3910">   39</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_capture.html#ada2b91a69570edbb2bbb22a49c055021">Capture::CreateDevice</a>(libusb_device *dev)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span>( pEncodeEngine-&gt;<a class="code" href="class_android_engine.html#ac89eebe1929f619ff46692181686d010">CreateDevice</a>(dev) ) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        printf(<span class="stringliteral">&quot;Capture::CreateDevice(), ok\n&quot;</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> pEncodeEngine-&gt;<a class="code" href="class_thread_base.html#a4a1f6b181ec4fdd376d824caf5b5adaa">Start</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        printf(<span class="stringliteral">&quot;Capture::CreateDevice(), Fail\n&quot;</span>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_capture.html#a89addc3270deefe97c7f01466f4c1458">   50</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_capture.html#a89addc3270deefe97c7f01466f4c1458">Capture::SetDevResolution</a>(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    printf(<span class="stringliteral">&quot;Capture::SetDevResolution(int width, int height), OK\n&quot;</span>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> pEncodeEngine-&gt;<a class="code" href="class_android_engine.html#aae23d0ab386f8b8bec04a4b6bdfc9e53">SetDevResolution</a>(width, height);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="ttc" id="a_encode_engine_8cpp_html_abea69858a53184329d466106598f8937"><div class="ttname"><a href="_encode_engine_8cpp.html#abea69858a53184329d466106598f8937">sync_event</a></div><div class="ttdeci">event_t sync_event</div><div class="ttdef"><b>Definition:</b> <a href="_encode_engine_8cpp_source.html#l00010">EncodeEngine.cpp:10</a></div></div>
+<div class="ttc" id="acapture_8h_html"><div class="ttname"><a href="capture_8h.html">capture.h</a></div></div>
+<div class="ttc" id="aclass_android_engine_html"><div class="ttname"><a href="class_android_engine.html">AndroidEngine</a></div><div class="ttdef"><b>Definition:</b> <a href="capture_8h_source.html#l00012">capture.h:13</a></div></div>
+<div class="ttc" id="aclass_android_engine_html_aae23d0ab386f8b8bec04a4b6bdfc9e53"><div class="ttname"><a href="class_android_engine.html#aae23d0ab386f8b8bec04a4b6bdfc9e53">AndroidEngine::SetDevResolution</a></div><div class="ttdeci">bool SetDevResolution(int width, int height)</div><div class="ttdef"><b>Definition:</b> <a href="capture_8h_source.html#l00038">capture.h:38</a></div></div>
+<div class="ttc" id="aclass_android_engine_html_ac89eebe1929f619ff46692181686d010"><div class="ttname"><a href="class_android_engine.html#ac89eebe1929f619ff46692181686d010">AndroidEngine::CreateDevice</a></div><div class="ttdeci">bool CreateDevice(int fd)</div><div class="ttdef"><b>Definition:</b> <a href="capture_8h_source.html#l00025">capture.h:25</a></div></div>
+<div class="ttc" id="aclass_capture_html_a89addc3270deefe97c7f01466f4c1458"><div class="ttname"><a href="class_capture.html#a89addc3270deefe97c7f01466f4c1458">Capture::SetDevResolution</a></div><div class="ttdeci">bool SetDevResolution(int width, int height)</div><div class="ttdef"><b>Definition:</b> <a href="capture_8cpp_source.html#l00050">capture.cpp:50</a></div></div>
+<div class="ttc" id="aclass_capture_html_a97036b5d271238bd4852da79a0091b57"><div class="ttname"><a href="class_capture.html#a97036b5d271238bd4852da79a0091b57">Capture::Capture</a></div><div class="ttdeci">Capture()</div><div class="ttdef"><b>Definition:</b> <a href="capture_8cpp_source.html#l00004">capture.cpp:4</a></div></div>
+<div class="ttc" id="aclass_capture_html_ab5b3fac467fa47592126d782f9375250"><div class="ttname"><a href="class_capture.html#ab5b3fac467fa47592126d782f9375250">Capture::~Capture</a></div><div class="ttdeci">~Capture()</div><div class="ttdef"><b>Definition:</b> <a href="capture_8cpp_source.html#l00013">capture.cpp:13</a></div></div>
+<div class="ttc" id="aclass_capture_html_ada2b91a69570edbb2bbb22a49c055021"><div class="ttname"><a href="class_capture.html#ada2b91a69570edbb2bbb22a49c055021">Capture::CreateDevice</a></div><div class="ttdeci">bool CreateDevice(int fd)</div><div class="ttdef"><b>Definition:</b> <a href="capture_8cpp_source.html#l00028">capture.cpp:28</a></div></div>
+<div class="ttc" id="aclass_encode_engine_html_a441375e73897c15499b257ad1414f8f0"><div class="ttname"><a href="class_encode_engine.html#a441375e73897c15499b257ad1414f8f0">EncodeEngine::DeviceReset</a></div><div class="ttdeci">bool DeviceReset()</div><div class="ttdef"><b>Definition:</b> <a href="_encode_engine_8cpp_source.html#l00135">EncodeEngine.cpp:135</a></div></div>
+<div class="ttc" id="aclass_thread_base_html_a4a1f6b181ec4fdd376d824caf5b5adaa"><div class="ttname"><a href="class_thread_base.html#a4a1f6b181ec4fdd376d824caf5b5adaa">ThreadBase::Start</a></div><div class="ttdeci">virtual bool Start()</div><div class="ttdef"><b>Definition:</b> <a href="_thread_base_8cpp_source.html#l00037">ThreadBase.cpp:37</a></div></div>
+<div class="ttc" id="aevent_8c_html_a78412450f3046cd03fb578d8e75ab1a2"><div class="ttname"><a href="event_8c.html#a78412450f3046cd03fb578d8e75ab1a2">init_event</a></div><div class="ttdeci">void init_event(event_t *event)</div><div class="ttdef"><b>Definition:</b> <a href="event_8c_source.html#l00006">event.c:6</a></div></div>
+<div class="ttc" id="aevent_8c_html_a83b0816fa4639d9a1554d7c3977ea5bd"><div class="ttname"><a href="event_8c.html#a83b0816fa4639d9a1554d7c3977ea5bd">uninit_event</a></div><div class="ttdeci">void uninit_event(event_t *event)</div><div class="ttdef"><b>Definition:</b> <a href="event_8c_source.html#l00013">event.c:13</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+產生者:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

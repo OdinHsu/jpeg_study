@@ -1,0 +1,517 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: /home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_gem.c 檔案參考文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 產生者: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜尋','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜尋');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_9075f4783833d2193daf99d175bda543.html">usbdisp_linux</a></li><li class="navelem"><a class="el" href="dir_9a57f247e9479574bdd4d89e6fadae2c.html">libusbdisp</a></li><li class="navelem"><a class="el" href="dir_c177418391c6082701191d849c92e04e.html">deb_install</a></li><li class="navelem"><a class="el" href="dir_9beb4c8f8cede0cdbcde00f25fd8d8b8.html">com.racertech.usbdisp-1.0.0</a></li><li class="navelem"><a class="el" href="dir_c556d2293237b66c763aa1c38400309a.html">opt</a></li><li class="navelem"><a class="el" href="dir_98656f11af99d476e6250cd584e59b42.html">apps</a></li><li class="navelem"><a class="el" href="dir_365d2588cc5b1a689601eb68794b1216.html">com.racertech.usbdisp</a></li><li class="navelem"><a class="el" href="dir_74b907b0cf0dd8424a599bb4aefb2ba6.html">files</a></li><li class="navelem"><a class="el" href="dir_501b6d2d1a5ea8e4a705bf28822605ee.html">evdi</a></li><li class="navelem"><a class="el" href="dir_611f9203c5b70a3412d8aed75ef95d23.html">module</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函式</a>  </div>
+  <div class="headertitle">
+<div class="title">evdi_gem.c 檔案參考文件</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;linux/sched.h&gt;</code><br />
+<code>#include &lt;linux/version.h&gt;</code><br />
+<code>#include &lt;drm/drm_prime.h&gt;</code><br />
+<code>#include &lt;drm/drm_file.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="evdi__drm__drv_8h_source.html">evdi_drm_drv.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="evdi__params_8h_source.html">evdi_params.h</a>&quot;</code><br />
+<code>#include &lt;linux/shmem_fs.h&gt;</code><br />
+<code>#include &lt;linux/dma-buf.h&gt;</code><br />
+<code>#include &lt;drm/drm_cache.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+evdi_gem.c的包含相依圖:</div>
+<div class="dyncontent">
+<div class="center"><img src="evdi__gem_8c__incl.png" border="0" usemap="#a_2home_2odin_2_desktop_2program_2usbdisp__linux_2libusbdisp_2deb__install_2com_8racertech_8usbdisp-1_80_80_2opt_2apps_2com_8racertech_8usbdisp_2files_2evdi_2module_2evdi__gem_8c" alt=""/></div>
+<map name="a_2home_2odin_2_desktop_2program_2usbdisp__linux_2libusbdisp_2deb__install_2com_8racertech_8usbdisp-1_80_80_2opt_2apps_2com_8racertech_8usbdisp_2files_2evdi_2module_2evdi__gem_8c" id="a_2home_2odin_2_desktop_2program_2usbdisp__linux_2libusbdisp_2deb__install_2com_8racertech_8usbdisp-1_80_80_2opt_2apps_2com_8racertech_8usbdisp_2files_2evdi_2module_2evdi__gem_8c">
+<area shape="rect" title=" " alt="" coords="1213,5,1447,105"/>
+<area shape="rect" title=" " alt="" coords="784,153,892,180"/>
+<area shape="rect" title=" " alt="" coords="5,228,124,255"/>
+<area shape="rect" title=" " alt="" coords="968,153,1103,180"/>
+<area shape="rect" title=" " alt="" coords="1127,153,1245,180"/>
+<area shape="rect" href="evdi__drm__drv_8h.html" title=" " alt="" coords="1269,153,1391,180"/>
+<area shape="rect" href="evdi__params_8h.html" title=" " alt="" coords="2179,303,2297,329"/>
+<area shape="rect" title=" " alt="" coords="1933,153,2071,180"/>
+<area shape="rect" title=" " alt="" coords="2096,153,2220,180"/>
+<area shape="rect" title=" " alt="" coords="2244,153,2379,180"/>
+<area shape="rect" title=" " alt="" coords="148,228,267,255"/>
+<area shape="rect" title=" " alt="" coords="290,228,402,255"/>
+<area shape="rect" title=" " alt="" coords="427,228,540,255"/>
+<area shape="rect" title=" " alt="" coords="565,228,682,255"/>
+<area shape="rect" title=" " alt="" coords="707,228,844,255"/>
+<area shape="rect" title=" " alt="" coords="869,228,994,255"/>
+<area shape="rect" title=" " alt="" coords="1018,228,1159,255"/>
+<area shape="rect" title=" " alt="" coords="1183,228,1322,255"/>
+<area shape="rect" title=" " alt="" coords="1347,228,1468,255"/>
+<area shape="rect" title=" " alt="" coords="1493,228,1661,255"/>
+<area shape="rect" title=" " alt="" coords="1685,228,1807,255"/>
+<area shape="rect" title=" " alt="" coords="1832,228,1959,255"/>
+<area shape="rect" title=" " alt="" coords="1983,228,2114,255"/>
+<area shape="rect" href="evdi__debug_8h.html" title=" " alt="" coords="2138,228,2247,255"/>
+</map>
+</div>
+</div>
+<p><a href="evdi__gem_8c_source.html">查看本檔案的原始碼.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函式</h2></td></tr>
+<tr class="memitem:a648e2c97d818096da9ce068a3172e7ad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__gem_8c.html#a648e2c97d818096da9ce068a3172e7ad">MODULE_IMPORT_NS</a> (DMA_BUF)</td></tr>
+<tr class="separator:a648e2c97d818096da9ce068a3172e7ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab84040237a782ebd34364aadc48471f8"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__gem_8c.html#ab84040237a782ebd34364aadc48471f8">evdi_gem_object_handle_lookup</a> (struct drm_file *filp, struct drm_gem_object *obj)</td></tr>
+<tr class="separator:ab84040237a782ebd34364aadc48471f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af28695881b71065cce598bd9a314ade8"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structevdi__gem__object.html">evdi_gem_object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__gem_8c.html#af28695881b71065cce598bd9a314ade8">evdi_gem_alloc_object</a> (struct drm_device *dev, size_t size)</td></tr>
+<tr class="separator:af28695881b71065cce598bd9a314ade8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a541153bc5a25b5a07513c30c67ba64c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__gem_8c.html#a541153bc5a25b5a07513c30c67ba64c5">evdi_dumb_create</a> (struct drm_file *file, struct drm_device *dev, struct drm_mode_create_dumb *args)</td></tr>
+<tr class="separator:a541153bc5a25b5a07513c30c67ba64c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0878d7d7042c25480d8bd24f19197b00"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__gem_8c.html#a0878d7d7042c25480d8bd24f19197b00">evdi_drm_gem_mmap</a> (struct file *filp, struct vm_area_struct *vma)</td></tr>
+<tr class="separator:a0878d7d7042c25480d8bd24f19197b00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e3f5a85661b4a372c1ce70f10446d28"><td class="memItemLeft" align="right" valign="top">vm_fault_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__gem_8c.html#a4e3f5a85661b4a372c1ce70f10446d28">evdi_gem_fault</a> (struct vm_fault *vmf)</td></tr>
+<tr class="separator:a4e3f5a85661b4a372c1ce70f10446d28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91a07e8620b47f2a36dbda301fe1d509"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__gem_8c.html#a91a07e8620b47f2a36dbda301fe1d509">evdi_gem_vmap</a> (struct <a class="el" href="structevdi__gem__object.html">evdi_gem_object</a> *obj)</td></tr>
+<tr class="separator:a91a07e8620b47f2a36dbda301fe1d509"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac23ae5c4323b045c69a51088650598db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__gem_8c.html#ac23ae5c4323b045c69a51088650598db">evdi_gem_vunmap</a> (struct <a class="el" href="structevdi__gem__object.html">evdi_gem_object</a> *obj)</td></tr>
+<tr class="separator:ac23ae5c4323b045c69a51088650598db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86e09609b0b22f642cf3e8ffe2a5e86a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__gem_8c.html#a86e09609b0b22f642cf3e8ffe2a5e86a">evdi_gem_free_object</a> (struct drm_gem_object *gem_obj)</td></tr>
+<tr class="separator:a86e09609b0b22f642cf3e8ffe2a5e86a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c08bec9036b2bfb541288f8365aafd8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__gem_8c.html#a9c08bec9036b2bfb541288f8365aafd8">evdi_gem_mmap</a> (struct drm_file *file, struct drm_device *dev, uint32_t <a class="el" href="main_8c.html#a96cd449c4b349daaf3ec8700056aa462">handle</a>, uint64_t *offset)</td></tr>
+<tr class="separator:a9c08bec9036b2bfb541288f8365aafd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a937664c6448e40ac97e32c62aad568f4"><td class="memItemLeft" align="right" valign="top">struct drm_gem_object *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__gem_8c.html#a937664c6448e40ac97e32c62aad568f4">evdi_prime_import_sg_table</a> (struct drm_device *dev, struct dma_buf_attachment *attach, struct sg_table *sg)</td></tr>
+<tr class="separator:a937664c6448e40ac97e32c62aad568f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c6a6aa361fb03449b83a9b9b641c237"><td class="memItemLeft" align="right" valign="top">struct sg_table *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__gem_8c.html#a3c6a6aa361fb03449b83a9b9b641c237">evdi_prime_get_sg_table</a> (struct drm_gem_object *obj)</td></tr>
+<tr class="separator:a3c6a6aa361fb03449b83a9b9b641c237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">函式說明文件</h2>
+<a id="a0878d7d7042c25480d8bd24f19197b00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0878d7d7042c25480d8bd24f19197b00">&#9670;&nbsp;</a></span>evdi_drm_gem_mmap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> evdi_drm_gem_mmap </td>
+          <td>(</td>
+          <td class="paramtype">struct file *&#160;</td>
+          <td class="paramname"><em>filp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct vm_area_struct *&#160;</td>
+          <td class="paramname"><em>vma</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__gem_8c_source.html">evdi_gem.c</a> 檔案之第 <a class="el" href="evdi__gem_8c_source.html#l00184">184</a> 行.</p>
+
+</div>
+</div>
+<a id="a541153bc5a25b5a07513c30c67ba64c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a541153bc5a25b5a07513c30c67ba64c5">&#9670;&nbsp;</a></span>evdi_dumb_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> evdi_dumb_create </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_file *&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct drm_device *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct drm_mode_create_dumb *&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__gem_8c_source.html">evdi_gem.c</a> 檔案之第 <a class="el" href="evdi__gem_8c_source.html#l00175">175</a> 行.</p>
+
+</div>
+</div>
+<a id="af28695881b71065cce598bd9a314ade8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af28695881b71065cce598bd9a314ade8">&#9670;&nbsp;</a></span>evdi_gem_alloc_object()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structevdi__gem__object.html">evdi_gem_object</a>* evdi_gem_alloc_object </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_device *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__gem_8c_source.html">evdi_gem.c</a> 檔案之第 <a class="el" href="evdi__gem_8c_source.html#l00090">90</a> 行.</p>
+
+</div>
+</div>
+<a id="a4e3f5a85661b4a372c1ce70f10446d28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e3f5a85661b4a372c1ce70f10446d28">&#9670;&nbsp;</a></span>evdi_gem_fault()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vm_fault_t evdi_gem_fault </td>
+          <td>(</td>
+          <td class="paramtype">struct vm_fault *&#160;</td>
+          <td class="paramname"><em>vmf</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__gem_8c_source.html">evdi_gem.c</a> 檔案之第 <a class="el" href="evdi__gem_8c_source.html#l00199">199</a> 行.</p>
+<div class="dynheader">
+這是此函數的引用函數圖:</div>
+<div class="dyncontent">
+<div class="center"><img src="evdi__gem_8c_a4e3f5a85661b4a372c1ce70f10446d28_cgraph.png" border="0" usemap="#aevdi__gem_8c_a4e3f5a85661b4a372c1ce70f10446d28_cgraph" alt=""/></div>
+<map name="aevdi__gem_8c_a4e3f5a85661b4a372c1ce70f10446d28_cgraph" id="aevdi__gem_8c_a4e3f5a85661b4a372c1ce70f10446d28_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,128,56"/>
+</map>
+</div>
+<div class="dynheader">
+呼叫此函數的函數列表:</div>
+<div class="dyncontent">
+<div class="center"><img src="evdi__gem_8c_a4e3f5a85661b4a372c1ce70f10446d28_icgraph.png" border="0" usemap="#aevdi__gem_8c_a4e3f5a85661b4a372c1ce70f10446d28_icgraph" alt=""/></div>
+<map name="aevdi__gem_8c_a4e3f5a85661b4a372c1ce70f10446d28_icgraph" id="aevdi__gem_8c_a4e3f5a85661b4a372c1ce70f10446d28_icgraph">
+<area shape="rect" title=" " alt="" coords="176,29,299,56"/>
+<area shape="rect" href="evdi__drm__drv_8h.html#a4e3f5a85661b4a372c1ce70f10446d28" title=" " alt="" coords="5,29,128,56"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a86e09609b0b22f642cf3e8ffe2a5e86a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86e09609b0b22f642cf3e8ffe2a5e86a">&#9670;&nbsp;</a></span>evdi_gem_free_object()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_gem_free_object </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_gem_object *&#160;</td>
+          <td class="paramname"><em>gem_obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__gem_8c_source.html">evdi_gem.c</a> 檔案之第 <a class="el" href="evdi__gem_8c_source.html#l00361">361</a> 行.</p>
+<div class="dynheader">
+這是此函數的引用函數圖:</div>
+<div class="dyncontent">
+<div class="center"><img src="evdi__gem_8c_a86e09609b0b22f642cf3e8ffe2a5e86a_cgraph.png" border="0" usemap="#aevdi__gem_8c_a86e09609b0b22f642cf3e8ffe2a5e86a_cgraph" alt=""/></div>
+<map name="aevdi__gem_8c_a86e09609b0b22f642cf3e8ffe2a5e86a_cgraph" id="aevdi__gem_8c_a86e09609b0b22f642cf3e8ffe2a5e86a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,172,32"/>
+<area shape="rect" href="evdi__gem_8c.html#ac23ae5c4323b045c69a51088650598db" title=" " alt="" coords="220,5,367,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9c08bec9036b2bfb541288f8365aafd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c08bec9036b2bfb541288f8365aafd8">&#9670;&nbsp;</a></span>evdi_gem_mmap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> evdi_gem_mmap </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_file *&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct drm_device *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t *&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__gem_8c_source.html">evdi_gem.c</a> 檔案之第 <a class="el" href="evdi__gem_8c_source.html#l00389">389</a> 行.</p>
+
+</div>
+</div>
+<a id="ab84040237a782ebd34364aadc48471f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab84040237a782ebd34364aadc48471f8">&#9670;&nbsp;</a></span>evdi_gem_object_handle_lookup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t evdi_gem_object_handle_lookup </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_file *&#160;</td>
+          <td class="paramname"><em>filp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct drm_gem_object *&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__gem_8c_source.html">evdi_gem.c</a> 檔案之第 <a class="el" href="evdi__gem_8c_source.html#l00071">71</a> 行.</p>
+
+</div>
+</div>
+<a id="a91a07e8620b47f2a36dbda301fe1d509"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91a07e8620b47f2a36dbda301fe1d509">&#9670;&nbsp;</a></span>evdi_gem_vmap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> evdi_gem_vmap </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structevdi__gem__object.html">evdi_gem_object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__gem_8c_source.html">evdi_gem.c</a> 檔案之第 <a class="el" href="evdi__gem_8c_source.html#l00288">288</a> 行.</p>
+<div class="dynheader">
+呼叫此函數的函數列表:</div>
+<div class="dyncontent">
+<div class="center"><img src="evdi__gem_8c_a91a07e8620b47f2a36dbda301fe1d509_icgraph.png" border="0" usemap="#aevdi__gem_8c_a91a07e8620b47f2a36dbda301fe1d509_icgraph" alt=""/></div>
+<map name="aevdi__gem_8c_a91a07e8620b47f2a36dbda301fe1d509_icgraph" id="aevdi__gem_8c_a91a07e8620b47f2a36dbda301fe1d509_icgraph">
+<area shape="rect" title=" " alt="" coords="177,5,308,32"/>
+<area shape="rect" href="evdi__cursor_8c.html#a11e47b665bfe1f772754fcf159c0311f" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac23ae5c4323b045c69a51088650598db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac23ae5c4323b045c69a51088650598db">&#9670;&nbsp;</a></span>evdi_gem_vunmap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_gem_vunmap </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structevdi__gem__object.html">evdi_gem_object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__gem_8c_source.html">evdi_gem.c</a> 檔案之第 <a class="el" href="evdi__gem_8c_source.html#l00324">324</a> 行.</p>
+<div class="dynheader">
+呼叫此函數的函數列表:</div>
+<div class="dyncontent">
+<div class="center"><img src="evdi__gem_8c_ac23ae5c4323b045c69a51088650598db_icgraph.png" border="0" usemap="#aevdi__gem_8c_ac23ae5c4323b045c69a51088650598db_icgraph" alt=""/></div>
+<map name="aevdi__gem_8c_ac23ae5c4323b045c69a51088650598db_icgraph" id="aevdi__gem_8c_ac23ae5c4323b045c69a51088650598db_icgraph">
+<area shape="rect" title=" " alt="" coords="220,5,367,32"/>
+<area shape="rect" href="evdi__drm__drv_8h.html#a86e09609b0b22f642cf3e8ffe2a5e86a" title=" " alt="" coords="5,5,172,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3c6a6aa361fb03449b83a9b9b641c237"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c6a6aa361fb03449b83a9b9b641c237">&#9670;&nbsp;</a></span>evdi_prime_get_sg_table()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct sg_table* evdi_prime_get_sg_table </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_gem_object *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__gem_8c_source.html">evdi_gem.c</a> 檔案之第 <a class="el" href="evdi__gem_8c_source.html#l00470">470</a> 行.</p>
+
+</div>
+</div>
+<a id="a937664c6448e40ac97e32c62aad568f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a937664c6448e40ac97e32c62aad568f4">&#9670;&nbsp;</a></span>evdi_prime_import_sg_table()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct drm_gem_object* evdi_prime_import_sg_table </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_device *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct dma_buf_attachment *&#160;</td>
+          <td class="paramname"><em>attach</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct sg_table *&#160;</td>
+          <td class="paramname"><em>sg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">定義在 <a class="el" href="evdi__gem_8c_source.html">evdi_gem.c</a> 檔案之第 <a class="el" href="evdi__gem_8c_source.html#l00422">422</a> 行.</p>
+
+</div>
+</div>
+<a id="a648e2c97d818096da9ce068a3172e7ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a648e2c97d818096da9ce068a3172e7ad">&#9670;&nbsp;</a></span>MODULE_IMPORT_NS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MODULE_IMPORT_NS </td>
+          <td>(</td>
+          <td class="paramtype">DMA_BUF&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+產生者:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

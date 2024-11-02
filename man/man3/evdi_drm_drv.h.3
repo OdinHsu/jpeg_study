@@ -1,0 +1,408 @@
+.TH "/home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_drm_drv.h" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_drm_drv.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <linux/module\&.h>\fP
+.br
+\fC#include <linux/version\&.h>\fP
+.br
+\fC#include <linux/mutex\&.h>\fP
+.br
+\fC#include <linux/device\&.h>\fP
+.br
+\fC#include <drm/drm_drv\&.h>\fP
+.br
+\fC#include <drm/drm_fourcc\&.h>\fP
+.br
+\fC#include <drm/drm_ioctl\&.h>\fP
+.br
+\fC#include <drm/drm_vblank\&.h>\fP
+.br
+\fC#include <drm/drm_legacy\&.h>\fP
+.br
+\fC#include <drm/drm_crtc\&.h>\fP
+.br
+\fC#include <drm/drm_crtc_helper\&.h>\fP
+.br
+\fC#include <drm/drm_rect\&.h>\fP
+.br
+\fC#include <drm/drm_gem\&.h>\fP
+.br
+\fC#include <linux/dma\-resv\&.h>\fP
+.br
+\fC#include 'evdi_debug\&.h'\fP
+.br
+
+.SS "複合項目"
+
+.in +1c
+.ti -1c
+.RI "struct \fBevdi_device\fP"
+.br
+.ti -1c
+.RI "struct \fBevdi_gem_object\fP"
+.br
+.ti -1c
+.RI "struct \fBevdi_framebuffer\fP"
+.br
+.in -1c
+.SS "定義"
+
+.in +1c
+.ti -1c
+.RI "#define \fBto_evdi_bo\fP(x)   container_of(x, struct \fBevdi_gem_object\fP, base)"
+.br
+.ti -1c
+.RI "#define \fBto_evdi_fb\fP(x)   container_of(x, struct \fBevdi_framebuffer\fP, base)"
+.br
+.in -1c
+.SS "函式"
+
+.in +1c
+.ti -1c
+.RI "void \fBevdi_modeset_init\fP (struct drm_device *dev)"
+.br
+.ti -1c
+.RI "void \fBevdi_modeset_cleanup\fP (struct drm_device *dev)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_connector_init\fP (struct drm_device *dev, struct drm_encoder *encoder)"
+.br
+.ti -1c
+.RI "struct drm_encoder * \fBevdi_encoder_init\fP (struct drm_device *dev)"
+.br
+.ti -1c
+.RI "void \fBevdi_drm_device_unload\fP (struct drm_device *dev)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_driver_open\fP (struct drm_device *drm_dev, struct drm_file *file)"
+.br
+.ti -1c
+.RI "void \fBevdi_driver_preclose\fP (struct drm_device *dev, struct drm_file *file_priv)"
+.br
+.ti -1c
+.RI "void \fBevdi_driver_postclose\fP (struct drm_device *dev, struct drm_file *file_priv)"
+.br
+.ti -1c
+.RI "struct drm_framebuffer * \fBevdi_fb_user_fb_create\fP (struct drm_device *dev, struct drm_file *file, const struct drm_mode_fb_cmd2 *mode_cmd)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_dumb_create\fP (struct drm_file *file_priv, struct drm_device *dev, struct drm_mode_create_dumb *args)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_gem_mmap\fP (struct drm_file *file_priv, struct drm_device *dev, uint32_t \fBhandle\fP, uint64_t *offset)"
+.br
+.ti -1c
+.RI "void \fBevdi_gem_free_object\fP (struct drm_gem_object *gem_obj)"
+.br
+.ti -1c
+.RI "struct \fBevdi_gem_object\fP * \fBevdi_gem_alloc_object\fP (struct drm_device *dev, size_t size)"
+.br
+.ti -1c
+.RI "uint32_t \fBevdi_gem_object_handle_lookup\fP (struct drm_file *filp, struct drm_gem_object *obj)"
+.br
+.ti -1c
+.RI "struct sg_table * \fBevdi_prime_get_sg_table\fP (struct drm_gem_object *obj)"
+.br
+.ti -1c
+.RI "struct drm_gem_object * \fBevdi_prime_import_sg_table\fP (struct drm_device *dev, struct dma_buf_attachment *attach, struct sg_table *sg)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_gem_vmap\fP (struct \fBevdi_gem_object\fP *obj)"
+.br
+.ti -1c
+.RI "void \fBevdi_gem_vunmap\fP (struct \fBevdi_gem_object\fP *obj)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_drm_gem_mmap\fP (struct file *filp, struct vm_area_struct *vma)"
+.br
+.ti -1c
+.RI "vm_fault_t \fBevdi_gem_fault\fP (struct vm_fault *vmf)"
+.br
+.ti -1c
+.RI "bool \fBevdi_painter_is_connected\fP (struct \fBevdi_painter\fP *painter)"
+.br
+.ti -1c
+.RI "void \fBevdi_painter_close\fP (struct \fBevdi_device\fP *evdi, struct drm_file *file)"
+.br
+.ti -1c
+.RI "u8 * \fBevdi_painter_get_edid_copy\fP (struct \fBevdi_device\fP *evdi)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_painter_get_num_dirts\fP (struct \fBevdi_painter\fP *painter)"
+.br
+.ti -1c
+.RI "void \fBevdi_painter_mark_dirty\fP (struct \fBevdi_device\fP *evdi, const struct drm_clip_rect *rect)"
+.br
+.ti -1c
+.RI "void \fBevdi_painter_set_vblank\fP (struct \fBevdi_painter\fP *painter, struct drm_crtc *crtc, struct drm_pending_vblank_event *vblank)"
+.br
+.ti -1c
+.RI "void \fBevdi_painter_send_update_ready_if_needed\fP (struct \fBevdi_painter\fP *painter)"
+.br
+.ti -1c
+.RI "void \fBevdi_painter_dpms_notify\fP (struct \fBevdi_device\fP *evdi, \fBint\fP mode)"
+.br
+.ti -1c
+.RI "void \fBevdi_painter_mode_changed_notify\fP (struct \fBevdi_device\fP *evdi, struct drm_display_mode *mode)"
+.br
+.ti -1c
+.RI "unsigned \fBint\fP \fBevdi_painter_poll\fP (struct file *filp, struct poll_table_struct *wait)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_painter_status_ioctl\fP (struct drm_device *drm_dev, void *data, struct drm_file *file)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_painter_connect_ioctl\fP (struct drm_device *drm_dev, void *data, struct drm_file *file)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_painter_grabpix_ioctl\fP (struct drm_device *drm_dev, void *data, struct drm_file *file)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_painter_request_update_ioctl\fP (struct drm_device *drm_dev, void *data, struct drm_file *file)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_painter_ddcci_response_ioctl\fP (struct drm_device *drm_dev, void *data, struct drm_file *file)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_painter_enable_cursor_events_ioctl\fP (struct drm_device *drm_dev, void *data, struct drm_file *file)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_painter_init\fP (struct \fBevdi_device\fP *evdi)"
+.br
+.ti -1c
+.RI "void \fBevdi_painter_cleanup\fP (struct \fBevdi_painter\fP *painter)"
+.br
+.ti -1c
+.RI "void \fBevdi_painter_set_scanout_buffer\fP (struct \fBevdi_painter\fP *painter, struct \fBevdi_framebuffer\fP *\fBbuffer\fP)"
+.br
+.ti -1c
+.RI "struct drm_clip_rect \fBevdi_framebuffer_sanitize_rect\fP (const struct \fBevdi_framebuffer\fP *fb, const struct drm_clip_rect *rect)"
+.br
+.ti -1c
+.RI "struct drm_device * \fBevdi_drm_device_create\fP (struct device *parent)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_drm_device_remove\fP (struct drm_device *dev)"
+.br
+.ti -1c
+.RI "void \fBevdi_painter_send_cursor_set\fP (struct \fBevdi_painter\fP *painter, struct \fBevdi_cursor\fP *cursor)"
+.br
+.ti -1c
+.RI "void \fBevdi_painter_send_cursor_move\fP (struct \fBevdi_painter\fP *painter, struct \fBevdi_cursor\fP *cursor)"
+.br
+.ti -1c
+.RI "bool \fBevdi_painter_needs_full_modeset\fP (struct \fBevdi_painter\fP *painter)"
+.br
+.ti -1c
+.RI "void \fBevdi_painter_force_full_modeset\fP (struct \fBevdi_painter\fP *painter)"
+.br
+.ti -1c
+.RI "struct drm_clip_rect \fBevdi_painter_framebuffer_size\fP (struct \fBevdi_painter\fP *painter)"
+.br
+.ti -1c
+.RI "bool \fBevdi_painter_i2c_data_notify\fP (struct \fBevdi_painter\fP *painter, struct i2c_msg *msg)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_fb_get_bpp\fP (uint32_t format)"
+.br
+.in -1c
+.SH "定義巨集說明文件"
+.PP 
+.SS "#define to_evdi_bo(x)   container_of(x, struct \fBevdi_gem_object\fP, base)"
+
+.PP
+定義在 evdi_drm_drv\&.h 檔案之第 84 行\&.
+.SS "#define to_evdi_fb(x)   container_of(x, struct \fBevdi_framebuffer\fP, base)"
+
+.PP
+定義在 evdi_drm_drv\&.h 檔案之第 92 行\&.
+.SH "函式說明文件"
+.PP 
+.SS "\fBint\fP evdi_connector_init (struct drm_device * dev, struct drm_encoder * encoder)"
+
+.PP
+定義在 evdi_connector\&.c 檔案之第 143 行\&.
+.SS "\fBint\fP evdi_driver_open (struct drm_device * drm_dev, struct drm_file * file)"
+
+.SS "void evdi_driver_postclose (struct drm_device * dev, struct drm_file * file_priv)"
+
+.PP
+定義在 evdi_drm_drv\&.c 檔案之第 261 行\&.
+.SS "void evdi_driver_preclose (struct drm_device * dev, struct drm_file * file_priv)"
+
+.PP
+定義在 evdi_drm_drv\&.c 檔案之第 256 行\&.
+.SS "struct drm_device* evdi_drm_device_create (struct device * parent)"
+
+.PP
+定義在 evdi_drm_drv\&.c 檔案之第 273 行\&.
+.SS "\fBint\fP evdi_drm_device_remove (struct drm_device * dev)"
+
+.PP
+定義在 evdi_drm_drv\&.c 檔案之第 297 行\&.
+.SS "void evdi_drm_device_unload (struct drm_device * dev)"
+
+.PP
+定義在 evdi_drm_drv\&.c 檔案之第 214 行\&.
+.SS "\fBint\fP evdi_drm_gem_mmap (struct file * filp, struct vm_area_struct * vma)"
+
+.PP
+定義在 evdi_gem\&.c 檔案之第 184 行\&.
+.SS "\fBint\fP evdi_dumb_create (struct drm_file * file_priv, struct drm_device * dev, struct drm_mode_create_dumb * args)"
+
+.PP
+定義在 evdi_gem\&.c 檔案之第 175 行\&.
+.SS "struct drm_encoder* evdi_encoder_init (struct drm_device * dev)"
+
+.PP
+定義在 evdi_encoder\&.c 檔案之第 47 行\&.
+.SS "\fBint\fP evdi_fb_get_bpp (uint32_t format)"
+
+.PP
+定義在 evdi_fb\&.c 檔案之第 553 行\&.
+.SS "struct drm_framebuffer* evdi_fb_user_fb_create (struct drm_device * dev, struct drm_file * file, const struct drm_mode_fb_cmd2 * mode_cmd)"
+
+.PP
+定義在 evdi_fb\&.c 檔案之第 562 行\&.
+.SS "struct drm_clip_rect evdi_framebuffer_sanitize_rect (const struct \fBevdi_framebuffer\fP * fb, const struct drm_clip_rect * rect)"
+
+.PP
+定義在 evdi_fb\&.c 檔案之第 1 行\&.
+.SS "struct \fBevdi_gem_object\fP* evdi_gem_alloc_object (struct drm_device * dev, size_t size)"
+
+.PP
+定義在 evdi_gem\&.c 檔案之第 90 行\&.
+.SS "vm_fault_t evdi_gem_fault (struct vm_fault * vmf)"
+
+.PP
+定義在 evdi_gem\&.c 檔案之第 199 行\&.
+.SS "void evdi_gem_free_object (struct drm_gem_object * gem_obj)"
+
+.PP
+定義在 evdi_gem\&.c 檔案之第 361 行\&.
+.SS "\fBint\fP evdi_gem_mmap (struct drm_file * file_priv, struct drm_device * dev, uint32_t handle, uint64_t * offset)"
+
+.PP
+定義在 evdi_gem\&.c 檔案之第 389 行\&.
+.SS "uint32_t evdi_gem_object_handle_lookup (struct drm_file * filp, struct drm_gem_object * obj)"
+
+.PP
+定義在 evdi_gem\&.c 檔案之第 71 行\&.
+.SS "\fBint\fP evdi_gem_vmap (struct \fBevdi_gem_object\fP * obj)"
+
+.PP
+定義在 evdi_gem\&.c 檔案之第 288 行\&.
+.SS "void evdi_gem_vunmap (struct \fBevdi_gem_object\fP * obj)"
+
+.PP
+定義在 evdi_gem\&.c 檔案之第 324 行\&.
+.SS "void evdi_modeset_cleanup (struct drm_device * dev)"
+
+.SS "void evdi_modeset_init (struct drm_device * dev)"
+
+.PP
+定義在 evdi_modeset\&.c 檔案之第 511 行\&.
+.SS "void evdi_painter_cleanup (struct \fBevdi_painter\fP * painter)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 1198 行\&.
+.SS "void evdi_painter_close (struct \fBevdi_device\fP * evdi, struct drm_file * file)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 959 行\&.
+.SS "\fBint\fP evdi_painter_connect_ioctl (struct drm_device * drm_dev, void * data, struct drm_file * file)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 967 行\&.
+.SS "\fBint\fP evdi_painter_ddcci_response_ioctl (struct drm_device * drm_dev, void * data, struct drm_file * file)"
+
+.SS "void evdi_painter_dpms_notify (struct \fBevdi_device\fP * evdi, \fBint\fP mode)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 699 行\&.
+.SS "\fBint\fP evdi_painter_enable_cursor_events_ioctl (struct drm_device * drm_dev, void * data, struct drm_file * file)"
+
+.SS "void evdi_painter_force_full_modeset (struct \fBevdi_painter\fP * painter)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 1247 行\&.
+.SS "struct drm_clip_rect evdi_painter_framebuffer_size (struct \fBevdi_painter\fP * painter)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 544 行\&.
+.SS "u8* evdi_painter_get_edid_copy (struct \fBevdi_device\fP * evdi)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 235 行\&.
+.SS "\fBint\fP evdi_painter_get_num_dirts (struct \fBevdi_painter\fP * painter)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 544 行\&.
+.SS "\fBint\fP evdi_painter_grabpix_ioctl (struct drm_device * drm_dev, void * data, struct drm_file * file)"
+
+.SS "bool evdi_painter_i2c_data_notify (struct \fBevdi_painter\fP * painter, struct i2c_msg * msg)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 1308 行\&.
+.SS "\fBint\fP evdi_painter_init (struct \fBevdi_device\fP * evdi)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 1177 行\&.
+.SS "bool evdi_painter_is_connected (struct \fBevdi_painter\fP * painter)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 230 行\&.
+.SS "void evdi_painter_mark_dirty (struct \fBevdi_device\fP * evdi, const struct drm_clip_rect * rect)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 589 行\&.
+.SS "void evdi_painter_mode_changed_notify (struct \fBevdi_device\fP * evdi, struct drm_display_mode * mode)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 740 行\&.
+.SS "bool evdi_painter_needs_full_modeset (struct \fBevdi_painter\fP * painter)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 1241 行\&.
+.SS "unsigned \fBint\fP evdi_painter_poll (struct file * filp, struct poll_table_struct * wait)"
+
+.SS "\fBint\fP evdi_painter_request_update_ioctl (struct drm_device * drm_dev, void * data, struct drm_file * file)"
+
+.SS "void evdi_painter_send_cursor_move (struct \fBevdi_painter\fP * painter, struct \fBevdi_cursor\fP * cursor)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 474 行\&.
+.SS "void evdi_painter_send_cursor_set (struct \fBevdi_painter\fP * painter, struct \fBevdi_cursor\fP * cursor)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 440 行\&.
+.SS "void evdi_painter_send_update_ready_if_needed (struct \fBevdi_painter\fP * painter)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 677 行\&.
+.SS "void evdi_painter_set_scanout_buffer (struct \fBevdi_painter\fP * painter, struct \fBevdi_framebuffer\fP * buffer)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 1222 行\&.
+.SS "void evdi_painter_set_vblank (struct \fBevdi_painter\fP * painter, struct drm_crtc * crtc, struct drm_pending_vblank_event * vblank)"
+
+.PP
+定義在 evdi_painter\&.c 檔案之第 652 行\&.
+.SS "\fBint\fP evdi_painter_status_ioctl (struct drm_device * drm_dev, void * data, struct drm_file * file)"
+
+.SS "struct sg_table* evdi_prime_get_sg_table (struct drm_gem_object * obj)"
+
+.PP
+定義在 evdi_gem\&.c 檔案之第 470 行\&.
+.SS "struct drm_gem_object* evdi_prime_import_sg_table (struct drm_device * dev, struct dma_buf_attachment * attach, struct sg_table * sg)"
+
+.PP
+定義在 evdi_gem\&.c 檔案之第 422 行\&.
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

@@ -1,0 +1,93 @@
+.TH "evdi_device" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+evdi_device
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <evdi_drm_drv\&.h>\fP
+.SS "公開屬性"
+
+.in +1c
+.ti -1c
+.RI "struct drm_device * \fBddev\fP"
+.br
+.ti -1c
+.RI "struct drm_connector * \fBconn\fP"
+.br
+.ti -1c
+.RI "struct \fBevdi_cursor\fP * \fBcursor\fP"
+.br
+.ti -1c
+.RI "bool \fBcursor_events_enabled\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBpixel_area_limit\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBpixel_per_second_limit\fP"
+.br
+.ti -1c
+.RI "struct \fBevdi_fbdev\fP * \fBfbdev\fP"
+.br
+.ti -1c
+.RI "struct \fBevdi_painter\fP * \fBpainter\fP"
+.br
+.ti -1c
+.RI "struct i2c_adapter * \fBi2c_adapter\fP"
+.br
+.ti -1c
+.RI "\fBint\fP \fBdev_index\fP"
+.br
+.in -1c
+.SH "詳細描述"
+.PP 
+定義在 evdi_drm_drv\&.h 檔案之第 48 行\&.
+.SH "資料成員說明文件"
+.PP 
+.SS "struct drm_connector* evdi_device::conn"
+
+.PP
+定義在 evdi_drm_drv\&.h 檔案之第 50 行\&.
+.SS "struct \fBevdi_cursor\fP* evdi_device::cursor"
+
+.PP
+定義在 evdi_drm_drv\&.h 檔案之第 51 行\&.
+.SS "bool evdi_device::cursor_events_enabled"
+
+.PP
+定義在 evdi_drm_drv\&.h 檔案之第 52 行\&.
+.SS "struct drm_device* evdi_device::ddev"
+
+.PP
+定義在 evdi_drm_drv\&.h 檔案之第 49 行\&.
+.SS "\fBint\fP evdi_device::dev_index"
+
+.PP
+定義在 evdi_drm_drv\&.h 檔案之第 61 行\&.
+.SS "struct \fBevdi_fbdev\fP* evdi_device::fbdev"
+
+.PP
+定義在 evdi_drm_drv\&.h 檔案之第 57 行\&.
+.SS "struct i2c_adapter* evdi_device::i2c_adapter"
+
+.PP
+定義在 evdi_drm_drv\&.h 檔案之第 59 行\&.
+.SS "struct \fBevdi_painter\fP* evdi_device::painter"
+
+.PP
+定義在 evdi_drm_drv\&.h 檔案之第 58 行\&.
+.SS "uint32_t evdi_device::pixel_area_limit"
+
+.PP
+定義在 evdi_drm_drv\&.h 檔案之第 54 行\&.
+.SS "uint32_t evdi_device::pixel_per_second_limit"
+
+.PP
+定義在 evdi_drm_drv\&.h 檔案之第 55 行\&.
+
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

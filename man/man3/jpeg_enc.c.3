@@ -1,0 +1,191 @@
+.TH "/home/odin/Desktop/program/usbdisp_linux/libusbdisp/libenc/jpeg_enc.c" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/odin/Desktop/program/usbdisp_linux/libusbdisp/libenc/jpeg_enc.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdarg\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include 'jpeg_enc\&.h'\fP
+.br
+\fC#include 'Optimize_SSE2\&.h'\fP
+.br
+\fC#include 'Optimize_NEON\&.h'\fP
+.br
+
+.SS "函式"
+
+.in +1c
+.ti -1c
+.RI "void \fBwrite_APP0info\fP (\fBjpeg_stream_t\fP *jpeg_stream)"
+.br
+.ti -1c
+.RI "void \fBwrite_SOF0info\fP (\fBcinfo_t\fP *cinfo)"
+.br
+.ti -1c
+.RI "void \fBwrite_SOSinfo\fP (\fBcinfo_t\fP *cinfo)"
+.br
+.ti -1c
+.RI "void \fBwrite_comment\fP (\fBjpeg_stream_t\fP *jpeg_stream, \fBBYTE\fP *comment)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBwrite_DQTinfo\fP (\fBcinfo_t\fP *cinfo, \fBjpeg_stream_t\fP *stream)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBGetDQTinfo\fP (\fBcinfo_t\fP *cinfo, \fBjpeg_stream_t\fP *stream)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBwrite_DHTinfo\fP (\fBjpeg_stream_t\fP *stream)"
+.br
+.ti -1c
+.RI "void \fBset_quant_table\fP (\fBBYTE\fP *basic_table, \fBBYTE\fP scale_factor, \fBBYTE\fP *newtable)"
+.br
+.ti -1c
+.RI "void \fBset_DQTinfo\fP (\fBcinfo_t\fP *cinfo, \fBBYTE\fP quality)"
+.br
+.ti -1c
+.RI "void \fBset_DHTinfo\fP ()"
+.br
+.ti -1c
+.RI "void \fBwritebits\fP (\fBbitstring\fP bs, \fBcinfo_t\fP *cinfo)"
+.br
+.ti -1c
+.RI "void \fBcompute_Huffman_table\fP (\fBBYTE\fP *nrcodes, \fBBYTE\fP *std_table, \fBbitstring\fP *HT)"
+.br
+.ti -1c
+.RI "void \fBinit_Huffman_tables\fP ()"
+.br
+.ti -1c
+.RI "void \fBexitmessage\fP (\fBchar\fP *error_message)"
+.br
+.ti -1c
+.RI "void \fBprepare_quant_tables\fP (\fBcinfo_t\fP *cinfo)"
+.br
+.ti -1c
+.RI "void \fBfdct_and_quantization\fP (\fBINT16\fP *divisors, \fBSWORD\fP *outdata)"
+.br
+.ti -1c
+.RI "void \fBprocess_DU\fP (\fBcinfo_t\fP *cinfo, \fBINT16\fP *DU, \fBSWORD\fP *DC, \fBHuffmanTable_t\fP *HT)"
+.br
+.ti -1c
+.RI "void \fBload_data_units_from_buffer\fP (\fBcinfo_t\fP *cinfo, \fBWORD\fP xpos, \fBWORD\fP ypos)"
+.br
+.ti -1c
+.RI "void \fBmain_encoder\fP (\fBcinfo_t\fP *cinfo)"
+.br
+.ti -1c
+.RI "void \fBInitialize\fP (\fBcinfo_t\fP *cinfo, \fBBYTE\fP scalefactor)"
+.br
+.ti -1c
+.RI "void \fBDeInitialize\fP ()"
+.br
+.ti -1c
+.RI "void \fBWriteHeader\fP (\fBcinfo_t\fP *cinfo, \fBint\fP width, \fBint\fP height)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBencode\fP (\fBcinfo_t\fP *cinfo)"
+.br
+.in -1c
+.SH "函式說明文件"
+.PP 
+.SS "void compute_Huffman_table (\fBBYTE\fP * nrcodes, \fBBYTE\fP * std_table, \fBbitstring\fP * HT)"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 387 行\&.
+.SS "void DeInitialize ()"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 640 行\&.
+.SS "\fBint\fP encode (\fBcinfo_t\fP * cinfo)"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 661 行\&.
+.SS "void exitmessage (\fBchar\fP * error_message)"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 411 行\&.
+.SS "void fdct_and_quantization (\fBINT16\fP * divisors, \fBSWORD\fP * outdata)"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 498 行\&.
+.SS "\fBint\fP GetDQTinfo (\fBcinfo_t\fP * cinfo, \fBjpeg_stream_t\fP * stream)"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 231 行\&.
+.SS "void init_Huffman_tables ()"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 403 行\&.
+.SS "void Initialize (\fBcinfo_t\fP * cinfo, \fBBYTE\fP scalefactor)"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 628 行\&.
+.SS "void load_data_units_from_buffer (\fBcinfo_t\fP * cinfo, \fBWORD\fP xpos, \fBWORD\fP ypos)"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 580 行\&.
+.SS "void main_encoder (\fBcinfo_t\fP * cinfo)"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 606 行\&.
+.SS "void prepare_quant_tables (\fBcinfo_t\fP * cinfo)"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 471 行\&.
+.SS "void process_DU (\fBcinfo_t\fP * cinfo, \fBINT16\fP * DU, \fBSWORD\fP * DC, \fBHuffmanTable_t\fP * HT)"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 506 行\&.
+.SS "void set_DHTinfo ()"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 299 行\&.
+.SS "void set_DQTinfo (\fBcinfo_t\fP * cinfo, \fBBYTE\fP quality)"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 286 行\&.
+.SS "void set_quant_table (\fBBYTE\fP * basic_table, \fBBYTE\fP scale_factor, \fBBYTE\fP * newtable)"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 272 行\&.
+.SS "void write_APP0info (\fBjpeg_stream_t\fP * jpeg_stream)"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 145 行\&.
+.SS "void write_comment (\fBjpeg_stream_t\fP * jpeg_stream, \fBBYTE\fP * comment)"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 201 行\&.
+.SS "\fBint\fP write_DHTinfo (\fBjpeg_stream_t\fP * stream)"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 248 行\&.
+.SS "\fBint\fP write_DQTinfo (\fBcinfo_t\fP * cinfo, \fBjpeg_stream_t\fP * stream)"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 215 行\&.
+.SS "void write_SOF0info (\fBcinfo_t\fP * cinfo)"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 165 行\&.
+.SS "void write_SOSinfo (\fBcinfo_t\fP * cinfo)"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 185 行\&.
+.SS "void writebits (\fBbitstring\fP bs, \fBcinfo_t\fP * cinfo)"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 319 行\&.
+.SS "void WriteHeader (\fBcinfo_t\fP * cinfo, \fBint\fP width, \fBint\fP height)"
+
+.PP
+定義在 jpeg_enc\&.c 檔案之第 645 行\&.
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

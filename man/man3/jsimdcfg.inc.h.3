@@ -1,0 +1,269 @@
+.TH "/home/odin/Desktop/program/usbdisp_linux/libusbdisp/libenc/simd/jsimdcfg.inc.h" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/odin/Desktop/program/usbdisp_linux/libusbdisp/libenc/simd/jsimdcfg.inc.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./jpeglib\&.h'\fP
+.br
+\fC#include '\&.\&./jconfig\&.h'\fP
+.br
+\fC#include '\&.\&./jmorecfg\&.h'\fP
+.br
+\fC#include 'jsimd\&.h'\fP
+.br
+
+.SS "定義"
+
+.in +1c
+.ti -1c
+.RI "#define \fBJPEG_INTERNALS\fP"
+.br
+.in -1c
+.SS "函式"
+
+.in +1c
+.ti -1c
+.RI "Representation of a single \fBsample\fP (pixel element value)\&."
+.br
+.ti -1c
+.RI "\fBsizeof\fP (\fBJSAMPLE\fP) %define _cpp_protection_CENTERJSAMPLE CENTERJSAMPLE"
+.br
+.ti -1c
+.RI "\fBsizeof\fP (JCOEF)"
+.br
+.ti -1c
+.RI "\fBsizeof\fP (\fBJDIMENSION\fP) %define \fBJSAMPROW\fP \fBPOINTER\fP"
+.br
+.ti -1c
+.RI "\fBsizeof\fP (\fBJSAMPROW\fP) %define SIZEOF_JSAMPARRAY \fBSIZEOF_POINTER\fP"
+.br
+.ti -1c
+.RI "\fBsizeof\fP (\fBJSAMPARRAY\fP) %define SIZEOF_JSAMPIMAGE \fBSIZEOF_POINTER\fP"
+.br
+.ti -1c
+.RI "\fBsizeof\fP (\fBJSAMPIMAGE\fP) %define SIZEOF_JCOEFPTR \fBSIZEOF_POINTER\fP"
+.br
+.ti -1c
+.RI "\fBsizeof\fP (JCOEFPTR)"
+.br
+.ti -1c
+.RI "To maximize Type \fBDCTELEM\fP is changed to \fBshort\fP (originally, \fBint\fP)\&."
+.br
+.ti -1c
+.RI "\fBsizeof\fP (\fBDCTELEM\fP) %define FAST_FLOAT \fBFP32\fP"
+.br
+.ti -1c
+.RI "\fBsizeof\fP (FAST_FLOAT)"
+.br
+.ti -1c
+.RI "\fBsizeof\fP (ISLOW_MULT_TYPE) %define IFAST_MULT_TYPE \fBword\fP"
+.br
+.ti -1c
+.RI "\fBsizeof\fP (IFAST_MULT_TYPE) %define IFAST_SCALE_BITS 2"
+.br
+.ti -1c
+.RI "\fBsizeof\fP (FLOAT_MULT_TYPE)"
+.br
+.in -1c
+.SS "變數"
+
+.in +1c
+.ti -1c
+.RI "Automatically generated include file from jsimdcfg inc \fBh\fP"
+.br
+.ti -1c
+.RI "define _cpp_protection_DCTSIZE DCTSIZE define _cpp_protection_DCTSIZE2 \fBDCTSIZE2\fP"
+.br
+.ti -1c
+.RI "define _cpp_protection_RGB_RED RGB_RED define _cpp_protection_RGB_GREEN RGB_GREEN define _cpp_protection_RGB_BLUE RGB_BLUE define _cpp_protection_RGB_PIXELSIZE RGB_PIXELSIZE define _cpp_protection_EXT_RGB_RED EXT_RGB_RED define _cpp_protection_EXT_RGB_GREEN EXT_RGB_GREEN define _cpp_protection_EXT_RGB_BLUE EXT_RGB_BLUE define _cpp_protection_EXT_RGB_PIXELSIZE EXT_RGB_PIXELSIZE define _cpp_protection_EXT_RGBX_RED EXT_RGBX_RED define _cpp_protection_EXT_RGBX_GREEN EXT_RGBX_GREEN define _cpp_protection_EXT_RGBX_BLUE EXT_RGBX_BLUE define _cpp_protection_EXT_RGBX_PIXELSIZE EXT_RGBX_PIXELSIZE define _cpp_protection_EXT_BGR_RED EXT_BGR_RED define _cpp_protection_EXT_BGR_GREEN EXT_BGR_GREEN define _cpp_protection_EXT_BGR_BLUE EXT_BGR_BLUE define _cpp_protection_EXT_BGR_PIXELSIZE EXT_BGR_PIXELSIZE define _cpp_protection_EXT_BGRX_RED EXT_BGRX_RED define _cpp_protection_EXT_BGRX_GREEN EXT_BGRX_GREEN define _cpp_protection_EXT_BGRX_BLUE EXT_BGRX_BLUE define _cpp_protection_EXT_BGRX_PIXELSIZE EXT_BGRX_PIXELSIZE define _cpp_protection_EXT_XBGR_RED EXT_XBGR_RED define _cpp_protection_EXT_XBGR_GREEN EXT_XBGR_GREEN define _cpp_protection_EXT_XBGR_BLUE EXT_XBGR_BLUE define _cpp_protection_EXT_XBGR_PIXELSIZE EXT_XBGR_PIXELSIZE define _cpp_protection_EXT_XRGB_RED EXT_XRGB_RED define _cpp_protection_EXT_XRGB_GREEN EXT_XRGB_GREEN define _cpp_protection_EXT_XRGB_BLUE EXT_XRGB_BLUE define _cpp_protection_EXT_XRGB_PIXELSIZE EXT_XRGB_PIXELSIZE define \fBRGBX_FILLER_0XFF\fP"
+.br
+.ti -1c
+.RI "On this SIMD \fBimplementation\fP"
+.br
+.ti -1c
+.RI "On this SIMD this must be unsigned \fBchar\fP"
+.br
+.ti -1c
+.RI "define \fBJSAMPLE\fP \fBbyte\fP"
+.br
+.ti -1c
+.RI "unsigned \fBchar\fP define SIZEOF_JSAMPLE \fBSIZEOF_BYTE\fP"
+.br
+.ti -1c
+.RI "Representation of a DCT frequency \fBcoefficient\fP"
+.br
+.ti -1c
+.RI "On this SIMD this must be \fBshort\fP"
+.br
+.ti -1c
+.RI "define JCOEF \fBword\fP"
+.br
+.ti -1c
+.RI "\fBshort\fP define SIZEOF_JCOEF \fBSIZEOF_WORD\fP"
+.br
+.ti -1c
+.RI "Datatype used for image \fBdimensions\fP"
+.br
+.ti -1c
+.RI "On this SIMD this must be unsigned \fBint\fP"
+.br
+.ti -1c
+.RI "define \fBJDIMENSION\fP \fBdword\fP"
+.br
+.ti -1c
+.RI "unsigned \fBint\fP define SIZEOF_JDIMENSION \fBSIZEOF_DWORD\fP"
+.br
+.ti -1c
+.RI "\fBJSAMPLE\fP *jpeglib \fBh\fP define \fBJSAMPARRAY\fP \fBPOINTER\fP"
+.br
+.ti -1c
+.RI "JCOEF *jpeglib \fBh\fP define SIZEOF_JSAMPROW \fBSIZEOF_POINTER\fP"
+.br
+.ti -1c
+.RI "A forward DCT routine is given a pointer to a work area of type \fBDCTELEM\fP []"
+.br
+.ti -1c
+.RI "the DCT is to be performed in place in that \fBbuffer\fP"
+.br
+.ti -1c
+.RI "To maximize \fBparallelism\fP"
+.br
+.ti -1c
+.RI "float define SIZEOF_FAST_FLOAT \fBSIZEOF_FP32\fP"
+.br
+.ti -1c
+.RI "fractional bits in scale factors define FLOAT_MULT_TYPE \fBFP32\fP"
+.br
+.in -1c
+.SH "定義巨集說明文件"
+.PP 
+.SS "#define JPEG_INTERNALS"
+
+.PP
+定義在 jsimdcfg\&.inc\&.h 檔案之第 11 行\&.
+.SH "函式說明文件"
+.PP 
+.SS "Representation of a single sample (pixel element value)"
+
+.SS "To maximize Type \fBDCTELEM\fP is changed to short (originally, \fBint\fP)"
+
+.SS "sizeof (\fBDCTELEM\fP)"
+
+.SS "sizeof (FAST_FLOAT)"
+
+.SS "sizeof (FLOAT_MULT_TYPE)"
+
+.SS "sizeof (IFAST_MULT_TYPE)"
+
+.SS "sizeof (ISLOW_MULT_TYPE)"
+
+.SS "sizeof (JCOEF)"
+
+.SS "sizeof (JCOEFPTR)"
+
+.SS "sizeof (\fBJDIMENSION\fP)"
+
+.SS "sizeof (\fBJSAMPARRAY\fP)"
+
+.SS "sizeof (\fBJSAMPIMAGE\fP)"
+
+.SS "sizeof (\fBJSAMPLE\fP)"
+
+.SS "sizeof (\fBJSAMPROW\fP)"
+
+.SH "變數說明文件"
+.PP 
+.SS "the DCT is to be performed in place in that buffer"
+
+.PP
+定義在 jsimdcfg\&.inc\&.h 檔案之第 101 行\&.
+.SS "define \fBJSAMPLE\fP byte"
+
+.PP
+定義在 jsimdcfg\&.inc\&.h 檔案之第 70 行\&.
+.SS "On this SIMD this must be unsigned char"
+
+.PP
+定義在 jsimdcfg\&.inc\&.h 檔案之第 67 行\&.
+.SS "Representation of a DCT frequency coefficient"
+
+.PP
+定義在 jsimdcfg\&.inc\&.h 檔案之第 75 行\&.
+.SS "A forward DCT routine is given a pointer to a work area of type \fBDCTELEM\fP[]"
+
+.PP
+定義在 jsimdcfg\&.inc\&.h 檔案之第 100 行\&.
+.SS "define _cpp_protection_DCTSIZE DCTSIZE define _cpp_protection_DCTSIZE2 DCTSIZE2"
+
+.PP
+定義在 jsimdcfg\&.inc\&.h 檔案之第 23 行\&.
+.SS "Datatype used for image dimensions"
+
+.PP
+定義在 jsimdcfg\&.inc\&.h 檔案之第 81 行\&.
+.SS "define \fBJDIMENSION\fP dword"
+
+.PP
+定義在 jsimdcfg\&.inc\&.h 檔案之第 84 行\&.
+.SS "fractional bits in scale factors define FLOAT_MULT_TYPE FP32"
+
+.PP
+定義在 jsimdcfg\&.inc\&.h 檔案之第 119 行\&.
+.SS "jsimd h"
+
+.PP
+定義在 jsimdcfg\&.inc\&.h 檔案之第 8 行\&.
+.SS "On this SIMD implementation"
+
+.PP
+定義在 jsimdcfg\&.inc\&.h 檔案之第 67 行\&.
+.SS "On this SIMD this must be unsigned int"
+
+.PP
+定義在 jsimdcfg\&.inc\&.h 檔案之第 82 行\&.
+.SS "To maximize parallelism"
+
+.PP
+定義在 jsimdcfg\&.inc\&.h 檔案之第 102 行\&.
+.SS "\fBJSAMPARRAY\fP *jpeglib \fBh\fP define JCOEFPTR POINTER"
+
+.PP
+定義在 jsimdcfg\&.inc\&.h 檔案之第 88 行\&.
+.SS "define _cpp_protection_RGB_RED RGB_RED define _cpp_protection_RGB_GREEN RGB_GREEN define _cpp_protection_RGB_BLUE RGB_BLUE define _cpp_protection_RGB_PIXELSIZE RGB_PIXELSIZE define _cpp_protection_EXT_RGB_RED EXT_RGB_RED define _cpp_protection_EXT_RGB_GREEN EXT_RGB_GREEN define _cpp_protection_EXT_RGB_BLUE EXT_RGB_BLUE define _cpp_protection_EXT_RGB_PIXELSIZE EXT_RGB_PIXELSIZE define _cpp_protection_EXT_RGBX_RED EXT_RGBX_RED define _cpp_protection_EXT_RGBX_GREEN EXT_RGBX_GREEN define _cpp_protection_EXT_RGBX_BLUE EXT_RGBX_BLUE define _cpp_protection_EXT_RGBX_PIXELSIZE EXT_RGBX_PIXELSIZE define _cpp_protection_EXT_BGR_RED EXT_BGR_RED define _cpp_protection_EXT_BGR_GREEN EXT_BGR_GREEN define _cpp_protection_EXT_BGR_BLUE EXT_BGR_BLUE define _cpp_protection_EXT_BGR_PIXELSIZE EXT_BGR_PIXELSIZE define _cpp_protection_EXT_BGRX_RED EXT_BGRX_RED define _cpp_protection_EXT_BGRX_GREEN EXT_BGRX_GREEN define _cpp_protection_EXT_BGRX_BLUE EXT_BGRX_BLUE define _cpp_protection_EXT_BGRX_PIXELSIZE EXT_BGRX_PIXELSIZE define _cpp_protection_EXT_XBGR_RED EXT_XBGR_RED define _cpp_protection_EXT_XBGR_GREEN EXT_XBGR_GREEN define _cpp_protection_EXT_XBGR_BLUE EXT_XBGR_BLUE define _cpp_protection_EXT_XBGR_PIXELSIZE EXT_XBGR_PIXELSIZE define _cpp_protection_EXT_XRGB_RED EXT_XRGB_RED define _cpp_protection_EXT_XRGB_GREEN EXT_XRGB_GREEN define _cpp_protection_EXT_XRGB_BLUE EXT_XRGB_BLUE define _cpp_protection_EXT_XRGB_PIXELSIZE EXT_XRGB_PIXELSIZE define RGBX_FILLER_0XFF"
+
+.PP
+定義在 jsimdcfg\&.inc\&.h 檔案之第 64 行\&.
+.SS "To maximize Type MULTIPLIER is changed to short"
+
+.PP
+定義在 jsimdcfg\&.inc\&.h 檔案之第 76 行\&.
+.SS "unsigned \fBchar\fP define SIZEOF_JSAMPLE SIZEOF_BYTE"
+
+.PP
+定義在 jsimdcfg\&.inc\&.h 檔案之第 71 行\&.
+.SS "unsigned \fBint\fP define SIZEOF_JDIMENSION SIZEOF_DWORD"
+
+.PP
+定義在 jsimdcfg\&.inc\&.h 檔案之第 85 行\&.
+.SS "must be float define SIZEOF_FLOAT_MULT_TYPE SIZEOF_FP32"
+
+.PP
+定義在 jsimdcfg\&.inc\&.h 檔案之第 108 行\&.
+.SS "JCOEF* jpeglib \fBh\fP define SIZEOF_JSAMPROW SIZEOF_POINTER"
+
+.PP
+定義在 jsimdcfg\&.inc\&.h 檔案之第 91 行\&.
+.SS "must be \fBshort\fP define SIZEOF_IFAST_MULT_TYPE SIZEOF_WORD"
+
+.PP
+定義在 jsimdcfg\&.inc\&.h 檔案之第 79 行\&.
+.SS "define ISLOW_MULT_TYPE word"
+
+.PP
+定義在 jsimdcfg\&.inc\&.h 檔案之第 78 行\&.
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

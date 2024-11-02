@@ -1,0 +1,59 @@
+.TH "/home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_params.c" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_params.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <linux/module\&.h>\fP
+.br
+\fC#include <linux/moduleparam\&.h>\fP
+.br
+\fC#include 'evdi_params\&.h'\fP
+.br
+\fC#include 'evdi_debug\&.h'\fP
+.br
+
+.SS "函式"
+
+.in +1c
+.ti -1c
+.RI "\fBmodule_param_named\fP (initial_loglevel, \fBevdi_loglevel\fP, \fBint\fP, 0400)"
+.br
+.ti -1c
+.RI "\fBMODULE_PARM_DESC\fP (initial_loglevel, 'Initial log level')"
+.br
+.ti -1c
+.RI "\fBmodule_param_named\fP (initial_device_count, \fBevdi_initial_device_count\fP, ushort, 0644)"
+.br
+.ti -1c
+.RI "\fBMODULE_PARM_DESC\fP (initial_device_count, 'Initial DRM device count (default: 0)')"
+.br
+.in -1c
+.SS "變數"
+
+.in +1c
+.ti -1c
+.RI "unsigned \fBint\fP \fBevdi_loglevel\fP \fB__read_mostly\fP = \fBEVDI_LOGLEVEL_INFO\fP"
+.br
+.in -1c
+.SH "函式說明文件"
+.PP 
+.SS "module_param_named (initial_device_count, \fBevdi_initial_device_count\fP, ushort, 0644)"
+
+.SS "module_param_named (initial_loglevel, \fBevdi_loglevel\fP, \fBint\fP, 0400)"
+
+.SS "MODULE_PARM_DESC (initial_device_count, 'Initial DRM device count (default: 0)')"
+
+.SS "MODULE_PARM_DESC (initial_loglevel, 'Initial log level')"
+
+.SH "變數說明文件"
+.PP 
+.SS "unsigned \fBshort\fP \fBint\fP \fBevdi_initial_device_count\fP __read_mostly = \fBEVDI_LOGLEVEL_INFO\fP"
+
+.PP
+定義在 evdi_params\&.c 檔案之第 16 行\&.
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

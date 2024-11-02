@@ -1,0 +1,114 @@
+.TH "/home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_drm_drv.c" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_drm_drv.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <linux/version\&.h>\fP
+.br
+\fC#include <drm/drm_ioctl\&.h>\fP
+.br
+\fC#include <drm/drm_file\&.h>\fP
+.br
+\fC#include <drm/drm_drv\&.h>\fP
+.br
+\fC#include <drm/drm_vblank\&.h>\fP
+.br
+\fC#include <drm/drm_probe_helper\&.h>\fP
+.br
+\fC#include <drm/drm_managed\&.h>\fP
+.br
+\fC#include <drm/drm_atomic_helper\&.h>\fP
+.br
+\fC#include 'evdi_drm_drv\&.h'\fP
+.br
+\fC#include 'evdi_platform_drv\&.h'\fP
+.br
+\fC#include 'evdi_cursor\&.h'\fP
+.br
+\fC#include 'evdi_debug\&.h'\fP
+.br
+\fC#include 'evdi_drm\&.h'\fP
+.br
+
+.SS "函式"
+
+.in +1c
+.ti -1c
+.RI "void \fBevdi_drm_device_unload\fP (struct drm_device *dev)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_driver_open\fP (struct drm_device *drm_dev, __always_unused struct drm_file *file)"
+.br
+.ti -1c
+.RI "void \fBevdi_driver_preclose\fP (struct drm_device *drm_dev, struct drm_file *file)"
+.br
+.ti -1c
+.RI "void \fBevdi_driver_postclose\fP (struct drm_device *drm_dev, struct drm_file *file)"
+.br
+.ti -1c
+.RI "struct drm_device * \fBevdi_drm_device_create\fP (struct device *parent)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_drm_device_remove\fP (struct drm_device *dev)"
+.br
+.in -1c
+.SS "變數"
+
+.in +1c
+.ti -1c
+.RI "struct drm_ioctl_desc \fBevdi_painter_ioctls\fP []"
+.br
+.in -1c
+.SH "函式說明文件"
+.PP 
+.SS "\fBint\fP evdi_driver_open (struct drm_device * drm_dev, __always_unused struct drm_file * file)"
+
+.PP
+定義在 evdi_drm_drv\&.c 檔案之第 237 行\&.
+.SS "void evdi_driver_postclose (struct drm_device * drm_dev, struct drm_file * file)"
+
+.PP
+定義在 evdi_drm_drv\&.c 檔案之第 261 行\&.
+.SS "void evdi_driver_preclose (struct drm_device * drm_dev, struct drm_file * file)"
+
+.PP
+定義在 evdi_drm_drv\&.c 檔案之第 256 行\&.
+.SS "struct drm_device* evdi_drm_device_create (struct device * parent)"
+
+.PP
+定義在 evdi_drm_drv\&.c 檔案之第 273 行\&.
+.SS "\fBint\fP evdi_drm_device_remove (struct drm_device * dev)"
+
+.PP
+定義在 evdi_drm_drv\&.c 檔案之第 297 行\&.
+.SS "void evdi_drm_device_unload (struct drm_device * dev)"
+
+.PP
+定義在 evdi_drm_drv\&.c 檔案之第 214 行\&.
+.SH "變數說明文件"
+.PP 
+.SS "struct drm_ioctl_desc evdi_painter_ioctls[]"
+\fB初值:\fP
+.PP
+.nf
+= {
+    DRM_IOCTL_DEF_DRV(EVDI_CONNECT, evdi_painter_connect_ioctl,
+              DRM_UNLOCKED),
+    DRM_IOCTL_DEF_DRV(EVDI_REQUEST_UPDATE,
+              evdi_painter_request_update_ioctl, DRM_UNLOCKED),
+    DRM_IOCTL_DEF_DRV(EVDI_GRABPIX, evdi_painter_grabpix_ioctl,
+              DRM_UNLOCKED),
+    DRM_IOCTL_DEF_DRV(EVDI_DDCCI_RESPONSE, evdi_painter_ddcci_response_ioctl,
+              DRM_UNLOCKED),
+    DRM_IOCTL_DEF_DRV(EVDI_ENABLE_CURSOR_EVENTS, evdi_painter_enable_cursor_events_ioctl,
+              DRM_UNLOCKED),
+}
+.fi
+.PP
+定義在 evdi_drm_drv\&.c 檔案之第 1 行\&.
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

@@ -1,0 +1,44 @@
+.TH "event_t" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+event_t
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <event\&.h>\fP
+.SS "公開屬性"
+
+.in +1c
+.ti -1c
+.RI "pthread_mutex_t \fBmutex\fP"
+.br
+.ti -1c
+.RI "pthread_cond_t \fBcond\fP"
+.br
+.ti -1c
+.RI "unsigned \fBint\fP \fBflag\fP"
+.br
+.in -1c
+.SH "詳細描述"
+.PP 
+定義在 event\&.h 檔案之第 11 行\&.
+.SH "資料成員說明文件"
+.PP 
+.SS "pthread_cond_t event_t::cond"
+
+.PP
+定義在 event\&.h 檔案之第 13 行\&.
+.SS "unsigned \fBint\fP event_t::flag"
+
+.PP
+定義在 event\&.h 檔案之第 14 行\&.
+.SS "pthread_mutex_t event_t::mutex"
+
+.PP
+定義在 event\&.h 檔案之第 12 行\&.
+
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

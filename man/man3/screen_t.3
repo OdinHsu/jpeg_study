@@ -1,0 +1,72 @@
+.TH "screen_t" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+screen_t
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Encoder\&.h>\fP
+.SS "公開屬性"
+
+.in +1c
+.ti -1c
+.RI "\fBBYTE\fP * \fBpframebuffer\fP"
+.br
+.ti -1c
+.RI "\fBBYTE\fP * \fBpencode_buffer\fP"
+.br
+.ti -1c
+.RI "\fBUINT32\fP * \fBpheader\fP"
+.br
+.ti -1c
+.RI "\fBINT32\fP \fBencode_count\fP"
+.br
+.ti -1c
+.RI "\fBUINT32\fP \fBencode_list\fP [\fBMAX_SCREEN_BLOCK\fP]"
+.br
+.ti -1c
+.RI "\fBBYTE\fP \fBquality\fP [\fBMAX_SCREEN_BLOCK\fP]"
+.br
+.ti -1c
+.RI "\fBBYTE\fP \fBbuff_idx\fP [\fBMAX_SCREEN_BLOCK\fP]"
+.br
+.in -1c
+.SH "詳細描述"
+.PP 
+定義在 Encoder\&.h 檔案之第 39 行\&.
+.SH "資料成員說明文件"
+.PP 
+.SS "\fBBYTE\fP screen_t::buff_idx[\fBMAX_SCREEN_BLOCK\fP]"
+
+.PP
+定義在 Encoder\&.h 檔案之第 46 行\&.
+.SS "\fBINT32\fP screen_t::encode_count"
+
+.PP
+定義在 Encoder\&.h 檔案之第 43 行\&.
+.SS "\fBUINT32\fP screen_t::encode_list[\fBMAX_SCREEN_BLOCK\fP]"
+
+.PP
+定義在 Encoder\&.h 檔案之第 44 行\&.
+.SS "\fBBYTE\fP* screen_t::pencode_buffer"
+
+.PP
+定義在 Encoder\&.h 檔案之第 41 行\&.
+.SS "\fBBYTE\fP* screen_t::pframebuffer"
+
+.PP
+定義在 Encoder\&.h 檔案之第 40 行\&.
+.SS "\fBUINT32\fP* screen_t::pheader"
+
+.PP
+定義在 Encoder\&.h 檔案之第 42 行\&.
+.SS "\fBBYTE\fP screen_t::quality[\fBMAX_SCREEN_BLOCK\fP]"
+
+.PP
+定義在 Encoder\&.h 檔案之第 45 行\&.
+
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

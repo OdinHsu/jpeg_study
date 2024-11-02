@@ -1,0 +1,67 @@
+.TH "Capture" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Capture
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <capture\&.h>\fP
+.SS "公開方法(Public Methods)"
+
+.in +1c
+.ti -1c
+.RI "\fBCapture\fP ()"
+.br
+.ti -1c
+.RI "\fB~Capture\fP ()"
+.br
+.ti -1c
+.RI "bool \fBCreateDevice\fP (\fBint\fP fd)"
+.br
+.ti -1c
+.RI "bool \fBCreateDevice\fP (libusb_device *dev)"
+.br
+.ti -1c
+.RI "void \fBStartEncode\fP (\fBint\fP width, \fBint\fP height, \fBint\fP pitch, unsigned \fBchar\fP *framebuffer)"
+.br
+.ti -1c
+.RI "bool \fBSetDevResolution\fP (\fBint\fP width, \fBint\fP height)"
+.br
+.in -1c
+.SH "詳細描述"
+.PP 
+定義在 capture\&.h 檔案之第 44 行\&.
+.SH "建構子與解構子說明文件"
+.PP 
+.SS "Capture::Capture ()"
+
+.PP
+定義在 capture\&.cpp 檔案之第 4 行\&.
+.SS "Capture::~Capture ()"
+
+.PP
+定義在 capture\&.cpp 檔案之第 13 行\&.
+.SH "函式成員說明文件"
+.PP 
+.SS "bool Capture::CreateDevice (\fBint\fP fd)"
+
+.PP
+定義在 capture\&.cpp 檔案之第 28 行\&.
+.SS "bool Capture::CreateDevice (libusb_device * dev)"
+
+.PP
+定義在 capture\&.cpp 檔案之第 39 行\&.
+.SS "bool Capture::SetDevResolution (\fBint\fP width, \fBint\fP height)"
+
+.PP
+定義在 capture\&.cpp 檔案之第 50 行\&.
+.SS "void Capture::StartEncode (\fBint\fP width, \fBint\fP height, \fBint\fP pitch, unsigned \fBchar\fP * framebuffer)\fC [inline]\fP"
+
+.PP
+定義在 capture\&.h 檔案之第 57 行\&.
+
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

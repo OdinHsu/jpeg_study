@@ -1,0 +1,8 @@
+<map id="ClientUSB::IsConnected" name="ClientUSB::IsConnected">
+<area shape="rect" id="node1" title=" " alt="" coords="675,56,849,83"/>
+<area shape="rect" id="node2" href="$class_android_engine.html#ac89eebe1929f619ff46692181686d010" title=" " alt="" coords="415,5,627,32"/>
+<area shape="rect" id="node5" href="$class_encode_engine.html#a8fbf29a53fa64461007719f1d40e748a" title=" " alt="" coords="189,81,367,108"/>
+<area shape="rect" id="node6" href="$class_encode_engine.html#ac9753aca67469ab9ac8f30f64922da29" title=" " alt="" coords="443,107,599,133"/>
+<area shape="rect" id="node3" href="$class_capture.html#ada2b91a69570edbb2bbb22a49c055021" title=" " alt="" coords="193,5,363,32"/>
+<area shape="rect" id="node4" href="$class_usb_display.html#aba74015c7aa95227551b800323400181" title=" " alt="" coords="5,5,141,32"/>
+</map>

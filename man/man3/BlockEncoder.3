@@ -1,0 +1,81 @@
+.TH "BlockEncoder" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BlockEncoder
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Encoder\&.h>\fP
+.SS "公開方法(Public Methods)"
+
+.in +1c
+.ti -1c
+.RI "\fBBlockEncoder\fP ()"
+.br
+.ti -1c
+.RI "\fB~BlockEncoder\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetInputImageGeometry\fP (\fBint\fP width, \fBint\fP height, \fBint\fP pitch)"
+.br
+.ti -1c
+.RI "void \fBSetEncoderQuality\fP (\fBint\fP low, \fBint\fP medium, \fBint\fP high)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBGetQuantTable\fP (unsigned \fBchar\fP *p_table, \fBint\fP len, \fBint\fP index)"
+.br
+.ti -1c
+.RI "unsigned \fBint\fP \fBAnalysis\fP (\fBBYTE\fP *framebuffer, bool first)"
+.br
+.ti -1c
+.RI "unsigned \fBint\fP \fBCompress\fP (\fBBYTE\fP *bitstream)"
+.br
+.ti -1c
+.RI "void \fBToggleScreen\fP ()"
+.br
+.in -1c
+.SH "詳細描述"
+.PP 
+定義在 Encoder\&.h 檔案之第 91 行\&.
+.SH "建構子與解構子說明文件"
+.PP 
+.SS "BlockEncoder::BlockEncoder ()"
+
+.PP
+定義在 Encoder\&.cpp 檔案之第 22 行\&.
+.SS "BlockEncoder::~BlockEncoder ()"
+
+.PP
+定義在 Encoder\&.cpp 檔案之第 63 行\&.
+.SH "函式成員說明文件"
+.PP 
+.SS "unsigned \fBint\fP BlockEncoder::Analysis (\fBBYTE\fP * framebuffer, bool first)"
+
+.PP
+定義在 Encoder\&.cpp 檔案之第 102 行\&.
+.SS "unsigned \fBint\fP BlockEncoder::Compress (\fBBYTE\fP * bitstream)"
+
+.PP
+定義在 Encoder\&.cpp 檔案之第 145 行\&.
+.SS "\fBint\fP BlockEncoder::GetQuantTable (unsigned \fBchar\fP * p_table, \fBint\fP len, \fBint\fP index)\fC [inline]\fP"
+
+.PP
+定義在 Encoder\&.h 檔案之第 157 行\&.
+.SS "void BlockEncoder::SetEncoderQuality (\fBint\fP low, \fBint\fP medium, \fBint\fP high)\fC [inline]\fP"
+
+.PP
+定義在 Encoder\&.h 檔案之第 150 行\&.
+.SS "void BlockEncoder::SetInputImageGeometry (\fBint\fP width, \fBint\fP height, \fBint\fP pitch)"
+
+.PP
+定義在 Encoder\&.cpp 檔案之第 85 行\&.
+.SS "void BlockEncoder::ToggleScreen ()"
+
+.PP
+定義在 Encoder\&.cpp 檔案之第 172 行\&.
+
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

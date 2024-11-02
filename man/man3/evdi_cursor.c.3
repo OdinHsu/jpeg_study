@@ -1,0 +1,142 @@
+.TH "/home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_cursor.c" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_cursor.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <linux/compiler\&.h>\fP
+.br
+\fC#include <linux/mutex\&.h>\fP
+.br
+\fC#include <linux/version\&.h>\fP
+.br
+\fC#include <drm/drm_crtc_helper\&.h>\fP
+.br
+\fC#include 'evdi_cursor\&.h'\fP
+.br
+\fC#include 'evdi_drm_drv\&.h'\fP
+.br
+
+.SS "複合項目"
+
+.in +1c
+.ti -1c
+.RI "struct \fBevdi_cursor\fP"
+.br
+.in -1c
+.SS "函式"
+
+.in +1c
+.ti -1c
+.RI "struct \fBevdi_gem_object\fP * \fBevdi_cursor_gem\fP (struct \fBevdi_cursor\fP *cursor)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_cursor_init\fP (struct \fBevdi_cursor\fP **cursor)"
+.br
+.ti -1c
+.RI "void \fBevdi_cursor_lock\fP (struct \fBevdi_cursor\fP *cursor)"
+.br
+.ti -1c
+.RI "void \fBevdi_cursor_unlock\fP (struct \fBevdi_cursor\fP *cursor)"
+.br
+.ti -1c
+.RI "void \fBevdi_cursor_free\fP (struct \fBevdi_cursor\fP *cursor)"
+.br
+.ti -1c
+.RI "bool \fBevdi_cursor_enabled\fP (struct \fBevdi_cursor\fP *cursor)"
+.br
+.ti -1c
+.RI "void \fBevdi_cursor_enable\fP (struct \fBevdi_cursor\fP *cursor, bool enable)"
+.br
+.ti -1c
+.RI "void \fBevdi_cursor_set\fP (struct \fBevdi_cursor\fP *cursor, struct \fBevdi_gem_object\fP *obj, uint32_t width, uint32_t height, int32_t hot_x, int32_t hot_y, uint32_t pixel_format, uint32_t stride)"
+.br
+.ti -1c
+.RI "void \fBevdi_cursor_move\fP (struct \fBevdi_cursor\fP *cursor, int32_t x, int32_t y)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_cursor_compose_and_copy\fP (struct \fBevdi_cursor\fP *cursor, struct \fBevdi_framebuffer\fP *efb, \fBchar\fP \fB__user\fP *\fBbuffer\fP, \fBint\fP buf_byte_stride)"
+.br
+.ti -1c
+.RI "void \fBevdi_cursor_position\fP (struct \fBevdi_cursor\fP *cursor, int32_t *x, int32_t *y)"
+.br
+.ti -1c
+.RI "void \fBevdi_cursor_hotpoint\fP (struct \fBevdi_cursor\fP *cursor, int32_t *hot_x, int32_t *hot_y)"
+.br
+.ti -1c
+.RI "void \fBevdi_cursor_size\fP (struct \fBevdi_cursor\fP *cursor, uint32_t *width, uint32_t *height)"
+.br
+.ti -1c
+.RI "void \fBevdi_cursor_format\fP (struct \fBevdi_cursor\fP *cursor, uint32_t *format)"
+.br
+.ti -1c
+.RI "void \fBevdi_cursor_stride\fP (struct \fBevdi_cursor\fP *cursor, uint32_t *stride)"
+.br
+.in -1c
+.SH "函式說明文件"
+.PP 
+.SS "\fBint\fP evdi_cursor_compose_and_copy (struct \fBevdi_cursor\fP * cursor, struct \fBevdi_framebuffer\fP * efb, \fBchar\fP \fB__user\fP * buffer, \fBint\fP buf_byte_stride)"
+
+.PP
+定義在 evdi_cursor\&.c 檔案之第 187 行\&.
+.SS "void evdi_cursor_enable (struct \fBevdi_cursor\fP * cursor, bool enable)"
+
+.PP
+定義在 evdi_cursor\&.c 檔案之第 109 行\&.
+.SS "bool evdi_cursor_enabled (struct \fBevdi_cursor\fP * cursor)"
+
+.PP
+定義在 evdi_cursor\&.c 檔案之第 104 行\&.
+.SS "void evdi_cursor_format (struct \fBevdi_cursor\fP * cursor, uint32_t * format)"
+
+.PP
+定義在 evdi_cursor\&.c 檔案之第 282 行\&.
+.SS "void evdi_cursor_free (struct \fBevdi_cursor\fP * cursor)"
+
+.PP
+定義在 evdi_cursor\&.c 檔案之第 96 行\&.
+.SS "struct \fBevdi_gem_object\fP* evdi_cursor_gem (struct \fBevdi_cursor\fP * cursor)"
+
+.PP
+定義在 evdi_cursor\&.c 檔案之第 67 行\&.
+.SS "void evdi_cursor_hotpoint (struct \fBevdi_cursor\fP * cursor, int32_t * hot_x, int32_t * hot_y)"
+
+.PP
+定義在 evdi_cursor\&.c 檔案之第 268 行\&.
+.SS "\fBint\fP evdi_cursor_init (struct \fBevdi_cursor\fP ** cursor)"
+
+.PP
+定義在 evdi_cursor\&.c 檔案之第 72 行\&.
+.SS "void evdi_cursor_lock (struct \fBevdi_cursor\fP * cursor)"
+
+.PP
+定義在 evdi_cursor\&.c 檔案之第 86 行\&.
+.SS "void \fBevdi_cursor_move\fP (struct \fBevdi_cursor\fP * cursor, int32_t x, int32_t y)"
+
+.PP
+定義在 evdi_cursor\&.c 檔案之第 147 行\&.
+.SS "void evdi_cursor_position (struct \fBevdi_cursor\fP * cursor, int32_t * x, int32_t * y)"
+
+.PP
+定義在 evdi_cursor\&.c 檔案之第 262 行\&.
+.SS "void \fBevdi_cursor_set\fP (struct \fBevdi_cursor\fP * cursor, struct \fBevdi_gem_object\fP * obj, uint32_t width, uint32_t height, int32_t hot_x, int32_t hot_y, uint32_t pixel_format, uint32_t stride)"
+
+.PP
+定義在 evdi_cursor\&.c 檔案之第 118 行\&.
+.SS "void evdi_cursor_size (struct \fBevdi_cursor\fP * cursor, uint32_t * width, uint32_t * height)"
+
+.PP
+定義在 evdi_cursor\&.c 檔案之第 275 行\&.
+.SS "void evdi_cursor_stride (struct \fBevdi_cursor\fP * cursor, uint32_t * stride)"
+
+.PP
+定義在 evdi_cursor\&.c 檔案之第 287 行\&.
+.SS "void evdi_cursor_unlock (struct \fBevdi_cursor\fP * cursor)"
+
+.PP
+定義在 evdi_cursor\&.c 檔案之第 91 行\&.
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

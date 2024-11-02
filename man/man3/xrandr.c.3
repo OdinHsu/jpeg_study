@@ -1,0 +1,375 @@
+.TH "/home/odin/Desktop/program/usbdisp_linux/libusbdisp/xrandr.c" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/odin/Desktop/program/usbdisp_linux/libusbdisp/xrandr.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <X11/Xlib\&.h>\fP
+.br
+\fC#include <X11/Xlibint\&.h>\fP
+.br
+\fC#include <X11/Xproto\&.h>\fP
+.br
+\fC#include <X11/Xatom\&.h>\fP
+.br
+\fC#include <X11/extensions/Xrandr\&.h>\fP
+.br
+\fC#include <X11/extensions/Xrender\&.h>\fP
+.br
+\fC#include <strings\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <stdint\&.h>\fP
+.br
+\fC#include <inttypes\&.h>\fP
+.br
+\fC#include <stdarg\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include 'xrandr\&.h'\fP
+.br
+\fC#include <assert\&.h>\fP
+.br
+\fC#include <sys/shm\&.h>\fP
+.br
+
+.SS "複合項目"
+
+.in +1c
+.ti -1c
+.RI "struct \fBrectangle_t\fP"
+.br
+.ti -1c
+.RI "struct \fBbox_t\fP"
+.br
+.ti -1c
+.RI "struct \fBpoint_t\fP"
+.br
+.ti -1c
+.RI "struct \fBname_t\fP"
+.br
+.ti -1c
+.RI "struct \fB_transform\fP"
+.br
+.ti -1c
+.RI "struct \fB_crtc\fP"
+.br
+.ti -1c
+.RI "struct \fB_output_prop\fP"
+.br
+.ti -1c
+.RI "struct \fB_output\fP"
+.br
+.ti -1c
+.RI "struct \fB_umode\fP"
+.br
+.ti -1c
+.RI "struct \fB_provider\fP"
+.br
+.ti -1c
+.RI "struct \fB_monitors\fP"
+.br
+.ti -1c
+.RI "struct \fB_umonitor\fP"
+.br
+.in -1c
+.SS "定義"
+
+.in +1c
+.ti -1c
+.RI "#define \fBOUTPUT_NAME\fP   1"
+.br
+.ti -1c
+.RI "#define \fBCRTC_OFF\fP   2"
+.br
+.ti -1c
+.RI "#define \fBCRTC_UNSET\fP   3"
+.br
+.ti -1c
+.RI "#define \fBCRTC_INDEX\fP   0x40000000"
+.br
+.ti -1c
+.RI "#define \fBMODE_NAME\fP   1"
+.br
+.ti -1c
+.RI "#define \fBMODE_OFF\fP   2"
+.br
+.ti -1c
+.RI "#define \fBMODE_UNSET\fP   3"
+.br
+.ti -1c
+.RI "#define \fBMODE_PREF\fP   4"
+.br
+.ti -1c
+.RI "#define \fBPOS_UNSET\fP   \-1"
+.br
+.ti -1c
+.RI "#define \fBNAME\fP   'screenshot'"
+.br
+.ti -1c
+.RI "#define \fBBPP\fP   4"
+.br
+.in -1c
+.SS "型態定義"
+
+.in +1c
+.ti -1c
+.RI "typedef enum \fB_relation\fP \fBrelation_t\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_changes\fP \fBchanges_t\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_name_kind\fP \fBname_kind_t\fP"
+.br
+.ti -1c
+.RI "typedef struct \fB_crtc\fP \fBcrtc_t\fP"
+.br
+.ti -1c
+.RI "typedef struct \fB_output\fP \fBoutput_t\fP"
+.br
+.ti -1c
+.RI "typedef struct \fB_transform\fP \fBtransform_t\fP"
+.br
+.ti -1c
+.RI "typedef struct \fB_umode\fP \fBumode_t\fP"
+.br
+.ti -1c
+.RI "typedef struct \fB_output_prop\fP \fBoutput_prop_t\fP"
+.br
+.ti -1c
+.RI "typedef struct \fB_provider\fP \fBprovider_t\fP"
+.br
+.ti -1c
+.RI "typedef struct \fB_monitors\fP \fBmonitors_t\fP"
+.br
+.ti -1c
+.RI "typedef struct \fB_umonitor\fP \fBumonitor_t\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_umode_action\fP \fBumode_action_t\fP"
+.br
+.in -1c
+.SS "列舉型態"
+
+.in +1c
+.ti -1c
+.RI "enum \fB_relation\fP { \fBrelation_left_of\fP, \fBrelation_right_of\fP, \fBrelation_above\fP, \fBrelation_below\fP, \fBrelation_same_as\fP }"
+.br
+.ti -1c
+.RI "enum \fB_changes\fP { \fBchanges_none\fP = 0, \fBchanges_crtc\fP = (1 << 0), \fBchanges_mode\fP = (1 << 1), \fBchanges_relation\fP = (1 << 2), \fBchanges_position\fP = (1 << 3), \fBchanges_rotation\fP = (1 << 4), \fBchanges_reflection\fP = (1 << 5), \fBchanges_automatic\fP = (1 << 6), \fBchanges_refresh\fP = (1 << 7), \fBchanges_property\fP = (1 << 8), \fBchanges_transform\fP = (1 << 9), \fBchanges_panning\fP = (1 << 10), \fBchanges_gamma\fP = (1 << 11), \fBchanges_primary\fP = (1 << 12), \fBchanges_filter\fP = (1 << 13) }"
+.br
+.ti -1c
+.RI "enum \fB_name_kind\fP { \fBname_none\fP = 0, \fBname_string\fP = (1 << 0), \fBname_xid\fP = (1 << 1), \fBname_index\fP = (1 << 2), \fBname_preferred\fP = (1 << 3) }"
+.br
+.ti -1c
+.RI "enum \fB_umode_action\fP { \fBumode_create\fP, \fBumode_destroy\fP, \fBumode_add\fP, \fBumode_delete\fP }"
+.br
+.in -1c
+.SS "函式"
+
+.in +1c
+.ti -1c
+.RI "void \fBinitimage\fP (struct \fBshmimage\fP *image)"
+.br
+.ti -1c
+.RI "void \fBgetrootwindow\fP (Display *dsp, struct \fBshmimage\fP *image, \fBint\fP x_pos, \fBint\fP y_pos)"
+.br
+.in -1c
+.SH "定義巨集說明文件"
+.PP 
+.SS "#define BPP   4"
+
+.PP
+定義在 xrandr\&.c 檔案之第 1190 行\&.
+.SS "#define CRTC_INDEX   0x40000000"
+
+.PP
+定義在 xrandr\&.c 檔案之第 311 行\&.
+.SS "#define CRTC_OFF   2"
+
+.PP
+定義在 xrandr\&.c 檔案之第 309 行\&.
+.SS "#define CRTC_UNSET   3"
+
+.PP
+定義在 xrandr\&.c 檔案之第 310 行\&.
+.SS "#define MODE_NAME   1"
+
+.PP
+定義在 xrandr\&.c 檔案之第 313 行\&.
+.SS "#define MODE_OFF   2"
+
+.PP
+定義在 xrandr\&.c 檔案之第 314 行\&.
+.SS "#define MODE_PREF   4"
+
+.PP
+定義在 xrandr\&.c 檔案之第 316 行\&.
+.SS "#define MODE_UNSET   3"
+
+.PP
+定義在 xrandr\&.c 檔案之第 315 行\&.
+.SS "#define NAME   'screenshot'"
+
+.PP
+定義在 xrandr\&.c 檔案之第 1189 行\&.
+.SS "#define OUTPUT_NAME   1"
+
+.PP
+定義在 xrandr\&.c 檔案之第 307 行\&.
+.SS "#define POS_UNSET   \-1"
+
+.PP
+定義在 xrandr\&.c 檔案之第 318 行\&.
+.SH "型態定義說明文件"
+.PP 
+.SS "typedef enum \fB_changes\fP \fBchanges_t\fP"
+
+.SS "typedef struct \fB_crtc\fP \fBcrtc_t\fP"
+
+.PP
+定義在 xrandr\&.c 檔案之第 115 行\&.
+.SS "typedef struct \fB_monitors\fP \fBmonitors_t\fP"
+
+.PP
+定義在 xrandr\&.c 檔案之第 115 行\&.
+.SS "typedef enum \fB_name_kind\fP \fBname_kind_t\fP"
+
+.SS "typedef struct \fB_output_prop\fP \fBoutput_prop_t\fP"
+
+.PP
+定義在 xrandr\&.c 檔案之第 115 行\&.
+.SS "typedef struct \fB_output\fP \fBoutput_t\fP"
+
+.PP
+定義在 xrandr\&.c 檔案之第 115 行\&.
+.SS "typedef struct \fB_provider\fP \fBprovider_t\fP"
+
+.PP
+定義在 xrandr\&.c 檔案之第 115 行\&.
+.SS "typedef enum \fB_relation\fP \fBrelation_t\fP"
+
+.SS "typedef struct \fB_transform\fP \fBtransform_t\fP"
+
+.PP
+定義在 xrandr\&.c 檔案之第 115 行\&.
+.SS "typedef enum \fB_umode_action\fP \fBumode_action_t\fP"
+
+.SS "typedef struct \fB_umode\fP \fBumode_t\fP"
+
+.PP
+定義在 xrandr\&.c 檔案之第 115 行\&.
+.SS "typedef struct \fB_umonitor\fP \fBumonitor_t\fP"
+
+.PP
+定義在 xrandr\&.c 檔案之第 115 行\&.
+.SH "列舉型態說明文件"
+.PP 
+.SS "enum \fB_changes\fP"
+
+.PP
+\fB列舉值\fP
+.in +1c
+.TP
+\fB\fIchanges_none \fP\fP
+.TP
+\fB\fIchanges_crtc \fP\fP
+.TP
+\fB\fIchanges_mode \fP\fP
+.TP
+\fB\fIchanges_relation \fP\fP
+.TP
+\fB\fIchanges_position \fP\fP
+.TP
+\fB\fIchanges_rotation \fP\fP
+.TP
+\fB\fIchanges_reflection \fP\fP
+.TP
+\fB\fIchanges_automatic \fP\fP
+.TP
+\fB\fIchanges_refresh \fP\fP
+.TP
+\fB\fIchanges_property \fP\fP
+.TP
+\fB\fIchanges_transform \fP\fP
+.TP
+\fB\fIchanges_panning \fP\fP
+.TP
+\fB\fIchanges_gamma \fP\fP
+.TP
+\fB\fIchanges_primary \fP\fP
+.TP
+\fB\fIchanges_filter \fP\fP
+.PP
+定義在 xrandr\&.c 檔案之第 152 行\&.
+.SS "enum \fB_name_kind\fP"
+
+.PP
+\fB列舉值\fP
+.in +1c
+.TP
+\fB\fIname_none \fP\fP
+.TP
+\fB\fIname_string \fP\fP
+.TP
+\fB\fIname_xid \fP\fP
+.TP
+\fB\fIname_index \fP\fP
+.TP
+\fB\fIname_preferred \fP\fP
+.PP
+定義在 xrandr\&.c 檔案之第 170 行\&.
+.SS "enum \fB_relation\fP"
+
+.PP
+\fB列舉值\fP
+.in +1c
+.TP
+\fB\fIrelation_left_of \fP\fP
+.TP
+\fB\fIrelation_right_of \fP\fP
+.TP
+\fB\fIrelation_above \fP\fP
+.TP
+\fB\fIrelation_below \fP\fP
+.TP
+\fB\fIrelation_same_as \fP\fP
+.PP
+定義在 xrandr\&.c 檔案之第 132 行\&.
+.SS "enum \fB_umode_action\fP"
+
+.PP
+\fB列舉值\fP
+.in +1c
+.TP
+\fB\fIumode_create \fP\fP
+.TP
+\fB\fIumode_destroy \fP\fP
+.TP
+\fB\fIumode_add \fP\fP
+.TP
+\fB\fIumode_delete \fP\fP
+.PP
+定義在 xrandr\&.c 檔案之第 267 行\&.
+.SH "函式說明文件"
+.PP 
+.SS "void getrootwindow (Display * dsp, struct \fBshmimage\fP * image, \fBint\fP x_pos, \fBint\fP y_pos)"
+
+.PP
+定義在 xrandr\&.c 檔案之第 1259 行\&.
+.SS "void initimage (struct \fBshmimage\fP * image)"
+
+.PP
+定義在 xrandr\&.c 檔案之第 1191 行\&.
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

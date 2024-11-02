@@ -1,0 +1,92 @@
+.TH "/home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_platform_dev.c" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_platform_dev.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'evdi_platform_dev\&.h'\fP
+.br
+\fC#include <linux/version\&.h>\fP
+.br
+\fC#include <linux/dma\-mapping\&.h>\fP
+.br
+\fC#include <linux/platform_device\&.h>\fP
+.br
+\fC#include <linux/slab\&.h>\fP
+.br
+\fC#include <linux/iommu\&.h>\fP
+.br
+\fC#include 'evdi_platform_drv\&.h'\fP
+.br
+\fC#include 'evdi_debug\&.h'\fP
+.br
+\fC#include 'evdi_drm_drv\&.h'\fP
+.br
+
+.SS "複合項目"
+
+.in +1c
+.ti -1c
+.RI "struct \fBevdi_platform_device_data\fP"
+.br
+.in -1c
+.SS "函式"
+
+.in +1c
+.ti -1c
+.RI "struct platform_device * \fBevdi_platform_dev_create\fP (struct platform_device_info *info)"
+.br
+.ti -1c
+.RI "void \fBevdi_platform_dev_destroy\fP (struct platform_device *dev)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_platform_device_probe\fP (struct platform_device *pdev)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_platform_device_remove\fP (struct platform_device *pdev)"
+.br
+.ti -1c
+.RI "bool \fBevdi_platform_device_is_free\fP (struct platform_device *pdev)"
+.br
+.ti -1c
+.RI "void \fBevdi_platform_device_link\fP (struct platform_device *pdev, struct device *parent)"
+.br
+.ti -1c
+.RI "void \fBevdi_platform_device_unlink_if_linked_with\fP (struct platform_device *pdev, struct device *parent)"
+.br
+.in -1c
+.SH "函式說明文件"
+.PP 
+.SS "struct platform_device* evdi_platform_dev_create (struct platform_device_info * info)"
+
+.PP
+定義在 evdi_platform_dev\&.c 檔案之第 38 行\&.
+.SS "void evdi_platform_dev_destroy (struct platform_device * dev)"
+
+.PP
+定義在 evdi_platform_dev\&.c 檔案之第 53 行\&.
+.SS "bool evdi_platform_device_is_free (struct platform_device * pdev)"
+
+.PP
+定義在 evdi_platform_dev\&.c 檔案之第 111 行\&.
+.SS "void evdi_platform_device_link (struct platform_device * pdev, struct device * parent)"
+
+.PP
+定義在 evdi_platform_dev\&.c 檔案之第 122 行\&.
+.SS "\fBint\fP evdi_platform_device_probe (struct platform_device * pdev)"
+
+.PP
+定義在 evdi_platform_dev\&.c 檔案之第 59 行\&.
+.SS "\fBint\fP evdi_platform_device_remove (struct platform_device * pdev)"
+
+.PP
+定義在 evdi_platform_dev\&.c 檔案之第 100 行\&.
+.SS "void evdi_platform_device_unlink_if_linked_with (struct platform_device * pdev, struct device * parent)"
+
+.PP
+定義在 evdi_platform_dev\&.c 檔案之第 146 行\&.
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

@@ -1,0 +1,79 @@
+.TH "evdi_event_context" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+evdi_event_context
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <evdi_lib\&.h>\fP
+.SS "公開屬性"
+
+.in +1c
+.ti -1c
+.RI "void(* \fBdpms_handler\fP )(\fBint\fP dpms_mode, void *\fBuser_data\fP)"
+.br
+.ti -1c
+.RI "void(* \fBmode_changed_handler\fP )(struct \fBevdi_mode\fP mode, void *\fBuser_data\fP)"
+.br
+.ti -1c
+.RI "void(* \fBupdate_ready_handler\fP )(\fBint\fP buffer_to_be_updated, void *\fBuser_data\fP)"
+.br
+.ti -1c
+.RI "void(* \fBcrtc_state_handler\fP )(\fBint\fP state, void *\fBuser_data\fP)"
+.br
+.ti -1c
+.RI "void(* \fBcursor_set_handler\fP )(struct \fBevdi_cursor_set\fP cursor_set, void *\fBuser_data\fP)"
+.br
+.ti -1c
+.RI "void(* \fBcursor_move_handler\fP )(struct \fBevdi_cursor_move\fP cursor_move, void *\fBuser_data\fP)"
+.br
+.ti -1c
+.RI "void(* \fBddcci_data_handler\fP )(struct \fBevdi_ddcci_data\fP ddcci_data, void *\fBuser_data\fP)"
+.br
+.ti -1c
+.RI "void * \fBuser_data\fP"
+.br
+.in -1c
+.SH "詳細描述"
+.PP 
+定義在 evdi_lib\&.h 檔案之第 81 行\&.
+.SH "資料成員說明文件"
+.PP 
+.SS "void(* evdi_event_context::crtc_state_handler) (\fBint\fP state, void *\fBuser_data\fP)"
+
+.PP
+定義在 evdi_lib\&.h 檔案之第 85 行\&.
+.SS "void(* evdi_event_context::cursor_move_handler) (struct \fBevdi_cursor_move\fP cursor_move, void *\fBuser_data\fP)"
+
+.PP
+定義在 evdi_lib\&.h 檔案之第 88 行\&.
+.SS "void(* evdi_event_context::cursor_set_handler) (struct \fBevdi_cursor_set\fP cursor_set, void *\fBuser_data\fP)"
+
+.PP
+定義在 evdi_lib\&.h 檔案之第 86 行\&.
+.SS "void(* evdi_event_context::ddcci_data_handler) (struct \fBevdi_ddcci_data\fP ddcci_data, void *\fBuser_data\fP)"
+
+.PP
+定義在 evdi_lib\&.h 檔案之第 90 行\&.
+.SS "void(* evdi_event_context::dpms_handler) (\fBint\fP dpms_mode, void *\fBuser_data\fP)"
+
+.PP
+定義在 evdi_lib\&.h 檔案之第 82 行\&.
+.SS "void(* evdi_event_context::mode_changed_handler) (struct \fBevdi_mode\fP mode, void *\fBuser_data\fP)"
+
+.PP
+定義在 evdi_lib\&.h 檔案之第 83 行\&.
+.SS "void(* evdi_event_context::update_ready_handler) (\fBint\fP buffer_to_be_updated, void *\fBuser_data\fP)"
+
+.PP
+定義在 evdi_lib\&.h 檔案之第 84 行\&.
+.SS "void* evdi_event_context::user_data"
+
+.PP
+定義在 evdi_lib\&.h 檔案之第 92 行\&.
+
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

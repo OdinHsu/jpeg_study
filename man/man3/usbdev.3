@@ -1,0 +1,194 @@
+.TH "usbdev" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+usbdev
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <usbdev\&.h>\fP
+.PP
+繼承自 \fBClientUSB\fP\&.
+.SS "公開方法(Public Methods)"
+
+.in +1c
+.ti -1c
+.RI "\fBusbdev\fP (\fBint\fP fd)"
+.br
+.ti -1c
+.RI "\fBusbdev\fP (libusb_device *dev)"
+.br
+.ti -1c
+.RI "virtual \fB~usbdev\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetHandle\fP (libusb_device_handle *\fBhandle\fP)"
+.br
+.ti -1c
+.RI "libusb_device_handle * \fBGetHandle\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetEndpoint\fP (\fBshort\fP interface, \fBint\fP address)"
+.br
+.ti -1c
+.RI "void \fBSetbcdUSB\fP (\fBshort\fP bcdUSB)"
+.br
+.ti -1c
+.RI "virtual \fBBOOL\fP \fBGetStatus\fP (\fBUSHORT\fP *status)"
+.br
+.ti -1c
+.RI "virtual \fBBOOL\fP \fBGetEDIDSize\fP (\fBUSHORT\fP *size)"
+.br
+.ti -1c
+.RI "virtual \fBBOOL\fP \fBGetEDIDData\fP (\fBUCHAR\fP *buff, \fBint\fP bank)"
+.br
+.ti -1c
+.RI "virtual \fBBOOL\fP \fBGetTargetVersion\fP (\fBchar\fP *data, \fBint\fP len)"
+.br
+.ti -1c
+.RI "virtual \fBBOOL\fP \fBSetResolution\fP (\fBULONG\fP width, \fBULONG\fP height)"
+.br
+.ti -1c
+.RI "virtual \fBBOOL\fP \fBSetQuantTable\fP (\fBUCHAR\fP *table, \fBULONG\fP len, \fBUSHORT\fP index)"
+.br
+.ti -1c
+.RI "virtual \fBBOOL\fP \fBSetCommand\fP (\fBUSHORT\fP cmd)"
+.br
+.ti -1c
+.RI "virtual \fBBOOL\fP \fBWrite\fP (\fBUCHAR\fP *data, \fBULONG\fP SendLen, \fBULONG\fP *ActLen)"
+.br
+.ti -1c
+.RI "virtual \fBUSHORT\fP \fBgetUSBVersion\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBBOOL\fP \fBSetISPmode\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBBOOL\fP \fBSetReConfig\fP (\fBUSHORT\fP flag)"
+.br
+.ti -1c
+.RI "virtual \fBBOOL\fP \fBGetPowerStatus\fP (\fBUSHORT\fP *status)"
+.br
+.ti -1c
+.RI "virtual void \fBResetDevice\fP ()"
+.br
+.in -1c
+.SS "額外的繼承成員"
+.SH "詳細描述"
+.PP 
+定義在 usbdev\&.h 檔案之第 7 行\&.
+.SH "建構子與解構子說明文件"
+.PP 
+.SS "usbdev::usbdev (\fBint\fP fd)"
+
+.PP
+定義在 usbdev\&.cpp 檔案之第 57 行\&.
+.SS "usbdev::usbdev (libusb_device * dev)"
+
+.PP
+定義在 usbdev\&.cpp 檔案之第 99 行\&.
+.SS "usbdev::~usbdev ()\fC [virtual]\fP"
+
+.PP
+定義在 usbdev\&.cpp 檔案之第 151 行\&.
+.SH "函式成員說明文件"
+.PP 
+.SS "\fBBOOL\fP usbdev::GetEDIDData (\fBUCHAR\fP * buff, \fBint\fP bank)\fC [virtual]\fP"
+
+.PP
+實作 \fBClientUSB\fP\&.
+.PP
+定義在 usbdev\&.cpp 檔案之第 217 行\&.
+.SS "\fBBOOL\fP usbdev::GetEDIDSize (\fBUSHORT\fP * size)\fC [virtual]\fP"
+
+.PP
+實作 \fBClientUSB\fP\&.
+.PP
+定義在 usbdev\&.cpp 檔案之第 201 行\&.
+.SS "libusb_device_handle* usbdev::GetHandle ()\fC [inline]\fP"
+
+.PP
+定義在 usbdev\&.h 檔案之第 15 行\&.
+.SS "\fBBOOL\fP usbdev::GetPowerStatus (\fBUSHORT\fP * status)\fC [virtual]\fP"
+
+.PP
+實作 \fBClientUSB\fP\&.
+.PP
+定義在 usbdev\&.cpp 檔案之第 250 行\&.
+.SS "\fBBOOL\fP usbdev::GetStatus (\fBUSHORT\fP * status)\fC [virtual]\fP"
+
+.PP
+實作 \fBClientUSB\fP\&.
+.PP
+定義在 usbdev\&.cpp 檔案之第 183 行\&.
+.SS "\fBBOOL\fP usbdev::GetTargetVersion (\fBchar\fP * data, \fBint\fP len)\fC [virtual]\fP"
+
+.PP
+實作 \fBClientUSB\fP\&.
+.PP
+定義在 usbdev\&.cpp 檔案之第 233 行\&.
+.SS "\fBUSHORT\fP usbdev::getUSBVersion ()\fC [virtual]\fP"
+
+.PP
+實作 \fBClientUSB\fP\&.
+.PP
+定義在 usbdev\&.cpp 檔案之第 267 行\&.
+.SS "void usbdev::ResetDevice ()\fC [virtual]\fP"
+
+.PP
+實作 \fBClientUSB\fP\&.
+.PP
+定義在 usbdev\&.cpp 檔案之第 414 行\&.
+.SS "void usbdev::SetbcdUSB (\fBshort\fP bcdUSB)"
+
+.PP
+定義在 usbdev\&.cpp 檔案之第 177 行\&.
+.SS "\fBBOOL\fP usbdev::SetCommand (\fBUSHORT\fP cmd)\fC [virtual]\fP"
+
+.PP
+實作 \fBClientUSB\fP\&.
+.PP
+定義在 usbdev\&.cpp 檔案之第 319 行\&.
+.SS "void usbdev::SetEndpoint (\fBshort\fP interface, \fBint\fP address)"
+
+.PP
+定義在 usbdev\&.cpp 檔案之第 170 行\&.
+.SS "void usbdev::SetHandle (libusb_device_handle * handle)"
+
+.PP
+定義在 usbdev\&.cpp 檔案之第 164 行\&.
+.SS "\fBBOOL\fP usbdev::SetISPmode ()\fC [virtual]\fP"
+
+.PP
+實作 \fBClientUSB\fP\&.
+.PP
+定義在 usbdev\&.cpp 檔案之第 374 行\&.
+.SS "\fBBOOL\fP usbdev::SetQuantTable (\fBUCHAR\fP * table, \fBULONG\fP len, \fBUSHORT\fP index)\fC [virtual]\fP"
+
+.PP
+實作 \fBClientUSB\fP\&.
+.PP
+定義在 usbdev\&.cpp 檔案之第 354 行\&.
+.SS "\fBBOOL\fP usbdev::SetReConfig (\fBUSHORT\fP flag)\fC [virtual]\fP"
+
+.PP
+實作 \fBClientUSB\fP\&.
+.PP
+定義在 usbdev\&.cpp 檔案之第 394 行\&.
+.SS "\fBBOOL\fP usbdev::SetResolution (\fBULONG\fP width, \fBULONG\fP height)\fC [virtual]\fP"
+
+.PP
+實作 \fBClientUSB\fP\&.
+.PP
+定義在 usbdev\&.cpp 檔案之第 272 行\&.
+.SS "\fBBOOL\fP usbdev::Write (\fBUCHAR\fP * data, \fBULONG\fP SendLen, \fBULONG\fP * ActLen)\fC [virtual]\fP"
+
+.PP
+實作 \fBClientUSB\fP\&.
+.PP
+定義在 usbdev\&.cpp 檔案之第 338 行\&.
+
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

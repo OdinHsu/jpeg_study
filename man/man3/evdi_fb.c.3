@@ -1,0 +1,64 @@
+.TH "/home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_fb.c" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_fb.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <linux/slab\&.h>\fP
+.br
+\fC#include <linux/dma\-buf\&.h>\fP
+.br
+\fC#include <linux/version\&.h>\fP
+.br
+\fC#include <drm/drm_crtc\&.h>\fP
+.br
+\fC#include <drm/drm_crtc_helper\&.h>\fP
+.br
+\fC#include <drm/drm_fb_helper\&.h>\fP
+.br
+\fC#include <drm/drm_atomic\&.h>\fP
+.br
+\fC#include <drm/drm_damage_helper\&.h>\fP
+.br
+\fC#include 'evdi_drm_drv\&.h'\fP
+.br
+
+.SS "複合項目"
+
+.in +1c
+.ti -1c
+.RI "struct \fBevdi_fbdev\fP"
+.br
+.in -1c
+.SS "函式"
+
+.in +1c
+.ti -1c
+.RI "struct drm_clip_rect \fBevdi_framebuffer_sanitize_rect\fP (const struct \fBevdi_framebuffer\fP *fb, const struct drm_clip_rect *dirty_rect)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_fb_get_bpp\fP (uint32_t format)"
+.br
+.ti -1c
+.RI "struct drm_framebuffer * \fBevdi_fb_user_fb_create\fP (struct drm_device *dev, struct drm_file *file, const struct drm_mode_fb_cmd2 *mode_cmd)"
+.br
+.in -1c
+.SH "函式說明文件"
+.PP 
+.SS "\fBint\fP evdi_fb_get_bpp (uint32_t format)"
+
+.PP
+定義在 evdi_fb\&.c 檔案之第 553 行\&.
+.SS "struct drm_framebuffer* evdi_fb_user_fb_create (struct drm_device * dev, struct drm_file * file, const struct drm_mode_fb_cmd2 * mode_cmd)"
+
+.PP
+定義在 evdi_fb\&.c 檔案之第 562 行\&.
+.SS "struct drm_clip_rect evdi_framebuffer_sanitize_rect (const struct \fBevdi_framebuffer\fP * fb, const struct drm_clip_rect * dirty_rect)"
+
+.PP
+定義在 evdi_fb\&.c 檔案之第 1 行\&.
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

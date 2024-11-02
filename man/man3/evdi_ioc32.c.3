@@ -1,0 +1,63 @@
+.TH "/home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_ioc32.c" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_ioc32.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <linux/compat\&.h>\fP
+.br
+\fC#include <linux/version\&.h>\fP
+.br
+\fC#include <drm/drm_ioctl\&.h>\fP
+.br
+\fC#include <drm/drm_edid\&.h>\fP
+.br
+\fC#include 'evdi_drm\&.h'\fP
+.br
+\fC#include 'evdi_drm_drv\&.h'\fP
+.br
+
+.SS "複合項目"
+
+.in +1c
+.ti -1c
+.RI "struct \fBdrm_evdi_connect32\fP"
+.br
+.ti -1c
+.RI "struct \fBdrm_evdi_grabpix32\fP"
+.br
+.in -1c
+.SS "函式"
+
+.in +1c
+.ti -1c
+.RI "long \fBevdi_compat_ioctl\fP (struct file *filp, unsigned \fBint\fP cmd, unsigned long arg)"
+.br
+.in -1c
+.SH "函式說明文件"
+.PP 
+.SS "long evdi_compat_ioctl (struct file * filp, unsigned \fBint\fP cmd, unsigned long arg)"
+Called whenever a 32-bit process running under a 64-bit kernel performs an ioctl on /dev/dri/card<n>\&.
+.PP
+\fB參數\fP
+.RS 4
+\fIfilp\fP file pointer\&. 
+.br
+\fIcmd\fP command\&. 
+.br
+\fIarg\fP user argument\&. 
+.RE
+.PP
+\fB傳回值\fP
+.RS 4
+zero on success or negative number on failure\&. 
+.RE
+.PP
+
+.PP
+定義在 evdi_ioc32\&.c 檔案之第 137 行\&.
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

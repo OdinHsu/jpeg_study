@@ -1,0 +1,410 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: /home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_cursor.c 原始程式檔</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 產生者: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜尋','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜尋');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_9075f4783833d2193daf99d175bda543.html">usbdisp_linux</a></li><li class="navelem"><a class="el" href="dir_9a57f247e9479574bdd4d89e6fadae2c.html">libusbdisp</a></li><li class="navelem"><a class="el" href="dir_c177418391c6082701191d849c92e04e.html">deb_install</a></li><li class="navelem"><a class="el" href="dir_9beb4c8f8cede0cdbcde00f25fd8d8b8.html">com.racertech.usbdisp-1.0.0</a></li><li class="navelem"><a class="el" href="dir_c556d2293237b66c763aa1c38400309a.html">opt</a></li><li class="navelem"><a class="el" href="dir_98656f11af99d476e6250cd584e59b42.html">apps</a></li><li class="navelem"><a class="el" href="dir_365d2588cc5b1a689601eb68794b1216.html">com.racertech.usbdisp</a></li><li class="navelem"><a class="el" href="dir_74b907b0cf0dd8424a599bb4aefb2ba6.html">files</a></li><li class="navelem"><a class="el" href="dir_501b6d2d1a5ea8e4a705bf28822605ee.html">evdi</a></li><li class="navelem"><a class="el" href="dir_611f9203c5b70a3412d8aed75ef95d23.html">module</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">evdi_cursor.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="evdi__cursor_8c.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// SPDX-License-Identifier: GPL-2.0-only</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * evdi_cursor.c</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Copyright (c) 2016 The Chromium OS Authors</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Copyright (c) 2016 - 2020 DisplayLink (UK) Ltd.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * This program is free software; you can redistribute  it and/or modify it</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * under  the terms of  the GNU General  Public License as published by the</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * Free Software Foundation;  either version 2 of the  License, or (at your</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * option) any later version.</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * This program is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;linux/compiler.h&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;linux/mutex.h&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;linux/version.h&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#if KERNEL_VERSION(5, 5, 0) &lt;= LINUX_VERSION_CODE || defined(EL8)</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;drm/drmP.h&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;drm/drm_crtc_helper.h&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="evdi__cursor_8h.html">evdi_cursor.h</a>&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="evdi__drm__drv_8h.html">evdi_drm_drv.h</a>&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> * EVDI drm cursor private structure.</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="structevdi__cursor.html">   38</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structevdi__cursor.html">evdi_cursor</a> {</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="structevdi__cursor.html#aca842261db2a95e8a54fb49b3b7b8303">   39</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structevdi__cursor.html#aca842261db2a95e8a54fb49b3b7b8303">enabled</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="structevdi__cursor.html#a4e7d393fc000b7f155cc20a6c5d9b1dc">   40</a></span>&#160;    int32_t <a class="code" href="structevdi__cursor.html#a4e7d393fc000b7f155cc20a6c5d9b1dc">x</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structevdi__cursor.html#a784660e7a84626eb6cc9cc1d684908e3">   41</a></span>&#160;    int32_t <a class="code" href="structevdi__cursor.html#a784660e7a84626eb6cc9cc1d684908e3">y</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="structevdi__cursor.html#a6fb7c9780f56af5393aa804f4eb19a52">   42</a></span>&#160;    uint32_t <a class="code" href="structevdi__cursor.html#a6fb7c9780f56af5393aa804f4eb19a52">width</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structevdi__cursor.html#a99309aaa702e1b724a016c2e2e23fe33">   43</a></span>&#160;    uint32_t <a class="code" href="structevdi__cursor.html#a99309aaa702e1b724a016c2e2e23fe33">height</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="structevdi__cursor.html#acf6c3829f30abbc7eda7760661281eea">   44</a></span>&#160;    int32_t <a class="code" href="structevdi__cursor.html#acf6c3829f30abbc7eda7760661281eea">hot_x</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="structevdi__cursor.html#a989cade39e5d1142cd1c5ba3f395fe3e">   45</a></span>&#160;    int32_t <a class="code" href="structevdi__cursor.html#a989cade39e5d1142cd1c5ba3f395fe3e">hot_y</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="structevdi__cursor.html#acf587f84b25770a66066c462c62883e9">   46</a></span>&#160;    uint32_t <a class="code" href="structevdi__cursor.html#acf587f84b25770a66066c462c62883e9">pixel_format</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="structevdi__cursor.html#a8bf92a5068a4570817ed5561e264e535">   47</a></span>&#160;    uint32_t <a class="code" href="structevdi__cursor.html#a8bf92a5068a4570817ed5561e264e535">stride</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="structevdi__cursor.html#a9d309a006354e7ad9540960dac32f09a">   48</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structevdi__gem__object.html">evdi_gem_object</a> *<a class="code" href="structevdi__cursor.html#a7acae7c5280e5d57bcd074f2384edb14">obj</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">struct </span>mutex <a class="code" href="structevdi__cursor.html#a9d309a006354e7ad9540960dac32f09a">lock</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> evdi_cursor_set_gem(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keyword">struct</span> <a class="code" href="structevdi__gem__object.html">evdi_gem_object</a> *obj)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span> (obj)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        drm_gem_object_get(&amp;obj-&gt;<a class="code" href="structevdi__gem__object.html#a596756c327ba74f48afa17e0ccbbd8d5">base</a>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span> (cursor-&gt;<a class="code" href="structevdi__cursor.html#a7acae7c5280e5d57bcd074f2384edb14">obj</a>)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#if KERNEL_VERSION(5, 9, 0) &lt;= LINUX_VERSION_CODE || defined(EL8)</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        drm_gem_object_put(&amp;cursor-&gt;<a class="code" href="structevdi__cursor.html#a7acae7c5280e5d57bcd074f2384edb14">obj</a>-&gt;<a class="code" href="structevdi__gem__object.html#a596756c327ba74f48afa17e0ccbbd8d5">base</a>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        drm_gem_object_put_unlocked(&amp;cursor-&gt;<a class="code" href="structevdi__cursor.html#a7acae7c5280e5d57bcd074f2384edb14">obj</a>-&gt;<a class="code" href="structevdi__gem__object.html#a596756c327ba74f48afa17e0ccbbd8d5">base</a>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    cursor-&gt;<a class="code" href="structevdi__cursor.html#a7acae7c5280e5d57bcd074f2384edb14">obj</a> = obj;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="evdi__cursor_8c.html#a056412b9129f99a42abc85ac5ac518c9">   67</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structevdi__gem__object.html">evdi_gem_object</a> *<a class="code" href="evdi__cursor_8c.html#a056412b9129f99a42abc85ac5ac518c9">evdi_cursor_gem</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> cursor-&gt;<a class="code" href="structevdi__cursor.html#a7acae7c5280e5d57bcd074f2384edb14">obj</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="evdi__cursor_8c.html#af3256df27114d1d8c0c09ddafdcbb21c">   72</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="evdi__cursor_8c.html#af3256df27114d1d8c0c09ddafdcbb21c">evdi_cursor_init</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> **cursor)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;{</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">if</span> (WARN_ON(*cursor))</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> -EINVAL;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    *cursor = kzalloc(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a>), GFP_KERNEL);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span> (*cursor) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        mutex_init(&amp;(*cursor)-&gt;lock);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span> -ENOMEM;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="evdi__cursor_8c.html#a1d0737a0a62c6274255ab4dbf269d6f3">   86</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="evdi__cursor_8c.html#a1d0737a0a62c6274255ab4dbf269d6f3">evdi_cursor_lock</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    mutex_lock(&amp;cursor-&gt;<a class="code" href="structevdi__cursor.html#a9d309a006354e7ad9540960dac32f09a">lock</a>);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="evdi__cursor_8c.html#a228f2f8306d6bd2499bcd5439a8c5599">   91</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="evdi__cursor_8c.html#a228f2f8306d6bd2499bcd5439a8c5599">evdi_cursor_unlock</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    mutex_unlock(&amp;cursor-&gt;<a class="code" href="structevdi__cursor.html#a9d309a006354e7ad9540960dac32f09a">lock</a>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="evdi__cursor_8c.html#a359e78efde256acae823a5253cf28665">   96</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="evdi__cursor_8c.html#a359e78efde256acae823a5253cf28665">evdi_cursor_free</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">if</span> (WARN_ON(!cursor))</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    evdi_cursor_set_gem(cursor, NULL);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    kfree(cursor);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="evdi__cursor_8c.html#a2d341f24d263284c170e925f4a2a6cf4">  104</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="evdi__cursor_8c.html#a2d341f24d263284c170e925f4a2a6cf4">evdi_cursor_enabled</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor)</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;{</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">return</span> cursor-&gt;<a class="code" href="structevdi__cursor.html#aca842261db2a95e8a54fb49b3b7b8303">enabled</a>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="evdi__cursor_8c.html#a4746ad185c990e228ced234253213a6c">  109</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="evdi__cursor_8c.html#a4746ad185c990e228ced234253213a6c">evdi_cursor_enable</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor, <span class="keywordtype">bool</span> enable)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;{</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="evdi__cursor_8c.html#a1d0737a0a62c6274255ab4dbf269d6f3">evdi_cursor_lock</a>(cursor);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    cursor-&gt;<a class="code" href="structevdi__cursor.html#aca842261db2a95e8a54fb49b3b7b8303">enabled</a> = enable;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">if</span> (!enable)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        evdi_cursor_set_gem(cursor, NULL);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="evdi__cursor_8c.html#a228f2f8306d6bd2499bcd5439a8c5599">evdi_cursor_unlock</a>(cursor);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="evdi__cursor_8c.html#a11e47b665bfe1f772754fcf159c0311f">  118</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="evdi__cursor_8c.html#a11e47b665bfe1f772754fcf159c0311f">evdi_cursor_set</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor,</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;             <span class="keyword">struct</span> <a class="code" href="structevdi__gem__object.html">evdi_gem_object</a> *obj,</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;             uint32_t width, uint32_t height,</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;             int32_t hot_x, int32_t hot_y,</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;             uint32_t pixel_format, uint32_t stride)</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;{</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">int</span> err = 0;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="evdi__cursor_8c.html#a1d0737a0a62c6274255ab4dbf269d6f3">evdi_cursor_lock</a>(cursor);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">if</span> (obj &amp;&amp; !obj-&gt;<a class="code" href="structevdi__gem__object.html#a46ba4dcc8e6a560cc908c71291b84bb7">vmapping</a>)</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        err = <a class="code" href="evdi__drm__drv_8h.html#a91a07e8620b47f2a36dbda301fe1d509">evdi_gem_vmap</a>(obj);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">if</span> (err != 0) {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <a class="code" href="evdi__debug_8h.html#a4914a25387c1beaadefedb0381c47877">EVDI_ERROR</a>(<span class="stringliteral">&quot;Failed to map cursor.\n&quot;</span>);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        obj = NULL;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    }</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    cursor-&gt;<a class="code" href="structevdi__cursor.html#aca842261db2a95e8a54fb49b3b7b8303">enabled</a> = obj != NULL;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    cursor-&gt;<a class="code" href="structevdi__cursor.html#a6fb7c9780f56af5393aa804f4eb19a52">width</a> = width;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    cursor-&gt;<a class="code" href="structevdi__cursor.html#a99309aaa702e1b724a016c2e2e23fe33">height</a> = height;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    cursor-&gt;<a class="code" href="structevdi__cursor.html#acf6c3829f30abbc7eda7760661281eea">hot_x</a> = hot_x;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    cursor-&gt;<a class="code" href="structevdi__cursor.html#a989cade39e5d1142cd1c5ba3f395fe3e">hot_y</a> = hot_y;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    cursor-&gt;<a class="code" href="structevdi__cursor.html#acf587f84b25770a66066c462c62883e9">pixel_format</a> = pixel_format;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    cursor-&gt;<a class="code" href="structevdi__cursor.html#a8bf92a5068a4570817ed5561e264e535">stride</a> = stride;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    evdi_cursor_set_gem(cursor, obj);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <a class="code" href="evdi__cursor_8c.html#a228f2f8306d6bd2499bcd5439a8c5599">evdi_cursor_unlock</a>(cursor);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="evdi__cursor_8c.html#a8d849edf5b1f746c9625fe27b62a28b5">  147</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="evdi__cursor_8c.html#a8d849edf5b1f746c9625fe27b62a28b5">evdi_cursor_move</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor, int32_t x, int32_t y)</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;{</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <a class="code" href="evdi__cursor_8c.html#a1d0737a0a62c6274255ab4dbf269d6f3">evdi_cursor_lock</a>(cursor);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    cursor-&gt;<a class="code" href="structevdi__cursor.html#a4e7d393fc000b7f155cc20a6c5d9b1dc">x</a> = x;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    cursor-&gt;<a class="code" href="structevdi__cursor.html#a784660e7a84626eb6cc9cc1d684908e3">y</a> = y;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <a class="code" href="evdi__cursor_8c.html#a228f2f8306d6bd2499bcd5439a8c5599">evdi_cursor_unlock</a>(cursor);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> uint32_t blend_component(uint32_t pixel,</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                  uint32_t blend,</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                  uint32_t alpha)</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;{</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    uint32_t pre_blend = (pixel * (255 - alpha) + blend * alpha);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">return</span> (pre_blend + ((pre_blend + 1) &lt;&lt; 8)) &gt;&gt; 16;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> uint32_t blend_alpha(<span class="keyword">const</span> uint32_t pixel_val32,</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                uint32_t blend_val32)</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;{</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    uint32_t alpha = (blend_val32 &gt;&gt; 24);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">return</span> blend_component(pixel_val32 &amp; 0xff,</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                   blend_val32 &amp; 0xff, alpha) |</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            blend_component((pixel_val32 &amp; 0xff00) &gt;&gt; 8,</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                (blend_val32 &amp; 0xff00) &gt;&gt; 8, alpha) &lt;&lt; 8 |</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            blend_component((pixel_val32 &amp; 0xff0000) &gt;&gt; 16,</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                (blend_val32 &amp; 0xff0000) &gt;&gt; 16, alpha) &lt;&lt; 16;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> evdi_cursor_compose_pixel(<span class="keywordtype">char</span> <a class="code" href="evdi__lib_8c.html#ace6f17999da4ea3b93c4227beafcab95">__user</a> *<a class="code" href="jsimdcfg_8inc_8h.html#abdb77e53de4261715ec5f4783a343ec3">buffer</a>,</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                     <span class="keywordtype">int</span> <span class="keyword">const</span> cursor_value,</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                     <span class="keywordtype">int</span> <span class="keyword">const</span> fb_value,</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                     <span class="keywordtype">int</span> cmd_offset)</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;{</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordtype">int</span> <span class="keyword">const</span> composed_value = blend_alpha(fb_value, cursor_value);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordflow">return</span> copy_to_user(<a class="code" href="jsimdcfg_8inc_8h.html#abdb77e53de4261715ec5f4783a343ec3">buffer</a> + cmd_offset, &amp;composed_value, 4);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;}</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="evdi__cursor_8c.html#a219fda947f87832b3be3610efa7f4df8">  187</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="evdi__cursor_8c.html#a219fda947f87832b3be3610efa7f4df8">evdi_cursor_compose_and_copy</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor,</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                 <span class="keyword">struct</span> <a class="code" href="structevdi__framebuffer.html">evdi_framebuffer</a> *efb,</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                 <span class="keywordtype">char</span> <a class="code" href="evdi__lib_8c.html#ace6f17999da4ea3b93c4227beafcab95">__user</a> *<a class="code" href="jsimdcfg_8inc_8h.html#abdb77e53de4261715ec5f4783a343ec3">buffer</a>,</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                 <span class="keywordtype">int</span> buf_byte_stride)</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;{</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordtype">int</span> x, y;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keyword">struct </span>drm_framebuffer *fb = &amp;efb-&gt;<a class="code" href="structevdi__framebuffer.html#a6bb9d47fe8a78674e39407c0dcb6a653">base</a>;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> h_cursor_w = cursor-&gt;<a class="code" href="structevdi__cursor.html#a6fb7c9780f56af5393aa804f4eb19a52">width</a> &gt;&gt; 1;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> h_cursor_h = cursor-&gt;<a class="code" href="structevdi__cursor.html#a99309aaa702e1b724a016c2e2e23fe33">height</a> &gt;&gt; 1;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    uint32_t *cursor_buffer = NULL;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    uint32_t bytespp = 0;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordflow">if</span> (!cursor-&gt;<a class="code" href="structevdi__cursor.html#aca842261db2a95e8a54fb49b3b7b8303">enabled</a>)</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordflow">if</span> (!cursor-&gt;<a class="code" href="structevdi__cursor.html#a7acae7c5280e5d57bcd074f2384edb14">obj</a>)</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keywordflow">return</span> -EINVAL;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordflow">if</span> (!cursor-&gt;<a class="code" href="structevdi__cursor.html#a7acae7c5280e5d57bcd074f2384edb14">obj</a>-&gt;<a class="code" href="structevdi__gem__object.html#a46ba4dcc8e6a560cc908c71291b84bb7">vmapping</a>)</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="keywordflow">return</span> -EINVAL;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    bytespp = <a class="code" href="evdi__drm__drv_8h.html#ab6254583256ef20cefdbcf2d2466895c">evdi_fb_get_bpp</a>(cursor-&gt;<a class="code" href="structevdi__cursor.html#acf587f84b25770a66066c462c62883e9">pixel_format</a>);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    bytespp = DIV_ROUND_UP(bytespp, 8);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">if</span> (bytespp != 4) {</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <a class="code" href="evdi__debug_8h.html#a4914a25387c1beaadefedb0381c47877">EVDI_ERROR</a>(<span class="stringliteral">&quot;Unsupported cursor format bpp=%u\n&quot;</span>, bytespp);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keywordflow">return</span> -EINVAL;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    }</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">if</span> (cursor-&gt;<a class="code" href="structevdi__cursor.html#a6fb7c9780f56af5393aa804f4eb19a52">width</a> * cursor-&gt;<a class="code" href="structevdi__cursor.html#a99309aaa702e1b724a016c2e2e23fe33">height</a> * bytespp &gt;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        cursor-&gt;<a class="code" href="structevdi__cursor.html#a7acae7c5280e5d57bcd074f2384edb14">obj</a>-&gt;<a class="code" href="structevdi__gem__object.html#a596756c327ba74f48afa17e0ccbbd8d5">base</a>.size){</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <a class="code" href="evdi__debug_8h.html#a4914a25387c1beaadefedb0381c47877">EVDI_ERROR</a>(<span class="stringliteral">&quot;Wrong cursor size\n&quot;</span>);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keywordflow">return</span> -EINVAL;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    }</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    cursor_buffer = (uint32_t *)cursor-&gt;<a class="code" href="structevdi__cursor.html#a7acae7c5280e5d57bcd074f2384edb14">obj</a>-&gt;<a class="code" href="structevdi__gem__object.html#a46ba4dcc8e6a560cc908c71291b84bb7">vmapping</a>;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    for (y = -h_cursor_h; y &lt; h_cursor_h; ++y) {</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="keywordflow">for</span> (x = -h_cursor_w; x &lt; h_cursor_w; ++x) {</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            uint32_t curs_val;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            <span class="keywordtype">int</span> *fbsrc;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            <span class="keywordtype">int</span> fb_value;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <span class="keywordtype">int</span> cmd_offset;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            <span class="keywordtype">int</span> cursor_pix;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            <span class="keywordtype">int</span> <span class="keyword">const</span> mouse_pix_x = cursor-&gt;<a class="code" href="structevdi__cursor.html#a4e7d393fc000b7f155cc20a6c5d9b1dc">x</a> + x + h_cursor_w;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            <span class="keywordtype">int</span> <span class="keyword">const</span> mouse_pix_y = cursor-&gt;<a class="code" href="structevdi__cursor.html#a784660e7a84626eb6cc9cc1d684908e3">y</a> + y + h_cursor_h;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            <span class="keywordtype">bool</span> <span class="keyword">const</span> is_pix_sane =</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                mouse_pix_x &gt;= 0 &amp;&amp;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                mouse_pix_y &gt;= 0 &amp;&amp;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                mouse_pix_x &lt; (<a class="code" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>)fb-&gt;width &amp;&amp;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                mouse_pix_y &lt; (<span class="keywordtype">int</span>)fb-&gt;height;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            <span class="keywordflow">if</span> (!is_pix_sane)</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            cursor_pix = h_cursor_w+x +</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                    (h_cursor_h+y)*cursor-&gt;<a class="code" href="structevdi__cursor.html#a6fb7c9780f56af5393aa804f4eb19a52">width</a>;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            curs_val = le32_to_cpu(cursor_buffer[cursor_pix]);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            fbsrc = (<span class="keywordtype">int</span> *)(efb-&gt;<a class="code" href="structevdi__framebuffer.html#abe1b096b596effb29ba0cacc9072fa4a">obj</a>-&gt;<a class="code" href="structevdi__gem__object.html#a46ba4dcc8e6a560cc908c71291b84bb7">vmapping</a> + fb-&gt;offsets[0]);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            fb_value = *(fbsrc + ((fb-&gt;pitches[0]&gt;&gt;2) *</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                          mouse_pix_y + mouse_pix_x));</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            cmd_offset = (buf_byte_stride * mouse_pix_y) +</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                               (mouse_pix_x * bytespp);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            <span class="keywordflow">if</span> (evdi_cursor_compose_pixel(<a class="code" href="jsimdcfg_8inc_8h.html#abdb77e53de4261715ec5f4783a343ec3">buffer</a>,</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                              curs_val,</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                              fb_value,</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                              cmd_offset)) {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                <a class="code" href="evdi__debug_8h.html#a4914a25387c1beaadefedb0381c47877">EVDI_ERROR</a>(<span class="stringliteral">&quot;Failed to compose cursor pixel\n&quot;</span>);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                <span class="keywordflow">return</span> -EFAULT;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            }</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    }</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;}</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno"><a class="line" href="evdi__cursor_8c.html#ac83c3c33f4532ec96a622b50899dd888">  262</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="evdi__cursor_8c.html#ac83c3c33f4532ec96a622b50899dd888">evdi_cursor_position</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor, int32_t *x, int32_t *y)</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;{</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    *x = cursor-&gt;<a class="code" href="structevdi__cursor.html#a4e7d393fc000b7f155cc20a6c5d9b1dc">x</a>;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    *y = cursor-&gt;<a class="code" href="structevdi__cursor.html#a784660e7a84626eb6cc9cc1d684908e3">y</a>;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;}</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00268"></a><span class="lineno"><a class="line" href="evdi__cursor_8c.html#a62af4646a9fd131e9f581472e2ed5a07">  268</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="evdi__cursor_8c.html#a62af4646a9fd131e9f581472e2ed5a07">evdi_cursor_hotpoint</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor,</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;              int32_t *hot_x, int32_t *hot_y)</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;{</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    *hot_x = cursor-&gt;<a class="code" href="structevdi__cursor.html#acf6c3829f30abbc7eda7760661281eea">hot_x</a>;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    *hot_y = cursor-&gt;<a class="code" href="structevdi__cursor.html#a989cade39e5d1142cd1c5ba3f395fe3e">hot_y</a>;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;}</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
+<div class="line"><a name="l00275"></a><span class="lineno"><a class="line" href="evdi__cursor_8c.html#ac21258bbdb51e714c84b4dac74b005d6">  275</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="evdi__cursor_8c.html#ac21258bbdb51e714c84b4dac74b005d6">evdi_cursor_size</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor,</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;              uint32_t *width, uint32_t *height)</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;{</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    *width = cursor-&gt;<a class="code" href="structevdi__cursor.html#a6fb7c9780f56af5393aa804f4eb19a52">width</a>;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    *height = cursor-&gt;<a class="code" href="structevdi__cursor.html#a99309aaa702e1b724a016c2e2e23fe33">height</a>;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;}</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
+<div class="line"><a name="l00282"></a><span class="lineno"><a class="line" href="evdi__cursor_8c.html#a7a52943e8d9ed9d50777b757edc2b4ca">  282</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="evdi__cursor_8c.html#a7a52943e8d9ed9d50777b757edc2b4ca">evdi_cursor_format</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor, uint32_t *format)</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;{</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    *format = cursor-&gt;<a class="code" href="structevdi__cursor.html#acf587f84b25770a66066c462c62883e9">pixel_format</a>;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;}</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
+<div class="line"><a name="l00287"></a><span class="lineno"><a class="line" href="evdi__cursor_8c.html#a3bf39cb330a5f65d52054c405c94390b">  287</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="evdi__cursor_8c.html#a3bf39cb330a5f65d52054c405c94390b">evdi_cursor_stride</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor, uint32_t *stride)</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;{</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    *stride = cursor-&gt;<a class="code" href="structevdi__cursor.html#a8bf92a5068a4570817ed5561e264e535">stride</a>;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;}</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
+<div class="ttc" id="aevdi__cursor_8c_html_a056412b9129f99a42abc85ac5ac518c9"><div class="ttname"><a href="evdi__cursor_8c.html#a056412b9129f99a42abc85ac5ac518c9">evdi_cursor_gem</a></div><div class="ttdeci">struct evdi_gem_object * evdi_cursor_gem(struct evdi_cursor *cursor)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00067">evdi_cursor.c:67</a></div></div>
+<div class="ttc" id="aevdi__cursor_8c_html_a11e47b665bfe1f772754fcf159c0311f"><div class="ttname"><a href="evdi__cursor_8c.html#a11e47b665bfe1f772754fcf159c0311f">evdi_cursor_set</a></div><div class="ttdeci">void evdi_cursor_set(struct evdi_cursor *cursor, struct evdi_gem_object *obj, uint32_t width, uint32_t height, int32_t hot_x, int32_t hot_y, uint32_t pixel_format, uint32_t stride)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00118">evdi_cursor.c:118</a></div></div>
+<div class="ttc" id="aevdi__cursor_8c_html_a1d0737a0a62c6274255ab4dbf269d6f3"><div class="ttname"><a href="evdi__cursor_8c.html#a1d0737a0a62c6274255ab4dbf269d6f3">evdi_cursor_lock</a></div><div class="ttdeci">void evdi_cursor_lock(struct evdi_cursor *cursor)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00086">evdi_cursor.c:86</a></div></div>
+<div class="ttc" id="aevdi__cursor_8c_html_a219fda947f87832b3be3610efa7f4df8"><div class="ttname"><a href="evdi__cursor_8c.html#a219fda947f87832b3be3610efa7f4df8">evdi_cursor_compose_and_copy</a></div><div class="ttdeci">int evdi_cursor_compose_and_copy(struct evdi_cursor *cursor, struct evdi_framebuffer *efb, char __user *buffer, int buf_byte_stride)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00187">evdi_cursor.c:187</a></div></div>
+<div class="ttc" id="aevdi__cursor_8c_html_a228f2f8306d6bd2499bcd5439a8c5599"><div class="ttname"><a href="evdi__cursor_8c.html#a228f2f8306d6bd2499bcd5439a8c5599">evdi_cursor_unlock</a></div><div class="ttdeci">void evdi_cursor_unlock(struct evdi_cursor *cursor)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00091">evdi_cursor.c:91</a></div></div>
+<div class="ttc" id="aevdi__cursor_8c_html_a2d341f24d263284c170e925f4a2a6cf4"><div class="ttname"><a href="evdi__cursor_8c.html#a2d341f24d263284c170e925f4a2a6cf4">evdi_cursor_enabled</a></div><div class="ttdeci">bool evdi_cursor_enabled(struct evdi_cursor *cursor)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00104">evdi_cursor.c:104</a></div></div>
+<div class="ttc" id="aevdi__cursor_8c_html_a359e78efde256acae823a5253cf28665"><div class="ttname"><a href="evdi__cursor_8c.html#a359e78efde256acae823a5253cf28665">evdi_cursor_free</a></div><div class="ttdeci">void evdi_cursor_free(struct evdi_cursor *cursor)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00096">evdi_cursor.c:96</a></div></div>
+<div class="ttc" id="aevdi__cursor_8c_html_a3bf39cb330a5f65d52054c405c94390b"><div class="ttname"><a href="evdi__cursor_8c.html#a3bf39cb330a5f65d52054c405c94390b">evdi_cursor_stride</a></div><div class="ttdeci">void evdi_cursor_stride(struct evdi_cursor *cursor, uint32_t *stride)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00287">evdi_cursor.c:287</a></div></div>
+<div class="ttc" id="aevdi__cursor_8c_html_a4746ad185c990e228ced234253213a6c"><div class="ttname"><a href="evdi__cursor_8c.html#a4746ad185c990e228ced234253213a6c">evdi_cursor_enable</a></div><div class="ttdeci">void evdi_cursor_enable(struct evdi_cursor *cursor, bool enable)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00109">evdi_cursor.c:109</a></div></div>
+<div class="ttc" id="aevdi__cursor_8c_html_a62af4646a9fd131e9f581472e2ed5a07"><div class="ttname"><a href="evdi__cursor_8c.html#a62af4646a9fd131e9f581472e2ed5a07">evdi_cursor_hotpoint</a></div><div class="ttdeci">void evdi_cursor_hotpoint(struct evdi_cursor *cursor, int32_t *hot_x, int32_t *hot_y)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00268">evdi_cursor.c:268</a></div></div>
+<div class="ttc" id="aevdi__cursor_8c_html_a7a52943e8d9ed9d50777b757edc2b4ca"><div class="ttname"><a href="evdi__cursor_8c.html#a7a52943e8d9ed9d50777b757edc2b4ca">evdi_cursor_format</a></div><div class="ttdeci">void evdi_cursor_format(struct evdi_cursor *cursor, uint32_t *format)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00282">evdi_cursor.c:282</a></div></div>
+<div class="ttc" id="aevdi__cursor_8c_html_a8d849edf5b1f746c9625fe27b62a28b5"><div class="ttname"><a href="evdi__cursor_8c.html#a8d849edf5b1f746c9625fe27b62a28b5">evdi_cursor_move</a></div><div class="ttdeci">void evdi_cursor_move(struct evdi_cursor *cursor, int32_t x, int32_t y)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00147">evdi_cursor.c:147</a></div></div>
+<div class="ttc" id="aevdi__cursor_8c_html_ac21258bbdb51e714c84b4dac74b005d6"><div class="ttname"><a href="evdi__cursor_8c.html#ac21258bbdb51e714c84b4dac74b005d6">evdi_cursor_size</a></div><div class="ttdeci">void evdi_cursor_size(struct evdi_cursor *cursor, uint32_t *width, uint32_t *height)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00275">evdi_cursor.c:275</a></div></div>
+<div class="ttc" id="aevdi__cursor_8c_html_ac83c3c33f4532ec96a622b50899dd888"><div class="ttname"><a href="evdi__cursor_8c.html#ac83c3c33f4532ec96a622b50899dd888">evdi_cursor_position</a></div><div class="ttdeci">void evdi_cursor_position(struct evdi_cursor *cursor, int32_t *x, int32_t *y)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00262">evdi_cursor.c:262</a></div></div>
+<div class="ttc" id="aevdi__cursor_8c_html_af3256df27114d1d8c0c09ddafdcbb21c"><div class="ttname"><a href="evdi__cursor_8c.html#af3256df27114d1d8c0c09ddafdcbb21c">evdi_cursor_init</a></div><div class="ttdeci">int evdi_cursor_init(struct evdi_cursor **cursor)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00072">evdi_cursor.c:72</a></div></div>
+<div class="ttc" id="aevdi__cursor_8h_html"><div class="ttname"><a href="evdi__cursor_8h.html">evdi_cursor.h</a></div></div>
+<div class="ttc" id="aevdi__debug_8h_html_a4914a25387c1beaadefedb0381c47877"><div class="ttname"><a href="evdi__debug_8h.html#a4914a25387c1beaadefedb0381c47877">EVDI_ERROR</a></div><div class="ttdeci">#define EVDI_ERROR(FORMAT_STR,...)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__debug_8h_source.html#l00031">evdi_debug.h:31</a></div></div>
+<div class="ttc" id="aevdi__drm__drv_8h_html"><div class="ttname"><a href="evdi__drm__drv_8h.html">evdi_drm_drv.h</a></div></div>
+<div class="ttc" id="aevdi__drm__drv_8h_html_a91a07e8620b47f2a36dbda301fe1d509"><div class="ttname"><a href="evdi__drm__drv_8h.html#a91a07e8620b47f2a36dbda301fe1d509">evdi_gem_vmap</a></div><div class="ttdeci">int evdi_gem_vmap(struct evdi_gem_object *obj)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__gem_8c_source.html#l00288">evdi_gem.c:288</a></div></div>
+<div class="ttc" id="aevdi__drm__drv_8h_html_ab6254583256ef20cefdbcf2d2466895c"><div class="ttname"><a href="evdi__drm__drv_8h.html#ab6254583256ef20cefdbcf2d2466895c">evdi_fb_get_bpp</a></div><div class="ttdeci">int evdi_fb_get_bpp(uint32_t format)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__fb_8c_source.html#l00553">evdi_fb.c:553</a></div></div>
+<div class="ttc" id="aevdi__lib_8c_html_ace6f17999da4ea3b93c4227beafcab95"><div class="ttname"><a href="evdi__lib_8c.html#ace6f17999da4ea3b93c4227beafcab95">__user</a></div><div class="ttdeci">#define __user</div><div class="ttdef"><b>Definition:</b> <a href="evdi__lib_8c_source.html#l00008">evdi_lib.c:8</a></div></div>
+<div class="ttc" id="ajsimdcfg_8inc_8h_html_a0d43f9a819c111f70ea20e3197a12c23"><div class="ttname"><a href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a></div><div class="ttdeci">On this SIMD this must be unsigned int</div><div class="ttdef"><b>Definition:</b> <a href="jsimdcfg_8inc_8h_source.html#l00082">jsimdcfg.inc.h:83</a></div></div>
+<div class="ttc" id="ajsimdcfg_8inc_8h_html_abdb77e53de4261715ec5f4783a343ec3"><div class="ttname"><a href="jsimdcfg_8inc_8h.html#abdb77e53de4261715ec5f4783a343ec3">buffer</a></div><div class="ttdeci">the DCT is to be performed in place in that buffer</div><div class="ttdef"><b>Definition:</b> <a href="jsimdcfg_8inc_8h_source.html#l00101">jsimdcfg.inc.h:101</a></div></div>
+<div class="ttc" id="astructevdi__cursor_html"><div class="ttname"><a href="structevdi__cursor.html">evdi_cursor</a></div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00038">evdi_cursor.c:38</a></div></div>
+<div class="ttc" id="astructevdi__cursor_html_a4e7d393fc000b7f155cc20a6c5d9b1dc"><div class="ttname"><a href="structevdi__cursor.html#a4e7d393fc000b7f155cc20a6c5d9b1dc">evdi_cursor::x</a></div><div class="ttdeci">int32_t x</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00040">evdi_cursor.c:40</a></div></div>
+<div class="ttc" id="astructevdi__cursor_html_a6fb7c9780f56af5393aa804f4eb19a52"><div class="ttname"><a href="structevdi__cursor.html#a6fb7c9780f56af5393aa804f4eb19a52">evdi_cursor::width</a></div><div class="ttdeci">uint32_t width</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00042">evdi_cursor.c:42</a></div></div>
+<div class="ttc" id="astructevdi__cursor_html_a784660e7a84626eb6cc9cc1d684908e3"><div class="ttname"><a href="structevdi__cursor.html#a784660e7a84626eb6cc9cc1d684908e3">evdi_cursor::y</a></div><div class="ttdeci">int32_t y</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00041">evdi_cursor.c:41</a></div></div>
+<div class="ttc" id="astructevdi__cursor_html_a7acae7c5280e5d57bcd074f2384edb14"><div class="ttname"><a href="structevdi__cursor.html#a7acae7c5280e5d57bcd074f2384edb14">evdi_cursor::obj</a></div><div class="ttdeci">struct evdi_gem_object * obj</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00048">evdi_cursor.c:48</a></div></div>
+<div class="ttc" id="astructevdi__cursor_html_a8bf92a5068a4570817ed5561e264e535"><div class="ttname"><a href="structevdi__cursor.html#a8bf92a5068a4570817ed5561e264e535">evdi_cursor::stride</a></div><div class="ttdeci">uint32_t stride</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00047">evdi_cursor.c:47</a></div></div>
+<div class="ttc" id="astructevdi__cursor_html_a989cade39e5d1142cd1c5ba3f395fe3e"><div class="ttname"><a href="structevdi__cursor.html#a989cade39e5d1142cd1c5ba3f395fe3e">evdi_cursor::hot_y</a></div><div class="ttdeci">int32_t hot_y</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00045">evdi_cursor.c:45</a></div></div>
+<div class="ttc" id="astructevdi__cursor_html_a99309aaa702e1b724a016c2e2e23fe33"><div class="ttname"><a href="structevdi__cursor.html#a99309aaa702e1b724a016c2e2e23fe33">evdi_cursor::height</a></div><div class="ttdeci">uint32_t height</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00043">evdi_cursor.c:43</a></div></div>
+<div class="ttc" id="astructevdi__cursor_html_a9d309a006354e7ad9540960dac32f09a"><div class="ttname"><a href="structevdi__cursor.html#a9d309a006354e7ad9540960dac32f09a">evdi_cursor::lock</a></div><div class="ttdeci">struct mutex lock</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00048">evdi_cursor.c:49</a></div></div>
+<div class="ttc" id="astructevdi__cursor_html_aca842261db2a95e8a54fb49b3b7b8303"><div class="ttname"><a href="structevdi__cursor.html#aca842261db2a95e8a54fb49b3b7b8303">evdi_cursor::enabled</a></div><div class="ttdeci">bool enabled</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00039">evdi_cursor.c:39</a></div></div>
+<div class="ttc" id="astructevdi__cursor_html_acf587f84b25770a66066c462c62883e9"><div class="ttname"><a href="structevdi__cursor.html#acf587f84b25770a66066c462c62883e9">evdi_cursor::pixel_format</a></div><div class="ttdeci">uint32_t pixel_format</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00046">evdi_cursor.c:46</a></div></div>
+<div class="ttc" id="astructevdi__cursor_html_acf6c3829f30abbc7eda7760661281eea"><div class="ttname"><a href="structevdi__cursor.html#acf6c3829f30abbc7eda7760661281eea">evdi_cursor::hot_x</a></div><div class="ttdeci">int32_t hot_x</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00044">evdi_cursor.c:44</a></div></div>
+<div class="ttc" id="astructevdi__framebuffer_html"><div class="ttname"><a href="structevdi__framebuffer.html">evdi_framebuffer</a></div><div class="ttdef"><b>Definition:</b> <a href="evdi__drm__drv_8h_source.html#l00086">evdi_drm_drv.h:86</a></div></div>
+<div class="ttc" id="astructevdi__framebuffer_html_a6bb9d47fe8a78674e39407c0dcb6a653"><div class="ttname"><a href="structevdi__framebuffer.html#a6bb9d47fe8a78674e39407c0dcb6a653">evdi_framebuffer::base</a></div><div class="ttdeci">struct drm_framebuffer base</div><div class="ttdef"><b>Definition:</b> <a href="evdi__drm__drv_8h_source.html#l00081">evdi_drm_drv.h:87</a></div></div>
+<div class="ttc" id="astructevdi__framebuffer_html_abe1b096b596effb29ba0cacc9072fa4a"><div class="ttname"><a href="structevdi__framebuffer.html#abe1b096b596effb29ba0cacc9072fa4a">evdi_framebuffer::obj</a></div><div class="ttdeci">struct evdi_gem_object * obj</div><div class="ttdef"><b>Definition:</b> <a href="evdi__drm__drv_8h_source.html#l00088">evdi_drm_drv.h:88</a></div></div>
+<div class="ttc" id="astructevdi__gem__object_html"><div class="ttname"><a href="structevdi__gem__object.html">evdi_gem_object</a></div><div class="ttdef"><b>Definition:</b> <a href="evdi__drm__drv_8h_source.html#l00064">evdi_drm_drv.h:64</a></div></div>
+<div class="ttc" id="astructevdi__gem__object_html_a46ba4dcc8e6a560cc908c71291b84bb7"><div class="ttname"><a href="structevdi__gem__object.html#a46ba4dcc8e6a560cc908c71291b84bb7">evdi_gem_object::vmapping</a></div><div class="ttdeci">void * vmapping</div><div class="ttdef"><b>Definition:</b> <a href="evdi__drm__drv_8h_source.html#l00069">evdi_drm_drv.h:69</a></div></div>
+<div class="ttc" id="astructevdi__gem__object_html_a596756c327ba74f48afa17e0ccbbd8d5"><div class="ttname"><a href="structevdi__gem__object.html#a596756c327ba74f48afa17e0ccbbd8d5">evdi_gem_object::base</a></div><div class="ttdeci">struct drm_gem_object base</div><div class="ttdef"><b>Definition:</b> <a href="evdi__drm__drv_8h_source.html#l00061">evdi_drm_drv.h:65</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+產生者:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

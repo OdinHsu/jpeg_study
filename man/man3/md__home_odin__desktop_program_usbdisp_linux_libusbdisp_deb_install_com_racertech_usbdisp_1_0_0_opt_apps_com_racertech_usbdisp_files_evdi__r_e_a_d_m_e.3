@@ -1,0 +1,39 @@
+.TH "md__home_odin__desktop_program_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_1_0_0_opt_apps_com_racertech_usbdisp_files_evdi__r_e_a_d_m_e" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_odin__desktop_program_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_1_0_0_opt_apps_com_racertech_usbdisp_files_evdi__r_e_a_d_m_e \- Extensible Virtual Display Interface 
+\fC\fP
+.PP
+The Extensible Virtual Display Interface (EVDI) is a Linux(R) kernel module that enables management of multiple screens, allowing user-space programs to take control over what happens with the image\&. It is essentially a virtual display you can add, remove and receive screen updates for, in an application that uses the \fClibevdi\fP library\&.
+.PP
+The project is part of the DisplayLink Ubuntu development which enables support for DisplayLink USB 3\&.0 devices on Ubuntu\&. Please note that \fBthis is NOT a complete driver for DisplayLink devices\fP\&. For more information and the full driver package, see \fCDisplayLink Ubuntu driver\fP\&.
+.PP
+This open-source project includes source code for both the \fCevdi\fP kernel module and a wrapper \fClibevdi\fP library that can be used by applications like DisplayLink's user mode driver to send and receive information from and to the kernel module\&.
+.SH "How to use"
+.PP
+See \fClibevdi API documentation\fP for details\&.
+.PP
+EVDI is a driver compatible with a standard Linux DRM subsystem\&. Due to this, displays can be controlled by standard tools, eg\&. \fCxrandr\fP or display settings applets in graphical environments eg\&. Unity, Gnome or KDE\&.
+.PP
+Minimum supported kernel version required is 4\&.15\&. DisplayLink have checked the module compiles and works with Ubuntu variants of kernels up to 5\&.5\&. Although other vanilla Linux kernel sources are used for Travis CI job, newer kernels, or kernel variants used by other distributions may require extra development\&. Please see below to see how you can help\&.
+.SH "Future Development"
+.PP
+This is a first release\&. DisplayLink are open to suggestions and feedback on improving the proposed architecture and will gladly review patches or proposals from the developer community\&. Please find a current list of areas we identify as requiring attention below\&.
+.PP
+.IP "\(bu" 2
+Compatibility with distributions other than Ubuntu 18\&.04/20\&.04 LTS is not verified\&. Please let us know if you make it work on other distros - pull requests are welcome!
+.IP "\(bu" 2
+The communication between the EVDI kernel module and the wrapper libevdi library is not access-controlled or authenticated\&. This could be improved in future releases, making it harder to compromise the data EVDI is sending and receiving\&.
+.IP "\(bu" 2
+EVDI kernel module driver is currently a platform_driver, for multiple reasons; most importantly because virtual displays are not discoverable, i\&.e\&. cannot be enumerated at the hardware level\&. EVDI is also a generic device, not tied to any particular kind of device, transport layer or a bus\&.
+.PP
+.SH "Licensing"
+.PP
+Please refer to the LICENSE information in \fCmodule\fP and \fClibrary\fP subfolders of this project\&.
+.SS "More information"
+For more information, see our \fCsupport page\fP\&. Visit \fCdisplaylink\&.com\fP to learn more about DisplayLink technology\&.
+.PP
+(C) Copyright 2015-2020 DisplayLink (UK) Ltd\&.
+.PP
+Linux is a registered trademark of Linus Torvalds in the U\&.S\&. and other countries\&. 

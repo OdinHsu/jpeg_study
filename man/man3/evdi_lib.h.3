@@ -1,0 +1,246 @@
+.TH "/home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/library/evdi_lib.h" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/library/evdi_lib.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdbool\&.h>\fP
+.br
+
+.SS "複合項目"
+
+.in +1c
+.ti -1c
+.RI "struct \fBevdi_lib_version\fP"
+.br
+.ti -1c
+.RI "struct \fBevdi_rect\fP"
+.br
+.ti -1c
+.RI "struct \fBevdi_mode\fP"
+.br
+.ti -1c
+.RI "struct \fBevdi_buffer\fP"
+.br
+.ti -1c
+.RI "struct \fBevdi_cursor_set\fP"
+.br
+.ti -1c
+.RI "struct \fBevdi_cursor_move\fP"
+.br
+.ti -1c
+.RI "struct \fBevdi_ddcci_data\fP"
+.br
+.ti -1c
+.RI "struct \fBevdi_event_context\fP"
+.br
+.ti -1c
+.RI "struct \fBevdi_logging\fP"
+.br
+.in -1c
+.SS "定義"
+
+.in +1c
+.ti -1c
+.RI "#define \fBLIBEVDI_VERSION_MAJOR\fP   1"
+.br
+.ti -1c
+.RI "#define \fBLIBEVDI_VERSION_MINOR\fP   12"
+.br
+.ti -1c
+.RI "#define \fBLIBEVDI_VERSION_PATCH\fP   0"
+.br
+.ti -1c
+.RI "#define \fBEVDI_INVALID_HANDLE\fP   NULL"
+.br
+.in -1c
+.SS "型態定義"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBevdi_device_context\fP * \fBevdi_handle\fP"
+.br
+.ti -1c
+.RI "typedef \fBint\fP \fBevdi_selectable\fP"
+.br
+.in -1c
+.SS "列舉型態"
+
+.in +1c
+.ti -1c
+.RI "enum \fBevdi_device_status\fP { \fBAVAILABLE\fP, \fBUNRECOGNIZED\fP, \fBNOT_PRESENT\fP }"
+.br
+.in -1c
+.SS "函式"
+
+.in +1c
+.ti -1c
+.RI "enum \fBevdi_device_status\fP \fBevdi_check_device\fP (\fBint\fP device)"
+.br
+.ti -1c
+.RI "\fBevdi_handle\fP \fBevdi_open\fP (\fBint\fP device)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBevdi_add_device\fP (void)"
+.br
+.ti -1c
+.RI "\fBevdi_handle\fP \fBevdi_open_attached_to\fP (const \fBchar\fP *sysfs_parent_device)"
+.br
+.ti -1c
+.RI "void \fBevdi_close\fP (\fBevdi_handle\fP \fBhandle\fP)"
+.br
+.ti -1c
+.RI "void \fBevdi_connect\fP (\fBevdi_handle\fP \fBhandle\fP, const unsigned \fBchar\fP *edid, const unsigned \fBint\fP edid_length, const uint32_t pixel_area_limit, const uint32_t pixel_per_second_limit)"
+.br
+.ti -1c
+.RI "void \fBevdi_disconnect\fP (\fBevdi_handle\fP \fBhandle\fP)"
+.br
+.ti -1c
+.RI "void \fBevdi_enable_cursor_events\fP (\fBevdi_handle\fP \fBhandle\fP, bool enable)"
+.br
+.ti -1c
+.RI "void \fBevdi_grab_pixels\fP (\fBevdi_handle\fP \fBhandle\fP, struct \fBevdi_rect\fP *rects, \fBint\fP *num_rects)"
+.br
+.ti -1c
+.RI "void \fBevdi_register_buffer\fP (\fBevdi_handle\fP \fBhandle\fP, struct \fBevdi_buffer\fP \fBbuffer\fP)"
+.br
+.ti -1c
+.RI "void \fBevdi_unregister_buffer\fP (\fBevdi_handle\fP \fBhandle\fP, \fBint\fP bufferId)"
+.br
+.ti -1c
+.RI "bool \fBevdi_request_update\fP (\fBevdi_handle\fP \fBhandle\fP, \fBint\fP bufferId)"
+.br
+.ti -1c
+.RI "void \fBevdi_ddcci_response\fP (\fBevdi_handle\fP \fBhandle\fP, const unsigned \fBchar\fP *\fBbuffer\fP, const uint32_t buffer_length, const bool result)"
+.br
+.ti -1c
+.RI "void \fBevdi_handle_events\fP (\fBevdi_handle\fP \fBhandle\fP, struct \fBevdi_event_context\fP *evtctx)"
+.br
+.ti -1c
+.RI "\fBevdi_selectable\fP \fBevdi_get_event_ready\fP (\fBevdi_handle\fP \fBhandle\fP)"
+.br
+.ti -1c
+.RI "void \fBevdi_get_lib_version\fP (struct \fBevdi_lib_version\fP *version)"
+.br
+.ti -1c
+.RI "void \fBevdi_set_logging\fP (struct \fBevdi_logging\fP \fBevdi_logging\fP)"
+.br
+.in -1c
+.SH "定義巨集說明文件"
+.PP 
+.SS "#define EVDI_INVALID_HANDLE   NULL"
+
+.PP
+定義在 evdi_lib\&.h 檔案之第 100 行\&.
+.SS "#define LIBEVDI_VERSION_MAJOR   1"
+
+.PP
+定義在 evdi_lib\&.h 檔案之第 14 行\&.
+.SS "#define LIBEVDI_VERSION_MINOR   12"
+
+.PP
+定義在 evdi_lib\&.h 檔案之第 15 行\&.
+.SS "#define LIBEVDI_VERSION_PATCH   0"
+
+.PP
+定義在 evdi_lib\&.h 檔案之第 16 行\&.
+.SH "型態定義說明文件"
+.PP 
+.SS "typedef struct \fBevdi_device_context\fP* \fBevdi_handle\fP"
+
+.PP
+定義在 evdi_lib\&.h 檔案之第 25 行\&.
+.SS "typedef \fBint\fP \fBevdi_selectable\fP"
+
+.PP
+定義在 evdi_lib\&.h 檔案之第 26 行\&.
+.SH "列舉型態說明文件"
+.PP 
+.SS "enum \fBevdi_device_status\fP"
+
+.PP
+\fB列舉值\fP
+.in +1c
+.TP
+\fB\fIAVAILABLE \fP\fP
+.TP
+\fB\fIUNRECOGNIZED \fP\fP
+.TP
+\fB\fINOT_PRESENT \fP\fP
+.PP
+定義在 evdi_lib\&.h 檔案之第 28 行\&.
+.SH "函式說明文件"
+.PP 
+.SS "\fBint\fP evdi_add_device (void)"
+
+.PP
+定義在 evdi_lib\&.c 檔案之第 637 行\&.
+.SS "enum \fBevdi_device_status\fP evdi_check_device (\fBint\fP device)"
+
+.PP
+定義在 evdi_lib\&.c 檔案之第 575 行\&.
+.SS "void evdi_close (\fBevdi_handle\fP handle)"
+
+.PP
+定義在 evdi_lib\&.c 檔案之第 661 行\&.
+.SS "void evdi_connect (\fBevdi_handle\fP handle, const unsigned \fBchar\fP * edid, const unsigned \fBint\fP edid_length, const uint32_t pixel_area_limit, const uint32_t pixel_per_second_limit)"
+
+.PP
+定義在 evdi_lib\&.c 檔案之第 675 行\&.
+.SS "void evdi_ddcci_response (\fBevdi_handle\fP handle, const unsigned \fBchar\fP * buffer, const uint32_t buffer_length, const bool result)"
+
+.PP
+定義在 evdi_lib\&.c 檔案之第 804 行\&.
+.SS "void evdi_disconnect (\fBevdi_handle\fP handle)"
+
+.PP
+定義在 evdi_lib\&.c 檔案之第 693 行\&.
+.SS "void evdi_enable_cursor_events (\fBevdi_handle\fP handle, bool enable)"
+
+.PP
+定義在 evdi_lib\&.c 檔案之第 700 行\&.
+.SS "\fBevdi_selectable\fP evdi_get_event_ready (\fBevdi_handle\fP handle)"
+
+.PP
+定義在 evdi_lib\&.c 檔案之第 1001 行\&.
+.SS "void evdi_get_lib_version (struct \fBevdi_lib_version\fP * version)"
+
+.PP
+定義在 evdi_lib\&.c 檔案之第 1006 行\&.
+.SS "void evdi_grab_pixels (\fBevdi_handle\fP handle, struct \fBevdi_rect\fP * rects, \fBint\fP * num_rects)"
+
+.PP
+定義在 evdi_lib\&.c 檔案之第 713 行\&.
+.SS "void evdi_handle_events (\fBevdi_handle\fP handle, struct \fBevdi_event_context\fP * evtctx)"
+
+.PP
+定義在 evdi_lib\&.c 檔案之第 980 行\&.
+.SS "\fBevdi_handle\fP evdi_open (\fBint\fP device)"
+
+.PP
+定義在 evdi_lib\&.c 檔案之第 575 行\&.
+.SS "\fBevdi_handle\fP evdi_open_attached_to (const \fBchar\fP * sysfs_parent_device)"
+
+.PP
+定義在 evdi_lib\&.c 檔案之第 642 行\&.
+.SS "void evdi_register_buffer (\fBevdi_handle\fP handle, struct \fBevdi_buffer\fP buffer)"
+
+.PP
+定義在 evdi_lib\&.c 檔案之第 767 行\&.
+.SS "bool evdi_request_update (\fBevdi_handle\fP handle, \fBint\fP bufferId)"
+
+.PP
+定義在 evdi_lib\&.c 檔案之第 787 行\&.
+.SS "void evdi_set_logging (struct \fBevdi_logging\fP evdi_logging)"
+
+.PP
+定義在 evdi_lib\&.c 檔案之第 1015 行\&.
+.SS "void evdi_unregister_buffer (\fBevdi_handle\fP handle, \fBint\fP bufferId)"
+
+.PP
+定義在 evdi_lib\&.c 檔案之第 775 行\&.
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

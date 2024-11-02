@@ -1,0 +1,72 @@
+.TH "drm_evdi_grabpix" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+drm_evdi_grabpix
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <evdi_drm\&.h>\fP
+.SS "公開屬性"
+
+.in +1c
+.ti -1c
+.RI "enum \fBdrm_evdi_grabpix_mode\fP \fBmode\fP"
+.br
+.ti -1c
+.RI "int32_t \fBbuf_width\fP"
+.br
+.ti -1c
+.RI "int32_t \fBbuf_height\fP"
+.br
+.ti -1c
+.RI "int32_t \fBbuf_byte_stride\fP"
+.br
+.ti -1c
+.RI "unsigned \fBchar\fP \fB__user\fP * \fBbuffer\fP"
+.br
+.ti -1c
+.RI "int32_t \fBnum_rects\fP"
+.br
+.ti -1c
+.RI "struct drm_clip_rect \fB__user\fP * \fBrects\fP"
+.br
+.in -1c
+.SH "詳細描述"
+.PP 
+定義在 evdi_drm\&.h 檔案之第 63 行\&.
+.SH "資料成員說明文件"
+.PP 
+.SS "int32_t drm_evdi_grabpix::buf_byte_stride"
+
+.PP
+定義在 evdi_drm\&.h 檔案之第 67 行\&.
+.SS "int32_t drm_evdi_grabpix::buf_height"
+
+.PP
+定義在 evdi_drm\&.h 檔案之第 66 行\&.
+.SS "int32_t drm_evdi_grabpix::buf_width"
+
+.PP
+定義在 evdi_drm\&.h 檔案之第 65 行\&.
+.SS "unsigned \fBchar\fP \fB__user\fP* drm_evdi_grabpix::buffer"
+
+.PP
+定義在 evdi_drm\&.h 檔案之第 68 行\&.
+.SS "enum \fBdrm_evdi_grabpix_mode\fP drm_evdi_grabpix::mode"
+
+.PP
+定義在 evdi_drm\&.h 檔案之第 55 行\&.
+.SS "int32_t drm_evdi_grabpix::num_rects"
+
+.PP
+定義在 evdi_drm\&.h 檔案之第 69 行\&.
+.SS "struct drm_clip_rect \fB__user\fP* drm_evdi_grabpix::rects"
+
+.PP
+定義在 evdi_drm\&.h 檔案之第 70 行\&.
+
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

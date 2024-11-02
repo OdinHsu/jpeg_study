@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: /home/odin/Desktop/program/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_cursor.h 原始程式檔</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 產生者: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜尋','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜尋');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_9075f4783833d2193daf99d175bda543.html">usbdisp_linux</a></li><li class="navelem"><a class="el" href="dir_9a57f247e9479574bdd4d89e6fadae2c.html">libusbdisp</a></li><li class="navelem"><a class="el" href="dir_c177418391c6082701191d849c92e04e.html">deb_install</a></li><li class="navelem"><a class="el" href="dir_9beb4c8f8cede0cdbcde00f25fd8d8b8.html">com.racertech.usbdisp-1.0.0</a></li><li class="navelem"><a class="el" href="dir_c556d2293237b66c763aa1c38400309a.html">opt</a></li><li class="navelem"><a class="el" href="dir_98656f11af99d476e6250cd584e59b42.html">apps</a></li><li class="navelem"><a class="el" href="dir_365d2588cc5b1a689601eb68794b1216.html">com.racertech.usbdisp</a></li><li class="navelem"><a class="el" href="dir_74b907b0cf0dd8424a599bb4aefb2ba6.html">files</a></li><li class="navelem"><a class="el" href="dir_501b6d2d1a5ea8e4a705bf28822605ee.html">evdi</a></li><li class="navelem"><a class="el" href="dir_611f9203c5b70a3412d8aed75ef95d23.html">module</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">evdi_cursor.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="evdi__cursor_8h.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* SPDX-License-Identifier: GPL-2.0-only</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * evdi_cursor.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (c) 2016 The Chromium OS Authors</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Copyright (c) 2016 - 2020 DisplayLink (UK) Ltd.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * This program is free software; you can redistribute  it and/or modify it</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * under  the terms of  the GNU General  Public License as published by the</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * Free Software Foundation;  either version 2 of the  License, or (at your</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * option) any later version.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * This program is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef _EVDI_CURSOR_H_</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define _EVDI_CURSOR_H_</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;linux/version.h&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;linux/module.h&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#if KERNEL_VERSION(5, 5, 0) &lt;= LINUX_VERSION_CODE || defined(EL8)</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;drm/drmP.h&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;drm/drm_crtc.h&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">struct </span><a class="code" href="structevdi__cursor.html">evdi_cursor</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">struct </span><a class="code" href="structevdi__framebuffer.html">evdi_framebuffer</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">struct </span><a class="code" href="structevdi__gem__object.html">evdi_gem_object</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">int</span> <a class="code" href="evdi__cursor_8h.html#af3256df27114d1d8c0c09ddafdcbb21c">evdi_cursor_init</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> **cursor);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">void</span> <a class="code" href="evdi__cursor_8h.html#a359e78efde256acae823a5253cf28665">evdi_cursor_free</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">void</span> <a class="code" href="evdi__cursor_8h.html#a1d0737a0a62c6274255ab4dbf269d6f3">evdi_cursor_lock</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keywordtype">void</span> <a class="code" href="evdi__cursor_8h.html#a228f2f8306d6bd2499bcd5439a8c5599">evdi_cursor_unlock</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="evdi__cursor_8h.html#a2d341f24d263284c170e925f4a2a6cf4">evdi_cursor_enabled</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">void</span> <a class="code" href="evdi__cursor_8h.html#a7b182acfe59cadd5d9c618a0c2131e95">evdi_cursor_enable</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor, <span class="keywordtype">bool</span> enabled);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">void</span> <a class="code" href="evdi__cursor_8h.html#a11e47b665bfe1f772754fcf159c0311f">evdi_cursor_set</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;             <span class="keyword">struct</span> <a class="code" href="structevdi__gem__object.html">evdi_gem_object</a> *obj,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;             uint32_t width, uint32_t height,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;             int32_t hot_x, int32_t hot_y,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;             uint32_t pixel_format, uint32_t stride);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">void</span> <a class="code" href="evdi__cursor_8h.html#a8d849edf5b1f746c9625fe27b62a28b5">evdi_cursor_move</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor, int32_t x, int32_t y);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">void</span> <a class="code" href="evdi__cursor_8h.html#ac83c3c33f4532ec96a622b50899dd888">evdi_cursor_position</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor, int32_t *x, int32_t *y);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">void</span> <a class="code" href="evdi__cursor_8h.html#a62af4646a9fd131e9f581472e2ed5a07">evdi_cursor_hotpoint</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;              int32_t *hot_x, int32_t *hot_y);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">void</span> <a class="code" href="evdi__cursor_8h.html#ac21258bbdb51e714c84b4dac74b005d6">evdi_cursor_size</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;              uint32_t *width, uint32_t *height);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">void</span> <a class="code" href="evdi__cursor_8h.html#a7a52943e8d9ed9d50777b757edc2b4ca">evdi_cursor_format</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor, uint32_t *format);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordtype">void</span> <a class="code" href="evdi__cursor_8h.html#a3bf39cb330a5f65d52054c405c94390b">evdi_cursor_stride</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor, uint32_t *stride);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">struct </span><a class="code" href="structevdi__gem__object.html">evdi_gem_object</a> *<a class="code" href="evdi__cursor_8h.html#a056412b9129f99a42abc85ac5ac518c9">evdi_cursor_gem</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordtype">int</span> <a class="code" href="evdi__cursor_8h.html#a219fda947f87832b3be3610efa7f4df8">evdi_cursor_compose_and_copy</a>(<span class="keyword">struct</span> <a class="code" href="structevdi__cursor.html">evdi_cursor</a> *cursor,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                 <span class="keyword">struct</span> <a class="code" href="structevdi__framebuffer.html">evdi_framebuffer</a> *efb,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                 <span class="keywordtype">char</span> <a class="code" href="evdi__lib_8c.html#ace6f17999da4ea3b93c4227beafcab95">__user</a> *<a class="code" href="jsimdcfg_8inc_8h.html#abdb77e53de4261715ec5f4783a343ec3">buffer</a>,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                 <span class="keywordtype">int</span> buf_byte_stride);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aevdi__cursor_8h_html_a056412b9129f99a42abc85ac5ac518c9"><div class="ttname"><a href="evdi__cursor_8h.html#a056412b9129f99a42abc85ac5ac518c9">evdi_cursor_gem</a></div><div class="ttdeci">struct evdi_gem_object * evdi_cursor_gem(struct evdi_cursor *cursor)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00067">evdi_cursor.c:67</a></div></div>
+<div class="ttc" id="aevdi__cursor_8h_html_a11e47b665bfe1f772754fcf159c0311f"><div class="ttname"><a href="evdi__cursor_8h.html#a11e47b665bfe1f772754fcf159c0311f">evdi_cursor_set</a></div><div class="ttdeci">void evdi_cursor_set(struct evdi_cursor *cursor, struct evdi_gem_object *obj, uint32_t width, uint32_t height, int32_t hot_x, int32_t hot_y, uint32_t pixel_format, uint32_t stride)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00118">evdi_cursor.c:118</a></div></div>
+<div class="ttc" id="aevdi__cursor_8h_html_a1d0737a0a62c6274255ab4dbf269d6f3"><div class="ttname"><a href="evdi__cursor_8h.html#a1d0737a0a62c6274255ab4dbf269d6f3">evdi_cursor_lock</a></div><div class="ttdeci">void evdi_cursor_lock(struct evdi_cursor *cursor)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00086">evdi_cursor.c:86</a></div></div>
+<div class="ttc" id="aevdi__cursor_8h_html_a219fda947f87832b3be3610efa7f4df8"><div class="ttname"><a href="evdi__cursor_8h.html#a219fda947f87832b3be3610efa7f4df8">evdi_cursor_compose_and_copy</a></div><div class="ttdeci">int evdi_cursor_compose_and_copy(struct evdi_cursor *cursor, struct evdi_framebuffer *efb, char __user *buffer, int buf_byte_stride)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00187">evdi_cursor.c:187</a></div></div>
+<div class="ttc" id="aevdi__cursor_8h_html_a228f2f8306d6bd2499bcd5439a8c5599"><div class="ttname"><a href="evdi__cursor_8h.html#a228f2f8306d6bd2499bcd5439a8c5599">evdi_cursor_unlock</a></div><div class="ttdeci">void evdi_cursor_unlock(struct evdi_cursor *cursor)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00091">evdi_cursor.c:91</a></div></div>
+<div class="ttc" id="aevdi__cursor_8h_html_a2d341f24d263284c170e925f4a2a6cf4"><div class="ttname"><a href="evdi__cursor_8h.html#a2d341f24d263284c170e925f4a2a6cf4">evdi_cursor_enabled</a></div><div class="ttdeci">bool evdi_cursor_enabled(struct evdi_cursor *cursor)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00104">evdi_cursor.c:104</a></div></div>
+<div class="ttc" id="aevdi__cursor_8h_html_a359e78efde256acae823a5253cf28665"><div class="ttname"><a href="evdi__cursor_8h.html#a359e78efde256acae823a5253cf28665">evdi_cursor_free</a></div><div class="ttdeci">void evdi_cursor_free(struct evdi_cursor *cursor)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00096">evdi_cursor.c:96</a></div></div>
+<div class="ttc" id="aevdi__cursor_8h_html_a3bf39cb330a5f65d52054c405c94390b"><div class="ttname"><a href="evdi__cursor_8h.html#a3bf39cb330a5f65d52054c405c94390b">evdi_cursor_stride</a></div><div class="ttdeci">void evdi_cursor_stride(struct evdi_cursor *cursor, uint32_t *stride)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00287">evdi_cursor.c:287</a></div></div>
+<div class="ttc" id="aevdi__cursor_8h_html_a62af4646a9fd131e9f581472e2ed5a07"><div class="ttname"><a href="evdi__cursor_8h.html#a62af4646a9fd131e9f581472e2ed5a07">evdi_cursor_hotpoint</a></div><div class="ttdeci">void evdi_cursor_hotpoint(struct evdi_cursor *cursor, int32_t *hot_x, int32_t *hot_y)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00268">evdi_cursor.c:268</a></div></div>
+<div class="ttc" id="aevdi__cursor_8h_html_a7a52943e8d9ed9d50777b757edc2b4ca"><div class="ttname"><a href="evdi__cursor_8h.html#a7a52943e8d9ed9d50777b757edc2b4ca">evdi_cursor_format</a></div><div class="ttdeci">void evdi_cursor_format(struct evdi_cursor *cursor, uint32_t *format)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00282">evdi_cursor.c:282</a></div></div>
+<div class="ttc" id="aevdi__cursor_8h_html_a7b182acfe59cadd5d9c618a0c2131e95"><div class="ttname"><a href="evdi__cursor_8h.html#a7b182acfe59cadd5d9c618a0c2131e95">evdi_cursor_enable</a></div><div class="ttdeci">void evdi_cursor_enable(struct evdi_cursor *cursor, bool enabled)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00109">evdi_cursor.c:109</a></div></div>
+<div class="ttc" id="aevdi__cursor_8h_html_a8d849edf5b1f746c9625fe27b62a28b5"><div class="ttname"><a href="evdi__cursor_8h.html#a8d849edf5b1f746c9625fe27b62a28b5">evdi_cursor_move</a></div><div class="ttdeci">void evdi_cursor_move(struct evdi_cursor *cursor, int32_t x, int32_t y)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00147">evdi_cursor.c:147</a></div></div>
+<div class="ttc" id="aevdi__cursor_8h_html_ac21258bbdb51e714c84b4dac74b005d6"><div class="ttname"><a href="evdi__cursor_8h.html#ac21258bbdb51e714c84b4dac74b005d6">evdi_cursor_size</a></div><div class="ttdeci">void evdi_cursor_size(struct evdi_cursor *cursor, uint32_t *width, uint32_t *height)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00275">evdi_cursor.c:275</a></div></div>
+<div class="ttc" id="aevdi__cursor_8h_html_ac83c3c33f4532ec96a622b50899dd888"><div class="ttname"><a href="evdi__cursor_8h.html#ac83c3c33f4532ec96a622b50899dd888">evdi_cursor_position</a></div><div class="ttdeci">void evdi_cursor_position(struct evdi_cursor *cursor, int32_t *x, int32_t *y)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00262">evdi_cursor.c:262</a></div></div>
+<div class="ttc" id="aevdi__cursor_8h_html_af3256df27114d1d8c0c09ddafdcbb21c"><div class="ttname"><a href="evdi__cursor_8h.html#af3256df27114d1d8c0c09ddafdcbb21c">evdi_cursor_init</a></div><div class="ttdeci">int evdi_cursor_init(struct evdi_cursor **cursor)</div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00072">evdi_cursor.c:72</a></div></div>
+<div class="ttc" id="aevdi__lib_8c_html_ace6f17999da4ea3b93c4227beafcab95"><div class="ttname"><a href="evdi__lib_8c.html#ace6f17999da4ea3b93c4227beafcab95">__user</a></div><div class="ttdeci">#define __user</div><div class="ttdef"><b>Definition:</b> <a href="evdi__lib_8c_source.html#l00008">evdi_lib.c:8</a></div></div>
+<div class="ttc" id="ajsimdcfg_8inc_8h_html_abdb77e53de4261715ec5f4783a343ec3"><div class="ttname"><a href="jsimdcfg_8inc_8h.html#abdb77e53de4261715ec5f4783a343ec3">buffer</a></div><div class="ttdeci">the DCT is to be performed in place in that buffer</div><div class="ttdef"><b>Definition:</b> <a href="jsimdcfg_8inc_8h_source.html#l00101">jsimdcfg.inc.h:101</a></div></div>
+<div class="ttc" id="astructevdi__cursor_html"><div class="ttname"><a href="structevdi__cursor.html">evdi_cursor</a></div><div class="ttdef"><b>Definition:</b> <a href="evdi__cursor_8c_source.html#l00038">evdi_cursor.c:38</a></div></div>
+<div class="ttc" id="astructevdi__framebuffer_html"><div class="ttname"><a href="structevdi__framebuffer.html">evdi_framebuffer</a></div><div class="ttdef"><b>Definition:</b> <a href="evdi__drm__drv_8h_source.html#l00086">evdi_drm_drv.h:86</a></div></div>
+<div class="ttc" id="astructevdi__gem__object_html"><div class="ttname"><a href="structevdi__gem__object.html">evdi_gem_object</a></div><div class="ttdef"><b>Definition:</b> <a href="evdi__drm__drv_8h_source.html#l00064">evdi_drm_drv.h:64</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+產生者:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

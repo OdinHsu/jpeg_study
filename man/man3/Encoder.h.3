@@ -1,0 +1,168 @@
+.TH "/home/odin/Desktop/program/usbdisp_linux/libusbdisp/libenc/Encoder.h" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/odin/Desktop/program/usbdisp_linux/libusbdisp/libenc/Encoder.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'event\&.h'\fP
+.br
+\fC#include 'jpeg_enc\&.h'\fP
+.br
+
+.SS "複合項目"
+
+.in +1c
+.ti -1c
+.RI "struct \fBscreen_t\fP"
+.br
+.ti -1c
+.RI "class \fBEncodeUnit\fP"
+.br
+.ti -1c
+.RI "class \fBBlockEncoder\fP"
+.br
+.in -1c
+.SS "定義"
+
+.in +1c
+.ti -1c
+.RI "#define \fBMAX_WIDTH\fP   1920"
+.br
+.ti -1c
+.RI "#define \fBMAX_HEIGHT\fP   1200"
+.br
+.ti -1c
+.RI "#define \fBMAX_SCREEN_BLOCK\fP   9000"
+.br
+.ti -1c
+.RI "#define \fBBLOCK_WIDTH\fP   32"
+.br
+.ti -1c
+.RI "#define \fBBLOCK_HEIGHT\fP   8"
+.br
+.ti -1c
+.RI "#define \fBRAW_DEPTH\fP   4"
+.br
+.ti -1c
+.RI "#define \fBNUM_ENCODER\fP   3"
+.br
+.ti -1c
+.RI "#define \fBNUM_SCREEN\fP   2"
+.br
+.ti -1c
+.RI "#define \fBENC_THREADS\fP   4"
+.br
+.ti -1c
+.RI "#define \fBQUALITY_RAW\fP   0"
+.br
+.ti -1c
+.RI "#define \fBQUALITY_LOW\fP   1"
+.br
+.ti -1c
+.RI "#define \fBQUALITY_MEDIAN\fP   2"
+.br
+.ti -1c
+.RI "#define \fBQUALITY_HIGH\fP   3"
+.br
+.ti -1c
+.RI "#define \fBQUALITY_CLONE\fP   4"
+.br
+.ti -1c
+.RI "#define \fBCOLOR_SIZE\fP   (\fBBLOCK_WIDTH\fP*\fBBLOCK_HEIGHT\fP)"
+.br
+.ti -1c
+.RI "#define \fBBLOCK_SIZE\fP   (\fBCOLOR_SIZE\fP*3)"
+.br
+.ti -1c
+.RI "#define \fBBGRX_SIZE\fP   (\fBCOLOR_SIZE\fP*4)"
+.br
+.ti -1c
+.RI "#define \fB_PACK\fP(index,  quality)   (\fBint\fP)(((index)<<3)|(quality))"
+.br
+.ti -1c
+.RI "#define \fB_UNPACK\fP(index,  quality,  val)   { index = ((val)>>3)&0x0000FFFF; quality = val&0x7; }"
+.br
+.in -1c
+.SH "定義巨集說明文件"
+.PP 
+.SS "#define _PACK(index, quality)   (\fBint\fP)(((index)<<3)|(quality))"
+
+.PP
+定義在 Encoder\&.h 檔案之第 36 行\&.
+.SS "#define _UNPACK(index, quality, val)   { index = ((val)>>3)&0x0000FFFF; quality = val&0x7; }"
+
+.PP
+定義在 Encoder\&.h 檔案之第 37 行\&.
+.SS "#define BGRX_SIZE   (\fBCOLOR_SIZE\fP*4)"
+
+.PP
+定義在 Encoder\&.h 檔案之第 34 行\&.
+.SS "#define BLOCK_HEIGHT   8"
+
+.PP
+定義在 Encoder\&.h 檔案之第 19 行\&.
+.SS "#define BLOCK_SIZE   (\fBCOLOR_SIZE\fP*3)"
+
+.PP
+定義在 Encoder\&.h 檔案之第 33 行\&.
+.SS "#define BLOCK_WIDTH   32"
+
+.PP
+定義在 Encoder\&.h 檔案之第 18 行\&.
+.SS "#define COLOR_SIZE   (\fBBLOCK_WIDTH\fP*\fBBLOCK_HEIGHT\fP)"
+
+.PP
+定義在 Encoder\&.h 檔案之第 32 行\&.
+.SS "#define ENC_THREADS   4"
+
+.PP
+定義在 Encoder\&.h 檔案之第 24 行\&.
+.SS "#define MAX_HEIGHT   1200"
+
+.PP
+定義在 Encoder\&.h 檔案之第 15 行\&.
+.SS "#define MAX_SCREEN_BLOCK   9000"
+
+.PP
+定義在 Encoder\&.h 檔案之第 17 行\&.
+.SS "#define MAX_WIDTH   1920"
+
+.PP
+定義在 Encoder\&.h 檔案之第 14 行\&.
+.SS "#define NUM_ENCODER   3"
+
+.PP
+定義在 Encoder\&.h 檔案之第 22 行\&.
+.SS "#define NUM_SCREEN   2"
+
+.PP
+定義在 Encoder\&.h 檔案之第 23 行\&.
+.SS "#define QUALITY_CLONE   4"
+
+.PP
+定義在 Encoder\&.h 檔案之第 30 行\&.
+.SS "#define QUALITY_HIGH   3"
+
+.PP
+定義在 Encoder\&.h 檔案之第 29 行\&.
+.SS "#define QUALITY_LOW   1"
+
+.PP
+定義在 Encoder\&.h 檔案之第 27 行\&.
+.SS "#define QUALITY_MEDIAN   2"
+
+.PP
+定義在 Encoder\&.h 檔案之第 28 行\&.
+.SS "#define QUALITY_RAW   0"
+
+.PP
+定義在 Encoder\&.h 檔案之第 26 行\&.
+.SS "#define RAW_DEPTH   4"
+
+.PP
+定義在 Encoder\&.h 檔案之第 20 行\&.
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

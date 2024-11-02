@@ -1,0 +1,108 @@
+.TH "X11_Screen" 3 "2024年11月2日 星期六" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+X11_Screen
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <xrandr\&.h>\fP
+.SS "公開方法(Public Methods)"
+
+.in +1c
+.ti -1c
+.RI "\fBX11_Screen\fP ()"
+.br
+.ti -1c
+.RI "\fBint\fP \fBinit_dsp\fP ()"
+.br
+.ti -1c
+.RI "\fBint\fP \fBcreateimage\fP (Display *dsp, struct \fBshmimage\fP *image, \fBint\fP width, \fBint\fP height)"
+.br
+.ti -1c
+.RI "void \fBdestroyimage\fP (Display *dsp, struct \fBshmimage\fP *image)"
+.br
+.ti -1c
+.RI "\fBint\fP \fBinformationCheck\fP ()"
+.br
+.ti -1c
+.RI "void \fBcursorPosition\fP ()"
+.br
+.ti -1c
+.RI "struct \fBshmimage\fP \fBscreenshot\fP (bool exMode)"
+.br
+.ti -1c
+.RI "void \fBcombineCursorBuffer\fP (struct \fBshmimage\fP *image)"
+.br
+.in -1c
+.SS "公開屬性"
+
+.in +1c
+.ti -1c
+.RI "\fBint\fP \fBroot_x\fP"
+.br
+.ti -1c
+.RI "\fBint\fP \fBroot_y\fP"
+.br
+.ti -1c
+.RI "Display * \fBdsp_share\fP"
+.br
+.in -1c
+.SH "詳細描述"
+.PP 
+定義在 xrandr\&.h 檔案之第 60 行\&.
+.SH "建構子與解構子說明文件"
+.PP 
+.SS "X11_Screen::X11_Screen ()\fC [inline]\fP"
+
+.PP
+定義在 xrandr\&.h 檔案之第 63 行\&.
+.SH "函式成員說明文件"
+.PP 
+.SS "void X11_Screen::combineCursorBuffer (struct \fBshmimage\fP * image)"
+
+.PP
+定義在 xrandr\&.c 檔案之第 1365 行\&.
+.SS "\fBint\fP X11_Screen::createimage (Display * dsp, struct \fBshmimage\fP * image, \fBint\fP width, \fBint\fP height)"
+
+.PP
+定義在 xrandr\&.c 檔案之第 1213 行\&.
+.SS "void X11_Screen::cursorPosition ()"
+
+.PP
+定義在 xrandr\&.c 檔案之第 1170 行\&.
+.SS "void X11_Screen::destroyimage (Display * dsp, struct \fBshmimage\fP * image)"
+
+.PP
+定義在 xrandr\&.c 檔案之第 1197 行\&.
+.SS "\fBint\fP X11_Screen::informationCheck ()"
+
+.PP
+定義在 xrandr\&.c 檔案之第 1123 行\&.
+.SS "\fBint\fP X11_Screen::init_dsp ()"
+
+.PP
+定義在 xrandr\&.c 檔案之第 1089 行\&.
+.SS "struct \fBshmimage\fP X11_Screen::screenshot (bool exMode)"
+
+.PP
+定義在 xrandr\&.c 檔案之第 1259 行\&.
+.SH "資料成員說明文件"
+.PP 
+.SS "Display* X11_Screen::dsp_share"
+
+.PP
+定義在 xrandr\&.h 檔案之第 75 行\&.
+.SS "\fBint\fP X11_Screen::root_x"
+
+.PP
+定義在 xrandr\&.h 檔案之第 74 行\&.
+.SS "\fBint\fP X11_Screen::root_y"
+
+.PP
+定義在 xrandr\&.h 檔案之第 74 行\&.
+
+.SH "作者"
+.PP 
+本文件由Doxygen 自 My Project 的原始碼中自動產生\&.

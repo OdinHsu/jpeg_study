@@ -33,12 +33,16 @@ typedef struct {
 unsigned char* load_bmp_image(const char* file_name, int *width, int *height);
 
 int main() {
-    const char* bmp_name = "../src/testBMP.bmp";
+    const char* bmp_name = "src/testBMP.bmp";
 
     int width = 0, height = 0;
     unsigned char* bmp_data = load_bmp_image(bmp_name, &width, &height);
 
-    
+    for (int i = 0; i < height; ++i) {
+        for (int j = 0; j < width; ++j) {
+            printf("%4d", *((bmp_data+(i*width))+j));
+        }
+    }
 
     return 0;
 }
@@ -51,7 +55,12 @@ unsigned char* load_bmp_image(const char* file_name, int *width, int *height) {
     }
 
     BITMAPFILEHEADER fileHeader;
-    fread(&fileHeader, sizeof(BITMAPFILEHEADER), 1, file);
+    // 檢查 fread 返回值
+    if (fread(&fileHeader, sizeof(BITMAPFILEHEADER), 1, file) != 1) {
+        fprintf(stderr, "Error reading file header.\n");
+        fclose(file);
+        return NULL;
+    }
     if (fileHeader.bfType != 0x4D42) { // 檢查是否為 BMP 格式（'BM' 標識）
         printf("此文件不是 BMP 圖片\n");
         fclose(file);
@@ -59,7 +68,11 @@ unsigned char* load_bmp_image(const char* file_name, int *width, int *height) {
     }
 
     BITMAPINFOHEADER infoHeader;
-    fread(&infoHeader, sizeof(BITMAPINFOHEADER), 1, file);
+    if (fread(&infoHeader, sizeof(BITMAPINFOHEADER), 1, file) != 1) {
+        fprintf(stderr, "Error reading info header.\n");
+        fclose(file);
+        return nullptr;
+    }
     printf("寬度: %d\n", infoHeader.biWidth);
     printf("高度: %d\n", infoHeader.biHeight);
     printf("色深: %d 位元\n", infoHeader.biBitCount);

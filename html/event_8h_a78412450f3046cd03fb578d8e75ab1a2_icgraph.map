@@ -1,7 +1,0 @@
-<map id="init_event" name="init_event">
-<area shape="rect" id="node1" title=" " alt="" coords="265,81,352,108"/>
-<area shape="rect" id="node2" href="$class_capture.html#a97036b5d271238bd4852da79a0091b57" title=" " alt="" coords="45,5,177,32"/>
-<area shape="rect" id="node3" href="$class_encode_engine.html#a868eff0aba1443d81070a3c05266a0fc" title=" " alt="" coords="5,56,217,83"/>
-<area shape="rect" id="node4" href="$class_encode_unit.html#ad331809bf4134db60db7a17a667e95ed" title=" " alt="" coords="22,107,201,133"/>
-<area shape="rect" id="node5" href="$class_thread_base.html#af66330f2f5605a8f104ec346014da976" title=" " alt="" coords="19,157,203,184"/>
-</map>

@@ -1,8 +1,0 @@
-<map id="evdi_device" name="evdi_device">
-<area shape="rect" id="node1" title=" " alt="" coords="117,285,217,312"/>
-<area shape="rect" id="node2" href="$structevdi__cursor.html" title=" " alt="" coords="5,145,103,172"/>
-<area shape="rect" id="node3" href="$structevdi__gem__object.html" title=" " alt="" coords="21,5,154,32"/>
-<area shape="rect" id="node5" href="$structevdi__framebuffer.html" title=" " alt="" coords="100,95,235,121"/>
-<area shape="rect" id="node4" href="$structevdi__fbdev.html" title=" " alt="" coords="120,196,215,223"/>
-<area shape="rect" id="node6" href="$structevdi__painter.html" title=" " alt="" coords="239,196,341,223"/>
-</map>

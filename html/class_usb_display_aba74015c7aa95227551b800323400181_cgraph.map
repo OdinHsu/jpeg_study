@@ -1,7 +1,0 @@
-<map id="UsbDisplay::jxInit" name="UsbDisplay::jxInit">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,141,57"/>
-<area shape="rect" id="node2" href="$class_capture.html#ada2b91a69570edbb2bbb22a49c055021" title=" " alt="" coords="189,31,359,57"/>
-<area shape="rect" id="node3" href="$class_android_engine.html#ac89eebe1929f619ff46692181686d010" title=" " alt="" coords="407,5,619,32"/>
-<area shape="rect" id="node5" href="$class_thread_base.html#a4a1f6b181ec4fdd376d824caf5b5adaa" title=" " alt="" coords="443,56,582,83"/>
-<area shape="rect" id="node4" href="$class_client_u_s_b.html#a35ff9bf82e4e4d67d93d4fa96120528d" title=" " alt="" coords="667,5,841,32"/>
-</map>

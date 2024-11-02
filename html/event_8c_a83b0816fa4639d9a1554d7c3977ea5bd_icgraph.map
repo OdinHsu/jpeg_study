@@ -1,7 +1,0 @@
-<map id="uninit_event" name="uninit_event">
-<area shape="rect" id="node1" title=" " alt="" coords="276,81,379,108"/>
-<area shape="rect" id="node2" href="$class_capture.html#ab5b3fac467fa47592126d782f9375250" title=" " alt="" coords="45,5,188,32"/>
-<area shape="rect" id="node3" href="$class_encode_engine.html#a43e55270fcc5a2d0a7365e2e975eecae" title=" " alt="" coords="5,56,228,83"/>
-<area shape="rect" id="node4" href="$class_encode_unit.html#aba39f3aeb89ce11afb14a303ca8fdf21" title=" " alt="" coords="22,107,211,133"/>
-<area shape="rect" id="node5" href="$class_thread_base.html#ad15ca02379160e151a026fe382dc2b05" title=" " alt="" coords="19,157,214,184"/>
-</map>

@@ -1,0 +1,26 @@
+var jpeg__enc_8c =
+[
+    [ "compute_Huffman_table", "jpeg__enc_8c.html#aa0ad0b017d0f40335a0ca63e2a3cd4b1", null ],
+    [ "DeInitialize", "jpeg__enc_8c.html#ad9a7edb57ac46137f80a60d8f54a3eec", null ],
+    [ "encode", "jpeg__enc_8c.html#a7626c713912d29bc0208bb4d4b387fee", null ],
+    [ "exitmessage", "jpeg__enc_8c.html#a189439c7f44c437c657d97ed6194c288", null ],
+    [ "fdct_and_quantization", "jpeg__enc_8c.html#ad08dd1d0be0c6f5bb9dee09e0d189650", null ],
+    [ "GetDQTinfo", "jpeg__enc_8c.html#aed12a3220b4ff438b98346db0d8b2d88", null ],
+    [ "init_Huffman_tables", "jpeg__enc_8c.html#a0a948f3a01600239069178253e30e382", null ],
+    [ "Initialize", "jpeg__enc_8c.html#aef37c36584c40822dd8ffd51601a17ea", null ],
+    [ "load_data_units_from_buffer", "jpeg__enc_8c.html#a477a74841f0b749853ac2531a8987bc4", null ],
+    [ "main_encoder", "jpeg__enc_8c.html#a545c0b88a77ab043015179bbcdac84ee", null ],
+    [ "prepare_quant_tables", "jpeg__enc_8c.html#aee99c37ec8931c5738a222b301f3755d", null ],
+    [ "process_DU", "jpeg__enc_8c.html#a7717016b07e28d8450192a8dfb3e7bfb", null ],
+    [ "set_DHTinfo", "jpeg__enc_8c.html#ab1f9f80fdde968fcb1edd1cebb97faec", null ],
+    [ "set_DQTinfo", "jpeg__enc_8c.html#ab7ad030c16f5310b3806ea727df433c3", null ],
+    [ "set_quant_table", "jpeg__enc_8c.html#a689dd199b140c9518f1df106a52cd6a0", null ],
+    [ "write_APP0info", "jpeg__enc_8c.html#ad6373d7cd52fd24f48b11b537dd9ef79", null ],
+    [ "write_comment", "jpeg__enc_8c.html#a2af5ddb4ee88fcd55d2537a7bfda3ed1", null ],
+    [ "write_DHTinfo", "jpeg__enc_8c.html#add40a833c42db841bba279c85ff09e80", null ],
+    [ "write_DQTinfo", "jpeg__enc_8c.html#a4830b44852460d287c795c9c7f8415b4", null ],
+    [ "write_SOF0info", "jpeg__enc_8c.html#a1838db9d77f464725d435000dbb8a73f", null ],
+    [ "write_SOSinfo", "jpeg__enc_8c.html#a20ec8c1d53aa25102380578e8866418b", null ],
+    [ "writebits", "jpeg__enc_8c.html#a1ab61b3ba65c0635617e5f225d72f2f9", null ],
+    [ "WriteHeader", "jpeg__enc_8c.html#ad044d7626e2e07f7f310ad478181a642", null ]
+];

@@ -1,0 +1,151 @@
+\hypertarget{evdi__gem_8c}{}\doxysection{/home/odin/\+Desktop/program/learn/usbdisp\+\_\+linux/libusbdisp/deb\+\_\+install/com.racertech.\+usbdisp-\/1.0.0/opt/apps/com.racertech.\+usbdisp/files/evdi/module/evdi\+\_\+gem.c 檔案參考文件}
+\label{evdi__gem_8c}\index{/home/odin/Desktop/program/learn/usbdisp\_linux/libusbdisp/deb\_install/com.racertech.usbdisp-\/1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi\_gem.c@{/home/odin/Desktop/program/learn/usbdisp\_linux/libusbdisp/deb\_install/com.racertech.usbdisp-\/1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi\_gem.c}}
+{\ttfamily \#include $<$linux/sched.\+h$>$}\newline
+{\ttfamily \#include $<$linux/version.\+h$>$}\newline
+{\ttfamily \#include $<$drm/drm\+\_\+prime.\+h$>$}\newline
+{\ttfamily \#include $<$drm/drm\+\_\+file.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}evdi\+\_\+drm\+\_\+drv.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}evdi\+\_\+params.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$linux/shmem\+\_\+fs.\+h$>$}\newline
+{\ttfamily \#include $<$linux/dma-\/buf.\+h$>$}\newline
+{\ttfamily \#include $<$drm/drm\+\_\+cache.\+h$>$}\newline
+evdi\+\_\+gem.\+c的包含相依圖\+:
+% FIG 0
+\doxysubsection*{函式}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{evdi__gem_8c_a648e2c97d818096da9ce068a3172e7ad}{MODULE\+\_\+\+IMPORT\+\_\+\+NS}} (DMA\+\_\+\+BUF)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{evdi__gem_8c_ab84040237a782ebd34364aadc48471f8}{evdi\+\_\+gem\+\_\+object\+\_\+handle\+\_\+lookup}} (struct drm\+\_\+file $\ast$filp, struct drm\+\_\+gem\+\_\+object $\ast$obj)
+\item 
+struct \mbox{\hyperlink{structevdi__gem__object}{evdi\+\_\+gem\+\_\+object}} $\ast$ \mbox{\hyperlink{evdi__gem_8c_af28695881b71065cce598bd9a314ade8}{evdi\+\_\+gem\+\_\+alloc\+\_\+object}} (struct drm\+\_\+device $\ast$dev, size\+\_\+t size)
+\item 
+\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{evdi__gem_8c_a541153bc5a25b5a07513c30c67ba64c5}{evdi\+\_\+dumb\+\_\+create}} (struct drm\+\_\+file $\ast$file, struct drm\+\_\+device $\ast$dev, struct drm\+\_\+mode\+\_\+create\+\_\+dumb $\ast$args)
+\item 
+\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{evdi__gem_8c_a0878d7d7042c25480d8bd24f19197b00}{evdi\+\_\+drm\+\_\+gem\+\_\+mmap}} (struct file $\ast$filp, struct vm\+\_\+area\+\_\+struct $\ast$vma)
+\item 
+vm\+\_\+fault\+\_\+t \mbox{\hyperlink{evdi__gem_8c_a4e3f5a85661b4a372c1ce70f10446d28}{evdi\+\_\+gem\+\_\+fault}} (struct vm\+\_\+fault $\ast$vmf)
+\item 
+\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{evdi__gem_8c_a91a07e8620b47f2a36dbda301fe1d509}{evdi\+\_\+gem\+\_\+vmap}} (struct \mbox{\hyperlink{structevdi__gem__object}{evdi\+\_\+gem\+\_\+object}} $\ast$obj)
+\item 
+void \mbox{\hyperlink{evdi__gem_8c_ac23ae5c4323b045c69a51088650598db}{evdi\+\_\+gem\+\_\+vunmap}} (struct \mbox{\hyperlink{structevdi__gem__object}{evdi\+\_\+gem\+\_\+object}} $\ast$obj)
+\item 
+void \mbox{\hyperlink{evdi__gem_8c_a86e09609b0b22f642cf3e8ffe2a5e86a}{evdi\+\_\+gem\+\_\+free\+\_\+object}} (struct drm\+\_\+gem\+\_\+object $\ast$gem\+\_\+obj)
+\item 
+\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{evdi__gem_8c_a9c08bec9036b2bfb541288f8365aafd8}{evdi\+\_\+gem\+\_\+mmap}} (struct drm\+\_\+file $\ast$file, struct drm\+\_\+device $\ast$dev, uint32\+\_\+t \mbox{\hyperlink{main_8c_a96cd449c4b349daaf3ec8700056aa462}{handle}}, uint64\+\_\+t $\ast$offset)
+\item 
+struct drm\+\_\+gem\+\_\+object $\ast$ \mbox{\hyperlink{evdi__gem_8c_a937664c6448e40ac97e32c62aad568f4}{evdi\+\_\+prime\+\_\+import\+\_\+sg\+\_\+table}} (struct drm\+\_\+device $\ast$dev, struct dma\+\_\+buf\+\_\+attachment $\ast$attach, struct sg\+\_\+table $\ast$sg)
+\item 
+struct sg\+\_\+table $\ast$ \mbox{\hyperlink{evdi__gem_8c_a3c6a6aa361fb03449b83a9b9b641c237}{evdi\+\_\+prime\+\_\+get\+\_\+sg\+\_\+table}} (struct drm\+\_\+gem\+\_\+object $\ast$obj)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函式說明文件}
+\mbox{\Hypertarget{evdi__gem_8c_a0878d7d7042c25480d8bd24f19197b00}\label{evdi__gem_8c_a0878d7d7042c25480d8bd24f19197b00}} 
+\index{evdi\_gem.c@{evdi\_gem.c}!evdi\_drm\_gem\_mmap@{evdi\_drm\_gem\_mmap}}
+\index{evdi\_drm\_gem\_mmap@{evdi\_drm\_gem\_mmap}!evdi\_gem.c@{evdi\_gem.c}}
+\doxysubsubsection{\texorpdfstring{evdi\_drm\_gem\_mmap()}{evdi\_drm\_gem\_mmap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} evdi\+\_\+drm\+\_\+gem\+\_\+mmap (\begin{DoxyParamCaption}\item[{struct file $\ast$}]{filp,  }\item[{struct vm\+\_\+area\+\_\+struct $\ast$}]{vma }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{evdi__gem_8c_a541153bc5a25b5a07513c30c67ba64c5}\label{evdi__gem_8c_a541153bc5a25b5a07513c30c67ba64c5}} 
+\index{evdi\_gem.c@{evdi\_gem.c}!evdi\_dumb\_create@{evdi\_dumb\_create}}
+\index{evdi\_dumb\_create@{evdi\_dumb\_create}!evdi\_gem.c@{evdi\_gem.c}}
+\doxysubsubsection{\texorpdfstring{evdi\_dumb\_create()}{evdi\_dumb\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} evdi\+\_\+dumb\+\_\+create (\begin{DoxyParamCaption}\item[{struct drm\+\_\+file $\ast$}]{file,  }\item[{struct drm\+\_\+device $\ast$}]{dev,  }\item[{struct drm\+\_\+mode\+\_\+create\+\_\+dumb $\ast$}]{args }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{evdi__gem_8c_af28695881b71065cce598bd9a314ade8}\label{evdi__gem_8c_af28695881b71065cce598bd9a314ade8}} 
+\index{evdi\_gem.c@{evdi\_gem.c}!evdi\_gem\_alloc\_object@{evdi\_gem\_alloc\_object}}
+\index{evdi\_gem\_alloc\_object@{evdi\_gem\_alloc\_object}!evdi\_gem.c@{evdi\_gem.c}}
+\doxysubsubsection{\texorpdfstring{evdi\_gem\_alloc\_object()}{evdi\_gem\_alloc\_object()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structevdi__gem__object}{evdi\+\_\+gem\+\_\+object}}$\ast$ evdi\+\_\+gem\+\_\+alloc\+\_\+object (\begin{DoxyParamCaption}\item[{struct drm\+\_\+device $\ast$}]{dev,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+參考 evdi\+\_\+gem\+\_\+object\+::\+\_\+resv, evdi\+\_\+gem\+\_\+object\+::base, 及 evdi\+\_\+gem\+\_\+object\+::resv.
+
+\mbox{\Hypertarget{evdi__gem_8c_a4e3f5a85661b4a372c1ce70f10446d28}\label{evdi__gem_8c_a4e3f5a85661b4a372c1ce70f10446d28}} 
+\index{evdi\_gem.c@{evdi\_gem.c}!evdi\_gem\_fault@{evdi\_gem\_fault}}
+\index{evdi\_gem\_fault@{evdi\_gem\_fault}!evdi\_gem.c@{evdi\_gem.c}}
+\doxysubsubsection{\texorpdfstring{evdi\_gem\_fault()}{evdi\_gem\_fault()}}
+{\footnotesize\ttfamily vm\+\_\+fault\+\_\+t evdi\+\_\+gem\+\_\+fault (\begin{DoxyParamCaption}\item[{struct vm\+\_\+fault $\ast$}]{vmf }\end{DoxyParamCaption})}
+
+
+
+參考 evdi\+\_\+gem\+\_\+fault(), evdi\+\_\+gem\+\_\+object\+::pages, 及 to\+\_\+evdi\+\_\+bo.
+
+
+
+被參考於 evdi\+\_\+gem\+\_\+fault().
+
+\mbox{\Hypertarget{evdi__gem_8c_a86e09609b0b22f642cf3e8ffe2a5e86a}\label{evdi__gem_8c_a86e09609b0b22f642cf3e8ffe2a5e86a}} 
+\index{evdi\_gem.c@{evdi\_gem.c}!evdi\_gem\_free\_object@{evdi\_gem\_free\_object}}
+\index{evdi\_gem\_free\_object@{evdi\_gem\_free\_object}!evdi\_gem.c@{evdi\_gem.c}}
+\doxysubsubsection{\texorpdfstring{evdi\_gem\_free\_object()}{evdi\_gem\_free\_object()}}
+{\footnotesize\ttfamily void evdi\+\_\+gem\+\_\+free\+\_\+object (\begin{DoxyParamCaption}\item[{struct drm\+\_\+gem\+\_\+object $\ast$}]{gem\+\_\+obj }\end{DoxyParamCaption})}
+
+
+
+參考 evdi\+\_\+gem\+\_\+vunmap(), evdi\+\_\+gem\+\_\+object\+::pages, evdi\+\_\+gem\+\_\+object\+::sg, to\+\_\+evdi\+\_\+bo, 及 evdi\+\_\+gem\+\_\+object\+::vmapping.
+
+\mbox{\Hypertarget{evdi__gem_8c_a9c08bec9036b2bfb541288f8365aafd8}\label{evdi__gem_8c_a9c08bec9036b2bfb541288f8365aafd8}} 
+\index{evdi\_gem.c@{evdi\_gem.c}!evdi\_gem\_mmap@{evdi\_gem\_mmap}}
+\index{evdi\_gem\_mmap@{evdi\_gem\_mmap}!evdi\_gem.c@{evdi\_gem.c}}
+\doxysubsubsection{\texorpdfstring{evdi\_gem\_mmap()}{evdi\_gem\_mmap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} evdi\+\_\+gem\+\_\+mmap (\begin{DoxyParamCaption}\item[{struct drm\+\_\+file $\ast$}]{file,  }\item[{struct drm\+\_\+device $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{handle,  }\item[{uint64\+\_\+t $\ast$}]{offset }\end{DoxyParamCaption})}
+
+
+
+參考 handle, 及 to\+\_\+evdi\+\_\+bo.
+
+\mbox{\Hypertarget{evdi__gem_8c_ab84040237a782ebd34364aadc48471f8}\label{evdi__gem_8c_ab84040237a782ebd34364aadc48471f8}} 
+\index{evdi\_gem.c@{evdi\_gem.c}!evdi\_gem\_object\_handle\_lookup@{evdi\_gem\_object\_handle\_lookup}}
+\index{evdi\_gem\_object\_handle\_lookup@{evdi\_gem\_object\_handle\_lookup}!evdi\_gem.c@{evdi\_gem.c}}
+\doxysubsubsection{\texorpdfstring{evdi\_gem\_object\_handle\_lookup()}{evdi\_gem\_object\_handle\_lookup()}}
+{\footnotesize\ttfamily uint32\+\_\+t evdi\+\_\+gem\+\_\+object\+\_\+handle\+\_\+lookup (\begin{DoxyParamCaption}\item[{struct drm\+\_\+file $\ast$}]{filp,  }\item[{struct drm\+\_\+gem\+\_\+object $\ast$}]{obj }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{evdi__gem_8c_a91a07e8620b47f2a36dbda301fe1d509}\label{evdi__gem_8c_a91a07e8620b47f2a36dbda301fe1d509}} 
+\index{evdi\_gem.c@{evdi\_gem.c}!evdi\_gem\_vmap@{evdi\_gem\_vmap}}
+\index{evdi\_gem\_vmap@{evdi\_gem\_vmap}!evdi\_gem.c@{evdi\_gem.c}}
+\doxysubsubsection{\texorpdfstring{evdi\_gem\_vmap()}{evdi\_gem\_vmap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} evdi\+\_\+gem\+\_\+vmap (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structevdi__gem__object}{evdi\+\_\+gem\+\_\+object}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+參考 evdi\+\_\+gem\+\_\+object\+::base.
+
+
+
+被參考於 evdi\+\_\+cursor\+\_\+set().
+
+\mbox{\Hypertarget{evdi__gem_8c_ac23ae5c4323b045c69a51088650598db}\label{evdi__gem_8c_ac23ae5c4323b045c69a51088650598db}} 
+\index{evdi\_gem.c@{evdi\_gem.c}!evdi\_gem\_vunmap@{evdi\_gem\_vunmap}}
+\index{evdi\_gem\_vunmap@{evdi\_gem\_vunmap}!evdi\_gem.c@{evdi\_gem.c}}
+\doxysubsubsection{\texorpdfstring{evdi\_gem\_vunmap()}{evdi\_gem\_vunmap()}}
+{\footnotesize\ttfamily void evdi\+\_\+gem\+\_\+vunmap (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structevdi__gem__object}{evdi\+\_\+gem\+\_\+object}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+被參考於 evdi\+\_\+gem\+\_\+free\+\_\+object().
+
+\mbox{\Hypertarget{evdi__gem_8c_a3c6a6aa361fb03449b83a9b9b641c237}\label{evdi__gem_8c_a3c6a6aa361fb03449b83a9b9b641c237}} 
+\index{evdi\_gem.c@{evdi\_gem.c}!evdi\_prime\_get\_sg\_table@{evdi\_prime\_get\_sg\_table}}
+\index{evdi\_prime\_get\_sg\_table@{evdi\_prime\_get\_sg\_table}!evdi\_gem.c@{evdi\_gem.c}}
+\doxysubsubsection{\texorpdfstring{evdi\_prime\_get\_sg\_table()}{evdi\_prime\_get\_sg\_table()}}
+{\footnotesize\ttfamily struct sg\+\_\+table$\ast$ evdi\+\_\+prime\+\_\+get\+\_\+sg\+\_\+table (\begin{DoxyParamCaption}\item[{struct drm\+\_\+gem\+\_\+object $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+參考 evdi\+\_\+gem\+\_\+object\+::base, evdi\+\_\+gem\+\_\+object\+::pages, 及 to\+\_\+evdi\+\_\+bo.
+
+\mbox{\Hypertarget{evdi__gem_8c_a937664c6448e40ac97e32c62aad568f4}\label{evdi__gem_8c_a937664c6448e40ac97e32c62aad568f4}} 
+\index{evdi\_gem.c@{evdi\_gem.c}!evdi\_prime\_import\_sg\_table@{evdi\_prime\_import\_sg\_table}}
+\index{evdi\_prime\_import\_sg\_table@{evdi\_prime\_import\_sg\_table}!evdi\_gem.c@{evdi\_gem.c}}
+\doxysubsubsection{\texorpdfstring{evdi\_prime\_import\_sg\_table()}{evdi\_prime\_import\_sg\_table()}}
+{\footnotesize\ttfamily struct drm\+\_\+gem\+\_\+object$\ast$ evdi\+\_\+prime\+\_\+import\+\_\+sg\+\_\+table (\begin{DoxyParamCaption}\item[{struct drm\+\_\+device $\ast$}]{dev,  }\item[{struct dma\+\_\+buf\+\_\+attachment $\ast$}]{attach,  }\item[{struct sg\+\_\+table $\ast$}]{sg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{evdi__gem_8c_a648e2c97d818096da9ce068a3172e7ad}\label{evdi__gem_8c_a648e2c97d818096da9ce068a3172e7ad}} 
+\index{evdi\_gem.c@{evdi\_gem.c}!MODULE\_IMPORT\_NS@{MODULE\_IMPORT\_NS}}
+\index{MODULE\_IMPORT\_NS@{MODULE\_IMPORT\_NS}!evdi\_gem.c@{evdi\_gem.c}}
+\doxysubsubsection{\texorpdfstring{MODULE\_IMPORT\_NS()}{MODULE\_IMPORT\_NS()}}
+{\footnotesize\ttfamily MODULE\+\_\+\+IMPORT\+\_\+\+NS (\begin{DoxyParamCaption}\item[{DMA\+\_\+\+BUF}]{ }\end{DoxyParamCaption})}
+

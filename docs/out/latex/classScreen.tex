@@ -1,0 +1,270 @@
+\hypertarget{classScreen}{}\doxysection{Screen 類別 參考文件}
+\label{classScreen}\index{Screen@{Screen}}
+
+
+{\ttfamily \#include $<$screen.\+hpp$>$}
+
+
+
+類別\+Screen的繼承圖\+:
+% FIG 0
+\doxysubsection*{公開方法(Public Methods)}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classScreen_a541febb6fb28836062a60be43c4522b2}{Screen}} (const \mbox{\hyperlink{classEvdi}{Evdi}} \&evdi, std\+::vector$<$ unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a8b272214e498a4cb09dde135bb4d7d03}{char}} $>$ \&edid, bool separate\+Cursor\+Events=false)
+\item 
+\mbox{\hyperlink{classScreen_a4243bc17596af96415b09ac48205676d}{$\sim$\+Screen}} ()
+\item 
+void \mbox{\hyperlink{classScreen_a0b6fb948f802838e45c45ef04d7e6370}{update}} ()
+\item 
+\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{classScreen_ab81aafacb599abec0054b2a35c104e02}{event\+\_\+source}} () const
+\item 
+void \mbox{\hyperlink{classScreen_a0253b0fcd6ede84ab2a7e9311f0cab00}{handle\+\_\+events}} ()
+\item 
+void \mbox{\hyperlink{classScreen_a2ca04dad5424aeb15880dd624fd2f2ef}{enable\+\_\+cursor\+\_\+events}} () const
+\item 
+void \mbox{\hyperlink{classScreen_a85536e7236af7791fd1efc4c292af62d}{set\+Edid}} (std\+::vector$<$ unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a8b272214e498a4cb09dde135bb4d7d03}{char}} $>$ \&edid) const
+\end{DoxyCompactItemize}
+\doxysubsection*{保護方法(Protected Methods)}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classScreen_a8e4b6bf6fb4108924599d3fc57a26c8d}{on\+\_\+mode\+\_\+change}} (\mbox{\hyperlink{structevdi__mode}{evdi\+\_\+mode}} mode)
+\item 
+virtual \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{classScreen_a4968a57aa18158beb12503ccf7a5d848}{on\+\_\+update\+\_\+ready}} (\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} buffer\+\_\+to\+\_\+be\+\_\+updated)
+\item 
+virtual void \mbox{\hyperlink{classScreen_aa9ca776aa1e2d5e9f02293157ac1ec16}{on\+\_\+dpms\+\_\+notification}} (\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} dpms\+\_\+mode)
+\item 
+virtual void \mbox{\hyperlink{classScreen_a0aa14519c632a66b27b54d56fc606cb4}{on\+\_\+crtc\+\_\+state\+\_\+change}} (\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} state)
+\item 
+virtual void \mbox{\hyperlink{classScreen_a45f6301d9fca61e9d90cffdc17f99eab}{on\+\_\+cursor\+\_\+set}} (\mbox{\hyperlink{structevdi__cursor__set}{evdi\+\_\+cursor\+\_\+set}} cursor\+\_\+set)
+\item 
+virtual void \mbox{\hyperlink{classScreen_a94f9b4275a3274cb8a37087bccc41e9e}{on\+\_\+cursor\+\_\+move}} (\mbox{\hyperlink{structevdi__cursor__move}{evdi\+\_\+cursor\+\_\+move}} cursor\+\_\+move)
+\item 
+virtual void \mbox{\hyperlink{classScreen_af3746bed00047bb417499e46dff379a3}{on\+\_\+ddcci\+\_\+change}} (\mbox{\hyperlink{structevdi__ddcci__data}{evdi\+\_\+ddcci\+\_\+data}} ddcci\+\_\+data)
+\end{DoxyCompactItemize}
+\doxysubsection*{保護屬性}
+\begin{DoxyCompactItemize}
+\item 
+const size\+\_\+t \mbox{\hyperlink{classScreen_aba6d3ac2a7cfe6b34310dfbb793dc94c}{BUFFER\+\_\+\+COUNT}} = 2
+\item 
+std\+::map$<$ \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classBuffer}{Buffer}} $>$ $>$ \mbox{\hyperlink{classScreen_a8c77dab8c9ddde8c6310fe8143344054}{buffers}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structevdi__rect}{evdi\+\_\+rect}} $>$ \mbox{\hyperlink{classScreen_a5089f158f228c5f0df470b648f2080e1}{rects}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classScreen_a99c866c7fecb9ae73c687a09b2ff9f2f}{buffer\+To\+Update}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{建構子與解構子說明文件}
+\mbox{\Hypertarget{classScreen_a541febb6fb28836062a60be43c4522b2}\label{classScreen_a541febb6fb28836062a60be43c4522b2}} 
+\index{Screen@{Screen}!Screen@{Screen}}
+\index{Screen@{Screen}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{Screen()}{Screen()}}
+{\footnotesize\ttfamily Screen\+::\+Screen (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classEvdi}{Evdi}} \&}]{evdi,  }\item[{std\+::vector$<$ unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a8b272214e498a4cb09dde135bb4d7d03}{char}} $>$ \&}]{edid,  }\item[{bool}]{separate\+Cursor\+Events = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+參考 Evdi\+::connect(), evdi\+\_\+event\+\_\+context\+::crtc\+\_\+state\+\_\+handler, evdi\+\_\+event\+\_\+context\+::cursor\+\_\+move\+\_\+handler, evdi\+\_\+event\+\_\+context\+::cursor\+\_\+set\+\_\+handler, evdi\+\_\+event\+\_\+context\+::ddcci\+\_\+data\+\_\+handler, evdi\+\_\+event\+\_\+context\+::dpms\+\_\+handler, enable\+\_\+cursor\+\_\+events(), evdi\+\_\+event\+\_\+context\+::mode\+\_\+changed\+\_\+handler, rects, evdi\+\_\+event\+\_\+context\+::update\+\_\+ready\+\_\+handler, 及 evdi\+\_\+event\+\_\+context\+::user\+\_\+data.
+
+\mbox{\Hypertarget{classScreen_a4243bc17596af96415b09ac48205676d}\label{classScreen_a4243bc17596af96415b09ac48205676d}} 
+\index{Screen@{Screen}!````~Screen@{$\sim$Screen}}
+\index{````~Screen@{$\sim$Screen}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{$\sim$Screen()}{~Screen()}}
+{\footnotesize\ttfamily Screen\+::$\sim$\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+參考 Evdi\+::disconnect().
+
+
+
+\doxysubsection{函式成員說明文件}
+\mbox{\Hypertarget{classScreen_a2ca04dad5424aeb15880dd624fd2f2ef}\label{classScreen_a2ca04dad5424aeb15880dd624fd2f2ef}} 
+\index{Screen@{Screen}!enable\_cursor\_events@{enable\_cursor\_events}}
+\index{enable\_cursor\_events@{enable\_cursor\_events}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{enable\_cursor\_events()}{enable\_cursor\_events()}}
+{\footnotesize\ttfamily void Screen\+::enable\+\_\+cursor\+\_\+events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+參考 Evdi\+::enable\+\_\+cursor\+\_\+events().
+
+
+
+被參考於 Screen().
+
+\mbox{\Hypertarget{classScreen_ab81aafacb599abec0054b2a35c104e02}\label{classScreen_ab81aafacb599abec0054b2a35c104e02}} 
+\index{Screen@{Screen}!event\_source@{event\_source}}
+\index{event\_source@{event\_source}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{event\_source()}{event\_source()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} Screen\+::event\+\_\+source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+參考 Evdi\+::get\+\_\+event\+\_\+source().
+
+\mbox{\Hypertarget{classScreen_a0253b0fcd6ede84ab2a7e9311f0cab00}\label{classScreen_a0253b0fcd6ede84ab2a7e9311f0cab00}} 
+\index{Screen@{Screen}!handle\_events@{handle\_events}}
+\index{handle\_events@{handle\_events}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{handle\_events()}{handle\_events()}}
+{\footnotesize\ttfamily void Screen\+::handle\+\_\+events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+參考 Evdi\+::handle\+\_\+events().
+
+\mbox{\Hypertarget{classScreen_a0aa14519c632a66b27b54d56fc606cb4}\label{classScreen_a0aa14519c632a66b27b54d56fc606cb4}} 
+\index{Screen@{Screen}!on\_crtc\_state\_change@{on\_crtc\_state\_change}}
+\index{on\_crtc\_state\_change@{on\_crtc\_state\_change}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{on\_crtc\_state\_change()}{on\_crtc\_state\_change()}}
+{\footnotesize\ttfamily void Screen\+::on\+\_\+crtc\+\_\+state\+\_\+change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+參考 logging.
+
+\mbox{\Hypertarget{classScreen_a94f9b4275a3274cb8a37087bccc41e9e}\label{classScreen_a94f9b4275a3274cb8a37087bccc41e9e}} 
+\index{Screen@{Screen}!on\_cursor\_move@{on\_cursor\_move}}
+\index{on\_cursor\_move@{on\_cursor\_move}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{on\_cursor\_move()}{on\_cursor\_move()}}
+{\footnotesize\ttfamily void Screen\+::on\+\_\+cursor\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structevdi__cursor__move}{evdi\+\_\+cursor\+\_\+move}}}]{cursor\+\_\+move }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+在\mbox{\hyperlink{classScreenDriver_a349aa15bad588a29dd4173b1bd707a43}{Screen\+Driver}}重新實作.
+
+
+
+參考 logging, evdi\+\_\+cursor\+\_\+move\+::x, 及 evdi\+\_\+cursor\+\_\+move\+::y.
+
+\mbox{\Hypertarget{classScreen_a45f6301d9fca61e9d90cffdc17f99eab}\label{classScreen_a45f6301d9fca61e9d90cffdc17f99eab}} 
+\index{Screen@{Screen}!on\_cursor\_set@{on\_cursor\_set}}
+\index{on\_cursor\_set@{on\_cursor\_set}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{on\_cursor\_set()}{on\_cursor\_set()}}
+{\footnotesize\ttfamily void Screen\+::on\+\_\+cursor\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structevdi__cursor__set}{evdi\+\_\+cursor\+\_\+set}}}]{cursor\+\_\+set }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+在\mbox{\hyperlink{classScreenDriver_a2b3d30d22760795e7774ec410fcf2baa}{Screen\+Driver}}重新實作.
+
+
+
+參考 evdi\+\_\+cursor\+\_\+set\+::enabled, evdi\+\_\+cursor\+\_\+set\+::hot\+\_\+x, evdi\+\_\+cursor\+\_\+set\+::hot\+\_\+y, 及 logging.
+
+\mbox{\Hypertarget{classScreen_af3746bed00047bb417499e46dff379a3}\label{classScreen_af3746bed00047bb417499e46dff379a3}} 
+\index{Screen@{Screen}!on\_ddcci\_change@{on\_ddcci\_change}}
+\index{on\_ddcci\_change@{on\_ddcci\_change}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{on\_ddcci\_change()}{on\_ddcci\_change()}}
+{\footnotesize\ttfamily void Screen\+::on\+\_\+ddcci\+\_\+change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structevdi__ddcci__data}{evdi\+\_\+ddcci\+\_\+data}}}]{ddcci\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+參考 evdi\+\_\+ddcci\+\_\+data\+::buffer, evdi\+\_\+ddcci\+\_\+data\+::buffer\+\_\+length, evdi\+\_\+ddcci\+\_\+data\+::flags, 及 logging.
+
+\mbox{\Hypertarget{classScreen_aa9ca776aa1e2d5e9f02293157ac1ec16}\label{classScreen_aa9ca776aa1e2d5e9f02293157ac1ec16}} 
+\index{Screen@{Screen}!on\_dpms\_notification@{on\_dpms\_notification}}
+\index{on\_dpms\_notification@{on\_dpms\_notification}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{on\_dpms\_notification()}{on\_dpms\_notification()}}
+{\footnotesize\ttfamily void Screen\+::on\+\_\+dpms\+\_\+notification (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}}]{dpms\+\_\+mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+在\mbox{\hyperlink{classScreenDriver_ac69f0a8a248a697caee286649062880e}{Screen\+Driver}}重新實作.
+
+
+
+參考 logging.
+
+\mbox{\Hypertarget{classScreen_a8e4b6bf6fb4108924599d3fc57a26c8d}\label{classScreen_a8e4b6bf6fb4108924599d3fc57a26c8d}} 
+\index{Screen@{Screen}!on\_mode\_change@{on\_mode\_change}}
+\index{on\_mode\_change@{on\_mode\_change}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{on\_mode\_change()}{on\_mode\_change()}}
+{\footnotesize\ttfamily void Screen\+::on\+\_\+mode\+\_\+change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structevdi__mode}{evdi\+\_\+mode}}}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+參考 evdi\+\_\+mode\+::bits\+\_\+per\+\_\+pixel, buffer, BUFFER\+\_\+\+COUNT, buffers, evdi\+\_\+mode\+::height, logging, evdi\+\_\+mode\+::pixel\+\_\+format, evdi\+\_\+mode\+::refresh\+\_\+rate, Evdi\+::register\+\_\+buffer(), Evdi\+::unregister\+\_\+buffer(), 及 evdi\+\_\+mode\+::width.
+
+\mbox{\Hypertarget{classScreen_a4968a57aa18158beb12503ccf7a5d848}\label{classScreen_a4968a57aa18158beb12503ccf7a5d848}} 
+\index{Screen@{Screen}!on\_update\_ready@{on\_update\_ready}}
+\index{on\_update\_ready@{on\_update\_ready}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{on\_update\_ready()}{on\_update\_ready()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} Screen\+::on\+\_\+update\+\_\+ready (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}}]{buffer\+\_\+to\+\_\+be\+\_\+updated }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+在\mbox{\hyperlink{classScreenDriver_ae7127a5f69c71ad8e304d97a29bd07a5}{Screen\+Driver}}重新實作.
+
+
+
+參考 Evdi\+::grab\+\_\+pixels(), logging, 及 rects.
+
+
+
+被參考於 update().
+
+\mbox{\Hypertarget{classScreen_a85536e7236af7791fd1efc4c292af62d}\label{classScreen_a85536e7236af7791fd1efc4c292af62d}} 
+\index{Screen@{Screen}!setEdid@{setEdid}}
+\index{setEdid@{setEdid}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{setEdid()}{setEdid()}}
+{\footnotesize\ttfamily void Screen\+::set\+Edid (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a8b272214e498a4cb09dde135bb4d7d03}{char}} $>$ \&}]{edid }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classScreen_a0b6fb948f802838e45c45ef04d7e6370}\label{classScreen_a0b6fb948f802838e45c45ef04d7e6370}} 
+\index{Screen@{Screen}!update@{update}}
+\index{update@{update}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Screen\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+參考 BUFFER\+\_\+\+COUNT, buffer\+To\+Update, on\+\_\+update\+\_\+ready(), 及 Evdi\+::request\+\_\+update().
+
+
+
+\doxysubsection{資料成員說明文件}
+\mbox{\Hypertarget{classScreen_aba6d3ac2a7cfe6b34310dfbb793dc94c}\label{classScreen_aba6d3ac2a7cfe6b34310dfbb793dc94c}} 
+\index{Screen@{Screen}!BUFFER\_COUNT@{BUFFER\_COUNT}}
+\index{BUFFER\_COUNT@{BUFFER\_COUNT}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{BUFFER\_COUNT}{BUFFER\_COUNT}}
+{\footnotesize\ttfamily const size\+\_\+t Screen\+::\+BUFFER\+\_\+\+COUNT = 2\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+被參考於 on\+\_\+mode\+\_\+change(), 及 update().
+
+\mbox{\Hypertarget{classScreen_a8c77dab8c9ddde8c6310fe8143344054}\label{classScreen_a8c77dab8c9ddde8c6310fe8143344054}} 
+\index{Screen@{Screen}!buffers@{buffers}}
+\index{buffers@{buffers}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{buffers}{buffers}}
+{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}, std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classBuffer}{Buffer}}$>$ $>$ Screen\+::buffers\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+被參考於 on\+\_\+mode\+\_\+change(), 及 Screen\+Driver\+::on\+\_\+update\+\_\+ready().
+
+\mbox{\Hypertarget{classScreen_a99c866c7fecb9ae73c687a09b2ff9f2f}\label{classScreen_a99c866c7fecb9ae73c687a09b2ff9f2f}} 
+\index{Screen@{Screen}!bufferToUpdate@{bufferToUpdate}}
+\index{bufferToUpdate@{bufferToUpdate}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{bufferToUpdate}{bufferToUpdate}}
+{\footnotesize\ttfamily size\+\_\+t Screen\+::buffer\+To\+Update\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+被參考於 Screen\+Driver\+::on\+\_\+update\+\_\+ready(), 及 update().
+
+\mbox{\Hypertarget{classScreen_a5089f158f228c5f0df470b648f2080e1}\label{classScreen_a5089f158f228c5f0df470b648f2080e1}} 
+\index{Screen@{Screen}!rects@{rects}}
+\index{rects@{rects}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{rects}{rects}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structevdi__rect}{evdi\+\_\+rect}}$>$ Screen\+::rects\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+被參考於 Screen\+Driver\+::on\+\_\+update\+\_\+ready(), on\+\_\+update\+\_\+ready(), 及 Screen().
+
+
+
+此類別(class) 文件是由下列檔案中產生\+:\begin{DoxyCompactItemize}
+\item 
+/home/odin/\+Desktop/program/learn/usbdisp\+\_\+linux/libevdipp/\mbox{\hyperlink{screen_8hpp}{screen.\+hpp}}\item 
+/home/odin/\+Desktop/program/learn/usbdisp\+\_\+linux/libevdipp/\mbox{\hyperlink{screen_8cpp}{screen.\+cpp}}\end{DoxyCompactItemize}

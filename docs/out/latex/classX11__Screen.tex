@@ -1,0 +1,143 @@
+\hypertarget{classX11__Screen}{}\doxysection{X11\+\_\+\+Screen 類別 參考文件}
+\label{classX11__Screen}\index{X11\_Screen@{X11\_Screen}}
+
+
+{\ttfamily \#include $<$xrandr.\+h$>$}
+
+\doxysubsection*{公開方法(Public Methods)}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classX11__Screen_a1dd0e4cc193d27078063739cc73b9f67}{X11\+\_\+\+Screen}} ()
+\item 
+\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{classX11__Screen_ab643535a9a5f905285beb7bea7d86eaf}{init\+\_\+dsp}} ()
+\item 
+\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{classX11__Screen_a2d21a0f6662601c71f917d629d081fc3}{createimage}} (Display $\ast$dsp, struct \mbox{\hyperlink{structshmimage}{shmimage}} $\ast$image, \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} width, \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} height)
+\item 
+void \mbox{\hyperlink{classX11__Screen_a649e3b2611d5ea6a3b2d2b5e26d0ddfc}{destroyimage}} (Display $\ast$dsp, struct \mbox{\hyperlink{structshmimage}{shmimage}} $\ast$image)
+\item 
+\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{classX11__Screen_a0a3478a46ed16074cb9eab8b2ae7b26b}{information\+Check}} ()
+\item 
+void \mbox{\hyperlink{classX11__Screen_afc44004cdf9fa466df210d6e5008a55f}{cursor\+Position}} ()
+\item 
+struct \mbox{\hyperlink{structshmimage}{shmimage}} \mbox{\hyperlink{classX11__Screen_af2926bfc9d69bac99b918b0964730201}{screenshot}} (bool ex\+Mode)
+\item 
+void \mbox{\hyperlink{classX11__Screen_a8f7482c8132d40f1614ee748e4472cfd}{combine\+Cursor\+Buffer}} (struct \mbox{\hyperlink{structshmimage}{shmimage}} $\ast$image)
+\end{DoxyCompactItemize}
+\doxysubsection*{公開屬性}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{classX11__Screen_a0a13bbf237c8b0342196580be0ab534b}{root\+\_\+x}}
+\item 
+\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{classX11__Screen_a13180e8a0fce929d4dd3f03ed157fe92}{root\+\_\+y}}
+\item 
+Display $\ast$ \mbox{\hyperlink{classX11__Screen_a138e6043e959b7a7e2df0d282578a41d}{dsp\+\_\+share}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{建構子與解構子說明文件}
+\mbox{\Hypertarget{classX11__Screen_a1dd0e4cc193d27078063739cc73b9f67}\label{classX11__Screen_a1dd0e4cc193d27078063739cc73b9f67}} 
+\index{X11\_Screen@{X11\_Screen}!X11\_Screen@{X11\_Screen}}
+\index{X11\_Screen@{X11\_Screen}!X11\_Screen@{X11\_Screen}}
+\doxysubsubsection{\texorpdfstring{X11\_Screen()}{X11\_Screen()}}
+{\footnotesize\ttfamily X11\+\_\+\+Screen\+::\+X11\+\_\+\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{函式成員說明文件}
+\mbox{\Hypertarget{classX11__Screen_a8f7482c8132d40f1614ee748e4472cfd}\label{classX11__Screen_a8f7482c8132d40f1614ee748e4472cfd}} 
+\index{X11\_Screen@{X11\_Screen}!combineCursorBuffer@{combineCursorBuffer}}
+\index{combineCursorBuffer@{combineCursorBuffer}!X11\_Screen@{X11\_Screen}}
+\doxysubsubsection{\texorpdfstring{combineCursorBuffer()}{combineCursorBuffer()}}
+{\footnotesize\ttfamily void X11\+\_\+\+Screen\+::combine\+Cursor\+Buffer (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structshmimage}{shmimage}} $\ast$}]{image }\end{DoxyParamCaption})}
+
+
+
+參考 Cursor\+\_\+image, shmimage\+::data, root\+\_\+x, 及 root\+\_\+y.
+
+\mbox{\Hypertarget{classX11__Screen_a2d21a0f6662601c71f917d629d081fc3}\label{classX11__Screen_a2d21a0f6662601c71f917d629d081fc3}} 
+\index{X11\_Screen@{X11\_Screen}!createimage@{createimage}}
+\index{createimage@{createimage}!X11\_Screen@{X11\_Screen}}
+\doxysubsubsection{\texorpdfstring{createimage()}{createimage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} X11\+\_\+\+Screen\+::createimage (\begin{DoxyParamCaption}\item[{Display $\ast$}]{dsp,  }\item[{struct \mbox{\hyperlink{structshmimage}{shmimage}} $\ast$}]{image,  }\item[{\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}}]{width,  }\item[{\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}}]{height }\end{DoxyParamCaption})}
+
+
+
+參考 BPP, shmimage\+::data, destroyimage(), \+\_\+umonitor\+::height, NAME, shmimage\+::shminfo, \+\_\+umonitor\+::width, 及 shmimage\+::ximage.
+
+\mbox{\Hypertarget{classX11__Screen_afc44004cdf9fa466df210d6e5008a55f}\label{classX11__Screen_afc44004cdf9fa466df210d6e5008a55f}} 
+\index{X11\_Screen@{X11\_Screen}!cursorPosition@{cursorPosition}}
+\index{cursorPosition@{cursorPosition}!X11\_Screen@{X11\_Screen}}
+\doxysubsubsection{\texorpdfstring{cursorPosition()}{cursorPosition()}}
+{\footnotesize\ttfamily void X11\+\_\+\+Screen\+::cursor\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classX11__Screen_a649e3b2611d5ea6a3b2d2b5e26d0ddfc}\label{classX11__Screen_a649e3b2611d5ea6a3b2d2b5e26d0ddfc}} 
+\index{X11\_Screen@{X11\_Screen}!destroyimage@{destroyimage}}
+\index{destroyimage@{destroyimage}!X11\_Screen@{X11\_Screen}}
+\doxysubsubsection{\texorpdfstring{destroyimage()}{destroyimage()}}
+{\footnotesize\ttfamily void X11\+\_\+\+Screen\+::destroyimage (\begin{DoxyParamCaption}\item[{Display $\ast$}]{dsp,  }\item[{struct \mbox{\hyperlink{structshmimage}{shmimage}} $\ast$}]{image }\end{DoxyParamCaption})}
+
+
+
+參考 shmimage\+::shminfo, 及 shmimage\+::ximage.
+
+
+
+被參考於 createimage().
+
+\mbox{\Hypertarget{classX11__Screen_a0a3478a46ed16074cb9eab8b2ae7b26b}\label{classX11__Screen_a0a3478a46ed16074cb9eab8b2ae7b26b}} 
+\index{X11\_Screen@{X11\_Screen}!informationCheck@{informationCheck}}
+\index{informationCheck@{informationCheck}!X11\_Screen@{X11\_Screen}}
+\doxysubsubsection{\texorpdfstring{informationCheck()}{informationCheck()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} X11\+\_\+\+Screen\+::information\+Check (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classX11__Screen_ab643535a9a5f905285beb7bea7d86eaf}\label{classX11__Screen_ab643535a9a5f905285beb7bea7d86eaf}} 
+\index{X11\_Screen@{X11\_Screen}!init\_dsp@{init\_dsp}}
+\index{init\_dsp@{init\_dsp}!X11\_Screen@{X11\_Screen}}
+\doxysubsubsection{\texorpdfstring{init\_dsp()}{init\_dsp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} X11\+\_\+\+Screen\+::init\+\_\+dsp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classX11__Screen_af2926bfc9d69bac99b918b0964730201}\label{classX11__Screen_af2926bfc9d69bac99b918b0964730201}} 
+\index{X11\_Screen@{X11\_Screen}!screenshot@{screenshot}}
+\index{screenshot@{screenshot}!X11\_Screen@{X11\_Screen}}
+\doxysubsubsection{\texorpdfstring{screenshot()}{screenshot()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structshmimage}{shmimage}} X11\+\_\+\+Screen\+::screenshot (\begin{DoxyParamCaption}\item[{bool}]{ex\+Mode }\end{DoxyParamCaption})}
+
+
+
+參考 shmimage\+::data, \+\_\+umonitor\+::x, shmimage\+::ximage, 及 \+\_\+umonitor\+::y.
+
+
+
+\doxysubsection{資料成員說明文件}
+\mbox{\Hypertarget{classX11__Screen_a138e6043e959b7a7e2df0d282578a41d}\label{classX11__Screen_a138e6043e959b7a7e2df0d282578a41d}} 
+\index{X11\_Screen@{X11\_Screen}!dsp\_share@{dsp\_share}}
+\index{dsp\_share@{dsp\_share}!X11\_Screen@{X11\_Screen}}
+\doxysubsubsection{\texorpdfstring{dsp\_share}{dsp\_share}}
+{\footnotesize\ttfamily Display$\ast$ X11\+\_\+\+Screen\+::dsp\+\_\+share}
+
+\mbox{\Hypertarget{classX11__Screen_a0a13bbf237c8b0342196580be0ab534b}\label{classX11__Screen_a0a13bbf237c8b0342196580be0ab534b}} 
+\index{X11\_Screen@{X11\_Screen}!root\_x@{root\_x}}
+\index{root\_x@{root\_x}!X11\_Screen@{X11\_Screen}}
+\doxysubsubsection{\texorpdfstring{root\_x}{root\_x}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} X11\+\_\+\+Screen\+::root\+\_\+x}
+
+
+
+被參考於 combine\+Cursor\+Buffer().
+
+\mbox{\Hypertarget{classX11__Screen_a13180e8a0fce929d4dd3f03ed157fe92}\label{classX11__Screen_a13180e8a0fce929d4dd3f03ed157fe92}} 
+\index{X11\_Screen@{X11\_Screen}!root\_y@{root\_y}}
+\index{root\_y@{root\_y}!X11\_Screen@{X11\_Screen}}
+\doxysubsubsection{\texorpdfstring{root\_y}{root\_y}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} X11\+\_\+\+Screen\+::root\+\_\+y}
+
+
+
+被參考於 combine\+Cursor\+Buffer().
+
+
+
+此類別(class) 文件是由下列檔案中產生\+:\begin{DoxyCompactItemize}
+\item 
+/home/odin/\+Desktop/program/learn/usbdisp\+\_\+linux/libusbdisp/\mbox{\hyperlink{xrandr_8h}{xrandr.\+h}}\item 
+/home/odin/\+Desktop/program/learn/usbdisp\+\_\+linux/libusbdisp/\mbox{\hyperlink{xrandr_8c}{xrandr.\+c}}\end{DoxyCompactItemize}

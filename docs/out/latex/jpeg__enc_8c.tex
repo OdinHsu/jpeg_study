@@ -1,0 +1,308 @@
+\hypertarget{jpeg__enc_8c}{}\doxysection{/home/odin/\+Desktop/program/learn/usbdisp\+\_\+linux/libusbdisp/libenc/jpeg\+\_\+enc.c 檔案參考文件}
+\label{jpeg__enc_8c}\index{/home/odin/Desktop/program/learn/usbdisp\_linux/libusbdisp/libenc/jpeg\_enc.c@{/home/odin/Desktop/program/learn/usbdisp\_linux/libusbdisp/libenc/jpeg\_enc.c}}
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}jpeg\+\_\+enc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Optimize\+\_\+\+SSE2.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Optimize\+\_\+\+NEON.\+h\char`\"{}}\newline
+jpeg\+\_\+enc.\+c的包含相依圖\+:
+% FIG 0
+\doxysubsection*{函式}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{jpeg__enc_8c_ad6373d7cd52fd24f48b11b537dd9ef79}{write\+\_\+\+APP0info}} (\mbox{\hyperlink{structjpeg__stream__t}{jpeg\+\_\+stream\+\_\+t}} $\ast$jpeg\+\_\+stream)
+\item 
+void \mbox{\hyperlink{jpeg__enc_8c_a1838db9d77f464725d435000dbb8a73f}{write\+\_\+\+SOF0info}} (\mbox{\hyperlink{jpeg__enc_8h_abc486d940ac1d38cfcdee427e575671a}{cinfo\+\_\+t}} $\ast$\mbox{\hyperlink{jpegenc_8c_af3d3a37ad816d3c9005fc2be2e0a22b0}{cinfo}})
+\item 
+void \mbox{\hyperlink{jpeg__enc_8c_a20ec8c1d53aa25102380578e8866418b}{write\+\_\+\+SOSinfo}} (\mbox{\hyperlink{jpeg__enc_8h_abc486d940ac1d38cfcdee427e575671a}{cinfo\+\_\+t}} $\ast$\mbox{\hyperlink{jpegenc_8c_af3d3a37ad816d3c9005fc2be2e0a22b0}{cinfo}})
+\item 
+void \mbox{\hyperlink{jpeg__enc_8c_a2af5ddb4ee88fcd55d2537a7bfda3ed1}{write\+\_\+comment}} (\mbox{\hyperlink{structjpeg__stream__t}{jpeg\+\_\+stream\+\_\+t}} $\ast$jpeg\+\_\+stream, \mbox{\hyperlink{mm__type_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$comment)
+\item 
+\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{jpeg__enc_8c_a4830b44852460d287c795c9c7f8415b4}{write\+\_\+\+DQTinfo}} (\mbox{\hyperlink{jpeg__enc_8h_abc486d940ac1d38cfcdee427e575671a}{cinfo\+\_\+t}} $\ast$\mbox{\hyperlink{jpegenc_8c_af3d3a37ad816d3c9005fc2be2e0a22b0}{cinfo}}, \mbox{\hyperlink{structjpeg__stream__t}{jpeg\+\_\+stream\+\_\+t}} $\ast$stream)
+\item 
+\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{jpeg__enc_8c_aed12a3220b4ff438b98346db0d8b2d88}{Get\+DQTinfo}} (\mbox{\hyperlink{jpeg__enc_8h_abc486d940ac1d38cfcdee427e575671a}{cinfo\+\_\+t}} $\ast$\mbox{\hyperlink{jpegenc_8c_af3d3a37ad816d3c9005fc2be2e0a22b0}{cinfo}}, \mbox{\hyperlink{structjpeg__stream__t}{jpeg\+\_\+stream\+\_\+t}} $\ast$stream)
+\item 
+\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{jpeg__enc_8c_add40a833c42db841bba279c85ff09e80}{write\+\_\+\+DHTinfo}} (\mbox{\hyperlink{structjpeg__stream__t}{jpeg\+\_\+stream\+\_\+t}} $\ast$stream)
+\item 
+void \mbox{\hyperlink{jpeg__enc_8c_a689dd199b140c9518f1df106a52cd6a0}{set\+\_\+quant\+\_\+table}} (\mbox{\hyperlink{mm__type_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$basic\+\_\+table, \mbox{\hyperlink{mm__type_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} scale\+\_\+factor, \mbox{\hyperlink{mm__type_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$newtable)
+\item 
+void \mbox{\hyperlink{jpeg__enc_8c_ab7ad030c16f5310b3806ea727df433c3}{set\+\_\+\+DQTinfo}} (\mbox{\hyperlink{jpeg__enc_8h_abc486d940ac1d38cfcdee427e575671a}{cinfo\+\_\+t}} $\ast$\mbox{\hyperlink{jpegenc_8c_af3d3a37ad816d3c9005fc2be2e0a22b0}{cinfo}}, \mbox{\hyperlink{mm__type_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} quality)
+\item 
+void \mbox{\hyperlink{jpeg__enc_8c_ab1f9f80fdde968fcb1edd1cebb97faec}{set\+\_\+\+DHTinfo}} ()
+\item 
+void \mbox{\hyperlink{jpeg__enc_8c_a1ab61b3ba65c0635617e5f225d72f2f9}{writebits}} (\mbox{\hyperlink{jpeg__enc_8h_a139611a53f7e4afc6d7fab4614144686}{bitstring}} bs, \mbox{\hyperlink{jpeg__enc_8h_abc486d940ac1d38cfcdee427e575671a}{cinfo\+\_\+t}} $\ast$\mbox{\hyperlink{jpegenc_8c_af3d3a37ad816d3c9005fc2be2e0a22b0}{cinfo}})
+\item 
+void \mbox{\hyperlink{jpeg__enc_8c_aa0ad0b017d0f40335a0ca63e2a3cd4b1}{compute\+\_\+\+Huffman\+\_\+table}} (\mbox{\hyperlink{mm__type_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$nrcodes, \mbox{\hyperlink{mm__type_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$std\+\_\+table, \mbox{\hyperlink{jpeg__enc_8h_a139611a53f7e4afc6d7fab4614144686}{bitstring}} $\ast$HT)
+\item 
+void \mbox{\hyperlink{jpeg__enc_8c_a0a948f3a01600239069178253e30e382}{init\+\_\+\+Huffman\+\_\+tables}} ()
+\item 
+void \mbox{\hyperlink{jpeg__enc_8c_a189439c7f44c437c657d97ed6194c288}{exitmessage}} (\mbox{\hyperlink{jsimdcfg_8inc_8h_a8b272214e498a4cb09dde135bb4d7d03}{char}} $\ast$error\+\_\+message)
+\item 
+void \mbox{\hyperlink{jpeg__enc_8c_aee99c37ec8931c5738a222b301f3755d}{prepare\+\_\+quant\+\_\+tables}} (\mbox{\hyperlink{jpeg__enc_8h_abc486d940ac1d38cfcdee427e575671a}{cinfo\+\_\+t}} $\ast$\mbox{\hyperlink{jpegenc_8c_af3d3a37ad816d3c9005fc2be2e0a22b0}{cinfo}})
+\item 
+void \mbox{\hyperlink{jpeg__enc_8c_ad08dd1d0be0c6f5bb9dee09e0d189650}{fdct\+\_\+and\+\_\+quantization}} (\mbox{\hyperlink{mm__type_8h_a30f500129d8c688af07726d5d34ce52d}{INT16}} $\ast$divisors, \mbox{\hyperlink{mm__type_8h_aa2a68256db5a10b7b32434e92d834759}{SWORD}} $\ast$outdata)
+\item 
+void \mbox{\hyperlink{jpeg__enc_8c_a7717016b07e28d8450192a8dfb3e7bfb}{process\+\_\+\+DU}} (\mbox{\hyperlink{jpeg__enc_8h_abc486d940ac1d38cfcdee427e575671a}{cinfo\+\_\+t}} $\ast$\mbox{\hyperlink{jpegenc_8c_af3d3a37ad816d3c9005fc2be2e0a22b0}{cinfo}}, \mbox{\hyperlink{mm__type_8h_a30f500129d8c688af07726d5d34ce52d}{INT16}} $\ast$DU, \mbox{\hyperlink{mm__type_8h_aa2a68256db5a10b7b32434e92d834759}{SWORD}} $\ast$DC, \mbox{\hyperlink{structHuffmanTable__t}{Huffman\+Table\+\_\+t}} $\ast$HT)
+\item 
+void \mbox{\hyperlink{jpeg__enc_8c_a477a74841f0b749853ac2531a8987bc4}{load\+\_\+data\+\_\+units\+\_\+from\+\_\+buffer}} (\mbox{\hyperlink{jpeg__enc_8h_abc486d940ac1d38cfcdee427e575671a}{cinfo\+\_\+t}} $\ast$\mbox{\hyperlink{jpegenc_8c_af3d3a37ad816d3c9005fc2be2e0a22b0}{cinfo}}, \mbox{\hyperlink{mm__type_8h_a2b0e863dadf920709ec53d9088ee7c91}{WORD}} xpos, \mbox{\hyperlink{mm__type_8h_a2b0e863dadf920709ec53d9088ee7c91}{WORD}} ypos)
+\item 
+void \mbox{\hyperlink{jpeg__enc_8c_a545c0b88a77ab043015179bbcdac84ee}{main\+\_\+encoder}} (\mbox{\hyperlink{jpeg__enc_8h_abc486d940ac1d38cfcdee427e575671a}{cinfo\+\_\+t}} $\ast$\mbox{\hyperlink{jpegenc_8c_af3d3a37ad816d3c9005fc2be2e0a22b0}{cinfo}})
+\item 
+void \mbox{\hyperlink{jpeg__enc_8c_aef37c36584c40822dd8ffd51601a17ea}{Initialize}} (\mbox{\hyperlink{jpeg__enc_8h_abc486d940ac1d38cfcdee427e575671a}{cinfo\+\_\+t}} $\ast$\mbox{\hyperlink{jpegenc_8c_af3d3a37ad816d3c9005fc2be2e0a22b0}{cinfo}}, \mbox{\hyperlink{mm__type_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} scalefactor)
+\item 
+void \mbox{\hyperlink{jpeg__enc_8c_ad9a7edb57ac46137f80a60d8f54a3eec}{De\+Initialize}} ()
+\item 
+void \mbox{\hyperlink{jpeg__enc_8c_ad044d7626e2e07f7f310ad478181a642}{Write\+Header}} (\mbox{\hyperlink{jpeg__enc_8h_abc486d940ac1d38cfcdee427e575671a}{cinfo\+\_\+t}} $\ast$\mbox{\hyperlink{jpegenc_8c_af3d3a37ad816d3c9005fc2be2e0a22b0}{cinfo}}, \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} width, \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} height)
+\item 
+\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{jpeg__enc_8c_a7626c713912d29bc0208bb4d4b387fee}{encode}} (\mbox{\hyperlink{jpeg__enc_8h_abc486d940ac1d38cfcdee427e575671a}{cinfo\+\_\+t}} $\ast$\mbox{\hyperlink{jpegenc_8c_af3d3a37ad816d3c9005fc2be2e0a22b0}{cinfo}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函式說明文件}
+\mbox{\Hypertarget{jpeg__enc_8c_aa0ad0b017d0f40335a0ca63e2a3cd4b1}\label{jpeg__enc_8c_aa0ad0b017d0f40335a0ca63e2a3cd4b1}} 
+\index{jpeg\_enc.c@{jpeg\_enc.c}!compute\_Huffman\_table@{compute\_Huffman\_table}}
+\index{compute\_Huffman\_table@{compute\_Huffman\_table}!jpeg\_enc.c@{jpeg\_enc.c}}
+\doxysubsubsection{\texorpdfstring{compute\_Huffman\_table()}{compute\_Huffman\_table()}}
+{\footnotesize\ttfamily void compute\+\_\+\+Huffman\+\_\+table (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{mm__type_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$}]{nrcodes,  }\item[{\mbox{\hyperlink{mm__type_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$}]{std\+\_\+table,  }\item[{\mbox{\hyperlink{jpeg__enc_8h_a139611a53f7e4afc6d7fab4614144686}{bitstring}} $\ast$}]{HT }\end{DoxyParamCaption})}
+
+
+
+被參考於 init\+\_\+\+Huffman\+\_\+tables().
+
+\mbox{\Hypertarget{jpeg__enc_8c_ad9a7edb57ac46137f80a60d8f54a3eec}\label{jpeg__enc_8c_ad9a7edb57ac46137f80a60d8f54a3eec}} 
+\index{jpeg\_enc.c@{jpeg\_enc.c}!DeInitialize@{DeInitialize}}
+\index{DeInitialize@{DeInitialize}!jpeg\_enc.c@{jpeg\_enc.c}}
+\doxysubsubsection{\texorpdfstring{DeInitialize()}{DeInitialize()}}
+{\footnotesize\ttfamily void De\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+被參考於 main(), 及 Encode\+Unit\+::$\sim$\+Encode\+Unit().
+
+\mbox{\Hypertarget{jpeg__enc_8c_a7626c713912d29bc0208bb4d4b387fee}\label{jpeg__enc_8c_a7626c713912d29bc0208bb4d4b387fee}} 
+\index{jpeg\_enc.c@{jpeg\_enc.c}!encode@{encode}}
+\index{encode@{encode}!jpeg\_enc.c@{jpeg\_enc.c}}
+\doxysubsubsection{\texorpdfstring{encode()}{encode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} encode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jpeg__enc_8h_abc486d940ac1d38cfcdee427e575671a}{cinfo\+\_\+t}} $\ast$}]{cinfo }\end{DoxyParamCaption})}
+
+
+
+參考 cinfo, 及 main\+\_\+encoder().
+
+
+
+被參考於 main().
+
+\mbox{\Hypertarget{jpeg__enc_8c_a189439c7f44c437c657d97ed6194c288}\label{jpeg__enc_8c_a189439c7f44c437c657d97ed6194c288}} 
+\index{jpeg\_enc.c@{jpeg\_enc.c}!exitmessage@{exitmessage}}
+\index{exitmessage@{exitmessage}!jpeg\_enc.c@{jpeg\_enc.c}}
+\doxysubsubsection{\texorpdfstring{exitmessage()}{exitmessage()}}
+{\footnotesize\ttfamily void exitmessage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jsimdcfg_8inc_8h_a8b272214e498a4cb09dde135bb4d7d03}{char}} $\ast$}]{error\+\_\+message }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{jpeg__enc_8c_ad08dd1d0be0c6f5bb9dee09e0d189650}\label{jpeg__enc_8c_ad08dd1d0be0c6f5bb9dee09e0d189650}} 
+\index{jpeg\_enc.c@{jpeg\_enc.c}!fdct\_and\_quantization@{fdct\_and\_quantization}}
+\index{fdct\_and\_quantization@{fdct\_and\_quantization}!jpeg\_enc.c@{jpeg\_enc.c}}
+\doxysubsubsection{\texorpdfstring{fdct\_and\_quantization()}{fdct\_and\_quantization()}}
+{\footnotesize\ttfamily void fdct\+\_\+and\+\_\+quantization (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{mm__type_8h_a30f500129d8c688af07726d5d34ce52d}{INT16}} $\ast$}]{divisors,  }\item[{\mbox{\hyperlink{mm__type_8h_aa2a68256db5a10b7b32434e92d834759}{SWORD}} $\ast$}]{outdata }\end{DoxyParamCaption})}
+
+
+
+參考 jsimd\+\_\+fdct\+\_\+ifast(), 及 jsimd\+\_\+quantize().
+
+
+
+被參考於 main\+\_\+encoder().
+
+\mbox{\Hypertarget{jpeg__enc_8c_aed12a3220b4ff438b98346db0d8b2d88}\label{jpeg__enc_8c_aed12a3220b4ff438b98346db0d8b2d88}} 
+\index{jpeg\_enc.c@{jpeg\_enc.c}!GetDQTinfo@{GetDQTinfo}}
+\index{GetDQTinfo@{GetDQTinfo}!jpeg\_enc.c@{jpeg\_enc.c}}
+\doxysubsubsection{\texorpdfstring{GetDQTinfo()}{GetDQTinfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} Get\+DQTinfo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jpeg__enc_8h_abc486d940ac1d38cfcdee427e575671a}{cinfo\+\_\+t}} $\ast$}]{cinfo,  }\item[{\mbox{\hyperlink{structjpeg__stream__t}{jpeg\+\_\+stream\+\_\+t}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+
+
+參考 cinfo, jpeg\+\_\+stream\+\_\+t\+::pos, writebyte, 及 writeword.
+
+
+
+被參考於 Encode\+Unit\+::\+Get\+Quant\+Table(), 及 main().
+
+\mbox{\Hypertarget{jpeg__enc_8c_a0a948f3a01600239069178253e30e382}\label{jpeg__enc_8c_a0a948f3a01600239069178253e30e382}} 
+\index{jpeg\_enc.c@{jpeg\_enc.c}!init\_Huffman\_tables@{init\_Huffman\_tables}}
+\index{init\_Huffman\_tables@{init\_Huffman\_tables}!jpeg\_enc.c@{jpeg\_enc.c}}
+\doxysubsubsection{\texorpdfstring{init\_Huffman\_tables()}{init\_Huffman\_tables()}}
+{\footnotesize\ttfamily void init\+\_\+\+Huffman\+\_\+tables (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+參考 compute\+\_\+\+Huffman\+\_\+table().
+
+\mbox{\Hypertarget{jpeg__enc_8c_aef37c36584c40822dd8ffd51601a17ea}\label{jpeg__enc_8c_aef37c36584c40822dd8ffd51601a17ea}} 
+\index{jpeg\_enc.c@{jpeg\_enc.c}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!jpeg\_enc.c@{jpeg\_enc.c}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jpeg__enc_8h_abc486d940ac1d38cfcdee427e575671a}{cinfo\+\_\+t}} $\ast$}]{cinfo,  }\item[{\mbox{\hyperlink{mm__type_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}}]{scalefactor }\end{DoxyParamCaption})}
+
+
+
+被參考於 Encode\+Unit\+::\+Encode\+Unit(), get\+Buf\+Form\+Bmp(), main(), 及 Encode\+Unit\+::\+Set\+Encode\+Quality().
+
+\mbox{\Hypertarget{jpeg__enc_8c_a477a74841f0b749853ac2531a8987bc4}\label{jpeg__enc_8c_a477a74841f0b749853ac2531a8987bc4}} 
+\index{jpeg\_enc.c@{jpeg\_enc.c}!load\_data\_units\_from\_buffer@{load\_data\_units\_from\_buffer}}
+\index{load\_data\_units\_from\_buffer@{load\_data\_units\_from\_buffer}!jpeg\_enc.c@{jpeg\_enc.c}}
+\doxysubsubsection{\texorpdfstring{load\_data\_units\_from\_buffer()}{load\_data\_units\_from\_buffer()}}
+{\footnotesize\ttfamily void load\+\_\+data\+\_\+units\+\_\+from\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jpeg__enc_8h_abc486d940ac1d38cfcdee427e575671a}{cinfo\+\_\+t}} $\ast$}]{cinfo,  }\item[{\mbox{\hyperlink{mm__type_8h_a2b0e863dadf920709ec53d9088ee7c91}{WORD}}}]{xpos,  }\item[{\mbox{\hyperlink{mm__type_8h_a2b0e863dadf920709ec53d9088ee7c91}{WORD}}}]{ypos }\end{DoxyParamCaption})}
+
+
+
+參考 cinfo.
+
+
+
+被參考於 main\+\_\+encoder().
+
+\mbox{\Hypertarget{jpeg__enc_8c_a545c0b88a77ab043015179bbcdac84ee}\label{jpeg__enc_8c_a545c0b88a77ab043015179bbcdac84ee}} 
+\index{jpeg\_enc.c@{jpeg\_enc.c}!main\_encoder@{main\_encoder}}
+\index{main\_encoder@{main\_encoder}!jpeg\_enc.c@{jpeg\_enc.c}}
+\doxysubsubsection{\texorpdfstring{main\_encoder()}{main\_encoder()}}
+{\footnotesize\ttfamily void main\+\_\+encoder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jpeg__enc_8h_abc486d940ac1d38cfcdee427e575671a}{cinfo\+\_\+t}} $\ast$}]{cinfo }\end{DoxyParamCaption})}
+
+
+
+參考 cinfo, fdct\+\_\+and\+\_\+quantization(), load\+\_\+data\+\_\+units\+\_\+from\+\_\+buffer(), 及 process\+\_\+\+DU().
+
+
+
+被參考於 encode().
+
+\mbox{\Hypertarget{jpeg__enc_8c_aee99c37ec8931c5738a222b301f3755d}\label{jpeg__enc_8c_aee99c37ec8931c5738a222b301f3755d}} 
+\index{jpeg\_enc.c@{jpeg\_enc.c}!prepare\_quant\_tables@{prepare\_quant\_tables}}
+\index{prepare\_quant\_tables@{prepare\_quant\_tables}!jpeg\_enc.c@{jpeg\_enc.c}}
+\doxysubsubsection{\texorpdfstring{prepare\_quant\_tables()}{prepare\_quant\_tables()}}
+{\footnotesize\ttfamily void prepare\+\_\+quant\+\_\+tables (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jpeg__enc_8h_abc486d940ac1d38cfcdee427e575671a}{cinfo\+\_\+t}} $\ast$}]{cinfo }\end{DoxyParamCaption})}
+
+
+
+參考 DCTSIZE2.
+
+\mbox{\Hypertarget{jpeg__enc_8c_a7717016b07e28d8450192a8dfb3e7bfb}\label{jpeg__enc_8c_a7717016b07e28d8450192a8dfb3e7bfb}} 
+\index{jpeg\_enc.c@{jpeg\_enc.c}!process\_DU@{process\_DU}}
+\index{process\_DU@{process\_DU}!jpeg\_enc.c@{jpeg\_enc.c}}
+\doxysubsubsection{\texorpdfstring{process\_DU()}{process\_DU()}}
+{\footnotesize\ttfamily void process\+\_\+\+DU (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jpeg__enc_8h_abc486d940ac1d38cfcdee427e575671a}{cinfo\+\_\+t}} $\ast$}]{cinfo,  }\item[{\mbox{\hyperlink{mm__type_8h_a30f500129d8c688af07726d5d34ce52d}{INT16}} $\ast$}]{DU,  }\item[{\mbox{\hyperlink{mm__type_8h_aa2a68256db5a10b7b32434e92d834759}{SWORD}} $\ast$}]{DC,  }\item[{\mbox{\hyperlink{structHuffmanTable__t}{Huffman\+Table\+\_\+t}} $\ast$}]{HT }\end{DoxyParamCaption})}
+
+
+
+參考 Huffman\+Table\+\_\+t\+::\+DC.
+
+
+
+被參考於 main\+\_\+encoder().
+
+\mbox{\Hypertarget{jpeg__enc_8c_ab1f9f80fdde968fcb1edd1cebb97faec}\label{jpeg__enc_8c_ab1f9f80fdde968fcb1edd1cebb97faec}} 
+\index{jpeg\_enc.c@{jpeg\_enc.c}!set\_DHTinfo@{set\_DHTinfo}}
+\index{set\_DHTinfo@{set\_DHTinfo}!jpeg\_enc.c@{jpeg\_enc.c}}
+\doxysubsubsection{\texorpdfstring{set\_DHTinfo()}{set\_DHTinfo()}}
+{\footnotesize\ttfamily void set\+\_\+\+DHTinfo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{jpeg__enc_8c_ab7ad030c16f5310b3806ea727df433c3}\label{jpeg__enc_8c_ab7ad030c16f5310b3806ea727df433c3}} 
+\index{jpeg\_enc.c@{jpeg\_enc.c}!set\_DQTinfo@{set\_DQTinfo}}
+\index{set\_DQTinfo@{set\_DQTinfo}!jpeg\_enc.c@{jpeg\_enc.c}}
+\doxysubsubsection{\texorpdfstring{set\_DQTinfo()}{set\_DQTinfo()}}
+{\footnotesize\ttfamily void set\+\_\+\+DQTinfo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jpeg__enc_8h_abc486d940ac1d38cfcdee427e575671a}{cinfo\+\_\+t}} $\ast$}]{cinfo,  }\item[{\mbox{\hyperlink{mm__type_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}}]{quality }\end{DoxyParamCaption})}
+
+
+
+參考 cinfo, 及 set\+\_\+quant\+\_\+table().
+
+\mbox{\Hypertarget{jpeg__enc_8c_a689dd199b140c9518f1df106a52cd6a0}\label{jpeg__enc_8c_a689dd199b140c9518f1df106a52cd6a0}} 
+\index{jpeg\_enc.c@{jpeg\_enc.c}!set\_quant\_table@{set\_quant\_table}}
+\index{set\_quant\_table@{set\_quant\_table}!jpeg\_enc.c@{jpeg\_enc.c}}
+\doxysubsubsection{\texorpdfstring{set\_quant\_table()}{set\_quant\_table()}}
+{\footnotesize\ttfamily void set\+\_\+quant\+\_\+table (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{mm__type_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$}]{basic\+\_\+table,  }\item[{\mbox{\hyperlink{mm__type_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}}]{scale\+\_\+factor,  }\item[{\mbox{\hyperlink{mm__type_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$}]{newtable }\end{DoxyParamCaption})}
+
+
+
+被參考於 set\+\_\+\+DQTinfo().
+
+\mbox{\Hypertarget{jpeg__enc_8c_ad6373d7cd52fd24f48b11b537dd9ef79}\label{jpeg__enc_8c_ad6373d7cd52fd24f48b11b537dd9ef79}} 
+\index{jpeg\_enc.c@{jpeg\_enc.c}!write\_APP0info@{write\_APP0info}}
+\index{write\_APP0info@{write\_APP0info}!jpeg\_enc.c@{jpeg\_enc.c}}
+\doxysubsubsection{\texorpdfstring{write\_APP0info()}{write\_APP0info()}}
+{\footnotesize\ttfamily void write\+\_\+\+APP0info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structjpeg__stream__t}{jpeg\+\_\+stream\+\_\+t}} $\ast$}]{jpeg\+\_\+stream }\end{DoxyParamCaption})}
+
+
+
+參考 writeword.
+
+\mbox{\Hypertarget{jpeg__enc_8c_a2af5ddb4ee88fcd55d2537a7bfda3ed1}\label{jpeg__enc_8c_a2af5ddb4ee88fcd55d2537a7bfda3ed1}} 
+\index{jpeg\_enc.c@{jpeg\_enc.c}!write\_comment@{write\_comment}}
+\index{write\_comment@{write\_comment}!jpeg\_enc.c@{jpeg\_enc.c}}
+\doxysubsubsection{\texorpdfstring{write\_comment()}{write\_comment()}}
+{\footnotesize\ttfamily void write\+\_\+comment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structjpeg__stream__t}{jpeg\+\_\+stream\+\_\+t}} $\ast$}]{jpeg\+\_\+stream,  }\item[{\mbox{\hyperlink{mm__type_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} $\ast$}]{comment }\end{DoxyParamCaption})}
+
+
+
+參考 DHTinfotype\+::length, writebyte, 及 writeword.
+
+\mbox{\Hypertarget{jpeg__enc_8c_add40a833c42db841bba279c85ff09e80}\label{jpeg__enc_8c_add40a833c42db841bba279c85ff09e80}} 
+\index{jpeg\_enc.c@{jpeg\_enc.c}!write\_DHTinfo@{write\_DHTinfo}}
+\index{write\_DHTinfo@{write\_DHTinfo}!jpeg\_enc.c@{jpeg\_enc.c}}
+\doxysubsubsection{\texorpdfstring{write\_DHTinfo()}{write\_DHTinfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} write\+\_\+\+DHTinfo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structjpeg__stream__t}{jpeg\+\_\+stream\+\_\+t}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+
+
+參考 jpeg\+\_\+stream\+\_\+t\+::pos, 及 writeword.
+
+\mbox{\Hypertarget{jpeg__enc_8c_a4830b44852460d287c795c9c7f8415b4}\label{jpeg__enc_8c_a4830b44852460d287c795c9c7f8415b4}} 
+\index{jpeg\_enc.c@{jpeg\_enc.c}!write\_DQTinfo@{write\_DQTinfo}}
+\index{write\_DQTinfo@{write\_DQTinfo}!jpeg\_enc.c@{jpeg\_enc.c}}
+\doxysubsubsection{\texorpdfstring{write\_DQTinfo()}{write\_DQTinfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} write\+\_\+\+DQTinfo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jpeg__enc_8h_abc486d940ac1d38cfcdee427e575671a}{cinfo\+\_\+t}} $\ast$}]{cinfo,  }\item[{\mbox{\hyperlink{structjpeg__stream__t}{jpeg\+\_\+stream\+\_\+t}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+
+
+參考 cinfo, jpeg\+\_\+stream\+\_\+t\+::pos, writebyte, 及 writeword.
+
+\mbox{\Hypertarget{jpeg__enc_8c_a1838db9d77f464725d435000dbb8a73f}\label{jpeg__enc_8c_a1838db9d77f464725d435000dbb8a73f}} 
+\index{jpeg\_enc.c@{jpeg\_enc.c}!write\_SOF0info@{write\_SOF0info}}
+\index{write\_SOF0info@{write\_SOF0info}!jpeg\_enc.c@{jpeg\_enc.c}}
+\doxysubsubsection{\texorpdfstring{write\_SOF0info()}{write\_SOF0info()}}
+{\footnotesize\ttfamily void write\+\_\+\+SOF0info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jpeg__enc_8h_abc486d940ac1d38cfcdee427e575671a}{cinfo\+\_\+t}} $\ast$}]{cinfo }\end{DoxyParamCaption})}
+
+
+
+參考 cinfo, 及 writeword.
+
+\mbox{\Hypertarget{jpeg__enc_8c_a20ec8c1d53aa25102380578e8866418b}\label{jpeg__enc_8c_a20ec8c1d53aa25102380578e8866418b}} 
+\index{jpeg\_enc.c@{jpeg\_enc.c}!write\_SOSinfo@{write\_SOSinfo}}
+\index{write\_SOSinfo@{write\_SOSinfo}!jpeg\_enc.c@{jpeg\_enc.c}}
+\doxysubsubsection{\texorpdfstring{write\_SOSinfo()}{write\_SOSinfo()}}
+{\footnotesize\ttfamily void write\+\_\+\+SOSinfo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jpeg__enc_8h_abc486d940ac1d38cfcdee427e575671a}{cinfo\+\_\+t}} $\ast$}]{cinfo }\end{DoxyParamCaption})}
+
+
+
+參考 cinfo, 及 writeword.
+
+\mbox{\Hypertarget{jpeg__enc_8c_a1ab61b3ba65c0635617e5f225d72f2f9}\label{jpeg__enc_8c_a1ab61b3ba65c0635617e5f225d72f2f9}} 
+\index{jpeg\_enc.c@{jpeg\_enc.c}!writebits@{writebits}}
+\index{writebits@{writebits}!jpeg\_enc.c@{jpeg\_enc.c}}
+\doxysubsubsection{\texorpdfstring{writebits()}{writebits()}}
+{\footnotesize\ttfamily void writebits (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jpeg__enc_8h_a139611a53f7e4afc6d7fab4614144686}{bitstring}}}]{bs,  }\item[{\mbox{\hyperlink{jpeg__enc_8h_abc486d940ac1d38cfcdee427e575671a}{cinfo\+\_\+t}} $\ast$}]{cinfo }\end{DoxyParamCaption})}
+
+
+
+參考 BUF\+\_\+\+BITS, BUF\+\_\+\+BYTES, cinfo, 及 writebyte.
+
+\mbox{\Hypertarget{jpeg__enc_8c_ad044d7626e2e07f7f310ad478181a642}\label{jpeg__enc_8c_ad044d7626e2e07f7f310ad478181a642}} 
+\index{jpeg\_enc.c@{jpeg\_enc.c}!WriteHeader@{WriteHeader}}
+\index{WriteHeader@{WriteHeader}!jpeg\_enc.c@{jpeg\_enc.c}}
+\doxysubsubsection{\texorpdfstring{WriteHeader()}{WriteHeader()}}
+{\footnotesize\ttfamily void Write\+Header (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jpeg__enc_8h_abc486d940ac1d38cfcdee427e575671a}{cinfo\+\_\+t}} $\ast$}]{cinfo,  }\item[{\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}}]{width,  }\item[{\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}}]{height }\end{DoxyParamCaption})}
+
+
+
+被參考於 main().
+

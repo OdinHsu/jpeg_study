@@ -1,0 +1,485 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>jpeg: /home/odin/Desktop/program/learn/usbdisp_linux/libusbdisp/libenc/jpeg_enc.h 原始程式檔</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">jpeg
+   &#160;<span id="projectnumber">0.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 產生者: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜尋','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜尋');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('jpeg__enc_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">jpeg_enc.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="jpeg__enc_8h.html">查看本檔案說明文件.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/***************************************************************************/</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/*  File: encoder.h                                                        */</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*  Date: 20-Jun-2014                                                      */</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/*                                                                         */</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/***************************************************************************/</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">C source of a JPEG encoder.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">The principles of designing JPEG encoder were mainly clarity and portability.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">Kept as simple as possibly, using basic c in most places for portability.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">The program should give the same results on any C compiler which provides at least</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">256 kb of free memory. I needed that for the precalculated bitcode (3*64k) and</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">category (64k) arrays.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/***************************************************************************/</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#ifndef JPEG_ENC_H</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define JPEG_ENC_H</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//#define _SSE2_</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">//#define _X86_64_</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//#define _NEON_</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#ifdef _X86_64_</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define _64_BIT_</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//#define _NO_HEADER_</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// for writebits</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#ifdef _64_BIT_</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define BUF_BITS 64</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#ae484cfaf5e4317581424c29803432cb0">   37</a></span>&#160;<span class="preprocessor">#define BUF_BITS 32</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#a096f1748d68946004752232255dd2824">   40</a></span>&#160;<span class="preprocessor">#define BUF_BYTES (BUF_BITS/8)</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mm__type_8h.html">mm_type.h</a>&quot;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="debug__trace_8h.html">debug_trace.h</a>&quot;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#ifndef _NO_HEADER_</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="structAPP0infotype.html">   47</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structAPP0infotype.html">APP0infotype</a> {</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="structAPP0infotype.html#a350d9e289f6343cc89c4832637b51541">   48</a></span>&#160;        <a class="code" href="mm__type_8h.html#a2b0e863dadf920709ec53d9088ee7c91">WORD</a> <a class="code" href="structAPP0infotype.html#a350d9e289f6343cc89c4832637b51541">marker</a>;<span class="comment">// = 0xFFE0</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="structAPP0infotype.html#a86b387dcf518792490bc6dcde4961eab">   49</a></span>&#160;        <a class="code" href="mm__type_8h.html#a2b0e863dadf920709ec53d9088ee7c91">WORD</a> <a class="code" href="structAPP0infotype.html#a86b387dcf518792490bc6dcde4961eab">length</a>; <span class="comment">// = 16 for usual JPEG, no thumbnail</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="structAPP0infotype.html#a78f6377225db5c629adf0af7ca4d954c">   50</a></span>&#160;        <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structAPP0infotype.html#a78f6377225db5c629adf0af7ca4d954c">JFIFsignature</a>[5]; <span class="comment">// = &quot;JFIF&quot;,&#39;\0&#39;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="structAPP0infotype.html#ac096429b4f7e18e53928107703b3c0dc">   51</a></span>&#160;        <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structAPP0infotype.html#ac096429b4f7e18e53928107703b3c0dc">versionhi</a>; <span class="comment">// 1</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="structAPP0infotype.html#ab401abbab25f940304aa832d58ef2355">   52</a></span>&#160;        <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structAPP0infotype.html#ab401abbab25f940304aa832d58ef2355">versionlo</a>; <span class="comment">// 1</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="structAPP0infotype.html#ab7102440d2dfadec9f3381f5986333ea">   53</a></span>&#160;        <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structAPP0infotype.html#ab7102440d2dfadec9f3381f5986333ea">xyunits</a>;   <span class="comment">// 0 = no units, normal density</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="structAPP0infotype.html#a5b7a8f526984e272cc402ffc4310ab04">   54</a></span>&#160;        <a class="code" href="mm__type_8h.html#a2b0e863dadf920709ec53d9088ee7c91">WORD</a> <a class="code" href="structAPP0infotype.html#a5b7a8f526984e272cc402ffc4310ab04">xdensity</a>;  <span class="comment">// 1</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="structAPP0infotype.html#a689e50a9a5b58b93d8a8f62c3b6c2c03">   55</a></span>&#160;        <a class="code" href="mm__type_8h.html#a2b0e863dadf920709ec53d9088ee7c91">WORD</a> <a class="code" href="structAPP0infotype.html#a689e50a9a5b58b93d8a8f62c3b6c2c03">ydensity</a>;  <span class="comment">// 1</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="structAPP0infotype.html#a4ebde26eaea0a2fa96e24e0bec2100ef">   56</a></span>&#160;        <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structAPP0infotype.html#a4ebde26eaea0a2fa96e24e0bec2100ef">thumbnwidth</a>; <span class="comment">// 0</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="structAPP0infotype.html#a118a4508a0f4f19cce1c82e104d44b58">   57</a></span>&#160;        <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structAPP0infotype.html#a118a4508a0f4f19cce1c82e104d44b58">thumbnheight</a>; <span class="comment">// 0</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="structSOF0infotype.html">   60</a></span>&#160;<span class="keyword">struct  </span><a class="code" href="structSOF0infotype.html">SOF0infotype</a> {</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="structSOF0infotype.html#aba058cef0bae4a0fabcb2dd95d05d614">   61</a></span>&#160;        <a class="code" href="mm__type_8h.html#a2b0e863dadf920709ec53d9088ee7c91">WORD</a> <a class="code" href="structSOF0infotype.html#aba058cef0bae4a0fabcb2dd95d05d614">marker</a>; <span class="comment">// = 0xFFC0</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="structSOF0infotype.html#ac6afabc362cd4ebe82e3088bc4d0dc0f">   62</a></span>&#160;        <a class="code" href="mm__type_8h.html#a2b0e863dadf920709ec53d9088ee7c91">WORD</a> <a class="code" href="structSOF0infotype.html#ac6afabc362cd4ebe82e3088bc4d0dc0f">length</a>; <span class="comment">// = 17 for a truecolor YCbCr JPG</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="structSOF0infotype.html#a4412d26e50e45b403688f7e2fce49707">   63</a></span>&#160;        <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structSOF0infotype.html#a4412d26e50e45b403688f7e2fce49707">precision</a> ;<span class="comment">// Should be 8: 8 bits/sample</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="structSOF0infotype.html#a20c3e4ad635952187df8aeba6c935997">   64</a></span>&#160;        <a class="code" href="mm__type_8h.html#a2b0e863dadf920709ec53d9088ee7c91">WORD</a> <a class="code" href="structSOF0infotype.html#a20c3e4ad635952187df8aeba6c935997">height</a> ;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="structSOF0infotype.html#a791087db49711d8cbdcd1c18c4c8f266">   65</a></span>&#160;        <a class="code" href="mm__type_8h.html#a2b0e863dadf920709ec53d9088ee7c91">WORD</a> <a class="code" href="structSOF0infotype.html#a791087db49711d8cbdcd1c18c4c8f266">width</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="structSOF0infotype.html#a31fb0f391c80373726d3a1e4b233a52d">   66</a></span>&#160;        <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structSOF0infotype.html#a31fb0f391c80373726d3a1e4b233a52d">nrofcomponents</a>;<span class="comment">//Should be 3: We encode a truecolor JPG</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="structSOF0infotype.html#adccb35f67418e87cd35099c08bf4c6d3">   67</a></span>&#160;        <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structSOF0infotype.html#adccb35f67418e87cd35099c08bf4c6d3">IdY</a>;  <span class="comment">// = 1</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="structSOF0infotype.html#a888da8fe5b54502c7aeaf9f750e1dc25">   68</a></span>&#160;        <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structSOF0infotype.html#a888da8fe5b54502c7aeaf9f750e1dc25">HVY</a>; <span class="comment">// sampling factors for Y (bit 0-3 vert., 4-7 hor.)</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="structSOF0infotype.html#ac3602b4f9496d910435ee66e4fca17de">   69</a></span>&#160;        <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structSOF0infotype.html#ac3602b4f9496d910435ee66e4fca17de">QTY</a>;  <span class="comment">// Quantization Table number for Y = 0</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="structSOF0infotype.html#ab90f370c5ed19397c35dcb981436f857">   70</a></span>&#160;        <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structSOF0infotype.html#ab90f370c5ed19397c35dcb981436f857">IdCb</a>; <span class="comment">// = 2</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="structSOF0infotype.html#ac1e11ada39b0c758a8ce2e862bbc31bb">   71</a></span>&#160;        <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structSOF0infotype.html#ac1e11ada39b0c758a8ce2e862bbc31bb">HVCb</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="structSOF0infotype.html#a67e1391ebe3b8ba777672849801d83cd">   72</a></span>&#160;        <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structSOF0infotype.html#a67e1391ebe3b8ba777672849801d83cd">QTCb</a>; <span class="comment">// 1</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="structSOF0infotype.html#a16ca45b622c9ad99745ba08879a5733a">   73</a></span>&#160;        <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structSOF0infotype.html#a16ca45b622c9ad99745ba08879a5733a">IdCr</a>; <span class="comment">// = 3</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="structSOF0infotype.html#aafa72168a52e37bcbc15538dd8c93f44">   74</a></span>&#160;        <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structSOF0infotype.html#aafa72168a52e37bcbc15538dd8c93f44">HVCr</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="structSOF0infotype.html#a32ac4a8529c43b632620cc34f23b4244">   75</a></span>&#160;        <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structSOF0infotype.html#a32ac4a8529c43b632620cc34f23b4244">QTCr</a>; <span class="comment">// Normally equal to QTCb = 1</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="structSOSinfotype.html">   78</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structSOSinfotype.html">SOSinfotype</a> {</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="structSOSinfotype.html#a88c064c5a095506049987f96238a7b4e">   79</a></span>&#160;         <a class="code" href="mm__type_8h.html#a2b0e863dadf920709ec53d9088ee7c91">WORD</a> <a class="code" href="structSOSinfotype.html#a88c064c5a095506049987f96238a7b4e">marker</a>;  <span class="comment">// = 0xFFDA</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="structSOSinfotype.html#ab129567914760164b914ee634bc9af1d">   80</a></span>&#160;         <a class="code" href="mm__type_8h.html#a2b0e863dadf920709ec53d9088ee7c91">WORD</a> <a class="code" href="structSOSinfotype.html#ab129567914760164b914ee634bc9af1d">length</a>; <span class="comment">// = 12</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="structSOSinfotype.html#a0dab21cc712a6c5c00770f6825574ced">   81</a></span>&#160;         <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structSOSinfotype.html#a0dab21cc712a6c5c00770f6825574ced">nrofcomponents</a>; <span class="comment">// Should be 3: truecolor JPG</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="structSOSinfotype.html#a5303588320592e03d01b8a9dc5bd232f">   82</a></span>&#160;         <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structSOSinfotype.html#a5303588320592e03d01b8a9dc5bd232f">IdY</a>; <span class="comment">//1</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="structSOSinfotype.html#ab797c480671f01c954533291e9a08cd9">   83</a></span>&#160;         <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structSOSinfotype.html#ab797c480671f01c954533291e9a08cd9">HTY</a>; <span class="comment">//0 // bits 0..3: AC table (0..3)</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                   <span class="comment">// bits 4..7: DC table (0..3)</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="structSOSinfotype.html#ab7ddec0d124a3cd207a0c499f3556267">   85</a></span>&#160;         <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structSOSinfotype.html#ab7ddec0d124a3cd207a0c499f3556267">IdCb</a>; <span class="comment">//2</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="structSOSinfotype.html#ac394e5a4d81b7cc3d0d0df0c0d94d724">   86</a></span>&#160;         <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structSOSinfotype.html#ac394e5a4d81b7cc3d0d0df0c0d94d724">HTCb</a>; <span class="comment">//0x11</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="structSOSinfotype.html#ac47ad8517d1b5c300d3211a81d1c45f8">   87</a></span>&#160;         <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structSOSinfotype.html#ac47ad8517d1b5c300d3211a81d1c45f8">IdCr</a>; <span class="comment">//3</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="structSOSinfotype.html#a7c441a9aed658e826b6c35fc3db7cc12">   88</a></span>&#160;         <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structSOSinfotype.html#a7c441a9aed658e826b6c35fc3db7cc12">HTCr</a>; <span class="comment">//0x11</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="structSOSinfotype.html#a79c58c1545109fb4c5f481096429325e">   89</a></span>&#160;         <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structSOSinfotype.html#a378c993ad0afcbfe4aa54e07cf3ea658">Ss</a>,<a class="code" href="structSOSinfotype.html#a9c1044a8a87793a028896e006cbd75cc">Se</a>,<a class="code" href="structSOSinfotype.html#a79c58c1545109fb4c5f481096429325e">Bf</a>; <span class="comment">// not interesting, they should be 0,63,0</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">// Ytable from DQTinfo should be equal to a scaled and zizag reordered version</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">// of the table which can be found in &quot;tables.h&quot;: std_luminance_qt</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">// Cbtable , similar = std_chrominance_qt</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">// We&#39;ll init them in the program using set_DQTinfo function</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="structDQTinfotype.html">   98</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structDQTinfotype.html">DQTinfotype</a> {</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="structDQTinfotype.html#a7b95589a8a1617e5c1e7c42dbfc596e3">   99</a></span>&#160;         <a class="code" href="mm__type_8h.html#a2b0e863dadf920709ec53d9088ee7c91">WORD</a> <a class="code" href="structDQTinfotype.html#a7b95589a8a1617e5c1e7c42dbfc596e3">marker</a>;  <span class="comment">// = 0xFFDB</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="structDQTinfotype.html#a13f1a5b1068801c8376bd869d385b844">  100</a></span>&#160;         <a class="code" href="mm__type_8h.html#a2b0e863dadf920709ec53d9088ee7c91">WORD</a> <a class="code" href="structDQTinfotype.html#a13f1a5b1068801c8376bd869d385b844">length</a>;  <span class="comment">// = 132</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="structDQTinfotype.html#a8a129c0652d24105e1884d916519dc4e">  101</a></span>&#160;         <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structDQTinfotype.html#a8a129c0652d24105e1884d916519dc4e">QTYinfo</a>;<span class="comment">// = 0:  bit 0..3: number of QT = 0 (table for Y)</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                  <span class="comment">//       bit 4..7: precision of QT, 0 = 8 bit</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="structDQTinfotype.html#a8d3584b71461273587fb4ee0aca7b01f">  103</a></span>&#160;         <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structDQTinfotype.html#a8d3584b71461273587fb4ee0aca7b01f">Ytable</a>[64];</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="structDQTinfotype.html#ae2f054253653ae55a74de77530071743">  104</a></span>&#160;         <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structDQTinfotype.html#ae2f054253653ae55a74de77530071743">QTCbinfo</a>; <span class="comment">// = 1 (quantization table for Cb,Cr}</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="structDQTinfotype.html#a8850273e4042c695ac51a815b22e3786">  105</a></span>&#160;         <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structDQTinfotype.html#a8850273e4042c695ac51a815b22e3786">Cbtable</a>[64];</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;};</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="structDHTinfotype.html">  108</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structDHTinfotype.html">DHTinfotype</a> {</div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="structDHTinfotype.html#a5a7e0889cc4a2de27ba4a24709091631">  109</a></span>&#160;         <a class="code" href="mm__type_8h.html#a2b0e863dadf920709ec53d9088ee7c91">WORD</a> <a class="code" href="structDHTinfotype.html#a5a7e0889cc4a2de27ba4a24709091631">marker</a>;  <span class="comment">// = 0xFFC4</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="structDHTinfotype.html#a5cdd816a2141d31d311140ea1bb39b51">  110</a></span>&#160;         <a class="code" href="mm__type_8h.html#a2b0e863dadf920709ec53d9088ee7c91">WORD</a> <a class="code" href="structDHTinfotype.html#a5cdd816a2141d31d311140ea1bb39b51">length</a>;  <span class="comment">//0x01A2</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="structDHTinfotype.html#a3fe190d767f9bc9f10e6ecfb97007fe8">  111</a></span>&#160;         <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structDHTinfotype.html#a3fe190d767f9bc9f10e6ecfb97007fe8">HTYDCinfo</a>; <span class="comment">// bit 0..3: number of HT (0..3), for Y =0</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <span class="comment">//bit 4  :type of HT, 0 = DC table,1 = AC table</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <span class="comment">//bit 5..7: not used, must be 0</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="structDHTinfotype.html#a13dae4acbcd7835a3a535e1a6f67ee55">  114</a></span>&#160;         <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structDHTinfotype.html#a13dae4acbcd7835a3a535e1a6f67ee55">YDC_nrcodes</a>[16]; <span class="comment">//at index i = nr of codes with length i</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="structDHTinfotype.html#a93daa34ecd8c9de5331069226ad62c89">  115</a></span>&#160;         <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structDHTinfotype.html#a93daa34ecd8c9de5331069226ad62c89">YDC_values</a>[12];</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="structDHTinfotype.html#ae89747ad70dd831117d874b8b59106d8">  116</a></span>&#160;         <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structDHTinfotype.html#ae89747ad70dd831117d874b8b59106d8">HTYACinfo</a>; <span class="comment">// = 0x10</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="structDHTinfotype.html#ab239fb37be102a9c34a3b0b2a4625c86">  117</a></span>&#160;         <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structDHTinfotype.html#ab239fb37be102a9c34a3b0b2a4625c86">YAC_nrcodes</a>[16];</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="structDHTinfotype.html#aa057be97dd7cbb5aaecb32a6f5140975">  118</a></span>&#160;         <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structDHTinfotype.html#aa057be97dd7cbb5aaecb32a6f5140975">YAC_values</a>[162];<span class="comment">//we&#39;ll use the standard Huffman tables</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="structDHTinfotype.html#a68fdeacd18f23d93b0039914b54e7b9c">  119</a></span>&#160;         <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structDHTinfotype.html#a68fdeacd18f23d93b0039914b54e7b9c">HTCbDCinfo</a>; <span class="comment">// = 1</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="structDHTinfotype.html#adf4809e8edb8d1958744fdf2d3a26fc4">  120</a></span>&#160;         <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structDHTinfotype.html#adf4809e8edb8d1958744fdf2d3a26fc4">CbDC_nrcodes</a>[16];</div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="structDHTinfotype.html#a7beccf2bfdfa6107164d881da14fa74b">  121</a></span>&#160;         <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structDHTinfotype.html#a7beccf2bfdfa6107164d881da14fa74b">CbDC_values</a>[12];</div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="structDHTinfotype.html#a67d92653576d229cfec20e341353aa9c">  122</a></span>&#160;         <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structDHTinfotype.html#a67d92653576d229cfec20e341353aa9c">HTCbACinfo</a>; <span class="comment">//  = 0x11</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="structDHTinfotype.html#a75894a4bfc7c28275d92f8f2bc00d525">  123</a></span>&#160;         <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structDHTinfotype.html#a75894a4bfc7c28275d92f8f2bc00d525">CbAC_nrcodes</a>[16];</div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="structDHTinfotype.html#ab2e50c3ca94bfb695985d2e513fc3121">  124</a></span>&#160;         <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="code" href="structDHTinfotype.html#ab2e50c3ca94bfb695985d2e513fc3121">CbAC_values</a>[162];</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;};</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="structcolorRGB.html#a882bd9efee47f8038984e2d0248a5fa2">  127</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{ <a class="code" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> B,G,R,<a class="code" href="structcolorRGB.html#a882bd9efee47f8038984e2d0248a5fa2">A</a>; } <a class="code" href="structcolorRGB.html">colorRGB</a>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#a139611a53f7e4afc6d7fab4614144686">  129</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="mm__type_8h.html#a798af1e30bc65f319c1a246cecf59e39">DWORD</a> <a class="code" href="jpeg__enc_8h.html#a139611a53f7e4afc6d7fab4614144686">bitstring</a>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#aedefda9acf9192e34dc7ac84bfb52c56">  131</a></span>&#160;<span class="preprocessor">#define writebyte(jpeg_stream,b) (jpeg_stream)-&gt;pbitstream[(jpeg_stream)-&gt;pos++]=(b)</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#ac81b8d5a2f5009badb657f243c21bf83">  132</a></span>&#160;<span class="preprocessor">#define writeword(jpeg_stream,w) writebyte(jpeg_stream,(unsigned char)((w)/256));writebyte(jpeg_stream,(unsigned char)((w)%256));</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor">#ifdef _SSE2_</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment">//#define jsimd_extbgrx_ycc_convert jsimd_extbgrx_ycc_convert_sse2</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">#define jsimd_extbgrx_ycc_convert jsimd_extrgbx_ycc_convert_sse2</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="preprocessor">#define jsimd_fdct_ifast          jsimd_fdct_ifast_sse2</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="preprocessor">#define jsimd_quantize            jsimd_quantize_sse2</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="preprocessor">#ifdef _NEON_</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="preprocessor">#define jsimd_extbgrx_ycc_convert jsimd_extrgbx_ycc_convert_neon</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment">//#define jsimd_extbgrx_ycc_convert jsimd_extbgrx_ycc_convert_neon</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="preprocessor">#define jsimd_fdct_ifast          jsimd_fdct_ifast_neon</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="preprocessor">#define jsimd_quantize            jsimd_quantize_neon</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#af89dff4200396563157d4a1e59da3bdf">  148</a></span>&#160;<span class="preprocessor">#define DCTSIZE2 64</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#a04ed4674f6f1d0d50ec241531e38274f">  150</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="jpeg__enc_8h.html#a04ed4674f6f1d0d50ec241531e38274f">JDIMENSION</a>;</div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#a11613de0abdeca2384262ade7a5b382d">  151</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="jpeg__enc_8h.html#a11613de0abdeca2384262ade7a5b382d">JSAMPLE</a>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#a57d1c52be424e0587386fa359f8b517d">  152</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="jpeg__enc_8h.html#a11613de0abdeca2384262ade7a5b382d">JSAMPLE</a>  *<a class="code" href="jpeg__enc_8h.html#a57d1c52be424e0587386fa359f8b517d">JSAMPROW</a>;     <span class="comment">/* ptr to one image row of pixel samples. */</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#ac9d5d1b829ed51769db69a37271a7e91">  153</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="jpeg__enc_8h.html#a57d1c52be424e0587386fa359f8b517d">JSAMPROW</a> *<a class="code" href="jpeg__enc_8h.html#ac9d5d1b829ed51769db69a37271a7e91">JSAMPARRAY</a>;   <span class="comment">/* ptr to some rows (a 2-D sample array) */</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#a4bf858e4d42202287e786bdec2f3b62b">  154</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="jpeg__enc_8h.html#ac9d5d1b829ed51769db69a37271a7e91">JSAMPARRAY</a> *<a class="code" href="jpeg__enc_8h.html#a4bf858e4d42202287e786bdec2f3b62b">JSAMPIMAGE</a>; <span class="comment">/* a 3-D sample array: top index is color */</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#a41a9ee0af0fcd972f647f0db5b608bc9">  156</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">short</span> <a class="code" href="jpeg__enc_8h.html#a41a9ee0af0fcd972f647f0db5b608bc9">DCTELEM</a>;  <span class="comment">/* prefer 16 bit with SIMD for parellelism */</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#a80358d37e6078147df35d23b6a5fd53a">  157</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="jpeg__enc_8h.html#a80358d37e6078147df35d23b6a5fd53a">UDCTELEM</a>;</div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#ac7517c95a09f1d674b724f9ef165c1ec">  158</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="jpeg__enc_8h.html#aa47686e2c9bbd75683931d8c243ee992">UDCTELEM2</a>;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#a60551099e0e59afa6bcdb5f8afc32230">  160</a></span>&#160;<span class="preprocessor">#define CONST_BITS 14</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#a206b6f5362e56b51ca957635350b70b6">  161</a></span>&#160;<span class="preprocessor">#define ONE ((INT32) 1)</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#ad45c45ba0d42abd22b4a095dd972a4ba">  162</a></span>&#160;<span class="preprocessor">#define RIGHT_SHIFT(x,shft) ((x) &gt;&gt; (shft))</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#affd087378f3038026c7395cd02d2ac86">  163</a></span>&#160;<span class="preprocessor">#define DESCALE(x,n)  RIGHT_SHIFT((x) + (ONE &lt;&lt; ((n)-1)), n)</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="structHuffmanTable__t.html">  165</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="structHuffmanTable__t.html#a68f310c649eb3dd938405dd018cc1023">  166</a></span>&#160;    <a class="code" href="jpeg__enc_8h.html#a139611a53f7e4afc6d7fab4614144686">bitstring</a> DC[12];</div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="structHuffmanTable__t.html#a0286f1016024830423c24aa7371d1626">  167</a></span>&#160;    <a class="code" href="jpeg__enc_8h.html#a139611a53f7e4afc6d7fab4614144686">bitstring</a> AC[256];</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;} <a class="code" href="structHuffmanTable__t.html">HuffmanTable_t</a>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
+<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="structjpeg__stream__t.html">  170</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="structjpeg__stream__t.html#ae5dde8b03efd733ab3144a3dba0090a4">  171</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *<a class="code" href="structjpeg__stream__t.html#ae5dde8b03efd733ab3144a3dba0090a4">pbitstream</a>;</div>
+<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="structjpeg__stream__t.html#a5c75a0283223e7b5d56ca3990dda6229">  172</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>  <a class="code" href="structjpeg__stream__t.html#a5c75a0283223e7b5d56ca3990dda6229">pos</a>;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;} <a class="code" href="structjpeg__stream__t.html">jpeg_stream_t</a>;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor">#if (defined WIN32) || (defined WIN64)</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>__declspec(align(16)) {</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="jpeg__enc_8h.html#ac7517c95a09f1d674b724f9ef165c1ec">__attribute__</a>((aligned(16))) {</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <a class="code" href="mm__type_8h.html#a30f500129d8c688af07726d5d34ce52d">INT16</a> divisor_Y[<a class="code" href="jpeg__enc_8h.html#af89dff4200396563157d4a1e59da3bdf">DCTSIZE2</a>*4];  <span class="comment">// 64*4*2 = 512</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <a class="code" href="mm__type_8h.html#a30f500129d8c688af07726d5d34ce52d">INT16</a> divisor_Cb[<a class="code" href="jpeg__enc_8h.html#af89dff4200396563157d4a1e59da3bdf">DCTSIZE2</a>*4]; <span class="comment">// 64*4*2 = 512</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <a class="code" href="mm__type_8h.html#a30f500129d8c688af07726d5d34ce52d">INT16</a> DU_DCTY[64];   <span class="comment">// Current DU (after DCT and quantization) which we&#39;ll zigzag, 64*2=128</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <a class="code" href="mm__type_8h.html#a30f500129d8c688af07726d5d34ce52d">INT16</a> DU_DCTCb[64];  <span class="comment">// Current DU (after DCT and quantization) which we&#39;ll zigzag, 64*2=128</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <a class="code" href="mm__type_8h.html#a30f500129d8c688af07726d5d34ce52d">INT16</a> DU_DCTCr[64];  <span class="comment">// Current DU (after DCT and quantization) which we&#39;ll zigzag, 64*2=128</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <a class="code" href="mm__type_8h.html#a30f500129d8c688af07726d5d34ce52d">INT16</a> ZDU[64];       <span class="comment">// Zigzag ordered DU, 64*2 = 128</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <a class="code" href="mm__type_8h.html#a798af1e30bc65f319c1a246cecf59e39">DWORD</a> RLE[128];      <span class="comment">// 128*4 = 512</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <a class="code" href="structjpeg__stream__t.html">jpeg_stream_t</a> jpeg_stream; <span class="comment">// offset = 0x800</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="preprocessor">#ifdef _64_BIT_</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <a class="code" href="mm__type_8h.html#a296e89aa9d3de65d9ba04e7060118260">INT64</a> wordnew;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <a class="code" href="mm__type_8h.html#a798af1e30bc65f319c1a246cecf59e39">DWORD</a> wordnew; <span class="comment">// The word that will be written in the JPG file</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keywordtype">int</span>   wordpos; <span class="comment">// bit position in the word we write (bytenew),should be&lt;=31 and &gt;=0</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordtype">int</span>   Ximage,Yimage; <span class="comment">// image dimensions divisible by 8</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <a class="code" href="mm__type_8h.html#a771e4543f2852e05b8a5e5104df940d2">SBYTE</a> *Y_buffer;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <a class="code" href="mm__type_8h.html#a771e4543f2852e05b8a5e5104df940d2">SBYTE</a> *Cb_buffer;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <a class="code" href="mm__type_8h.html#a771e4543f2852e05b8a5e5104df940d2">SBYTE</a> *Cr_buffer;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="keywordtype">int</span>  QualityFactor;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="keyword">struct </span><a class="code" href="structDQTinfotype.html">DQTinfotype</a> DQTinfo;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        </div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">  212</a></span>&#160;    } <a class="code" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a>;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
+<div class="line"><a name="l00214"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#aa60cf4c7747488cd498574c62a7c1a30">  214</a></span>&#160;<span class="preprocessor">#define DBG_MAIN 0x01</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#a991593e05971207b4d242532da26c306">  215</a></span>&#160;<span class="preprocessor">#define DBG_DUMP_QTABLE 0x02</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#ac2d33ccaf63f5d5b66552b95426c0137">  217</a></span>&#160;<span class="preprocessor">#define DEBUG_LEVEL (0)</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="comment">//#define DEBUG_LEVEL (DBG_DUMP_QTABLE)</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="keywordtype">void</span> <a class="code" href="jpeg__enc_8h.html#aee65b15f2496f8c6023e4766d851a6bc">Initialize</a>(<a class="code" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a>* <a class="code" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>,<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> scalefactor);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="keywordtype">void</span> <a class="code" href="jpeg__enc_8h.html#ad9a7edb57ac46137f80a60d8f54a3eec">DeInitialize</a>();</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="keywordtype">void</span> <a class="code" href="jpeg__enc_8h.html#ad044d7626e2e07f7f310ad478181a642">WriteHeader</a>(<a class="code" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a>* <a class="code" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>,<span class="keywordtype">int</span> width,<span class="keywordtype">int</span> height);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="keywordtype">int</span>  <a class="code" href="jpeg__enc_8h.html#aed12a3220b4ff438b98346db0d8b2d88">GetDQTinfo</a>(<a class="code" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *<a class="code" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>,<a class="code" href="structjpeg__stream__t.html">jpeg_stream_t</a>* stream);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="keywordtype">int</span>  <a class="code" href="jpeg__enc_8h.html#add40a833c42db841bba279c85ff09e80">write_DHTinfo</a>(<a class="code" href="structjpeg__stream__t.html">jpeg_stream_t</a>* stream );</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="keywordtype">int</span>  <a class="code" href="jpeg__enc_8h.html#a7626c713912d29bc0208bb4d4b387fee">encode</a>(<a class="code" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a>* <a class="code" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="preprocessor">#if !((defined WIN64) || (defined _NEON_) || (defined MACHO-64))</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="keywordtype">void</span> __fastcall <a class="code" href="jpeg__enc_8c.html#a1ab61b3ba65c0635617e5f225d72f2f9">writebits</a>(<a class="code" href="jpeg__enc_8h.html#a139611a53f7e4afc6d7fab4614144686">bitstring</a> bs,<a class="code" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *<a class="code" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    </div>
+<div class="line"><a name="l00235"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#a86b93505bff50bdf784fa992f7171a06">  235</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="jpeg__enc_8h.html#a86b93505bff50bdf784fa992f7171a06">jsimd_extbgrx_ycc_convert</a></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;(</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <a class="code" href="jpeg__enc_8h.html#a04ed4674f6f1d0d50ec241531e38274f">JDIMENSION</a> img_width,</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <a class="code" href="jpeg__enc_8h.html#ac9d5d1b829ed51769db69a37271a7e91">JSAMPARRAY</a> input_buf,</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <a class="code" href="jpeg__enc_8h.html#a4bf858e4d42202287e786bdec2f3b62b">JSAMPIMAGE</a> output_buf,</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <a class="code" href="jpeg__enc_8h.html#a04ed4674f6f1d0d50ec241531e38274f">JDIMENSION</a> output_row,</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keywordtype">int</span> num_rows</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
+<div class="line"><a name="l00244"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#abe7d95db433c9f58804300b6cc6b0cd9">  244</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="jpeg__enc_8h.html#abe7d95db433c9f58804300b6cc6b0cd9">jsimd_extbgr_ycc_convert</a></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;(</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <a class="code" href="jpeg__enc_8h.html#a04ed4674f6f1d0d50ec241531e38274f">JDIMENSION</a> img_width,</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <a class="code" href="jpeg__enc_8h.html#ac9d5d1b829ed51769db69a37271a7e91">JSAMPARRAY</a> input_buf,</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <a class="code" href="jpeg__enc_8h.html#a4bf858e4d42202287e786bdec2f3b62b">JSAMPIMAGE</a> output_buf,</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <a class="code" href="jpeg__enc_8h.html#a04ed4674f6f1d0d50ec241531e38274f">JDIMENSION</a> output_row,</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordtype">int</span> num_rows</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
+<div class="line"><a name="l00253"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#a214d04b827129d8d366c01572cf65ccb">  253</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="jpeg__enc_8h.html#a214d04b827129d8d366c01572cf65ccb">jsimd_quantize</a></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;(</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <a class="code" href="mm__type_8h.html#a30f500129d8c688af07726d5d34ce52d">INT16</a> * coef_block, </div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <a class="code" href="mm__type_8h.html#a30f500129d8c688af07726d5d34ce52d">INT16</a> * divisors,</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <a class="code" href="mm__type_8h.html#a30f500129d8c688af07726d5d34ce52d">INT16</a> * workspace</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
+<div class="line"><a name="l00260"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#a3222f8d8641f5433143634e19007b5e3">  260</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="jpeg__enc_8h.html#a3222f8d8641f5433143634e19007b5e3">jsimd_fdct_ifast</a>(<a class="code" href="mm__type_8h.html#a30f500129d8c688af07726d5d34ce52d">INT16</a> * data);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="preprocessor">#if (defined WIN32 || defined WIN64)</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    __inline <span class="keywordtype">int</span> <a class="code" href="jpeg__enc_8h.html#a495c58c00277d4d3ce46badd943beb3a">clz</a>(<span class="keywordtype">int</span> x)</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    {</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="keywordtype">int</span> res;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        BitScanReverse(&amp;res,x);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <span class="keywordflow">return</span> 31 - res;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    };</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    __inline <span class="keywordtype">int</span> <a class="code" href="jpeg__enc_8h.html#a241e747a4a1dbc730f2ec05b0d0ebd72">ctz</a>(<span class="keywordtype">int</span> x)</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    {</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <span class="keywordtype">int</span> res;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        BitScanForward(&amp;res,x);</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    }</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#a495c58c00277d4d3ce46badd943beb3a">  277</a></span>&#160;<span class="preprocessor">#define clz(x) __builtin_clz(x)</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno"><a class="line" href="jpeg__enc_8h.html#a241e747a4a1dbc730f2ec05b0d0ebd72">  278</a></span>&#160;<span class="preprocessor">#define ctz(x) __builtin_ctz(x)</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;}</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//SAVEJPG_H</span></div>
+<div class="ttc" id="adebug__trace_8h_html"><div class="ttname"><a href="debug__trace_8h.html">debug_trace.h</a></div></div>
+<div class="ttc" id="ajpeg__enc_8c_html_a1ab61b3ba65c0635617e5f225d72f2f9"><div class="ttname"><a href="jpeg__enc_8c.html#a1ab61b3ba65c0635617e5f225d72f2f9">writebits</a></div><div class="ttdeci">void writebits(bitstring bs, cinfo_t *cinfo)</div><div class="ttdef"><b>Definition:</b> jpeg_enc.c:321</div></div>
+<div class="ttc" id="ajpeg__enc_8h_html_a04ed4674f6f1d0d50ec241531e38274f"><div class="ttname"><a href="jpeg__enc_8h.html#a04ed4674f6f1d0d50ec241531e38274f">JDIMENSION</a></div><div class="ttdeci">unsigned int JDIMENSION</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:150</div></div>
+<div class="ttc" id="ajpeg__enc_8h_html_a11613de0abdeca2384262ade7a5b382d"><div class="ttname"><a href="jpeg__enc_8h.html#a11613de0abdeca2384262ade7a5b382d">JSAMPLE</a></div><div class="ttdeci">unsigned char JSAMPLE</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:151</div></div>
+<div class="ttc" id="ajpeg__enc_8h_html_a139611a53f7e4afc6d7fab4614144686"><div class="ttname"><a href="jpeg__enc_8h.html#a139611a53f7e4afc6d7fab4614144686">bitstring</a></div><div class="ttdeci">DWORD bitstring</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:129</div></div>
+<div class="ttc" id="ajpeg__enc_8h_html_a214d04b827129d8d366c01572cf65ccb"><div class="ttname"><a href="jpeg__enc_8h.html#a214d04b827129d8d366c01572cf65ccb">jsimd_quantize</a></div><div class="ttdeci">void jsimd_quantize(INT16 *coef_block, INT16 *divisors, INT16 *workspace)</div></div>
+<div class="ttc" id="ajpeg__enc_8h_html_a241e747a4a1dbc730f2ec05b0d0ebd72"><div class="ttname"><a href="jpeg__enc_8h.html#a241e747a4a1dbc730f2ec05b0d0ebd72">ctz</a></div><div class="ttdeci">#define ctz(x)</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:278</div></div>
+<div class="ttc" id="ajpeg__enc_8h_html_a3222f8d8641f5433143634e19007b5e3"><div class="ttname"><a href="jpeg__enc_8h.html#a3222f8d8641f5433143634e19007b5e3">jsimd_fdct_ifast</a></div><div class="ttdeci">void jsimd_fdct_ifast(INT16 *data)</div></div>
+<div class="ttc" id="ajpeg__enc_8h_html_a41a9ee0af0fcd972f647f0db5b608bc9"><div class="ttname"><a href="jpeg__enc_8h.html#a41a9ee0af0fcd972f647f0db5b608bc9">DCTELEM</a></div><div class="ttdeci">short DCTELEM</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:156</div></div>
+<div class="ttc" id="ajpeg__enc_8h_html_a495c58c00277d4d3ce46badd943beb3a"><div class="ttname"><a href="jpeg__enc_8h.html#a495c58c00277d4d3ce46badd943beb3a">clz</a></div><div class="ttdeci">#define clz(x)</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:277</div></div>
+<div class="ttc" id="ajpeg__enc_8h_html_a4bf858e4d42202287e786bdec2f3b62b"><div class="ttname"><a href="jpeg__enc_8h.html#a4bf858e4d42202287e786bdec2f3b62b">JSAMPIMAGE</a></div><div class="ttdeci">JSAMPARRAY * JSAMPIMAGE</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:154</div></div>
+<div class="ttc" id="ajpeg__enc_8h_html_a57d1c52be424e0587386fa359f8b517d"><div class="ttname"><a href="jpeg__enc_8h.html#a57d1c52be424e0587386fa359f8b517d">JSAMPROW</a></div><div class="ttdeci">JSAMPLE * JSAMPROW</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:152</div></div>
+<div class="ttc" id="ajpeg__enc_8h_html_a7626c713912d29bc0208bb4d4b387fee"><div class="ttname"><a href="jpeg__enc_8h.html#a7626c713912d29bc0208bb4d4b387fee">encode</a></div><div class="ttdeci">int encode(cinfo_t *cinfo)</div><div class="ttdef"><b>Definition:</b> jpeg_enc.c:664</div></div>
+<div class="ttc" id="ajpeg__enc_8h_html_a80358d37e6078147df35d23b6a5fd53a"><div class="ttname"><a href="jpeg__enc_8h.html#a80358d37e6078147df35d23b6a5fd53a">UDCTELEM</a></div><div class="ttdeci">unsigned short UDCTELEM</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:157</div></div>
+<div class="ttc" id="ajpeg__enc_8h_html_a86b93505bff50bdf784fa992f7171a06"><div class="ttname"><a href="jpeg__enc_8h.html#a86b93505bff50bdf784fa992f7171a06">jsimd_extbgrx_ycc_convert</a></div><div class="ttdeci">void jsimd_extbgrx_ycc_convert(JDIMENSION img_width, JSAMPARRAY input_buf, JSAMPIMAGE output_buf, JDIMENSION output_row, int num_rows)</div></div>
+<div class="ttc" id="ajpeg__enc_8h_html_aa47686e2c9bbd75683931d8c243ee992"><div class="ttname"><a href="jpeg__enc_8h.html#aa47686e2c9bbd75683931d8c243ee992">UDCTELEM2</a></div><div class="ttdeci">unsigned int UDCTELEM2</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:158</div></div>
+<div class="ttc" id="ajpeg__enc_8h_html_abc486d940ac1d38cfcdee427e575671a"><div class="ttname"><a href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a></div><div class="ttdeci">cinfo_t</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:212</div></div>
+<div class="ttc" id="ajpeg__enc_8h_html_abe7d95db433c9f58804300b6cc6b0cd9"><div class="ttname"><a href="jpeg__enc_8h.html#abe7d95db433c9f58804300b6cc6b0cd9">jsimd_extbgr_ycc_convert</a></div><div class="ttdeci">void jsimd_extbgr_ycc_convert(JDIMENSION img_width, JSAMPARRAY input_buf, JSAMPIMAGE output_buf, JDIMENSION output_row, int num_rows)</div></div>
+<div class="ttc" id="ajpeg__enc_8h_html_ac7517c95a09f1d674b724f9ef165c1ec"><div class="ttname"><a href="jpeg__enc_8h.html#ac7517c95a09f1d674b724f9ef165c1ec">__attribute__</a></div><div class="ttdeci">struct __attribute__((aligned(16)))</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:179</div></div>
+<div class="ttc" id="ajpeg__enc_8h_html_ac9d5d1b829ed51769db69a37271a7e91"><div class="ttname"><a href="jpeg__enc_8h.html#ac9d5d1b829ed51769db69a37271a7e91">JSAMPARRAY</a></div><div class="ttdeci">JSAMPROW * JSAMPARRAY</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:153</div></div>
+<div class="ttc" id="ajpeg__enc_8h_html_ad044d7626e2e07f7f310ad478181a642"><div class="ttname"><a href="jpeg__enc_8h.html#ad044d7626e2e07f7f310ad478181a642">WriteHeader</a></div><div class="ttdeci">void WriteHeader(cinfo_t *cinfo, int width, int height)</div><div class="ttdef"><b>Definition:</b> jpeg_enc.c:648</div></div>
+<div class="ttc" id="ajpeg__enc_8h_html_ad9a7edb57ac46137f80a60d8f54a3eec"><div class="ttname"><a href="jpeg__enc_8h.html#ad9a7edb57ac46137f80a60d8f54a3eec">DeInitialize</a></div><div class="ttdeci">void DeInitialize()</div><div class="ttdef"><b>Definition:</b> jpeg_enc.c:643</div></div>
+<div class="ttc" id="ajpeg__enc_8h_html_add40a833c42db841bba279c85ff09e80"><div class="ttname"><a href="jpeg__enc_8h.html#add40a833c42db841bba279c85ff09e80">write_DHTinfo</a></div><div class="ttdeci">int write_DHTinfo(jpeg_stream_t *stream)</div><div class="ttdef"><b>Definition:</b> jpeg_enc.c:250</div></div>
+<div class="ttc" id="ajpeg__enc_8h_html_aed12a3220b4ff438b98346db0d8b2d88"><div class="ttname"><a href="jpeg__enc_8h.html#aed12a3220b4ff438b98346db0d8b2d88">GetDQTinfo</a></div><div class="ttdeci">int GetDQTinfo(cinfo_t *cinfo, jpeg_stream_t *stream)</div><div class="ttdef"><b>Definition:</b> jpeg_enc.c:233</div></div>
+<div class="ttc" id="ajpeg__enc_8h_html_aee65b15f2496f8c6023e4766d851a6bc"><div class="ttname"><a href="jpeg__enc_8h.html#aee65b15f2496f8c6023e4766d851a6bc">Initialize</a></div><div class="ttdeci">void Initialize(cinfo_t *cinfo, unsigned char scalefactor)</div><div class="ttdef"><b>Definition:</b> jpeg_enc.c:631</div></div>
+<div class="ttc" id="ajpeg__enc_8h_html_af89dff4200396563157d4a1e59da3bdf"><div class="ttname"><a href="jpeg__enc_8h.html#af89dff4200396563157d4a1e59da3bdf">DCTSIZE2</a></div><div class="ttdeci">#define DCTSIZE2</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:148</div></div>
+<div class="ttc" id="ajpegenc_8c_html_af3d3a37ad816d3c9005fc2be2e0a22b0"><div class="ttname"><a href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a></div><div class="ttdeci">cinfo_t cinfo</div><div class="ttdef"><b>Definition:</b> jpegenc.c:74</div></div>
+<div class="ttc" id="amm__type_8h_html"><div class="ttname"><a href="mm__type_8h.html">mm_type.h</a></div></div>
+<div class="ttc" id="amm__type_8h_html_a296e89aa9d3de65d9ba04e7060118260"><div class="ttname"><a href="mm__type_8h.html#a296e89aa9d3de65d9ba04e7060118260">INT64</a></div><div class="ttdeci">int64_t INT64</div><div class="ttdef"><b>Definition:</b> mm_type.h:11</div></div>
+<div class="ttc" id="amm__type_8h_html_a2b0e863dadf920709ec53d9088ee7c91"><div class="ttname"><a href="mm__type_8h.html#a2b0e863dadf920709ec53d9088ee7c91">WORD</a></div><div class="ttdeci">unsigned short int WORD</div><div class="ttdef"><b>Definition:</b> mm_type.h:9</div></div>
+<div class="ttc" id="amm__type_8h_html_a30f500129d8c688af07726d5d34ce52d"><div class="ttname"><a href="mm__type_8h.html#a30f500129d8c688af07726d5d34ce52d">INT16</a></div><div class="ttdeci">signed short INT16</div><div class="ttdef"><b>Definition:</b> mm_type.h:22</div></div>
+<div class="ttc" id="amm__type_8h_html_a4ae1dab0fb4b072a66584546209e7d58"><div class="ttname"><a href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a></div><div class="ttdeci">unsigned char BYTE</div><div class="ttdef"><b>Definition:</b> mm_type.h:8</div></div>
+<div class="ttc" id="amm__type_8h_html_a771e4543f2852e05b8a5e5104df940d2"><div class="ttname"><a href="mm__type_8h.html#a771e4543f2852e05b8a5e5104df940d2">SBYTE</a></div><div class="ttdeci">signed char SBYTE</div><div class="ttdef"><b>Definition:</b> mm_type.h:19</div></div>
+<div class="ttc" id="amm__type_8h_html_a798af1e30bc65f319c1a246cecf59e39"><div class="ttname"><a href="mm__type_8h.html#a798af1e30bc65f319c1a246cecf59e39">DWORD</a></div><div class="ttdeci">unsigned int DWORD</div><div class="ttdef"><b>Definition:</b> mm_type.h:10</div></div>
+<div class="ttc" id="astructAPP0infotype_html"><div class="ttname"><a href="structAPP0infotype.html">APP0infotype</a></div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:47</div></div>
+<div class="ttc" id="astructAPP0infotype_html_a118a4508a0f4f19cce1c82e104d44b58"><div class="ttname"><a href="structAPP0infotype.html#a118a4508a0f4f19cce1c82e104d44b58">APP0infotype::thumbnheight</a></div><div class="ttdeci">BYTE thumbnheight</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:57</div></div>
+<div class="ttc" id="astructAPP0infotype_html_a350d9e289f6343cc89c4832637b51541"><div class="ttname"><a href="structAPP0infotype.html#a350d9e289f6343cc89c4832637b51541">APP0infotype::marker</a></div><div class="ttdeci">WORD marker</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:48</div></div>
+<div class="ttc" id="astructAPP0infotype_html_a4ebde26eaea0a2fa96e24e0bec2100ef"><div class="ttname"><a href="structAPP0infotype.html#a4ebde26eaea0a2fa96e24e0bec2100ef">APP0infotype::thumbnwidth</a></div><div class="ttdeci">BYTE thumbnwidth</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:56</div></div>
+<div class="ttc" id="astructAPP0infotype_html_a5b7a8f526984e272cc402ffc4310ab04"><div class="ttname"><a href="structAPP0infotype.html#a5b7a8f526984e272cc402ffc4310ab04">APP0infotype::xdensity</a></div><div class="ttdeci">WORD xdensity</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:54</div></div>
+<div class="ttc" id="astructAPP0infotype_html_a689e50a9a5b58b93d8a8f62c3b6c2c03"><div class="ttname"><a href="structAPP0infotype.html#a689e50a9a5b58b93d8a8f62c3b6c2c03">APP0infotype::ydensity</a></div><div class="ttdeci">WORD ydensity</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:55</div></div>
+<div class="ttc" id="astructAPP0infotype_html_a78f6377225db5c629adf0af7ca4d954c"><div class="ttname"><a href="structAPP0infotype.html#a78f6377225db5c629adf0af7ca4d954c">APP0infotype::JFIFsignature</a></div><div class="ttdeci">BYTE JFIFsignature[5]</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:50</div></div>
+<div class="ttc" id="astructAPP0infotype_html_a86b387dcf518792490bc6dcde4961eab"><div class="ttname"><a href="structAPP0infotype.html#a86b387dcf518792490bc6dcde4961eab">APP0infotype::length</a></div><div class="ttdeci">WORD length</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:49</div></div>
+<div class="ttc" id="astructAPP0infotype_html_ab401abbab25f940304aa832d58ef2355"><div class="ttname"><a href="structAPP0infotype.html#ab401abbab25f940304aa832d58ef2355">APP0infotype::versionlo</a></div><div class="ttdeci">BYTE versionlo</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:52</div></div>
+<div class="ttc" id="astructAPP0infotype_html_ab7102440d2dfadec9f3381f5986333ea"><div class="ttname"><a href="structAPP0infotype.html#ab7102440d2dfadec9f3381f5986333ea">APP0infotype::xyunits</a></div><div class="ttdeci">BYTE xyunits</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:53</div></div>
+<div class="ttc" id="astructAPP0infotype_html_ac096429b4f7e18e53928107703b3c0dc"><div class="ttname"><a href="structAPP0infotype.html#ac096429b4f7e18e53928107703b3c0dc">APP0infotype::versionhi</a></div><div class="ttdeci">BYTE versionhi</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:51</div></div>
+<div class="ttc" id="astructDHTinfotype_html"><div class="ttname"><a href="structDHTinfotype.html">DHTinfotype</a></div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:108</div></div>
+<div class="ttc" id="astructDHTinfotype_html_a13dae4acbcd7835a3a535e1a6f67ee55"><div class="ttname"><a href="structDHTinfotype.html#a13dae4acbcd7835a3a535e1a6f67ee55">DHTinfotype::YDC_nrcodes</a></div><div class="ttdeci">BYTE YDC_nrcodes[16]</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:114</div></div>
+<div class="ttc" id="astructDHTinfotype_html_a3fe190d767f9bc9f10e6ecfb97007fe8"><div class="ttname"><a href="structDHTinfotype.html#a3fe190d767f9bc9f10e6ecfb97007fe8">DHTinfotype::HTYDCinfo</a></div><div class="ttdeci">BYTE HTYDCinfo</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:111</div></div>
+<div class="ttc" id="astructDHTinfotype_html_a5a7e0889cc4a2de27ba4a24709091631"><div class="ttname"><a href="structDHTinfotype.html#a5a7e0889cc4a2de27ba4a24709091631">DHTinfotype::marker</a></div><div class="ttdeci">WORD marker</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:109</div></div>
+<div class="ttc" id="astructDHTinfotype_html_a5cdd816a2141d31d311140ea1bb39b51"><div class="ttname"><a href="structDHTinfotype.html#a5cdd816a2141d31d311140ea1bb39b51">DHTinfotype::length</a></div><div class="ttdeci">WORD length</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:110</div></div>
+<div class="ttc" id="astructDHTinfotype_html_a67d92653576d229cfec20e341353aa9c"><div class="ttname"><a href="structDHTinfotype.html#a67d92653576d229cfec20e341353aa9c">DHTinfotype::HTCbACinfo</a></div><div class="ttdeci">BYTE HTCbACinfo</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:122</div></div>
+<div class="ttc" id="astructDHTinfotype_html_a68fdeacd18f23d93b0039914b54e7b9c"><div class="ttname"><a href="structDHTinfotype.html#a68fdeacd18f23d93b0039914b54e7b9c">DHTinfotype::HTCbDCinfo</a></div><div class="ttdeci">BYTE HTCbDCinfo</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:119</div></div>
+<div class="ttc" id="astructDHTinfotype_html_a75894a4bfc7c28275d92f8f2bc00d525"><div class="ttname"><a href="structDHTinfotype.html#a75894a4bfc7c28275d92f8f2bc00d525">DHTinfotype::CbAC_nrcodes</a></div><div class="ttdeci">BYTE CbAC_nrcodes[16]</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:123</div></div>
+<div class="ttc" id="astructDHTinfotype_html_a7beccf2bfdfa6107164d881da14fa74b"><div class="ttname"><a href="structDHTinfotype.html#a7beccf2bfdfa6107164d881da14fa74b">DHTinfotype::CbDC_values</a></div><div class="ttdeci">BYTE CbDC_values[12]</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:121</div></div>
+<div class="ttc" id="astructDHTinfotype_html_a93daa34ecd8c9de5331069226ad62c89"><div class="ttname"><a href="structDHTinfotype.html#a93daa34ecd8c9de5331069226ad62c89">DHTinfotype::YDC_values</a></div><div class="ttdeci">BYTE YDC_values[12]</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:115</div></div>
+<div class="ttc" id="astructDHTinfotype_html_aa057be97dd7cbb5aaecb32a6f5140975"><div class="ttname"><a href="structDHTinfotype.html#aa057be97dd7cbb5aaecb32a6f5140975">DHTinfotype::YAC_values</a></div><div class="ttdeci">BYTE YAC_values[162]</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:118</div></div>
+<div class="ttc" id="astructDHTinfotype_html_ab239fb37be102a9c34a3b0b2a4625c86"><div class="ttname"><a href="structDHTinfotype.html#ab239fb37be102a9c34a3b0b2a4625c86">DHTinfotype::YAC_nrcodes</a></div><div class="ttdeci">BYTE YAC_nrcodes[16]</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:117</div></div>
+<div class="ttc" id="astructDHTinfotype_html_ab2e50c3ca94bfb695985d2e513fc3121"><div class="ttname"><a href="structDHTinfotype.html#ab2e50c3ca94bfb695985d2e513fc3121">DHTinfotype::CbAC_values</a></div><div class="ttdeci">BYTE CbAC_values[162]</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:124</div></div>
+<div class="ttc" id="astructDHTinfotype_html_adf4809e8edb8d1958744fdf2d3a26fc4"><div class="ttname"><a href="structDHTinfotype.html#adf4809e8edb8d1958744fdf2d3a26fc4">DHTinfotype::CbDC_nrcodes</a></div><div class="ttdeci">BYTE CbDC_nrcodes[16]</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:120</div></div>
+<div class="ttc" id="astructDHTinfotype_html_ae89747ad70dd831117d874b8b59106d8"><div class="ttname"><a href="structDHTinfotype.html#ae89747ad70dd831117d874b8b59106d8">DHTinfotype::HTYACinfo</a></div><div class="ttdeci">BYTE HTYACinfo</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:116</div></div>
+<div class="ttc" id="astructDQTinfotype_html"><div class="ttname"><a href="structDQTinfotype.html">DQTinfotype</a></div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:98</div></div>
+<div class="ttc" id="astructDQTinfotype_html_a13f1a5b1068801c8376bd869d385b844"><div class="ttname"><a href="structDQTinfotype.html#a13f1a5b1068801c8376bd869d385b844">DQTinfotype::length</a></div><div class="ttdeci">WORD length</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:100</div></div>
+<div class="ttc" id="astructDQTinfotype_html_a7b95589a8a1617e5c1e7c42dbfc596e3"><div class="ttname"><a href="structDQTinfotype.html#a7b95589a8a1617e5c1e7c42dbfc596e3">DQTinfotype::marker</a></div><div class="ttdeci">WORD marker</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:99</div></div>
+<div class="ttc" id="astructDQTinfotype_html_a8850273e4042c695ac51a815b22e3786"><div class="ttname"><a href="structDQTinfotype.html#a8850273e4042c695ac51a815b22e3786">DQTinfotype::Cbtable</a></div><div class="ttdeci">BYTE Cbtable[64]</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:105</div></div>
+<div class="ttc" id="astructDQTinfotype_html_a8a129c0652d24105e1884d916519dc4e"><div class="ttname"><a href="structDQTinfotype.html#a8a129c0652d24105e1884d916519dc4e">DQTinfotype::QTYinfo</a></div><div class="ttdeci">BYTE QTYinfo</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:101</div></div>
+<div class="ttc" id="astructDQTinfotype_html_a8d3584b71461273587fb4ee0aca7b01f"><div class="ttname"><a href="structDQTinfotype.html#a8d3584b71461273587fb4ee0aca7b01f">DQTinfotype::Ytable</a></div><div class="ttdeci">BYTE Ytable[64]</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:103</div></div>
+<div class="ttc" id="astructDQTinfotype_html_ae2f054253653ae55a74de77530071743"><div class="ttname"><a href="structDQTinfotype.html#ae2f054253653ae55a74de77530071743">DQTinfotype::QTCbinfo</a></div><div class="ttdeci">BYTE QTCbinfo</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:104</div></div>
+<div class="ttc" id="astructHuffmanTable__t_html"><div class="ttname"><a href="structHuffmanTable__t.html">HuffmanTable_t</a></div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:165</div></div>
+<div class="ttc" id="astructSOF0infotype_html"><div class="ttname"><a href="structSOF0infotype.html">SOF0infotype</a></div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:60</div></div>
+<div class="ttc" id="astructSOF0infotype_html_a16ca45b622c9ad99745ba08879a5733a"><div class="ttname"><a href="structSOF0infotype.html#a16ca45b622c9ad99745ba08879a5733a">SOF0infotype::IdCr</a></div><div class="ttdeci">BYTE IdCr</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:73</div></div>
+<div class="ttc" id="astructSOF0infotype_html_a20c3e4ad635952187df8aeba6c935997"><div class="ttname"><a href="structSOF0infotype.html#a20c3e4ad635952187df8aeba6c935997">SOF0infotype::height</a></div><div class="ttdeci">WORD height</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:64</div></div>
+<div class="ttc" id="astructSOF0infotype_html_a31fb0f391c80373726d3a1e4b233a52d"><div class="ttname"><a href="structSOF0infotype.html#a31fb0f391c80373726d3a1e4b233a52d">SOF0infotype::nrofcomponents</a></div><div class="ttdeci">BYTE nrofcomponents</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:66</div></div>
+<div class="ttc" id="astructSOF0infotype_html_a32ac4a8529c43b632620cc34f23b4244"><div class="ttname"><a href="structSOF0infotype.html#a32ac4a8529c43b632620cc34f23b4244">SOF0infotype::QTCr</a></div><div class="ttdeci">BYTE QTCr</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:75</div></div>
+<div class="ttc" id="astructSOF0infotype_html_a4412d26e50e45b403688f7e2fce49707"><div class="ttname"><a href="structSOF0infotype.html#a4412d26e50e45b403688f7e2fce49707">SOF0infotype::precision</a></div><div class="ttdeci">BYTE precision</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:63</div></div>
+<div class="ttc" id="astructSOF0infotype_html_a67e1391ebe3b8ba777672849801d83cd"><div class="ttname"><a href="structSOF0infotype.html#a67e1391ebe3b8ba777672849801d83cd">SOF0infotype::QTCb</a></div><div class="ttdeci">BYTE QTCb</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:72</div></div>
+<div class="ttc" id="astructSOF0infotype_html_a791087db49711d8cbdcd1c18c4c8f266"><div class="ttname"><a href="structSOF0infotype.html#a791087db49711d8cbdcd1c18c4c8f266">SOF0infotype::width</a></div><div class="ttdeci">WORD width</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:65</div></div>
+<div class="ttc" id="astructSOF0infotype_html_a888da8fe5b54502c7aeaf9f750e1dc25"><div class="ttname"><a href="structSOF0infotype.html#a888da8fe5b54502c7aeaf9f750e1dc25">SOF0infotype::HVY</a></div><div class="ttdeci">BYTE HVY</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:68</div></div>
+<div class="ttc" id="astructSOF0infotype_html_aafa72168a52e37bcbc15538dd8c93f44"><div class="ttname"><a href="structSOF0infotype.html#aafa72168a52e37bcbc15538dd8c93f44">SOF0infotype::HVCr</a></div><div class="ttdeci">BYTE HVCr</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:74</div></div>
+<div class="ttc" id="astructSOF0infotype_html_ab90f370c5ed19397c35dcb981436f857"><div class="ttname"><a href="structSOF0infotype.html#ab90f370c5ed19397c35dcb981436f857">SOF0infotype::IdCb</a></div><div class="ttdeci">BYTE IdCb</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:70</div></div>
+<div class="ttc" id="astructSOF0infotype_html_aba058cef0bae4a0fabcb2dd95d05d614"><div class="ttname"><a href="structSOF0infotype.html#aba058cef0bae4a0fabcb2dd95d05d614">SOF0infotype::marker</a></div><div class="ttdeci">WORD marker</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:61</div></div>
+<div class="ttc" id="astructSOF0infotype_html_ac1e11ada39b0c758a8ce2e862bbc31bb"><div class="ttname"><a href="structSOF0infotype.html#ac1e11ada39b0c758a8ce2e862bbc31bb">SOF0infotype::HVCb</a></div><div class="ttdeci">BYTE HVCb</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:71</div></div>
+<div class="ttc" id="astructSOF0infotype_html_ac3602b4f9496d910435ee66e4fca17de"><div class="ttname"><a href="structSOF0infotype.html#ac3602b4f9496d910435ee66e4fca17de">SOF0infotype::QTY</a></div><div class="ttdeci">BYTE QTY</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:69</div></div>
+<div class="ttc" id="astructSOF0infotype_html_ac6afabc362cd4ebe82e3088bc4d0dc0f"><div class="ttname"><a href="structSOF0infotype.html#ac6afabc362cd4ebe82e3088bc4d0dc0f">SOF0infotype::length</a></div><div class="ttdeci">WORD length</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:62</div></div>
+<div class="ttc" id="astructSOF0infotype_html_adccb35f67418e87cd35099c08bf4c6d3"><div class="ttname"><a href="structSOF0infotype.html#adccb35f67418e87cd35099c08bf4c6d3">SOF0infotype::IdY</a></div><div class="ttdeci">BYTE IdY</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:67</div></div>
+<div class="ttc" id="astructSOSinfotype_html"><div class="ttname"><a href="structSOSinfotype.html">SOSinfotype</a></div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:78</div></div>
+<div class="ttc" id="astructSOSinfotype_html_a0dab21cc712a6c5c00770f6825574ced"><div class="ttname"><a href="structSOSinfotype.html#a0dab21cc712a6c5c00770f6825574ced">SOSinfotype::nrofcomponents</a></div><div class="ttdeci">BYTE nrofcomponents</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:81</div></div>
+<div class="ttc" id="astructSOSinfotype_html_a378c993ad0afcbfe4aa54e07cf3ea658"><div class="ttname"><a href="structSOSinfotype.html#a378c993ad0afcbfe4aa54e07cf3ea658">SOSinfotype::Ss</a></div><div class="ttdeci">BYTE Ss</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:89</div></div>
+<div class="ttc" id="astructSOSinfotype_html_a5303588320592e03d01b8a9dc5bd232f"><div class="ttname"><a href="structSOSinfotype.html#a5303588320592e03d01b8a9dc5bd232f">SOSinfotype::IdY</a></div><div class="ttdeci">BYTE IdY</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:82</div></div>
+<div class="ttc" id="astructSOSinfotype_html_a79c58c1545109fb4c5f481096429325e"><div class="ttname"><a href="structSOSinfotype.html#a79c58c1545109fb4c5f481096429325e">SOSinfotype::Bf</a></div><div class="ttdeci">BYTE Bf</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:89</div></div>
+<div class="ttc" id="astructSOSinfotype_html_a7c441a9aed658e826b6c35fc3db7cc12"><div class="ttname"><a href="structSOSinfotype.html#a7c441a9aed658e826b6c35fc3db7cc12">SOSinfotype::HTCr</a></div><div class="ttdeci">BYTE HTCr</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:88</div></div>
+<div class="ttc" id="astructSOSinfotype_html_a88c064c5a095506049987f96238a7b4e"><div class="ttname"><a href="structSOSinfotype.html#a88c064c5a095506049987f96238a7b4e">SOSinfotype::marker</a></div><div class="ttdeci">WORD marker</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:79</div></div>
+<div class="ttc" id="astructSOSinfotype_html_a9c1044a8a87793a028896e006cbd75cc"><div class="ttname"><a href="structSOSinfotype.html#a9c1044a8a87793a028896e006cbd75cc">SOSinfotype::Se</a></div><div class="ttdeci">BYTE Se</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:89</div></div>
+<div class="ttc" id="astructSOSinfotype_html_ab129567914760164b914ee634bc9af1d"><div class="ttname"><a href="structSOSinfotype.html#ab129567914760164b914ee634bc9af1d">SOSinfotype::length</a></div><div class="ttdeci">WORD length</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:80</div></div>
+<div class="ttc" id="astructSOSinfotype_html_ab797c480671f01c954533291e9a08cd9"><div class="ttname"><a href="structSOSinfotype.html#ab797c480671f01c954533291e9a08cd9">SOSinfotype::HTY</a></div><div class="ttdeci">BYTE HTY</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:83</div></div>
+<div class="ttc" id="astructSOSinfotype_html_ab7ddec0d124a3cd207a0c499f3556267"><div class="ttname"><a href="structSOSinfotype.html#ab7ddec0d124a3cd207a0c499f3556267">SOSinfotype::IdCb</a></div><div class="ttdeci">BYTE IdCb</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:85</div></div>
+<div class="ttc" id="astructSOSinfotype_html_ac394e5a4d81b7cc3d0d0df0c0d94d724"><div class="ttname"><a href="structSOSinfotype.html#ac394e5a4d81b7cc3d0d0df0c0d94d724">SOSinfotype::HTCb</a></div><div class="ttdeci">BYTE HTCb</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:86</div></div>
+<div class="ttc" id="astructSOSinfotype_html_ac47ad8517d1b5c300d3211a81d1c45f8"><div class="ttname"><a href="structSOSinfotype.html#ac47ad8517d1b5c300d3211a81d1c45f8">SOSinfotype::IdCr</a></div><div class="ttdeci">BYTE IdCr</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:87</div></div>
+<div class="ttc" id="astructcolorRGB_html"><div class="ttname"><a href="structcolorRGB.html">colorRGB</a></div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:127</div></div>
+<div class="ttc" id="astructcolorRGB_html_a882bd9efee47f8038984e2d0248a5fa2"><div class="ttname"><a href="structcolorRGB.html#a882bd9efee47f8038984e2d0248a5fa2">colorRGB::A</a></div><div class="ttdeci">BYTE A</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:127</div></div>
+<div class="ttc" id="astructjpeg__stream__t_html"><div class="ttname"><a href="structjpeg__stream__t.html">jpeg_stream_t</a></div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:170</div></div>
+<div class="ttc" id="astructjpeg__stream__t_html_a5c75a0283223e7b5d56ca3990dda6229"><div class="ttname"><a href="structjpeg__stream__t.html#a5c75a0283223e7b5d56ca3990dda6229">jpeg_stream_t::pos</a></div><div class="ttdeci">unsigned int pos</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:172</div></div>
+<div class="ttc" id="astructjpeg__stream__t_html_ae5dde8b03efd733ab3144a3dba0090a4"><div class="ttname"><a href="structjpeg__stream__t.html#ae5dde8b03efd733ab3144a3dba0090a4">jpeg_stream_t::pbitstream</a></div><div class="ttdeci">unsigned char * pbitstream</div><div class="ttdef"><b>Definition:</b> jpeg_enc.h:171</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4159d2fa8205dd791550e6f261184d1d.html">libusbdisp</a></li><li class="navelem"><a class="el" href="dir_0f32255a43591352b42b74edabbacf7b.html">libenc</a></li><li class="navelem"><a class="el" href="jpeg__enc_8h.html">jpeg_enc.h</a></li>
+    <li class="footer">產生者: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

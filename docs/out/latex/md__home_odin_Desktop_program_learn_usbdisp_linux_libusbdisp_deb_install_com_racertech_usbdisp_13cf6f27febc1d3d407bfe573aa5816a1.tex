@@ -1,0 +1,306 @@
+\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md0}{}\doxysection{API Details}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md0}
+\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md1}{}\doxysubsection{Functions by group}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md1}
+\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md2}{}\doxyparagraph{Versioning}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md2}
+\#!c evdi\+\_\+get\+\_\+lib\+\_\+version(struct evdi\+\_\+lib\+\_\+version device);
+
+Function returns library version. It uses semantic versioning to mark compatibility changes. Version consists of 3 components formatted as MAJOR.\+MINOR.\+PATCH
+
+
+\begin{DoxyItemize}
+\item {\ttfamily MAJOR} number is changed for incompatibile API changes
+\item {\ttfamily MINOR} number is changed for backwards-\/compatible changes
+\item {\ttfamily PATCH} number is changed for backwards-\/compatibile bug fixes
+\end{DoxyItemize}\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md3}{}\doxyparagraph{Module parameters}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md3}
+User can modify driver behaviour by its parameters that can be set at module load time or changed during runtime.
+
+
+\begin{DoxyItemize}
+\item {\ttfamily initial\+\_\+device\+\_\+count} Number of evdi devices added at module load time (default\+: 0)
+\end{DoxyItemize}\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md4}{}\doxysubsubsection{EVDI nodes}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md4}
+\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md5}{}\doxyparagraph{Finding an available EVDI node to use}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md5}
+\#!c evdi\+\_\+device\+\_\+status \mbox{\hyperlink{evdi__lib_8h_ad2871484b85ee7a047fcd8b9002e8167}{evdi\+\_\+check\+\_\+device(int device)}};
+
+Use this function to check if a particular {\ttfamily /dev/dri/cardX} is EVDI or not.
+
+{\bfseries{Arguments\+:}} {\ttfamily device} is a number of card to check, e.\+g. passing {\ttfamily 1} will mean {\ttfamily /dev/dri/card1}.
+
+{\bfseries{Return value\+:}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily AVAILABLE} if the device node is EVDI and is available to use.
+\item {\ttfamily UNRECOGNIZED} when a node has not been created by EVDI kernel module.
+\item {\ttfamily NOT\+\_\+\+PRESENT} in other cases, e.\+g. when the device does not exist or cannot be opened to check.
+\end{DoxyItemize}\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md6}{}\doxyparagraph{Adding new EVDI node (pre v1.\+9.\+0)}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md6}
+\#!c int \mbox{\hyperlink{evdi__lib_8c_af130aa027bde8000489600ecf17c4126}{evdi\+\_\+add\+\_\+device()}}
+
+Use this to tell the kernel module to create a new {\ttfamily cardX} node for your application to use.
+
+{\bfseries{Return value\+:}} {\ttfamily 1} when successful, {\ttfamily 0} otherwise.\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md7}{}\doxyparagraph{Opening device nodes (pre v1.\+9.\+0)}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md7}
+\#!c evdi\+\_\+handle \mbox{\hyperlink{evdi__lib_8h_a22f9baafbffa240d03b8f47f6f09c929}{evdi\+\_\+open(int device)}};
+
+This function attempts to open a DRM device node with given number as EVDI. Function performs compatibility check with underlying drm device. If version of the library and module does not match then the device will not be opened.
+
+{\bfseries{Arguments}}\+: {\ttfamily device} is a number of card to open, e.\+g. {\ttfamily 1} means {\ttfamily /dev/dri/card1}.
+
+{\bfseries{Return value\+:}} On success, a handle to the opened device to be used in following API calls. {\ttfamily EVDI\+\_\+\+INVALID\+\_\+\+HANDLE} otherwise.\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md8}{}\doxyparagraph{Request evdi nodes (since v1.\+9.\+0)}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md8}
+\#!c evdi\+\_\+handle evdi\+\_\+open\+\_\+attached\+\_\+to(char $\ast$sysfs\+\_\+parent\+\_\+device);
+
+This function attempts to add (if necessary) and open a DRM device node attached to given parent device. Linking with another sysfs device is sometimes useful if it is required to reflect such relationship in sysfs.
+
+The function performs a compatibility check with an underlying drm device. If version of the library and module does not match, the device will not be opened.
+
+{\bfseries{Arguments}}\+: {\ttfamily sysfs\+\_\+parent\+\_\+device} is a string with the following format\+: {\ttfamily usb\+:\mbox{[}bus\+Num\mbox{]}-\/\mbox{[}port\+Num1\mbox{]}.\mbox{[}port\+Num2\mbox{]}.\mbox{[}port\+Num3\mbox{]}...}, which describes the device that evdi is linked to. Or {\ttfamily NULL} when evdi device node is not linked with any other device.
+
+{\bfseries{Return value\+:}} On success, a handle to the opened device to be used in following API calls. {\ttfamily EVDI\+\_\+\+INVALID\+\_\+\+HANDLE} otherwise.\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md9}{}\doxyparagraph{Closing devices}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md9}
+\begin{DoxyVerb}#!c
+void evdi_close(evdi_handle handle);
+\end{DoxyVerb}
+ Closes an opened EVDI handle.
+
+{\bfseries{Arguments}}\+: {\ttfamily handle} to an opened device that is to be closed.\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md10}{}\doxysubsubsection{Connection}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md10}
+\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md11}{}\doxyparagraph{Opening connections}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md11}
+\begin{DoxyVerb}#!c
+void evdi_connect(evdi_handle handle,
+          const unsigned char* edid,
+          const unsigned edid_length,
+          const uint32_t pixel_area_limit,
+          const uint32_t pixel_per_second_limit);
+\end{DoxyVerb}
+ Creates a connection between the EVDI and Linux DRM subsystem, resulting in kernel mode driver processing a hot plug event.
+
+{\bfseries{Arguments}}\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily handle} to an opened device
+\item {\ttfamily edid} should be a pointer to a memory block with contents of an EDID of a monitor that will be exposed to kernel
+\item {\ttfamily edid\+\_\+length} is the length of the EDID block (typically 512 bytes, or more if extension blocks are present)
+\item {\ttfamily pixel\+\_\+area\+\_\+limit} is the maximum pixel count (width x height) a connected device can handle
+\item {\ttfamily pixel\+\_\+per\+\_\+second\+\_\+limit} is the maximum pixel per second rate (width x height x frames per second) a connected device can handle
+\end{DoxyItemize}\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md12}{}\doxyparagraph{Disconnecting}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md12}
+\begin{DoxyVerb}#!c
+void evdi_disconnect(evdi_handle handle)
+\end{DoxyVerb}
+ Breaks the connection between the device handle and DRM subsystem -\/ resulting in an unplug event being processed.
+
+{\bfseries{Arguments}}\+: {\ttfamily handle} to an opened device.\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md13}{}\doxysubsubsection{Buffers}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md13}
+Managing memory for frame buffers is left to the client applications. The {\ttfamily \mbox{\hyperlink{structevdi__buffer}{evdi\+\_\+buffer}}} structure is used to let the library know details about the frame buffer your application is working with. For more details, see \href{details.md\#evdi_buffer}{\texttt{ struct evdi\+\_\+buffer}} description.\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md14}{}\doxyparagraph{Registering}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md14}
+\#!c void \mbox{\hyperlink{evdi__lib_8h_a55b8cd2dec9571ba2ad484dc12e8644d}{evdi\+\_\+register\+\_\+buffer(evdi\+\_\+handle handle, evdi\+\_\+buffer buffer)}};
+
+This function allows to register a {\ttfamily buffer} of type {\ttfamily \mbox{\hyperlink{structevdi__buffer}{evdi\+\_\+buffer}}} with an opened EVDI device {\ttfamily handle}.
+
+!!! warning Registering a buffer does not allocate memory for the frame.\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md15}{}\doxyparagraph{Unregistering}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md15}
+\begin{DoxyVerb}#!c
+void evdi_unregister_buffer(evdi_handle handle, int bufferId);
+\end{DoxyVerb}
+ This function unregisters a buffer with a given {\ttfamily buffer\+Id} from an opened EVDI device {\ttfamily handle}.
+
+!!! warning Unregistering a buffer does not deallocate memory for the frame.\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md16}{}\doxysubsubsection{Screen updates}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md16}
+\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md17}{}\doxyparagraph{Requesting an update}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md17}
+\#!c bool \mbox{\hyperlink{evdi__lib_8h_a1365a0f99d801521828b8d7e789ee190}{evdi\+\_\+request\+\_\+update(evdi\+\_\+handle handle, int buffer\+Id)}};
+
+Requests an update for a buffer with a given {\ttfamily buffer\+Id}. The buffer must be already registered with the library.
+
+{\bfseries{Arguments}}\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily handle} to an opened device.
+\item {\ttfamily buffer\+Id} is an identifier for a buffer that should be updated.
+\end{DoxyItemize}
+
+{\bfseries{Return value\+:}}
+
+The function can return {\ttfamily true} if the data for the buffer is ready to be grabbed immediately after the call. If {\ttfamily false} is returned, then an update is not yet ready to grab and the application should wait until it gets notified by the kernel module -\/ see \href{details.md\#events-and-handlers}{\texttt{ Events and handlers}}.\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md18}{}\doxyparagraph{Grabbing pixels}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md18}
+\begin{DoxyVerb}#!c
+void evdi_grab_pixels(evdi_handle handle, evdi_rect *rects, int *num_rects);
+\end{DoxyVerb}
+ Grabs pixels following the most recent update request (see \href{details.md\#requesting-an-update}{\texttt{ Requesting an update}}).
+
+This should be called either after a call to {\ttfamily evdi\+\_\+request\+\_\+update} (if it returns {\ttfamily true} which means pixels can be grabbed immediately), or while handling the {\ttfamily update\+\_\+ready} notification.
+
+{\bfseries{Arguments}}\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily handle} to an opened device.
+\item {\ttfamily rects} is a pointer to the first {\ttfamily \mbox{\hyperlink{structevdi__rect}{evdi\+\_\+rect}}} that the library fills, based on what the kernel tells.
+\end{DoxyItemize}
+
+!!! note It is expected that this pointer is a beginning of an array of {\ttfamily \mbox{\hyperlink{structevdi__rect}{evdi\+\_\+rect}}}s, and current implementation assumes the array does not contain more than 16 slots for rects.
+
+
+\begin{DoxyItemize}
+\item {\ttfamily num\+\_\+rects} is a pointer to an integer that will be modified to tell how many dirty rectangles are valid in the list, and the client should only care about as many. In particular, a failed grab will be indicated by {\ttfamily 0} valid rectangles to take into account (this can happen when there was a mode change between the request and the grab).
+\end{DoxyItemize}\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md19}{}\doxysubsubsection{DDC/\+CI response}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md19}
+\begin{DoxyVerb}#!c
+void evdi_ddcci_response(evdi_handle handle, const unsigned char *buffer,
+    const uint32_t buffer_length, const bool result);
+\end{DoxyVerb}
+ Pass back DDC/\+CI data following the most recent DDC/\+CI request to the EVDI kernel driver (see \href{details.md\#ddcci-data-notification}{\texttt{ DDC/\+CI data notification}}).
+
+{\bfseries{Arguments}}\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily handle} to an opened device.
+\item {\ttfamily buffer} a pointer to the response buffer. This will be copied into kernel space.
+\item {\ttfamily buffer\+\_\+length} the length of the response buffer.
+\item {\ttfamily result} the boolean result. The caller should set {\ttfamily result} to true if the most recent DDC/\+CI request was successful and false if it was unsuccessful. If false, {\ttfamily buffer} and {\ttfamily buffer\+\_\+length} are ignored.
+\end{DoxyItemize}
+
+!!! note The {\ttfamily buffer\+\_\+length} will be truncated to 64 bytes ({\ttfamily DDCCI\+\_\+\+BUFFER\+\_\+\+SIZE}).\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md20}{}\doxysubsubsection{Events and handlers}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md20}
+\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md21}{}\doxyparagraph{DPMS mode change}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md21}
+\begin{DoxyVerb}#!c
+void (*dpms_handler)(int dpms_mode, void* user_data);
+\end{DoxyVerb}
+ This notification is sent when a DPMS mode changes. The possible modes are as defined by the standard, and values are bit-\/compatible with DRM interface\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{/* DPMS flags */}
+\DoxyCodeLine{\#define DRM\_MODE\_DPMS\_ON        0}
+\DoxyCodeLine{\#define DRM\_MODE\_DPMS\_STANDBY   1}
+\DoxyCodeLine{\#define DRM\_MODE\_DPMS\_SUSPEND   2}
+\DoxyCodeLine{\#define DRM\_MODE\_DPMS\_OFF       3}
+
+\end{DoxyCode}
+
+
+$\ast$\mbox{[}DPMS\mbox{]}\+: Display Power Management Signaling\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md22}{}\doxyparagraph{Mode change notification}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md22}
+\begin{DoxyVerb}#!c
+void (*mode_changed_handler)(evdi_mode mode, void* user_data);
+\end{DoxyVerb}
+ This notification is sent when a display mode changes. Details of the new mode are sent in the {\ttfamily mode} argument. See \href{details.md\#evdi_mode}{\texttt{ evdi\+\_\+mode}} for description of the structure.\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md23}{}\doxyparagraph{Update ready notification}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md23}
+\begin{DoxyVerb}#!c
+void (*update_ready_handler)(int buffer_to_be_updated, void* user_data);
+\end{DoxyVerb}
+ This notification is sent when an update for a buffer, that had been earlier requested is ready to be consumed. The buffer number to be updated is {\ttfamily buffer\+\_\+to\+\_\+be\+\_\+updated}.\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md24}{}\doxyparagraph{Cursor change notification}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md24}
+\begin{DoxyVerb}#!c
+void (*cursor_set_handler)(struct evdi_cursor_set cursor_set, void* user_data);
+\end{DoxyVerb}
+ This notification is sent for an update of cursor buffer or shape. It is also raised when cursor is enabled or disabled. Such situation happens when cursor is moved on and off the screen respectively.\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md25}{}\doxyparagraph{Cursor move notification}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md25}
+\begin{DoxyVerb}#!c
+void (*cursor_move_handler)(struct evdi_cursor_move cursor_move, void* user_data);
+\end{DoxyVerb}
+ This notification is sent for a cursor position change. It is raised only when cursor is positioned on virtual screen.\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md26}{}\doxyparagraph{CRTC state change}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md26}
+\begin{DoxyVerb}#!c
+void (*crtc_state_handler)(int state, void* user_data);
+\end{DoxyVerb}
+ This event is deprecated. Please use DPMS mode change event instead. Sent when DRM\textquotesingle{}s CRTC changes state. The {\ttfamily state} is a value that\textquotesingle{}s forwarded from the kernel.\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md27}{}\doxyparagraph{DDC/\+CI data notification}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md27}
+\begin{DoxyVerb}#!c
+void (*ddcci_data_handler)(struct evdi_ddcci_data ddcci_data, void *user_data);
+\end{DoxyVerb}
+ This notification is sent when an i2c request has been made to the DDC/\+CI address (0x37).
+
+The module will wait for a maximum of DDCCI\+\_\+\+TIMEOUT\+\_\+\+MS (50ms -\/ The default DDC request timeout) for a response to this request to be passed back via {\ttfamily evdi\+\_\+ddcci\+\_\+response}.\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md28}{}\doxysubsubsection{Logging}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md28}
+Client can register their own callback to be used for logging instead of default {\ttfamily printf}. \begin{DoxyVerb}#!c
+void evdi_set_logging(struct evdi_logging evdi_logging);
+\end{DoxyVerb}
+ For more on argument see \href{details.md\#Types}{\texttt{ struct evdi\+\_\+logging}}.\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md29}{}\doxysubsection{Types}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md29}
+\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md30}{}\doxysubsubsection{evdi\+\_\+handle}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md30}
+This is a handle to an opened device node that you get from an {\ttfamily evdi\+\_\+open} call, and use in all following API calls to indicate which EVDI device you communicate with.\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md31}{}\doxysubsubsection{evdi\+\_\+selectable}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md31}
+A typedef denoting a file descriptor you can watch to know when there are events being signalled from the kernel module. Each opened EVDI device handle has its own descriptor to watch, which you can get with {\ttfamily evdi\+\_\+get\+\_\+event\+\_\+ready}. When the descriptor becomes ready to read from, the application should call {\ttfamily evdi\+\_\+handle\+\_\+events} to dispatch notifications to its handlers.\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md32}{}\doxysubsubsection{evdi\+\_\+device\+\_\+status}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md32}
+An enumerated type used while finding the DRM device node that is EVDI. Possible values are {\ttfamily AVAILABLE}, {\ttfamily UNRECOGNIZED} and {\ttfamily NOT\+\_\+\+PRESENT}.\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md33}{}\doxysubsubsection{evdi\+\_\+rect}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md33}
+A simple structure used by the library to represent a rectangular area of a screen. Top left coordinates of the rectangle are {\ttfamily x1} and {\ttfamily y1}, bottom right are {\ttfamily x2} and {\ttfamily y2}.\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md34}{}\doxysubsubsection{evdi\+\_\+mode}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md34}
+A structure used to describe a video mode that\textquotesingle{}s set for a display. Contains details of resolution set ({\ttfamily width}, {\ttfamily height}), refresh rate ({\ttfamily refresh\+\_\+rate}), and details of a pixel format used to encode color value ({\ttfamily bits\+\_\+per\+\_\+pixel} and {\ttfamily pixel\+\_\+format} -\/ which are forwarded from kernel\textquotesingle{}s DRM).\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md35}{}\doxysubsubsection{evdi\+\_\+buffer}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md35}
+A structure holding details about a buffer. \begin{DoxyVerb}#!c
+typedef struct {
+    int id;
+    void* buffer;
+    int width;
+    int height;
+    int stride;
+
+    evdi_rect* rects;
+    int rect_count;
+} evdi_buffer;
+\end{DoxyVerb}
+ Buffers have IDs, which can be arbitrarily chosen integer numbers -\/ but typically a simple sequence of numbers starting from {\ttfamily 0} is used in client applications. The pointer to the beginning of an already allocated memory block should be assigned to the {\ttfamily buffer} member of the structure. This memory will be filled by the kernel module when handling requests to grab pixels.
+
+{\ttfamily width}, {\ttfamily height} and {\ttfamily stride} are properties of the buffer -\/ the first two indicate what the size of the frame is, and {\ttfamily stride} is a width stride -\/ tells what is the increment in bytes between data for lines in memory.
+
+Stride can be equal to width of a single line multiplied by the number of bytes necessary for encoding color value for one pixel (e.\+g. 4 for RGB32) if the data for lines are contigous in the memory, but you can use larger value to indicate extra space/padding between them, e.\+g. oftentimes an additional requirement for the value of stride is it being divisbile by 8; note that those values might be specific to particular hardware/graphic drivers. Please consult documentation of your GPU for details.
+
+Last two structure members, {\ttfamily rects} and {\ttfamily rect\+\_\+counts} are updated during grabbing pixels to inform about the number and coordinates of areas that are changed from the last update.\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md36}{}\doxysubsubsection{evdi\+\_\+event\+\_\+context}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md36}
+\begin{DoxyVerb}#!c
+typedef struct {
+  void (*dpms_handler)(int dpms_mode, void* user_data);
+  void (*mode_changed_handler)(evdi_mode mode, void* user_data);
+  void (*update_ready_handler)(int buffer_to_be_updated, void* user_data);
+  void (*crtc_state_handler)(int state, void* user_data);
+  void (*cursor_set_handler)(struct evdi_cursor_set cursor_set, void *user_data);
+  void (*cursor_move_handler)(struct evdi_cursor_move cursor_move, void *user_data);
+  void (*ddcci_data_handler)(struct evdi_ddcci_data ddcci_data, void *user_data);
+  void* user_data;
+} evdi_event_context;
+\end{DoxyVerb}
+ The {\ttfamily \mbox{\hyperlink{structevdi__device__context}{evdi\+\_\+device\+\_\+context}}} structure is used for holding pointers to handlers for all notifications that the application may receive from the kernel module. The {\ttfamily user\+\_\+data} member is a value that the library will use while dispatching the call back. See \href{details.md\#events-and-handlers}{\texttt{ Events and handlers}} for more information.\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md37}{}\doxysubsubsection{evdi\+\_\+lib\+\_\+version}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md37}
+\begin{DoxyVerb}#!c
+struct evdi_lib_version {
+    int version_major;
+    int version_minor;
+    int version_patchlevel;
+};
+\end{DoxyVerb}
+ The {\ttfamily \mbox{\hyperlink{structevdi__lib__version}{evdi\+\_\+lib\+\_\+version}}} structure contains libevdi version. Version can be used to check compatibility between library and a client application.\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md38}{}\doxysubsubsection{evdi\+\_\+cursor\+\_\+set}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md38}
+\begin{DoxyVerb}#!c
+struct evdi_cursor_set {
+    int32_t hot_x;
+    int32_t hot_y;
+    uint32_t width;
+    uint32_t height;
+    uint8_t enabled;
+    uint32_t buffer_length;
+    uint32_t *buffer;
+    uint32_t pixel_format;
+    uint32_t stride;
+};
+\end{DoxyVerb}
+ The {\ttfamily \mbox{\hyperlink{structevdi__cursor__set}{evdi\+\_\+cursor\+\_\+set}}} structure contains cursor state information. {\ttfamily hot\+\_\+x} and {\ttfamily hot\+\_\+y} define hotspot information. {\ttfamily enabled} parameter is true when cursor bitmap is available and cursor is visible on virtual display. Parameters {\ttfamily width} and {\ttfamily height} define size of the cursor bitmap stored in a {\ttfamily buffer} memory area of size {\ttfamily buffer\+\_\+length}.
+
+!!! warning Event handler or library user has to free buffer memory when it is not using it.
+
+Remaining {\ttfamily stride} and {\ttfamily pixel\+\_\+format} describe data organization in the buffer. {\ttfamily stride} is a size of a single line in a buffer. Usually it is width of the cursor multiplied by bytes per pixel value plus additional extra padding. It ensures proper alignment of subsequent pixel rows. Pixel encoding is described by Four\+CC code in {\ttfamily pixel\+\_\+format} field.\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md39}{}\doxysubsubsection{evdi\+\_\+cursor\+\_\+move}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md39}
+\begin{DoxyVerb}#!c
+struct evdi_cursor_move {
+    int32_t x;
+    int32_t y;
+};
+\end{DoxyVerb}
+ The {\ttfamily \mbox{\hyperlink{structevdi__cursor__move}{evdi\+\_\+cursor\+\_\+move}}} structure contains current cursor position. It is defined as top left corner of the cursor bitmap.\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md40}{}\doxysubsubsection{evdi\+\_\+ddcci\+\_\+data}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md40}
+\begin{DoxyVerb}#!c
+struct evdi_ddcci_data {
+    uint16_t address;
+    uint16_t flags;
+    uint32_t buffer_length;
+    uint8_t *buffer;
+};
+\end{DoxyVerb}
+ The {\ttfamily \mbox{\hyperlink{structevdi__ddcci__data}{evdi\+\_\+ddcci\+\_\+data}}} structure contains\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily address} i2c address, will always be 0x37.
+\item {\ttfamily flags} read/write flags. Read = 1, Write = 0.
+\item {\ttfamily buffer\+\_\+length} the length of the buffer.
+\item {\ttfamily buffer} pointer to the ddc/ci buffer. For both read and write this will be truncated to 64 bytes ({\ttfamily DDCCI\+\_\+\+BUFFER\+\_\+\+SIZE}).
+\end{DoxyItemize}
+
+!!! warning Although the DDC spec advices the maximum buffer length is 32 bytes, we have identified monitors which support bigger buffers.\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md41}{}\doxysubsubsection{evdi\+\_\+logging}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_libusbdisp_deb_install_com_racertech_usbdisp_13cf6f27febc1d3d407bfe573aa5816a1_autotoc_md41}
+\begin{DoxyVerb}#!c
+struct evdi_logging {
+    void (*function)(void *user_data, const char *fmt, ...);
+    void *user_data;
+};
+\end{DoxyVerb}
+ Structure contains two fields\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily function} which is a pointer to the actual callback. The {\ttfamily fmt} and {\ttfamily ...} are the same as in case of {\ttfamily printf}.
+\item {\ttfamily user\+\_\+data} a pointer provided by the client when registering callback
+\end{DoxyItemize}
+
+!!! note By setting {\ttfamily function} to NULL libevdi will switch to default behaviour of using {\ttfamily printf}. 

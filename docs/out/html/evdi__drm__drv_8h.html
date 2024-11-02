@@ -1,0 +1,1590 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>jpeg: /home/odin/Desktop/program/learn/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_drm_drv.h 檔案參考文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">jpeg
+   &#160;<span id="projectnumber">0.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 產生者: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜尋','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜尋');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('evdi__drm__drv_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">複合項目</a> &#124;
+<a href="#define-members">定義</a> &#124;
+<a href="#func-members">函式</a>  </div>
+  <div class="headertitle">
+<div class="title">evdi_drm_drv.h 檔案參考文件</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;linux/module.h&gt;</code><br />
+<code>#include &lt;linux/version.h&gt;</code><br />
+<code>#include &lt;linux/mutex.h&gt;</code><br />
+<code>#include &lt;linux/device.h&gt;</code><br />
+<code>#include &lt;drm/drm_drv.h&gt;</code><br />
+<code>#include &lt;drm/drm_fourcc.h&gt;</code><br />
+<code>#include &lt;drm/drm_ioctl.h&gt;</code><br />
+<code>#include &lt;drm/drm_vblank.h&gt;</code><br />
+<code>#include &lt;drm/drm_legacy.h&gt;</code><br />
+<code>#include &lt;drm/drm_crtc.h&gt;</code><br />
+<code>#include &lt;drm/drm_crtc_helper.h&gt;</code><br />
+<code>#include &lt;drm/drm_rect.h&gt;</code><br />
+<code>#include &lt;drm/drm_gem.h&gt;</code><br />
+<code>#include &lt;linux/dma-resv.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="evdi__debug_8h_source.html">evdi_debug.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+evdi_drm_drv.h的包含相依圖:</div>
+<div class="dyncontent">
+<div class="center"><img src="evdi__drm__drv_8h__incl.png" border="0" usemap="#a_2home_2odin_2Desktop_2program_2learn_2usbdisp__linux_2libusbdisp_2deb__install_2com_8racertech_8usbdisp-1_80_80_2opt_2apps_2com_8racertech_8usbdisp_2files_2evdi_2module_2evdi__drm__drv_8h" alt=""/></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+本圖顯示出哪些檔案直接或間接include本檔 :</div>
+<div class="dyncontent">
+<div class="center"><img src="evdi__drm__drv_8h__dep__incl.png" border="0" usemap="#a_2home_2odin_2Desktop_2program_2learn_2usbdisp__linux_2libusbdisp_2deb__install_2com_8racertech_8usbdisp-1_80_80_2opt_2apps_2com_8racertech_8usbdisp_2files_2evdi_2module_2evdi__drm__drv_8hdep" alt=""/></div>
+</div>
+</div>
+<p><a href="evdi__drm__drv_8h_source.html">查看本檔案的原始碼.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+複合項目</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structevdi__device.html">evdi_device</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structevdi__gem__object.html">evdi_gem_object</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structevdi__framebuffer.html">evdi_framebuffer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+定義</h2></td></tr>
+<tr class="memitem:a4d70cb7ee8551c950259772e8661bbe5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a4d70cb7ee8551c950259772e8661bbe5">to_evdi_bo</a>(x)&#160;&#160;&#160;container_of(x, struct <a class="el" href="structevdi__gem__object.html">evdi_gem_object</a>, base)</td></tr>
+<tr class="separator:a4d70cb7ee8551c950259772e8661bbe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32d118cf669d3c9bf022007594246e84"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a32d118cf669d3c9bf022007594246e84">to_evdi_fb</a>(x)&#160;&#160;&#160;container_of(x, struct <a class="el" href="structevdi__framebuffer.html">evdi_framebuffer</a>, base)</td></tr>
+<tr class="separator:a32d118cf669d3c9bf022007594246e84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函式</h2></td></tr>
+<tr class="memitem:af162d8add86d1253243406d14002c90d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#af162d8add86d1253243406d14002c90d">evdi_modeset_init</a> (struct drm_device *dev)</td></tr>
+<tr class="separator:af162d8add86d1253243406d14002c90d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4407e453d3787fb4479a03caa033dfa5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a4407e453d3787fb4479a03caa033dfa5">evdi_modeset_cleanup</a> (struct drm_device *dev)</td></tr>
+<tr class="separator:a4407e453d3787fb4479a03caa033dfa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbbbb51c49a533a79dc2a5df4074a145"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#afbbbb51c49a533a79dc2a5df4074a145">evdi_connector_init</a> (struct drm_device *dev, struct drm_encoder *encoder)</td></tr>
+<tr class="separator:afbbbb51c49a533a79dc2a5df4074a145"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07b7b76848041d1135eda14e6a3577d3"><td class="memItemLeft" align="right" valign="top">struct drm_encoder *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a07b7b76848041d1135eda14e6a3577d3">evdi_encoder_init</a> (struct drm_device *dev)</td></tr>
+<tr class="separator:a07b7b76848041d1135eda14e6a3577d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8ba5eb420972bf36b287b2267bb7306"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#af8ba5eb420972bf36b287b2267bb7306">evdi_drm_device_unload</a> (struct drm_device *dev)</td></tr>
+<tr class="separator:af8ba5eb420972bf36b287b2267bb7306"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9cd78379faf72232ac98ca77b5c1e57"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#ac9cd78379faf72232ac98ca77b5c1e57">evdi_driver_open</a> (struct drm_device *drm_dev, struct drm_file *file)</td></tr>
+<tr class="separator:ac9cd78379faf72232ac98ca77b5c1e57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd435d5507b0edd3fe11969fca385a24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#abd435d5507b0edd3fe11969fca385a24">evdi_driver_preclose</a> (struct drm_device *dev, struct drm_file *file_priv)</td></tr>
+<tr class="separator:abd435d5507b0edd3fe11969fca385a24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29fe1334e0fdc6b84586f9923c74afa7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a29fe1334e0fdc6b84586f9923c74afa7">evdi_driver_postclose</a> (struct drm_device *dev, struct drm_file *file_priv)</td></tr>
+<tr class="separator:a29fe1334e0fdc6b84586f9923c74afa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cee98d0bf237dc2b5b7fdd793b404d0"><td class="memItemLeft" align="right" valign="top">struct drm_framebuffer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a8cee98d0bf237dc2b5b7fdd793b404d0">evdi_fb_user_fb_create</a> (struct drm_device *dev, struct drm_file *file, const struct drm_mode_fb_cmd2 *mode_cmd)</td></tr>
+<tr class="separator:a8cee98d0bf237dc2b5b7fdd793b404d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25a51866d672a3a8eb0137a9b5033444"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a25a51866d672a3a8eb0137a9b5033444">evdi_dumb_create</a> (struct drm_file *file_priv, struct drm_device *dev, struct drm_mode_create_dumb *args)</td></tr>
+<tr class="separator:a25a51866d672a3a8eb0137a9b5033444"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed20261d76d2c5ddfa31735928776bbf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#aed20261d76d2c5ddfa31735928776bbf">evdi_gem_mmap</a> (struct drm_file *file_priv, struct drm_device *dev, uint32_t <a class="el" href="main_8c.html#a96cd449c4b349daaf3ec8700056aa462">handle</a>, uint64_t *offset)</td></tr>
+<tr class="separator:aed20261d76d2c5ddfa31735928776bbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86e09609b0b22f642cf3e8ffe2a5e86a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a86e09609b0b22f642cf3e8ffe2a5e86a">evdi_gem_free_object</a> (struct drm_gem_object *gem_obj)</td></tr>
+<tr class="separator:a86e09609b0b22f642cf3e8ffe2a5e86a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af28695881b71065cce598bd9a314ade8"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structevdi__gem__object.html">evdi_gem_object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#af28695881b71065cce598bd9a314ade8">evdi_gem_alloc_object</a> (struct drm_device *dev, size_t size)</td></tr>
+<tr class="separator:af28695881b71065cce598bd9a314ade8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab84040237a782ebd34364aadc48471f8"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#ab84040237a782ebd34364aadc48471f8">evdi_gem_object_handle_lookup</a> (struct drm_file *filp, struct drm_gem_object *obj)</td></tr>
+<tr class="separator:ab84040237a782ebd34364aadc48471f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c6a6aa361fb03449b83a9b9b641c237"><td class="memItemLeft" align="right" valign="top">struct sg_table *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a3c6a6aa361fb03449b83a9b9b641c237">evdi_prime_get_sg_table</a> (struct drm_gem_object *obj)</td></tr>
+<tr class="separator:a3c6a6aa361fb03449b83a9b9b641c237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a937664c6448e40ac97e32c62aad568f4"><td class="memItemLeft" align="right" valign="top">struct drm_gem_object *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a937664c6448e40ac97e32c62aad568f4">evdi_prime_import_sg_table</a> (struct drm_device *dev, struct dma_buf_attachment *attach, struct sg_table *sg)</td></tr>
+<tr class="separator:a937664c6448e40ac97e32c62aad568f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91a07e8620b47f2a36dbda301fe1d509"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a91a07e8620b47f2a36dbda301fe1d509">evdi_gem_vmap</a> (struct <a class="el" href="structevdi__gem__object.html">evdi_gem_object</a> *obj)</td></tr>
+<tr class="separator:a91a07e8620b47f2a36dbda301fe1d509"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac23ae5c4323b045c69a51088650598db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#ac23ae5c4323b045c69a51088650598db">evdi_gem_vunmap</a> (struct <a class="el" href="structevdi__gem__object.html">evdi_gem_object</a> *obj)</td></tr>
+<tr class="separator:ac23ae5c4323b045c69a51088650598db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0878d7d7042c25480d8bd24f19197b00"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a0878d7d7042c25480d8bd24f19197b00">evdi_drm_gem_mmap</a> (struct file *filp, struct vm_area_struct *vma)</td></tr>
+<tr class="separator:a0878d7d7042c25480d8bd24f19197b00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e3f5a85661b4a372c1ce70f10446d28"><td class="memItemLeft" align="right" valign="top">vm_fault_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a4e3f5a85661b4a372c1ce70f10446d28">evdi_gem_fault</a> (struct vm_fault *vmf)</td></tr>
+<tr class="separator:a4e3f5a85661b4a372c1ce70f10446d28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a020e0d736e15138e4af139823d5a50a9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a020e0d736e15138e4af139823d5a50a9">evdi_painter_is_connected</a> (struct <a class="el" href="structevdi__painter.html">evdi_painter</a> *painter)</td></tr>
+<tr class="separator:a020e0d736e15138e4af139823d5a50a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7263fcf4f1257b816ff1cb54cbe68ebb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a7263fcf4f1257b816ff1cb54cbe68ebb">evdi_painter_close</a> (struct <a class="el" href="structevdi__device.html">evdi_device</a> *evdi, struct drm_file *file)</td></tr>
+<tr class="separator:a7263fcf4f1257b816ff1cb54cbe68ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dc3ec9d262b6b1eae1f7954b1490cf6"><td class="memItemLeft" align="right" valign="top">u8 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a8dc3ec9d262b6b1eae1f7954b1490cf6">evdi_painter_get_edid_copy</a> (struct <a class="el" href="structevdi__device.html">evdi_device</a> *evdi)</td></tr>
+<tr class="separator:a8dc3ec9d262b6b1eae1f7954b1490cf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfb1efc0190742cee7549c0f91e8b908"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#adfb1efc0190742cee7549c0f91e8b908">evdi_painter_get_num_dirts</a> (struct <a class="el" href="structevdi__painter.html">evdi_painter</a> *painter)</td></tr>
+<tr class="separator:adfb1efc0190742cee7549c0f91e8b908"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a460935e64e3565877431fbcb80fb765e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a460935e64e3565877431fbcb80fb765e">evdi_painter_mark_dirty</a> (struct <a class="el" href="structevdi__device.html">evdi_device</a> *evdi, const struct drm_clip_rect *rect)</td></tr>
+<tr class="separator:a460935e64e3565877431fbcb80fb765e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8682595b5c3e74879becc939f638955"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#ab8682595b5c3e74879becc939f638955">evdi_painter_set_vblank</a> (struct <a class="el" href="structevdi__painter.html">evdi_painter</a> *painter, struct drm_crtc *crtc, struct drm_pending_vblank_event *vblank)</td></tr>
+<tr class="separator:ab8682595b5c3e74879becc939f638955"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c7c09072479edef824e15d73ad24103"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a9c7c09072479edef824e15d73ad24103">evdi_painter_send_update_ready_if_needed</a> (struct <a class="el" href="structevdi__painter.html">evdi_painter</a> *painter)</td></tr>
+<tr class="separator:a9c7c09072479edef824e15d73ad24103"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a873d48bd4c0b49f2354a88c4a10a64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a1a873d48bd4c0b49f2354a88c4a10a64">evdi_painter_dpms_notify</a> (struct <a class="el" href="structevdi__device.html">evdi_device</a> *evdi, <a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> mode)</td></tr>
+<tr class="separator:a1a873d48bd4c0b49f2354a88c4a10a64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affe9f7757e2bafab24efd156a3b9e1ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#affe9f7757e2bafab24efd156a3b9e1ca">evdi_painter_mode_changed_notify</a> (struct <a class="el" href="structevdi__device.html">evdi_device</a> *evdi, struct drm_display_mode *mode)</td></tr>
+<tr class="separator:affe9f7757e2bafab24efd156a3b9e1ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad61bf5001d531ae35a424fa3b372c3cf"><td class="memItemLeft" align="right" valign="top">unsigned <a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#ad61bf5001d531ae35a424fa3b372c3cf">evdi_painter_poll</a> (struct file *filp, struct poll_table_struct *wait)</td></tr>
+<tr class="separator:ad61bf5001d531ae35a424fa3b372c3cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ba778d7c6a1e6906f64cfdb47617b1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a1ba778d7c6a1e6906f64cfdb47617b1a">evdi_painter_status_ioctl</a> (struct drm_device *drm_dev, void *data, struct drm_file *file)</td></tr>
+<tr class="separator:a1ba778d7c6a1e6906f64cfdb47617b1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fe51faa641d7af2e8968c9357fde4c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a5fe51faa641d7af2e8968c9357fde4c0">evdi_painter_connect_ioctl</a> (struct drm_device *drm_dev, void *data, struct drm_file *file)</td></tr>
+<tr class="separator:a5fe51faa641d7af2e8968c9357fde4c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ea3c96b61014d93e553451a15c9a311"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a0ea3c96b61014d93e553451a15c9a311">evdi_painter_grabpix_ioctl</a> (struct drm_device *drm_dev, void *data, struct drm_file *file)</td></tr>
+<tr class="separator:a0ea3c96b61014d93e553451a15c9a311"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2edf49efcd1531529bfa5820449bb5f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a2edf49efcd1531529bfa5820449bb5f5">evdi_painter_request_update_ioctl</a> (struct drm_device *drm_dev, void *data, struct drm_file *file)</td></tr>
+<tr class="separator:a2edf49efcd1531529bfa5820449bb5f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03252c2b7f1b721e9906443670b7afdb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a03252c2b7f1b721e9906443670b7afdb">evdi_painter_ddcci_response_ioctl</a> (struct drm_device *drm_dev, void *data, struct drm_file *file)</td></tr>
+<tr class="separator:a03252c2b7f1b721e9906443670b7afdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac50903dbf99d19cfaaa97ac0f614fd1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#ac50903dbf99d19cfaaa97ac0f614fd1e">evdi_painter_enable_cursor_events_ioctl</a> (struct drm_device *drm_dev, void *data, struct drm_file *file)</td></tr>
+<tr class="separator:ac50903dbf99d19cfaaa97ac0f614fd1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2921f3be7ea6c9b6a4de8df297bbfe45"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a2921f3be7ea6c9b6a4de8df297bbfe45">evdi_painter_init</a> (struct <a class="el" href="structevdi__device.html">evdi_device</a> *evdi)</td></tr>
+<tr class="separator:a2921f3be7ea6c9b6a4de8df297bbfe45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee221c62c2ef5a2001bf9cde143c5c8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#aee221c62c2ef5a2001bf9cde143c5c8a">evdi_painter_cleanup</a> (struct <a class="el" href="structevdi__painter.html">evdi_painter</a> *painter)</td></tr>
+<tr class="separator:aee221c62c2ef5a2001bf9cde143c5c8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b7c0fb6c83a3d2076760855de4bd381"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a5b7c0fb6c83a3d2076760855de4bd381">evdi_painter_set_scanout_buffer</a> (struct <a class="el" href="structevdi__painter.html">evdi_painter</a> *painter, struct <a class="el" href="structevdi__framebuffer.html">evdi_framebuffer</a> *<a class="el" href="jsimdcfg_8inc_8h.html#abdb77e53de4261715ec5f4783a343ec3">buffer</a>)</td></tr>
+<tr class="separator:a5b7c0fb6c83a3d2076760855de4bd381"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e9357521a0e724f86fe2659296ce81b"><td class="memItemLeft" align="right" valign="top">struct drm_clip_rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a1e9357521a0e724f86fe2659296ce81b">evdi_framebuffer_sanitize_rect</a> (const struct <a class="el" href="structevdi__framebuffer.html">evdi_framebuffer</a> *fb, const struct drm_clip_rect *rect)</td></tr>
+<tr class="separator:a1e9357521a0e724f86fe2659296ce81b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7def039a83c1353dc2770bc2cce869a5"><td class="memItemLeft" align="right" valign="top">struct drm_device *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a7def039a83c1353dc2770bc2cce869a5">evdi_drm_device_create</a> (struct device *parent)</td></tr>
+<tr class="separator:a7def039a83c1353dc2770bc2cce869a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00933d6a42caa53a9f9666b8998f759f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a00933d6a42caa53a9f9666b8998f759f">evdi_drm_device_remove</a> (struct drm_device *dev)</td></tr>
+<tr class="separator:a00933d6a42caa53a9f9666b8998f759f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa79ae7d378ca91df602e81356dece738"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#aa79ae7d378ca91df602e81356dece738">evdi_painter_send_cursor_set</a> (struct <a class="el" href="structevdi__painter.html">evdi_painter</a> *painter, struct <a class="el" href="structevdi__cursor.html">evdi_cursor</a> *cursor)</td></tr>
+<tr class="separator:aa79ae7d378ca91df602e81356dece738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80b0ab1350761d4046121079a601bc14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a80b0ab1350761d4046121079a601bc14">evdi_painter_send_cursor_move</a> (struct <a class="el" href="structevdi__painter.html">evdi_painter</a> *painter, struct <a class="el" href="structevdi__cursor.html">evdi_cursor</a> *cursor)</td></tr>
+<tr class="separator:a80b0ab1350761d4046121079a601bc14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45c02948561e529c926263e257374aa1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a45c02948561e529c926263e257374aa1">evdi_painter_needs_full_modeset</a> (struct <a class="el" href="structevdi__painter.html">evdi_painter</a> *painter)</td></tr>
+<tr class="separator:a45c02948561e529c926263e257374aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab39725c226c4a2c02cc9f65cd0a7a54f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#ab39725c226c4a2c02cc9f65cd0a7a54f">evdi_painter_force_full_modeset</a> (struct <a class="el" href="structevdi__painter.html">evdi_painter</a> *painter)</td></tr>
+<tr class="separator:ab39725c226c4a2c02cc9f65cd0a7a54f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f40c2dd4ae0ddf735ba78c875d22ee4"><td class="memItemLeft" align="right" valign="top">struct drm_clip_rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a5f40c2dd4ae0ddf735ba78c875d22ee4">evdi_painter_framebuffer_size</a> (struct <a class="el" href="structevdi__painter.html">evdi_painter</a> *painter)</td></tr>
+<tr class="separator:a5f40c2dd4ae0ddf735ba78c875d22ee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a489eb15cdd508c91e274015fa5b590f4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#a489eb15cdd508c91e274015fa5b590f4">evdi_painter_i2c_data_notify</a> (struct <a class="el" href="structevdi__painter.html">evdi_painter</a> *painter, struct i2c_msg *msg)</td></tr>
+<tr class="separator:a489eb15cdd508c91e274015fa5b590f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6254583256ef20cefdbcf2d2466895c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="evdi__drm__drv_8h.html#ab6254583256ef20cefdbcf2d2466895c">evdi_fb_get_bpp</a> (uint32_t format)</td></tr>
+<tr class="separator:ab6254583256ef20cefdbcf2d2466895c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">定義巨集說明文件</h2>
+<a id="a4d70cb7ee8551c950259772e8661bbe5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d70cb7ee8551c950259772e8661bbe5">&#9670;&nbsp;</a></span>to_evdi_bo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define to_evdi_bo</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;container_of(x, struct <a class="el" href="structevdi__gem__object.html">evdi_gem_object</a>, base)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a32d118cf669d3c9bf022007594246e84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32d118cf669d3c9bf022007594246e84">&#9670;&nbsp;</a></span>to_evdi_fb</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define to_evdi_fb</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;container_of(x, struct <a class="el" href="structevdi__framebuffer.html">evdi_framebuffer</a>, base)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">函式說明文件</h2>
+<a id="afbbbb51c49a533a79dc2a5df4074a145"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbbbb51c49a533a79dc2a5df4074a145">&#9670;&nbsp;</a></span>evdi_connector_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> evdi_connector_init </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_device *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct drm_encoder *&#160;</td>
+          <td class="paramname"><em>encoder</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac9cd78379faf72232ac98ca77b5c1e57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9cd78379faf72232ac98ca77b5c1e57">&#9670;&nbsp;</a></span>evdi_driver_open()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> evdi_driver_open </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_device *&#160;</td>
+          <td class="paramname"><em>drm_dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct drm_file *&#160;</td>
+          <td class="paramname"><em>file</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a29fe1334e0fdc6b84586f9923c74afa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29fe1334e0fdc6b84586f9923c74afa7">&#9670;&nbsp;</a></span>evdi_driver_postclose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_driver_postclose </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_device *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct drm_file *&#160;</td>
+          <td class="paramname"><em>file_priv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="structevdi__device.html#a4a3f3e00b85e5119b47db0414c61784f">evdi_device::dev_index</a>, <a class="el" href="evdi__debug_8h.html#a86f74f75489cd3f826027d214536d5e6">EVDI_INFO</a>, 及 <a class="el" href="evdi__debug_8c.html#abc857f05432fc94c30ee93b5d5cc6098">evdi_log_process()</a>.</p>
+
+</div>
+</div>
+<a id="abd435d5507b0edd3fe11969fca385a24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd435d5507b0edd3fe11969fca385a24">&#9670;&nbsp;</a></span>evdi_driver_preclose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_driver_preclose </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_device *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct drm_file *&#160;</td>
+          <td class="paramname"><em>file_priv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7def039a83c1353dc2770bc2cce869a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7def039a83c1353dc2770bc2cce869a5">&#9670;&nbsp;</a></span>evdi_drm_device_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct drm_device* evdi_drm_device_create </td>
+          <td>(</td>
+          <td class="paramtype">struct device *&#160;</td>
+          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被參考於 <a class="el" href="evdi__platform__dev_8c.html#aabe00bdcadd66b10b78d251dc3d42119">evdi_platform_device_probe()</a>.</p>
+
+</div>
+</div>
+<a id="a00933d6a42caa53a9f9666b8998f759f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00933d6a42caa53a9f9666b8998f759f">&#9670;&nbsp;</a></span>evdi_drm_device_remove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> evdi_drm_device_remove </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_device *&#160;</td>
+          <td class="paramname"><em>dev</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被參考於 <a class="el" href="evdi__platform__dev_8c.html#a36c6ed2f47180da2e96022e2ff142136">evdi_platform_device_remove()</a>.</p>
+
+</div>
+</div>
+<a id="af8ba5eb420972bf36b287b2267bb7306"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8ba5eb420972bf36b287b2267bb7306">&#9670;&nbsp;</a></span>evdi_drm_device_unload()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_drm_device_unload </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_device *&#160;</td>
+          <td class="paramname"><em>dev</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="structevdi__device.html#a7302f0f59d3239339359d51071851474">evdi_device::cursor</a>, <a class="el" href="evdi__debug_8h.html#a368ad0bcd95db2e19c8c0a1ec65d8d7b">EVDI_CHECKPT</a>, <a class="el" href="evdi__cursor_8c.html#a359e78efde256acae823a5253cf28665">evdi_cursor_free()</a>, <a class="el" href="evdi__drm__drv_8h.html#a4407e453d3787fb4479a03caa033dfa5">evdi_modeset_cleanup()</a>, <a class="el" href="evdi__drm__drv_8h.html#aee221c62c2ef5a2001bf9cde143c5c8a">evdi_painter_cleanup()</a>, 及 <a class="el" href="structevdi__device.html#adf4c6cf92d7976a97ec5c0c0a6f687e8">evdi_device::painter</a>.</p>
+
+</div>
+</div>
+<a id="a0878d7d7042c25480d8bd24f19197b00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0878d7d7042c25480d8bd24f19197b00">&#9670;&nbsp;</a></span>evdi_drm_gem_mmap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> evdi_drm_gem_mmap </td>
+          <td>(</td>
+          <td class="paramtype">struct file *&#160;</td>
+          <td class="paramname"><em>filp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct vm_area_struct *&#160;</td>
+          <td class="paramname"><em>vma</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a25a51866d672a3a8eb0137a9b5033444"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25a51866d672a3a8eb0137a9b5033444">&#9670;&nbsp;</a></span>evdi_dumb_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> evdi_dumb_create </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_file *&#160;</td>
+          <td class="paramname"><em>file_priv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct drm_device *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct drm_mode_create_dumb *&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a07b7b76848041d1135eda14e6a3577d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07b7b76848041d1135eda14e6a3577d3">&#9670;&nbsp;</a></span>evdi_encoder_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct drm_encoder* evdi_encoder_init </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_device *&#160;</td>
+          <td class="paramname"><em>dev</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab6254583256ef20cefdbcf2d2466895c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6254583256ef20cefdbcf2d2466895c">&#9670;&nbsp;</a></span>evdi_fb_get_bpp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> evdi_fb_get_bpp </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>format</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被參考於 <a class="el" href="evdi__cursor_8c.html#a219fda947f87832b3be3610efa7f4df8">evdi_cursor_compose_and_copy()</a>.</p>
+
+</div>
+</div>
+<a id="a8cee98d0bf237dc2b5b7fdd793b404d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cee98d0bf237dc2b5b7fdd793b404d0">&#9670;&nbsp;</a></span>evdi_fb_user_fb_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct drm_framebuffer* evdi_fb_user_fb_create </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_device *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct drm_file *&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct drm_mode_fb_cmd2 *&#160;</td>
+          <td class="paramname"><em>mode_cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1e9357521a0e724f86fe2659296ce81b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e9357521a0e724f86fe2659296ce81b">&#9670;&nbsp;</a></span>evdi_framebuffer_sanitize_rect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct drm_clip_rect evdi_framebuffer_sanitize_rect </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="structevdi__framebuffer.html">evdi_framebuffer</a> *&#160;</td>
+          <td class="paramname"><em>fb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct drm_clip_rect *&#160;</td>
+          <td class="paramname"><em>rect</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被參考於 <a class="el" href="evdi__drm__drv_8h.html#a460935e64e3565877431fbcb80fb765e">evdi_painter_mark_dirty()</a>.</p>
+
+</div>
+</div>
+<a id="af28695881b71065cce598bd9a314ade8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af28695881b71065cce598bd9a314ade8">&#9670;&nbsp;</a></span>evdi_gem_alloc_object()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structevdi__gem__object.html">evdi_gem_object</a>* evdi_gem_alloc_object </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_device *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="structevdi__gem__object.html#aeb42858c8bf2779605e621128eb19183">evdi_gem_object::_resv</a>, <a class="el" href="structevdi__gem__object.html#a596756c327ba74f48afa17e0ccbbd8d5">evdi_gem_object::base</a>, 及 <a class="el" href="structevdi__gem__object.html#a2034a4764600b82bad815679bc3902c4">evdi_gem_object::resv</a>.</p>
+
+</div>
+</div>
+<a id="a4e3f5a85661b4a372c1ce70f10446d28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e3f5a85661b4a372c1ce70f10446d28">&#9670;&nbsp;</a></span>evdi_gem_fault()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vm_fault_t evdi_gem_fault </td>
+          <td>(</td>
+          <td class="paramtype">struct vm_fault *&#160;</td>
+          <td class="paramname"><em>vmf</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="evdi__gem_8c.html#a4e3f5a85661b4a372c1ce70f10446d28">evdi_gem_fault()</a>, <a class="el" href="structevdi__gem__object.html#aad08648cfe5905f9b7f158b07dbbb361">evdi_gem_object::pages</a>, 及 <a class="el" href="evdi__drm__drv_8h.html#a4d70cb7ee8551c950259772e8661bbe5">to_evdi_bo</a>.</p>
+
+<p class="reference">被參考於 <a class="el" href="evdi__drm__drv_8h.html#a4e3f5a85661b4a372c1ce70f10446d28">evdi_gem_fault()</a>.</p>
+
+</div>
+</div>
+<a id="a86e09609b0b22f642cf3e8ffe2a5e86a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86e09609b0b22f642cf3e8ffe2a5e86a">&#9670;&nbsp;</a></span>evdi_gem_free_object()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_gem_free_object </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_gem_object *&#160;</td>
+          <td class="paramname"><em>gem_obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="evdi__gem_8c.html#ac23ae5c4323b045c69a51088650598db">evdi_gem_vunmap()</a>, <a class="el" href="structevdi__gem__object.html#aad08648cfe5905f9b7f158b07dbbb361">evdi_gem_object::pages</a>, <a class="el" href="structevdi__gem__object.html#a15d09fdcfae94e14a22abcf5fd17c166">evdi_gem_object::sg</a>, <a class="el" href="evdi__drm__drv_8h.html#a4d70cb7ee8551c950259772e8661bbe5">to_evdi_bo</a>, 及 <a class="el" href="structevdi__gem__object.html#a46ba4dcc8e6a560cc908c71291b84bb7">evdi_gem_object::vmapping</a>.</p>
+
+</div>
+</div>
+<a id="aed20261d76d2c5ddfa31735928776bbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed20261d76d2c5ddfa31735928776bbf">&#9670;&nbsp;</a></span>evdi_gem_mmap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> evdi_gem_mmap </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_file *&#160;</td>
+          <td class="paramname"><em>file_priv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct drm_device *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t *&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="example_8cpp.html#a96cd449c4b349daaf3ec8700056aa462">handle</a>, 及 <a class="el" href="evdi__drm__drv_8h.html#a4d70cb7ee8551c950259772e8661bbe5">to_evdi_bo</a>.</p>
+
+</div>
+</div>
+<a id="ab84040237a782ebd34364aadc48471f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab84040237a782ebd34364aadc48471f8">&#9670;&nbsp;</a></span>evdi_gem_object_handle_lookup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t evdi_gem_object_handle_lookup </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_file *&#160;</td>
+          <td class="paramname"><em>filp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct drm_gem_object *&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a91a07e8620b47f2a36dbda301fe1d509"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91a07e8620b47f2a36dbda301fe1d509">&#9670;&nbsp;</a></span>evdi_gem_vmap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> evdi_gem_vmap </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structevdi__gem__object.html">evdi_gem_object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="structevdi__gem__object.html#a596756c327ba74f48afa17e0ccbbd8d5">evdi_gem_object::base</a>.</p>
+
+<p class="reference">被參考於 <a class="el" href="evdi__cursor_8c.html#a11e47b665bfe1f772754fcf159c0311f">evdi_cursor_set()</a>.</p>
+
+</div>
+</div>
+<a id="ac23ae5c4323b045c69a51088650598db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac23ae5c4323b045c69a51088650598db">&#9670;&nbsp;</a></span>evdi_gem_vunmap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_gem_vunmap </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structevdi__gem__object.html">evdi_gem_object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被參考於 <a class="el" href="evdi__drm__drv_8h.html#a86e09609b0b22f642cf3e8ffe2a5e86a">evdi_gem_free_object()</a>.</p>
+
+</div>
+</div>
+<a id="a4407e453d3787fb4479a03caa033dfa5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4407e453d3787fb4479a03caa033dfa5">&#9670;&nbsp;</a></span>evdi_modeset_cleanup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_modeset_cleanup </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_device *&#160;</td>
+          <td class="paramname"><em>dev</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被參考於 <a class="el" href="evdi__drm__drv_8c.html#af8ba5eb420972bf36b287b2267bb7306">evdi_drm_device_unload()</a>.</p>
+
+</div>
+</div>
+<a id="af162d8add86d1253243406d14002c90d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af162d8add86d1253243406d14002c90d">&#9670;&nbsp;</a></span>evdi_modeset_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_modeset_init </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_device *&#160;</td>
+          <td class="paramname"><em>dev</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="evdi__debug_8h.html#a368ad0bcd95db2e19c8c0a1ec65d8d7b">EVDI_CHECKPT</a>.</p>
+
+</div>
+</div>
+<a id="aee221c62c2ef5a2001bf9cde143c5c8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee221c62c2ef5a2001bf9cde143c5c8a">&#9670;&nbsp;</a></span>evdi_painter_cleanup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_painter_cleanup </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structevdi__painter.html">evdi_painter</a> *&#160;</td>
+          <td class="paramname"><em>painter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="structevdi__framebuffer.html#a6bb9d47fe8a78674e39407c0dcb6a653">evdi_framebuffer::base</a>, <a class="el" href="structevdi__painter.html#a20b84e31ca898adef2757924765c4f65">evdi_painter::edid</a>, <a class="el" href="structevdi__painter.html#a34c4713a8c0c7f27d1c86069e2864076">evdi_painter::edid_length</a>, <a class="el" href="evdi__debug_8h.html#a368ad0bcd95db2e19c8c0a1ec65d8d7b">EVDI_CHECKPT</a>, <a class="el" href="evdi__debug_8h.html#af2060ee0f7e7ef1d38faa52934f65f9f">EVDI_WARN</a>, <a class="el" href="evdi__painter_8c.html#af6c3af8959cc8adc96931d2e4b03ecd5">painter_lock</a>, 及 <a class="el" href="structevdi__painter.html#aafeb6f95f351b3af3de4fe26d8e81515">evdi_painter::scanout_fb</a>.</p>
+
+<p class="reference">被參考於 <a class="el" href="evdi__drm__drv_8c.html#af8ba5eb420972bf36b287b2267bb7306">evdi_drm_device_unload()</a>.</p>
+
+</div>
+</div>
+<a id="a7263fcf4f1257b816ff1cb54cbe68ebb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7263fcf4f1257b816ff1cb54cbe68ebb">&#9670;&nbsp;</a></span>evdi_painter_close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_painter_close </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structevdi__device.html">evdi_device</a> *&#160;</td>
+          <td class="paramname"><em>evdi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct drm_file *&#160;</td>
+          <td class="paramname"><em>file</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="structevdi__painter.html#adf58eb285b6ca9d124a178a150d7a2b1">evdi_painter::drm_filp</a>, <a class="el" href="evdi__debug_8h.html#a368ad0bcd95db2e19c8c0a1ec65d8d7b">EVDI_CHECKPT</a>, 及 <a class="el" href="structevdi__device.html#adf4c6cf92d7976a97ec5c0c0a6f687e8">evdi_device::painter</a>.</p>
+
+</div>
+</div>
+<a id="a5fe51faa641d7af2e8968c9357fde4c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fe51faa641d7af2e8968c9357fde4c0">&#9670;&nbsp;</a></span>evdi_painter_connect_ioctl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> evdi_painter_connect_ioctl </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_device *&#160;</td>
+          <td class="paramname"><em>drm_dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct drm_file *&#160;</td>
+          <td class="paramname"><em>file</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="structdrm__evdi__connect.html#a91e12751fe0754a5dcae9c9555391ed0">drm_evdi_connect::connected</a>, <a class="el" href="evdi__debug_8h.html#a368ad0bcd95db2e19c8c0a1ec65d8d7b">EVDI_CHECKPT</a>, 及 <a class="el" href="structevdi__device.html#adf4c6cf92d7976a97ec5c0c0a6f687e8">evdi_device::painter</a>.</p>
+
+</div>
+</div>
+<a id="a03252c2b7f1b721e9906443670b7afdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03252c2b7f1b721e9906443670b7afdb">&#9670;&nbsp;</a></span>evdi_painter_ddcci_response_ioctl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> evdi_painter_ddcci_response_ioctl </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_device *&#160;</td>
+          <td class="paramname"><em>drm_dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct drm_file *&#160;</td>
+          <td class="paramname"><em>file</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1a873d48bd4c0b49f2354a88c4a10a64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a873d48bd4c0b49f2354a88c4a10a64">&#9670;&nbsp;</a></span>evdi_painter_dpms_notify()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_painter_dpms_notify </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structevdi__device.html">evdi_device</a> *&#160;</td>
+          <td class="paramname"><em>evdi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td>
+          <td class="paramname"><em>mode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="structevdi__device.html#a4a3f3e00b85e5119b47db0414c61784f">evdi_device::dev_index</a>, <a class="el" href="evdi__debug_8h.html#af2060ee0f7e7ef1d38faa52934f65f9f">EVDI_WARN</a>, <a class="el" href="structevdi__painter.html#a1c0be33f1df1896c8c5782ad4498c208">evdi_painter::is_connected</a>, 及 <a class="el" href="structevdi__device.html#adf4c6cf92d7976a97ec5c0c0a6f687e8">evdi_device::painter</a>.</p>
+
+</div>
+</div>
+<a id="ac50903dbf99d19cfaaa97ac0f614fd1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac50903dbf99d19cfaaa97ac0f614fd1e">&#9670;&nbsp;</a></span>evdi_painter_enable_cursor_events_ioctl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> evdi_painter_enable_cursor_events_ioctl </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_device *&#160;</td>
+          <td class="paramname"><em>drm_dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct drm_file *&#160;</td>
+          <td class="paramname"><em>file</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab39725c226c4a2c02cc9f65cd0a7a54f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab39725c226c4a2c02cc9f65cd0a7a54f">&#9670;&nbsp;</a></span>evdi_painter_force_full_modeset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_painter_force_full_modeset </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structevdi__painter.html">evdi_painter</a> *&#160;</td>
+          <td class="paramname"><em>painter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="structevdi__painter.html#a8825206065b70e2a1997bec26cbd476f">evdi_painter::needs_full_modeset</a>.</p>
+
+</div>
+</div>
+<a id="a5f40c2dd4ae0ddf735ba78c875d22ee4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f40c2dd4ae0ddf735ba78c875d22ee4">&#9670;&nbsp;</a></span>evdi_painter_framebuffer_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct drm_clip_rect evdi_painter_framebuffer_size </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structevdi__painter.html">evdi_painter</a> *&#160;</td>
+          <td class="paramname"><em>painter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="evdi__debug_8h.html#af2060ee0f7e7ef1d38faa52934f65f9f">EVDI_WARN</a>, <a class="el" href="structevdi__painter.html#a73ac58c64435d5f870225c7fbe41e7d2">evdi_painter::num_dirts</a>, <a class="el" href="evdi__painter_8c.html#af6c3af8959cc8adc96931d2e4b03ecd5">painter_lock</a>, 及 <a class="el" href="evdi__painter_8c.html#a1789a0187f8dd294290915ba29791870">painter_unlock</a>.</p>
+
+</div>
+</div>
+<a id="a8dc3ec9d262b6b1eae1f7954b1490cf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dc3ec9d262b6b1eae1f7954b1490cf6">&#9670;&nbsp;</a></span>evdi_painter_get_edid_copy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u8* evdi_painter_get_edid_copy </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structevdi__device.html">evdi_device</a> *&#160;</td>
+          <td class="paramname"><em>evdi</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="structevdi__painter.html#a20b84e31ca898adef2757924765c4f65">evdi_painter::edid</a>, <a class="el" href="structevdi__painter.html#a34c4713a8c0c7f27d1c86069e2864076">evdi_painter::edid_length</a>, <a class="el" href="evdi__debug_8h.html#a368ad0bcd95db2e19c8c0a1ec65d8d7b">EVDI_CHECKPT</a>, <a class="el" href="evdi__painter_8c.html#a020e0d736e15138e4af139823d5a50a9">evdi_painter_is_connected()</a>, <a class="el" href="structevdi__device.html#adf4c6cf92d7976a97ec5c0c0a6f687e8">evdi_device::painter</a>, <a class="el" href="evdi__painter_8c.html#af6c3af8959cc8adc96931d2e4b03ecd5">painter_lock</a>, 及 <a class="el" href="evdi__painter_8c.html#a1789a0187f8dd294290915ba29791870">painter_unlock</a>.</p>
+
+</div>
+</div>
+<a id="adfb1efc0190742cee7549c0f91e8b908"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfb1efc0190742cee7549c0f91e8b908">&#9670;&nbsp;</a></span>evdi_painter_get_num_dirts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> evdi_painter_get_num_dirts </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structevdi__painter.html">evdi_painter</a> *&#160;</td>
+          <td class="paramname"><em>painter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ea3c96b61014d93e553451a15c9a311"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ea3c96b61014d93e553451a15c9a311">&#9670;&nbsp;</a></span>evdi_painter_grabpix_ioctl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> evdi_painter_grabpix_ioctl </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_device *&#160;</td>
+          <td class="paramname"><em>drm_dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct drm_file *&#160;</td>
+          <td class="paramname"><em>file</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a489eb15cdd508c91e274015fa5b590f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a489eb15cdd508c91e274015fa5b590f4">&#9670;&nbsp;</a></span>evdi_painter_i2c_data_notify()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool evdi_painter_i2c_data_notify </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structevdi__painter.html">evdi_painter</a> *&#160;</td>
+          <td class="paramname"><em>painter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct i2c_msg *&#160;</td>
+          <td class="paramname"><em>msg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="evdi__painter_8c.html#a020e0d736e15138e4af139823d5a50a9">evdi_painter_is_connected()</a>, <a class="el" href="evdi__debug_8h.html#af2060ee0f7e7ef1d38faa52934f65f9f">EVDI_WARN</a>, 及 <a class="el" href="evdi__painter_8c.html#a7435925daed7815ccb3fd35fef81b9e9">I2C_ADDRESS_DDCCI</a>.</p>
+
+</div>
+</div>
+<a id="a2921f3be7ea6c9b6a4de8df297bbfe45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2921f3be7ea6c9b6a4de8df297bbfe45">&#9670;&nbsp;</a></span>evdi_painter_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> evdi_painter_init </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structevdi__device.html">evdi_device</a> *&#160;</td>
+          <td class="paramname"><em>evdi</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="structevdi__painter.html#a9b1f8589dba5470eafae91184ba7fac4">evdi_painter::crtc</a>, <a class="el" href="structevdi__device.html#ae078f3cc95b532435ec5ba71f50a64ca">evdi_device::ddev</a>, <a class="el" href="structevdi__painter.html#a0a6523e150347ebb9e20c92b5f6115f7">evdi_painter::drm_device</a>, <a class="el" href="structevdi__painter.html#a20b84e31ca898adef2757924765c4f65">evdi_painter::edid</a>, <a class="el" href="structevdi__painter.html#a34c4713a8c0c7f27d1c86069e2864076">evdi_painter::edid_length</a>, <a class="el" href="evdi__debug_8h.html#a368ad0bcd95db2e19c8c0a1ec65d8d7b">EVDI_CHECKPT</a>, <a class="el" href="structevdi__painter.html#a1fd434c3d622d05f36e1ede243a4ace5">evdi_painter::lock</a>, <a class="el" href="structevdi__painter.html#a8825206065b70e2a1997bec26cbd476f">evdi_painter::needs_full_modeset</a>, <a class="el" href="structevdi__device.html#adf4c6cf92d7976a97ec5c0c0a6f687e8">evdi_device::painter</a>, <a class="el" href="structevdi__painter.html#a185ffb9e49e6261902aacc1e1a19c4a4">evdi_painter::pending_events</a>, <a class="el" href="structevdi__painter.html#a87943007a9783fdac36fa527f89c9ea3">evdi_painter::send_events_work</a>, 及 <a class="el" href="structevdi__painter.html#a6d96aad214631110a93c24e96208f9d8">evdi_painter::vblank</a>.</p>
+
+</div>
+</div>
+<a id="a020e0d736e15138e4af139823d5a50a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a020e0d736e15138e4af139823d5a50a9">&#9670;&nbsp;</a></span>evdi_painter_is_connected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool evdi_painter_is_connected </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structevdi__painter.html">evdi_painter</a> *&#160;</td>
+          <td class="paramname"><em>painter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="structevdi__painter.html#a1c0be33f1df1896c8c5782ad4498c208">evdi_painter::is_connected</a>.</p>
+
+<p class="reference">被參考於 <a class="el" href="evdi__drm__drv_8h.html#a8dc3ec9d262b6b1eae1f7954b1490cf6">evdi_painter_get_edid_copy()</a>, <a class="el" href="evdi__drm__drv_8h.html#a489eb15cdd508c91e274015fa5b590f4">evdi_painter_i2c_data_notify()</a>, 及 <a class="el" href="evdi__platform__dev_8c.html#af49982874f211bc5d9207c0be177ca71">evdi_platform_device_is_free()</a>.</p>
+
+</div>
+</div>
+<a id="a460935e64e3565877431fbcb80fb765e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a460935e64e3565877431fbcb80fb765e">&#9670;&nbsp;</a></span>evdi_painter_mark_dirty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_painter_mark_dirty </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structevdi__device.html">evdi_device</a> *&#160;</td>
+          <td class="paramname"><em>evdi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct drm_clip_rect *&#160;</td>
+          <td class="paramname"><em>rect</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="structevdi__device.html#a4a3f3e00b85e5119b47db0414c61784f">evdi_device::dev_index</a>, <a class="el" href="evdi__drm__drv_8h.html#a1e9357521a0e724f86fe2659296ce81b">evdi_framebuffer_sanitize_rect()</a>, <a class="el" href="evdi__debug_8h.html#a6908d2edbc7c28b0ce20dee32f86f3fe">EVDI_VERBOSE</a>, <a class="el" href="evdi__debug_8h.html#af2060ee0f7e7ef1d38faa52934f65f9f">EVDI_WARN</a>, <a class="el" href="structevdi__painter.html#a1c0be33f1df1896c8c5782ad4498c208">evdi_painter::is_connected</a>, <a class="el" href="evdi__painter_8c.html#af955a6c65439ab0dfa068038b145a020">MAX_DIRTS</a>, <a class="el" href="structevdi__painter.html#a73ac58c64435d5f870225c7fbe41e7d2">evdi_painter::num_dirts</a>, <a class="el" href="structevdi__device.html#adf4c6cf92d7976a97ec5c0c0a6f687e8">evdi_device::painter</a>, <a class="el" href="evdi__painter_8c.html#af6c3af8959cc8adc96931d2e4b03ecd5">painter_lock</a>, 及 <a class="el" href="structevdi__painter.html#aafeb6f95f351b3af3de4fe26d8e81515">evdi_painter::scanout_fb</a>.</p>
+
+</div>
+</div>
+<a id="affe9f7757e2bafab24efd156a3b9e1ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affe9f7757e2bafab24efd156a3b9e1ca">&#9670;&nbsp;</a></span>evdi_painter_mode_changed_notify()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_painter_mode_changed_notify </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structevdi__device.html">evdi_device</a> *&#160;</td>
+          <td class="paramname"><em>evdi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct drm_display_mode *&#160;</td>
+          <td class="paramname"><em>mode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="structevdi__framebuffer.html#a6bb9d47fe8a78674e39407c0dcb6a653">evdi_framebuffer::base</a>, <a class="el" href="structevdi__device.html#adf4c6cf92d7976a97ec5c0c0a6f687e8">evdi_device::painter</a>, 及 <a class="el" href="structevdi__painter.html#aafeb6f95f351b3af3de4fe26d8e81515">evdi_painter::scanout_fb</a>.</p>
+
+</div>
+</div>
+<a id="a45c02948561e529c926263e257374aa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45c02948561e529c926263e257374aa1">&#9670;&nbsp;</a></span>evdi_painter_needs_full_modeset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool evdi_painter_needs_full_modeset </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structevdi__painter.html">evdi_painter</a> *&#160;</td>
+          <td class="paramname"><em>painter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="structevdi__painter.html#a8825206065b70e2a1997bec26cbd476f">evdi_painter::needs_full_modeset</a>.</p>
+
+</div>
+</div>
+<a id="ad61bf5001d531ae35a424fa3b372c3cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad61bf5001d531ae35a424fa3b372c3cf">&#9670;&nbsp;</a></span>evdi_painter_poll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned <a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> evdi_painter_poll </td>
+          <td>(</td>
+          <td class="paramtype">struct file *&#160;</td>
+          <td class="paramname"><em>filp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct poll_table_struct *&#160;</td>
+          <td class="paramname"><em>wait</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2edf49efcd1531529bfa5820449bb5f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2edf49efcd1531529bfa5820449bb5f5">&#9670;&nbsp;</a></span>evdi_painter_request_update_ioctl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> evdi_painter_request_update_ioctl </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_device *&#160;</td>
+          <td class="paramname"><em>drm_dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct drm_file *&#160;</td>
+          <td class="paramname"><em>file</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a80b0ab1350761d4046121079a601bc14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80b0ab1350761d4046121079a601bc14">&#9670;&nbsp;</a></span>evdi_painter_send_cursor_move()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_painter_send_cursor_move </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structevdi__painter.html">evdi_painter</a> *&#160;</td>
+          <td class="paramname"><em>painter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structevdi__cursor.html">evdi_cursor</a> *&#160;</td>
+          <td class="paramname"><em>cursor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa79ae7d378ca91df602e81356dece738"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa79ae7d378ca91df602e81356dece738">&#9670;&nbsp;</a></span>evdi_painter_send_cursor_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_painter_send_cursor_set </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structevdi__painter.html">evdi_painter</a> *&#160;</td>
+          <td class="paramname"><em>painter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structevdi__cursor.html">evdi_cursor</a> *&#160;</td>
+          <td class="paramname"><em>cursor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9c7c09072479edef824e15d73ad24103"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c7c09072479edef824e15d73ad24103">&#9670;&nbsp;</a></span>evdi_painter_send_update_ready_if_needed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_painter_send_update_ready_if_needed </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structevdi__painter.html">evdi_painter</a> *&#160;</td>
+          <td class="paramname"><em>painter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="evdi__debug_8h.html#a368ad0bcd95db2e19c8c0a1ec65d8d7b">EVDI_CHECKPT</a>, <a class="el" href="structevdi__painter.html#a73ac58c64435d5f870225c7fbe41e7d2">evdi_painter::num_dirts</a>, <a class="el" href="evdi__painter_8c.html#af6c3af8959cc8adc96931d2e4b03ecd5">painter_lock</a>, 及 <a class="el" href="structevdi__painter.html#a1192790b8801ff2c9567b94d9697c386">evdi_painter::was_update_requested</a>.</p>
+
+</div>
+</div>
+<a id="a5b7c0fb6c83a3d2076760855de4bd381"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b7c0fb6c83a3d2076760855de4bd381">&#9670;&nbsp;</a></span>evdi_painter_set_scanout_buffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_painter_set_scanout_buffer </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structevdi__painter.html">evdi_painter</a> *&#160;</td>
+          <td class="paramname"><em>painter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structevdi__framebuffer.html">evdi_framebuffer</a> *&#160;</td>
+          <td class="paramname"><em>buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="structevdi__framebuffer.html#a6bb9d47fe8a78674e39407c0dcb6a653">evdi_framebuffer::base</a>, <a class="el" href="evdi__painter_8c.html#af6c3af8959cc8adc96931d2e4b03ecd5">painter_lock</a>, <a class="el" href="evdi__painter_8c.html#a1789a0187f8dd294290915ba29791870">painter_unlock</a>, 及 <a class="el" href="structevdi__painter.html#aafeb6f95f351b3af3de4fe26d8e81515">evdi_painter::scanout_fb</a>.</p>
+
+</div>
+</div>
+<a id="ab8682595b5c3e74879becc939f638955"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8682595b5c3e74879becc939f638955">&#9670;&nbsp;</a></span>evdi_painter_set_vblank()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evdi_painter_set_vblank </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structevdi__painter.html">evdi_painter</a> *&#160;</td>
+          <td class="paramname"><em>painter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct drm_crtc *&#160;</td>
+          <td class="paramname"><em>crtc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct drm_pending_vblank_event *&#160;</td>
+          <td class="paramname"><em>vblank</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="evdi__debug_8h.html#a368ad0bcd95db2e19c8c0a1ec65d8d7b">EVDI_CHECKPT</a>, 及 <a class="el" href="evdi__painter_8c.html#af6c3af8959cc8adc96931d2e4b03ecd5">painter_lock</a>.</p>
+
+</div>
+</div>
+<a id="a1ba778d7c6a1e6906f64cfdb47617b1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ba778d7c6a1e6906f64cfdb47617b1a">&#9670;&nbsp;</a></span>evdi_painter_status_ioctl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> evdi_painter_status_ioctl </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_device *&#160;</td>
+          <td class="paramname"><em>drm_dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct drm_file *&#160;</td>
+          <td class="paramname"><em>file</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3c6a6aa361fb03449b83a9b9b641c237"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c6a6aa361fb03449b83a9b9b641c237">&#9670;&nbsp;</a></span>evdi_prime_get_sg_table()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct sg_table* evdi_prime_get_sg_table </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_gem_object *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="structevdi__gem__object.html#a596756c327ba74f48afa17e0ccbbd8d5">evdi_gem_object::base</a>, <a class="el" href="structevdi__gem__object.html#aad08648cfe5905f9b7f158b07dbbb361">evdi_gem_object::pages</a>, 及 <a class="el" href="evdi__drm__drv_8h.html#a4d70cb7ee8551c950259772e8661bbe5">to_evdi_bo</a>.</p>
+
+</div>
+</div>
+<a id="a937664c6448e40ac97e32c62aad568f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a937664c6448e40ac97e32c62aad568f4">&#9670;&nbsp;</a></span>evdi_prime_import_sg_table()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct drm_gem_object* evdi_prime_import_sg_table </td>
+          <td>(</td>
+          <td class="paramtype">struct drm_device *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct dma_buf_attachment *&#160;</td>
+          <td class="paramname"><em>attach</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct sg_table *&#160;</td>
+          <td class="paramname"><em>sg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4159d2fa8205dd791550e6f261184d1d.html">libusbdisp</a></li><li class="navelem"><a class="el" href="dir_6881a464b95ad4897fc535b6214d7148.html">deb_install</a></li><li class="navelem"><a class="el" href="dir_84dfbc1ed328336dd41d5e08e7924e0e.html">com.racertech.usbdisp-1.0.0</a></li><li class="navelem"><a class="el" href="dir_77a6ffae82e8d0c0c33c48a68b6de22f.html">opt</a></li><li class="navelem"><a class="el" href="dir_a3cc3d5e57a2adf20b8f62f7377377a3.html">apps</a></li><li class="navelem"><a class="el" href="dir_dbfe33686d272da549b3c20b65f4ce86.html">com.racertech.usbdisp</a></li><li class="navelem"><a class="el" href="dir_3841f109116f42dd392128f3ef1fd8f2.html">files</a></li><li class="navelem"><a class="el" href="dir_34dd691e212b3ada139d2c78e6bc9b51.html">evdi</a></li><li class="navelem"><a class="el" href="dir_2ca5aabeb08b7acc613601181db924f0.html">module</a></li><li class="navelem"><a class="el" href="evdi__drm__drv_8h.html">evdi_drm_drv.h</a></li>
+    <li class="footer">產生者: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

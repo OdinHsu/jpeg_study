@@ -1,0 +1,121 @@
+\hypertarget{structevdi__gem__object}{}\doxysection{evdi\+\_\+gem\+\_\+object 結構 參考文件}
+\label{structevdi__gem__object}\index{evdi\_gem\_object@{evdi\_gem\_object}}
+
+
+{\ttfamily \#include $<$evdi\+\_\+drm\+\_\+drv.\+h$>$}
+
+\doxysubsection*{公開屬性}
+\begin{DoxyCompactItemize}
+\item 
+struct drm\+\_\+gem\+\_\+object \mbox{\hyperlink{structevdi__gem__object_a596756c327ba74f48afa17e0ccbbd8d5}{base}}
+\item 
+struct page $\ast$$\ast$ \mbox{\hyperlink{structevdi__gem__object_aad08648cfe5905f9b7f158b07dbbb361}{pages}}
+\item 
+unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{structevdi__gem__object_ad256f1799a122b45877f98b3cc0559dc}{pages\+\_\+pin\+\_\+count}}
+\item 
+struct mutex \mbox{\hyperlink{structevdi__gem__object_af4cbe9991b6461b0208d7508d061c841}{pages\+\_\+lock}}
+\item 
+void $\ast$ \mbox{\hyperlink{structevdi__gem__object_a46ba4dcc8e6a560cc908c71291b84bb7}{vmapping}}
+\item 
+bool \mbox{\hyperlink{structevdi__gem__object_a15c69b02456158eed85223f1cf7a4a22}{vmap\+\_\+is\+\_\+iomem}}
+\item 
+struct sg\+\_\+table $\ast$ \mbox{\hyperlink{structevdi__gem__object_a15d09fdcfae94e14a22abcf5fd17c166}{sg}}
+\item 
+struct dma\+\_\+resv $\ast$ \mbox{\hyperlink{structevdi__gem__object_a2034a4764600b82bad815679bc3902c4}{resv}}
+\item 
+struct dma\+\_\+resv \mbox{\hyperlink{structevdi__gem__object_aeb42858c8bf2779605e621128eb19183}{\+\_\+resv}}
+\item 
+bool \mbox{\hyperlink{structevdi__gem__object_a5c3c8125b99b43d93798faa6f55ed8fd}{allow\+\_\+sw\+\_\+cursor\+\_\+rect\+\_\+updates}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{資料成員說明文件}
+\mbox{\Hypertarget{structevdi__gem__object_aeb42858c8bf2779605e621128eb19183}\label{structevdi__gem__object_aeb42858c8bf2779605e621128eb19183}} 
+\index{evdi\_gem\_object@{evdi\_gem\_object}!\_resv@{\_resv}}
+\index{\_resv@{\_resv}!evdi\_gem\_object@{evdi\_gem\_object}}
+\doxysubsubsection{\texorpdfstring{\_resv}{\_resv}}
+{\footnotesize\ttfamily struct dma\+\_\+resv evdi\+\_\+gem\+\_\+object\+::\+\_\+resv}
+
+
+
+被參考於 evdi\+\_\+gem\+\_\+alloc\+\_\+object().
+
+\mbox{\Hypertarget{structevdi__gem__object_a5c3c8125b99b43d93798faa6f55ed8fd}\label{structevdi__gem__object_a5c3c8125b99b43d93798faa6f55ed8fd}} 
+\index{evdi\_gem\_object@{evdi\_gem\_object}!allow\_sw\_cursor\_rect\_updates@{allow\_sw\_cursor\_rect\_updates}}
+\index{allow\_sw\_cursor\_rect\_updates@{allow\_sw\_cursor\_rect\_updates}!evdi\_gem\_object@{evdi\_gem\_object}}
+\doxysubsubsection{\texorpdfstring{allow\_sw\_cursor\_rect\_updates}{allow\_sw\_cursor\_rect\_updates}}
+{\footnotesize\ttfamily bool evdi\+\_\+gem\+\_\+object\+::allow\+\_\+sw\+\_\+cursor\+\_\+rect\+\_\+updates}
+
+\mbox{\Hypertarget{structevdi__gem__object_a596756c327ba74f48afa17e0ccbbd8d5}\label{structevdi__gem__object_a596756c327ba74f48afa17e0ccbbd8d5}} 
+\index{evdi\_gem\_object@{evdi\_gem\_object}!base@{base}}
+\index{base@{base}!evdi\_gem\_object@{evdi\_gem\_object}}
+\doxysubsubsection{\texorpdfstring{base}{base}}
+{\footnotesize\ttfamily struct drm\+\_\+gem\+\_\+object evdi\+\_\+gem\+\_\+object\+::base}
+
+
+
+被參考於 evdi\+\_\+cursor\+\_\+compose\+\_\+and\+\_\+copy(), evdi\+\_\+gem\+\_\+alloc\+\_\+object(), evdi\+\_\+gem\+\_\+vmap(), 及 evdi\+\_\+prime\+\_\+get\+\_\+sg\+\_\+table().
+
+\mbox{\Hypertarget{structevdi__gem__object_aad08648cfe5905f9b7f158b07dbbb361}\label{structevdi__gem__object_aad08648cfe5905f9b7f158b07dbbb361}} 
+\index{evdi\_gem\_object@{evdi\_gem\_object}!pages@{pages}}
+\index{pages@{pages}!evdi\_gem\_object@{evdi\_gem\_object}}
+\doxysubsubsection{\texorpdfstring{pages}{pages}}
+{\footnotesize\ttfamily struct page$\ast$$\ast$ evdi\+\_\+gem\+\_\+object\+::pages}
+
+
+
+被參考於 evdi\+\_\+gem\+\_\+fault(), evdi\+\_\+gem\+\_\+free\+\_\+object(), 及 evdi\+\_\+prime\+\_\+get\+\_\+sg\+\_\+table().
+
+\mbox{\Hypertarget{structevdi__gem__object_af4cbe9991b6461b0208d7508d061c841}\label{structevdi__gem__object_af4cbe9991b6461b0208d7508d061c841}} 
+\index{evdi\_gem\_object@{evdi\_gem\_object}!pages\_lock@{pages\_lock}}
+\index{pages\_lock@{pages\_lock}!evdi\_gem\_object@{evdi\_gem\_object}}
+\doxysubsubsection{\texorpdfstring{pages\_lock}{pages\_lock}}
+{\footnotesize\ttfamily struct mutex evdi\+\_\+gem\+\_\+object\+::pages\+\_\+lock}
+
+\mbox{\Hypertarget{structevdi__gem__object_ad256f1799a122b45877f98b3cc0559dc}\label{structevdi__gem__object_ad256f1799a122b45877f98b3cc0559dc}} 
+\index{evdi\_gem\_object@{evdi\_gem\_object}!pages\_pin\_count@{pages\_pin\_count}}
+\index{pages\_pin\_count@{pages\_pin\_count}!evdi\_gem\_object@{evdi\_gem\_object}}
+\doxysubsubsection{\texorpdfstring{pages\_pin\_count}{pages\_pin\_count}}
+{\footnotesize\ttfamily unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} evdi\+\_\+gem\+\_\+object\+::pages\+\_\+pin\+\_\+count}
+
+\mbox{\Hypertarget{structevdi__gem__object_a2034a4764600b82bad815679bc3902c4}\label{structevdi__gem__object_a2034a4764600b82bad815679bc3902c4}} 
+\index{evdi\_gem\_object@{evdi\_gem\_object}!resv@{resv}}
+\index{resv@{resv}!evdi\_gem\_object@{evdi\_gem\_object}}
+\doxysubsubsection{\texorpdfstring{resv}{resv}}
+{\footnotesize\ttfamily struct dma\+\_\+resv$\ast$ evdi\+\_\+gem\+\_\+object\+::resv}
+
+
+
+被參考於 evdi\+\_\+gem\+\_\+alloc\+\_\+object().
+
+\mbox{\Hypertarget{structevdi__gem__object_a15d09fdcfae94e14a22abcf5fd17c166}\label{structevdi__gem__object_a15d09fdcfae94e14a22abcf5fd17c166}} 
+\index{evdi\_gem\_object@{evdi\_gem\_object}!sg@{sg}}
+\index{sg@{sg}!evdi\_gem\_object@{evdi\_gem\_object}}
+\doxysubsubsection{\texorpdfstring{sg}{sg}}
+{\footnotesize\ttfamily struct sg\+\_\+table$\ast$ evdi\+\_\+gem\+\_\+object\+::sg}
+
+
+
+被參考於 evdi\+\_\+gem\+\_\+free\+\_\+object().
+
+\mbox{\Hypertarget{structevdi__gem__object_a15c69b02456158eed85223f1cf7a4a22}\label{structevdi__gem__object_a15c69b02456158eed85223f1cf7a4a22}} 
+\index{evdi\_gem\_object@{evdi\_gem\_object}!vmap\_is\_iomem@{vmap\_is\_iomem}}
+\index{vmap\_is\_iomem@{vmap\_is\_iomem}!evdi\_gem\_object@{evdi\_gem\_object}}
+\doxysubsubsection{\texorpdfstring{vmap\_is\_iomem}{vmap\_is\_iomem}}
+{\footnotesize\ttfamily bool evdi\+\_\+gem\+\_\+object\+::vmap\+\_\+is\+\_\+iomem}
+
+\mbox{\Hypertarget{structevdi__gem__object_a46ba4dcc8e6a560cc908c71291b84bb7}\label{structevdi__gem__object_a46ba4dcc8e6a560cc908c71291b84bb7}} 
+\index{evdi\_gem\_object@{evdi\_gem\_object}!vmapping@{vmapping}}
+\index{vmapping@{vmapping}!evdi\_gem\_object@{evdi\_gem\_object}}
+\doxysubsubsection{\texorpdfstring{vmapping}{vmapping}}
+{\footnotesize\ttfamily void$\ast$ evdi\+\_\+gem\+\_\+object\+::vmapping}
+
+
+
+被參考於 evdi\+\_\+cursor\+\_\+compose\+\_\+and\+\_\+copy(), evdi\+\_\+cursor\+\_\+set(), 及 evdi\+\_\+gem\+\_\+free\+\_\+object().
+
+
+
+此結構(structure) 文件是由下列檔案中產生\+:\begin{DoxyCompactItemize}
+\item 
+/home/odin/\+Desktop/program/learn/usbdisp\+\_\+linux/libusbdisp/deb\+\_\+install/com.\+racertech.\+usbdisp-\/1.\+0.\+0/opt/apps/com.\+racertech.\+usbdisp/files/evdi/module/\mbox{\hyperlink{evdi__drm__drv_8h}{evdi\+\_\+drm\+\_\+drv.\+h}}\end{DoxyCompactItemize}

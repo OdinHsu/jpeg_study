@@ -1,0 +1,187 @@
+\hypertarget{classEncodeEngine}{}\doxysection{Encode\+Engine 類別 參考文件}
+\label{classEncodeEngine}\index{EncodeEngine@{EncodeEngine}}
+
+
+{\ttfamily \#include $<$Encode\+Engine.\+h$>$}
+
+
+
+類別\+Encode\+Engine的繼承圖\+:
+% FIG 0
+
+
+Encode\+Engine的合作圖\+:
+% FIG 1
+\doxysubsection*{公開方法(Public Methods)}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEncodeEngine_a868eff0aba1443d81070a3c05266a0fc}{Encode\+Engine}} ()
+\item 
+virtual \mbox{\hyperlink{classEncodeEngine_a43e55270fcc5a2d0a7365e2e975eecae}{$\sim$\+Encode\+Engine}} ()
+\item 
+virtual void \mbox{\hyperlink{classEncodeEngine_aa4f1938b1181289ac80e5d2091df9d18}{Run}} ()
+\item 
+bool \mbox{\hyperlink{classEncodeEngine_a441375e73897c15499b257ad1414f8f0}{Device\+Reset}} ()
+\item 
+bool \mbox{\hyperlink{classEncodeEngine_a88f3d0d567c34188fcbf22cb6f09280e}{Set\+Resolution}} (\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} width, \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} height)
+\item 
+bool \mbox{\hyperlink{classEncodeEngine_ac9753aca67469ab9ac8f30f64922da29}{Write}} (unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a8b272214e498a4cb09dde135bb4d7d03}{char}} $\ast$\mbox{\hyperlink{jsimdcfg_8inc_8h_abdb77e53de4261715ec5f4783a343ec3}{buffer}}, \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} len)
+\item 
+void \mbox{\hyperlink{classEncodeEngine_a933a3c018e4ca2cbc2b18f9f067da976}{Start\+Encode}} (\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} width, \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} height, \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} pitch, unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a8b272214e498a4cb09dde135bb4d7d03}{char}} $\ast$framebuffer)
+\item 
+void \mbox{\hyperlink{classEncodeEngine_a27da2b5033e8509e7775904adc1683ba}{Analysis}} ()
+\item 
+void \mbox{\hyperlink{classEncodeEngine_ab16254343ad616ea5f53ad69227a399d}{Compress}} ()
+\item 
+void \mbox{\hyperlink{classEncodeEngine_a8fbf29a53fa64461007719f1d40e748a}{Transmit}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{保護屬性}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classClientUSB}{Client\+USB}} $\ast$ \mbox{\hyperlink{classEncodeEngine_a699b5e11ebb11028273ac1dd452ac232}{m\+\_\+device}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{建構子與解構子說明文件}
+\mbox{\Hypertarget{classEncodeEngine_a868eff0aba1443d81070a3c05266a0fc}\label{classEncodeEngine_a868eff0aba1443d81070a3c05266a0fc}} 
+\index{EncodeEngine@{EncodeEngine}!EncodeEngine@{EncodeEngine}}
+\index{EncodeEngine@{EncodeEngine}!EncodeEngine@{EncodeEngine}}
+\doxysubsubsection{\texorpdfstring{EncodeEngine()}{EncodeEngine()}}
+{\footnotesize\ttfamily Encode\+Engine\+::\+Encode\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+參考 DBG\+\_\+\+ENGINE, DBGTRACE(), init\+\_\+event(), m\+\_\+device, 及 NUM\+\_\+\+THREADS.
+
+\mbox{\Hypertarget{classEncodeEngine_a43e55270fcc5a2d0a7365e2e975eecae}\label{classEncodeEngine_a43e55270fcc5a2d0a7365e2e975eecae}} 
+\index{EncodeEngine@{EncodeEngine}!````~EncodeEngine@{$\sim$EncodeEngine}}
+\index{````~EncodeEngine@{$\sim$EncodeEngine}!EncodeEngine@{EncodeEngine}}
+\doxysubsubsection{\texorpdfstring{$\sim$EncodeEngine()}{~EncodeEngine()}}
+{\footnotesize\ttfamily Encode\+Engine\+::$\sim$\+Encode\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+參考 DBG\+\_\+\+ENGINE, DBGTRACE(), EVENT\+\_\+\+REMOVE, m\+\_\+device, NUM\+\_\+\+THREADS, Set\+Event, uninit\+\_\+event(), Wait\+Event, 及 Thread\+Base\+::\+Wait\+Thread\+Exit().
+
+
+
+\doxysubsection{函式成員說明文件}
+\mbox{\Hypertarget{classEncodeEngine_a27da2b5033e8509e7775904adc1683ba}\label{classEncodeEngine_a27da2b5033e8509e7775904adc1683ba}} 
+\index{EncodeEngine@{EncodeEngine}!Analysis@{Analysis}}
+\index{Analysis@{Analysis}!EncodeEngine@{EncodeEngine}}
+\doxysubsubsection{\texorpdfstring{Analysis()}{Analysis()}}
+{\footnotesize\ttfamily void Encode\+Engine\+::\+Analysis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+參考 Block\+Encoder\+::\+Analysis(), BLOCK\+\_\+\+HEIGHT, BLOCK\+\_\+\+SIZE, BLOCK\+\_\+\+WIDTH, task\+\_\+t\+::bmp\+\_\+buffer, DBG\+\_\+\+ENGINE, DBGTRACE(), Enter\+\_\+\+Critical\+\_\+\+Section, task\+\_\+t\+::first, task\+\_\+t\+::h\+\_\+blocks, task\+\_\+t\+::height, Leave\+\_\+\+Critical\+\_\+\+Section, task\+\_\+t\+::p\+Bitstream, PIPE\+\_\+\+COMPRESS, task\+\_\+t\+::pitch, task\+\_\+t\+::resolution\+\_\+chahged, Set\+Event, Block\+Encoder\+::\+Set\+Input\+Image\+Geometry(), Block\+Encoder\+::\+Toggle\+Screen(), task\+\_\+t\+::v\+\_\+blocks, Wait\+Event, 及 task\+\_\+t\+::width.
+
+
+
+被參考於 Run().
+
+\mbox{\Hypertarget{classEncodeEngine_ab16254343ad616ea5f53ad69227a399d}\label{classEncodeEngine_ab16254343ad616ea5f53ad69227a399d}} 
+\index{EncodeEngine@{EncodeEngine}!Compress@{Compress}}
+\index{Compress@{Compress}!EncodeEngine@{EncodeEngine}}
+\doxysubsubsection{\texorpdfstring{Compress()}{Compress()}}
+{\footnotesize\ttfamily void Encode\+Engine\+::\+Compress (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+參考 Block\+Encoder\+::\+Compress(), DBG\+\_\+\+ENGINE, DBGTRACE(), task\+\_\+t\+::filelen, task\+\_\+t\+::p\+Bitstream, PIPE\+\_\+\+COMPRESS, PIPE\+\_\+\+TRANSMIT, Set\+Event, 及 Wait\+Event.
+
+\mbox{\Hypertarget{classEncodeEngine_a441375e73897c15499b257ad1414f8f0}\label{classEncodeEngine_a441375e73897c15499b257ad1414f8f0}} 
+\index{EncodeEngine@{EncodeEngine}!DeviceReset@{DeviceReset}}
+\index{DeviceReset@{DeviceReset}!EncodeEngine@{EncodeEngine}}
+\doxysubsubsection{\texorpdfstring{DeviceReset()}{DeviceReset()}}
+{\footnotesize\ttfamily bool Encode\+Engine\+::\+Device\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+參考 m\+\_\+device, 及 Client\+USB\+::\+Reset\+Device().
+
+
+
+被參考於 Transmit(), 及 Capture\+::$\sim$\+Capture().
+
+\mbox{\Hypertarget{classEncodeEngine_aa4f1938b1181289ac80e5d2091df9d18}\label{classEncodeEngine_aa4f1938b1181289ac80e5d2091df9d18}} 
+\index{EncodeEngine@{EncodeEngine}!Run@{Run}}
+\index{Run@{Run}!EncodeEngine@{EncodeEngine}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily void Encode\+Engine\+::\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+實作 \mbox{\hyperlink{classThreadBase_a795d258c1f40c123859d0e83dce6a0ad}{Thread\+Base}}.
+
+
+
+參考 Analysis(), event\+\_\+t\+::cond, DBG\+\_\+\+ENGINE, DBG\+\_\+\+THREAD, DBGTRACE(), EVENT\+\_\+\+ALL, EVENT\+\_\+\+ENCODE, EVENT\+\_\+\+REMOVE, event\+\_\+t\+::flag, event\+\_\+t\+::mutex, Set\+Event, 及 sync\+\_\+event.
+
+\mbox{\Hypertarget{classEncodeEngine_a88f3d0d567c34188fcbf22cb6f09280e}\label{classEncodeEngine_a88f3d0d567c34188fcbf22cb6f09280e}} 
+\index{EncodeEngine@{EncodeEngine}!SetResolution@{SetResolution}}
+\index{SetResolution@{SetResolution}!EncodeEngine@{EncodeEngine}}
+\doxysubsubsection{\texorpdfstring{SetResolution()}{SetResolution()}}
+{\footnotesize\ttfamily bool Encode\+Engine\+::\+Set\+Resolution (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}}]{width,  }\item[{\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}}]{height }\end{DoxyParamCaption})}
+
+
+
+參考 Block\+Encoder\+::\+Set\+Input\+Image\+Geometry().
+
+\mbox{\Hypertarget{classEncodeEngine_a933a3c018e4ca2cbc2b18f9f067da976}\label{classEncodeEngine_a933a3c018e4ca2cbc2b18f9f067da976}} 
+\index{EncodeEngine@{EncodeEngine}!StartEncode@{StartEncode}}
+\index{StartEncode@{StartEncode}!EncodeEngine@{EncodeEngine}}
+\doxysubsubsection{\texorpdfstring{StartEncode()}{StartEncode()}}
+{\footnotesize\ttfamily void Encode\+Engine\+::\+Start\+Encode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}}]{width,  }\item[{\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}}]{height,  }\item[{\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}}]{pitch,  }\item[{unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a8b272214e498a4cb09dde135bb4d7d03}{char}} $\ast$}]{framebuffer }\end{DoxyParamCaption})}
+
+
+
+參考 BLOCK\+\_\+\+WIDTH, task\+\_\+t\+::bmp\+\_\+buffer, DBG\+\_\+\+ENGINE, DBGTRACE(), Enter\+\_\+\+Critical\+\_\+\+Section, EVENT\+\_\+\+ENCODE, task\+\_\+t\+::filelen, task\+\_\+t\+::first, task\+\_\+t\+::h\+\_\+blocks, task\+\_\+t\+::height, Leave\+\_\+\+Critical\+\_\+\+Section, task\+\_\+t\+::p\+Bitstream, task\+\_\+t\+::pitch, task\+\_\+t\+::resolution\+\_\+chahged, task\+\_\+t\+::szframebuffer, task\+\_\+t\+::v\+\_\+blocks, 及 task\+\_\+t\+::width.
+
+
+
+被參考於 Capture\+::\+Start\+Encode().
+
+\mbox{\Hypertarget{classEncodeEngine_a8fbf29a53fa64461007719f1d40e748a}\label{classEncodeEngine_a8fbf29a53fa64461007719f1d40e748a}} 
+\index{EncodeEngine@{EncodeEngine}!Transmit@{Transmit}}
+\index{Transmit@{Transmit}!EncodeEngine@{EncodeEngine}}
+\doxysubsubsection{\texorpdfstring{Transmit()}{Transmit()}}
+{\footnotesize\ttfamily void Encode\+Engine\+::\+Transmit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+參考 DBG\+\_\+\+ENGINE, DBG\+\_\+\+PROFILE, DBGTRACE(), Device\+Reset(), task\+\_\+t\+::filelen, Block\+Encoder\+::\+Get\+Quant\+Table(), task\+\_\+t\+::height, Client\+USB\+::\+Is\+Connected(), m\+\_\+device, MSG(), task\+\_\+t\+::p\+Bitstream, PIPE\+\_\+\+TRANSMIT, task\+\_\+t\+::resolution\+\_\+chahged, Set\+Event, Client\+USB\+::\+Set\+Quant\+Table(), Client\+USB\+::\+Set\+Resolution(), Wait\+Event, task\+\_\+t\+::width, 及 Write().
+
+\mbox{\Hypertarget{classEncodeEngine_ac9753aca67469ab9ac8f30f64922da29}\label{classEncodeEngine_ac9753aca67469ab9ac8f30f64922da29}} 
+\index{EncodeEngine@{EncodeEngine}!Write@{Write}}
+\index{Write@{Write}!EncodeEngine@{EncodeEngine}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily bool Encode\+Engine\+::\+Write (\begin{DoxyParamCaption}\item[{unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a8b272214e498a4cb09dde135bb4d7d03}{char}} $\ast$}]{buffer,  }\item[{\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}}]{len }\end{DoxyParamCaption})}
+
+
+
+參考 buffer, Client\+USB\+::\+Is\+Connected(), m\+\_\+device, 及 Client\+USB\+::\+Write().
+
+
+
+被參考於 Transmit().
+
+
+
+\doxysubsection{資料成員說明文件}
+\mbox{\Hypertarget{classEncodeEngine_a699b5e11ebb11028273ac1dd452ac232}\label{classEncodeEngine_a699b5e11ebb11028273ac1dd452ac232}} 
+\index{EncodeEngine@{EncodeEngine}!m\_device@{m\_device}}
+\index{m\_device@{m\_device}!EncodeEngine@{EncodeEngine}}
+\doxysubsubsection{\texorpdfstring{m\_device}{m\_device}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classClientUSB}{Client\+USB}}$\ast$ Encode\+Engine\+::m\+\_\+device\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+被參考於 Android\+Engine\+::\+Create\+Device(), Device\+Reset(), Encode\+Engine(), Android\+Engine\+::\+Set\+Dev\+Resolution(), Transmit(), Write(), 及 $\sim$\+Encode\+Engine().
+
+
+
+此類別(class) 文件是由下列檔案中產生\+:\begin{DoxyCompactItemize}
+\item 
+/home/odin/\+Desktop/program/learn/usbdisp\+\_\+linux/libusbdisp/libenc/\mbox{\hyperlink{EncodeEngine_8h}{Encode\+Engine.\+h}}\item 
+/home/odin/\+Desktop/program/learn/usbdisp\+\_\+linux/libusbdisp/libenc/\mbox{\hyperlink{EncodeEngine_8cpp}{Encode\+Engine.\+cpp}}\end{DoxyCompactItemize}

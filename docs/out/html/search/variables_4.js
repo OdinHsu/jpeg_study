@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['data_1477',['data',['../structshmimage.html#a0738d06a73fcb332e5091567411a5618',1,'shmimage']]],
+  ['dc_1478',['DC',['../structHuffmanTable__t.html#a68f310c649eb3dd938405dd018cc1023',1,'HuffmanTable_t']]],
+  ['dctelem_1479',['DCTELEM',['../jsimdcfg_8inc_8h.html#ad7c025ef0b31211f7f321097cc38c668',1,'jsimdcfg.inc.h']]],
+  ['dctsize2_1480',['DCTSIZE2',['../jsimdcfg_8inc_8h.html#a9bb6b9cf61ef6ec4dcb238b440721a3b',1,'jsimdcfg.inc.h']]],
+  ['ddcci_5fbuffer_1481',['ddcci_buffer',['../structevdi__painter.html#a72e38af6f647ff655467f513733bfab0',1,'evdi_painter']]],
+  ['ddcci_5fbuffer_5flength_1482',['ddcci_buffer_length',['../structevdi__painter.html#a222b2bfcf8845f855da86de398616f5d',1,'evdi_painter']]],
+  ['ddcci_5fdata_1483',['ddcci_data',['../structevdi__event__ddcci__data__pending.html#ad22d583f4c4b9ec1fd667f215b4039ca',1,'evdi_event_ddcci_data_pending']]],
+  ['ddcci_5fdata_5fhandler_1484',['ddcci_data_handler',['../structevdi__event__context.html#a6122edc3fcaac6a7698c2c13c9f1b4b8',1,'evdi_event_context']]],
+  ['ddcci_5fresponse_5freceived_1485',['ddcci_response_received',['../structevdi__painter.html#a5aedf2ed4e5a5e11bc3db18e2fbcefa8',1,'evdi_painter']]],
+  ['ddev_1486',['ddev',['../structevdi__device.html#ae078f3cc95b532435ec5ba71f50a64ca',1,'evdi_device']]],
+  ['debug_5fmask_1487',['debug_mask',['../debug__trace_8h.html#aca40b38d0f2431b805e16db4a0a183fd',1,'debug_mask():&#160;debug_trace.c'],['../debug__trace_8c.html#aca40b38d0f2431b805e16db4a0a183fd',1,'debug_mask():&#160;debug_trace.c']]],
+  ['dev_5findex_1488',['dev_index',['../structdrm__evdi__connect.html#ac7f1e012d2022a2bbae74cb711cd9da1',1,'drm_evdi_connect::dev_index()'],['../structevdi__device.html#a4a3f3e00b85e5119b47db0414c61784f',1,'evdi_device::dev_index()'],['../structdrm__evdi__connect32.html#a21a8afaeb0123960f55cbf988d1cddbf',1,'drm_evdi_connect32::dev_index()']]],
+  ['device_5findex_1489',['device_index',['../structevdi__device__context.html#a13b02728c2aad75b0e6f00136bfe78dc',1,'evdi_device_context']]],
+  ['dimensions_1490',['dimensions',['../jsimdcfg_8inc_8h.html#aa2aa9ef5a436fd9b61cf92c6c4656029',1,'jsimdcfg.inc.h']]],
+  ['dirty_5frects_1491',['dirty_rects',['../structevdi__painter.html#ada66d97117230fd9d947ecdc6c1e0a68',1,'evdi_painter']]],
+  ['dpms_1492',['dpms',['../structevdi__event__dpms__pending.html#ae9f1ffd0d60424d828ea826b2b2b0ae0',1,'evdi_event_dpms_pending']]],
+  ['dpms_5fhandler_1493',['dpms_handler',['../structevdi__event__context.html#aa5f40643dfb5aab73d29fadf56adabdc',1,'evdi_event_context']]],
+  ['drm_5fdev_1494',['drm_dev',['../structevdi__platform__device__data.html#a44f2268e38c514b35ad89574cd122363',1,'evdi_platform_device_data']]],
+  ['drm_5fdevice_1495',['drm_device',['../structevdi__painter.html#a0a6523e150347ebb9e20c92b5f6115f7',1,'evdi_painter']]],
+  ['drm_5ffilp_1496',['drm_filp',['../structevdi__painter.html#adf58eb285b6ca9d124a178a150d7a2b1',1,'evdi_painter']]],
+  ['dsp_5fshare_1497',['dsp_share',['../classX11__Screen.html#a138e6043e959b7a7e2df0d282578a41d',1,'X11_Screen']]],
+  ['dword_1498',['dword',['../jsimdcfg_8inc_8h.html#a975fccb5ebba3ff2165fbc392caf24ae',1,'jsimdcfg.inc.h']]]
+];

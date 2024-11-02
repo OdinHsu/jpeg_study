@@ -1,0 +1,113 @@
+\hypertarget{structevdi__event__context}{}\doxysection{evdi\+\_\+event\+\_\+context 結構 參考文件}
+\label{structevdi__event__context}\index{evdi\_event\_context@{evdi\_event\_context}}
+
+
+{\ttfamily \#include $<$evdi\+\_\+lib.\+h$>$}
+
+\doxysubsection*{公開屬性}
+\begin{DoxyCompactItemize}
+\item 
+void($\ast$ \mbox{\hyperlink{structevdi__event__context_aa5f40643dfb5aab73d29fadf56adabdc}{dpms\+\_\+handler}} )(\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} dpms\+\_\+mode, void $\ast$\mbox{\hyperlink{structevdi__event__context_a8b42ecbd5f849a4cdf83848f0f5bcbd6}{user\+\_\+data}})
+\item 
+void($\ast$ \mbox{\hyperlink{structevdi__event__context_a9cb2be284b3bbc8e57f356919810c12b}{mode\+\_\+changed\+\_\+handler}} )(struct \mbox{\hyperlink{structevdi__mode}{evdi\+\_\+mode}} mode, void $\ast$\mbox{\hyperlink{structevdi__event__context_a8b42ecbd5f849a4cdf83848f0f5bcbd6}{user\+\_\+data}})
+\item 
+void($\ast$ \mbox{\hyperlink{structevdi__event__context_a76ed49322465c6124ad0a3793d16d370}{update\+\_\+ready\+\_\+handler}} )(\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} buffer\+\_\+to\+\_\+be\+\_\+updated, void $\ast$\mbox{\hyperlink{structevdi__event__context_a8b42ecbd5f849a4cdf83848f0f5bcbd6}{user\+\_\+data}})
+\item 
+void($\ast$ \mbox{\hyperlink{structevdi__event__context_a4bc8b9194d29ac4088365c6a56b762e6}{crtc\+\_\+state\+\_\+handler}} )(\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} state, void $\ast$\mbox{\hyperlink{structevdi__event__context_a8b42ecbd5f849a4cdf83848f0f5bcbd6}{user\+\_\+data}})
+\item 
+void($\ast$ \mbox{\hyperlink{structevdi__event__context_ae6bea6ce5e6c6fb0a06b882c5c6043cf}{cursor\+\_\+set\+\_\+handler}} )(struct \mbox{\hyperlink{structevdi__cursor__set}{evdi\+\_\+cursor\+\_\+set}} cursor\+\_\+set, void $\ast$\mbox{\hyperlink{structevdi__event__context_a8b42ecbd5f849a4cdf83848f0f5bcbd6}{user\+\_\+data}})
+\item 
+void($\ast$ \mbox{\hyperlink{structevdi__event__context_a425c95faac24a785156ae3126a5c7ff5}{cursor\+\_\+move\+\_\+handler}} )(struct \mbox{\hyperlink{structevdi__cursor__move}{evdi\+\_\+cursor\+\_\+move}} cursor\+\_\+move, void $\ast$\mbox{\hyperlink{structevdi__event__context_a8b42ecbd5f849a4cdf83848f0f5bcbd6}{user\+\_\+data}})
+\item 
+void($\ast$ \mbox{\hyperlink{structevdi__event__context_a6122edc3fcaac6a7698c2c13c9f1b4b8}{ddcci\+\_\+data\+\_\+handler}} )(struct \mbox{\hyperlink{structevdi__ddcci__data}{evdi\+\_\+ddcci\+\_\+data}} ddcci\+\_\+data, void $\ast$\mbox{\hyperlink{structevdi__event__context_a8b42ecbd5f849a4cdf83848f0f5bcbd6}{user\+\_\+data}})
+\item 
+void $\ast$ \mbox{\hyperlink{structevdi__event__context_a8b42ecbd5f849a4cdf83848f0f5bcbd6}{user\+\_\+data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{資料成員說明文件}
+\mbox{\Hypertarget{structevdi__event__context_a4bc8b9194d29ac4088365c6a56b762e6}\label{structevdi__event__context_a4bc8b9194d29ac4088365c6a56b762e6}} 
+\index{evdi\_event\_context@{evdi\_event\_context}!crtc\_state\_handler@{crtc\_state\_handler}}
+\index{crtc\_state\_handler@{crtc\_state\_handler}!evdi\_event\_context@{evdi\_event\_context}}
+\doxysubsubsection{\texorpdfstring{crtc\_state\_handler}{crtc\_state\_handler}}
+{\footnotesize\ttfamily void($\ast$ evdi\+\_\+event\+\_\+context\+::crtc\+\_\+state\+\_\+handler) (\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} state, void $\ast$\mbox{\hyperlink{structevdi__event__context_a8b42ecbd5f849a4cdf83848f0f5bcbd6}{user\+\_\+data}})}
+
+
+
+被參考於 Screen\+::\+Screen().
+
+\mbox{\Hypertarget{structevdi__event__context_a425c95faac24a785156ae3126a5c7ff5}\label{structevdi__event__context_a425c95faac24a785156ae3126a5c7ff5}} 
+\index{evdi\_event\_context@{evdi\_event\_context}!cursor\_move\_handler@{cursor\_move\_handler}}
+\index{cursor\_move\_handler@{cursor\_move\_handler}!evdi\_event\_context@{evdi\_event\_context}}
+\doxysubsubsection{\texorpdfstring{cursor\_move\_handler}{cursor\_move\_handler}}
+{\footnotesize\ttfamily void($\ast$ evdi\+\_\+event\+\_\+context\+::cursor\+\_\+move\+\_\+handler) (struct \mbox{\hyperlink{structevdi__cursor__move}{evdi\+\_\+cursor\+\_\+move}} cursor\+\_\+move, void $\ast$\mbox{\hyperlink{structevdi__event__context_a8b42ecbd5f849a4cdf83848f0f5bcbd6}{user\+\_\+data}})}
+
+
+
+被參考於 Screen\+::\+Screen().
+
+\mbox{\Hypertarget{structevdi__event__context_ae6bea6ce5e6c6fb0a06b882c5c6043cf}\label{structevdi__event__context_ae6bea6ce5e6c6fb0a06b882c5c6043cf}} 
+\index{evdi\_event\_context@{evdi\_event\_context}!cursor\_set\_handler@{cursor\_set\_handler}}
+\index{cursor\_set\_handler@{cursor\_set\_handler}!evdi\_event\_context@{evdi\_event\_context}}
+\doxysubsubsection{\texorpdfstring{cursor\_set\_handler}{cursor\_set\_handler}}
+{\footnotesize\ttfamily void($\ast$ evdi\+\_\+event\+\_\+context\+::cursor\+\_\+set\+\_\+handler) (struct \mbox{\hyperlink{structevdi__cursor__set}{evdi\+\_\+cursor\+\_\+set}} cursor\+\_\+set, void $\ast$\mbox{\hyperlink{structevdi__event__context_a8b42ecbd5f849a4cdf83848f0f5bcbd6}{user\+\_\+data}})}
+
+
+
+被參考於 Screen\+::\+Screen().
+
+\mbox{\Hypertarget{structevdi__event__context_a6122edc3fcaac6a7698c2c13c9f1b4b8}\label{structevdi__event__context_a6122edc3fcaac6a7698c2c13c9f1b4b8}} 
+\index{evdi\_event\_context@{evdi\_event\_context}!ddcci\_data\_handler@{ddcci\_data\_handler}}
+\index{ddcci\_data\_handler@{ddcci\_data\_handler}!evdi\_event\_context@{evdi\_event\_context}}
+\doxysubsubsection{\texorpdfstring{ddcci\_data\_handler}{ddcci\_data\_handler}}
+{\footnotesize\ttfamily void($\ast$ evdi\+\_\+event\+\_\+context\+::ddcci\+\_\+data\+\_\+handler) (struct \mbox{\hyperlink{structevdi__ddcci__data}{evdi\+\_\+ddcci\+\_\+data}} ddcci\+\_\+data, void $\ast$\mbox{\hyperlink{structevdi__event__context_a8b42ecbd5f849a4cdf83848f0f5bcbd6}{user\+\_\+data}})}
+
+
+
+被參考於 Screen\+::\+Screen().
+
+\mbox{\Hypertarget{structevdi__event__context_aa5f40643dfb5aab73d29fadf56adabdc}\label{structevdi__event__context_aa5f40643dfb5aab73d29fadf56adabdc}} 
+\index{evdi\_event\_context@{evdi\_event\_context}!dpms\_handler@{dpms\_handler}}
+\index{dpms\_handler@{dpms\_handler}!evdi\_event\_context@{evdi\_event\_context}}
+\doxysubsubsection{\texorpdfstring{dpms\_handler}{dpms\_handler}}
+{\footnotesize\ttfamily void($\ast$ evdi\+\_\+event\+\_\+context\+::dpms\+\_\+handler) (\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} dpms\+\_\+mode, void $\ast$\mbox{\hyperlink{structevdi__event__context_a8b42ecbd5f849a4cdf83848f0f5bcbd6}{user\+\_\+data}})}
+
+
+
+被參考於 Screen\+::\+Screen().
+
+\mbox{\Hypertarget{structevdi__event__context_a9cb2be284b3bbc8e57f356919810c12b}\label{structevdi__event__context_a9cb2be284b3bbc8e57f356919810c12b}} 
+\index{evdi\_event\_context@{evdi\_event\_context}!mode\_changed\_handler@{mode\_changed\_handler}}
+\index{mode\_changed\_handler@{mode\_changed\_handler}!evdi\_event\_context@{evdi\_event\_context}}
+\doxysubsubsection{\texorpdfstring{mode\_changed\_handler}{mode\_changed\_handler}}
+{\footnotesize\ttfamily void($\ast$ evdi\+\_\+event\+\_\+context\+::mode\+\_\+changed\+\_\+handler) (struct \mbox{\hyperlink{structevdi__mode}{evdi\+\_\+mode}} mode, void $\ast$\mbox{\hyperlink{structevdi__event__context_a8b42ecbd5f849a4cdf83848f0f5bcbd6}{user\+\_\+data}})}
+
+
+
+被參考於 Screen\+::\+Screen().
+
+\mbox{\Hypertarget{structevdi__event__context_a76ed49322465c6124ad0a3793d16d370}\label{structevdi__event__context_a76ed49322465c6124ad0a3793d16d370}} 
+\index{evdi\_event\_context@{evdi\_event\_context}!update\_ready\_handler@{update\_ready\_handler}}
+\index{update\_ready\_handler@{update\_ready\_handler}!evdi\_event\_context@{evdi\_event\_context}}
+\doxysubsubsection{\texorpdfstring{update\_ready\_handler}{update\_ready\_handler}}
+{\footnotesize\ttfamily void($\ast$ evdi\+\_\+event\+\_\+context\+::update\+\_\+ready\+\_\+handler) (\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} buffer\+\_\+to\+\_\+be\+\_\+updated, void $\ast$\mbox{\hyperlink{structevdi__event__context_a8b42ecbd5f849a4cdf83848f0f5bcbd6}{user\+\_\+data}})}
+
+
+
+被參考於 Screen\+::\+Screen().
+
+\mbox{\Hypertarget{structevdi__event__context_a8b42ecbd5f849a4cdf83848f0f5bcbd6}\label{structevdi__event__context_a8b42ecbd5f849a4cdf83848f0f5bcbd6}} 
+\index{evdi\_event\_context@{evdi\_event\_context}!user\_data@{user\_data}}
+\index{user\_data@{user\_data}!evdi\_event\_context@{evdi\_event\_context}}
+\doxysubsubsection{\texorpdfstring{user\_data}{user\_data}}
+{\footnotesize\ttfamily void$\ast$ evdi\+\_\+event\+\_\+context\+::user\+\_\+data}
+
+
+
+被參考於 Screen\+::\+Screen().
+
+
+
+此結構(structure) 文件是由下列檔案中產生\+:\begin{DoxyCompactItemize}
+\item 
+/home/odin/\+Desktop/program/learn/usbdisp\+\_\+linux/libusbdisp/deb\+\_\+install/com.\+racertech.\+usbdisp-\/1.\+0.\+0/opt/apps/com.\+racertech.\+usbdisp/files/evdi/library/\mbox{\hyperlink{evdi__lib_8h}{evdi\+\_\+lib.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,117 @@
+\hypertarget{structevdi__device}{}\doxysection{evdi\+\_\+device 結構 參考文件}
+\label{structevdi__device}\index{evdi\_device@{evdi\_device}}
+
+
+{\ttfamily \#include $<$evdi\+\_\+drm\+\_\+drv.\+h$>$}
+
+
+
+evdi\+\_\+device的合作圖\+:
+% FIG 0
+\doxysubsection*{公開屬性}
+\begin{DoxyCompactItemize}
+\item 
+struct drm\+\_\+device $\ast$ \mbox{\hyperlink{structevdi__device_ae078f3cc95b532435ec5ba71f50a64ca}{ddev}}
+\item 
+struct drm\+\_\+connector $\ast$ \mbox{\hyperlink{structevdi__device_a700357cd0c927e34c8f2bec1c6995661}{conn}}
+\item 
+struct \mbox{\hyperlink{structevdi__cursor}{evdi\+\_\+cursor}} $\ast$ \mbox{\hyperlink{structevdi__device_a7302f0f59d3239339359d51071851474}{cursor}}
+\item 
+bool \mbox{\hyperlink{structevdi__device_ab3a9464495572cec899b4e9aeca37fae}{cursor\+\_\+events\+\_\+enabled}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structevdi__device_a14bf0246582fe05fd2d62486ec958593}{pixel\+\_\+area\+\_\+limit}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structevdi__device_a6ac2f98f8cdd55e876fdce67076b36cc}{pixel\+\_\+per\+\_\+second\+\_\+limit}}
+\item 
+struct \mbox{\hyperlink{structevdi__fbdev}{evdi\+\_\+fbdev}} $\ast$ \mbox{\hyperlink{structevdi__device_a69794d8aea65f097e12277597eaa84f2}{fbdev}}
+\item 
+struct \mbox{\hyperlink{structevdi__painter}{evdi\+\_\+painter}} $\ast$ \mbox{\hyperlink{structevdi__device_adf4c6cf92d7976a97ec5c0c0a6f687e8}{painter}}
+\item 
+struct i2c\+\_\+adapter $\ast$ \mbox{\hyperlink{structevdi__device_a6930e76b0503f5454ddeb7f62bf56faf}{i2c\+\_\+adapter}}
+\item 
+\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{structevdi__device_a4a3f3e00b85e5119b47db0414c61784f}{dev\+\_\+index}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{資料成員說明文件}
+\mbox{\Hypertarget{structevdi__device_a700357cd0c927e34c8f2bec1c6995661}\label{structevdi__device_a700357cd0c927e34c8f2bec1c6995661}} 
+\index{evdi\_device@{evdi\_device}!conn@{conn}}
+\index{conn@{conn}!evdi\_device@{evdi\_device}}
+\doxysubsubsection{\texorpdfstring{conn}{conn}}
+{\footnotesize\ttfamily struct drm\+\_\+connector$\ast$ evdi\+\_\+device\+::conn}
+
+\mbox{\Hypertarget{structevdi__device_a7302f0f59d3239339359d51071851474}\label{structevdi__device_a7302f0f59d3239339359d51071851474}} 
+\index{evdi\_device@{evdi\_device}!cursor@{cursor}}
+\index{cursor@{cursor}!evdi\_device@{evdi\_device}}
+\doxysubsubsection{\texorpdfstring{cursor}{cursor}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structevdi__cursor}{evdi\+\_\+cursor}}$\ast$ evdi\+\_\+device\+::cursor}
+
+
+
+被參考於 evdi\+\_\+drm\+\_\+device\+\_\+unload().
+
+\mbox{\Hypertarget{structevdi__device_ab3a9464495572cec899b4e9aeca37fae}\label{structevdi__device_ab3a9464495572cec899b4e9aeca37fae}} 
+\index{evdi\_device@{evdi\_device}!cursor\_events\_enabled@{cursor\_events\_enabled}}
+\index{cursor\_events\_enabled@{cursor\_events\_enabled}!evdi\_device@{evdi\_device}}
+\doxysubsubsection{\texorpdfstring{cursor\_events\_enabled}{cursor\_events\_enabled}}
+{\footnotesize\ttfamily bool evdi\+\_\+device\+::cursor\+\_\+events\+\_\+enabled}
+
+\mbox{\Hypertarget{structevdi__device_ae078f3cc95b532435ec5ba71f50a64ca}\label{structevdi__device_ae078f3cc95b532435ec5ba71f50a64ca}} 
+\index{evdi\_device@{evdi\_device}!ddev@{ddev}}
+\index{ddev@{ddev}!evdi\_device@{evdi\_device}}
+\doxysubsubsection{\texorpdfstring{ddev}{ddev}}
+{\footnotesize\ttfamily struct drm\+\_\+device$\ast$ evdi\+\_\+device\+::ddev}
+
+
+
+被參考於 evdi\+\_\+painter\+\_\+init().
+
+\mbox{\Hypertarget{structevdi__device_a4a3f3e00b85e5119b47db0414c61784f}\label{structevdi__device_a4a3f3e00b85e5119b47db0414c61784f}} 
+\index{evdi\_device@{evdi\_device}!dev\_index@{dev\_index}}
+\index{dev\_index@{dev\_index}!evdi\_device@{evdi\_device}}
+\doxysubsubsection{\texorpdfstring{dev\_index}{dev\_index}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} evdi\+\_\+device\+::dev\+\_\+index}
+
+
+
+被參考於 evdi\+\_\+driver\+\_\+open(), evdi\+\_\+driver\+\_\+postclose(), evdi\+\_\+painter\+\_\+dpms\+\_\+notify(), evdi\+\_\+painter\+\_\+grabpix\+\_\+ioctl(), evdi\+\_\+painter\+\_\+mark\+\_\+dirty(), 及 evdi\+\_\+painter\+\_\+request\+\_\+update\+\_\+ioctl().
+
+\mbox{\Hypertarget{structevdi__device_a69794d8aea65f097e12277597eaa84f2}\label{structevdi__device_a69794d8aea65f097e12277597eaa84f2}} 
+\index{evdi\_device@{evdi\_device}!fbdev@{fbdev}}
+\index{fbdev@{fbdev}!evdi\_device@{evdi\_device}}
+\doxysubsubsection{\texorpdfstring{fbdev}{fbdev}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structevdi__fbdev}{evdi\+\_\+fbdev}}$\ast$ evdi\+\_\+device\+::fbdev}
+
+\mbox{\Hypertarget{structevdi__device_a6930e76b0503f5454ddeb7f62bf56faf}\label{structevdi__device_a6930e76b0503f5454ddeb7f62bf56faf}} 
+\index{evdi\_device@{evdi\_device}!i2c\_adapter@{i2c\_adapter}}
+\index{i2c\_adapter@{i2c\_adapter}!evdi\_device@{evdi\_device}}
+\doxysubsubsection{\texorpdfstring{i2c\_adapter}{i2c\_adapter}}
+{\footnotesize\ttfamily struct i2c\+\_\+adapter$\ast$ evdi\+\_\+device\+::i2c\+\_\+adapter}
+
+\mbox{\Hypertarget{structevdi__device_adf4c6cf92d7976a97ec5c0c0a6f687e8}\label{structevdi__device_adf4c6cf92d7976a97ec5c0c0a6f687e8}} 
+\index{evdi\_device@{evdi\_device}!painter@{painter}}
+\index{painter@{painter}!evdi\_device@{evdi\_device}}
+\doxysubsubsection{\texorpdfstring{painter}{painter}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structevdi__painter}{evdi\+\_\+painter}}$\ast$ evdi\+\_\+device\+::painter}
+
+
+
+被參考於 evdi\+\_\+drm\+\_\+device\+\_\+unload(), evdi\+\_\+painter\+\_\+close(), evdi\+\_\+painter\+\_\+connect\+\_\+ioctl(), evdi\+\_\+painter\+\_\+ddcci\+\_\+response\+\_\+ioctl(), evdi\+\_\+painter\+\_\+dpms\+\_\+notify(), evdi\+\_\+painter\+\_\+get\+\_\+edid\+\_\+copy(), evdi\+\_\+painter\+\_\+grabpix\+\_\+ioctl(), evdi\+\_\+painter\+\_\+init(), evdi\+\_\+painter\+\_\+mark\+\_\+dirty(), evdi\+\_\+painter\+\_\+mode\+\_\+changed\+\_\+notify(), evdi\+\_\+painter\+\_\+request\+\_\+update\+\_\+ioctl(), 及 evdi\+\_\+platform\+\_\+device\+\_\+is\+\_\+free().
+
+\mbox{\Hypertarget{structevdi__device_a14bf0246582fe05fd2d62486ec958593}\label{structevdi__device_a14bf0246582fe05fd2d62486ec958593}} 
+\index{evdi\_device@{evdi\_device}!pixel\_area\_limit@{pixel\_area\_limit}}
+\index{pixel\_area\_limit@{pixel\_area\_limit}!evdi\_device@{evdi\_device}}
+\doxysubsubsection{\texorpdfstring{pixel\_area\_limit}{pixel\_area\_limit}}
+{\footnotesize\ttfamily uint32\+\_\+t evdi\+\_\+device\+::pixel\+\_\+area\+\_\+limit}
+
+\mbox{\Hypertarget{structevdi__device_a6ac2f98f8cdd55e876fdce67076b36cc}\label{structevdi__device_a6ac2f98f8cdd55e876fdce67076b36cc}} 
+\index{evdi\_device@{evdi\_device}!pixel\_per\_second\_limit@{pixel\_per\_second\_limit}}
+\index{pixel\_per\_second\_limit@{pixel\_per\_second\_limit}!evdi\_device@{evdi\_device}}
+\doxysubsubsection{\texorpdfstring{pixel\_per\_second\_limit}{pixel\_per\_second\_limit}}
+{\footnotesize\ttfamily uint32\+\_\+t evdi\+\_\+device\+::pixel\+\_\+per\+\_\+second\+\_\+limit}
+
+
+
+此結構(structure) 文件是由下列檔案中產生\+:\begin{DoxyCompactItemize}
+\item 
+/home/odin/\+Desktop/program/learn/usbdisp\+\_\+linux/libusbdisp/deb\+\_\+install/com.\+racertech.\+usbdisp-\/1.\+0.\+0/opt/apps/com.\+racertech.\+usbdisp/files/evdi/module/\mbox{\hyperlink{evdi__drm__drv_8h}{evdi\+\_\+drm\+\_\+drv.\+h}}\end{DoxyCompactItemize}

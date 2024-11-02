@@ -1,0 +1,12 @@
+digraph "/home/odin/Desktop/program/learn/usbdisp_linux/libusbdisp" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_4159d2fa8205dd791550e6f261184d1d {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_4159d2fa8205dd791550e6f261184d1d.html"];
+    dir_4159d2fa8205dd791550e6f261184d1d [shape=plaintext label="libusbdisp"];
+  dir_6881a464b95ad4897fc535b6214d7148 [shape=box label="deb_install" fillcolor="white" style="filled" color="red" URL="dir_6881a464b95ad4897fc535b6214d7148.html"];
+  dir_0f32255a43591352b42b74edabbacf7b [shape=box label="libenc" fillcolor="white" style="filled" color="red" URL="dir_0f32255a43591352b42b74edabbacf7b.html"];
+  }
+  dir_4159d2fa8205dd791550e6f261184d1d->dir_0f32255a43591352b42b74edabbacf7b [headlabel="8", labeldistance=1.5 headhref="dir_000002_000013.html"];
+}

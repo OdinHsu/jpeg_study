@@ -1,0 +1,105 @@
+\hypertarget{evdi__platform__dev_8h}{}\doxysection{/home/odin/\+Desktop/program/learn/usbdisp\+\_\+linux/libusbdisp/deb\+\_\+install/com.racertech.\+usbdisp-\/1.0.0/opt/apps/com.racertech.\+usbdisp/files/evdi/module/evdi\+\_\+platform\+\_\+dev.h 檔案參考文件}
+\label{evdi__platform__dev_8h}\index{/home/odin/Desktop/program/learn/usbdisp\_linux/libusbdisp/deb\_install/com.racertech.usbdisp-\/1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi\_platform\_dev.h@{/home/odin/Desktop/program/learn/usbdisp\_linux/libusbdisp/deb\_install/com.racertech.usbdisp-\/1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi\_platform\_dev.h}}
+{\ttfamily \#include $<$linux/types.\+h$>$}\newline
+evdi\+\_\+platform\+\_\+dev.\+h的包含相依圖\+:
+% FIG 0
+本圖顯示出哪些檔案直接或間接include本檔 \+:
+% FIG 1
+\doxysubsection*{函式}
+\begin{DoxyCompactItemize}
+\item 
+struct platform\+\_\+device $\ast$ \mbox{\hyperlink{evdi__platform__dev_8h_a83d60bb5addee7b21c5115eca22e97a6}{evdi\+\_\+platform\+\_\+dev\+\_\+create}} (struct platform\+\_\+device\+\_\+info $\ast$info)
+\item 
+void \mbox{\hyperlink{evdi__platform__dev_8h_ab62ed8bb602cee3dc96b7e4be4c43b5a}{evdi\+\_\+platform\+\_\+dev\+\_\+destroy}} (struct platform\+\_\+device $\ast$dev)
+\item 
+\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{evdi__platform__dev_8h_aabe00bdcadd66b10b78d251dc3d42119}{evdi\+\_\+platform\+\_\+device\+\_\+probe}} (struct platform\+\_\+device $\ast$pdev)
+\item 
+\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{evdi__platform__dev_8h_a36c6ed2f47180da2e96022e2ff142136}{evdi\+\_\+platform\+\_\+device\+\_\+remove}} (struct platform\+\_\+device $\ast$pdev)
+\item 
+bool \mbox{\hyperlink{evdi__platform__dev_8h_af49982874f211bc5d9207c0be177ca71}{evdi\+\_\+platform\+\_\+device\+\_\+is\+\_\+free}} (struct platform\+\_\+device $\ast$pdev)
+\item 
+void \mbox{\hyperlink{evdi__platform__dev_8h_ae3b7ac8dc509936322f2bd6e5f2a4367}{evdi\+\_\+platform\+\_\+device\+\_\+link}} (struct platform\+\_\+device $\ast$pdev, struct device $\ast$parent)
+\item 
+void \mbox{\hyperlink{evdi__platform__dev_8h_adf6be1f6b79fc9094f7be015265dd9c9}{evdi\+\_\+platform\+\_\+device\+\_\+unlink\+\_\+if\+\_\+linked\+\_\+with}} (struct platform\+\_\+device $\ast$pdev, struct device $\ast$parent)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函式說明文件}
+\mbox{\Hypertarget{evdi__platform__dev_8h_a83d60bb5addee7b21c5115eca22e97a6}\label{evdi__platform__dev_8h_a83d60bb5addee7b21c5115eca22e97a6}} 
+\index{evdi\_platform\_dev.h@{evdi\_platform\_dev.h}!evdi\_platform\_dev\_create@{evdi\_platform\_dev\_create}}
+\index{evdi\_platform\_dev\_create@{evdi\_platform\_dev\_create}!evdi\_platform\_dev.h@{evdi\_platform\_dev.h}}
+\doxysubsubsection{\texorpdfstring{evdi\_platform\_dev\_create()}{evdi\_platform\_dev\_create()}}
+{\footnotesize\ttfamily struct platform\+\_\+device$\ast$ evdi\+\_\+platform\+\_\+dev\+\_\+create (\begin{DoxyParamCaption}\item[{struct platform\+\_\+device\+\_\+info $\ast$}]{info }\end{DoxyParamCaption})}
+
+
+
+參考 EVDI\+\_\+\+INFO, 及 EVDI\+\_\+\+WARN.
+
+\mbox{\Hypertarget{evdi__platform__dev_8h_ab62ed8bb602cee3dc96b7e4be4c43b5a}\label{evdi__platform__dev_8h_ab62ed8bb602cee3dc96b7e4be4c43b5a}} 
+\index{evdi\_platform\_dev.h@{evdi\_platform\_dev.h}!evdi\_platform\_dev\_destroy@{evdi\_platform\_dev\_destroy}}
+\index{evdi\_platform\_dev\_destroy@{evdi\_platform\_dev\_destroy}!evdi\_platform\_dev.h@{evdi\_platform\_dev.h}}
+\doxysubsubsection{\texorpdfstring{evdi\_platform\_dev\_destroy()}{evdi\_platform\_dev\_destroy()}}
+{\footnotesize\ttfamily void evdi\+\_\+platform\+\_\+dev\+\_\+destroy (\begin{DoxyParamCaption}\item[{struct platform\+\_\+device $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+參考 EVDI\+\_\+\+INFO.
+
+
+
+被參考於 evdi\+\_\+platform\+\_\+remove\+\_\+all\+\_\+devices().
+
+\mbox{\Hypertarget{evdi__platform__dev_8h_af49982874f211bc5d9207c0be177ca71}\label{evdi__platform__dev_8h_af49982874f211bc5d9207c0be177ca71}} 
+\index{evdi\_platform\_dev.h@{evdi\_platform\_dev.h}!evdi\_platform\_device\_is\_free@{evdi\_platform\_device\_is\_free}}
+\index{evdi\_platform\_device\_is\_free@{evdi\_platform\_device\_is\_free}!evdi\_platform\_dev.h@{evdi\_platform\_dev.h}}
+\doxysubsubsection{\texorpdfstring{evdi\_platform\_device\_is\_free()}{evdi\_platform\_device\_is\_free()}}
+{\footnotesize\ttfamily bool evdi\+\_\+platform\+\_\+device\+\_\+is\+\_\+free (\begin{DoxyParamCaption}\item[{struct platform\+\_\+device $\ast$}]{pdev }\end{DoxyParamCaption})}
+
+
+
+參考 evdi\+\_\+platform\+\_\+device\+\_\+data\+::drm\+\_\+dev, evdi\+\_\+painter\+\_\+is\+\_\+connected(), evdi\+\_\+device\+::painter, 及 evdi\+\_\+platform\+\_\+device\+\_\+data\+::symlinked.
+
+
+
+被參考於 evdi\+\_\+platform\+\_\+device\+\_\+link().
+
+\mbox{\Hypertarget{evdi__platform__dev_8h_ae3b7ac8dc509936322f2bd6e5f2a4367}\label{evdi__platform__dev_8h_ae3b7ac8dc509936322f2bd6e5f2a4367}} 
+\index{evdi\_platform\_dev.h@{evdi\_platform\_dev.h}!evdi\_platform\_device\_link@{evdi\_platform\_device\_link}}
+\index{evdi\_platform\_device\_link@{evdi\_platform\_device\_link}!evdi\_platform\_dev.h@{evdi\_platform\_dev.h}}
+\doxysubsubsection{\texorpdfstring{evdi\_platform\_device\_link()}{evdi\_platform\_device\_link()}}
+{\footnotesize\ttfamily void evdi\+\_\+platform\+\_\+device\+\_\+link (\begin{DoxyParamCaption}\item[{struct platform\+\_\+device $\ast$}]{pdev,  }\item[{struct device $\ast$}]{parent }\end{DoxyParamCaption})}
+
+
+
+參考 EVDI\+\_\+\+FATAL, evdi\+\_\+platform\+\_\+device\+\_\+is\+\_\+free(), evdi\+\_\+platform\+\_\+device\+\_\+data\+::parent, 及 evdi\+\_\+platform\+\_\+device\+\_\+data\+::symlinked.
+
+\mbox{\Hypertarget{evdi__platform__dev_8h_aabe00bdcadd66b10b78d251dc3d42119}\label{evdi__platform__dev_8h_aabe00bdcadd66b10b78d251dc3d42119}} 
+\index{evdi\_platform\_dev.h@{evdi\_platform\_dev.h}!evdi\_platform\_device\_probe@{evdi\_platform\_device\_probe}}
+\index{evdi\_platform\_device\_probe@{evdi\_platform\_device\_probe}!evdi\_platform\_dev.h@{evdi\_platform\_dev.h}}
+\doxysubsubsection{\texorpdfstring{evdi\_platform\_device\_probe()}{evdi\_platform\_device\_probe()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} evdi\+\_\+platform\+\_\+device\+\_\+probe (\begin{DoxyParamCaption}\item[{struct platform\+\_\+device $\ast$}]{pdev }\end{DoxyParamCaption})}
+
+
+
+參考 evdi\+\_\+platform\+\_\+device\+\_\+data\+::drm\+\_\+dev, EVDI\+\_\+\+CHECKPT, evdi\+\_\+drm\+\_\+device\+\_\+create(), 及 evdi\+\_\+platform\+\_\+device\+\_\+data\+::symlinked.
+
+\mbox{\Hypertarget{evdi__platform__dev_8h_a36c6ed2f47180da2e96022e2ff142136}\label{evdi__platform__dev_8h_a36c6ed2f47180da2e96022e2ff142136}} 
+\index{evdi\_platform\_dev.h@{evdi\_platform\_dev.h}!evdi\_platform\_device\_remove@{evdi\_platform\_device\_remove}}
+\index{evdi\_platform\_device\_remove@{evdi\_platform\_device\_remove}!evdi\_platform\_dev.h@{evdi\_platform\_dev.h}}
+\doxysubsubsection{\texorpdfstring{evdi\_platform\_device\_remove()}{evdi\_platform\_device\_remove()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} evdi\+\_\+platform\+\_\+device\+\_\+remove (\begin{DoxyParamCaption}\item[{struct platform\+\_\+device $\ast$}]{pdev }\end{DoxyParamCaption})}
+
+
+
+參考 evdi\+\_\+platform\+\_\+device\+\_\+data\+::drm\+\_\+dev, EVDI\+\_\+\+CHECKPT, 及 evdi\+\_\+drm\+\_\+device\+\_\+remove().
+
+\mbox{\Hypertarget{evdi__platform__dev_8h_adf6be1f6b79fc9094f7be015265dd9c9}\label{evdi__platform__dev_8h_adf6be1f6b79fc9094f7be015265dd9c9}} 
+\index{evdi\_platform\_dev.h@{evdi\_platform\_dev.h}!evdi\_platform\_device\_unlink\_if\_linked\_with@{evdi\_platform\_device\_unlink\_if\_linked\_with}}
+\index{evdi\_platform\_device\_unlink\_if\_linked\_with@{evdi\_platform\_device\_unlink\_if\_linked\_with}!evdi\_platform\_dev.h@{evdi\_platform\_dev.h}}
+\doxysubsubsection{\texorpdfstring{evdi\_platform\_device\_unlink\_if\_linked\_with()}{evdi\_platform\_device\_unlink\_if\_linked\_with()}}
+{\footnotesize\ttfamily void evdi\+\_\+platform\+\_\+device\+\_\+unlink\+\_\+if\+\_\+linked\+\_\+with (\begin{DoxyParamCaption}\item[{struct platform\+\_\+device $\ast$}]{pdev,  }\item[{struct device $\ast$}]{parent }\end{DoxyParamCaption})}
+
+
+
+參考 EVDI\+\_\+\+INFO, evdi\+\_\+platform\+\_\+device\+\_\+data\+::parent, 及 evdi\+\_\+platform\+\_\+device\+\_\+data\+::symlinked.
+

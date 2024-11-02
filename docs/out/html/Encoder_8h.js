@@ -1,0 +1,25 @@
+var Encoder_8h =
+[
+    [ "screen_t", "structscreen__t.html", "structscreen__t" ],
+    [ "EncodeUnit", "classEncodeUnit.html", "classEncodeUnit" ],
+    [ "BlockEncoder", "classBlockEncoder.html", "classBlockEncoder" ],
+    [ "_PACK", "Encoder_8h.html#a72392578c82996165021d3a2aba3cf81", null ],
+    [ "_UNPACK", "Encoder_8h.html#a780d3f29138fa73a7844d8db598129c9", null ],
+    [ "BGRX_SIZE", "Encoder_8h.html#af01ed6ced03fc275fbc340bd4dab11e8", null ],
+    [ "BLOCK_HEIGHT", "Encoder_8h.html#ac7452942c3f51056da4bb24960f24f08", null ],
+    [ "BLOCK_SIZE", "Encoder_8h.html#ad51ded0bbd705f02f73fc60c0b721ced", null ],
+    [ "BLOCK_WIDTH", "Encoder_8h.html#aff434668c1f3fab69e5937ecae459c3f", null ],
+    [ "COLOR_SIZE", "Encoder_8h.html#a68a80be4e42506b0127b8559bc6662b0", null ],
+    [ "ENC_THREADS", "Encoder_8h.html#a04826c9ed0329c978f7812c40e42955b", null ],
+    [ "MAX_HEIGHT", "Encoder_8h.html#a9059fa76eb5e8e86f870405d63e72c4c", null ],
+    [ "MAX_SCREEN_BLOCK", "Encoder_8h.html#ac7a29576ba8edcb2630014457af01c32", null ],
+    [ "MAX_WIDTH", "Encoder_8h.html#a0e9d4003787634607af9e97e14b9668b", null ],
+    [ "NUM_ENCODER", "Encoder_8h.html#a1a8a183735d83f05204a23915959c53c", null ],
+    [ "NUM_SCREEN", "Encoder_8h.html#ab350424e04765eb8234bbb03dd1efbdc", null ],
+    [ "QUALITY_CLONE", "Encoder_8h.html#a03ae99450ee53275a76447f57a180ca6", null ],
+    [ "QUALITY_HIGH", "Encoder_8h.html#af82f023dbd0535ab333bc993b10a9860", null ],
+    [ "QUALITY_LOW", "Encoder_8h.html#af330a034b066ccbc75ad0e32da283e0a", null ],
+    [ "QUALITY_MEDIAN", "Encoder_8h.html#a0f58b2b7a66dc4dc68b12e69e8b8da0b", null ],
+    [ "QUALITY_RAW", "Encoder_8h.html#a6d8c8b292d349a43f1554f9daa7160ba", null ],
+    [ "RAW_DEPTH", "Encoder_8h.html#a553a3a9734a0be0f08459c9903d997f4", null ]
+];

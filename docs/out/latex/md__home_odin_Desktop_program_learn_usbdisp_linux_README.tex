@@ -1,0 +1,38 @@
+\href{https://travis-ci.org/mlukaszek/evdipp}{\texttt{ }}
+
+Simple C++ wrapper for \href{https://github.com/DisplayLink/evdi}{\texttt{ Display\+Link evdi}} library, with some example client code. Currently undocumented, but hopefully simple enough to be useful even as-\/is.\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_README_autotoc_md67}{}\doxysection{Contents}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_README_autotoc_md67}
+This project is a very simple example of how to write a complete client for Display\+Link\textquotesingle{}s evdi/libevdi.
+
+It includes\+:
+\begin{DoxyItemize}
+\item a very thin C++ wrapper for the library, called {\ttfamily libevdipp},
+\item a simple terminal-\/based example which registers a virtual screen and logs to console,
+\item a more complete {\ttfamily monitorsim} Qt sample app which uses evdi to add an additional screen an show its contents in a window. This application uses more features of the library than the console client -\/ for example, enables client-\/side mouse compositing.
+\end{DoxyItemize}
+
+\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_README_autotoc_md68}{}\doxysection{Building}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_README_autotoc_md68}
+You need cmake to build. EVDI is defined as external project which will be cloned from git as part of the build. As with libevdi, you need libdrm-\/dev package to be installed to be able to compile the library.
+
+Additionally\+:
+\begin{DoxyItemize}
+\item to build the example terminal app, you need libev/libev++.
+\item to build the Qt example, you obviously need Qt 5 dev packages installed.
+\end{DoxyItemize}
+
+If you\textquotesingle{}re using recent Ubuntu, you can do it by executing \begin{DoxyVerb}sudo apt-get install -y libev-dev cmake libdrm-dev unzip libghc-x11-dev gcc g++ dkms libusb-1.0-0-dev
+\end{DoxyVerb}
+ Then, you can build it by pretty standard chain of commands\+: \begin{DoxyVerb}mkdir build
+cd build
+cmake ..
+make install
+\end{DoxyVerb}
+ \hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_README_autotoc_md69}{}\doxysection{build deb package and run package}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_README_autotoc_md69}
+sudo apt install -\/y dh-\/make cd libusbdisp make deb\hypertarget{md__home_odin_Desktop_program_learn_usbdisp_linux_README_autotoc_md70}{}\doxysection{Running}\label{md__home_odin_Desktop_program_learn_usbdisp_linux_README_autotoc_md70}
+This project assumes you are familiar with what \href{https://github.com/DisplayLink/evdi}{\texttt{ evdi}} is, and how to build it for your system. Before attempting to launch any of the samples, make sure {\ttfamily evdi} kernel module is loaded. If you don\textquotesingle{}t see it in the output of {\ttfamily lsmod}, run {\ttfamily modprobe evdi} first.
+
+Any client app for EVDI at the moment must be run by root to be able to function -\/ so, using {\ttfamily sudo} is required. For example, to run the {\ttfamily monitorsim} binary built in the {\ttfamily stage/bin} subdirectory of your {\ttfamily build} folder, use\+: \begin{DoxyVerb}cd stage/bin
+sudo monitorsim
+\end{DoxyVerb}
+ Note that both the {\ttfamily example} app, and the Qt {\ttfamily monitorsim} client expect an input file with an EDID of a monitor that they should connect to evdi (which acts like a virtual graphics adapter that you need to connect to it). They will still run without it, but will use a hard-\/coded, single mode (800x600) EDID, which will reduce your possibilities -\/ for example, you will not be able to change display modes for the virtual screen as it will only have one mode available.
+
+You can get an EDID from any monitor you have (see {\ttfamily ls -\/la /sys/class/drm/$\ast$/edid}), or source it from the net -\/ for example from \href{https://chromium.googlesource.com/chromiumos/third_party/autotest/+/master/server/site_tests/display_Resolution/test_data/edids}{\texttt{ Google\textquotesingle{}s autotest project}}. Note however that the EDIDs you use must be valid -\/ and many are not. EVDI refuses EDIDs with invalid checksums, connection attempts will fail with {\ttfamily Invalid argument} error reported by the libevdi library. 

@@ -1,0 +1,23 @@
+digraph "/home/odin/Desktop/program/learn/usbdisp_linux/libusbdisp/libenc/ClientUSB.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/libenc\l/ClientUSB.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/libenc\l/EncodeEngine.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$EncodeEngine_8h.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/capture.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$capture_8h.html",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/capture.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$capture_8cpp.html",tooltip=" "];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/usbDisplay.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$usbDisplay_8cpp.html",tooltip=" "];
+  Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/libenc\l/EncodeEngine.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$EncodeEngine_8cpp.html",tooltip=" "];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/usbdev.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$usbdev_8h.html",tooltip=" "];
+  Node7 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/usbdev.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$usbdev_8cpp.html",tooltip=" "];
+}

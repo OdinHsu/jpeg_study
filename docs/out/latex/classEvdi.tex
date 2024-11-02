@@ -1,0 +1,272 @@
+\hypertarget{classEvdi}{}\doxysection{Evdi 類別 參考文件}
+\label{classEvdi}\index{Evdi@{Evdi}}
+
+
+{\ttfamily \#include $<$evdi.\+hpp$>$}
+
+\doxysubsection*{公開型態}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classEvdi_a0ae6df5d9a6b8a2cb287e0d0d225b003}{Log\+Handler}} = std\+::function$<$ void(const std\+::string \&)$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{公開方法(Public Methods)}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEvdi_a0025ff054e1b549b39b67c3d1fa83ee7}{Evdi}} ()
+\item 
+\mbox{\hyperlink{classEvdi_a1bb40a561683df90eff44ebb6229cf78}{Evdi}} (\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} devnum)
+\item 
+\mbox{\hyperlink{classEvdi_a14e5512871f333b9ca4175b8f45f0287}{Evdi}} (const \mbox{\hyperlink{jsimdcfg_8inc_8h_a8b272214e498a4cb09dde135bb4d7d03}{char}} $\ast$parent)
+\item 
+\mbox{\hyperlink{classEvdi_a1fe0847c508e198897e8eeeab97dbcf9}{$\sim$\+Evdi}} ()
+\item 
+\mbox{\hyperlink{classEvdi_a6a69678853aea07143a517e58c5ec1a5}{operator bool}} () const
+\item 
+void \mbox{\hyperlink{classEvdi_af27ae55a3a76084b5c6e0901325de770}{connect}} (const unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a8b272214e498a4cb09dde135bb4d7d03}{char}} $\ast$edid, const unsigned edid\+\_\+length) const
+\item 
+void \mbox{\hyperlink{classEvdi_af9621d1eba9dd5162e16a3d08d6ccb1a}{disconnect}} () const
+\item 
+void \mbox{\hyperlink{classEvdi_afc344693643457f8f38e691244fe491e}{register\+\_\+buffer}} (\mbox{\hyperlink{structevdi__buffer}{evdi\+\_\+buffer}} \mbox{\hyperlink{jsimdcfg_8inc_8h_abdb77e53de4261715ec5f4783a343ec3}{buffer}}) const
+\item 
+void \mbox{\hyperlink{classEvdi_a5609f142c17f34ba9d6667b84800596f}{unregister\+\_\+buffer}} (\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} buffer\+\_\+id) const
+\item 
+bool \mbox{\hyperlink{classEvdi_a78b2408fea89cca6313483ff59ccfa44}{request\+\_\+update}} (\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} buffer\+\_\+id) const
+\item 
+void \mbox{\hyperlink{classEvdi_a9e14e6654116f029aa11de2067ea74c4}{grab\+\_\+pixels}} (\mbox{\hyperlink{structevdi__rect}{evdi\+\_\+rect}} $\ast$rects, \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} $\ast$num\+\_\+rects) const
+\item 
+\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{classEvdi_a63dd7ed69f43469450839a57a4d8a980}{get\+\_\+event\+\_\+source}} () const
+\item 
+void \mbox{\hyperlink{classEvdi_a278567e072866b62dbc4c4d5ead0a5f4}{handle\+\_\+events}} (\mbox{\hyperlink{structevdi__event__context}{evdi\+\_\+event\+\_\+context}} $\ast$context) const
+\item 
+void \mbox{\hyperlink{classEvdi_ac8f096f2fe833831b45d01dda8f23b7e}{enable\+\_\+cursor\+\_\+events}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{靜態公開方法(Static Public Methods)}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classEvdi_aabf39c914549ebb79a6767f70ac249e7}{add}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{靜態公開屬性}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classEvdi_a0ae6df5d9a6b8a2cb287e0d0d225b003}{Log\+Handler}} \mbox{\hyperlink{classEvdi_a4e435758b175293d2c8fbae7539a51f6}{log\+\_\+handler}} = \mbox{[}$\,$\mbox{]}(const std\+::string\&) \{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{型態定義成員說明文件}
+\mbox{\Hypertarget{classEvdi_a0ae6df5d9a6b8a2cb287e0d0d225b003}\label{classEvdi_a0ae6df5d9a6b8a2cb287e0d0d225b003}} 
+\index{Evdi@{Evdi}!LogHandler@{LogHandler}}
+\index{LogHandler@{LogHandler}!Evdi@{Evdi}}
+\doxysubsubsection{\texorpdfstring{LogHandler}{LogHandler}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classEvdi_a0ae6df5d9a6b8a2cb287e0d0d225b003}{Evdi\+::\+Log\+Handler}} =  std\+::function$<$void(const std\+::string\&)$>$}
+
+
+
+\doxysubsection{建構子與解構子說明文件}
+\mbox{\Hypertarget{classEvdi_a0025ff054e1b549b39b67c3d1fa83ee7}\label{classEvdi_a0025ff054e1b549b39b67c3d1fa83ee7}} 
+\index{Evdi@{Evdi}!Evdi@{Evdi}}
+\index{Evdi@{Evdi}!Evdi@{Evdi}}
+\doxysubsubsection{\texorpdfstring{Evdi()}{Evdi()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Evdi\+::\+Evdi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+參考 evdi\+\_\+open\+\_\+attached\+\_\+to(), 及 evdi\+\_\+set\+\_\+logging().
+
+\mbox{\Hypertarget{classEvdi_a1bb40a561683df90eff44ebb6229cf78}\label{classEvdi_a1bb40a561683df90eff44ebb6229cf78}} 
+\index{Evdi@{Evdi}!Evdi@{Evdi}}
+\index{Evdi@{Evdi}!Evdi@{Evdi}}
+\doxysubsubsection{\texorpdfstring{Evdi()}{Evdi()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Evdi\+::\+Evdi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}}]{devnum }\end{DoxyParamCaption})}
+
+
+
+參考 evdi\+\_\+open(), 及 evdi\+\_\+set\+\_\+logging().
+
+\mbox{\Hypertarget{classEvdi_a14e5512871f333b9ca4175b8f45f0287}\label{classEvdi_a14e5512871f333b9ca4175b8f45f0287}} 
+\index{Evdi@{Evdi}!Evdi@{Evdi}}
+\index{Evdi@{Evdi}!Evdi@{Evdi}}
+\doxysubsubsection{\texorpdfstring{Evdi()}{Evdi()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Evdi\+::\+Evdi (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{jsimdcfg_8inc_8h_a8b272214e498a4cb09dde135bb4d7d03}{char}} $\ast$}]{parent }\end{DoxyParamCaption})}
+
+
+
+參考 evdi\+\_\+open\+\_\+attached\+\_\+to(), 及 evdi\+\_\+set\+\_\+logging().
+
+\mbox{\Hypertarget{classEvdi_a1fe0847c508e198897e8eeeab97dbcf9}\label{classEvdi_a1fe0847c508e198897e8eeeab97dbcf9}} 
+\index{Evdi@{Evdi}!````~Evdi@{$\sim$Evdi}}
+\index{````~Evdi@{$\sim$Evdi}!Evdi@{Evdi}}
+\doxysubsubsection{\texorpdfstring{$\sim$Evdi()}{~Evdi()}}
+{\footnotesize\ttfamily Evdi\+::$\sim$\+Evdi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+參考 evdi\+\_\+close().
+
+
+
+\doxysubsection{函式成員說明文件}
+\mbox{\Hypertarget{classEvdi_aabf39c914549ebb79a6767f70ac249e7}\label{classEvdi_aabf39c914549ebb79a6767f70ac249e7}} 
+\index{Evdi@{Evdi}!add@{add}}
+\index{add@{add}!Evdi@{Evdi}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily static void Evdi\+::add (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+參考 evdi\+\_\+add\+\_\+device().
+
+\mbox{\Hypertarget{classEvdi_af27ae55a3a76084b5c6e0901325de770}\label{classEvdi_af27ae55a3a76084b5c6e0901325de770}} 
+\index{Evdi@{Evdi}!connect@{connect}}
+\index{connect@{connect}!Evdi@{Evdi}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily void Evdi\+::connect (\begin{DoxyParamCaption}\item[{const unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a8b272214e498a4cb09dde135bb4d7d03}{char}} $\ast$}]{edid,  }\item[{const unsigned}]{edid\+\_\+length }\end{DoxyParamCaption}) const}
+
+
+
+參考 evdi\+\_\+connect().
+
+
+
+被參考於 Screen\+::\+Screen().
+
+\mbox{\Hypertarget{classEvdi_af9621d1eba9dd5162e16a3d08d6ccb1a}\label{classEvdi_af9621d1eba9dd5162e16a3d08d6ccb1a}} 
+\index{Evdi@{Evdi}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!Evdi@{Evdi}}
+\doxysubsubsection{\texorpdfstring{disconnect()}{disconnect()}}
+{\footnotesize\ttfamily void Evdi\+::disconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+參考 evdi\+\_\+disconnect().
+
+
+
+被參考於 Screen\+::$\sim$\+Screen().
+
+\mbox{\Hypertarget{classEvdi_ac8f096f2fe833831b45d01dda8f23b7e}\label{classEvdi_ac8f096f2fe833831b45d01dda8f23b7e}} 
+\index{Evdi@{Evdi}!enable\_cursor\_events@{enable\_cursor\_events}}
+\index{enable\_cursor\_events@{enable\_cursor\_events}!Evdi@{Evdi}}
+\doxysubsubsection{\texorpdfstring{enable\_cursor\_events()}{enable\_cursor\_events()}}
+{\footnotesize\ttfamily void Evdi\+::enable\+\_\+cursor\+\_\+events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+參考 evdi\+\_\+enable\+\_\+cursor\+\_\+events().
+
+
+
+被參考於 Screen\+::enable\+\_\+cursor\+\_\+events().
+
+\mbox{\Hypertarget{classEvdi_a63dd7ed69f43469450839a57a4d8a980}\label{classEvdi_a63dd7ed69f43469450839a57a4d8a980}} 
+\index{Evdi@{Evdi}!get\_event\_source@{get\_event\_source}}
+\index{get\_event\_source@{get\_event\_source}!Evdi@{Evdi}}
+\doxysubsubsection{\texorpdfstring{get\_event\_source()}{get\_event\_source()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} Evdi\+::get\+\_\+event\+\_\+source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+參考 evdi\+\_\+get\+\_\+event\+\_\+ready().
+
+
+
+被參考於 Screen\+::event\+\_\+source().
+
+\mbox{\Hypertarget{classEvdi_a9e14e6654116f029aa11de2067ea74c4}\label{classEvdi_a9e14e6654116f029aa11de2067ea74c4}} 
+\index{Evdi@{Evdi}!grab\_pixels@{grab\_pixels}}
+\index{grab\_pixels@{grab\_pixels}!Evdi@{Evdi}}
+\doxysubsubsection{\texorpdfstring{grab\_pixels()}{grab\_pixels()}}
+{\footnotesize\ttfamily void Evdi\+::grab\+\_\+pixels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structevdi__rect}{evdi\+\_\+rect}} $\ast$}]{rects,  }\item[{\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} $\ast$}]{num\+\_\+rects }\end{DoxyParamCaption}) const}
+
+
+
+參考 evdi\+\_\+grab\+\_\+pixels().
+
+
+
+被參考於 Screen\+Driver\+::on\+\_\+update\+\_\+ready(), 及 Screen\+::on\+\_\+update\+\_\+ready().
+
+\mbox{\Hypertarget{classEvdi_a278567e072866b62dbc4c4d5ead0a5f4}\label{classEvdi_a278567e072866b62dbc4c4d5ead0a5f4}} 
+\index{Evdi@{Evdi}!handle\_events@{handle\_events}}
+\index{handle\_events@{handle\_events}!Evdi@{Evdi}}
+\doxysubsubsection{\texorpdfstring{handle\_events()}{handle\_events()}}
+{\footnotesize\ttfamily void Evdi\+::handle\+\_\+events (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structevdi__event__context}{evdi\+\_\+event\+\_\+context}} $\ast$}]{context }\end{DoxyParamCaption}) const}
+
+
+
+參考 evdi\+\_\+handle\+\_\+events().
+
+
+
+被參考於 Screen\+::handle\+\_\+events().
+
+\mbox{\Hypertarget{classEvdi_a6a69678853aea07143a517e58c5ec1a5}\label{classEvdi_a6a69678853aea07143a517e58c5ec1a5}} 
+\index{Evdi@{Evdi}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!Evdi@{Evdi}}
+\doxysubsubsection{\texorpdfstring{operator bool()}{operator bool()}}
+{\footnotesize\ttfamily Evdi\+::operator bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+參考 EVDI\+\_\+\+INVALID\+\_\+\+HANDLE, 及 handle.
+
+\mbox{\Hypertarget{classEvdi_afc344693643457f8f38e691244fe491e}\label{classEvdi_afc344693643457f8f38e691244fe491e}} 
+\index{Evdi@{Evdi}!register\_buffer@{register\_buffer}}
+\index{register\_buffer@{register\_buffer}!Evdi@{Evdi}}
+\doxysubsubsection{\texorpdfstring{register\_buffer()}{register\_buffer()}}
+{\footnotesize\ttfamily void Evdi\+::register\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structevdi__buffer}{evdi\+\_\+buffer}}}]{buffer }\end{DoxyParamCaption}) const}
+
+
+
+參考 buffer, 及 evdi\+\_\+register\+\_\+buffer().
+
+
+
+被參考於 Screen\+::on\+\_\+mode\+\_\+change().
+
+\mbox{\Hypertarget{classEvdi_a78b2408fea89cca6313483ff59ccfa44}\label{classEvdi_a78b2408fea89cca6313483ff59ccfa44}} 
+\index{Evdi@{Evdi}!request\_update@{request\_update}}
+\index{request\_update@{request\_update}!Evdi@{Evdi}}
+\doxysubsubsection{\texorpdfstring{request\_update()}{request\_update()}}
+{\footnotesize\ttfamily bool Evdi\+::request\+\_\+update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}}]{buffer\+\_\+id }\end{DoxyParamCaption}) const}
+
+
+
+參考 evdi\+\_\+request\+\_\+update().
+
+
+
+被參考於 Screen\+::update().
+
+\mbox{\Hypertarget{classEvdi_a5609f142c17f34ba9d6667b84800596f}\label{classEvdi_a5609f142c17f34ba9d6667b84800596f}} 
+\index{Evdi@{Evdi}!unregister\_buffer@{unregister\_buffer}}
+\index{unregister\_buffer@{unregister\_buffer}!Evdi@{Evdi}}
+\doxysubsubsection{\texorpdfstring{unregister\_buffer()}{unregister\_buffer()}}
+{\footnotesize\ttfamily void Evdi\+::unregister\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}}]{buffer\+\_\+id }\end{DoxyParamCaption}) const}
+
+
+
+參考 evdi\+\_\+unregister\+\_\+buffer().
+
+
+
+被參考於 Screen\+::on\+\_\+mode\+\_\+change().
+
+
+
+\doxysubsection{資料成員說明文件}
+\mbox{\Hypertarget{classEvdi_a4e435758b175293d2c8fbae7539a51f6}\label{classEvdi_a4e435758b175293d2c8fbae7539a51f6}} 
+\index{Evdi@{Evdi}!log\_handler@{log\_handler}}
+\index{log\_handler@{log\_handler}!Evdi@{Evdi}}
+\doxysubsubsection{\texorpdfstring{log\_handler}{log\_handler}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEvdi_a0ae6df5d9a6b8a2cb287e0d0d225b003}{Evdi\+::\+Log\+Handler}} Evdi\+::log\+\_\+handler = \mbox{[}$\,$\mbox{]}(const std\+::string\&) \{\}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+被參考於 main().
+
+
+
+此類別(class) 文件是由下列檔案中產生\+:\begin{DoxyCompactItemize}
+\item 
+/home/odin/\+Desktop/program/learn/usbdisp\+\_\+linux/libevdipp/\mbox{\hyperlink{evdi_8hpp}{evdi.\+hpp}}\item 
+/home/odin/\+Desktop/program/learn/usbdisp\+\_\+linux/libevdipp/\mbox{\hyperlink{evdi_8cpp}{evdi.\+cpp}}\end{DoxyCompactItemize}

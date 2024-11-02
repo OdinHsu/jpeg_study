@@ -1,0 +1,27 @@
+var jpegenc_8c =
+[
+    [ "BlockHeader_t", "structBlockHeader__t.html", "structBlockHeader__t" ],
+    [ "BITMAPFILEHEADER", "structBITMAPFILEHEADER.html", "structBITMAPFILEHEADER" ],
+    [ "BITMAPINFOHEADER", "structBITMAPINFOHEADER.html", "structBITMAPINFOHEADER" ],
+    [ "BLOCK_HEIGHT", "jpegenc_8c.html#ac7452942c3f51056da4bb24960f24f08", null ],
+    [ "BLOCK_SIZE", "jpegenc_8c.html#ad51ded0bbd705f02f73fc60c0b721ced", null ],
+    [ "BLOCK_WIDTH", "jpegenc_8c.html#aff434668c1f3fab69e5937ecae459c3f", null ],
+    [ "COLOR_COMPONENTS", "jpegenc_8c.html#ae90258a8ea70460114026bfe8d94d93c", null ],
+    [ "HEADER_QUA", "jpegenc_8c.html#aac2f3849c03c6a35cf017506d455e434", null ],
+    [ "JPEG_QUALITY", "jpegenc_8c.html#acd2ae478f38783ee63adaed71b43ec10", null ],
+    [ "JPGENC", "jpegenc_8c.html#a385877bab3804fee61513d2f12a9b735", null ],
+    [ "PID", "jpegenc_8c.html#a1230649f2e178a83485c5b5465ff8260", null ],
+    [ "VID", "jpegenc_8c.html#af3dd96efa125254ae2dcc56a314866f0", null ],
+    [ "getBufFormBmp", "jpegenc_8c.html#a0f07894b31ba12754aec3f5cfff721fc", null ],
+    [ "jpgGetStatus", "jpegenc_8c.html#a2b69b02020f27477a05103086d44eb3e", null ],
+    [ "jpgSetQuantTable", "jpegenc_8c.html#a124ae5796705f9c4f01009349aa959b7", null ],
+    [ "jpgSetResolution", "jpegenc_8c.html#aa7b982a82a6c5e86283764e4efee9720", null ],
+    [ "load_bmp", "jpegenc_8c.html#ad28059e4cc9c0abeb07fd1d387c48aa6", null ],
+    [ "main", "jpegenc_8c.html#ac0f2228420376f4db7e1274f2b41667c", null ],
+    [ "pictureFrameCmd", "jpegenc_8c.html#adbcd6aed554c5a6cc688ec8026e11372", null ],
+    [ "rgb2ycc", "jpegenc_8c.html#a41bf1cd51d0fe436bc17cad01f87352d", null ],
+    [ "sendBuf", "jpegenc_8c.html#a9320187af96acb42a0e20f7b087eca82", null ],
+    [ "SendPicFrameUsbCmd", "jpegenc_8c.html#a8168571a6f16459b30c4cec15be1f7ea", null ],
+    [ "cinfo", "jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0", null ],
+    [ "oldBuffer", "jpegenc_8c.html#adfe15fbfee50ae173fa6122c7e2787f6", null ]
+];

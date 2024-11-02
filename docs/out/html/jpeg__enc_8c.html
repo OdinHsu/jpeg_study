@@ -1,0 +1,784 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>jpeg: /home/odin/Desktop/program/learn/usbdisp_linux/libusbdisp/libenc/jpeg_enc.c 檔案參考文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">jpeg
+   &#160;<span id="projectnumber">0.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 產生者: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜尋','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜尋');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('jpeg__enc_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函式</a>  </div>
+  <div class="headertitle">
+<div class="title">jpeg_enc.c 檔案參考文件</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdarg.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="jpeg__enc_8h_source.html">jpeg_enc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Optimize__SSE2_8h_source.html">Optimize_SSE2.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Optimize__NEON_8h_source.html">Optimize_NEON.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+jpeg_enc.c的包含相依圖:</div>
+<div class="dyncontent">
+<div class="center"><img src="jpeg__enc_8c__incl.png" border="0" usemap="#a_2home_2odin_2Desktop_2program_2learn_2usbdisp__linux_2libusbdisp_2libenc_2jpeg__enc_8c" alt=""/></div>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函式</h2></td></tr>
+<tr class="memitem:ad6373d7cd52fd24f48b11b537dd9ef79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8c.html#ad6373d7cd52fd24f48b11b537dd9ef79">write_APP0info</a> (<a class="el" href="structjpeg__stream__t.html">jpeg_stream_t</a> *jpeg_stream)</td></tr>
+<tr class="separator:ad6373d7cd52fd24f48b11b537dd9ef79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1838db9d77f464725d435000dbb8a73f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8c.html#a1838db9d77f464725d435000dbb8a73f">write_SOF0info</a> (<a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *<a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>)</td></tr>
+<tr class="separator:a1838db9d77f464725d435000dbb8a73f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20ec8c1d53aa25102380578e8866418b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8c.html#a20ec8c1d53aa25102380578e8866418b">write_SOSinfo</a> (<a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *<a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>)</td></tr>
+<tr class="separator:a20ec8c1d53aa25102380578e8866418b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2af5ddb4ee88fcd55d2537a7bfda3ed1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8c.html#a2af5ddb4ee88fcd55d2537a7bfda3ed1">write_comment</a> (<a class="el" href="structjpeg__stream__t.html">jpeg_stream_t</a> *jpeg_stream, <a class="el" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> *comment)</td></tr>
+<tr class="separator:a2af5ddb4ee88fcd55d2537a7bfda3ed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4830b44852460d287c795c9c7f8415b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8c.html#a4830b44852460d287c795c9c7f8415b4">write_DQTinfo</a> (<a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *<a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>, <a class="el" href="structjpeg__stream__t.html">jpeg_stream_t</a> *stream)</td></tr>
+<tr class="separator:a4830b44852460d287c795c9c7f8415b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed12a3220b4ff438b98346db0d8b2d88"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8c.html#aed12a3220b4ff438b98346db0d8b2d88">GetDQTinfo</a> (<a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *<a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>, <a class="el" href="structjpeg__stream__t.html">jpeg_stream_t</a> *stream)</td></tr>
+<tr class="separator:aed12a3220b4ff438b98346db0d8b2d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add40a833c42db841bba279c85ff09e80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8c.html#add40a833c42db841bba279c85ff09e80">write_DHTinfo</a> (<a class="el" href="structjpeg__stream__t.html">jpeg_stream_t</a> *stream)</td></tr>
+<tr class="separator:add40a833c42db841bba279c85ff09e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a689dd199b140c9518f1df106a52cd6a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8c.html#a689dd199b140c9518f1df106a52cd6a0">set_quant_table</a> (<a class="el" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> *basic_table, <a class="el" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> scale_factor, <a class="el" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> *newtable)</td></tr>
+<tr class="separator:a689dd199b140c9518f1df106a52cd6a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7ad030c16f5310b3806ea727df433c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8c.html#ab7ad030c16f5310b3806ea727df433c3">set_DQTinfo</a> (<a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *<a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>, <a class="el" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> quality)</td></tr>
+<tr class="separator:ab7ad030c16f5310b3806ea727df433c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1f9f80fdde968fcb1edd1cebb97faec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8c.html#ab1f9f80fdde968fcb1edd1cebb97faec">set_DHTinfo</a> ()</td></tr>
+<tr class="separator:ab1f9f80fdde968fcb1edd1cebb97faec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ab61b3ba65c0635617e5f225d72f2f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8c.html#a1ab61b3ba65c0635617e5f225d72f2f9">writebits</a> (<a class="el" href="jpeg__enc_8h.html#a139611a53f7e4afc6d7fab4614144686">bitstring</a> bs, <a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *<a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>)</td></tr>
+<tr class="separator:a1ab61b3ba65c0635617e5f225d72f2f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0ad0b017d0f40335a0ca63e2a3cd4b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8c.html#aa0ad0b017d0f40335a0ca63e2a3cd4b1">compute_Huffman_table</a> (<a class="el" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> *nrcodes, <a class="el" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> *std_table, <a class="el" href="jpeg__enc_8h.html#a139611a53f7e4afc6d7fab4614144686">bitstring</a> *HT)</td></tr>
+<tr class="separator:aa0ad0b017d0f40335a0ca63e2a3cd4b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a948f3a01600239069178253e30e382"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8c.html#a0a948f3a01600239069178253e30e382">init_Huffman_tables</a> ()</td></tr>
+<tr class="separator:a0a948f3a01600239069178253e30e382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a189439c7f44c437c657d97ed6194c288"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8c.html#a189439c7f44c437c657d97ed6194c288">exitmessage</a> (<a class="el" href="jsimdcfg_8inc_8h.html#a8b272214e498a4cb09dde135bb4d7d03">char</a> *error_message)</td></tr>
+<tr class="separator:a189439c7f44c437c657d97ed6194c288"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee99c37ec8931c5738a222b301f3755d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8c.html#aee99c37ec8931c5738a222b301f3755d">prepare_quant_tables</a> (<a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *<a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>)</td></tr>
+<tr class="separator:aee99c37ec8931c5738a222b301f3755d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad08dd1d0be0c6f5bb9dee09e0d189650"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8c.html#ad08dd1d0be0c6f5bb9dee09e0d189650">fdct_and_quantization</a> (<a class="el" href="mm__type_8h.html#a30f500129d8c688af07726d5d34ce52d">INT16</a> *divisors, <a class="el" href="mm__type_8h.html#aa2a68256db5a10b7b32434e92d834759">SWORD</a> *outdata)</td></tr>
+<tr class="separator:ad08dd1d0be0c6f5bb9dee09e0d189650"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7717016b07e28d8450192a8dfb3e7bfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8c.html#a7717016b07e28d8450192a8dfb3e7bfb">process_DU</a> (<a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *<a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>, <a class="el" href="mm__type_8h.html#a30f500129d8c688af07726d5d34ce52d">INT16</a> *DU, <a class="el" href="mm__type_8h.html#aa2a68256db5a10b7b32434e92d834759">SWORD</a> *DC, <a class="el" href="structHuffmanTable__t.html">HuffmanTable_t</a> *HT)</td></tr>
+<tr class="separator:a7717016b07e28d8450192a8dfb3e7bfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a477a74841f0b749853ac2531a8987bc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8c.html#a477a74841f0b749853ac2531a8987bc4">load_data_units_from_buffer</a> (<a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *<a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>, <a class="el" href="mm__type_8h.html#a2b0e863dadf920709ec53d9088ee7c91">WORD</a> xpos, <a class="el" href="mm__type_8h.html#a2b0e863dadf920709ec53d9088ee7c91">WORD</a> ypos)</td></tr>
+<tr class="separator:a477a74841f0b749853ac2531a8987bc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a545c0b88a77ab043015179bbcdac84ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8c.html#a545c0b88a77ab043015179bbcdac84ee">main_encoder</a> (<a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *<a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>)</td></tr>
+<tr class="separator:a545c0b88a77ab043015179bbcdac84ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef37c36584c40822dd8ffd51601a17ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8c.html#aef37c36584c40822dd8ffd51601a17ea">Initialize</a> (<a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *<a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>, <a class="el" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> scalefactor)</td></tr>
+<tr class="separator:aef37c36584c40822dd8ffd51601a17ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9a7edb57ac46137f80a60d8f54a3eec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8c.html#ad9a7edb57ac46137f80a60d8f54a3eec">DeInitialize</a> ()</td></tr>
+<tr class="separator:ad9a7edb57ac46137f80a60d8f54a3eec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad044d7626e2e07f7f310ad478181a642"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8c.html#ad044d7626e2e07f7f310ad478181a642">WriteHeader</a> (<a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *<a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>, <a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> width, <a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> height)</td></tr>
+<tr class="separator:ad044d7626e2e07f7f310ad478181a642"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7626c713912d29bc0208bb4d4b387fee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8c.html#a7626c713912d29bc0208bb4d4b387fee">encode</a> (<a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *<a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>)</td></tr>
+<tr class="separator:a7626c713912d29bc0208bb4d4b387fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">函式說明文件</h2>
+<a id="aa0ad0b017d0f40335a0ca63e2a3cd4b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0ad0b017d0f40335a0ca63e2a3cd4b1">&#9670;&nbsp;</a></span>compute_Huffman_table()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void compute_Huffman_table </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> *&#160;</td>
+          <td class="paramname"><em>nrcodes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> *&#160;</td>
+          <td class="paramname"><em>std_table</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="jpeg__enc_8h.html#a139611a53f7e4afc6d7fab4614144686">bitstring</a> *&#160;</td>
+          <td class="paramname"><em>HT</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被參考於 <a class="el" href="jpeg__enc_8c.html#a0a948f3a01600239069178253e30e382">init_Huffman_tables()</a>.</p>
+
+</div>
+</div>
+<a id="ad9a7edb57ac46137f80a60d8f54a3eec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9a7edb57ac46137f80a60d8f54a3eec">&#9670;&nbsp;</a></span>DeInitialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DeInitialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被參考於 <a class="el" href="jpegenc_8c.html#ac0f2228420376f4db7e1274f2b41667c">main()</a>, 及 <a class="el" href="classEncodeUnit.html#aba39f3aeb89ce11afb14a303ca8fdf21">EncodeUnit::~EncodeUnit()</a>.</p>
+
+</div>
+</div>
+<a id="a7626c713912d29bc0208bb4d4b387fee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7626c713912d29bc0208bb4d4b387fee">&#9670;&nbsp;</a></span>encode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> encode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *&#160;</td>
+          <td class="paramname"><em>cinfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>, 及 <a class="el" href="jpeg__enc_8c.html#a545c0b88a77ab043015179bbcdac84ee">main_encoder()</a>.</p>
+
+<p class="reference">被參考於 <a class="el" href="jpegenc_8c.html#ac0f2228420376f4db7e1274f2b41667c">main()</a>.</p>
+
+</div>
+</div>
+<a id="a189439c7f44c437c657d97ed6194c288"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a189439c7f44c437c657d97ed6194c288">&#9670;&nbsp;</a></span>exitmessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void exitmessage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="jsimdcfg_8inc_8h.html#a8b272214e498a4cb09dde135bb4d7d03">char</a> *&#160;</td>
+          <td class="paramname"><em>error_message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad08dd1d0be0c6f5bb9dee09e0d189650"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad08dd1d0be0c6f5bb9dee09e0d189650">&#9670;&nbsp;</a></span>fdct_and_quantization()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fdct_and_quantization </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="mm__type_8h.html#a30f500129d8c688af07726d5d34ce52d">INT16</a> *&#160;</td>
+          <td class="paramname"><em>divisors</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mm__type_8h.html#aa2a68256db5a10b7b32434e92d834759">SWORD</a> *&#160;</td>
+          <td class="paramname"><em>outdata</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="jpeg__enc_8h.html#a3222f8d8641f5433143634e19007b5e3">jsimd_fdct_ifast()</a>, 及 <a class="el" href="jpeg__enc_8h.html#a214d04b827129d8d366c01572cf65ccb">jsimd_quantize()</a>.</p>
+
+<p class="reference">被參考於 <a class="el" href="jpeg__enc_8c.html#a545c0b88a77ab043015179bbcdac84ee">main_encoder()</a>.</p>
+
+</div>
+</div>
+<a id="aed12a3220b4ff438b98346db0d8b2d88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed12a3220b4ff438b98346db0d8b2d88">&#9670;&nbsp;</a></span>GetDQTinfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> GetDQTinfo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *&#160;</td>
+          <td class="paramname"><em>cinfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structjpeg__stream__t.html">jpeg_stream_t</a> *&#160;</td>
+          <td class="paramname"><em>stream</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>, <a class="el" href="structjpeg__stream__t.html#a5c75a0283223e7b5d56ca3990dda6229">jpeg_stream_t::pos</a>, <a class="el" href="jpeg__enc_8h.html#aedefda9acf9192e34dc7ac84bfb52c56">writebyte</a>, 及 <a class="el" href="jpeg__enc_8h.html#ac81b8d5a2f5009badb657f243c21bf83">writeword</a>.</p>
+
+<p class="reference">被參考於 <a class="el" href="classEncodeUnit.html#a3455cd0f9de474448b9cdaafa5807171">EncodeUnit::GetQuantTable()</a>, 及 <a class="el" href="jpegenc_8c.html#ac0f2228420376f4db7e1274f2b41667c">main()</a>.</p>
+
+</div>
+</div>
+<a id="a0a948f3a01600239069178253e30e382"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a948f3a01600239069178253e30e382">&#9670;&nbsp;</a></span>init_Huffman_tables()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init_Huffman_tables </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="jpeg__enc_8c.html#aa0ad0b017d0f40335a0ca63e2a3cd4b1">compute_Huffman_table()</a>.</p>
+
+</div>
+</div>
+<a id="aef37c36584c40822dd8ffd51601a17ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef37c36584c40822dd8ffd51601a17ea">&#9670;&nbsp;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Initialize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *&#160;</td>
+          <td class="paramname"><em>cinfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a>&#160;</td>
+          <td class="paramname"><em>scalefactor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被參考於 <a class="el" href="classEncodeUnit.html#ad331809bf4134db60db7a17a667e95ed">EncodeUnit::EncodeUnit()</a>, <a class="el" href="jpegenc_8c.html#a0f07894b31ba12754aec3f5cfff721fc">getBufFormBmp()</a>, <a class="el" href="jpegenc_8c.html#ac0f2228420376f4db7e1274f2b41667c">main()</a>, 及 <a class="el" href="classEncodeUnit.html#ab3683abdd9c13d9ce927b662578ad024">EncodeUnit::SetEncodeQuality()</a>.</p>
+
+</div>
+</div>
+<a id="a477a74841f0b749853ac2531a8987bc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a477a74841f0b749853ac2531a8987bc4">&#9670;&nbsp;</a></span>load_data_units_from_buffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void load_data_units_from_buffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *&#160;</td>
+          <td class="paramname"><em>cinfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mm__type_8h.html#a2b0e863dadf920709ec53d9088ee7c91">WORD</a>&#160;</td>
+          <td class="paramname"><em>xpos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mm__type_8h.html#a2b0e863dadf920709ec53d9088ee7c91">WORD</a>&#160;</td>
+          <td class="paramname"><em>ypos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>.</p>
+
+<p class="reference">被參考於 <a class="el" href="jpeg__enc_8c.html#a545c0b88a77ab043015179bbcdac84ee">main_encoder()</a>.</p>
+
+</div>
+</div>
+<a id="a545c0b88a77ab043015179bbcdac84ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a545c0b88a77ab043015179bbcdac84ee">&#9670;&nbsp;</a></span>main_encoder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void main_encoder </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *&#160;</td>
+          <td class="paramname"><em>cinfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>, <a class="el" href="jpeg__enc_8c.html#ad08dd1d0be0c6f5bb9dee09e0d189650">fdct_and_quantization()</a>, <a class="el" href="jpeg__enc_8c.html#a477a74841f0b749853ac2531a8987bc4">load_data_units_from_buffer()</a>, 及 <a class="el" href="jpeg__enc_8c.html#a7717016b07e28d8450192a8dfb3e7bfb">process_DU()</a>.</p>
+
+<p class="reference">被參考於 <a class="el" href="jpeg__enc_8c.html#a7626c713912d29bc0208bb4d4b387fee">encode()</a>.</p>
+
+</div>
+</div>
+<a id="aee99c37ec8931c5738a222b301f3755d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee99c37ec8931c5738a222b301f3755d">&#9670;&nbsp;</a></span>prepare_quant_tables()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void prepare_quant_tables </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *&#160;</td>
+          <td class="paramname"><em>cinfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="jsimdcfg_8inc_8h.html#a9bb6b9cf61ef6ec4dcb238b440721a3b">DCTSIZE2</a>.</p>
+
+</div>
+</div>
+<a id="a7717016b07e28d8450192a8dfb3e7bfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7717016b07e28d8450192a8dfb3e7bfb">&#9670;&nbsp;</a></span>process_DU()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void process_DU </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *&#160;</td>
+          <td class="paramname"><em>cinfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mm__type_8h.html#a30f500129d8c688af07726d5d34ce52d">INT16</a> *&#160;</td>
+          <td class="paramname"><em>DU</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mm__type_8h.html#aa2a68256db5a10b7b32434e92d834759">SWORD</a> *&#160;</td>
+          <td class="paramname"><em>DC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structHuffmanTable__t.html">HuffmanTable_t</a> *&#160;</td>
+          <td class="paramname"><em>HT</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="structHuffmanTable__t.html#a68f310c649eb3dd938405dd018cc1023">HuffmanTable_t::DC</a>.</p>
+
+<p class="reference">被參考於 <a class="el" href="jpeg__enc_8c.html#a545c0b88a77ab043015179bbcdac84ee">main_encoder()</a>.</p>
+
+</div>
+</div>
+<a id="ab1f9f80fdde968fcb1edd1cebb97faec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1f9f80fdde968fcb1edd1cebb97faec">&#9670;&nbsp;</a></span>set_DHTinfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_DHTinfo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab7ad030c16f5310b3806ea727df433c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7ad030c16f5310b3806ea727df433c3">&#9670;&nbsp;</a></span>set_DQTinfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_DQTinfo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *&#160;</td>
+          <td class="paramname"><em>cinfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a>&#160;</td>
+          <td class="paramname"><em>quality</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>, 及 <a class="el" href="jpeg__enc_8c.html#a689dd199b140c9518f1df106a52cd6a0">set_quant_table()</a>.</p>
+
+</div>
+</div>
+<a id="a689dd199b140c9518f1df106a52cd6a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a689dd199b140c9518f1df106a52cd6a0">&#9670;&nbsp;</a></span>set_quant_table()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_quant_table </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> *&#160;</td>
+          <td class="paramname"><em>basic_table</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a>&#160;</td>
+          <td class="paramname"><em>scale_factor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> *&#160;</td>
+          <td class="paramname"><em>newtable</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被參考於 <a class="el" href="jpeg__enc_8c.html#ab7ad030c16f5310b3806ea727df433c3">set_DQTinfo()</a>.</p>
+
+</div>
+</div>
+<a id="ad6373d7cd52fd24f48b11b537dd9ef79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6373d7cd52fd24f48b11b537dd9ef79">&#9670;&nbsp;</a></span>write_APP0info()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void write_APP0info </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structjpeg__stream__t.html">jpeg_stream_t</a> *&#160;</td>
+          <td class="paramname"><em>jpeg_stream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="jpeg__enc_8h.html#ac81b8d5a2f5009badb657f243c21bf83">writeword</a>.</p>
+
+</div>
+</div>
+<a id="a2af5ddb4ee88fcd55d2537a7bfda3ed1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2af5ddb4ee88fcd55d2537a7bfda3ed1">&#9670;&nbsp;</a></span>write_comment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void write_comment </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structjpeg__stream__t.html">jpeg_stream_t</a> *&#160;</td>
+          <td class="paramname"><em>jpeg_stream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mm__type_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> *&#160;</td>
+          <td class="paramname"><em>comment</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="structDHTinfotype.html#a5cdd816a2141d31d311140ea1bb39b51">DHTinfotype::length</a>, <a class="el" href="jpeg__enc_8h.html#aedefda9acf9192e34dc7ac84bfb52c56">writebyte</a>, 及 <a class="el" href="jpeg__enc_8h.html#ac81b8d5a2f5009badb657f243c21bf83">writeword</a>.</p>
+
+</div>
+</div>
+<a id="add40a833c42db841bba279c85ff09e80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add40a833c42db841bba279c85ff09e80">&#9670;&nbsp;</a></span>write_DHTinfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> write_DHTinfo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structjpeg__stream__t.html">jpeg_stream_t</a> *&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="structjpeg__stream__t.html#a5c75a0283223e7b5d56ca3990dda6229">jpeg_stream_t::pos</a>, 及 <a class="el" href="jpeg__enc_8h.html#ac81b8d5a2f5009badb657f243c21bf83">writeword</a>.</p>
+
+</div>
+</div>
+<a id="a4830b44852460d287c795c9c7f8415b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4830b44852460d287c795c9c7f8415b4">&#9670;&nbsp;</a></span>write_DQTinfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> write_DQTinfo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *&#160;</td>
+          <td class="paramname"><em>cinfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structjpeg__stream__t.html">jpeg_stream_t</a> *&#160;</td>
+          <td class="paramname"><em>stream</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>, <a class="el" href="structjpeg__stream__t.html#a5c75a0283223e7b5d56ca3990dda6229">jpeg_stream_t::pos</a>, <a class="el" href="jpeg__enc_8h.html#aedefda9acf9192e34dc7ac84bfb52c56">writebyte</a>, 及 <a class="el" href="jpeg__enc_8h.html#ac81b8d5a2f5009badb657f243c21bf83">writeword</a>.</p>
+
+</div>
+</div>
+<a id="a1838db9d77f464725d435000dbb8a73f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1838db9d77f464725d435000dbb8a73f">&#9670;&nbsp;</a></span>write_SOF0info()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void write_SOF0info </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *&#160;</td>
+          <td class="paramname"><em>cinfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>, 及 <a class="el" href="jpeg__enc_8h.html#ac81b8d5a2f5009badb657f243c21bf83">writeword</a>.</p>
+
+</div>
+</div>
+<a id="a20ec8c1d53aa25102380578e8866418b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20ec8c1d53aa25102380578e8866418b">&#9670;&nbsp;</a></span>write_SOSinfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void write_SOSinfo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *&#160;</td>
+          <td class="paramname"><em>cinfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>, 及 <a class="el" href="jpeg__enc_8h.html#ac81b8d5a2f5009badb657f243c21bf83">writeword</a>.</p>
+
+</div>
+</div>
+<a id="a1ab61b3ba65c0635617e5f225d72f2f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ab61b3ba65c0635617e5f225d72f2f9">&#9670;&nbsp;</a></span>writebits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void writebits </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="jpeg__enc_8h.html#a139611a53f7e4afc6d7fab4614144686">bitstring</a>&#160;</td>
+          <td class="paramname"><em>bs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *&#160;</td>
+          <td class="paramname"><em>cinfo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="jpeg__enc_8h.html#ae484cfaf5e4317581424c29803432cb0">BUF_BITS</a>, <a class="el" href="jpeg__enc_8h.html#a096f1748d68946004752232255dd2824">BUF_BYTES</a>, <a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>, 及 <a class="el" href="jpeg__enc_8h.html#aedefda9acf9192e34dc7ac84bfb52c56">writebyte</a>.</p>
+
+</div>
+</div>
+<a id="ad044d7626e2e07f7f310ad478181a642"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad044d7626e2e07f7f310ad478181a642">&#9670;&nbsp;</a></span>WriteHeader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WriteHeader </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *&#160;</td>
+          <td class="paramname"><em>cinfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被參考於 <a class="el" href="jpegenc_8c.html#ac0f2228420376f4db7e1274f2b41667c">main()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4159d2fa8205dd791550e6f261184d1d.html">libusbdisp</a></li><li class="navelem"><a class="el" href="dir_0f32255a43591352b42b74edabbacf7b.html">libenc</a></li><li class="navelem"><a class="el" href="jpeg__enc_8c.html">jpeg_enc.c</a></li>
+    <li class="footer">產生者: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

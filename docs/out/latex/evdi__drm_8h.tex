@@ -1,0 +1,237 @@
+\hypertarget{evdi__drm_8h}{}\doxysection{/home/odin/\+Desktop/program/learn/usbdisp\+\_\+linux/libusbdisp/deb\+\_\+install/com.racertech.\+usbdisp-\/1.0.0/opt/apps/com.racertech.\+usbdisp/files/evdi/module/evdi\+\_\+drm.h 檔案參考文件}
+\label{evdi__drm_8h}\index{/home/odin/Desktop/program/learn/usbdisp\_linux/libusbdisp/deb\_install/com.racertech.usbdisp-\/1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi\_drm.h@{/home/odin/Desktop/program/learn/usbdisp\_linux/libusbdisp/deb\_install/com.racertech.usbdisp-\/1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi\_drm.h}}
+本圖顯示出哪些檔案直接或間接include本檔 \+:
+% FIG 0
+\doxysubsection*{複合項目}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structdrm__evdi__event__update__ready}{drm\+\_\+evdi\+\_\+event\+\_\+update\+\_\+ready}}
+\item 
+struct \mbox{\hyperlink{structdrm__evdi__event__dpms}{drm\+\_\+evdi\+\_\+event\+\_\+dpms}}
+\item 
+struct \mbox{\hyperlink{structdrm__evdi__event__mode__changed}{drm\+\_\+evdi\+\_\+event\+\_\+mode\+\_\+changed}}
+\item 
+struct \mbox{\hyperlink{structdrm__evdi__event__crtc__state}{drm\+\_\+evdi\+\_\+event\+\_\+crtc\+\_\+state}}
+\item 
+struct \mbox{\hyperlink{structdrm__evdi__connect}{drm\+\_\+evdi\+\_\+connect}}
+\item 
+struct \mbox{\hyperlink{structdrm__evdi__request__update}{drm\+\_\+evdi\+\_\+request\+\_\+update}}
+\item 
+struct \mbox{\hyperlink{structdrm__evdi__grabpix}{drm\+\_\+evdi\+\_\+grabpix}}
+\item 
+struct \mbox{\hyperlink{structdrm__evdi__event__cursor__set}{drm\+\_\+evdi\+\_\+event\+\_\+cursor\+\_\+set}}
+\item 
+struct \mbox{\hyperlink{structdrm__evdi__event__cursor__move}{drm\+\_\+evdi\+\_\+event\+\_\+cursor\+\_\+move}}
+\item 
+struct \mbox{\hyperlink{structdrm__evdi__ddcci__response}{drm\+\_\+evdi\+\_\+ddcci\+\_\+response}}
+\item 
+struct \mbox{\hyperlink{structdrm__evdi__enable__cursor__events}{drm\+\_\+evdi\+\_\+enable\+\_\+cursor\+\_\+events}}
+\item 
+struct \mbox{\hyperlink{structdrm__evdi__event__ddcci__data}{drm\+\_\+evdi\+\_\+event\+\_\+ddcci\+\_\+data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{定義}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{evdi__drm_8h_afcf60d020ca9561d9c8ed922d4369ae0}{DRM\+\_\+\+EVDI\+\_\+\+EVENT\+\_\+\+UPDATE\+\_\+\+READY}}~0x80000000
+\item 
+\#define \mbox{\hyperlink{evdi__drm_8h_ab052947e35e4c80c49195d4d364a75b1}{DRM\+\_\+\+EVDI\+\_\+\+EVENT\+\_\+\+DPMS}}~0x80000001
+\item 
+\#define \mbox{\hyperlink{evdi__drm_8h_aa54605a132a579e83e451e249b0d3a0f}{DRM\+\_\+\+EVDI\+\_\+\+EVENT\+\_\+\+MODE\+\_\+\+CHANGED}}~0x80000002
+\item 
+\#define \mbox{\hyperlink{evdi__drm_8h_ab04c9dfdd1deb87ca9270c20b15b126e}{DRM\+\_\+\+EVDI\+\_\+\+EVENT\+\_\+\+CRTC\+\_\+\+STATE}}~0x80000003
+\item 
+\#define \mbox{\hyperlink{evdi__drm_8h_a60d7bbeb58760a4e4bf206684c29e5e5}{DRM\+\_\+\+EVDI\+\_\+\+EVENT\+\_\+\+CURSOR\+\_\+\+SET}}~0x80000004
+\item 
+\#define \mbox{\hyperlink{evdi__drm_8h_a293b4ba96f5fa2aa8cb70efac8f2715f}{DRM\+\_\+\+EVDI\+\_\+\+EVENT\+\_\+\+CURSOR\+\_\+\+MOVE}}~0x80000005
+\item 
+\#define \mbox{\hyperlink{evdi__drm_8h_a898984a3b0ba76f2efff028b24c1048e}{DRM\+\_\+\+EVDI\+\_\+\+EVENT\+\_\+\+DDCCI\+\_\+\+DATA}}~0x80000006
+\item 
+\#define \mbox{\hyperlink{evdi__drm_8h_a4a5b721e577606863b3984f994fc468a}{DDCCI\+\_\+\+BUFFER\+\_\+\+SIZE}}~64
+\item 
+\#define \mbox{\hyperlink{evdi__drm_8h_a0c0b2cda86ffe6debfc720f64ffb5361}{DRM\+\_\+\+EVDI\+\_\+\+CONNECT}}~0x00
+\item 
+\#define \mbox{\hyperlink{evdi__drm_8h_a385aa65daded88d55ee18e200a5dd860}{DRM\+\_\+\+EVDI\+\_\+\+REQUEST\+\_\+\+UPDATE}}~0x01
+\item 
+\#define \mbox{\hyperlink{evdi__drm_8h_a188d3c38a345205a159c712551628055}{DRM\+\_\+\+EVDI\+\_\+\+GRABPIX}}~0x02
+\item 
+\#define \mbox{\hyperlink{evdi__drm_8h_aafb9b35c90a271bde98a65bc861789c1}{DRM\+\_\+\+EVDI\+\_\+\+DDCCI\+\_\+\+RESPONSE}}~0x03
+\item 
+\#define \mbox{\hyperlink{evdi__drm_8h_ab521014b24a1bb1e8ea26bb7f4df9888}{DRM\+\_\+\+EVDI\+\_\+\+ENABLE\+\_\+\+CURSOR\+\_\+\+EVENTS}}~0x04
+\item 
+\#define \mbox{\hyperlink{evdi__drm_8h_a33784772f4a320965e1752aaa1468fa3}{DRM\+\_\+\+IOCTL\+\_\+\+EVDI\+\_\+\+CONNECT}}
+\item 
+\#define \mbox{\hyperlink{evdi__drm_8h_ada2416657d1d84191ebaa02962de8cf1}{DRM\+\_\+\+IOCTL\+\_\+\+EVDI\+\_\+\+REQUEST\+\_\+\+UPDATE}}
+\item 
+\#define \mbox{\hyperlink{evdi__drm_8h_ab67777b734fb80f71e156b99ff22c832}{DRM\+\_\+\+IOCTL\+\_\+\+EVDI\+\_\+\+GRABPIX}}
+\item 
+\#define \mbox{\hyperlink{evdi__drm_8h_af48ef141bf0e0100c34366ea34e52cc5}{DRM\+\_\+\+IOCTL\+\_\+\+EVDI\+\_\+\+DDCCI\+\_\+\+RESPONSE}}
+\item 
+\#define \mbox{\hyperlink{evdi__drm_8h_a112f6d13cb63fb22400a1a80fd66cee4}{DRM\+\_\+\+IOCTL\+\_\+\+EVDI\+\_\+\+ENABLE\+\_\+\+CURSOR\+\_\+\+EVENTS}}
+\end{DoxyCompactItemize}
+\doxysubsection*{列舉型態}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{evdi__drm_8h_a5e6f509c031370d431b8b66db4ab8f90}{drm\+\_\+evdi\+\_\+grabpix\+\_\+mode}} \{ \mbox{\hyperlink{evdi__drm_8h_a5e6f509c031370d431b8b66db4ab8f90ab0ec4d6c18980e12fafac4e02ec1f5ef}{EVDI\+\_\+\+GRABPIX\+\_\+\+MODE\+\_\+\+RECTS}} = 0
+, \mbox{\hyperlink{evdi__drm_8h_a5e6f509c031370d431b8b66db4ab8f90a0208a4b2f23b9053931aac7c7f6aaa7e}{EVDI\+\_\+\+GRABPIX\+\_\+\+MODE\+\_\+\+DIRTY}} = 1
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{定義巨集說明文件}
+\mbox{\Hypertarget{evdi__drm_8h_a4a5b721e577606863b3984f994fc468a}\label{evdi__drm_8h_a4a5b721e577606863b3984f994fc468a}} 
+\index{evdi\_drm.h@{evdi\_drm.h}!DDCCI\_BUFFER\_SIZE@{DDCCI\_BUFFER\_SIZE}}
+\index{DDCCI\_BUFFER\_SIZE@{DDCCI\_BUFFER\_SIZE}!evdi\_drm.h@{evdi\_drm.h}}
+\doxysubsubsection{\texorpdfstring{DDCCI\_BUFFER\_SIZE}{DDCCI\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define DDCCI\+\_\+\+BUFFER\+\_\+\+SIZE~64}
+
+\mbox{\Hypertarget{evdi__drm_8h_a0c0b2cda86ffe6debfc720f64ffb5361}\label{evdi__drm_8h_a0c0b2cda86ffe6debfc720f64ffb5361}} 
+\index{evdi\_drm.h@{evdi\_drm.h}!DRM\_EVDI\_CONNECT@{DRM\_EVDI\_CONNECT}}
+\index{DRM\_EVDI\_CONNECT@{DRM\_EVDI\_CONNECT}!evdi\_drm.h@{evdi\_drm.h}}
+\doxysubsubsection{\texorpdfstring{DRM\_EVDI\_CONNECT}{DRM\_EVDI\_CONNECT}}
+{\footnotesize\ttfamily \#define DRM\+\_\+\+EVDI\+\_\+\+CONNECT~0x00}
+
+\mbox{\Hypertarget{evdi__drm_8h_aafb9b35c90a271bde98a65bc861789c1}\label{evdi__drm_8h_aafb9b35c90a271bde98a65bc861789c1}} 
+\index{evdi\_drm.h@{evdi\_drm.h}!DRM\_EVDI\_DDCCI\_RESPONSE@{DRM\_EVDI\_DDCCI\_RESPONSE}}
+\index{DRM\_EVDI\_DDCCI\_RESPONSE@{DRM\_EVDI\_DDCCI\_RESPONSE}!evdi\_drm.h@{evdi\_drm.h}}
+\doxysubsubsection{\texorpdfstring{DRM\_EVDI\_DDCCI\_RESPONSE}{DRM\_EVDI\_DDCCI\_RESPONSE}}
+{\footnotesize\ttfamily \#define DRM\+\_\+\+EVDI\+\_\+\+DDCCI\+\_\+\+RESPONSE~0x03}
+
+\mbox{\Hypertarget{evdi__drm_8h_ab521014b24a1bb1e8ea26bb7f4df9888}\label{evdi__drm_8h_ab521014b24a1bb1e8ea26bb7f4df9888}} 
+\index{evdi\_drm.h@{evdi\_drm.h}!DRM\_EVDI\_ENABLE\_CURSOR\_EVENTS@{DRM\_EVDI\_ENABLE\_CURSOR\_EVENTS}}
+\index{DRM\_EVDI\_ENABLE\_CURSOR\_EVENTS@{DRM\_EVDI\_ENABLE\_CURSOR\_EVENTS}!evdi\_drm.h@{evdi\_drm.h}}
+\doxysubsubsection{\texorpdfstring{DRM\_EVDI\_ENABLE\_CURSOR\_EVENTS}{DRM\_EVDI\_ENABLE\_CURSOR\_EVENTS}}
+{\footnotesize\ttfamily \#define DRM\+\_\+\+EVDI\+\_\+\+ENABLE\+\_\+\+CURSOR\+\_\+\+EVENTS~0x04}
+
+\mbox{\Hypertarget{evdi__drm_8h_ab04c9dfdd1deb87ca9270c20b15b126e}\label{evdi__drm_8h_ab04c9dfdd1deb87ca9270c20b15b126e}} 
+\index{evdi\_drm.h@{evdi\_drm.h}!DRM\_EVDI\_EVENT\_CRTC\_STATE@{DRM\_EVDI\_EVENT\_CRTC\_STATE}}
+\index{DRM\_EVDI\_EVENT\_CRTC\_STATE@{DRM\_EVDI\_EVENT\_CRTC\_STATE}!evdi\_drm.h@{evdi\_drm.h}}
+\doxysubsubsection{\texorpdfstring{DRM\_EVDI\_EVENT\_CRTC\_STATE}{DRM\_EVDI\_EVENT\_CRTC\_STATE}}
+{\footnotesize\ttfamily \#define DRM\+\_\+\+EVDI\+\_\+\+EVENT\+\_\+\+CRTC\+\_\+\+STATE~0x80000003}
+
+\mbox{\Hypertarget{evdi__drm_8h_a293b4ba96f5fa2aa8cb70efac8f2715f}\label{evdi__drm_8h_a293b4ba96f5fa2aa8cb70efac8f2715f}} 
+\index{evdi\_drm.h@{evdi\_drm.h}!DRM\_EVDI\_EVENT\_CURSOR\_MOVE@{DRM\_EVDI\_EVENT\_CURSOR\_MOVE}}
+\index{DRM\_EVDI\_EVENT\_CURSOR\_MOVE@{DRM\_EVDI\_EVENT\_CURSOR\_MOVE}!evdi\_drm.h@{evdi\_drm.h}}
+\doxysubsubsection{\texorpdfstring{DRM\_EVDI\_EVENT\_CURSOR\_MOVE}{DRM\_EVDI\_EVENT\_CURSOR\_MOVE}}
+{\footnotesize\ttfamily \#define DRM\+\_\+\+EVDI\+\_\+\+EVENT\+\_\+\+CURSOR\+\_\+\+MOVE~0x80000005}
+
+\mbox{\Hypertarget{evdi__drm_8h_a60d7bbeb58760a4e4bf206684c29e5e5}\label{evdi__drm_8h_a60d7bbeb58760a4e4bf206684c29e5e5}} 
+\index{evdi\_drm.h@{evdi\_drm.h}!DRM\_EVDI\_EVENT\_CURSOR\_SET@{DRM\_EVDI\_EVENT\_CURSOR\_SET}}
+\index{DRM\_EVDI\_EVENT\_CURSOR\_SET@{DRM\_EVDI\_EVENT\_CURSOR\_SET}!evdi\_drm.h@{evdi\_drm.h}}
+\doxysubsubsection{\texorpdfstring{DRM\_EVDI\_EVENT\_CURSOR\_SET}{DRM\_EVDI\_EVENT\_CURSOR\_SET}}
+{\footnotesize\ttfamily \#define DRM\+\_\+\+EVDI\+\_\+\+EVENT\+\_\+\+CURSOR\+\_\+\+SET~0x80000004}
+
+\mbox{\Hypertarget{evdi__drm_8h_a898984a3b0ba76f2efff028b24c1048e}\label{evdi__drm_8h_a898984a3b0ba76f2efff028b24c1048e}} 
+\index{evdi\_drm.h@{evdi\_drm.h}!DRM\_EVDI\_EVENT\_DDCCI\_DATA@{DRM\_EVDI\_EVENT\_DDCCI\_DATA}}
+\index{DRM\_EVDI\_EVENT\_DDCCI\_DATA@{DRM\_EVDI\_EVENT\_DDCCI\_DATA}!evdi\_drm.h@{evdi\_drm.h}}
+\doxysubsubsection{\texorpdfstring{DRM\_EVDI\_EVENT\_DDCCI\_DATA}{DRM\_EVDI\_EVENT\_DDCCI\_DATA}}
+{\footnotesize\ttfamily \#define DRM\+\_\+\+EVDI\+\_\+\+EVENT\+\_\+\+DDCCI\+\_\+\+DATA~0x80000006}
+
+\mbox{\Hypertarget{evdi__drm_8h_ab052947e35e4c80c49195d4d364a75b1}\label{evdi__drm_8h_ab052947e35e4c80c49195d4d364a75b1}} 
+\index{evdi\_drm.h@{evdi\_drm.h}!DRM\_EVDI\_EVENT\_DPMS@{DRM\_EVDI\_EVENT\_DPMS}}
+\index{DRM\_EVDI\_EVENT\_DPMS@{DRM\_EVDI\_EVENT\_DPMS}!evdi\_drm.h@{evdi\_drm.h}}
+\doxysubsubsection{\texorpdfstring{DRM\_EVDI\_EVENT\_DPMS}{DRM\_EVDI\_EVENT\_DPMS}}
+{\footnotesize\ttfamily \#define DRM\+\_\+\+EVDI\+\_\+\+EVENT\+\_\+\+DPMS~0x80000001}
+
+\mbox{\Hypertarget{evdi__drm_8h_aa54605a132a579e83e451e249b0d3a0f}\label{evdi__drm_8h_aa54605a132a579e83e451e249b0d3a0f}} 
+\index{evdi\_drm.h@{evdi\_drm.h}!DRM\_EVDI\_EVENT\_MODE\_CHANGED@{DRM\_EVDI\_EVENT\_MODE\_CHANGED}}
+\index{DRM\_EVDI\_EVENT\_MODE\_CHANGED@{DRM\_EVDI\_EVENT\_MODE\_CHANGED}!evdi\_drm.h@{evdi\_drm.h}}
+\doxysubsubsection{\texorpdfstring{DRM\_EVDI\_EVENT\_MODE\_CHANGED}{DRM\_EVDI\_EVENT\_MODE\_CHANGED}}
+{\footnotesize\ttfamily \#define DRM\+\_\+\+EVDI\+\_\+\+EVENT\+\_\+\+MODE\+\_\+\+CHANGED~0x80000002}
+
+\mbox{\Hypertarget{evdi__drm_8h_afcf60d020ca9561d9c8ed922d4369ae0}\label{evdi__drm_8h_afcf60d020ca9561d9c8ed922d4369ae0}} 
+\index{evdi\_drm.h@{evdi\_drm.h}!DRM\_EVDI\_EVENT\_UPDATE\_READY@{DRM\_EVDI\_EVENT\_UPDATE\_READY}}
+\index{DRM\_EVDI\_EVENT\_UPDATE\_READY@{DRM\_EVDI\_EVENT\_UPDATE\_READY}!evdi\_drm.h@{evdi\_drm.h}}
+\doxysubsubsection{\texorpdfstring{DRM\_EVDI\_EVENT\_UPDATE\_READY}{DRM\_EVDI\_EVENT\_UPDATE\_READY}}
+{\footnotesize\ttfamily \#define DRM\+\_\+\+EVDI\+\_\+\+EVENT\+\_\+\+UPDATE\+\_\+\+READY~0x80000000}
+
+\mbox{\Hypertarget{evdi__drm_8h_a188d3c38a345205a159c712551628055}\label{evdi__drm_8h_a188d3c38a345205a159c712551628055}} 
+\index{evdi\_drm.h@{evdi\_drm.h}!DRM\_EVDI\_GRABPIX@{DRM\_EVDI\_GRABPIX}}
+\index{DRM\_EVDI\_GRABPIX@{DRM\_EVDI\_GRABPIX}!evdi\_drm.h@{evdi\_drm.h}}
+\doxysubsubsection{\texorpdfstring{DRM\_EVDI\_GRABPIX}{DRM\_EVDI\_GRABPIX}}
+{\footnotesize\ttfamily \#define DRM\+\_\+\+EVDI\+\_\+\+GRABPIX~0x02}
+
+\mbox{\Hypertarget{evdi__drm_8h_a385aa65daded88d55ee18e200a5dd860}\label{evdi__drm_8h_a385aa65daded88d55ee18e200a5dd860}} 
+\index{evdi\_drm.h@{evdi\_drm.h}!DRM\_EVDI\_REQUEST\_UPDATE@{DRM\_EVDI\_REQUEST\_UPDATE}}
+\index{DRM\_EVDI\_REQUEST\_UPDATE@{DRM\_EVDI\_REQUEST\_UPDATE}!evdi\_drm.h@{evdi\_drm.h}}
+\doxysubsubsection{\texorpdfstring{DRM\_EVDI\_REQUEST\_UPDATE}{DRM\_EVDI\_REQUEST\_UPDATE}}
+{\footnotesize\ttfamily \#define DRM\+\_\+\+EVDI\+\_\+\+REQUEST\+\_\+\+UPDATE~0x01}
+
+\mbox{\Hypertarget{evdi__drm_8h_a33784772f4a320965e1752aaa1468fa3}\label{evdi__drm_8h_a33784772f4a320965e1752aaa1468fa3}} 
+\index{evdi\_drm.h@{evdi\_drm.h}!DRM\_IOCTL\_EVDI\_CONNECT@{DRM\_IOCTL\_EVDI\_CONNECT}}
+\index{DRM\_IOCTL\_EVDI\_CONNECT@{DRM\_IOCTL\_EVDI\_CONNECT}!evdi\_drm.h@{evdi\_drm.h}}
+\doxysubsubsection{\texorpdfstring{DRM\_IOCTL\_EVDI\_CONNECT}{DRM\_IOCTL\_EVDI\_CONNECT}}
+{\footnotesize\ttfamily \#define DRM\+\_\+\+IOCTL\+\_\+\+EVDI\+\_\+\+CONNECT}
+
+{\bfseries 巨集內容\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    DRM\_IOWR(DRM\_COMMAND\_BASE +  \(\backslash\)}
+\DoxyCodeLine{    \mbox{\hyperlink{evdi__drm_8h_a0c0b2cda86ffe6debfc720f64ffb5361}{DRM\_EVDI\_CONNECT}}, \textcolor{keyword}{struct} \mbox{\hyperlink{structdrm__evdi__connect}{drm\_evdi\_connect}})}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{evdi__drm_8h_af48ef141bf0e0100c34366ea34e52cc5}\label{evdi__drm_8h_af48ef141bf0e0100c34366ea34e52cc5}} 
+\index{evdi\_drm.h@{evdi\_drm.h}!DRM\_IOCTL\_EVDI\_DDCCI\_RESPONSE@{DRM\_IOCTL\_EVDI\_DDCCI\_RESPONSE}}
+\index{DRM\_IOCTL\_EVDI\_DDCCI\_RESPONSE@{DRM\_IOCTL\_EVDI\_DDCCI\_RESPONSE}!evdi\_drm.h@{evdi\_drm.h}}
+\doxysubsubsection{\texorpdfstring{DRM\_IOCTL\_EVDI\_DDCCI\_RESPONSE}{DRM\_IOCTL\_EVDI\_DDCCI\_RESPONSE}}
+{\footnotesize\ttfamily \#define DRM\+\_\+\+IOCTL\+\_\+\+EVDI\+\_\+\+DDCCI\+\_\+\+RESPONSE}
+
+{\bfseries 巨集內容\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    DRM\_IOWR(DRM\_COMMAND\_BASE +  \(\backslash\)}
+\DoxyCodeLine{    \mbox{\hyperlink{evdi__drm_8h_aafb9b35c90a271bde98a65bc861789c1}{DRM\_EVDI\_DDCCI\_RESPONSE}}, \textcolor{keyword}{struct} \mbox{\hyperlink{structdrm__evdi__ddcci__response}{drm\_evdi\_ddcci\_response}})}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{evdi__drm_8h_a112f6d13cb63fb22400a1a80fd66cee4}\label{evdi__drm_8h_a112f6d13cb63fb22400a1a80fd66cee4}} 
+\index{evdi\_drm.h@{evdi\_drm.h}!DRM\_IOCTL\_EVDI\_ENABLE\_CURSOR\_EVENTS@{DRM\_IOCTL\_EVDI\_ENABLE\_CURSOR\_EVENTS}}
+\index{DRM\_IOCTL\_EVDI\_ENABLE\_CURSOR\_EVENTS@{DRM\_IOCTL\_EVDI\_ENABLE\_CURSOR\_EVENTS}!evdi\_drm.h@{evdi\_drm.h}}
+\doxysubsubsection{\texorpdfstring{DRM\_IOCTL\_EVDI\_ENABLE\_CURSOR\_EVENTS}{DRM\_IOCTL\_EVDI\_ENABLE\_CURSOR\_EVENTS}}
+{\footnotesize\ttfamily \#define DRM\+\_\+\+IOCTL\+\_\+\+EVDI\+\_\+\+ENABLE\+\_\+\+CURSOR\+\_\+\+EVENTS}
+
+{\bfseries 巨集內容\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    DRM\_IOWR(DRM\_COMMAND\_BASE +  \(\backslash\)}
+\DoxyCodeLine{    \mbox{\hyperlink{evdi__drm_8h_ab521014b24a1bb1e8ea26bb7f4df9888}{DRM\_EVDI\_ENABLE\_CURSOR\_EVENTS}}, \textcolor{keyword}{struct} \mbox{\hyperlink{structdrm__evdi__enable__cursor__events}{drm\_evdi\_enable\_cursor\_events}})}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{evdi__drm_8h_ab67777b734fb80f71e156b99ff22c832}\label{evdi__drm_8h_ab67777b734fb80f71e156b99ff22c832}} 
+\index{evdi\_drm.h@{evdi\_drm.h}!DRM\_IOCTL\_EVDI\_GRABPIX@{DRM\_IOCTL\_EVDI\_GRABPIX}}
+\index{DRM\_IOCTL\_EVDI\_GRABPIX@{DRM\_IOCTL\_EVDI\_GRABPIX}!evdi\_drm.h@{evdi\_drm.h}}
+\doxysubsubsection{\texorpdfstring{DRM\_IOCTL\_EVDI\_GRABPIX}{DRM\_IOCTL\_EVDI\_GRABPIX}}
+{\footnotesize\ttfamily \#define DRM\+\_\+\+IOCTL\+\_\+\+EVDI\+\_\+\+GRABPIX}
+
+{\bfseries 巨集內容\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    DRM\_IOWR(DRM\_COMMAND\_BASE +  \(\backslash\)}
+\DoxyCodeLine{    \mbox{\hyperlink{evdi__drm_8h_a188d3c38a345205a159c712551628055}{DRM\_EVDI\_GRABPIX}}, \textcolor{keyword}{struct} \mbox{\hyperlink{structdrm__evdi__grabpix}{drm\_evdi\_grabpix}})}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{evdi__drm_8h_ada2416657d1d84191ebaa02962de8cf1}\label{evdi__drm_8h_ada2416657d1d84191ebaa02962de8cf1}} 
+\index{evdi\_drm.h@{evdi\_drm.h}!DRM\_IOCTL\_EVDI\_REQUEST\_UPDATE@{DRM\_IOCTL\_EVDI\_REQUEST\_UPDATE}}
+\index{DRM\_IOCTL\_EVDI\_REQUEST\_UPDATE@{DRM\_IOCTL\_EVDI\_REQUEST\_UPDATE}!evdi\_drm.h@{evdi\_drm.h}}
+\doxysubsubsection{\texorpdfstring{DRM\_IOCTL\_EVDI\_REQUEST\_UPDATE}{DRM\_IOCTL\_EVDI\_REQUEST\_UPDATE}}
+{\footnotesize\ttfamily \#define DRM\+\_\+\+IOCTL\+\_\+\+EVDI\+\_\+\+REQUEST\+\_\+\+UPDATE}
+
+{\bfseries 巨集內容\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    DRM\_IOWR(DRM\_COMMAND\_BASE +  \(\backslash\)}
+\DoxyCodeLine{    \mbox{\hyperlink{evdi__drm_8h_a385aa65daded88d55ee18e200a5dd860}{DRM\_EVDI\_REQUEST\_UPDATE}}, \textcolor{keyword}{struct} \mbox{\hyperlink{structdrm__evdi__request__update}{drm\_evdi\_request\_update}})}
+
+\end{DoxyCode}
+
+
+\doxysubsection{列舉型態說明文件}
+\mbox{\Hypertarget{evdi__drm_8h_a5e6f509c031370d431b8b66db4ab8f90}\label{evdi__drm_8h_a5e6f509c031370d431b8b66db4ab8f90}} 
+\index{evdi\_drm.h@{evdi\_drm.h}!drm\_evdi\_grabpix\_mode@{drm\_evdi\_grabpix\_mode}}
+\index{drm\_evdi\_grabpix\_mode@{drm\_evdi\_grabpix\_mode}!evdi\_drm.h@{evdi\_drm.h}}
+\doxysubsubsection{\texorpdfstring{drm\_evdi\_grabpix\_mode}{drm\_evdi\_grabpix\_mode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{evdi__drm_8h_a5e6f509c031370d431b8b66db4ab8f90}{drm\+\_\+evdi\+\_\+grabpix\+\_\+mode}}}
+
+\begin{DoxyEnumFields}{列舉值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EVDI\_GRABPIX\_MODE\_RECTS@{EVDI\_GRABPIX\_MODE\_RECTS}!evdi\_drm.h@{evdi\_drm.h}}\index{evdi\_drm.h@{evdi\_drm.h}!EVDI\_GRABPIX\_MODE\_RECTS@{EVDI\_GRABPIX\_MODE\_RECTS}}}\mbox{\Hypertarget{evdi__drm_8h_a5e6f509c031370d431b8b66db4ab8f90ab0ec4d6c18980e12fafac4e02ec1f5ef}\label{evdi__drm_8h_a5e6f509c031370d431b8b66db4ab8f90ab0ec4d6c18980e12fafac4e02ec1f5ef}} 
+EVDI\+\_\+\+GRABPIX\+\_\+\+MODE\+\_\+\+RECTS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EVDI\_GRABPIX\_MODE\_DIRTY@{EVDI\_GRABPIX\_MODE\_DIRTY}!evdi\_drm.h@{evdi\_drm.h}}\index{evdi\_drm.h@{evdi\_drm.h}!EVDI\_GRABPIX\_MODE\_DIRTY@{EVDI\_GRABPIX\_MODE\_DIRTY}}}\mbox{\Hypertarget{evdi__drm_8h_a5e6f509c031370d431b8b66db4ab8f90a0208a4b2f23b9053931aac7c7f6aaa7e}\label{evdi__drm_8h_a5e6f509c031370d431b8b66db4ab8f90a0208a4b2f23b9053931aac7c7f6aaa7e}} 
+EVDI\+\_\+\+GRABPIX\+\_\+\+MODE\+\_\+\+DIRTY&\\
+\hline
+
+\end{DoxyEnumFields}

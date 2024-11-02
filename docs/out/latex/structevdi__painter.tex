@@ -1,0 +1,229 @@
+\hypertarget{structevdi__painter}{}\doxysection{evdi\+\_\+painter 結構 參考文件}
+\label{structevdi__painter}\index{evdi\_painter@{evdi\_painter}}
+
+
+evdi\+\_\+painter的合作圖\+:
+% FIG 0
+\doxysubsection*{公開屬性}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structevdi__painter_a1c0be33f1df1896c8c5782ad4498c208}{is\+\_\+connected}}
+\item 
+struct edid $\ast$ \mbox{\hyperlink{structevdi__painter_a20b84e31ca898adef2757924765c4f65}{edid}}
+\item 
+unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{structevdi__painter_a34c4713a8c0c7f27d1c86069e2864076}{edid\+\_\+length}}
+\item 
+struct mutex \mbox{\hyperlink{structevdi__painter_a1fd434c3d622d05f36e1ede243a4ace5}{lock}}
+\item 
+struct drm\+\_\+clip\+\_\+rect \mbox{\hyperlink{structevdi__painter_ada66d97117230fd9d947ecdc6c1e0a68}{dirty\+\_\+rects}} \mbox{[}\mbox{\hyperlink{evdi__painter_8c_af955a6c65439ab0dfa068038b145a020}{MAX\+\_\+\+DIRTS}}\mbox{]}
+\item 
+\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{structevdi__painter_a73ac58c64435d5f870225c7fbe41e7d2}{num\+\_\+dirts}}
+\item 
+struct \mbox{\hyperlink{structevdi__framebuffer}{evdi\+\_\+framebuffer}} $\ast$ \mbox{\hyperlink{structevdi__painter_aafeb6f95f351b3af3de4fe26d8e81515}{scanout\+\_\+fb}}
+\item 
+struct drm\+\_\+file $\ast$ \mbox{\hyperlink{structevdi__painter_adf58eb285b6ca9d124a178a150d7a2b1}{drm\+\_\+filp}}
+\item 
+struct drm\+\_\+device $\ast$ \mbox{\hyperlink{structevdi__painter_a0a6523e150347ebb9e20c92b5f6115f7}{drm\+\_\+device}}
+\item 
+bool \mbox{\hyperlink{structevdi__painter_a1192790b8801ff2c9567b94d9697c386}{was\+\_\+update\+\_\+requested}}
+\item 
+bool \mbox{\hyperlink{structevdi__painter_a8825206065b70e2a1997bec26cbd476f}{needs\+\_\+full\+\_\+modeset}}
+\item 
+struct drm\+\_\+crtc $\ast$ \mbox{\hyperlink{structevdi__painter_a9b1f8589dba5470eafae91184ba7fac4}{crtc}}
+\item 
+struct drm\+\_\+pending\+\_\+vblank\+\_\+event $\ast$ \mbox{\hyperlink{structevdi__painter_a6d96aad214631110a93c24e96208f9d8}{vblank}}
+\item 
+struct list\+\_\+head \mbox{\hyperlink{structevdi__painter_a185ffb9e49e6261902aacc1e1a19c4a4}{pending\+\_\+events}}
+\item 
+struct delayed\+\_\+work \mbox{\hyperlink{structevdi__painter_a87943007a9783fdac36fa527f89c9ea3}{send\+\_\+events\+\_\+work}}
+\item 
+struct completion \mbox{\hyperlink{structevdi__painter_a5aedf2ed4e5a5e11bc3db18e2fbcefa8}{ddcci\+\_\+response\+\_\+received}}
+\item 
+\mbox{\hyperlink{jsimdcfg_8inc_8h_a8b272214e498a4cb09dde135bb4d7d03}{char}} $\ast$ \mbox{\hyperlink{structevdi__painter_a72e38af6f647ff655467f513733bfab0}{ddcci\+\_\+buffer}}
+\item 
+unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{structevdi__painter_a222b2bfcf8845f855da86de398616f5d}{ddcci\+\_\+buffer\+\_\+length}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{資料成員說明文件}
+\mbox{\Hypertarget{structevdi__painter_a9b1f8589dba5470eafae91184ba7fac4}\label{structevdi__painter_a9b1f8589dba5470eafae91184ba7fac4}} 
+\index{evdi\_painter@{evdi\_painter}!crtc@{crtc}}
+\index{crtc@{crtc}!evdi\_painter@{evdi\_painter}}
+\doxysubsubsection{\texorpdfstring{crtc}{crtc}}
+{\footnotesize\ttfamily struct drm\+\_\+crtc$\ast$ evdi\+\_\+painter\+::crtc}
+
+
+
+被參考於 evdi\+\_\+painter\+\_\+init().
+
+\mbox{\Hypertarget{structevdi__painter_a72e38af6f647ff655467f513733bfab0}\label{structevdi__painter_a72e38af6f647ff655467f513733bfab0}} 
+\index{evdi\_painter@{evdi\_painter}!ddcci\_buffer@{ddcci\_buffer}}
+\index{ddcci\_buffer@{ddcci\_buffer}!evdi\_painter@{evdi\_painter}}
+\doxysubsubsection{\texorpdfstring{ddcci\_buffer}{ddcci\_buffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jsimdcfg_8inc_8h_a8b272214e498a4cb09dde135bb4d7d03}{char}}$\ast$ evdi\+\_\+painter\+::ddcci\+\_\+buffer}
+
+
+
+被參考於 evdi\+\_\+painter\+\_\+ddcci\+\_\+response\+\_\+ioctl().
+
+\mbox{\Hypertarget{structevdi__painter_a222b2bfcf8845f855da86de398616f5d}\label{structevdi__painter_a222b2bfcf8845f855da86de398616f5d}} 
+\index{evdi\_painter@{evdi\_painter}!ddcci\_buffer\_length@{ddcci\_buffer\_length}}
+\index{ddcci\_buffer\_length@{ddcci\_buffer\_length}!evdi\_painter@{evdi\_painter}}
+\doxysubsubsection{\texorpdfstring{ddcci\_buffer\_length}{ddcci\_buffer\_length}}
+{\footnotesize\ttfamily unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} evdi\+\_\+painter\+::ddcci\+\_\+buffer\+\_\+length}
+
+
+
+被參考於 evdi\+\_\+painter\+\_\+ddcci\+\_\+response\+\_\+ioctl().
+
+\mbox{\Hypertarget{structevdi__painter_a5aedf2ed4e5a5e11bc3db18e2fbcefa8}\label{structevdi__painter_a5aedf2ed4e5a5e11bc3db18e2fbcefa8}} 
+\index{evdi\_painter@{evdi\_painter}!ddcci\_response\_received@{ddcci\_response\_received}}
+\index{ddcci\_response\_received@{ddcci\_response\_received}!evdi\_painter@{evdi\_painter}}
+\doxysubsubsection{\texorpdfstring{ddcci\_response\_received}{ddcci\_response\_received}}
+{\footnotesize\ttfamily struct completion evdi\+\_\+painter\+::ddcci\+\_\+response\+\_\+received}
+
+
+
+被參考於 evdi\+\_\+painter\+\_\+ddcci\+\_\+response\+\_\+ioctl().
+
+\mbox{\Hypertarget{structevdi__painter_ada66d97117230fd9d947ecdc6c1e0a68}\label{structevdi__painter_ada66d97117230fd9d947ecdc6c1e0a68}} 
+\index{evdi\_painter@{evdi\_painter}!dirty\_rects@{dirty\_rects}}
+\index{dirty\_rects@{dirty\_rects}!evdi\_painter@{evdi\_painter}}
+\doxysubsubsection{\texorpdfstring{dirty\_rects}{dirty\_rects}}
+{\footnotesize\ttfamily struct drm\+\_\+clip\+\_\+rect evdi\+\_\+painter\+::dirty\+\_\+rects\mbox{[}\mbox{\hyperlink{evdi__painter_8c_af955a6c65439ab0dfa068038b145a020}{MAX\+\_\+\+DIRTS}}\mbox{]}}
+
+\mbox{\Hypertarget{structevdi__painter_a0a6523e150347ebb9e20c92b5f6115f7}\label{structevdi__painter_a0a6523e150347ebb9e20c92b5f6115f7}} 
+\index{evdi\_painter@{evdi\_painter}!drm\_device@{drm\_device}}
+\index{drm\_device@{drm\_device}!evdi\_painter@{evdi\_painter}}
+\doxysubsubsection{\texorpdfstring{drm\_device}{drm\_device}}
+{\footnotesize\ttfamily struct drm\+\_\+device$\ast$ evdi\+\_\+painter\+::drm\+\_\+device}
+
+
+
+被參考於 evdi\+\_\+painter\+\_\+init().
+
+\mbox{\Hypertarget{structevdi__painter_adf58eb285b6ca9d124a178a150d7a2b1}\label{structevdi__painter_adf58eb285b6ca9d124a178a150d7a2b1}} 
+\index{evdi\_painter@{evdi\_painter}!drm\_filp@{drm\_filp}}
+\index{drm\_filp@{drm\_filp}!evdi\_painter@{evdi\_painter}}
+\doxysubsubsection{\texorpdfstring{drm\_filp}{drm\_filp}}
+{\footnotesize\ttfamily struct drm\+\_\+file$\ast$ evdi\+\_\+painter\+::drm\+\_\+filp}
+
+
+
+被參考於 evdi\+\_\+painter\+\_\+close().
+
+\mbox{\Hypertarget{structevdi__painter_a20b84e31ca898adef2757924765c4f65}\label{structevdi__painter_a20b84e31ca898adef2757924765c4f65}} 
+\index{evdi\_painter@{evdi\_painter}!edid@{edid}}
+\index{edid@{edid}!evdi\_painter@{evdi\_painter}}
+\doxysubsubsection{\texorpdfstring{edid}{edid}}
+{\footnotesize\ttfamily struct edid$\ast$ evdi\+\_\+painter\+::edid}
+
+
+
+被參考於 evdi\+\_\+painter\+\_\+cleanup(), evdi\+\_\+painter\+\_\+get\+\_\+edid\+\_\+copy(), 及 evdi\+\_\+painter\+\_\+init().
+
+\mbox{\Hypertarget{structevdi__painter_a34c4713a8c0c7f27d1c86069e2864076}\label{structevdi__painter_a34c4713a8c0c7f27d1c86069e2864076}} 
+\index{evdi\_painter@{evdi\_painter}!edid\_length@{edid\_length}}
+\index{edid\_length@{edid\_length}!evdi\_painter@{evdi\_painter}}
+\doxysubsubsection{\texorpdfstring{edid\_length}{edid\_length}}
+{\footnotesize\ttfamily unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} evdi\+\_\+painter\+::edid\+\_\+length}
+
+
+
+被參考於 evdi\+\_\+painter\+\_\+cleanup(), evdi\+\_\+painter\+\_\+get\+\_\+edid\+\_\+copy(), 及 evdi\+\_\+painter\+\_\+init().
+
+\mbox{\Hypertarget{structevdi__painter_a1c0be33f1df1896c8c5782ad4498c208}\label{structevdi__painter_a1c0be33f1df1896c8c5782ad4498c208}} 
+\index{evdi\_painter@{evdi\_painter}!is\_connected@{is\_connected}}
+\index{is\_connected@{is\_connected}!evdi\_painter@{evdi\_painter}}
+\doxysubsubsection{\texorpdfstring{is\_connected}{is\_connected}}
+{\footnotesize\ttfamily bool evdi\+\_\+painter\+::is\+\_\+connected}
+
+
+
+被參考於 evdi\+\_\+painter\+\_\+dpms\+\_\+notify(), evdi\+\_\+painter\+\_\+is\+\_\+connected(), 及 evdi\+\_\+painter\+\_\+mark\+\_\+dirty().
+
+\mbox{\Hypertarget{structevdi__painter_a1fd434c3d622d05f36e1ede243a4ace5}\label{structevdi__painter_a1fd434c3d622d05f36e1ede243a4ace5}} 
+\index{evdi\_painter@{evdi\_painter}!lock@{lock}}
+\index{lock@{lock}!evdi\_painter@{evdi\_painter}}
+\doxysubsubsection{\texorpdfstring{lock}{lock}}
+{\footnotesize\ttfamily struct mutex evdi\+\_\+painter\+::lock}
+
+
+
+被參考於 evdi\+\_\+painter\+\_\+init().
+
+\mbox{\Hypertarget{structevdi__painter_a8825206065b70e2a1997bec26cbd476f}\label{structevdi__painter_a8825206065b70e2a1997bec26cbd476f}} 
+\index{evdi\_painter@{evdi\_painter}!needs\_full\_modeset@{needs\_full\_modeset}}
+\index{needs\_full\_modeset@{needs\_full\_modeset}!evdi\_painter@{evdi\_painter}}
+\doxysubsubsection{\texorpdfstring{needs\_full\_modeset}{needs\_full\_modeset}}
+{\footnotesize\ttfamily bool evdi\+\_\+painter\+::needs\+\_\+full\+\_\+modeset}
+
+
+
+被參考於 evdi\+\_\+painter\+\_\+force\+\_\+full\+\_\+modeset(), evdi\+\_\+painter\+\_\+init(), 及 evdi\+\_\+painter\+\_\+needs\+\_\+full\+\_\+modeset().
+
+\mbox{\Hypertarget{structevdi__painter_a73ac58c64435d5f870225c7fbe41e7d2}\label{structevdi__painter_a73ac58c64435d5f870225c7fbe41e7d2}} 
+\index{evdi\_painter@{evdi\_painter}!num\_dirts@{num\_dirts}}
+\index{num\_dirts@{num\_dirts}!evdi\_painter@{evdi\_painter}}
+\doxysubsubsection{\texorpdfstring{num\_dirts}{num\_dirts}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} evdi\+\_\+painter\+::num\+\_\+dirts}
+
+
+
+被參考於 evdi\+\_\+painter\+\_\+framebuffer\+\_\+size(), evdi\+\_\+painter\+\_\+grabpix\+\_\+ioctl(), evdi\+\_\+painter\+\_\+mark\+\_\+dirty(), evdi\+\_\+painter\+\_\+request\+\_\+update\+\_\+ioctl(), 及 evdi\+\_\+painter\+\_\+send\+\_\+update\+\_\+ready\+\_\+if\+\_\+needed().
+
+\mbox{\Hypertarget{structevdi__painter_a185ffb9e49e6261902aacc1e1a19c4a4}\label{structevdi__painter_a185ffb9e49e6261902aacc1e1a19c4a4}} 
+\index{evdi\_painter@{evdi\_painter}!pending\_events@{pending\_events}}
+\index{pending\_events@{pending\_events}!evdi\_painter@{evdi\_painter}}
+\doxysubsubsection{\texorpdfstring{pending\_events}{pending\_events}}
+{\footnotesize\ttfamily struct list\+\_\+head evdi\+\_\+painter\+::pending\+\_\+events}
+
+
+
+被參考於 evdi\+\_\+painter\+\_\+init().
+
+\mbox{\Hypertarget{structevdi__painter_aafeb6f95f351b3af3de4fe26d8e81515}\label{structevdi__painter_aafeb6f95f351b3af3de4fe26d8e81515}} 
+\index{evdi\_painter@{evdi\_painter}!scanout\_fb@{scanout\_fb}}
+\index{scanout\_fb@{scanout\_fb}!evdi\_painter@{evdi\_painter}}
+\doxysubsubsection{\texorpdfstring{scanout\_fb}{scanout\_fb}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structevdi__framebuffer}{evdi\+\_\+framebuffer}}$\ast$ evdi\+\_\+painter\+::scanout\+\_\+fb}
+
+
+
+被參考於 evdi\+\_\+painter\+\_\+cleanup(), evdi\+\_\+painter\+\_\+mark\+\_\+dirty(), evdi\+\_\+painter\+\_\+mode\+\_\+changed\+\_\+notify(), 及 evdi\+\_\+painter\+\_\+set\+\_\+scanout\+\_\+buffer().
+
+\mbox{\Hypertarget{structevdi__painter_a87943007a9783fdac36fa527f89c9ea3}\label{structevdi__painter_a87943007a9783fdac36fa527f89c9ea3}} 
+\index{evdi\_painter@{evdi\_painter}!send\_events\_work@{send\_events\_work}}
+\index{send\_events\_work@{send\_events\_work}!evdi\_painter@{evdi\_painter}}
+\doxysubsubsection{\texorpdfstring{send\_events\_work}{send\_events\_work}}
+{\footnotesize\ttfamily struct delayed\+\_\+work evdi\+\_\+painter\+::send\+\_\+events\+\_\+work}
+
+
+
+被參考於 evdi\+\_\+painter\+\_\+init().
+
+\mbox{\Hypertarget{structevdi__painter_a6d96aad214631110a93c24e96208f9d8}\label{structevdi__painter_a6d96aad214631110a93c24e96208f9d8}} 
+\index{evdi\_painter@{evdi\_painter}!vblank@{vblank}}
+\index{vblank@{vblank}!evdi\_painter@{evdi\_painter}}
+\doxysubsubsection{\texorpdfstring{vblank}{vblank}}
+{\footnotesize\ttfamily struct drm\+\_\+pending\+\_\+vblank\+\_\+event$\ast$ evdi\+\_\+painter\+::vblank}
+
+
+
+被參考於 evdi\+\_\+painter\+\_\+init().
+
+\mbox{\Hypertarget{structevdi__painter_a1192790b8801ff2c9567b94d9697c386}\label{structevdi__painter_a1192790b8801ff2c9567b94d9697c386}} 
+\index{evdi\_painter@{evdi\_painter}!was\_update\_requested@{was\_update\_requested}}
+\index{was\_update\_requested@{was\_update\_requested}!evdi\_painter@{evdi\_painter}}
+\doxysubsubsection{\texorpdfstring{was\_update\_requested}{was\_update\_requested}}
+{\footnotesize\ttfamily bool evdi\+\_\+painter\+::was\+\_\+update\+\_\+requested}
+
+
+
+被參考於 evdi\+\_\+painter\+\_\+grabpix\+\_\+ioctl(), evdi\+\_\+painter\+\_\+request\+\_\+update\+\_\+ioctl(), 及 evdi\+\_\+painter\+\_\+send\+\_\+update\+\_\+ready\+\_\+if\+\_\+needed().
+
+
+
+此結構(structure) 文件是由下列檔案中產生\+:\begin{DoxyCompactItemize}
+\item 
+/home/odin/\+Desktop/program/learn/usbdisp\+\_\+linux/libusbdisp/deb\+\_\+install/com.\+racertech.\+usbdisp-\/1.\+0.\+0/opt/apps/com.\+racertech.\+usbdisp/files/evdi/module/\mbox{\hyperlink{evdi__painter_8c}{evdi\+\_\+painter.\+c}}\end{DoxyCompactItemize}

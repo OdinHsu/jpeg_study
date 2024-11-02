@@ -1,0 +1,151 @@
+\hypertarget{evdi__platform__drv_8c}{}\doxysection{/home/odin/\+Desktop/program/learn/usbdisp\+\_\+linux/libusbdisp/deb\+\_\+install/com.racertech.\+usbdisp-\/1.0.0/opt/apps/com.racertech.\+usbdisp/files/evdi/module/evdi\+\_\+platform\+\_\+drv.c 檔案參考文件}
+\label{evdi__platform__drv_8c}\index{/home/odin/Desktop/program/learn/usbdisp\_linux/libusbdisp/deb\_install/com.racertech.usbdisp-\/1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi\_platform\_drv.c@{/home/odin/Desktop/program/learn/usbdisp\_linux/libusbdisp/deb\_install/com.racertech.usbdisp-\/1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi\_platform\_drv.c}}
+{\ttfamily \#include $<$linux/version.\+h$>$}\newline
+{\ttfamily \#include $<$linux/module.\+h$>$}\newline
+{\ttfamily \#include $<$linux/platform\+\_\+device.\+h$>$}\newline
+{\ttfamily \#include $<$linux/dma-\/mapping.\+h$>$}\newline
+{\ttfamily \#include $<$linux/usb.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}evdi\+\_\+params.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}evdi\+\_\+debug.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}evdi\+\_\+platform\+\_\+drv.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}evdi\+\_\+platform\+\_\+dev.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}evdi\+\_\+sysfs.\+h\char`\"{}}\newline
+evdi\+\_\+platform\+\_\+drv.\+c的包含相依圖\+:
+% FIG 0
+\doxysubsection*{複合項目}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bfseries evdi\+\_\+platform\+\_\+drv\+\_\+context}
+\end{DoxyCompactItemize}
+\doxysubsection*{定義}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{evdi__platform__drv_8c_a541cd14a4ece26916214bfc07ec019db}{EVDI\+\_\+\+DEVICE\+\_\+\+COUNT\+\_\+\+MAX}}~16
+\item 
+\#define \mbox{\hyperlink{evdi__platform__drv_8c_a8bf95baa2ee0c9e0b441b7222a624203}{evdi\+\_\+platform\+\_\+drv\+\_\+context\+\_\+lock}}(ctx)~  mutex\+\_\+lock(\&ctx-\/$>$lock)
+\item 
+\#define \mbox{\hyperlink{evdi__platform__drv_8c_aceb894f2a3583266d71045cf7b2d69f7}{evdi\+\_\+platform\+\_\+drv\+\_\+context\+\_\+unlock}}(ctx)~  mutex\+\_\+unlock(\&ctx-\/$>$lock)
+\end{DoxyCompactItemize}
+\doxysubsection*{函式}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{evdi__platform__drv_8c_aecf8d0a6bc7c4063f9ec45ddbcad7bbe}{MODULE\+\_\+\+AUTHOR}} (\char`\"{}Display\+Link (UK) Ltd.\char`\"{})
+\item 
+\mbox{\hyperlink{evdi__platform__drv_8c_a0ad0e6559f955214b3d4973b3605699e}{MODULE\+\_\+\+DESCRIPTION}} (\char`\"{}Extensible Virtual Display Interface\char`\"{})
+\item 
+\mbox{\hyperlink{evdi__platform__drv_8c_ad94b36675e7eb067ea3ce6ff9e244a44}{MODULE\+\_\+\+LICENSE}} (\char`\"{}GPL\char`\"{})
+\item 
+\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{evdi__platform__drv_8c_aca059966d0ddc47d46168d2931fbf432}{evdi\+\_\+platform\+\_\+device\+\_\+add}} (struct device $\ast$device, struct device $\ast$parent)
+\item 
+\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{evdi__platform__drv_8c_ab1e17cfd80a3175ef7005c1cdbc858c9}{evdi\+\_\+platform\+\_\+add\+\_\+devices}} (struct device $\ast$device, unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} val)
+\item 
+void \mbox{\hyperlink{evdi__platform__drv_8c_ab1077c3e7562029f58ec46d75a90c662}{evdi\+\_\+platform\+\_\+remove\+\_\+all\+\_\+devices}} (struct device $\ast$device)
+\item 
+unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{evdi__platform__drv_8c_a43ca4a8acdd44a47fe1b12416de765e0}{evdi\+\_\+platform\+\_\+device\+\_\+count}} (struct device $\ast$device)
+\item 
+\mbox{\hyperlink{evdi__platform__drv_8c_a28729857637c69b005f96f4af7191942}{module\+\_\+init}} (evdi\+\_\+init)
+\item 
+\mbox{\hyperlink{evdi__platform__drv_8c_aa8c101a10c99a97aab06ea14ae2fa22b}{module\+\_\+exit}} (evdi\+\_\+exit)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{定義巨集說明文件}
+\mbox{\Hypertarget{evdi__platform__drv_8c_a541cd14a4ece26916214bfc07ec019db}\label{evdi__platform__drv_8c_a541cd14a4ece26916214bfc07ec019db}} 
+\index{evdi\_platform\_drv.c@{evdi\_platform\_drv.c}!EVDI\_DEVICE\_COUNT\_MAX@{EVDI\_DEVICE\_COUNT\_MAX}}
+\index{EVDI\_DEVICE\_COUNT\_MAX@{EVDI\_DEVICE\_COUNT\_MAX}!evdi\_platform\_drv.c@{evdi\_platform\_drv.c}}
+\doxysubsubsection{\texorpdfstring{EVDI\_DEVICE\_COUNT\_MAX}{EVDI\_DEVICE\_COUNT\_MAX}}
+{\footnotesize\ttfamily \#define EVDI\+\_\+\+DEVICE\+\_\+\+COUNT\+\_\+\+MAX~16}
+
+\mbox{\Hypertarget{evdi__platform__drv_8c_a8bf95baa2ee0c9e0b441b7222a624203}\label{evdi__platform__drv_8c_a8bf95baa2ee0c9e0b441b7222a624203}} 
+\index{evdi\_platform\_drv.c@{evdi\_platform\_drv.c}!evdi\_platform\_drv\_context\_lock@{evdi\_platform\_drv\_context\_lock}}
+\index{evdi\_platform\_drv\_context\_lock@{evdi\_platform\_drv\_context\_lock}!evdi\_platform\_drv.c@{evdi\_platform\_drv.c}}
+\doxysubsubsection{\texorpdfstring{evdi\_platform\_drv\_context\_lock}{evdi\_platform\_drv\_context\_lock}}
+{\footnotesize\ttfamily \#define evdi\+\_\+platform\+\_\+drv\+\_\+context\+\_\+lock(\begin{DoxyParamCaption}\item[{}]{ctx }\end{DoxyParamCaption})~  mutex\+\_\+lock(\&ctx-\/$>$lock)}
+
+\mbox{\Hypertarget{evdi__platform__drv_8c_aceb894f2a3583266d71045cf7b2d69f7}\label{evdi__platform__drv_8c_aceb894f2a3583266d71045cf7b2d69f7}} 
+\index{evdi\_platform\_drv.c@{evdi\_platform\_drv.c}!evdi\_platform\_drv\_context\_unlock@{evdi\_platform\_drv\_context\_unlock}}
+\index{evdi\_platform\_drv\_context\_unlock@{evdi\_platform\_drv\_context\_unlock}!evdi\_platform\_drv.c@{evdi\_platform\_drv.c}}
+\doxysubsubsection{\texorpdfstring{evdi\_platform\_drv\_context\_unlock}{evdi\_platform\_drv\_context\_unlock}}
+{\footnotesize\ttfamily \#define evdi\+\_\+platform\+\_\+drv\+\_\+context\+\_\+unlock(\begin{DoxyParamCaption}\item[{}]{ctx }\end{DoxyParamCaption})~  mutex\+\_\+unlock(\&ctx-\/$>$lock)}
+
+
+
+\doxysubsection{函式說明文件}
+\mbox{\Hypertarget{evdi__platform__drv_8c_ab1e17cfd80a3175ef7005c1cdbc858c9}\label{evdi__platform__drv_8c_ab1e17cfd80a3175ef7005c1cdbc858c9}} 
+\index{evdi\_platform\_drv.c@{evdi\_platform\_drv.c}!evdi\_platform\_add\_devices@{evdi\_platform\_add\_devices}}
+\index{evdi\_platform\_add\_devices@{evdi\_platform\_add\_devices}!evdi\_platform\_drv.c@{evdi\_platform\_drv.c}}
+\doxysubsubsection{\texorpdfstring{evdi\_platform\_add\_devices()}{evdi\_platform\_add\_devices()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} evdi\+\_\+platform\+\_\+add\+\_\+devices (\begin{DoxyParamCaption}\item[{struct device $\ast$}]{device,  }\item[{unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}}]{val }\end{DoxyParamCaption})}
+
+
+
+參考 EVDI\+\_\+\+DEVICE\+\_\+\+COUNT\+\_\+\+MAX, EVDI\+\_\+\+ERROR, EVDI\+\_\+\+INFO, evdi\+\_\+platform\+\_\+device\+\_\+add(), evdi\+\_\+platform\+\_\+device\+\_\+count(), 及 EVDI\+\_\+\+WARN.
+
+\mbox{\Hypertarget{evdi__platform__drv_8c_aca059966d0ddc47d46168d2931fbf432}\label{evdi__platform__drv_8c_aca059966d0ddc47d46168d2931fbf432}} 
+\index{evdi\_platform\_drv.c@{evdi\_platform\_drv.c}!evdi\_platform\_device\_add@{evdi\_platform\_device\_add}}
+\index{evdi\_platform\_device\_add@{evdi\_platform\_device\_add}!evdi\_platform\_drv.c@{evdi\_platform\_drv.c}}
+\doxysubsubsection{\texorpdfstring{evdi\_platform\_device\_add()}{evdi\_platform\_device\_add()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} evdi\+\_\+platform\+\_\+device\+\_\+add (\begin{DoxyParamCaption}\item[{struct device $\ast$}]{device,  }\item[{struct device $\ast$}]{parent }\end{DoxyParamCaption})}
+
+
+
+參考 evdi\+\_\+platform\+\_\+drv\+\_\+context\+\_\+lock.
+
+
+
+被參考於 evdi\+\_\+platform\+\_\+add\+\_\+devices().
+
+\mbox{\Hypertarget{evdi__platform__drv_8c_a43ca4a8acdd44a47fe1b12416de765e0}\label{evdi__platform__drv_8c_a43ca4a8acdd44a47fe1b12416de765e0}} 
+\index{evdi\_platform\_drv.c@{evdi\_platform\_drv.c}!evdi\_platform\_device\_count@{evdi\_platform\_device\_count}}
+\index{evdi\_platform\_device\_count@{evdi\_platform\_device\_count}!evdi\_platform\_drv.c@{evdi\_platform\_drv.c}}
+\doxysubsubsection{\texorpdfstring{evdi\_platform\_device\_count()}{evdi\_platform\_device\_count()}}
+{\footnotesize\ttfamily unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} evdi\+\_\+platform\+\_\+device\+\_\+count (\begin{DoxyParamCaption}\item[{struct device $\ast$}]{device }\end{DoxyParamCaption})}
+
+
+
+參考 evdi\+\_\+platform\+\_\+drv\+\_\+context\+\_\+lock, 及 evdi\+\_\+platform\+\_\+drv\+\_\+context\+\_\+unlock.
+
+
+
+被參考於 evdi\+\_\+platform\+\_\+add\+\_\+devices().
+
+\mbox{\Hypertarget{evdi__platform__drv_8c_ab1077c3e7562029f58ec46d75a90c662}\label{evdi__platform__drv_8c_ab1077c3e7562029f58ec46d75a90c662}} 
+\index{evdi\_platform\_drv.c@{evdi\_platform\_drv.c}!evdi\_platform\_remove\_all\_devices@{evdi\_platform\_remove\_all\_devices}}
+\index{evdi\_platform\_remove\_all\_devices@{evdi\_platform\_remove\_all\_devices}!evdi\_platform\_drv.c@{evdi\_platform\_drv.c}}
+\doxysubsubsection{\texorpdfstring{evdi\_platform\_remove\_all\_devices()}{evdi\_platform\_remove\_all\_devices()}}
+{\footnotesize\ttfamily void evdi\+\_\+platform\+\_\+remove\+\_\+all\+\_\+devices (\begin{DoxyParamCaption}\item[{struct device $\ast$}]{device }\end{DoxyParamCaption})}
+
+
+
+參考 EVDI\+\_\+\+DEVICE\+\_\+\+COUNT\+\_\+\+MAX, EVDI\+\_\+\+INFO, evdi\+\_\+platform\+\_\+dev\+\_\+destroy(), 及 evdi\+\_\+platform\+\_\+drv\+\_\+context\+\_\+lock.
+
+\mbox{\Hypertarget{evdi__platform__drv_8c_aecf8d0a6bc7c4063f9ec45ddbcad7bbe}\label{evdi__platform__drv_8c_aecf8d0a6bc7c4063f9ec45ddbcad7bbe}} 
+\index{evdi\_platform\_drv.c@{evdi\_platform\_drv.c}!MODULE\_AUTHOR@{MODULE\_AUTHOR}}
+\index{MODULE\_AUTHOR@{MODULE\_AUTHOR}!evdi\_platform\_drv.c@{evdi\_platform\_drv.c}}
+\doxysubsubsection{\texorpdfstring{MODULE\_AUTHOR()}{MODULE\_AUTHOR()}}
+{\footnotesize\ttfamily MODULE\+\_\+\+AUTHOR (\begin{DoxyParamCaption}\item[{\char`\"{}Display\+Link (UK) Ltd.\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{evdi__platform__drv_8c_a0ad0e6559f955214b3d4973b3605699e}\label{evdi__platform__drv_8c_a0ad0e6559f955214b3d4973b3605699e}} 
+\index{evdi\_platform\_drv.c@{evdi\_platform\_drv.c}!MODULE\_DESCRIPTION@{MODULE\_DESCRIPTION}}
+\index{MODULE\_DESCRIPTION@{MODULE\_DESCRIPTION}!evdi\_platform\_drv.c@{evdi\_platform\_drv.c}}
+\doxysubsubsection{\texorpdfstring{MODULE\_DESCRIPTION()}{MODULE\_DESCRIPTION()}}
+{\footnotesize\ttfamily MODULE\+\_\+\+DESCRIPTION (\begin{DoxyParamCaption}\item[{\char`\"{}Extensible Virtual Display Interface\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{evdi__platform__drv_8c_aa8c101a10c99a97aab06ea14ae2fa22b}\label{evdi__platform__drv_8c_aa8c101a10c99a97aab06ea14ae2fa22b}} 
+\index{evdi\_platform\_drv.c@{evdi\_platform\_drv.c}!module\_exit@{module\_exit}}
+\index{module\_exit@{module\_exit}!evdi\_platform\_drv.c@{evdi\_platform\_drv.c}}
+\doxysubsubsection{\texorpdfstring{module\_exit()}{module\_exit()}}
+{\footnotesize\ttfamily module\+\_\+exit (\begin{DoxyParamCaption}\item[{evdi\+\_\+exit}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{evdi__platform__drv_8c_a28729857637c69b005f96f4af7191942}\label{evdi__platform__drv_8c_a28729857637c69b005f96f4af7191942}} 
+\index{evdi\_platform\_drv.c@{evdi\_platform\_drv.c}!module\_init@{module\_init}}
+\index{module\_init@{module\_init}!evdi\_platform\_drv.c@{evdi\_platform\_drv.c}}
+\doxysubsubsection{\texorpdfstring{module\_init()}{module\_init()}}
+{\footnotesize\ttfamily module\+\_\+init (\begin{DoxyParamCaption}\item[{evdi\+\_\+init}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{evdi__platform__drv_8c_ad94b36675e7eb067ea3ce6ff9e244a44}\label{evdi__platform__drv_8c_ad94b36675e7eb067ea3ce6ff9e244a44}} 
+\index{evdi\_platform\_drv.c@{evdi\_platform\_drv.c}!MODULE\_LICENSE@{MODULE\_LICENSE}}
+\index{MODULE\_LICENSE@{MODULE\_LICENSE}!evdi\_platform\_drv.c@{evdi\_platform\_drv.c}}
+\doxysubsubsection{\texorpdfstring{MODULE\_LICENSE()}{MODULE\_LICENSE()}}
+{\footnotesize\ttfamily MODULE\+\_\+\+LICENSE (\begin{DoxyParamCaption}\item[{\char`\"{}GPL\char`\"{}}]{ }\end{DoxyParamCaption})}
+

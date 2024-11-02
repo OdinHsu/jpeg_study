@@ -1,0 +1,44 @@
+digraph "/home/odin/Desktop/program/learn/usbdisp_linux/libusbdisp/libenc/mm_type.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/libenc\l/mm_type.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/libenc\l/ClientUSB.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ClientUSB_8h.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/libenc\l/EncodeEngine.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$EncodeEngine_8h.html",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/capture.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$capture_8h.html",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/capture.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$capture_8cpp.html",tooltip=" "];
+  Node4 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/usbDisplay.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$usbDisplay_8cpp.html",tooltip=" "];
+  Node3 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/libenc\l/EncodeEngine.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$EncodeEngine_8cpp.html",tooltip=" "];
+  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/usbdev.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$usbdev_8h.html",tooltip=" "];
+  Node8 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/usbdev.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$usbdev_8cpp.html",tooltip=" "];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/libenc\l/jpeg_enc.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$jpeg__enc_8h.html",tooltip=" "];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/jpegenc.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$jpegenc_8c.html",tooltip=" "];
+  Node10 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/libenc\l/Encoder.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Encoder_8h.html",tooltip=" "];
+  Node12 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/libenc\l/Encoder.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Encoder_8cpp.html",tooltip=" "];
+  Node10 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/libenc\l/jpeg_enc.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$jpeg__enc_8c.html",tooltip=" "];
+  Node10 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/libenc\l/jpegenc.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$libenc_2jpegenc_8c.html",tooltip=" "];
+  Node10 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/libenc\l/Optimize_NEON.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Optimize__NEON_8h.html",tooltip=" "];
+  Node16 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/libenc\l/Optimize_SSE2.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Optimize__SSE2_8h.html",tooltip=" "];
+  Node17 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

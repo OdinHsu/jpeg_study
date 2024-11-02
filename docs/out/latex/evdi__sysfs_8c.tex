@@ -1,0 +1,52 @@
+\hypertarget{evdi__sysfs_8c}{}\doxysection{/home/odin/\+Desktop/program/learn/usbdisp\+\_\+linux/libusbdisp/deb\+\_\+install/com.racertech.\+usbdisp-\/1.0.0/opt/apps/com.racertech.\+usbdisp/files/evdi/module/evdi\+\_\+sysfs.c 檔案參考文件}
+\label{evdi__sysfs_8c}\index{/home/odin/Desktop/program/learn/usbdisp\_linux/libusbdisp/deb\_install/com.racertech.usbdisp-\/1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi\_sysfs.c@{/home/odin/Desktop/program/learn/usbdisp\_linux/libusbdisp/deb\_install/com.racertech.usbdisp-\/1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi\_sysfs.c}}
+{\ttfamily \#include $<$linux/device.\+h$>$}\newline
+{\ttfamily \#include $<$linux/slab.\+h$>$}\newline
+{\ttfamily \#include $<$linux/usb.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}evdi\+\_\+sysfs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}evdi\+\_\+params.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}evdi\+\_\+debug.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}evdi\+\_\+platform\+\_\+drv.\+h\char`\"{}}\newline
+evdi\+\_\+sysfs.\+c的包含相依圖\+:
+% FIG 0
+\doxysubsection*{複合項目}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structevdi__usb__addr}{evdi\+\_\+usb\+\_\+addr}}
+\end{DoxyCompactItemize}
+\doxysubsection*{定義}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{evdi__sysfs_8c_ac10e86b8df50ef2a8ae0dac185edce60}{MAX\+\_\+\+EVDI\+\_\+\+USB\+\_\+\+ADDR}}~10
+\end{DoxyCompactItemize}
+\doxysubsection*{函式}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{evdi__sysfs_8c_aeda48c481636a8bf5925f200ab8c7f1a}{evdi\+\_\+sysfs\+\_\+init}} (struct device $\ast$root)
+\item 
+void \mbox{\hyperlink{evdi__sysfs_8c_a34f09430524a235a21fab5643eac1ac1}{evdi\+\_\+sysfs\+\_\+exit}} (struct device $\ast$root)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{定義巨集說明文件}
+\mbox{\Hypertarget{evdi__sysfs_8c_ac10e86b8df50ef2a8ae0dac185edce60}\label{evdi__sysfs_8c_ac10e86b8df50ef2a8ae0dac185edce60}} 
+\index{evdi\_sysfs.c@{evdi\_sysfs.c}!MAX\_EVDI\_USB\_ADDR@{MAX\_EVDI\_USB\_ADDR}}
+\index{MAX\_EVDI\_USB\_ADDR@{MAX\_EVDI\_USB\_ADDR}!evdi\_sysfs.c@{evdi\_sysfs.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_EVDI\_USB\_ADDR}{MAX\_EVDI\_USB\_ADDR}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+EVDI\+\_\+\+USB\+\_\+\+ADDR~10}
+
+
+
+\doxysubsection{函式說明文件}
+\mbox{\Hypertarget{evdi__sysfs_8c_a34f09430524a235a21fab5643eac1ac1}\label{evdi__sysfs_8c_a34f09430524a235a21fab5643eac1ac1}} 
+\index{evdi\_sysfs.c@{evdi\_sysfs.c}!evdi\_sysfs\_exit@{evdi\_sysfs\_exit}}
+\index{evdi\_sysfs\_exit@{evdi\_sysfs\_exit}!evdi\_sysfs.c@{evdi\_sysfs.c}}
+\doxysubsubsection{\texorpdfstring{evdi\_sysfs\_exit()}{evdi\_sysfs\_exit()}}
+{\footnotesize\ttfamily void evdi\+\_\+sysfs\+\_\+exit (\begin{DoxyParamCaption}\item[{struct device $\ast$}]{root }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{evdi__sysfs_8c_aeda48c481636a8bf5925f200ab8c7f1a}\label{evdi__sysfs_8c_aeda48c481636a8bf5925f200ab8c7f1a}} 
+\index{evdi\_sysfs.c@{evdi\_sysfs.c}!evdi\_sysfs\_init@{evdi\_sysfs\_init}}
+\index{evdi\_sysfs\_init@{evdi\_sysfs\_init}!evdi\_sysfs.c@{evdi\_sysfs.c}}
+\doxysubsubsection{\texorpdfstring{evdi\_sysfs\_init()}{evdi\_sysfs\_init()}}
+{\footnotesize\ttfamily void evdi\+\_\+sysfs\+\_\+init (\begin{DoxyParamCaption}\item[{struct device $\ast$}]{root }\end{DoxyParamCaption})}
+

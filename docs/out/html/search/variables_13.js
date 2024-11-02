@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['scale_5ffrom_5fh_1645',['scale_from_h',['../struct__output.html#a401ad57dde4c7306faf9780d8109cc92',1,'_output']]],
+  ['scale_5ffrom_5fw_1646',['scale_from_w',['../struct__output.html#a578664b6b0887de48aaa9b0fd11c2723',1,'_output']]],
+  ['scanout_5ffb_1647',['scanout_fb',['../structevdi__painter.html#aafeb6f95f351b3af3de4fe26d8e81515',1,'evdi_painter']]],
+  ['screen_1648',['screen',['../example_8cpp.html#abfd0aa8d2594f4d3946b7cced174b619',1,'example.cpp']]],
+  ['se_1649',['Se',['../structSOSinfotype.html#a9c1044a8a87793a028896e006cbd75cc',1,'SOSinfotype']]],
+  ['send_5fevents_5fwork_1650',['send_events_work',['../structevdi__painter.html#a87943007a9783fdac36fa527f89c9ea3',1,'evdi_painter']]],
+  ['set_1651',['set',['../struct__umonitor.html#a00433038254bb33ce8fd441893d3009b',1,'_umonitor']]],
+  ['sg_1652',['sg',['../structevdi__gem__object.html#a15d09fdcfae94e14a22abcf5fd17c166',1,'evdi_gem_object']]],
+  ['shminfo_1653',['shminfo',['../structshmimage.html#ad46ff48c139c9929190f6b890219f504',1,'shmimage']]],
+  ['short_1654',['short',['../jsimdcfg_8inc_8h.html#ab503b2854b9326aa03041cdf4294e922',1,'jsimdcfg.inc.h']]],
+  ['sizeof_5fbyte_1655',['SIZEOF_BYTE',['../jsimdcfg_8inc_8h.html#afebb59bd463494f0a2f1653993f0b254',1,'jsimdcfg.inc.h']]],
+  ['sizeof_5fdword_1656',['SIZEOF_DWORD',['../jsimdcfg_8inc_8h.html#ac9d73af4bec4e0c1a311e3e119013b94',1,'jsimdcfg.inc.h']]],
+  ['sizeof_5ffp32_1657',['SIZEOF_FP32',['../jsimdcfg_8inc_8h.html#aa0a2fcc2d603d8c919e55a4747c534c2',1,'jsimdcfg.inc.h']]],
+  ['sizeof_5fpointer_1658',['SIZEOF_POINTER',['../jsimdcfg_8inc_8h.html#adff66b74aa6696c32bbd9a14508b9478',1,'jsimdcfg.inc.h']]],
+  ['sizeof_5fword_1659',['SIZEOF_WORD',['../jsimdcfg_8inc_8h.html#acf2d3462b693ad13f6ccc0089d6d1b5d',1,'jsimdcfg.inc.h']]],
+  ['ss_1660',['Ss',['../structSOSinfotype.html#a378c993ad0afcbfe4aa54e07cf3ea658',1,'SOSinfotype']]],
+  ['state_1661',['state',['../structdrm__evdi__event__crtc__state.html#aa3648c5fa850aee5f800938b73947ec1',1,'drm_evdi_event_crtc_state']]],
+  ['stride_1662',['stride',['../structdrm__evdi__event__cursor__set.html#a4cb08f0699def5a32ff5f037a3ab1993',1,'drm_evdi_event_cursor_set::stride()'],['../structevdi__cursor.html#a8bf92a5068a4570817ed5561e264e535',1,'evdi_cursor::stride()'],['../structevdi__cursor__set.html#a512a0dd618c1b6a5940e707598cc434e',1,'evdi_cursor_set::stride()'],['../structevdi__buffer.html#af345e333e90bd66c40c438f7c6dd4630',1,'evdi_buffer::stride()']]],
+  ['string_1663',['string',['../structname__t.html#a10e419892fab1a1057b99a86c909ce60',1,'name_t']]],
+  ['symlinked_1664',['symlinked',['../structevdi__platform__device__data.html#aa308d333547f2a0454e0422bd7fe2b06',1,'evdi_platform_device_data']]],
+  ['sync_5fevent_1665',['sync_event',['../EncodeEngine_8cpp.html#abea69858a53184329d466106598f8937',1,'sync_event():&#160;EncodeEngine.cpp'],['../EncodeEngine_8h.html#abea69858a53184329d466106598f8937',1,'sync_event():&#160;EncodeEngine.cpp']]],
+  ['szframebuffer_1666',['szframebuffer',['../structtask__t.html#a5419b31f7e37d69272eb03193cecc3f6',1,'task_t']]]
+];

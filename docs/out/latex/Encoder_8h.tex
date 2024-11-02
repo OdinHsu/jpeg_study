@@ -1,0 +1,175 @@
+\hypertarget{Encoder_8h}{}\doxysection{/home/odin/\+Desktop/program/learn/usbdisp\+\_\+linux/libusbdisp/libenc/\+Encoder.h 檔案參考文件}
+\label{Encoder_8h}\index{/home/odin/Desktop/program/learn/usbdisp\_linux/libusbdisp/libenc/Encoder.h@{/home/odin/Desktop/program/learn/usbdisp\_linux/libusbdisp/libenc/Encoder.h}}
+{\ttfamily \#include \char`\"{}event.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}jpeg\+\_\+enc.\+h\char`\"{}}\newline
+Encoder.\+h的包含相依圖\+:
+% FIG 0
+本圖顯示出哪些檔案直接或間接include本檔 \+:
+% FIG 1
+\doxysubsection*{複合項目}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structscreen__t}{screen\+\_\+t}}
+\item 
+class \mbox{\hyperlink{classEncodeUnit}{Encode\+Unit}}
+\item 
+class \mbox{\hyperlink{classBlockEncoder}{Block\+Encoder}}
+\end{DoxyCompactItemize}
+\doxysubsection*{定義}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{Encoder_8h_a0e9d4003787634607af9e97e14b9668b}{MAX\+\_\+\+WIDTH}}~1920
+\item 
+\#define \mbox{\hyperlink{Encoder_8h_a9059fa76eb5e8e86f870405d63e72c4c}{MAX\+\_\+\+HEIGHT}}~1200
+\item 
+\#define \mbox{\hyperlink{Encoder_8h_ac7a29576ba8edcb2630014457af01c32}{MAX\+\_\+\+SCREEN\+\_\+\+BLOCK}}~9000
+\item 
+\#define \mbox{\hyperlink{Encoder_8h_aff434668c1f3fab69e5937ecae459c3f}{BLOCK\+\_\+\+WIDTH}}~32
+\item 
+\#define \mbox{\hyperlink{Encoder_8h_ac7452942c3f51056da4bb24960f24f08}{BLOCK\+\_\+\+HEIGHT}}~8
+\item 
+\#define \mbox{\hyperlink{Encoder_8h_a553a3a9734a0be0f08459c9903d997f4}{RAW\+\_\+\+DEPTH}}~4
+\item 
+\#define \mbox{\hyperlink{Encoder_8h_a1a8a183735d83f05204a23915959c53c}{NUM\+\_\+\+ENCODER}}~3
+\item 
+\#define \mbox{\hyperlink{Encoder_8h_ab350424e04765eb8234bbb03dd1efbdc}{NUM\+\_\+\+SCREEN}}~2
+\item 
+\#define \mbox{\hyperlink{Encoder_8h_a04826c9ed0329c978f7812c40e42955b}{ENC\+\_\+\+THREADS}}~4
+\item 
+\#define \mbox{\hyperlink{Encoder_8h_a6d8c8b292d349a43f1554f9daa7160ba}{QUALITY\+\_\+\+RAW}}~0
+\item 
+\#define \mbox{\hyperlink{Encoder_8h_af330a034b066ccbc75ad0e32da283e0a}{QUALITY\+\_\+\+LOW}}~1
+\item 
+\#define \mbox{\hyperlink{Encoder_8h_a0f58b2b7a66dc4dc68b12e69e8b8da0b}{QUALITY\+\_\+\+MEDIAN}}~2
+\item 
+\#define \mbox{\hyperlink{Encoder_8h_af82f023dbd0535ab333bc993b10a9860}{QUALITY\+\_\+\+HIGH}}~3
+\item 
+\#define \mbox{\hyperlink{Encoder_8h_a03ae99450ee53275a76447f57a180ca6}{QUALITY\+\_\+\+CLONE}}~4
+\item 
+\#define \mbox{\hyperlink{Encoder_8h_a68a80be4e42506b0127b8559bc6662b0}{COLOR\+\_\+\+SIZE}}~(\mbox{\hyperlink{Encoder_8h_aff434668c1f3fab69e5937ecae459c3f}{BLOCK\+\_\+\+WIDTH}}$\ast$\mbox{\hyperlink{Encoder_8h_ac7452942c3f51056da4bb24960f24f08}{BLOCK\+\_\+\+HEIGHT}})
+\item 
+\#define \mbox{\hyperlink{Encoder_8h_ad51ded0bbd705f02f73fc60c0b721ced}{BLOCK\+\_\+\+SIZE}}~(\mbox{\hyperlink{Encoder_8h_a68a80be4e42506b0127b8559bc6662b0}{COLOR\+\_\+\+SIZE}}$\ast$3)
+\item 
+\#define \mbox{\hyperlink{Encoder_8h_af01ed6ced03fc275fbc340bd4dab11e8}{BGRX\+\_\+\+SIZE}}~(\mbox{\hyperlink{Encoder_8h_a68a80be4e42506b0127b8559bc6662b0}{COLOR\+\_\+\+SIZE}}$\ast$4)
+\item 
+\#define \mbox{\hyperlink{Encoder_8h_a72392578c82996165021d3a2aba3cf81}{\+\_\+\+PACK}}(index,  quality)~(\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}})(((index)$<$$<$3)$\vert$(quality))
+\item 
+\#define \mbox{\hyperlink{Encoder_8h_a780d3f29138fa73a7844d8db598129c9}{\+\_\+\+UNPACK}}(index,  quality,  val)~\{ index = ((val)$>$$>$3)\&0x0000\+FFFF; quality = val\&0x7; \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{定義巨集說明文件}
+\mbox{\Hypertarget{Encoder_8h_a72392578c82996165021d3a2aba3cf81}\label{Encoder_8h_a72392578c82996165021d3a2aba3cf81}} 
+\index{Encoder.h@{Encoder.h}!\_PACK@{\_PACK}}
+\index{\_PACK@{\_PACK}!Encoder.h@{Encoder.h}}
+\doxysubsubsection{\texorpdfstring{\_PACK}{\_PACK}}
+{\footnotesize\ttfamily \#define \+\_\+\+PACK(\begin{DoxyParamCaption}\item[{}]{index,  }\item[{}]{quality }\end{DoxyParamCaption})~(\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}})(((index)$<$$<$3)$\vert$(quality))}
+
+\mbox{\Hypertarget{Encoder_8h_a780d3f29138fa73a7844d8db598129c9}\label{Encoder_8h_a780d3f29138fa73a7844d8db598129c9}} 
+\index{Encoder.h@{Encoder.h}!\_UNPACK@{\_UNPACK}}
+\index{\_UNPACK@{\_UNPACK}!Encoder.h@{Encoder.h}}
+\doxysubsubsection{\texorpdfstring{\_UNPACK}{\_UNPACK}}
+{\footnotesize\ttfamily \#define \+\_\+\+UNPACK(\begin{DoxyParamCaption}\item[{}]{index,  }\item[{}]{quality,  }\item[{}]{val }\end{DoxyParamCaption})~\{ index = ((val)$>$$>$3)\&0x0000\+FFFF; quality = val\&0x7; \}}
+
+\mbox{\Hypertarget{Encoder_8h_af01ed6ced03fc275fbc340bd4dab11e8}\label{Encoder_8h_af01ed6ced03fc275fbc340bd4dab11e8}} 
+\index{Encoder.h@{Encoder.h}!BGRX\_SIZE@{BGRX\_SIZE}}
+\index{BGRX\_SIZE@{BGRX\_SIZE}!Encoder.h@{Encoder.h}}
+\doxysubsubsection{\texorpdfstring{BGRX\_SIZE}{BGRX\_SIZE}}
+{\footnotesize\ttfamily \#define BGRX\+\_\+\+SIZE~(\mbox{\hyperlink{Encoder_8h_a68a80be4e42506b0127b8559bc6662b0}{COLOR\+\_\+\+SIZE}}$\ast$4)}
+
+\mbox{\Hypertarget{Encoder_8h_ac7452942c3f51056da4bb24960f24f08}\label{Encoder_8h_ac7452942c3f51056da4bb24960f24f08}} 
+\index{Encoder.h@{Encoder.h}!BLOCK\_HEIGHT@{BLOCK\_HEIGHT}}
+\index{BLOCK\_HEIGHT@{BLOCK\_HEIGHT}!Encoder.h@{Encoder.h}}
+\doxysubsubsection{\texorpdfstring{BLOCK\_HEIGHT}{BLOCK\_HEIGHT}}
+{\footnotesize\ttfamily \#define BLOCK\+\_\+\+HEIGHT~8}
+
+\mbox{\Hypertarget{Encoder_8h_ad51ded0bbd705f02f73fc60c0b721ced}\label{Encoder_8h_ad51ded0bbd705f02f73fc60c0b721ced}} 
+\index{Encoder.h@{Encoder.h}!BLOCK\_SIZE@{BLOCK\_SIZE}}
+\index{BLOCK\_SIZE@{BLOCK\_SIZE}!Encoder.h@{Encoder.h}}
+\doxysubsubsection{\texorpdfstring{BLOCK\_SIZE}{BLOCK\_SIZE}}
+{\footnotesize\ttfamily \#define BLOCK\+\_\+\+SIZE~(\mbox{\hyperlink{Encoder_8h_a68a80be4e42506b0127b8559bc6662b0}{COLOR\+\_\+\+SIZE}}$\ast$3)}
+
+\mbox{\Hypertarget{Encoder_8h_aff434668c1f3fab69e5937ecae459c3f}\label{Encoder_8h_aff434668c1f3fab69e5937ecae459c3f}} 
+\index{Encoder.h@{Encoder.h}!BLOCK\_WIDTH@{BLOCK\_WIDTH}}
+\index{BLOCK\_WIDTH@{BLOCK\_WIDTH}!Encoder.h@{Encoder.h}}
+\doxysubsubsection{\texorpdfstring{BLOCK\_WIDTH}{BLOCK\_WIDTH}}
+{\footnotesize\ttfamily \#define BLOCK\+\_\+\+WIDTH~32}
+
+\mbox{\Hypertarget{Encoder_8h_a68a80be4e42506b0127b8559bc6662b0}\label{Encoder_8h_a68a80be4e42506b0127b8559bc6662b0}} 
+\index{Encoder.h@{Encoder.h}!COLOR\_SIZE@{COLOR\_SIZE}}
+\index{COLOR\_SIZE@{COLOR\_SIZE}!Encoder.h@{Encoder.h}}
+\doxysubsubsection{\texorpdfstring{COLOR\_SIZE}{COLOR\_SIZE}}
+{\footnotesize\ttfamily \#define COLOR\+\_\+\+SIZE~(\mbox{\hyperlink{Encoder_8h_aff434668c1f3fab69e5937ecae459c3f}{BLOCK\+\_\+\+WIDTH}}$\ast$\mbox{\hyperlink{Encoder_8h_ac7452942c3f51056da4bb24960f24f08}{BLOCK\+\_\+\+HEIGHT}})}
+
+\mbox{\Hypertarget{Encoder_8h_a04826c9ed0329c978f7812c40e42955b}\label{Encoder_8h_a04826c9ed0329c978f7812c40e42955b}} 
+\index{Encoder.h@{Encoder.h}!ENC\_THREADS@{ENC\_THREADS}}
+\index{ENC\_THREADS@{ENC\_THREADS}!Encoder.h@{Encoder.h}}
+\doxysubsubsection{\texorpdfstring{ENC\_THREADS}{ENC\_THREADS}}
+{\footnotesize\ttfamily \#define ENC\+\_\+\+THREADS~4}
+
+\mbox{\Hypertarget{Encoder_8h_a9059fa76eb5e8e86f870405d63e72c4c}\label{Encoder_8h_a9059fa76eb5e8e86f870405d63e72c4c}} 
+\index{Encoder.h@{Encoder.h}!MAX\_HEIGHT@{MAX\_HEIGHT}}
+\index{MAX\_HEIGHT@{MAX\_HEIGHT}!Encoder.h@{Encoder.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_HEIGHT}{MAX\_HEIGHT}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+HEIGHT~1200}
+
+\mbox{\Hypertarget{Encoder_8h_ac7a29576ba8edcb2630014457af01c32}\label{Encoder_8h_ac7a29576ba8edcb2630014457af01c32}} 
+\index{Encoder.h@{Encoder.h}!MAX\_SCREEN\_BLOCK@{MAX\_SCREEN\_BLOCK}}
+\index{MAX\_SCREEN\_BLOCK@{MAX\_SCREEN\_BLOCK}!Encoder.h@{Encoder.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_SCREEN\_BLOCK}{MAX\_SCREEN\_BLOCK}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+SCREEN\+\_\+\+BLOCK~9000}
+
+\mbox{\Hypertarget{Encoder_8h_a0e9d4003787634607af9e97e14b9668b}\label{Encoder_8h_a0e9d4003787634607af9e97e14b9668b}} 
+\index{Encoder.h@{Encoder.h}!MAX\_WIDTH@{MAX\_WIDTH}}
+\index{MAX\_WIDTH@{MAX\_WIDTH}!Encoder.h@{Encoder.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_WIDTH}{MAX\_WIDTH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+WIDTH~1920}
+
+\mbox{\Hypertarget{Encoder_8h_a1a8a183735d83f05204a23915959c53c}\label{Encoder_8h_a1a8a183735d83f05204a23915959c53c}} 
+\index{Encoder.h@{Encoder.h}!NUM\_ENCODER@{NUM\_ENCODER}}
+\index{NUM\_ENCODER@{NUM\_ENCODER}!Encoder.h@{Encoder.h}}
+\doxysubsubsection{\texorpdfstring{NUM\_ENCODER}{NUM\_ENCODER}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+ENCODER~3}
+
+\mbox{\Hypertarget{Encoder_8h_ab350424e04765eb8234bbb03dd1efbdc}\label{Encoder_8h_ab350424e04765eb8234bbb03dd1efbdc}} 
+\index{Encoder.h@{Encoder.h}!NUM\_SCREEN@{NUM\_SCREEN}}
+\index{NUM\_SCREEN@{NUM\_SCREEN}!Encoder.h@{Encoder.h}}
+\doxysubsubsection{\texorpdfstring{NUM\_SCREEN}{NUM\_SCREEN}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+SCREEN~2}
+
+\mbox{\Hypertarget{Encoder_8h_a03ae99450ee53275a76447f57a180ca6}\label{Encoder_8h_a03ae99450ee53275a76447f57a180ca6}} 
+\index{Encoder.h@{Encoder.h}!QUALITY\_CLONE@{QUALITY\_CLONE}}
+\index{QUALITY\_CLONE@{QUALITY\_CLONE}!Encoder.h@{Encoder.h}}
+\doxysubsubsection{\texorpdfstring{QUALITY\_CLONE}{QUALITY\_CLONE}}
+{\footnotesize\ttfamily \#define QUALITY\+\_\+\+CLONE~4}
+
+\mbox{\Hypertarget{Encoder_8h_af82f023dbd0535ab333bc993b10a9860}\label{Encoder_8h_af82f023dbd0535ab333bc993b10a9860}} 
+\index{Encoder.h@{Encoder.h}!QUALITY\_HIGH@{QUALITY\_HIGH}}
+\index{QUALITY\_HIGH@{QUALITY\_HIGH}!Encoder.h@{Encoder.h}}
+\doxysubsubsection{\texorpdfstring{QUALITY\_HIGH}{QUALITY\_HIGH}}
+{\footnotesize\ttfamily \#define QUALITY\+\_\+\+HIGH~3}
+
+\mbox{\Hypertarget{Encoder_8h_af330a034b066ccbc75ad0e32da283e0a}\label{Encoder_8h_af330a034b066ccbc75ad0e32da283e0a}} 
+\index{Encoder.h@{Encoder.h}!QUALITY\_LOW@{QUALITY\_LOW}}
+\index{QUALITY\_LOW@{QUALITY\_LOW}!Encoder.h@{Encoder.h}}
+\doxysubsubsection{\texorpdfstring{QUALITY\_LOW}{QUALITY\_LOW}}
+{\footnotesize\ttfamily \#define QUALITY\+\_\+\+LOW~1}
+
+\mbox{\Hypertarget{Encoder_8h_a0f58b2b7a66dc4dc68b12e69e8b8da0b}\label{Encoder_8h_a0f58b2b7a66dc4dc68b12e69e8b8da0b}} 
+\index{Encoder.h@{Encoder.h}!QUALITY\_MEDIAN@{QUALITY\_MEDIAN}}
+\index{QUALITY\_MEDIAN@{QUALITY\_MEDIAN}!Encoder.h@{Encoder.h}}
+\doxysubsubsection{\texorpdfstring{QUALITY\_MEDIAN}{QUALITY\_MEDIAN}}
+{\footnotesize\ttfamily \#define QUALITY\+\_\+\+MEDIAN~2}
+
+\mbox{\Hypertarget{Encoder_8h_a6d8c8b292d349a43f1554f9daa7160ba}\label{Encoder_8h_a6d8c8b292d349a43f1554f9daa7160ba}} 
+\index{Encoder.h@{Encoder.h}!QUALITY\_RAW@{QUALITY\_RAW}}
+\index{QUALITY\_RAW@{QUALITY\_RAW}!Encoder.h@{Encoder.h}}
+\doxysubsubsection{\texorpdfstring{QUALITY\_RAW}{QUALITY\_RAW}}
+{\footnotesize\ttfamily \#define QUALITY\+\_\+\+RAW~0}
+
+\mbox{\Hypertarget{Encoder_8h_a553a3a9734a0be0f08459c9903d997f4}\label{Encoder_8h_a553a3a9734a0be0f08459c9903d997f4}} 
+\index{Encoder.h@{Encoder.h}!RAW\_DEPTH@{RAW\_DEPTH}}
+\index{RAW\_DEPTH@{RAW\_DEPTH}!Encoder.h@{Encoder.h}}
+\doxysubsubsection{\texorpdfstring{RAW\_DEPTH}{RAW\_DEPTH}}
+{\footnotesize\ttfamily \#define RAW\+\_\+\+DEPTH~4}
+

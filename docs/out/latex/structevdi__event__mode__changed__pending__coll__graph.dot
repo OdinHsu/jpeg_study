@@ -1,0 +1,9 @@
+digraph "evdi_event_mode_changed_pending"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="evdi_event_mode_changed\l_pending",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" mode_changed" ];
+  Node2 [label="drm_evdi_event_mode\l_changed",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdrm__evdi__event__mode__changed.html",tooltip=" "];
+}

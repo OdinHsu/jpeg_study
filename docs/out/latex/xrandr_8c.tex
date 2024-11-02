@@ -1,0 +1,469 @@
+\hypertarget{xrandr_8c}{}\doxysection{/home/odin/\+Desktop/program/learn/usbdisp\+\_\+linux/libusbdisp/xrandr.c 檔案參考文件}
+\label{xrandr_8c}\index{/home/odin/Desktop/program/learn/usbdisp\_linux/libusbdisp/xrandr.c@{/home/odin/Desktop/program/learn/usbdisp\_linux/libusbdisp/xrandr.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$X11/\+Xlib.\+h$>$}\newline
+{\ttfamily \#include $<$X11/\+Xlibint.\+h$>$}\newline
+{\ttfamily \#include $<$X11/\+Xproto.\+h$>$}\newline
+{\ttfamily \#include $<$X11/\+Xatom.\+h$>$}\newline
+{\ttfamily \#include $<$X11/extensions/\+Xrandr.\+h$>$}\newline
+{\ttfamily \#include $<$X11/extensions/\+Xrender.\+h$>$}\newline
+{\ttfamily \#include $<$strings.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$inttypes.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}xrandr.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$sys/shm.\+h$>$}\newline
+xrandr.\+c的包含相依圖\+:
+% FIG 0
+\doxysubsection*{複合項目}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structrectangle__t}{rectangle\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structbox__t}{box\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structpoint__t}{point\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structname__t}{name\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct__transform}{\+\_\+transform}}
+\item 
+struct \mbox{\hyperlink{struct__crtc}{\+\_\+crtc}}
+\item 
+struct \mbox{\hyperlink{struct__output__prop}{\+\_\+output\+\_\+prop}}
+\item 
+struct \mbox{\hyperlink{struct__output}{\+\_\+output}}
+\item 
+struct \mbox{\hyperlink{struct__umode}{\+\_\+umode}}
+\item 
+struct \mbox{\hyperlink{struct__provider}{\+\_\+provider}}
+\item 
+struct \mbox{\hyperlink{struct__monitors}{\+\_\+monitors}}
+\item 
+struct \mbox{\hyperlink{struct__umonitor}{\+\_\+umonitor}}
+\end{DoxyCompactItemize}
+\doxysubsection*{定義}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{xrandr_8c_a2a9e71d817d8ed2fa28ce7c7174f403e}{OUTPUT\+\_\+\+NAME}}~1
+\item 
+\#define \mbox{\hyperlink{xrandr_8c_a557b080871f22a7530a78498db5b6b0e}{CRTC\+\_\+\+OFF}}~2
+\item 
+\#define \mbox{\hyperlink{xrandr_8c_a604c65a0f4caee863a6b23fc56be0822}{CRTC\+\_\+\+UNSET}}~3
+\item 
+\#define \mbox{\hyperlink{xrandr_8c_a3b790e9ee5a615e51293d71489a3e077}{CRTC\+\_\+\+INDEX}}~0x40000000
+\item 
+\#define \mbox{\hyperlink{xrandr_8c_a948a1151d1d2770cc7be67b13ad62c00}{MODE\+\_\+\+NAME}}~1
+\item 
+\#define \mbox{\hyperlink{xrandr_8c_a7e20383a958f627be3b77eebf0a4a467}{MODE\+\_\+\+OFF}}~2
+\item 
+\#define \mbox{\hyperlink{xrandr_8c_a483ae44f0f31fed9929bb21257902df5}{MODE\+\_\+\+UNSET}}~3
+\item 
+\#define \mbox{\hyperlink{xrandr_8c_a5fdf75d5713917f97255c6bab99f5cee}{MODE\+\_\+\+PREF}}~4
+\item 
+\#define \mbox{\hyperlink{xrandr_8c_a4b312c8800dc40dc9b335faab9d3eed7}{POS\+\_\+\+UNSET}}~-\/1
+\item 
+\#define \mbox{\hyperlink{xrandr_8c_a47f2e62c0dbebc787052c165afcada0e}{NAME}}~\char`\"{}screenshot\char`\"{}
+\item 
+\#define \mbox{\hyperlink{xrandr_8c_a8f40226da14df1fe52cd78fcda4ec5cb}{BPP}}~4
+\end{DoxyCompactItemize}
+\doxysubsection*{型態定義}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{xrandr_8c_a2a32a993584e6f26b94df7e38cc51a69}{\+\_\+relation}} \mbox{\hyperlink{xrandr_8c_aec85c723e9a465ef9a2b5d08897ac67d}{relation\+\_\+t}}
+\item 
+typedef enum \mbox{\hyperlink{xrandr_8c_afef13f6ab47c180a1bb4f607297e206d}{\+\_\+changes}} \mbox{\hyperlink{xrandr_8c_a7ac8108f1e2dfaed62b5c653a8c85071}{changes\+\_\+t}}
+\item 
+typedef enum \mbox{\hyperlink{xrandr_8c_a3b56090b475f41fa88920087a0f8169b}{\+\_\+name\+\_\+kind}} \mbox{\hyperlink{xrandr_8c_a71d0415222b694ca87162336403df900}{name\+\_\+kind\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct__crtc}{\+\_\+crtc}} \mbox{\hyperlink{xrandr_8c_ae2af31683748b963fff9bdb033a08536}{crtc\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct__output}{\+\_\+output}} \mbox{\hyperlink{xrandr_8c_a5af79d67e379b52117b7d60540b2c012}{output\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct__transform}{\+\_\+transform}} \mbox{\hyperlink{xrandr_8c_ad7c0efb7a970ea50a2917012ecefbe04}{transform\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct__umode}{\+\_\+umode}} \mbox{\hyperlink{xrandr_8c_a2245ed818eac403572f14e3d786b71eb}{umode\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct__output__prop}{\+\_\+output\+\_\+prop}} \mbox{\hyperlink{xrandr_8c_ad11470b928775601c89c9888f8b2017d}{output\+\_\+prop\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct__provider}{\+\_\+provider}} \mbox{\hyperlink{xrandr_8c_a4ea92e942bf78a99e395b602ef8c26d1}{provider\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct__monitors}{\+\_\+monitors}} \mbox{\hyperlink{xrandr_8c_ad90952c869fb99e7c65a804b031c9f39}{monitors\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct__umonitor}{\+\_\+umonitor}} \mbox{\hyperlink{xrandr_8c_aa329ee0b2bbc2d3f4b03f727c2fe16ae}{umonitor\+\_\+t}}
+\item 
+typedef enum \mbox{\hyperlink{xrandr_8c_ac6037d99af1f72f20fd34726e1fc1efb}{\+\_\+umode\+\_\+action}} \mbox{\hyperlink{xrandr_8c_a1f9222bc164091fd0299fd87f9b008ef}{umode\+\_\+action\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{列舉型態}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{xrandr_8c_a2a32a993584e6f26b94df7e38cc51a69}{\+\_\+relation}} \{ \newline
+\mbox{\hyperlink{xrandr_8c_a2a32a993584e6f26b94df7e38cc51a69a9378062c7a27d48a11e4b81649f18a90}{relation\+\_\+left\+\_\+of}}
+, \mbox{\hyperlink{xrandr_8c_a2a32a993584e6f26b94df7e38cc51a69a21806350c670b46272e1ac53a6fbc79b}{relation\+\_\+right\+\_\+of}}
+, \mbox{\hyperlink{xrandr_8c_a2a32a993584e6f26b94df7e38cc51a69a924e1039dd44e04d6c10393f9755f2b9}{relation\+\_\+above}}
+, \mbox{\hyperlink{xrandr_8c_a2a32a993584e6f26b94df7e38cc51a69a078cc4e5fa49aa24c7a0ec0693529692}{relation\+\_\+below}}
+, \newline
+\mbox{\hyperlink{xrandr_8c_a2a32a993584e6f26b94df7e38cc51a69aeb6a7d051dd187efda61077111c17b67}{relation\+\_\+same\+\_\+as}}
+ \}
+\item 
+enum \mbox{\hyperlink{xrandr_8c_afef13f6ab47c180a1bb4f607297e206d}{\+\_\+changes}} \{ \newline
+\mbox{\hyperlink{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da9b5364d018a4f8f2fedbfafcd408bad5}{changes\+\_\+none}} = 0
+, \mbox{\hyperlink{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da780beb1dacc10e90331c0717827b4e81}{changes\+\_\+crtc}} = (1 $<$$<$ 0)
+, \mbox{\hyperlink{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da56e2ca14b3cab7fbbace3aad541dd134}{changes\+\_\+mode}} = (1 $<$$<$ 1)
+, \mbox{\hyperlink{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da41b742d19f2fbd9964d687e2d3546c6a}{changes\+\_\+relation}} = (1 $<$$<$ 2)
+, \newline
+\mbox{\hyperlink{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da4e5b37711385ffe0af561ab483392278}{changes\+\_\+position}} = (1 $<$$<$ 3)
+, \mbox{\hyperlink{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da43a4271239d9ed72cc77e09bc4b476e1}{changes\+\_\+rotation}} = (1 $<$$<$ 4)
+, \mbox{\hyperlink{xrandr_8c_afef13f6ab47c180a1bb4f607297e206dad3b3e951b5388f09dd8aa4cdd3f94cb9}{changes\+\_\+reflection}} = (1 $<$$<$ 5)
+, \mbox{\hyperlink{xrandr_8c_afef13f6ab47c180a1bb4f607297e206daf304f0ac3bb51f9f551ce5462a8b7523}{changes\+\_\+automatic}} = (1 $<$$<$ 6)
+, \newline
+\mbox{\hyperlink{xrandr_8c_afef13f6ab47c180a1bb4f607297e206dae754597bccf42723fdfbfdd90f2792ab}{changes\+\_\+refresh}} = (1 $<$$<$ 7)
+, \mbox{\hyperlink{xrandr_8c_afef13f6ab47c180a1bb4f607297e206dae5774ca0c7bd67603eb86e4ca92c6c22}{changes\+\_\+property}} = (1 $<$$<$ 8)
+, \mbox{\hyperlink{xrandr_8c_afef13f6ab47c180a1bb4f607297e206daa0c25c8fe10ecf5d46fc1e9ecf345063}{changes\+\_\+transform}} = (1 $<$$<$ 9)
+, \mbox{\hyperlink{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da54065ba9e44e4af186db9dd943783d27}{changes\+\_\+panning}} = (1 $<$$<$ 10)
+, \newline
+\mbox{\hyperlink{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da29ab7d4c2c6134807f805f9877dfad80}{changes\+\_\+gamma}} = (1 $<$$<$ 11)
+, \mbox{\hyperlink{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da46ae810699c02bfbfd5c306c208028e1}{changes\+\_\+primary}} = (1 $<$$<$ 12)
+, \mbox{\hyperlink{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da63480f43e85a08fb868c62bc9c0061d5}{changes\+\_\+filter}} = (1 $<$$<$ 13)
+ \}
+\item 
+enum \mbox{\hyperlink{xrandr_8c_a3b56090b475f41fa88920087a0f8169b}{\+\_\+name\+\_\+kind}} \{ \newline
+\mbox{\hyperlink{xrandr_8c_a3b56090b475f41fa88920087a0f8169ba4647e76ab6cbc9dfdec2cd613d87a4f0}{name\+\_\+none}} = 0
+, \mbox{\hyperlink{xrandr_8c_a3b56090b475f41fa88920087a0f8169ba98cbf64aa9605a805e866fbd4c4a2099}{name\+\_\+string}} = (1 $<$$<$ 0)
+, \mbox{\hyperlink{xrandr_8c_a3b56090b475f41fa88920087a0f8169baae93a21e331d6921d92d3150752cf21b}{name\+\_\+xid}} = (1 $<$$<$ 1)
+, \mbox{\hyperlink{xrandr_8c_a3b56090b475f41fa88920087a0f8169baa89a6b8603fd28f611a9fcb5b4befb1e}{name\+\_\+index}} = (1 $<$$<$ 2)
+, \newline
+\mbox{\hyperlink{xrandr_8c_a3b56090b475f41fa88920087a0f8169baa2c60f2d1f10c148d2170f50b435393b}{name\+\_\+preferred}} = (1 $<$$<$ 3)
+ \}
+\item 
+enum \mbox{\hyperlink{xrandr_8c_ac6037d99af1f72f20fd34726e1fc1efb}{\+\_\+umode\+\_\+action}} \{ \mbox{\hyperlink{xrandr_8c_ac6037d99af1f72f20fd34726e1fc1efbacaea2d6700d4bb1b4015d94b36757baa}{umode\+\_\+create}}
+, \mbox{\hyperlink{xrandr_8c_ac6037d99af1f72f20fd34726e1fc1efba5571640f5e39055d663dcc419efe875f}{umode\+\_\+destroy}}
+, \mbox{\hyperlink{xrandr_8c_ac6037d99af1f72f20fd34726e1fc1efbac42c152bf85233273088ee47c5230ee1}{umode\+\_\+add}}
+, \mbox{\hyperlink{xrandr_8c_ac6037d99af1f72f20fd34726e1fc1efbab577a18d6bf5ff8548687bd43b289d7f}{umode\+\_\+delete}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{函式}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{xrandr_8c_a0ba13330d8e5f0f6e3ce43fc081c239c}{initimage}} (struct \mbox{\hyperlink{structshmimage}{shmimage}} $\ast$image)
+\item 
+void \mbox{\hyperlink{xrandr_8c_a8c2e72090f933327fd3d448f74b26c2e}{getrootwindow}} (Display $\ast$dsp, struct \mbox{\hyperlink{structshmimage}{shmimage}} $\ast$image, \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} x\+\_\+pos, \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} y\+\_\+pos)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{定義巨集說明文件}
+\mbox{\Hypertarget{xrandr_8c_a8f40226da14df1fe52cd78fcda4ec5cb}\label{xrandr_8c_a8f40226da14df1fe52cd78fcda4ec5cb}} 
+\index{xrandr.c@{xrandr.c}!BPP@{BPP}}
+\index{BPP@{BPP}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{BPP}{BPP}}
+{\footnotesize\ttfamily \#define BPP~4}
+
+\mbox{\Hypertarget{xrandr_8c_a3b790e9ee5a615e51293d71489a3e077}\label{xrandr_8c_a3b790e9ee5a615e51293d71489a3e077}} 
+\index{xrandr.c@{xrandr.c}!CRTC\_INDEX@{CRTC\_INDEX}}
+\index{CRTC\_INDEX@{CRTC\_INDEX}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{CRTC\_INDEX}{CRTC\_INDEX}}
+{\footnotesize\ttfamily \#define CRTC\+\_\+\+INDEX~0x40000000}
+
+\mbox{\Hypertarget{xrandr_8c_a557b080871f22a7530a78498db5b6b0e}\label{xrandr_8c_a557b080871f22a7530a78498db5b6b0e}} 
+\index{xrandr.c@{xrandr.c}!CRTC\_OFF@{CRTC\_OFF}}
+\index{CRTC\_OFF@{CRTC\_OFF}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{CRTC\_OFF}{CRTC\_OFF}}
+{\footnotesize\ttfamily \#define CRTC\+\_\+\+OFF~2}
+
+\mbox{\Hypertarget{xrandr_8c_a604c65a0f4caee863a6b23fc56be0822}\label{xrandr_8c_a604c65a0f4caee863a6b23fc56be0822}} 
+\index{xrandr.c@{xrandr.c}!CRTC\_UNSET@{CRTC\_UNSET}}
+\index{CRTC\_UNSET@{CRTC\_UNSET}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{CRTC\_UNSET}{CRTC\_UNSET}}
+{\footnotesize\ttfamily \#define CRTC\+\_\+\+UNSET~3}
+
+\mbox{\Hypertarget{xrandr_8c_a948a1151d1d2770cc7be67b13ad62c00}\label{xrandr_8c_a948a1151d1d2770cc7be67b13ad62c00}} 
+\index{xrandr.c@{xrandr.c}!MODE\_NAME@{MODE\_NAME}}
+\index{MODE\_NAME@{MODE\_NAME}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{MODE\_NAME}{MODE\_NAME}}
+{\footnotesize\ttfamily \#define MODE\+\_\+\+NAME~1}
+
+\mbox{\Hypertarget{xrandr_8c_a7e20383a958f627be3b77eebf0a4a467}\label{xrandr_8c_a7e20383a958f627be3b77eebf0a4a467}} 
+\index{xrandr.c@{xrandr.c}!MODE\_OFF@{MODE\_OFF}}
+\index{MODE\_OFF@{MODE\_OFF}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{MODE\_OFF}{MODE\_OFF}}
+{\footnotesize\ttfamily \#define MODE\+\_\+\+OFF~2}
+
+\mbox{\Hypertarget{xrandr_8c_a5fdf75d5713917f97255c6bab99f5cee}\label{xrandr_8c_a5fdf75d5713917f97255c6bab99f5cee}} 
+\index{xrandr.c@{xrandr.c}!MODE\_PREF@{MODE\_PREF}}
+\index{MODE\_PREF@{MODE\_PREF}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{MODE\_PREF}{MODE\_PREF}}
+{\footnotesize\ttfamily \#define MODE\+\_\+\+PREF~4}
+
+\mbox{\Hypertarget{xrandr_8c_a483ae44f0f31fed9929bb21257902df5}\label{xrandr_8c_a483ae44f0f31fed9929bb21257902df5}} 
+\index{xrandr.c@{xrandr.c}!MODE\_UNSET@{MODE\_UNSET}}
+\index{MODE\_UNSET@{MODE\_UNSET}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{MODE\_UNSET}{MODE\_UNSET}}
+{\footnotesize\ttfamily \#define MODE\+\_\+\+UNSET~3}
+
+\mbox{\Hypertarget{xrandr_8c_a47f2e62c0dbebc787052c165afcada0e}\label{xrandr_8c_a47f2e62c0dbebc787052c165afcada0e}} 
+\index{xrandr.c@{xrandr.c}!NAME@{NAME}}
+\index{NAME@{NAME}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{NAME}{NAME}}
+{\footnotesize\ttfamily \#define NAME~\char`\"{}screenshot\char`\"{}}
+
+\mbox{\Hypertarget{xrandr_8c_a2a9e71d817d8ed2fa28ce7c7174f403e}\label{xrandr_8c_a2a9e71d817d8ed2fa28ce7c7174f403e}} 
+\index{xrandr.c@{xrandr.c}!OUTPUT\_NAME@{OUTPUT\_NAME}}
+\index{OUTPUT\_NAME@{OUTPUT\_NAME}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{OUTPUT\_NAME}{OUTPUT\_NAME}}
+{\footnotesize\ttfamily \#define OUTPUT\+\_\+\+NAME~1}
+
+\mbox{\Hypertarget{xrandr_8c_a4b312c8800dc40dc9b335faab9d3eed7}\label{xrandr_8c_a4b312c8800dc40dc9b335faab9d3eed7}} 
+\index{xrandr.c@{xrandr.c}!POS\_UNSET@{POS\_UNSET}}
+\index{POS\_UNSET@{POS\_UNSET}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{POS\_UNSET}{POS\_UNSET}}
+{\footnotesize\ttfamily \#define POS\+\_\+\+UNSET~-\/1}
+
+
+
+\doxysubsection{型態定義說明文件}
+\mbox{\Hypertarget{xrandr_8c_a7ac8108f1e2dfaed62b5c653a8c85071}\label{xrandr_8c_a7ac8108f1e2dfaed62b5c653a8c85071}} 
+\index{xrandr.c@{xrandr.c}!changes\_t@{changes\_t}}
+\index{changes\_t@{changes\_t}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{changes\_t}{changes\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{xrandr_8c_afef13f6ab47c180a1bb4f607297e206d}{\+\_\+changes}} \mbox{\hyperlink{xrandr_8c_a7ac8108f1e2dfaed62b5c653a8c85071}{changes\+\_\+t}}}
+
+\mbox{\Hypertarget{xrandr_8c_ae2af31683748b963fff9bdb033a08536}\label{xrandr_8c_ae2af31683748b963fff9bdb033a08536}} 
+\index{xrandr.c@{xrandr.c}!crtc\_t@{crtc\_t}}
+\index{crtc\_t@{crtc\_t}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{crtc\_t}{crtc\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct__crtc}{\+\_\+crtc}} \mbox{\hyperlink{xrandr_8c_ae2af31683748b963fff9bdb033a08536}{crtc\+\_\+t}}}
+
+\mbox{\Hypertarget{xrandr_8c_ad90952c869fb99e7c65a804b031c9f39}\label{xrandr_8c_ad90952c869fb99e7c65a804b031c9f39}} 
+\index{xrandr.c@{xrandr.c}!monitors\_t@{monitors\_t}}
+\index{monitors\_t@{monitors\_t}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{monitors\_t}{monitors\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct__monitors}{\+\_\+monitors}} \mbox{\hyperlink{xrandr_8c_ad90952c869fb99e7c65a804b031c9f39}{monitors\+\_\+t}}}
+
+\mbox{\Hypertarget{xrandr_8c_a71d0415222b694ca87162336403df900}\label{xrandr_8c_a71d0415222b694ca87162336403df900}} 
+\index{xrandr.c@{xrandr.c}!name\_kind\_t@{name\_kind\_t}}
+\index{name\_kind\_t@{name\_kind\_t}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{name\_kind\_t}{name\_kind\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{xrandr_8c_a3b56090b475f41fa88920087a0f8169b}{\+\_\+name\+\_\+kind}} \mbox{\hyperlink{xrandr_8c_a71d0415222b694ca87162336403df900}{name\+\_\+kind\+\_\+t}}}
+
+\mbox{\Hypertarget{xrandr_8c_ad11470b928775601c89c9888f8b2017d}\label{xrandr_8c_ad11470b928775601c89c9888f8b2017d}} 
+\index{xrandr.c@{xrandr.c}!output\_prop\_t@{output\_prop\_t}}
+\index{output\_prop\_t@{output\_prop\_t}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{output\_prop\_t}{output\_prop\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct__output__prop}{\+\_\+output\+\_\+prop}} \mbox{\hyperlink{xrandr_8c_ad11470b928775601c89c9888f8b2017d}{output\+\_\+prop\+\_\+t}}}
+
+\mbox{\Hypertarget{xrandr_8c_a5af79d67e379b52117b7d60540b2c012}\label{xrandr_8c_a5af79d67e379b52117b7d60540b2c012}} 
+\index{xrandr.c@{xrandr.c}!output\_t@{output\_t}}
+\index{output\_t@{output\_t}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{output\_t}{output\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct__output}{\+\_\+output}} \mbox{\hyperlink{xrandr_8c_a5af79d67e379b52117b7d60540b2c012}{output\+\_\+t}}}
+
+\mbox{\Hypertarget{xrandr_8c_a4ea92e942bf78a99e395b602ef8c26d1}\label{xrandr_8c_a4ea92e942bf78a99e395b602ef8c26d1}} 
+\index{xrandr.c@{xrandr.c}!provider\_t@{provider\_t}}
+\index{provider\_t@{provider\_t}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{provider\_t}{provider\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct__provider}{\+\_\+provider}} \mbox{\hyperlink{xrandr_8c_a4ea92e942bf78a99e395b602ef8c26d1}{provider\+\_\+t}}}
+
+\mbox{\Hypertarget{xrandr_8c_aec85c723e9a465ef9a2b5d08897ac67d}\label{xrandr_8c_aec85c723e9a465ef9a2b5d08897ac67d}} 
+\index{xrandr.c@{xrandr.c}!relation\_t@{relation\_t}}
+\index{relation\_t@{relation\_t}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{relation\_t}{relation\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{xrandr_8c_a2a32a993584e6f26b94df7e38cc51a69}{\+\_\+relation}} \mbox{\hyperlink{xrandr_8c_aec85c723e9a465ef9a2b5d08897ac67d}{relation\+\_\+t}}}
+
+\mbox{\Hypertarget{xrandr_8c_ad7c0efb7a970ea50a2917012ecefbe04}\label{xrandr_8c_ad7c0efb7a970ea50a2917012ecefbe04}} 
+\index{xrandr.c@{xrandr.c}!transform\_t@{transform\_t}}
+\index{transform\_t@{transform\_t}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{transform\_t}{transform\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct__transform}{\+\_\+transform}} \mbox{\hyperlink{xrandr_8c_ad7c0efb7a970ea50a2917012ecefbe04}{transform\+\_\+t}}}
+
+\mbox{\Hypertarget{xrandr_8c_a1f9222bc164091fd0299fd87f9b008ef}\label{xrandr_8c_a1f9222bc164091fd0299fd87f9b008ef}} 
+\index{xrandr.c@{xrandr.c}!umode\_action\_t@{umode\_action\_t}}
+\index{umode\_action\_t@{umode\_action\_t}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{umode\_action\_t}{umode\_action\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{xrandr_8c_ac6037d99af1f72f20fd34726e1fc1efb}{\+\_\+umode\+\_\+action}} \mbox{\hyperlink{xrandr_8c_a1f9222bc164091fd0299fd87f9b008ef}{umode\+\_\+action\+\_\+t}}}
+
+\mbox{\Hypertarget{xrandr_8c_a2245ed818eac403572f14e3d786b71eb}\label{xrandr_8c_a2245ed818eac403572f14e3d786b71eb}} 
+\index{xrandr.c@{xrandr.c}!umode\_t@{umode\_t}}
+\index{umode\_t@{umode\_t}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{umode\_t}{umode\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct__umode}{\+\_\+umode}} \mbox{\hyperlink{xrandr_8c_a2245ed818eac403572f14e3d786b71eb}{umode\+\_\+t}}}
+
+\mbox{\Hypertarget{xrandr_8c_aa329ee0b2bbc2d3f4b03f727c2fe16ae}\label{xrandr_8c_aa329ee0b2bbc2d3f4b03f727c2fe16ae}} 
+\index{xrandr.c@{xrandr.c}!umonitor\_t@{umonitor\_t}}
+\index{umonitor\_t@{umonitor\_t}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{umonitor\_t}{umonitor\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct__umonitor}{\+\_\+umonitor}} \mbox{\hyperlink{xrandr_8c_aa329ee0b2bbc2d3f4b03f727c2fe16ae}{umonitor\+\_\+t}}}
+
+
+
+\doxysubsection{列舉型態說明文件}
+\mbox{\Hypertarget{xrandr_8c_afef13f6ab47c180a1bb4f607297e206d}\label{xrandr_8c_afef13f6ab47c180a1bb4f607297e206d}} 
+\index{xrandr.c@{xrandr.c}!\_changes@{\_changes}}
+\index{\_changes@{\_changes}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{\_changes}{\_changes}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{xrandr_8c_afef13f6ab47c180a1bb4f607297e206d}{\+\_\+changes}}}
+
+\begin{DoxyEnumFields}{列舉值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{changes\_none@{changes\_none}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!changes\_none@{changes\_none}}}\mbox{\Hypertarget{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da9b5364d018a4f8f2fedbfafcd408bad5}\label{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da9b5364d018a4f8f2fedbfafcd408bad5}} 
+changes\+\_\+none&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{changes\_crtc@{changes\_crtc}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!changes\_crtc@{changes\_crtc}}}\mbox{\Hypertarget{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da780beb1dacc10e90331c0717827b4e81}\label{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da780beb1dacc10e90331c0717827b4e81}} 
+changes\+\_\+crtc&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{changes\_mode@{changes\_mode}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!changes\_mode@{changes\_mode}}}\mbox{\Hypertarget{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da56e2ca14b3cab7fbbace3aad541dd134}\label{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da56e2ca14b3cab7fbbace3aad541dd134}} 
+changes\+\_\+mode&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{changes\_relation@{changes\_relation}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!changes\_relation@{changes\_relation}}}\mbox{\Hypertarget{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da41b742d19f2fbd9964d687e2d3546c6a}\label{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da41b742d19f2fbd9964d687e2d3546c6a}} 
+changes\+\_\+relation&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{changes\_position@{changes\_position}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!changes\_position@{changes\_position}}}\mbox{\Hypertarget{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da4e5b37711385ffe0af561ab483392278}\label{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da4e5b37711385ffe0af561ab483392278}} 
+changes\+\_\+position&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{changes\_rotation@{changes\_rotation}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!changes\_rotation@{changes\_rotation}}}\mbox{\Hypertarget{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da43a4271239d9ed72cc77e09bc4b476e1}\label{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da43a4271239d9ed72cc77e09bc4b476e1}} 
+changes\+\_\+rotation&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{changes\_reflection@{changes\_reflection}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!changes\_reflection@{changes\_reflection}}}\mbox{\Hypertarget{xrandr_8c_afef13f6ab47c180a1bb4f607297e206dad3b3e951b5388f09dd8aa4cdd3f94cb9}\label{xrandr_8c_afef13f6ab47c180a1bb4f607297e206dad3b3e951b5388f09dd8aa4cdd3f94cb9}} 
+changes\+\_\+reflection&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{changes\_automatic@{changes\_automatic}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!changes\_automatic@{changes\_automatic}}}\mbox{\Hypertarget{xrandr_8c_afef13f6ab47c180a1bb4f607297e206daf304f0ac3bb51f9f551ce5462a8b7523}\label{xrandr_8c_afef13f6ab47c180a1bb4f607297e206daf304f0ac3bb51f9f551ce5462a8b7523}} 
+changes\+\_\+automatic&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{changes\_refresh@{changes\_refresh}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!changes\_refresh@{changes\_refresh}}}\mbox{\Hypertarget{xrandr_8c_afef13f6ab47c180a1bb4f607297e206dae754597bccf42723fdfbfdd90f2792ab}\label{xrandr_8c_afef13f6ab47c180a1bb4f607297e206dae754597bccf42723fdfbfdd90f2792ab}} 
+changes\+\_\+refresh&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{changes\_property@{changes\_property}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!changes\_property@{changes\_property}}}\mbox{\Hypertarget{xrandr_8c_afef13f6ab47c180a1bb4f607297e206dae5774ca0c7bd67603eb86e4ca92c6c22}\label{xrandr_8c_afef13f6ab47c180a1bb4f607297e206dae5774ca0c7bd67603eb86e4ca92c6c22}} 
+changes\+\_\+property&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{changes\_transform@{changes\_transform}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!changes\_transform@{changes\_transform}}}\mbox{\Hypertarget{xrandr_8c_afef13f6ab47c180a1bb4f607297e206daa0c25c8fe10ecf5d46fc1e9ecf345063}\label{xrandr_8c_afef13f6ab47c180a1bb4f607297e206daa0c25c8fe10ecf5d46fc1e9ecf345063}} 
+changes\+\_\+transform&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{changes\_panning@{changes\_panning}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!changes\_panning@{changes\_panning}}}\mbox{\Hypertarget{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da54065ba9e44e4af186db9dd943783d27}\label{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da54065ba9e44e4af186db9dd943783d27}} 
+changes\+\_\+panning&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{changes\_gamma@{changes\_gamma}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!changes\_gamma@{changes\_gamma}}}\mbox{\Hypertarget{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da29ab7d4c2c6134807f805f9877dfad80}\label{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da29ab7d4c2c6134807f805f9877dfad80}} 
+changes\+\_\+gamma&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{changes\_primary@{changes\_primary}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!changes\_primary@{changes\_primary}}}\mbox{\Hypertarget{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da46ae810699c02bfbfd5c306c208028e1}\label{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da46ae810699c02bfbfd5c306c208028e1}} 
+changes\+\_\+primary&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{changes\_filter@{changes\_filter}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!changes\_filter@{changes\_filter}}}\mbox{\Hypertarget{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da63480f43e85a08fb868c62bc9c0061d5}\label{xrandr_8c_afef13f6ab47c180a1bb4f607297e206da63480f43e85a08fb868c62bc9c0061d5}} 
+changes\+\_\+filter&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{xrandr_8c_a3b56090b475f41fa88920087a0f8169b}\label{xrandr_8c_a3b56090b475f41fa88920087a0f8169b}} 
+\index{xrandr.c@{xrandr.c}!\_name\_kind@{\_name\_kind}}
+\index{\_name\_kind@{\_name\_kind}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{\_name\_kind}{\_name\_kind}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{xrandr_8c_a3b56090b475f41fa88920087a0f8169b}{\+\_\+name\+\_\+kind}}}
+
+\begin{DoxyEnumFields}{列舉值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{name\_none@{name\_none}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!name\_none@{name\_none}}}\mbox{\Hypertarget{xrandr_8c_a3b56090b475f41fa88920087a0f8169ba4647e76ab6cbc9dfdec2cd613d87a4f0}\label{xrandr_8c_a3b56090b475f41fa88920087a0f8169ba4647e76ab6cbc9dfdec2cd613d87a4f0}} 
+name\+\_\+none&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{name\_string@{name\_string}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!name\_string@{name\_string}}}\mbox{\Hypertarget{xrandr_8c_a3b56090b475f41fa88920087a0f8169ba98cbf64aa9605a805e866fbd4c4a2099}\label{xrandr_8c_a3b56090b475f41fa88920087a0f8169ba98cbf64aa9605a805e866fbd4c4a2099}} 
+name\+\_\+string&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{name\_xid@{name\_xid}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!name\_xid@{name\_xid}}}\mbox{\Hypertarget{xrandr_8c_a3b56090b475f41fa88920087a0f8169baae93a21e331d6921d92d3150752cf21b}\label{xrandr_8c_a3b56090b475f41fa88920087a0f8169baae93a21e331d6921d92d3150752cf21b}} 
+name\+\_\+xid&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{name\_index@{name\_index}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!name\_index@{name\_index}}}\mbox{\Hypertarget{xrandr_8c_a3b56090b475f41fa88920087a0f8169baa89a6b8603fd28f611a9fcb5b4befb1e}\label{xrandr_8c_a3b56090b475f41fa88920087a0f8169baa89a6b8603fd28f611a9fcb5b4befb1e}} 
+name\+\_\+index&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{name\_preferred@{name\_preferred}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!name\_preferred@{name\_preferred}}}\mbox{\Hypertarget{xrandr_8c_a3b56090b475f41fa88920087a0f8169baa2c60f2d1f10c148d2170f50b435393b}\label{xrandr_8c_a3b56090b475f41fa88920087a0f8169baa2c60f2d1f10c148d2170f50b435393b}} 
+name\+\_\+preferred&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{xrandr_8c_a2a32a993584e6f26b94df7e38cc51a69}\label{xrandr_8c_a2a32a993584e6f26b94df7e38cc51a69}} 
+\index{xrandr.c@{xrandr.c}!\_relation@{\_relation}}
+\index{\_relation@{\_relation}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{\_relation}{\_relation}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{xrandr_8c_a2a32a993584e6f26b94df7e38cc51a69}{\+\_\+relation}}}
+
+\begin{DoxyEnumFields}{列舉值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{relation\_left\_of@{relation\_left\_of}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!relation\_left\_of@{relation\_left\_of}}}\mbox{\Hypertarget{xrandr_8c_a2a32a993584e6f26b94df7e38cc51a69a9378062c7a27d48a11e4b81649f18a90}\label{xrandr_8c_a2a32a993584e6f26b94df7e38cc51a69a9378062c7a27d48a11e4b81649f18a90}} 
+relation\+\_\+left\+\_\+of&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{relation\_right\_of@{relation\_right\_of}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!relation\_right\_of@{relation\_right\_of}}}\mbox{\Hypertarget{xrandr_8c_a2a32a993584e6f26b94df7e38cc51a69a21806350c670b46272e1ac53a6fbc79b}\label{xrandr_8c_a2a32a993584e6f26b94df7e38cc51a69a21806350c670b46272e1ac53a6fbc79b}} 
+relation\+\_\+right\+\_\+of&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{relation\_above@{relation\_above}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!relation\_above@{relation\_above}}}\mbox{\Hypertarget{xrandr_8c_a2a32a993584e6f26b94df7e38cc51a69a924e1039dd44e04d6c10393f9755f2b9}\label{xrandr_8c_a2a32a993584e6f26b94df7e38cc51a69a924e1039dd44e04d6c10393f9755f2b9}} 
+relation\+\_\+above&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{relation\_below@{relation\_below}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!relation\_below@{relation\_below}}}\mbox{\Hypertarget{xrandr_8c_a2a32a993584e6f26b94df7e38cc51a69a078cc4e5fa49aa24c7a0ec0693529692}\label{xrandr_8c_a2a32a993584e6f26b94df7e38cc51a69a078cc4e5fa49aa24c7a0ec0693529692}} 
+relation\+\_\+below&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{relation\_same\_as@{relation\_same\_as}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!relation\_same\_as@{relation\_same\_as}}}\mbox{\Hypertarget{xrandr_8c_a2a32a993584e6f26b94df7e38cc51a69aeb6a7d051dd187efda61077111c17b67}\label{xrandr_8c_a2a32a993584e6f26b94df7e38cc51a69aeb6a7d051dd187efda61077111c17b67}} 
+relation\+\_\+same\+\_\+as&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{xrandr_8c_ac6037d99af1f72f20fd34726e1fc1efb}\label{xrandr_8c_ac6037d99af1f72f20fd34726e1fc1efb}} 
+\index{xrandr.c@{xrandr.c}!\_umode\_action@{\_umode\_action}}
+\index{\_umode\_action@{\_umode\_action}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{\_umode\_action}{\_umode\_action}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{xrandr_8c_ac6037d99af1f72f20fd34726e1fc1efb}{\+\_\+umode\+\_\+action}}}
+
+\begin{DoxyEnumFields}{列舉值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{umode\_create@{umode\_create}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!umode\_create@{umode\_create}}}\mbox{\Hypertarget{xrandr_8c_ac6037d99af1f72f20fd34726e1fc1efbacaea2d6700d4bb1b4015d94b36757baa}\label{xrandr_8c_ac6037d99af1f72f20fd34726e1fc1efbacaea2d6700d4bb1b4015d94b36757baa}} 
+umode\+\_\+create&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{umode\_destroy@{umode\_destroy}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!umode\_destroy@{umode\_destroy}}}\mbox{\Hypertarget{xrandr_8c_ac6037d99af1f72f20fd34726e1fc1efba5571640f5e39055d663dcc419efe875f}\label{xrandr_8c_ac6037d99af1f72f20fd34726e1fc1efba5571640f5e39055d663dcc419efe875f}} 
+umode\+\_\+destroy&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{umode\_add@{umode\_add}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!umode\_add@{umode\_add}}}\mbox{\Hypertarget{xrandr_8c_ac6037d99af1f72f20fd34726e1fc1efbac42c152bf85233273088ee47c5230ee1}\label{xrandr_8c_ac6037d99af1f72f20fd34726e1fc1efbac42c152bf85233273088ee47c5230ee1}} 
+umode\+\_\+add&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{umode\_delete@{umode\_delete}!xrandr.c@{xrandr.c}}\index{xrandr.c@{xrandr.c}!umode\_delete@{umode\_delete}}}\mbox{\Hypertarget{xrandr_8c_ac6037d99af1f72f20fd34726e1fc1efbab577a18d6bf5ff8548687bd43b289d7f}\label{xrandr_8c_ac6037d99af1f72f20fd34726e1fc1efbab577a18d6bf5ff8548687bd43b289d7f}} 
+umode\+\_\+delete&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{函式說明文件}
+\mbox{\Hypertarget{xrandr_8c_a8c2e72090f933327fd3d448f74b26c2e}\label{xrandr_8c_a8c2e72090f933327fd3d448f74b26c2e}} 
+\index{xrandr.c@{xrandr.c}!getrootwindow@{getrootwindow}}
+\index{getrootwindow@{getrootwindow}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{getrootwindow()}{getrootwindow()}}
+{\footnotesize\ttfamily void getrootwindow (\begin{DoxyParamCaption}\item[{Display $\ast$}]{dsp,  }\item[{struct \mbox{\hyperlink{structshmimage}{shmimage}} $\ast$}]{image,  }\item[{\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}}]{x\+\_\+pos,  }\item[{\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}}]{y\+\_\+pos }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{xrandr_8c_a0ba13330d8e5f0f6e3ce43fc081c239c}\label{xrandr_8c_a0ba13330d8e5f0f6e3ce43fc081c239c}} 
+\index{xrandr.c@{xrandr.c}!initimage@{initimage}}
+\index{initimage@{initimage}!xrandr.c@{xrandr.c}}
+\doxysubsubsection{\texorpdfstring{initimage()}{initimage()}}
+{\footnotesize\ttfamily void initimage (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structshmimage}{shmimage}} $\ast$}]{image }\end{DoxyParamCaption})}
+
+
+
+參考 shmimage\+::shminfo, 及 shmimage\+::ximage.
+

@@ -1,0 +1,30 @@
+digraph "/home/odin/Desktop/program/learn/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/library/evdi_lib.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/deb\l_install/com.racertech.usbdisp\l-1.0.0/opt/apps/com.racertech.usbdisp\l/files/evdi/library/evdi_lib.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libevdipp/buffer.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$buffer_8hpp.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libevdipp/buffer.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$buffer_8cpp.html",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libevdipp/screen.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$screen_8hpp.html",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/example/driver.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$driver_8hpp.html",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/example/driver.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$driver_8cpp.html",tooltip=" "];
+  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/example/example.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$example_8cpp.html",tooltip=" "];
+  Node4 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libevdipp/screen.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$screen_8cpp.html",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libevdipp/evdi.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$evdi_8hpp.html",tooltip=" "];
+  Node9 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libevdipp/evdi.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$evdi_8cpp.html",tooltip=" "];
+  Node9 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/deb\l_install/com.racertech.usbdisp\l-1.0.0/opt/apps/com.racertech.usbdisp\l/files/evdi/library/evdi_lib.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$evdi__lib_8c.html",tooltip=" "];
+}

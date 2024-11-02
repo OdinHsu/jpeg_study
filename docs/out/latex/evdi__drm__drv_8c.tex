@@ -1,0 +1,121 @@
+\hypertarget{evdi__drm__drv_8c}{}\doxysection{/home/odin/\+Desktop/program/learn/usbdisp\+\_\+linux/libusbdisp/deb\+\_\+install/com.racertech.\+usbdisp-\/1.0.0/opt/apps/com.racertech.\+usbdisp/files/evdi/module/evdi\+\_\+drm\+\_\+drv.c 檔案參考文件}
+\label{evdi__drm__drv_8c}\index{/home/odin/Desktop/program/learn/usbdisp\_linux/libusbdisp/deb\_install/com.racertech.usbdisp-\/1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi\_drm\_drv.c@{/home/odin/Desktop/program/learn/usbdisp\_linux/libusbdisp/deb\_install/com.racertech.usbdisp-\/1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi\_drm\_drv.c}}
+{\ttfamily \#include $<$linux/version.\+h$>$}\newline
+{\ttfamily \#include $<$drm/drm\+\_\+ioctl.\+h$>$}\newline
+{\ttfamily \#include $<$drm/drm\+\_\+file.\+h$>$}\newline
+{\ttfamily \#include $<$drm/drm\+\_\+drv.\+h$>$}\newline
+{\ttfamily \#include $<$drm/drm\+\_\+vblank.\+h$>$}\newline
+{\ttfamily \#include $<$drm/drm\+\_\+probe\+\_\+helper.\+h$>$}\newline
+{\ttfamily \#include $<$drm/drm\+\_\+managed.\+h$>$}\newline
+{\ttfamily \#include $<$drm/drm\+\_\+atomic\+\_\+helper.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}evdi\+\_\+drm\+\_\+drv.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}evdi\+\_\+platform\+\_\+drv.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}evdi\+\_\+cursor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}evdi\+\_\+debug.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}evdi\+\_\+drm.\+h\char`\"{}}\newline
+evdi\+\_\+drm\+\_\+drv.\+c的包含相依圖\+:
+% FIG 0
+\doxysubsection*{函式}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{evdi__drm__drv_8c_af8ba5eb420972bf36b287b2267bb7306}{evdi\+\_\+drm\+\_\+device\+\_\+unload}} (struct drm\+\_\+device $\ast$dev)
+\item 
+\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{evdi__drm__drv_8c_ad6ba78e320f0b7ec4eeb05b1d3e18a8a}{evdi\+\_\+driver\+\_\+open}} (struct drm\+\_\+device $\ast$drm\+\_\+dev, \+\_\+\+\_\+always\+\_\+unused struct drm\+\_\+file $\ast$file)
+\item 
+void \mbox{\hyperlink{evdi__drm__drv_8c_a08a0e9922f1c31014646d154f1fce540}{evdi\+\_\+driver\+\_\+preclose}} (struct drm\+\_\+device $\ast$drm\+\_\+dev, struct drm\+\_\+file $\ast$file)
+\item 
+void \mbox{\hyperlink{evdi__drm__drv_8c_adce8ff8cbf6d18aca71fd8c63351b32f}{evdi\+\_\+driver\+\_\+postclose}} (struct drm\+\_\+device $\ast$drm\+\_\+dev, struct drm\+\_\+file $\ast$file)
+\item 
+struct drm\+\_\+device $\ast$ \mbox{\hyperlink{evdi__drm__drv_8c_a7def039a83c1353dc2770bc2cce869a5}{evdi\+\_\+drm\+\_\+device\+\_\+create}} (struct device $\ast$parent)
+\item 
+\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{evdi__drm__drv_8c_a00933d6a42caa53a9f9666b8998f759f}{evdi\+\_\+drm\+\_\+device\+\_\+remove}} (struct drm\+\_\+device $\ast$dev)
+\end{DoxyCompactItemize}
+\doxysubsection*{變數}
+\begin{DoxyCompactItemize}
+\item 
+struct drm\+\_\+ioctl\+\_\+desc \mbox{\hyperlink{evdi__drm__drv_8c_a5ed559ed6c313a784c9db3f62703d3d3}{evdi\+\_\+painter\+\_\+ioctls}} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{函式說明文件}
+\mbox{\Hypertarget{evdi__drm__drv_8c_ad6ba78e320f0b7ec4eeb05b1d3e18a8a}\label{evdi__drm__drv_8c_ad6ba78e320f0b7ec4eeb05b1d3e18a8a}} 
+\index{evdi\_drm\_drv.c@{evdi\_drm\_drv.c}!evdi\_driver\_open@{evdi\_driver\_open}}
+\index{evdi\_driver\_open@{evdi\_driver\_open}!evdi\_drm\_drv.c@{evdi\_drm\_drv.c}}
+\doxysubsubsection{\texorpdfstring{evdi\_driver\_open()}{evdi\_driver\_open()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} evdi\+\_\+driver\+\_\+open (\begin{DoxyParamCaption}\item[{struct drm\+\_\+device $\ast$}]{drm\+\_\+dev,  }\item[{\+\_\+\+\_\+always\+\_\+unused struct drm\+\_\+file $\ast$}]{file }\end{DoxyParamCaption})}
+
+
+
+參考 evdi\+\_\+device\+::dev\+\_\+index, EVDI\+\_\+\+INFO, 及 evdi\+\_\+log\+\_\+process().
+
+\mbox{\Hypertarget{evdi__drm__drv_8c_adce8ff8cbf6d18aca71fd8c63351b32f}\label{evdi__drm__drv_8c_adce8ff8cbf6d18aca71fd8c63351b32f}} 
+\index{evdi\_drm\_drv.c@{evdi\_drm\_drv.c}!evdi\_driver\_postclose@{evdi\_driver\_postclose}}
+\index{evdi\_driver\_postclose@{evdi\_driver\_postclose}!evdi\_drm\_drv.c@{evdi\_drm\_drv.c}}
+\doxysubsubsection{\texorpdfstring{evdi\_driver\_postclose()}{evdi\_driver\_postclose()}}
+{\footnotesize\ttfamily void evdi\+\_\+driver\+\_\+postclose (\begin{DoxyParamCaption}\item[{struct drm\+\_\+device $\ast$}]{drm\+\_\+dev,  }\item[{struct drm\+\_\+file $\ast$}]{file }\end{DoxyParamCaption})}
+
+
+
+參考 evdi\+\_\+device\+::dev\+\_\+index, EVDI\+\_\+\+INFO, 及 evdi\+\_\+log\+\_\+process().
+
+\mbox{\Hypertarget{evdi__drm__drv_8c_a08a0e9922f1c31014646d154f1fce540}\label{evdi__drm__drv_8c_a08a0e9922f1c31014646d154f1fce540}} 
+\index{evdi\_drm\_drv.c@{evdi\_drm\_drv.c}!evdi\_driver\_preclose@{evdi\_driver\_preclose}}
+\index{evdi\_driver\_preclose@{evdi\_driver\_preclose}!evdi\_drm\_drv.c@{evdi\_drm\_drv.c}}
+\doxysubsubsection{\texorpdfstring{evdi\_driver\_preclose()}{evdi\_driver\_preclose()}}
+{\footnotesize\ttfamily void evdi\+\_\+driver\+\_\+preclose (\begin{DoxyParamCaption}\item[{struct drm\+\_\+device $\ast$}]{drm\+\_\+dev,  }\item[{struct drm\+\_\+file $\ast$}]{file }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{evdi__drm__drv_8c_a7def039a83c1353dc2770bc2cce869a5}\label{evdi__drm__drv_8c_a7def039a83c1353dc2770bc2cce869a5}} 
+\index{evdi\_drm\_drv.c@{evdi\_drm\_drv.c}!evdi\_drm\_device\_create@{evdi\_drm\_device\_create}}
+\index{evdi\_drm\_device\_create@{evdi\_drm\_device\_create}!evdi\_drm\_drv.c@{evdi\_drm\_drv.c}}
+\doxysubsubsection{\texorpdfstring{evdi\_drm\_device\_create()}{evdi\_drm\_device\_create()}}
+{\footnotesize\ttfamily struct drm\+\_\+device$\ast$ evdi\+\_\+drm\+\_\+device\+\_\+create (\begin{DoxyParamCaption}\item[{struct device $\ast$}]{parent }\end{DoxyParamCaption})}
+
+
+
+被參考於 evdi\+\_\+platform\+\_\+device\+\_\+probe().
+
+\mbox{\Hypertarget{evdi__drm__drv_8c_a00933d6a42caa53a9f9666b8998f759f}\label{evdi__drm__drv_8c_a00933d6a42caa53a9f9666b8998f759f}} 
+\index{evdi\_drm\_drv.c@{evdi\_drm\_drv.c}!evdi\_drm\_device\_remove@{evdi\_drm\_device\_remove}}
+\index{evdi\_drm\_device\_remove@{evdi\_drm\_device\_remove}!evdi\_drm\_drv.c@{evdi\_drm\_drv.c}}
+\doxysubsubsection{\texorpdfstring{evdi\_drm\_device\_remove()}{evdi\_drm\_device\_remove()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} evdi\+\_\+drm\+\_\+device\+\_\+remove (\begin{DoxyParamCaption}\item[{struct drm\+\_\+device $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+被參考於 evdi\+\_\+platform\+\_\+device\+\_\+remove().
+
+\mbox{\Hypertarget{evdi__drm__drv_8c_af8ba5eb420972bf36b287b2267bb7306}\label{evdi__drm__drv_8c_af8ba5eb420972bf36b287b2267bb7306}} 
+\index{evdi\_drm\_drv.c@{evdi\_drm\_drv.c}!evdi\_drm\_device\_unload@{evdi\_drm\_device\_unload}}
+\index{evdi\_drm\_device\_unload@{evdi\_drm\_device\_unload}!evdi\_drm\_drv.c@{evdi\_drm\_drv.c}}
+\doxysubsubsection{\texorpdfstring{evdi\_drm\_device\_unload()}{evdi\_drm\_device\_unload()}}
+{\footnotesize\ttfamily void evdi\+\_\+drm\+\_\+device\+\_\+unload (\begin{DoxyParamCaption}\item[{struct drm\+\_\+device $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+參考 evdi\+\_\+device\+::cursor, EVDI\+\_\+\+CHECKPT, evdi\+\_\+cursor\+\_\+free(), evdi\+\_\+modeset\+\_\+cleanup(), evdi\+\_\+painter\+\_\+cleanup(), 及 evdi\+\_\+device\+::painter.
+
+
+
+\doxysubsection{變數說明文件}
+\mbox{\Hypertarget{evdi__drm__drv_8c_a5ed559ed6c313a784c9db3f62703d3d3}\label{evdi__drm__drv_8c_a5ed559ed6c313a784c9db3f62703d3d3}} 
+\index{evdi\_drm\_drv.c@{evdi\_drm\_drv.c}!evdi\_painter\_ioctls@{evdi\_painter\_ioctls}}
+\index{evdi\_painter\_ioctls@{evdi\_painter\_ioctls}!evdi\_drm\_drv.c@{evdi\_drm\_drv.c}}
+\doxysubsubsection{\texorpdfstring{evdi\_painter\_ioctls}{evdi\_painter\_ioctls}}
+{\footnotesize\ttfamily struct drm\+\_\+ioctl\+\_\+desc evdi\+\_\+painter\+\_\+ioctls\mbox{[}$\,$\mbox{]}}
+
+{\bfseries 初值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    DRM\_IOCTL\_DEF\_DRV(EVDI\_CONNECT, \mbox{\hyperlink{evdi__drm__drv_8h_a5fe51faa641d7af2e8968c9357fde4c0}{evdi\_painter\_connect\_ioctl}},}
+\DoxyCodeLine{              DRM\_UNLOCKED),}
+\DoxyCodeLine{    DRM\_IOCTL\_DEF\_DRV(EVDI\_REQUEST\_UPDATE,}
+\DoxyCodeLine{              \mbox{\hyperlink{evdi__drm__drv_8h_a2edf49efcd1531529bfa5820449bb5f5}{evdi\_painter\_request\_update\_ioctl}}, DRM\_UNLOCKED),}
+\DoxyCodeLine{    DRM\_IOCTL\_DEF\_DRV(EVDI\_GRABPIX, \mbox{\hyperlink{evdi__drm__drv_8h_a0ea3c96b61014d93e553451a15c9a311}{evdi\_painter\_grabpix\_ioctl}},}
+\DoxyCodeLine{              DRM\_UNLOCKED),}
+\DoxyCodeLine{    DRM\_IOCTL\_DEF\_DRV(EVDI\_DDCCI\_RESPONSE, \mbox{\hyperlink{evdi__drm__drv_8h_a03252c2b7f1b721e9906443670b7afdb}{evdi\_painter\_ddcci\_response\_ioctl}},}
+\DoxyCodeLine{              DRM\_UNLOCKED),}
+\DoxyCodeLine{    DRM\_IOCTL\_DEF\_DRV(EVDI\_ENABLE\_CURSOR\_EVENTS, \mbox{\hyperlink{evdi__drm__drv_8h_ac50903dbf99d19cfaaa97ac0f614fd1e}{evdi\_painter\_enable\_cursor\_events\_ioctl}},}
+\DoxyCodeLine{              DRM\_UNLOCKED),}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}

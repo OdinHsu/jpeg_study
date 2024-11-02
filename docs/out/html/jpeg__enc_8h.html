@@ -1,0 +1,954 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>jpeg: /home/odin/Desktop/program/learn/usbdisp_linux/libusbdisp/libenc/jpeg_enc.h 檔案參考文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">jpeg
+   &#160;<span id="projectnumber">0.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 產生者: Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜尋','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜尋');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('jpeg__enc_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">複合項目</a> &#124;
+<a href="#define-members">定義</a> &#124;
+<a href="#typedef-members">型態定義</a> &#124;
+<a href="#func-members">函式</a> &#124;
+<a href="#var-members">變數</a>  </div>
+  <div class="headertitle">
+<div class="title">jpeg_enc.h 檔案參考文件</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="mm__type_8h_source.html">mm_type.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="debug__trace_8h_source.html">debug_trace.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+jpeg_enc.h的包含相依圖:</div>
+<div class="dyncontent">
+<div class="center"><img src="jpeg__enc_8h__incl.png" border="0" usemap="#a_2home_2odin_2Desktop_2program_2learn_2usbdisp__linux_2libusbdisp_2libenc_2jpeg__enc_8h" alt=""/></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+本圖顯示出哪些檔案直接或間接include本檔 :</div>
+<div class="dyncontent">
+<div class="center"><img src="jpeg__enc_8h__dep__incl.png" border="0" usemap="#a_2home_2odin_2Desktop_2program_2learn_2usbdisp__linux_2libusbdisp_2libenc_2jpeg__enc_8hdep" alt=""/></div>
+</div>
+</div>
+<p><a href="jpeg__enc_8h_source.html">查看本檔案的原始碼.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+複合項目</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAPP0infotype.html">APP0infotype</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSOF0infotype.html">SOF0infotype</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSOSinfotype.html">SOSinfotype</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDQTinfotype.html">DQTinfotype</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDHTinfotype.html">DHTinfotype</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcolorRGB.html">colorRGB</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHuffmanTable__t.html">HuffmanTable_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structjpeg__stream__t.html">jpeg_stream_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+定義</h2></td></tr>
+<tr class="memitem:ae484cfaf5e4317581424c29803432cb0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#ae484cfaf5e4317581424c29803432cb0">BUF_BITS</a>&#160;&#160;&#160;32</td></tr>
+<tr class="separator:ae484cfaf5e4317581424c29803432cb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a096f1748d68946004752232255dd2824"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#a096f1748d68946004752232255dd2824">BUF_BYTES</a>&#160;&#160;&#160;(<a class="el" href="jpeg__enc_8h.html#ae484cfaf5e4317581424c29803432cb0">BUF_BITS</a>/8)</td></tr>
+<tr class="separator:a096f1748d68946004752232255dd2824"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedefda9acf9192e34dc7ac84bfb52c56"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#aedefda9acf9192e34dc7ac84bfb52c56">writebyte</a>(jpeg_stream,  b)&#160;&#160;&#160;(jpeg_stream)-&gt;pbitstream[(jpeg_stream)-&gt;pos++]=(b)</td></tr>
+<tr class="separator:aedefda9acf9192e34dc7ac84bfb52c56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac81b8d5a2f5009badb657f243c21bf83"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#ac81b8d5a2f5009badb657f243c21bf83">writeword</a>(jpeg_stream,  w)&#160;&#160;&#160;<a class="el" href="jpeg__enc_8h.html#aedefda9acf9192e34dc7ac84bfb52c56">writebyte</a>(jpeg_stream,(unsigned <a class="el" href="jsimdcfg_8inc_8h.html#a8b272214e498a4cb09dde135bb4d7d03">char</a>)((w)/256));<a class="el" href="jpeg__enc_8h.html#aedefda9acf9192e34dc7ac84bfb52c56">writebyte</a>(jpeg_stream,(unsigned <a class="el" href="jsimdcfg_8inc_8h.html#a8b272214e498a4cb09dde135bb4d7d03">char</a>)((w)%256));</td></tr>
+<tr class="separator:ac81b8d5a2f5009badb657f243c21bf83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af89dff4200396563157d4a1e59da3bdf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#af89dff4200396563157d4a1e59da3bdf">DCTSIZE2</a>&#160;&#160;&#160;64</td></tr>
+<tr class="separator:af89dff4200396563157d4a1e59da3bdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60551099e0e59afa6bcdb5f8afc32230"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#a60551099e0e59afa6bcdb5f8afc32230">CONST_BITS</a>&#160;&#160;&#160;14</td></tr>
+<tr class="separator:a60551099e0e59afa6bcdb5f8afc32230"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a206b6f5362e56b51ca957635350b70b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#a206b6f5362e56b51ca957635350b70b6">ONE</a>&#160;&#160;&#160;((<a class="el" href="mm__type_8h.html#a1137216524060afd426c34677fed058b">INT32</a>) 1)</td></tr>
+<tr class="separator:a206b6f5362e56b51ca957635350b70b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad45c45ba0d42abd22b4a095dd972a4ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#ad45c45ba0d42abd22b4a095dd972a4ba">RIGHT_SHIFT</a>(x,  shft)&#160;&#160;&#160;((x) &gt;&gt; (shft))</td></tr>
+<tr class="separator:ad45c45ba0d42abd22b4a095dd972a4ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affd087378f3038026c7395cd02d2ac86"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#affd087378f3038026c7395cd02d2ac86">DESCALE</a>(x,  n)&#160;&#160;&#160;<a class="el" href="jpeg__enc_8h.html#ad45c45ba0d42abd22b4a095dd972a4ba">RIGHT_SHIFT</a>((x) + (<a class="el" href="jpeg__enc_8h.html#a206b6f5362e56b51ca957635350b70b6">ONE</a> &lt;&lt; ((n)-1)), n)</td></tr>
+<tr class="separator:affd087378f3038026c7395cd02d2ac86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa60cf4c7747488cd498574c62a7c1a30"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#aa60cf4c7747488cd498574c62a7c1a30">DBG_MAIN</a>&#160;&#160;&#160;0x01</td></tr>
+<tr class="separator:aa60cf4c7747488cd498574c62a7c1a30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a991593e05971207b4d242532da26c306"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#a991593e05971207b4d242532da26c306">DBG_DUMP_QTABLE</a>&#160;&#160;&#160;0x02</td></tr>
+<tr class="separator:a991593e05971207b4d242532da26c306"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2d33ccaf63f5d5b66552b95426c0137"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#ac2d33ccaf63f5d5b66552b95426c0137">DEBUG_LEVEL</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="separator:ac2d33ccaf63f5d5b66552b95426c0137"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a495c58c00277d4d3ce46badd943beb3a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#a495c58c00277d4d3ce46badd943beb3a">clz</a>(x)&#160;&#160;&#160;__builtin_clz(x)</td></tr>
+<tr class="separator:a495c58c00277d4d3ce46badd943beb3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a241e747a4a1dbc730f2ec05b0d0ebd72"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#a241e747a4a1dbc730f2ec05b0d0ebd72">ctz</a>(x)&#160;&#160;&#160;__builtin_ctz(x)</td></tr>
+<tr class="separator:a241e747a4a1dbc730f2ec05b0d0ebd72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+型態定義</h2></td></tr>
+<tr class="memitem:a139611a53f7e4afc6d7fab4614144686"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="mm__type_8h.html#a798af1e30bc65f319c1a246cecf59e39">DWORD</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#a139611a53f7e4afc6d7fab4614144686">bitstring</a></td></tr>
+<tr class="separator:a139611a53f7e4afc6d7fab4614144686"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04ed4674f6f1d0d50ec241531e38274f"><td class="memItemLeft" align="right" valign="top">typedef unsigned <a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#a04ed4674f6f1d0d50ec241531e38274f">JDIMENSION</a></td></tr>
+<tr class="separator:a04ed4674f6f1d0d50ec241531e38274f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11613de0abdeca2384262ade7a5b382d"><td class="memItemLeft" align="right" valign="top">typedef unsigned <a class="el" href="jsimdcfg_8inc_8h.html#a8b272214e498a4cb09dde135bb4d7d03">char</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#a11613de0abdeca2384262ade7a5b382d">JSAMPLE</a></td></tr>
+<tr class="separator:a11613de0abdeca2384262ade7a5b382d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57d1c52be424e0587386fa359f8b517d"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="jpeg__enc_8h.html#a11613de0abdeca2384262ade7a5b382d">JSAMPLE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#a57d1c52be424e0587386fa359f8b517d">JSAMPROW</a></td></tr>
+<tr class="separator:a57d1c52be424e0587386fa359f8b517d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9d5d1b829ed51769db69a37271a7e91"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="jpeg__enc_8h.html#a57d1c52be424e0587386fa359f8b517d">JSAMPROW</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#ac9d5d1b829ed51769db69a37271a7e91">JSAMPARRAY</a></td></tr>
+<tr class="separator:ac9d5d1b829ed51769db69a37271a7e91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bf858e4d42202287e786bdec2f3b62b"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="jpeg__enc_8h.html#ac9d5d1b829ed51769db69a37271a7e91">JSAMPARRAY</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#a4bf858e4d42202287e786bdec2f3b62b">JSAMPIMAGE</a></td></tr>
+<tr class="separator:a4bf858e4d42202287e786bdec2f3b62b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41a9ee0af0fcd972f647f0db5b608bc9"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="jsimdcfg_8inc_8h.html#a91956fdf4930859db9baedd2d362a721">short</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#a41a9ee0af0fcd972f647f0db5b608bc9">DCTELEM</a></td></tr>
+<tr class="separator:a41a9ee0af0fcd972f647f0db5b608bc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80358d37e6078147df35d23b6a5fd53a"><td class="memItemLeft" align="right" valign="top">typedef unsigned <a class="el" href="jsimdcfg_8inc_8h.html#a91956fdf4930859db9baedd2d362a721">short</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#a80358d37e6078147df35d23b6a5fd53a">UDCTELEM</a></td></tr>
+<tr class="separator:a80358d37e6078147df35d23b6a5fd53a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa47686e2c9bbd75683931d8c243ee992"><td class="memItemLeft" align="right" valign="top">typedef unsigned <a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#aa47686e2c9bbd75683931d8c243ee992">UDCTELEM2</a></td></tr>
+<tr class="separator:aa47686e2c9bbd75683931d8c243ee992"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函式</h2></td></tr>
+<tr class="memitem:ac7517c95a09f1d674b724f9ef165c1ec"><td class="memItemLeft" align="right" valign="top">struct&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#ac7517c95a09f1d674b724f9ef165c1ec">__attribute__</a> ((aligned(16)))</td></tr>
+<tr class="separator:ac7517c95a09f1d674b724f9ef165c1ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee65b15f2496f8c6023e4766d851a6bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#aee65b15f2496f8c6023e4766d851a6bc">Initialize</a> (<a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *<a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>, unsigned <a class="el" href="jsimdcfg_8inc_8h.html#a8b272214e498a4cb09dde135bb4d7d03">char</a> scalefactor)</td></tr>
+<tr class="separator:aee65b15f2496f8c6023e4766d851a6bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9a7edb57ac46137f80a60d8f54a3eec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#ad9a7edb57ac46137f80a60d8f54a3eec">DeInitialize</a> ()</td></tr>
+<tr class="separator:ad9a7edb57ac46137f80a60d8f54a3eec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad044d7626e2e07f7f310ad478181a642"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#ad044d7626e2e07f7f310ad478181a642">WriteHeader</a> (<a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *<a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>, <a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> width, <a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> height)</td></tr>
+<tr class="separator:ad044d7626e2e07f7f310ad478181a642"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed12a3220b4ff438b98346db0d8b2d88"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#aed12a3220b4ff438b98346db0d8b2d88">GetDQTinfo</a> (<a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *<a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>, <a class="el" href="structjpeg__stream__t.html">jpeg_stream_t</a> *stream)</td></tr>
+<tr class="separator:aed12a3220b4ff438b98346db0d8b2d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add40a833c42db841bba279c85ff09e80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#add40a833c42db841bba279c85ff09e80">write_DHTinfo</a> (<a class="el" href="structjpeg__stream__t.html">jpeg_stream_t</a> *stream)</td></tr>
+<tr class="separator:add40a833c42db841bba279c85ff09e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7626c713912d29bc0208bb4d4b387fee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#a7626c713912d29bc0208bb4d4b387fee">encode</a> (<a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *<a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>)</td></tr>
+<tr class="separator:a7626c713912d29bc0208bb4d4b387fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86b93505bff50bdf784fa992f7171a06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#a86b93505bff50bdf784fa992f7171a06">jsimd_extbgrx_ycc_convert</a> (<a class="el" href="jpeg__enc_8h.html#a04ed4674f6f1d0d50ec241531e38274f">JDIMENSION</a> img_width, <a class="el" href="jpeg__enc_8h.html#ac9d5d1b829ed51769db69a37271a7e91">JSAMPARRAY</a> input_buf, <a class="el" href="jpeg__enc_8h.html#a4bf858e4d42202287e786bdec2f3b62b">JSAMPIMAGE</a> output_buf, <a class="el" href="jpeg__enc_8h.html#a04ed4674f6f1d0d50ec241531e38274f">JDIMENSION</a> output_row, <a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> num_rows)</td></tr>
+<tr class="separator:a86b93505bff50bdf784fa992f7171a06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe7d95db433c9f58804300b6cc6b0cd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#abe7d95db433c9f58804300b6cc6b0cd9">jsimd_extbgr_ycc_convert</a> (<a class="el" href="jpeg__enc_8h.html#a04ed4674f6f1d0d50ec241531e38274f">JDIMENSION</a> img_width, <a class="el" href="jpeg__enc_8h.html#ac9d5d1b829ed51769db69a37271a7e91">JSAMPARRAY</a> input_buf, <a class="el" href="jpeg__enc_8h.html#a4bf858e4d42202287e786bdec2f3b62b">JSAMPIMAGE</a> output_buf, <a class="el" href="jpeg__enc_8h.html#a04ed4674f6f1d0d50ec241531e38274f">JDIMENSION</a> output_row, <a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> num_rows)</td></tr>
+<tr class="separator:abe7d95db433c9f58804300b6cc6b0cd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a214d04b827129d8d366c01572cf65ccb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#a214d04b827129d8d366c01572cf65ccb">jsimd_quantize</a> (<a class="el" href="mm__type_8h.html#a30f500129d8c688af07726d5d34ce52d">INT16</a> *coef_block, <a class="el" href="mm__type_8h.html#a30f500129d8c688af07726d5d34ce52d">INT16</a> *divisors, <a class="el" href="mm__type_8h.html#a30f500129d8c688af07726d5d34ce52d">INT16</a> *workspace)</td></tr>
+<tr class="separator:a214d04b827129d8d366c01572cf65ccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3222f8d8641f5433143634e19007b5e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#a3222f8d8641f5433143634e19007b5e3">jsimd_fdct_ifast</a> (<a class="el" href="mm__type_8h.html#a30f500129d8c688af07726d5d34ce52d">INT16</a> *data)</td></tr>
+<tr class="separator:a3222f8d8641f5433143634e19007b5e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+變數</h2></td></tr>
+<tr class="memitem:abc486d940ac1d38cfcdee427e575671a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a></td></tr>
+<tr class="separator:abc486d940ac1d38cfcdee427e575671a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">定義巨集說明文件</h2>
+<a id="ae484cfaf5e4317581424c29803432cb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae484cfaf5e4317581424c29803432cb0">&#9670;&nbsp;</a></span>BUF_BITS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUF_BITS&#160;&#160;&#160;32</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a096f1748d68946004752232255dd2824"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a096f1748d68946004752232255dd2824">&#9670;&nbsp;</a></span>BUF_BYTES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUF_BYTES&#160;&#160;&#160;(<a class="el" href="jpeg__enc_8h.html#ae484cfaf5e4317581424c29803432cb0">BUF_BITS</a>/8)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a495c58c00277d4d3ce46badd943beb3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a495c58c00277d4d3ce46badd943beb3a">&#9670;&nbsp;</a></span>clz</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define clz</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;__builtin_clz(x)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a60551099e0e59afa6bcdb5f8afc32230"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60551099e0e59afa6bcdb5f8afc32230">&#9670;&nbsp;</a></span>CONST_BITS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONST_BITS&#160;&#160;&#160;14</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a241e747a4a1dbc730f2ec05b0d0ebd72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a241e747a4a1dbc730f2ec05b0d0ebd72">&#9670;&nbsp;</a></span>ctz</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ctz</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;__builtin_ctz(x)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a991593e05971207b4d242532da26c306"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a991593e05971207b4d242532da26c306">&#9670;&nbsp;</a></span>DBG_DUMP_QTABLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DBG_DUMP_QTABLE&#160;&#160;&#160;0x02</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa60cf4c7747488cd498574c62a7c1a30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa60cf4c7747488cd498574c62a7c1a30">&#9670;&nbsp;</a></span>DBG_MAIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DBG_MAIN&#160;&#160;&#160;0x01</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af89dff4200396563157d4a1e59da3bdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af89dff4200396563157d4a1e59da3bdf">&#9670;&nbsp;</a></span>DCTSIZE2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DCTSIZE2&#160;&#160;&#160;64</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac2d33ccaf63f5d5b66552b95426c0137"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2d33ccaf63f5d5b66552b95426c0137">&#9670;&nbsp;</a></span>DEBUG_LEVEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DEBUG_LEVEL&#160;&#160;&#160;(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="affd087378f3038026c7395cd02d2ac86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affd087378f3038026c7395cd02d2ac86">&#9670;&nbsp;</a></span>DESCALE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DESCALE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="jpeg__enc_8h.html#ad45c45ba0d42abd22b4a095dd972a4ba">RIGHT_SHIFT</a>((x) + (<a class="el" href="jpeg__enc_8h.html#a206b6f5362e56b51ca957635350b70b6">ONE</a> &lt;&lt; ((n)-1)), n)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a206b6f5362e56b51ca957635350b70b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a206b6f5362e56b51ca957635350b70b6">&#9670;&nbsp;</a></span>ONE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ONE&#160;&#160;&#160;((<a class="el" href="mm__type_8h.html#a1137216524060afd426c34677fed058b">INT32</a>) 1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad45c45ba0d42abd22b4a095dd972a4ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad45c45ba0d42abd22b4a095dd972a4ba">&#9670;&nbsp;</a></span>RIGHT_SHIFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RIGHT_SHIFT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">shft&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((x) &gt;&gt; (shft))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aedefda9acf9192e34dc7ac84bfb52c56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedefda9acf9192e34dc7ac84bfb52c56">&#9670;&nbsp;</a></span>writebyte</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define writebyte</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">jpeg_stream, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(jpeg_stream)-&gt;pbitstream[(jpeg_stream)-&gt;pos++]=(b)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac81b8d5a2f5009badb657f243c21bf83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac81b8d5a2f5009badb657f243c21bf83">&#9670;&nbsp;</a></span>writeword</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define writeword</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">jpeg_stream, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">w&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="jpeg__enc_8h.html#aedefda9acf9192e34dc7ac84bfb52c56">writebyte</a>(jpeg_stream,(unsigned <a class="el" href="jsimdcfg_8inc_8h.html#a8b272214e498a4cb09dde135bb4d7d03">char</a>)((w)/256));<a class="el" href="jpeg__enc_8h.html#aedefda9acf9192e34dc7ac84bfb52c56">writebyte</a>(jpeg_stream,(unsigned <a class="el" href="jsimdcfg_8inc_8h.html#a8b272214e498a4cb09dde135bb4d7d03">char</a>)((w)%256));</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">型態定義說明文件</h2>
+<a id="a139611a53f7e4afc6d7fab4614144686"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a139611a53f7e4afc6d7fab4614144686">&#9670;&nbsp;</a></span>bitstring</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="mm__type_8h.html#a798af1e30bc65f319c1a246cecf59e39">DWORD</a> <a class="el" href="jpeg__enc_8h.html#a139611a53f7e4afc6d7fab4614144686">bitstring</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a41a9ee0af0fcd972f647f0db5b608bc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41a9ee0af0fcd972f647f0db5b608bc9">&#9670;&nbsp;</a></span>DCTELEM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="jsimdcfg_8inc_8h.html#a91956fdf4930859db9baedd2d362a721">short</a> <a class="el" href="jpeg__enc_8h.html#a41a9ee0af0fcd972f647f0db5b608bc9">DCTELEM</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a04ed4674f6f1d0d50ec241531e38274f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04ed4674f6f1d0d50ec241531e38274f">&#9670;&nbsp;</a></span>JDIMENSION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned <a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> <a class="el" href="jpeg__enc_8h.html#a04ed4674f6f1d0d50ec241531e38274f">JDIMENSION</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac9d5d1b829ed51769db69a37271a7e91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9d5d1b829ed51769db69a37271a7e91">&#9670;&nbsp;</a></span>JSAMPARRAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="jpeg__enc_8h.html#a57d1c52be424e0587386fa359f8b517d">JSAMPROW</a>* <a class="el" href="jpeg__enc_8h.html#ac9d5d1b829ed51769db69a37271a7e91">JSAMPARRAY</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4bf858e4d42202287e786bdec2f3b62b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bf858e4d42202287e786bdec2f3b62b">&#9670;&nbsp;</a></span>JSAMPIMAGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="jpeg__enc_8h.html#ac9d5d1b829ed51769db69a37271a7e91">JSAMPARRAY</a>* <a class="el" href="jpeg__enc_8h.html#a4bf858e4d42202287e786bdec2f3b62b">JSAMPIMAGE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a11613de0abdeca2384262ade7a5b382d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11613de0abdeca2384262ade7a5b382d">&#9670;&nbsp;</a></span>JSAMPLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned <a class="el" href="jsimdcfg_8inc_8h.html#a8b272214e498a4cb09dde135bb4d7d03">char</a> <a class="el" href="jpeg__enc_8h.html#a11613de0abdeca2384262ade7a5b382d">JSAMPLE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a57d1c52be424e0587386fa359f8b517d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57d1c52be424e0587386fa359f8b517d">&#9670;&nbsp;</a></span>JSAMPROW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="jpeg__enc_8h.html#a11613de0abdeca2384262ade7a5b382d">JSAMPLE</a>* <a class="el" href="jpeg__enc_8h.html#a57d1c52be424e0587386fa359f8b517d">JSAMPROW</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a80358d37e6078147df35d23b6a5fd53a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80358d37e6078147df35d23b6a5fd53a">&#9670;&nbsp;</a></span>UDCTELEM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned <a class="el" href="jsimdcfg_8inc_8h.html#a91956fdf4930859db9baedd2d362a721">short</a> <a class="el" href="jpeg__enc_8h.html#a80358d37e6078147df35d23b6a5fd53a">UDCTELEM</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa47686e2c9bbd75683931d8c243ee992"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa47686e2c9bbd75683931d8c243ee992">&#9670;&nbsp;</a></span>UDCTELEM2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned <a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> <a class="el" href="jpeg__enc_8h.html#aa47686e2c9bbd75683931d8c243ee992">UDCTELEM2</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">函式說明文件</h2>
+<a id="ac7517c95a09f1d674b724f9ef165c1ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7517c95a09f1d674b724f9ef165c1ec">&#9670;&nbsp;</a></span>__attribute__()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct __attribute__ </td>
+          <td>(</td>
+          <td class="paramtype">(aligned(16))&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad9a7edb57ac46137f80a60d8f54a3eec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9a7edb57ac46137f80a60d8f54a3eec">&#9670;&nbsp;</a></span>DeInitialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DeInitialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被參考於 <a class="el" href="jpegenc_8c.html#ac0f2228420376f4db7e1274f2b41667c">main()</a>, 及 <a class="el" href="classEncodeUnit.html#aba39f3aeb89ce11afb14a303ca8fdf21">EncodeUnit::~EncodeUnit()</a>.</p>
+
+</div>
+</div>
+<a id="a7626c713912d29bc0208bb4d4b387fee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7626c713912d29bc0208bb4d4b387fee">&#9670;&nbsp;</a></span>encode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> encode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *&#160;</td>
+          <td class="paramname"><em>cinfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>, 及 <a class="el" href="jpeg__enc_8c.html#a545c0b88a77ab043015179bbcdac84ee">main_encoder()</a>.</p>
+
+<p class="reference">被參考於 <a class="el" href="jpegenc_8c.html#ac0f2228420376f4db7e1274f2b41667c">main()</a>.</p>
+
+</div>
+</div>
+<a id="aed12a3220b4ff438b98346db0d8b2d88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed12a3220b4ff438b98346db0d8b2d88">&#9670;&nbsp;</a></span>GetDQTinfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> GetDQTinfo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *&#160;</td>
+          <td class="paramname"><em>cinfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structjpeg__stream__t.html">jpeg_stream_t</a> *&#160;</td>
+          <td class="paramname"><em>stream</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="jpegenc_8c.html#af3d3a37ad816d3c9005fc2be2e0a22b0">cinfo</a>, <a class="el" href="structjpeg__stream__t.html#a5c75a0283223e7b5d56ca3990dda6229">jpeg_stream_t::pos</a>, <a class="el" href="jpeg__enc_8h.html#aedefda9acf9192e34dc7ac84bfb52c56">writebyte</a>, 及 <a class="el" href="jpeg__enc_8h.html#ac81b8d5a2f5009badb657f243c21bf83">writeword</a>.</p>
+
+<p class="reference">被參考於 <a class="el" href="classEncodeUnit.html#a3455cd0f9de474448b9cdaafa5807171">EncodeUnit::GetQuantTable()</a>, 及 <a class="el" href="jpegenc_8c.html#ac0f2228420376f4db7e1274f2b41667c">main()</a>.</p>
+
+</div>
+</div>
+<a id="aee65b15f2496f8c6023e4766d851a6bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee65b15f2496f8c6023e4766d851a6bc">&#9670;&nbsp;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Initialize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *&#160;</td>
+          <td class="paramname"><em>cinfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned <a class="el" href="jsimdcfg_8inc_8h.html#a8b272214e498a4cb09dde135bb4d7d03">char</a>&#160;</td>
+          <td class="paramname"><em>scalefactor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被參考於 <a class="el" href="classEncodeUnit.html#ad331809bf4134db60db7a17a667e95ed">EncodeUnit::EncodeUnit()</a>, <a class="el" href="jpegenc_8c.html#a0f07894b31ba12754aec3f5cfff721fc">getBufFormBmp()</a>, <a class="el" href="jpegenc_8c.html#ac0f2228420376f4db7e1274f2b41667c">main()</a>, 及 <a class="el" href="classEncodeUnit.html#ab3683abdd9c13d9ce927b662578ad024">EncodeUnit::SetEncodeQuality()</a>.</p>
+
+</div>
+</div>
+<a id="abe7d95db433c9f58804300b6cc6b0cd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe7d95db433c9f58804300b6cc6b0cd9">&#9670;&nbsp;</a></span>jsimd_extbgr_ycc_convert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void jsimd_extbgr_ycc_convert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="jpeg__enc_8h.html#a04ed4674f6f1d0d50ec241531e38274f">JDIMENSION</a>&#160;</td>
+          <td class="paramname"><em>img_width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="jpeg__enc_8h.html#ac9d5d1b829ed51769db69a37271a7e91">JSAMPARRAY</a>&#160;</td>
+          <td class="paramname"><em>input_buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="jpeg__enc_8h.html#a4bf858e4d42202287e786bdec2f3b62b">JSAMPIMAGE</a>&#160;</td>
+          <td class="paramname"><em>output_buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="jpeg__enc_8h.html#a04ed4674f6f1d0d50ec241531e38274f">JDIMENSION</a>&#160;</td>
+          <td class="paramname"><em>output_row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td>
+          <td class="paramname"><em>num_rows</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a86b93505bff50bdf784fa992f7171a06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86b93505bff50bdf784fa992f7171a06">&#9670;&nbsp;</a></span>jsimd_extbgrx_ycc_convert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void jsimd_extbgrx_ycc_convert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="jpeg__enc_8h.html#a04ed4674f6f1d0d50ec241531e38274f">JDIMENSION</a>&#160;</td>
+          <td class="paramname"><em>img_width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="jpeg__enc_8h.html#ac9d5d1b829ed51769db69a37271a7e91">JSAMPARRAY</a>&#160;</td>
+          <td class="paramname"><em>input_buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="jpeg__enc_8h.html#a4bf858e4d42202287e786bdec2f3b62b">JSAMPIMAGE</a>&#160;</td>
+          <td class="paramname"><em>output_buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="jpeg__enc_8h.html#a04ed4674f6f1d0d50ec241531e38274f">JDIMENSION</a>&#160;</td>
+          <td class="paramname"><em>output_row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td>
+          <td class="paramname"><em>num_rows</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被參考於 <a class="el" href="jpegenc_8c.html#a41bf1cd51d0fe436bc17cad01f87352d">rgb2ycc()</a>.</p>
+
+</div>
+</div>
+<a id="a3222f8d8641f5433143634e19007b5e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3222f8d8641f5433143634e19007b5e3">&#9670;&nbsp;</a></span>jsimd_fdct_ifast()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void jsimd_fdct_ifast </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="mm__type_8h.html#a30f500129d8c688af07726d5d34ce52d">INT16</a> *&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被參考於 <a class="el" href="jpeg__enc_8c.html#ad08dd1d0be0c6f5bb9dee09e0d189650">fdct_and_quantization()</a>.</p>
+
+</div>
+</div>
+<a id="a214d04b827129d8d366c01572cf65ccb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a214d04b827129d8d366c01572cf65ccb">&#9670;&nbsp;</a></span>jsimd_quantize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void jsimd_quantize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="mm__type_8h.html#a30f500129d8c688af07726d5d34ce52d">INT16</a> *&#160;</td>
+          <td class="paramname"><em>coef_block</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mm__type_8h.html#a30f500129d8c688af07726d5d34ce52d">INT16</a> *&#160;</td>
+          <td class="paramname"><em>divisors</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mm__type_8h.html#a30f500129d8c688af07726d5d34ce52d">INT16</a> *&#160;</td>
+          <td class="paramname"><em>workspace</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被參考於 <a class="el" href="jpeg__enc_8c.html#ad08dd1d0be0c6f5bb9dee09e0d189650">fdct_and_quantization()</a>.</p>
+
+</div>
+</div>
+<a id="add40a833c42db841bba279c85ff09e80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add40a833c42db841bba279c85ff09e80">&#9670;&nbsp;</a></span>write_DHTinfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a> write_DHTinfo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structjpeg__stream__t.html">jpeg_stream_t</a> *&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">參考 <a class="el" href="structjpeg__stream__t.html#a5c75a0283223e7b5d56ca3990dda6229">jpeg_stream_t::pos</a>, 及 <a class="el" href="jpeg__enc_8h.html#ac81b8d5a2f5009badb657f243c21bf83">writeword</a>.</p>
+
+</div>
+</div>
+<a id="ad044d7626e2e07f7f310ad478181a642"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad044d7626e2e07f7f310ad478181a642">&#9670;&nbsp;</a></span>WriteHeader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WriteHeader </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="jpeg__enc_8h.html#abc486d940ac1d38cfcdee427e575671a">cinfo_t</a> *&#160;</td>
+          <td class="paramname"><em>cinfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="jsimdcfg_8inc_8h.html#a0d43f9a819c111f70ea20e3197a12c23">int</a>&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被參考於 <a class="el" href="jpegenc_8c.html#ac0f2228420376f4db7e1274f2b41667c">main()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">變數說明文件</h2>
+<a id="abc486d940ac1d38cfcdee427e575671a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc486d940ac1d38cfcdee427e575671a">&#9670;&nbsp;</a></span>cinfo_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cinfo_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">被參考於 <a class="el" href="classEncodeUnit.html#ad331809bf4134db60db7a17a667e95ed">EncodeUnit::EncodeUnit()</a>, 及 <a class="el" href="classEncodeUnit.html#a3455cd0f9de474448b9cdaafa5807171">EncodeUnit::GetQuantTable()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_4159d2fa8205dd791550e6f261184d1d.html">libusbdisp</a></li><li class="navelem"><a class="el" href="dir_0f32255a43591352b42b74edabbacf7b.html">libenc</a></li><li class="navelem"><a class="el" href="jpeg__enc_8h.html">jpeg_enc.h</a></li>
+    <li class="footer">產生者: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

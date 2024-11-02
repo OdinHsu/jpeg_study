@@ -1,0 +1,369 @@
+\hypertarget{evdi__lib_8h}{}\doxysection{/home/odin/\+Desktop/program/learn/usbdisp\+\_\+linux/libusbdisp/deb\+\_\+install/com.racertech.\+usbdisp-\/1.0.0/opt/apps/com.racertech.\+usbdisp/files/evdi/library/evdi\+\_\+lib.h 檔案參考文件}
+\label{evdi__lib_8h}\index{/home/odin/Desktop/program/learn/usbdisp\_linux/libusbdisp/deb\_install/com.racertech.usbdisp-\/1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/library/evdi\_lib.h@{/home/odin/Desktop/program/learn/usbdisp\_linux/libusbdisp/deb\_install/com.racertech.usbdisp-\/1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/library/evdi\_lib.h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+evdi\+\_\+lib.\+h的包含相依圖\+:
+% FIG 0
+本圖顯示出哪些檔案直接或間接include本檔 \+:
+% FIG 1
+\doxysubsection*{複合項目}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structevdi__lib__version}{evdi\+\_\+lib\+\_\+version}}
+\item 
+struct \mbox{\hyperlink{structevdi__rect}{evdi\+\_\+rect}}
+\item 
+struct \mbox{\hyperlink{structevdi__mode}{evdi\+\_\+mode}}
+\item 
+struct \mbox{\hyperlink{structevdi__buffer}{evdi\+\_\+buffer}}
+\item 
+struct \mbox{\hyperlink{structevdi__cursor__set}{evdi\+\_\+cursor\+\_\+set}}
+\item 
+struct \mbox{\hyperlink{structevdi__cursor__move}{evdi\+\_\+cursor\+\_\+move}}
+\item 
+struct \mbox{\hyperlink{structevdi__ddcci__data}{evdi\+\_\+ddcci\+\_\+data}}
+\item 
+struct \mbox{\hyperlink{structevdi__event__context}{evdi\+\_\+event\+\_\+context}}
+\item 
+struct \mbox{\hyperlink{structevdi__logging}{evdi\+\_\+logging}}
+\end{DoxyCompactItemize}
+\doxysubsection*{定義}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{evdi__lib_8h_adcfb73ed0f2c3cbc17abbc848b5d0c90}{LIBEVDI\+\_\+\+VERSION\+\_\+\+MAJOR}}~1
+\item 
+\#define \mbox{\hyperlink{evdi__lib_8h_a1e87ac9426d75b48b1d564cdb22cdee2}{LIBEVDI\+\_\+\+VERSION\+\_\+\+MINOR}}~12
+\item 
+\#define \mbox{\hyperlink{evdi__lib_8h_a6e94cfe89d71a68ae56b660f9fe9f71f}{LIBEVDI\+\_\+\+VERSION\+\_\+\+PATCH}}~0
+\item 
+\#define \mbox{\hyperlink{evdi__lib_8h_afe8a1d96a5e076124a8c8123a653285e}{EVDI\+\_\+\+INVALID\+\_\+\+HANDLE}}~NULL
+\end{DoxyCompactItemize}
+\doxysubsection*{型態定義}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structevdi__device__context}{evdi\+\_\+device\+\_\+context}} $\ast$ \mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}}
+\item 
+typedef \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{evdi__lib_8h_a58a9920383ad607e07b75d8cd1280897}{evdi\+\_\+selectable}}
+\end{DoxyCompactItemize}
+\doxysubsection*{列舉型態}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{evdi__lib_8h_a00a649446b891bc7effb5ad284f41fa8}{evdi\+\_\+device\+\_\+status}} \{ \mbox{\hyperlink{evdi__lib_8h_a00a649446b891bc7effb5ad284f41fa8a1e229ccb8b53a57de4ebb11c2d15272e}{AVAILABLE}}
+, \mbox{\hyperlink{evdi__lib_8h_a00a649446b891bc7effb5ad284f41fa8acb9331d084ecdba0890ee39bda83e7b8}{UNRECOGNIZED}}
+, \mbox{\hyperlink{evdi__lib_8h_a00a649446b891bc7effb5ad284f41fa8acf30d1e6a6b091ca668346f50810f125}{NOT\+\_\+\+PRESENT}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{函式}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{evdi__lib_8h_a00a649446b891bc7effb5ad284f41fa8}{evdi\+\_\+device\+\_\+status}} \mbox{\hyperlink{evdi__lib_8h_ad2871484b85ee7a047fcd8b9002e8167}{evdi\+\_\+check\+\_\+device}} (\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} device)
+\item 
+\mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}} \mbox{\hyperlink{evdi__lib_8h_a22f9baafbffa240d03b8f47f6f09c929}{evdi\+\_\+open}} (\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} device)
+\item 
+\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{evdi__lib_8h_af130aa027bde8000489600ecf17c4126}{evdi\+\_\+add\+\_\+device}} (void)
+\item 
+\mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}} \mbox{\hyperlink{evdi__lib_8h_af8506540c9f632d795d4bd4523374530}{evdi\+\_\+open\+\_\+attached\+\_\+to}} (const \mbox{\hyperlink{jsimdcfg_8inc_8h_a8b272214e498a4cb09dde135bb4d7d03}{char}} $\ast$sysfs\+\_\+parent\+\_\+device)
+\item 
+void \mbox{\hyperlink{evdi__lib_8h_adb2dcc7c0febdd8c281af5c6a77434fe}{evdi\+\_\+close}} (\mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}} \mbox{\hyperlink{main_8c_a96cd449c4b349daaf3ec8700056aa462}{handle}})
+\item 
+void \mbox{\hyperlink{evdi__lib_8h_a4979d9eb79303294d583b8589b26957e}{evdi\+\_\+connect}} (\mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}} \mbox{\hyperlink{main_8c_a96cd449c4b349daaf3ec8700056aa462}{handle}}, const unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a8b272214e498a4cb09dde135bb4d7d03}{char}} $\ast$edid, const unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} edid\+\_\+length, const uint32\+\_\+t pixel\+\_\+area\+\_\+limit, const uint32\+\_\+t pixel\+\_\+per\+\_\+second\+\_\+limit)
+\item 
+void \mbox{\hyperlink{evdi__lib_8h_a5ecaba53f53b98d0ffba0d1977a0b36e}{evdi\+\_\+disconnect}} (\mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}} \mbox{\hyperlink{main_8c_a96cd449c4b349daaf3ec8700056aa462}{handle}})
+\item 
+void \mbox{\hyperlink{evdi__lib_8h_a2c9240a8bd859f865c975db9f5805ac8}{evdi\+\_\+enable\+\_\+cursor\+\_\+events}} (\mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}} \mbox{\hyperlink{main_8c_a96cd449c4b349daaf3ec8700056aa462}{handle}}, bool enable)
+\item 
+void \mbox{\hyperlink{evdi__lib_8h_ad9a44f261bd62709bf2132ee188fc039}{evdi\+\_\+grab\+\_\+pixels}} (\mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}} \mbox{\hyperlink{main_8c_a96cd449c4b349daaf3ec8700056aa462}{handle}}, struct \mbox{\hyperlink{structevdi__rect}{evdi\+\_\+rect}} $\ast$rects, \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} $\ast$num\+\_\+rects)
+\item 
+void \mbox{\hyperlink{evdi__lib_8h_a55b8cd2dec9571ba2ad484dc12e8644d}{evdi\+\_\+register\+\_\+buffer}} (\mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}} \mbox{\hyperlink{main_8c_a96cd449c4b349daaf3ec8700056aa462}{handle}}, struct \mbox{\hyperlink{structevdi__buffer}{evdi\+\_\+buffer}} \mbox{\hyperlink{jsimdcfg_8inc_8h_abdb77e53de4261715ec5f4783a343ec3}{buffer}})
+\item 
+void \mbox{\hyperlink{evdi__lib_8h_a04802a3a4fc9acef1a02c02b9379e6b1}{evdi\+\_\+unregister\+\_\+buffer}} (\mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}} \mbox{\hyperlink{main_8c_a96cd449c4b349daaf3ec8700056aa462}{handle}}, \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} buffer\+Id)
+\item 
+bool \mbox{\hyperlink{evdi__lib_8h_a1365a0f99d801521828b8d7e789ee190}{evdi\+\_\+request\+\_\+update}} (\mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}} \mbox{\hyperlink{main_8c_a96cd449c4b349daaf3ec8700056aa462}{handle}}, \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} buffer\+Id)
+\item 
+void \mbox{\hyperlink{evdi__lib_8h_a7252cf9a8397e2ab5cfbe14856cd36d7}{evdi\+\_\+ddcci\+\_\+response}} (\mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}} \mbox{\hyperlink{main_8c_a96cd449c4b349daaf3ec8700056aa462}{handle}}, const unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a8b272214e498a4cb09dde135bb4d7d03}{char}} $\ast$\mbox{\hyperlink{jsimdcfg_8inc_8h_abdb77e53de4261715ec5f4783a343ec3}{buffer}}, const uint32\+\_\+t buffer\+\_\+length, const bool result)
+\item 
+void \mbox{\hyperlink{evdi__lib_8h_a33915ec8a6e0947d5465e1e70d0cf4f6}{evdi\+\_\+handle\+\_\+events}} (\mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}} \mbox{\hyperlink{main_8c_a96cd449c4b349daaf3ec8700056aa462}{handle}}, struct \mbox{\hyperlink{structevdi__event__context}{evdi\+\_\+event\+\_\+context}} $\ast$evtctx)
+\item 
+\mbox{\hyperlink{evdi__lib_8h_a58a9920383ad607e07b75d8cd1280897}{evdi\+\_\+selectable}} \mbox{\hyperlink{evdi__lib_8h_a28d1c460204b49714ce3273bc85e0b46}{evdi\+\_\+get\+\_\+event\+\_\+ready}} (\mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}} \mbox{\hyperlink{main_8c_a96cd449c4b349daaf3ec8700056aa462}{handle}})
+\item 
+void \mbox{\hyperlink{evdi__lib_8h_a550ce0f7caf0a555f07c0f8365301350}{evdi\+\_\+get\+\_\+lib\+\_\+version}} (struct \mbox{\hyperlink{structevdi__lib__version}{evdi\+\_\+lib\+\_\+version}} $\ast$version)
+\item 
+void \mbox{\hyperlink{evdi__lib_8h_aecf4840d3b6e77b4f267c876ec166eb5}{evdi\+\_\+set\+\_\+logging}} (struct \mbox{\hyperlink{structevdi__logging}{evdi\+\_\+logging}} \mbox{\hyperlink{structevdi__logging}{evdi\+\_\+logging}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{定義巨集說明文件}
+\mbox{\Hypertarget{evdi__lib_8h_afe8a1d96a5e076124a8c8123a653285e}\label{evdi__lib_8h_afe8a1d96a5e076124a8c8123a653285e}} 
+\index{evdi\_lib.h@{evdi\_lib.h}!EVDI\_INVALID\_HANDLE@{EVDI\_INVALID\_HANDLE}}
+\index{EVDI\_INVALID\_HANDLE@{EVDI\_INVALID\_HANDLE}!evdi\_lib.h@{evdi\_lib.h}}
+\doxysubsubsection{\texorpdfstring{EVDI\_INVALID\_HANDLE}{EVDI\_INVALID\_HANDLE}}
+{\footnotesize\ttfamily \#define EVDI\+\_\+\+INVALID\+\_\+\+HANDLE~NULL}
+
+\mbox{\Hypertarget{evdi__lib_8h_adcfb73ed0f2c3cbc17abbc848b5d0c90}\label{evdi__lib_8h_adcfb73ed0f2c3cbc17abbc848b5d0c90}} 
+\index{evdi\_lib.h@{evdi\_lib.h}!LIBEVDI\_VERSION\_MAJOR@{LIBEVDI\_VERSION\_MAJOR}}
+\index{LIBEVDI\_VERSION\_MAJOR@{LIBEVDI\_VERSION\_MAJOR}!evdi\_lib.h@{evdi\_lib.h}}
+\doxysubsubsection{\texorpdfstring{LIBEVDI\_VERSION\_MAJOR}{LIBEVDI\_VERSION\_MAJOR}}
+{\footnotesize\ttfamily \#define LIBEVDI\+\_\+\+VERSION\+\_\+\+MAJOR~1}
+
+\mbox{\Hypertarget{evdi__lib_8h_a1e87ac9426d75b48b1d564cdb22cdee2}\label{evdi__lib_8h_a1e87ac9426d75b48b1d564cdb22cdee2}} 
+\index{evdi\_lib.h@{evdi\_lib.h}!LIBEVDI\_VERSION\_MINOR@{LIBEVDI\_VERSION\_MINOR}}
+\index{LIBEVDI\_VERSION\_MINOR@{LIBEVDI\_VERSION\_MINOR}!evdi\_lib.h@{evdi\_lib.h}}
+\doxysubsubsection{\texorpdfstring{LIBEVDI\_VERSION\_MINOR}{LIBEVDI\_VERSION\_MINOR}}
+{\footnotesize\ttfamily \#define LIBEVDI\+\_\+\+VERSION\+\_\+\+MINOR~12}
+
+\mbox{\Hypertarget{evdi__lib_8h_a6e94cfe89d71a68ae56b660f9fe9f71f}\label{evdi__lib_8h_a6e94cfe89d71a68ae56b660f9fe9f71f}} 
+\index{evdi\_lib.h@{evdi\_lib.h}!LIBEVDI\_VERSION\_PATCH@{LIBEVDI\_VERSION\_PATCH}}
+\index{LIBEVDI\_VERSION\_PATCH@{LIBEVDI\_VERSION\_PATCH}!evdi\_lib.h@{evdi\_lib.h}}
+\doxysubsubsection{\texorpdfstring{LIBEVDI\_VERSION\_PATCH}{LIBEVDI\_VERSION\_PATCH}}
+{\footnotesize\ttfamily \#define LIBEVDI\+\_\+\+VERSION\+\_\+\+PATCH~0}
+
+
+
+\doxysubsection{型態定義說明文件}
+\mbox{\Hypertarget{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}\label{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}} 
+\index{evdi\_lib.h@{evdi\_lib.h}!evdi\_handle@{evdi\_handle}}
+\index{evdi\_handle@{evdi\_handle}!evdi\_lib.h@{evdi\_lib.h}}
+\doxysubsubsection{\texorpdfstring{evdi\_handle}{evdi\_handle}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structevdi__device__context}{evdi\+\_\+device\+\_\+context}}$\ast$ \mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}}}
+
+\mbox{\Hypertarget{evdi__lib_8h_a58a9920383ad607e07b75d8cd1280897}\label{evdi__lib_8h_a58a9920383ad607e07b75d8cd1280897}} 
+\index{evdi\_lib.h@{evdi\_lib.h}!evdi\_selectable@{evdi\_selectable}}
+\index{evdi\_selectable@{evdi\_selectable}!evdi\_lib.h@{evdi\_lib.h}}
+\doxysubsubsection{\texorpdfstring{evdi\_selectable}{evdi\_selectable}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{evdi__lib_8h_a58a9920383ad607e07b75d8cd1280897}{evdi\+\_\+selectable}}}
+
+
+
+\doxysubsection{列舉型態說明文件}
+\mbox{\Hypertarget{evdi__lib_8h_a00a649446b891bc7effb5ad284f41fa8}\label{evdi__lib_8h_a00a649446b891bc7effb5ad284f41fa8}} 
+\index{evdi\_lib.h@{evdi\_lib.h}!evdi\_device\_status@{evdi\_device\_status}}
+\index{evdi\_device\_status@{evdi\_device\_status}!evdi\_lib.h@{evdi\_lib.h}}
+\doxysubsubsection{\texorpdfstring{evdi\_device\_status}{evdi\_device\_status}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{evdi__lib_8h_a00a649446b891bc7effb5ad284f41fa8}{evdi\+\_\+device\+\_\+status}}}
+
+\begin{DoxyEnumFields}{列舉值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AVAILABLE@{AVAILABLE}!evdi\_lib.h@{evdi\_lib.h}}\index{evdi\_lib.h@{evdi\_lib.h}!AVAILABLE@{AVAILABLE}}}\mbox{\Hypertarget{evdi__lib_8h_a00a649446b891bc7effb5ad284f41fa8a1e229ccb8b53a57de4ebb11c2d15272e}\label{evdi__lib_8h_a00a649446b891bc7effb5ad284f41fa8a1e229ccb8b53a57de4ebb11c2d15272e}} 
+AVAILABLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNRECOGNIZED@{UNRECOGNIZED}!evdi\_lib.h@{evdi\_lib.h}}\index{evdi\_lib.h@{evdi\_lib.h}!UNRECOGNIZED@{UNRECOGNIZED}}}\mbox{\Hypertarget{evdi__lib_8h_a00a649446b891bc7effb5ad284f41fa8acb9331d084ecdba0890ee39bda83e7b8}\label{evdi__lib_8h_a00a649446b891bc7effb5ad284f41fa8acb9331d084ecdba0890ee39bda83e7b8}} 
+UNRECOGNIZED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NOT\_PRESENT@{NOT\_PRESENT}!evdi\_lib.h@{evdi\_lib.h}}\index{evdi\_lib.h@{evdi\_lib.h}!NOT\_PRESENT@{NOT\_PRESENT}}}\mbox{\Hypertarget{evdi__lib_8h_a00a649446b891bc7effb5ad284f41fa8acf30d1e6a6b091ca668346f50810f125}\label{evdi__lib_8h_a00a649446b891bc7effb5ad284f41fa8acf30d1e6a6b091ca668346f50810f125}} 
+NOT\+\_\+\+PRESENT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{函式說明文件}
+\mbox{\Hypertarget{evdi__lib_8h_af130aa027bde8000489600ecf17c4126}\label{evdi__lib_8h_af130aa027bde8000489600ecf17c4126}} 
+\index{evdi\_lib.h@{evdi\_lib.h}!evdi\_add\_device@{evdi\_add\_device}}
+\index{evdi\_add\_device@{evdi\_add\_device}!evdi\_lib.h@{evdi\_lib.h}}
+\doxysubsubsection{\texorpdfstring{evdi\_add\_device()}{evdi\_add\_device()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} evdi\+\_\+add\+\_\+device (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+被參考於 Evdi\+::add().
+
+\mbox{\Hypertarget{evdi__lib_8h_ad2871484b85ee7a047fcd8b9002e8167}\label{evdi__lib_8h_ad2871484b85ee7a047fcd8b9002e8167}} 
+\index{evdi\_lib.h@{evdi\_lib.h}!evdi\_check\_device@{evdi\_check\_device}}
+\index{evdi\_check\_device@{evdi\_check\_device}!evdi\_lib.h@{evdi\_lib.h}}
+\doxysubsubsection{\texorpdfstring{evdi\_check\_device()}{evdi\_check\_device()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{evdi__lib_8h_a00a649446b891bc7effb5ad284f41fa8}{evdi\+\_\+device\+\_\+status}} evdi\+\_\+check\+\_\+device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}}]{device }\end{DoxyParamCaption})}
+
+
+
+參考 EVDI\+\_\+\+INVALID\+\_\+\+HANDLE, 及 h.
+
+\mbox{\Hypertarget{evdi__lib_8h_adb2dcc7c0febdd8c281af5c6a77434fe}\label{evdi__lib_8h_adb2dcc7c0febdd8c281af5c6a77434fe}} 
+\index{evdi\_lib.h@{evdi\_lib.h}!evdi\_close@{evdi\_close}}
+\index{evdi\_close@{evdi\_close}!evdi\_lib.h@{evdi\_lib.h}}
+\doxysubsubsection{\texorpdfstring{evdi\_close()}{evdi\_close()}}
+{\footnotesize\ttfamily void evdi\+\_\+close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}}}]{handle }\end{DoxyParamCaption})}
+
+
+
+參考 EVDI\+\_\+\+INVALID\+\_\+\+HANDLE, EVDI\+\_\+\+USAGE\+\_\+\+LEN, 及 handle.
+
+
+
+被參考於 Evdi\+::$\sim$\+Evdi().
+
+\mbox{\Hypertarget{evdi__lib_8h_a4979d9eb79303294d583b8589b26957e}\label{evdi__lib_8h_a4979d9eb79303294d583b8589b26957e}} 
+\index{evdi\_lib.h@{evdi\_lib.h}!evdi\_connect@{evdi\_connect}}
+\index{evdi\_connect@{evdi\_connect}!evdi\_lib.h@{evdi\_lib.h}}
+\doxysubsubsection{\texorpdfstring{evdi\_connect()}{evdi\_connect()}}
+{\footnotesize\ttfamily void evdi\+\_\+connect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}}}]{handle,  }\item[{const unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a8b272214e498a4cb09dde135bb4d7d03}{char}} $\ast$}]{edid,  }\item[{const unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}}]{edid\+\_\+length,  }\item[{const uint32\+\_\+t}]{pixel\+\_\+area\+\_\+limit,  }\item[{const uint32\+\_\+t}]{pixel\+\_\+per\+\_\+second\+\_\+limit }\end{DoxyParamCaption})}
+
+
+
+參考 drm\+\_\+evdi\+\_\+connect\+::connected, drm\+\_\+evdi\+\_\+connect\+::edid, drm\+\_\+evdi\+\_\+connect\+::edid\+\_\+length, handle, drm\+\_\+evdi\+\_\+connect\+::pixel\+\_\+area\+\_\+limit, 及 drm\+\_\+evdi\+\_\+connect\+::pixel\+\_\+per\+\_\+second\+\_\+limit.
+
+
+
+被參考於 Evdi\+::connect().
+
+\mbox{\Hypertarget{evdi__lib_8h_a7252cf9a8397e2ab5cfbe14856cd36d7}\label{evdi__lib_8h_a7252cf9a8397e2ab5cfbe14856cd36d7}} 
+\index{evdi\_lib.h@{evdi\_lib.h}!evdi\_ddcci\_response@{evdi\_ddcci\_response}}
+\index{evdi\_ddcci\_response@{evdi\_ddcci\_response}!evdi\_lib.h@{evdi\_lib.h}}
+\doxysubsubsection{\texorpdfstring{evdi\_ddcci\_response()}{evdi\_ddcci\_response()}}
+{\footnotesize\ttfamily void evdi\+\_\+ddcci\+\_\+response (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}}}]{handle,  }\item[{const unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a8b272214e498a4cb09dde135bb4d7d03}{char}} $\ast$}]{buffer,  }\item[{const uint32\+\_\+t}]{buffer\+\_\+length,  }\item[{const bool}]{result }\end{DoxyParamCaption})}
+
+
+
+參考 drm\+\_\+evdi\+\_\+ddcci\+\_\+response\+::buffer, buffer, drm\+\_\+evdi\+\_\+ddcci\+\_\+response\+::buffer\+\_\+length, 及 drm\+\_\+evdi\+\_\+ddcci\+\_\+response\+::result.
+
+\mbox{\Hypertarget{evdi__lib_8h_a5ecaba53f53b98d0ffba0d1977a0b36e}\label{evdi__lib_8h_a5ecaba53f53b98d0ffba0d1977a0b36e}} 
+\index{evdi\_lib.h@{evdi\_lib.h}!evdi\_disconnect@{evdi\_disconnect}}
+\index{evdi\_disconnect@{evdi\_disconnect}!evdi\_lib.h@{evdi\_lib.h}}
+\doxysubsubsection{\texorpdfstring{evdi\_disconnect()}{evdi\_disconnect()}}
+{\footnotesize\ttfamily void evdi\+\_\+disconnect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}}}]{handle }\end{DoxyParamCaption})}
+
+
+
+被參考於 Evdi\+::disconnect().
+
+\mbox{\Hypertarget{evdi__lib_8h_a2c9240a8bd859f865c975db9f5805ac8}\label{evdi__lib_8h_a2c9240a8bd859f865c975db9f5805ac8}} 
+\index{evdi\_lib.h@{evdi\_lib.h}!evdi\_enable\_cursor\_events@{evdi\_enable\_cursor\_events}}
+\index{evdi\_enable\_cursor\_events@{evdi\_enable\_cursor\_events}!evdi\_lib.h@{evdi\_lib.h}}
+\doxysubsubsection{\texorpdfstring{evdi\_enable\_cursor\_events()}{evdi\_enable\_cursor\_events()}}
+{\footnotesize\ttfamily void evdi\+\_\+enable\+\_\+cursor\+\_\+events (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}}}]{handle,  }\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+
+
+參考 drm\+\_\+evdi\+\_\+enable\+\_\+cursor\+\_\+events\+::enable, evdi\+\_\+log, 及 handle.
+
+
+
+被參考於 Evdi\+::enable\+\_\+cursor\+\_\+events().
+
+\mbox{\Hypertarget{evdi__lib_8h_a28d1c460204b49714ce3273bc85e0b46}\label{evdi__lib_8h_a28d1c460204b49714ce3273bc85e0b46}} 
+\index{evdi\_lib.h@{evdi\_lib.h}!evdi\_get\_event\_ready@{evdi\_get\_event\_ready}}
+\index{evdi\_get\_event\_ready@{evdi\_get\_event\_ready}!evdi\_lib.h@{evdi\_lib.h}}
+\doxysubsubsection{\texorpdfstring{evdi\_get\_event\_ready()}{evdi\_get\_event\_ready()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{evdi__lib_8h_a58a9920383ad607e07b75d8cd1280897}{evdi\+\_\+selectable}} evdi\+\_\+get\+\_\+event\+\_\+ready (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}}}]{handle }\end{DoxyParamCaption})}
+
+
+
+參考 handle.
+
+
+
+被參考於 Evdi\+::get\+\_\+event\+\_\+source().
+
+\mbox{\Hypertarget{evdi__lib_8h_a550ce0f7caf0a555f07c0f8365301350}\label{evdi__lib_8h_a550ce0f7caf0a555f07c0f8365301350}} 
+\index{evdi\_lib.h@{evdi\_lib.h}!evdi\_get\_lib\_version@{evdi\_get\_lib\_version}}
+\index{evdi\_get\_lib\_version@{evdi\_get\_lib\_version}!evdi\_lib.h@{evdi\_lib.h}}
+\doxysubsubsection{\texorpdfstring{evdi\_get\_lib\_version()}{evdi\_get\_lib\_version()}}
+{\footnotesize\ttfamily void evdi\+\_\+get\+\_\+lib\+\_\+version (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structevdi__lib__version}{evdi\+\_\+lib\+\_\+version}} $\ast$}]{version }\end{DoxyParamCaption})}
+
+
+
+參考 LIBEVDI\+\_\+\+VERSION\+\_\+\+MAJOR, LIBEVDI\+\_\+\+VERSION\+\_\+\+MINOR, LIBEVDI\+\_\+\+VERSION\+\_\+\+PATCH, evdi\+\_\+lib\+\_\+version\+::version\+\_\+major, evdi\+\_\+lib\+\_\+version\+::version\+\_\+minor, 及 evdi\+\_\+lib\+\_\+version\+::version\+\_\+patchlevel.
+
+\mbox{\Hypertarget{evdi__lib_8h_ad9a44f261bd62709bf2132ee188fc039}\label{evdi__lib_8h_ad9a44f261bd62709bf2132ee188fc039}} 
+\index{evdi\_lib.h@{evdi\_lib.h}!evdi\_grab\_pixels@{evdi\_grab\_pixels}}
+\index{evdi\_grab\_pixels@{evdi\_grab\_pixels}!evdi\_lib.h@{evdi\_lib.h}}
+\doxysubsubsection{\texorpdfstring{evdi\_grab\_pixels()}{evdi\_grab\_pixels()}}
+{\footnotesize\ttfamily void evdi\+\_\+grab\+\_\+pixels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}}}]{handle,  }\item[{struct \mbox{\hyperlink{structevdi__rect}{evdi\+\_\+rect}} $\ast$}]{rects,  }\item[{\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} $\ast$}]{num\+\_\+rects }\end{DoxyParamCaption})}
+
+
+
+參考 MAX\+\_\+\+DIRTS.
+
+
+
+被參考於 Evdi\+::grab\+\_\+pixels().
+
+\mbox{\Hypertarget{evdi__lib_8h_a33915ec8a6e0947d5465e1e70d0cf4f6}\label{evdi__lib_8h_a33915ec8a6e0947d5465e1e70d0cf4f6}} 
+\index{evdi\_lib.h@{evdi\_lib.h}!evdi\_handle\_events@{evdi\_handle\_events}}
+\index{evdi\_handle\_events@{evdi\_handle\_events}!evdi\_lib.h@{evdi\_lib.h}}
+\doxysubsubsection{\texorpdfstring{evdi\_handle\_events()}{evdi\_handle\_events()}}
+{\footnotesize\ttfamily void evdi\+\_\+handle\+\_\+events (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}}}]{handle,  }\item[{struct \mbox{\hyperlink{structevdi__event__context}{evdi\+\_\+event\+\_\+context}} $\ast$}]{evtctx }\end{DoxyParamCaption})}
+
+
+
+參考 buffer, evdi\+\_\+log, 及 handle.
+
+
+
+被參考於 Evdi\+::handle\+\_\+events().
+
+\mbox{\Hypertarget{evdi__lib_8h_a22f9baafbffa240d03b8f47f6f09c929}\label{evdi__lib_8h_a22f9baafbffa240d03b8f47f6f09c929}} 
+\index{evdi\_lib.h@{evdi\_lib.h}!evdi\_open@{evdi\_open}}
+\index{evdi\_open@{evdi\_open}!evdi\_lib.h@{evdi\_lib.h}}
+\doxysubsubsection{\texorpdfstring{evdi\_open()}{evdi\_open()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}} evdi\+\_\+open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}}]{device }\end{DoxyParamCaption})}
+
+
+
+被參考於 Evdi\+::\+Evdi().
+
+\mbox{\Hypertarget{evdi__lib_8h_af8506540c9f632d795d4bd4523374530}\label{evdi__lib_8h_af8506540c9f632d795d4bd4523374530}} 
+\index{evdi\_lib.h@{evdi\_lib.h}!evdi\_open\_attached\_to@{evdi\_open\_attached\_to}}
+\index{evdi\_open\_attached\_to@{evdi\_open\_attached\_to}!evdi\_lib.h@{evdi\_lib.h}}
+\doxysubsubsection{\texorpdfstring{evdi\_open\_attached\_to()}{evdi\_open\_attached\_to()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}} evdi\+\_\+open\+\_\+attached\+\_\+to (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{jsimdcfg_8inc_8h_a8b272214e498a4cb09dde135bb4d7d03}{char}} $\ast$}]{sysfs\+\_\+parent\+\_\+device }\end{DoxyParamCaption})}
+
+
+
+參考 EVDI\+\_\+\+INVALID\+\_\+\+DEVICE\+\_\+\+INDEX.
+
+
+
+被參考於 Evdi\+::\+Evdi().
+
+\mbox{\Hypertarget{evdi__lib_8h_a55b8cd2dec9571ba2ad484dc12e8644d}\label{evdi__lib_8h_a55b8cd2dec9571ba2ad484dc12e8644d}} 
+\index{evdi\_lib.h@{evdi\_lib.h}!evdi\_register\_buffer@{evdi\_register\_buffer}}
+\index{evdi\_register\_buffer@{evdi\_register\_buffer}!evdi\_lib.h@{evdi\_lib.h}}
+\doxysubsubsection{\texorpdfstring{evdi\_register\_buffer()}{evdi\_register\_buffer()}}
+{\footnotesize\ttfamily void evdi\+\_\+register\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}}}]{handle,  }\item[{struct \mbox{\hyperlink{structevdi__buffer}{evdi\+\_\+buffer}}}]{buffer }\end{DoxyParamCaption})}
+
+
+
+參考 handle.
+
+
+
+被參考於 Evdi\+::register\+\_\+buffer().
+
+\mbox{\Hypertarget{evdi__lib_8h_a1365a0f99d801521828b8d7e789ee190}\label{evdi__lib_8h_a1365a0f99d801521828b8d7e789ee190}} 
+\index{evdi\_lib.h@{evdi\_lib.h}!evdi\_request\_update@{evdi\_request\_update}}
+\index{evdi\_request\_update@{evdi\_request\_update}!evdi\_lib.h@{evdi\_lib.h}}
+\doxysubsubsection{\texorpdfstring{evdi\_request\_update()}{evdi\_request\_update()}}
+{\footnotesize\ttfamily bool evdi\+\_\+request\+\_\+update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}}}]{handle,  }\item[{\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}}]{buffer\+Id }\end{DoxyParamCaption})}
+
+
+
+參考 handle.
+
+
+
+被參考於 Evdi\+::request\+\_\+update().
+
+\mbox{\Hypertarget{evdi__lib_8h_aecf4840d3b6e77b4f267c876ec166eb5}\label{evdi__lib_8h_aecf4840d3b6e77b4f267c876ec166eb5}} 
+\index{evdi\_lib.h@{evdi\_lib.h}!evdi\_set\_logging@{evdi\_set\_logging}}
+\index{evdi\_set\_logging@{evdi\_set\_logging}!evdi\_lib.h@{evdi\_lib.h}}
+\doxysubsubsection{\texorpdfstring{evdi\_set\_logging()}{evdi\_set\_logging()}}
+{\footnotesize\ttfamily void evdi\+\_\+set\+\_\+logging (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structevdi__logging}{evdi\+\_\+logging}}}]{evdi\+\_\+logging }\end{DoxyParamCaption})}
+
+
+
+被參考於 Evdi\+::\+Evdi().
+
+\mbox{\Hypertarget{evdi__lib_8h_a04802a3a4fc9acef1a02c02b9379e6b1}\label{evdi__lib_8h_a04802a3a4fc9acef1a02c02b9379e6b1}} 
+\index{evdi\_lib.h@{evdi\_lib.h}!evdi\_unregister\_buffer@{evdi\_unregister\_buffer}}
+\index{evdi\_unregister\_buffer@{evdi\_unregister\_buffer}!evdi\_lib.h@{evdi\_lib.h}}
+\doxysubsubsection{\texorpdfstring{evdi\_unregister\_buffer()}{evdi\_unregister\_buffer()}}
+{\footnotesize\ttfamily void evdi\+\_\+unregister\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{evdi__lib_8h_a3111032ff8e32c04ed2f747a13af6316}{evdi\+\_\+handle}}}]{handle,  }\item[{\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}}]{buffer\+Id }\end{DoxyParamCaption})}
+
+
+
+參考 handle.
+
+
+
+被參考於 Evdi\+::unregister\+\_\+buffer().
+

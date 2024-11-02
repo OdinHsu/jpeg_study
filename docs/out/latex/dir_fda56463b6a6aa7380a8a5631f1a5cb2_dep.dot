@@ -1,0 +1,8 @@
+digraph "/home/odin/Desktop/program/learn/usbdisp_linux/libevdipp" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  dir_fda56463b6a6aa7380a8a5631f1a5cb2 [shape=box, label="libevdipp", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_fda56463b6a6aa7380a8a5631f1a5cb2.html"];
+  dir_4159d2fa8205dd791550e6f261184d1d [shape=box label="libusbdisp" fillcolor="white" style="filled" color="red" URL="dir_4159d2fa8205dd791550e6f261184d1d.html"];
+  dir_fda56463b6a6aa7380a8a5631f1a5cb2->dir_4159d2fa8205dd791550e6f261184d1d [headlabel="2", labeldistance=1.5 headhref="dir_000001_000002.html"];
+}

@@ -1,0 +1,11 @@
+digraph "/home/odin/Desktop/program/learn/usbdisp_linux/libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/evdi/module/evdi_sysfs.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/deb\l_install/com.racertech.usbdisp\l-1.0.0/opt/apps/com.racertech.usbdisp\l/files/evdi/module/evdi_sysfs.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/deb\l_install/com.racertech.usbdisp\l-1.0.0/opt/apps/com.racertech.usbdisp\l/files/evdi/module/evdi_platform_drv.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$evdi__platform__drv_8c.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="/home/odin/Desktop\l/program/learn/usbdisp\l_linux/libusbdisp/deb\l_install/com.racertech.usbdisp\l-1.0.0/opt/apps/com.racertech.usbdisp\l/files/evdi/module/evdi_sysfs.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$evdi__sysfs_8c.html",tooltip=" "];
+}

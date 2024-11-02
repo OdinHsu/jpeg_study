@@ -1,0 +1,179 @@
+\hypertarget{classScreenDriver}{}\doxysection{Screen\+Driver 類別 參考文件}
+\label{classScreenDriver}\index{ScreenDriver@{ScreenDriver}}
+
+
+{\ttfamily \#include $<$driver.\+hpp$>$}
+
+
+
+類別\+Screen\+Driver的繼承圖\+:
+% FIG 0
+
+
+Screen\+Driver的合作圖\+:
+% FIG 1
+\doxysubsection*{公開方法(Public Methods)}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classScreenDriver_a11f47bb7b1d18216d353541cc62126c4}{Screen\+Driver}} (const \mbox{\hyperlink{classEvdi}{Evdi}} \&evdi, std\+::vector$<$ unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a8b272214e498a4cb09dde135bb4d7d03}{char}} $>$ \&edid, bool separate\+Cursor\+Events=false)
+\item 
+void \mbox{\hyperlink{classScreenDriver_a613cb66bd0008d1878fc9bd8707fe82b}{add\+\_\+screen}} (\mbox{\hyperlink{screen_8hpp_a4ad978763e5c380e1bc595139fcec0a2}{Screen\+Ptr}} \mbox{\hyperlink{example_8cpp_abfd0aa8d2594f4d3946b7cced174b619}{screen}}, libusb\+\_\+device $\ast$dev)
+\item 
+void \mbox{\hyperlink{classScreenDriver_a22f993b509abf7b42d3a46397aace7fb}{drive}} (unsigned fps)
+\item 
+\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} \mbox{\hyperlink{classScreenDriver_ae7127a5f69c71ad8e304d97a29bd07a5}{on\+\_\+update\+\_\+ready}} (\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} buffer\+\_\+to\+\_\+be\+\_\+updated)
+\item 
+void \mbox{\hyperlink{classScreenDriver_a2b3d30d22760795e7774ec410fcf2baa}{on\+\_\+cursor\+\_\+set}} (\mbox{\hyperlink{structevdi__cursor__set}{evdi\+\_\+cursor\+\_\+set}} cursor\+\_\+set)
+\item 
+void \mbox{\hyperlink{classScreenDriver_a349aa15bad588a29dd4173b1bd707a43}{on\+\_\+cursor\+\_\+move}} (\mbox{\hyperlink{structevdi__cursor__move}{evdi\+\_\+cursor\+\_\+move}} cursor\+\_\+move)
+\item 
+void \mbox{\hyperlink{classScreenDriver_af4c0793b1813cbcceffe49b32e302592}{quit}} ()
+\item 
+\mbox{\hyperlink{driver_8hpp_a4f4bb67531a9bf6f0b9c6ad76aeba587}{UCHAR}} $\ast$ \mbox{\hyperlink{classScreenDriver_a5df08e9d6695d9b3d40eddcdd8cc9494}{get\+Edid}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{公開屬性}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a8b272214e498a4cb09dde135bb4d7d03}{char}} $>$ \mbox{\hyperlink{classScreenDriver_acb6478b30f248a5a995aef523bcf31cc}{edid\+\_\+data}}
+\item 
+\mbox{\hyperlink{driver_8hpp_a4f4bb67531a9bf6f0b9c6ad76aeba587}{UCHAR}} $\ast$ \mbox{\hyperlink{classScreenDriver_a8a01dba207d4a7db8ed50aaf900bc19a}{Edid\+\_\+data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{保護方法(Protected Methods)}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classScreenDriver_ac69f0a8a248a697caee286649062880e}{on\+\_\+dpms\+\_\+notification}} (\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} dpms\+\_\+mode)
+\end{DoxyCompactItemize}
+\doxysubsection*{額外的繼承成員}
+
+
+\doxysubsection{建構子與解構子說明文件}
+\mbox{\Hypertarget{classScreenDriver_a11f47bb7b1d18216d353541cc62126c4}\label{classScreenDriver_a11f47bb7b1d18216d353541cc62126c4}} 
+\index{ScreenDriver@{ScreenDriver}!ScreenDriver@{ScreenDriver}}
+\index{ScreenDriver@{ScreenDriver}!ScreenDriver@{ScreenDriver}}
+\doxysubsubsection{\texorpdfstring{ScreenDriver()}{ScreenDriver()}}
+{\footnotesize\ttfamily Screen\+Driver\+::\+Screen\+Driver (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classEvdi}{Evdi}} \&}]{evdi,  }\item[{std\+::vector$<$ unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a8b272214e498a4cb09dde135bb4d7d03}{char}} $>$ \&}]{edid,  }\item[{bool}]{separate\+Cursor\+Events = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+被參考於 add\+\_\+screen(), 及 drive().
+
+
+
+\doxysubsection{函式成員說明文件}
+\mbox{\Hypertarget{classScreenDriver_a613cb66bd0008d1878fc9bd8707fe82b}\label{classScreenDriver_a613cb66bd0008d1878fc9bd8707fe82b}} 
+\index{ScreenDriver@{ScreenDriver}!add\_screen@{add\_screen}}
+\index{add\_screen@{add\_screen}!ScreenDriver@{ScreenDriver}}
+\doxysubsubsection{\texorpdfstring{add\_screen()}{add\_screen()}}
+{\footnotesize\ttfamily void Screen\+Driver\+::add\+\_\+screen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{screen_8hpp_a4ad978763e5c380e1bc595139fcec0a2}{Screen\+Ptr}}}]{screen,  }\item[{libusb\+\_\+device $\ast$}]{dev }\end{DoxyParamCaption})}
+
+
+
+參考 edid\+\_\+data, Usb\+Display\+::jx\+Init(), screen, 及 Screen\+Driver().
+
+\mbox{\Hypertarget{classScreenDriver_a22f993b509abf7b42d3a46397aace7fb}\label{classScreenDriver_a22f993b509abf7b42d3a46397aace7fb}} 
+\index{ScreenDriver@{ScreenDriver}!drive@{drive}}
+\index{drive@{drive}!ScreenDriver@{ScreenDriver}}
+\doxysubsubsection{\texorpdfstring{drive()}{drive()}}
+{\footnotesize\ttfamily void Screen\+Driver\+::drive (\begin{DoxyParamCaption}\item[{unsigned}]{fps }\end{DoxyParamCaption})}
+
+
+
+參考 Screen\+Driver().
+
+\mbox{\Hypertarget{classScreenDriver_a5df08e9d6695d9b3d40eddcdd8cc9494}\label{classScreenDriver_a5df08e9d6695d9b3d40eddcdd8cc9494}} 
+\index{ScreenDriver@{ScreenDriver}!getEdid@{getEdid}}
+\index{getEdid@{getEdid}!ScreenDriver@{ScreenDriver}}
+\doxysubsubsection{\texorpdfstring{getEdid()}{getEdid()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{driver_8hpp_a4f4bb67531a9bf6f0b9c6ad76aeba587}{UCHAR}}$\ast$ Screen\+Driver\+::get\+Edid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classScreenDriver_a349aa15bad588a29dd4173b1bd707a43}\label{classScreenDriver_a349aa15bad588a29dd4173b1bd707a43}} 
+\index{ScreenDriver@{ScreenDriver}!on\_cursor\_move@{on\_cursor\_move}}
+\index{on\_cursor\_move@{on\_cursor\_move}!ScreenDriver@{ScreenDriver}}
+\doxysubsubsection{\texorpdfstring{on\_cursor\_move()}{on\_cursor\_move()}}
+{\footnotesize\ttfamily void Screen\+Driver\+::on\+\_\+cursor\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structevdi__cursor__move}{evdi\+\_\+cursor\+\_\+move}}}]{cursor\+\_\+move }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+依據\mbox{\hyperlink{classScreen_a94f9b4275a3274cb8a37087bccc41e9e}{Screen}}重新實作.
+
+
+
+參考 logging, evdi\+\_\+cursor\+\_\+move\+::x, 及 evdi\+\_\+cursor\+\_\+move\+::y.
+
+\mbox{\Hypertarget{classScreenDriver_a2b3d30d22760795e7774ec410fcf2baa}\label{classScreenDriver_a2b3d30d22760795e7774ec410fcf2baa}} 
+\index{ScreenDriver@{ScreenDriver}!on\_cursor\_set@{on\_cursor\_set}}
+\index{on\_cursor\_set@{on\_cursor\_set}!ScreenDriver@{ScreenDriver}}
+\doxysubsubsection{\texorpdfstring{on\_cursor\_set()}{on\_cursor\_set()}}
+{\footnotesize\ttfamily void Screen\+Driver\+::on\+\_\+cursor\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structevdi__cursor__set}{evdi\+\_\+cursor\+\_\+set}}}]{cursor\+\_\+set }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+依據\mbox{\hyperlink{classScreen_a45f6301d9fca61e9d90cffdc17f99eab}{Screen}}重新實作.
+
+
+
+參考 evdi\+\_\+cursor\+\_\+set\+::enabled, evdi\+\_\+cursor\+\_\+set\+::hot\+\_\+x, evdi\+\_\+cursor\+\_\+set\+::hot\+\_\+y, 及 logging.
+
+\mbox{\Hypertarget{classScreenDriver_ac69f0a8a248a697caee286649062880e}\label{classScreenDriver_ac69f0a8a248a697caee286649062880e}} 
+\index{ScreenDriver@{ScreenDriver}!on\_dpms\_notification@{on\_dpms\_notification}}
+\index{on\_dpms\_notification@{on\_dpms\_notification}!ScreenDriver@{ScreenDriver}}
+\doxysubsubsection{\texorpdfstring{on\_dpms\_notification()}{on\_dpms\_notification()}}
+{\footnotesize\ttfamily void Screen\+Driver\+::on\+\_\+dpms\+\_\+notification (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}}]{dpms\+\_\+mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+依據\mbox{\hyperlink{classScreen_aa9ca776aa1e2d5e9f02293157ac1ec16}{Screen}}重新實作.
+
+
+
+參考 Usb\+Display\+::jx\+Set\+Resolution(), 及 logging.
+
+\mbox{\Hypertarget{classScreenDriver_ae7127a5f69c71ad8e304d97a29bd07a5}\label{classScreenDriver_ae7127a5f69c71ad8e304d97a29bd07a5}} 
+\index{ScreenDriver@{ScreenDriver}!on\_update\_ready@{on\_update\_ready}}
+\index{on\_update\_ready@{on\_update\_ready}!ScreenDriver@{ScreenDriver}}
+\doxysubsubsection{\texorpdfstring{on\_update\_ready()}{on\_update\_ready()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}} Screen\+Driver\+::on\+\_\+update\+\_\+ready (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jsimdcfg_8inc_8h_a0d43f9a819c111f70ea20e3197a12c23}{int}}}]{buffer\+\_\+to\+\_\+be\+\_\+updated }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+依據\mbox{\hyperlink{classScreen_a4968a57aa18158beb12503ccf7a5d848}{Screen}}重新實作.
+
+
+
+參考 buffer, Screen\+::buffers, Screen\+::buffer\+To\+Update, Evdi\+::grab\+\_\+pixels(), Usb\+Display\+::jx\+Start\+Encode(), logging, 及 Screen\+::rects.
+
+\mbox{\Hypertarget{classScreenDriver_af4c0793b1813cbcceffe49b32e302592}\label{classScreenDriver_af4c0793b1813cbcceffe49b32e302592}} 
+\index{ScreenDriver@{ScreenDriver}!quit@{quit}}
+\index{quit@{quit}!ScreenDriver@{ScreenDriver}}
+\doxysubsubsection{\texorpdfstring{quit()}{quit()}}
+{\footnotesize\ttfamily void Screen\+Driver\+::quit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+參考 Usb\+Display\+::jx\+Delete().
+
+
+
+\doxysubsection{資料成員說明文件}
+\mbox{\Hypertarget{classScreenDriver_acb6478b30f248a5a995aef523bcf31cc}\label{classScreenDriver_acb6478b30f248a5a995aef523bcf31cc}} 
+\index{ScreenDriver@{ScreenDriver}!edid\_data@{edid\_data}}
+\index{edid\_data@{edid\_data}!ScreenDriver@{ScreenDriver}}
+\doxysubsubsection{\texorpdfstring{edid\_data}{edid\_data}}
+{\footnotesize\ttfamily std\+::vector$<$unsigned \mbox{\hyperlink{jsimdcfg_8inc_8h_a8b272214e498a4cb09dde135bb4d7d03}{char}}$>$ Screen\+Driver\+::edid\+\_\+data}
+
+
+
+被參考於 add\+\_\+screen().
+
+\mbox{\Hypertarget{classScreenDriver_a8a01dba207d4a7db8ed50aaf900bc19a}\label{classScreenDriver_a8a01dba207d4a7db8ed50aaf900bc19a}} 
+\index{ScreenDriver@{ScreenDriver}!Edid\_data@{Edid\_data}}
+\index{Edid\_data@{Edid\_data}!ScreenDriver@{ScreenDriver}}
+\doxysubsubsection{\texorpdfstring{Edid\_data}{Edid\_data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{driver_8hpp_a4f4bb67531a9bf6f0b9c6ad76aeba587}{UCHAR}}$\ast$ Screen\+Driver\+::\+Edid\+\_\+data}
+
+
+
+此類別(class) 文件是由下列檔案中產生\+:\begin{DoxyCompactItemize}
+\item 
+/home/odin/\+Desktop/program/learn/usbdisp\+\_\+linux/example/\mbox{\hyperlink{driver_8hpp}{driver.\+hpp}}\item 
+/home/odin/\+Desktop/program/learn/usbdisp\+\_\+linux/example/\mbox{\hyperlink{driver_8cpp}{driver.\+cpp}}\end{DoxyCompactItemize}

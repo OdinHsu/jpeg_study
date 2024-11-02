@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=usbdisp
+comment=The Driver for usbdisp display management
+Exec=/opt/racertech/com.racertech.usbdisp/files/bin/usb-disp
+Categories=Graphics
+Type=Application

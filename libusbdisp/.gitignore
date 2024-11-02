@@ -1,0 +1,15 @@
+*.cmd
+*.d
+*.ko
+*.o
+*.order
+*.rej
+*.so
+*.so.*
+*.symvers
+
+
+bin/
+obj/
+lib/
+stage/

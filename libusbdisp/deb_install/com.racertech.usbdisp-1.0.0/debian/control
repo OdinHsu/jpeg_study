@@ -1,0 +1,18 @@
+Source: com.racertech.usbdisp
+Section: graphics
+Priority: optional
+Maintainer: Eddie <Eddie@racer-tech.com>
+Build-Depends: libdrm-dev, dkms
+#Pre-Depends: libdrm-dev, dkms, libusb-1.0-0-dev
+Standards-Version: 1.0.0
+Homepage: https://www.racer-tech.com/
+#Vcs-Browser: https://salsa.debian.org/debian/com.racertech.usbdisp
+#Vcs-Git: https://salsa.debian.org/debian/com.racertech.usbdisp.git
+
+Package: com.racertech.usbdisp
+Architecture: amd64
+Pre-Depends: libdrm-dev, dkms, libusb-1.0-0-dev
+#Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: A driver for usbdisp device
+ usbdisp is display management driver for usbdisp devices.
+ usbdisp let the display extend or mirror on usbdisp monitor.

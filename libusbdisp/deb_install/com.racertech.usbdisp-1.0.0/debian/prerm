@@ -1,0 +1,54 @@
+#!/bin/bash
+
+LOGSDIR=/var/log/usb-disp
+user_name=$(cat /opt/apps/com.racertech.usbdisp/files/user.log)
+uninstall_evdi_module()
+{
+  EVDI="$1"
+
+  (
+    cd "${EVDI}/module" || return 1
+    make uninstall_dkms
+  )
+}
+
+
+cleanup()
+{
+  systemctl stop usbdisp
+  systemctl disable usbdisp
+  rm -f /etc/systemd/system/usbdisp.service
+  rm -rf $LOGSDIR
+  rm -f /etc/modprobe.d/evdi.conf
+  rm -rf /etc/modules-load.d/evdi.conf
+  rm -rf /etc/profile.d/usbdisp.sh
+  rm -rf /etc/X11/xorg.conf.d/10-usbdisplay.conf
+  rm -rf /home/$user_name/.config/autostart/xhost.desktop
+  rm -rf /opt/apps/com.racertech.usbdisp/files/user.log
+  echo $user_name > /opt/name.log
+}
+
+uninstall()
+{
+  echo -e "\nUninstalling\n"
+
+  echo "[ Removing EVDI from kernel tree, DKMS, and removing sources. ]"
+
+  (
+    rm -f /etc/udev/rules.d/90-usbdisp.rules
+
+    cd "$(dirname "$(realpath "${BASH_SOURCE[0]}")")" && \
+      uninstall_evdi_module "/opt/apps/com.racertech.usbdisp/files/evdi"
+  )
+
+  echo "[ Removing Core folder ]"
+  cleanup
+  rm -rf usbdisp
+
+  echo -e "\nUninstallation steps complete."
+  if [ -f /sys/devices/evdi/version ]; then
+    echo "Please note that the evdi kernel module is still in the memory."
+    echo "A reboot is required to fully complete the uninstallation process."
+  fi
+}
+uninstall

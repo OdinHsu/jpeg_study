@@ -1,0 +1,3 @@
+SUBSYSTEM=="usb", ATTRS{idVendor}=="1a40", ATTRS{idProduct}=="0101",RUN+="/bin/bash + /opt/apps/com.racertech.usbdisp/files/xrandr_set.sh"
+
+SUBSYSTEM=="usb", ATTRS{idVendor}=="1a40", ATTRS{idProduct}=="0201",RUN+="/bin/bash + /opt/apps/com.racertech.usbdisp/files/xrandr_set.sh"

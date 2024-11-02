@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Exec=/opt/apps/com.racertech.usbdisp/files/xrandr_set.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[zh_CN]=xhost
+Name=xhost
+Comment[zh_CN]=run
+Comment=run
+X-GNOME-Autostart-Delay=1

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+root_check(){
+# root check
+if (( $EUID != 0 ));
+then
+        echo -e "\nMust be run as root (i.e: 'sudo $0')."
+        exit 1
+fi
+}
+
+root_check
+LD_LIBRARY_PATH=/opt/apps/com.racertech.usbdisp/files/lib/ /opt/apps/com.racertech.usbdisp/files/bin/usb-disp_bin

@@ -1,0 +1,83 @@
+#!/bin/bash
+
+mkdir usbdisp_log
+dmesg > usbdisp_log/dmesg.log
+cp /var/log/Xorg.0.log usbdisp_log/Xorg.0.log
+xrandr > usbdisp_log/xrandr.log
+xrandr --listproviders > usbdisp_log/listproviders.log
+journalctl -u usbdisp.service > usbdisp_log/usbdisp.log
+
+
+wget -qO inxi.tar.gz https://github.com/smxi/inxi/archive/refs/tags/3.3.22-1.tar.gz
+tar xvf inxi.tar.gz --strip-components=1 -C /usr/local/bin --wildcards --no-anchored inxi > /dev/null
+
+inxi -SMCGm > usbdisp_log/inxi.log
+
+echo -e "--------------- Linux system info ----------------\n" >> usbdisp_log/inxi.log
+
+echo -e "Distro: $(lsb_release -is)" >> usbdisp_log/inxi.log
+echo -e "Release: $(lsb_release -cs)" >> usbdisp_log/inxi.log
+echo -e "platform = $(lsb_release -ics | sed '$!s/$/ /' | tr -d '\n')" >> usbdisp_log/inxi.log
+echo -e "ARCH = $(uname -m)" >> usbdisp_log/inxi.log
+kernel="$(uname -r)"
+echo -e "Kernel: $kernel" >> usbdisp_log/inxi.log
+
+
+echo -e "\n---------------- Usbdisp Driver info ----------------\n" >> usbdisp_log/inxi.log
+if [ -f /sys/devices/evdi/version ]
+then
+	evdi_version="$(cat /sys/devices/evdi/version)"
+else
+	evdi_version="/sys/devices/evdi/version not found"
+fi
+sys_driver_version="$(ls /usr/src/ | grep "evdi" | cut -d "-" -f2)"
+echo -e "Driver version: $sys_driver_version" >> usbdisp_log/inxi.log
+echo -e "usbdisp service status: $(systemctl is-active --quiet displaylink-driver.service && echo up and running)" >> usbdisp_log/inxi.log
+echo -e "EVDI service version: $evdi_version" >> usbdisp_log/inxi.log
+
+echo -e "\n------------------ Graphics card -----------------\n" >> usbdisp_log/inxi.log
+graphics_vendor="$(lspci -nnk | grep -i vga -A3 | grep 'in use' | cut -d ':' -f2 | sed 's/ //g')"
+graphics_subcard="$(lspci -nnk | grep -i vga -A3 | grep Subsystem | cut -d ' ' -f5)"
+vga_info="$(lspci | grep -oP '(?<=VGA compatible controller: ).*')" || :
+vga_info_3d="$(lspci | grep -i '3d controller' | sed 's/^.*: //')"
+xorg_vcheck="$(dpkg -l | grep "ii  xserver-xorg-core" | awk '{print $3}' | sed 's/[^,:]*://g')"
+xconfig_list(){
+x11_etc="/etc/X11/"
+
+if [ ! -d "${x11_etc}" ] ; then # No directory found
+	echo "X11 configs: None"
+	return 0
+fi
+
+count_conf_in_etc=$(find $x11_etc -maxdepth 2 -name "*.conf" | wc -l)
+if [ $count_conf_in_etc -gt 0 ]; then
+	find $x11_etc -type f -name "*.conf" | xargs echo "X11 configs:"
+fi
+}
+echo -e "Vendor: $graphics_vendor" >> usbdisp_log/inxi.log
+echo -e "Subsystem: $graphics_subcard" >> usbdisp_log/inxi.log
+echo -e "VGA: $vga_info" >> usbdisp_log/inxi.log
+echo -e "VGA (3D): $vga_info_3d" >> usbdisp_log/inxi.log
+echo -e "X11 version: $xorg_vcheck" >> usbdisp_log/inxi.log
+xconfig_list >> usbdisp_log/inxi.log
+
+echo -e "\n---------------- Xorg info ----------------\n" >> usbdisp_log/inxi.log
+if [ -f "/etc/X11/xorg.conf.d/10-usbdisplay.conf" ]; then
+	echo -e "xorg_conf_name= $(cat "/etc/X11/xorg.conf.d/10-usbdisplay.conf")" >> usbdisp_log/inxi.log
+fi
+lsb="$(lsb_release -is)"
+if [ "$lsb" == "Kylin" ] && [ -f "/etc/.kyinfo" ]; then
+	echo -e "--------------- Kylin info ----------------\n" >> usbdisp_log/inxi.log
+   	echo -e "kylin version: $(grep milestone "/etc/.kyinfo" | awk -F '-' '{print $NF}')" >> usbdisp_log/inxi.log
+	cat /etc/.kyinfo >> usbdisp_log/inxi.log
+fi
+
+echo -e "\n---------------- modesetting info ----------------\n" >> usbdisp_log/inxi.log
+echo -e "kernel_check= $(uname -r | egrep -o '[0-9]+\.[0-9]+')" >> usbdisp_log/inxi.log
+echo -e "drv= $(lspci -nnk | grep -i vga -A3 | grep 'in use'|cut -d":" -f2|sed 's/ //g')" >> usbdisp_log/inxi.log
+echo -e "drv_nvidia= $(lspci | grep -i '3d controller' | sed 's/^.*: //' | awk '{print $1}')" >> usbdisp_log/inxi.log
+echo -e "cardsub= $(lspci -nnk | grep -i vga -A3|grep Subsystem|cut -d" " -f5)" >> usbdisp_log/inxi.log
+
+
+tar czf usbdisp_log_$(lsb_release -is)_"$graphics_vendor"_$(date '+%Y')$(date '+%m')$(date '+%d')-$(date '+%H')$(date '+%M').tar.gz usbdisp_log
+rm -r usbdisp_log

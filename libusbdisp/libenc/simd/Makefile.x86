@@ -1,0 +1,27 @@
+
+
+OUTDIR=objs
+
+SRCS= jccolor-sse2.asm \
+      jfdctfst-sse2.asm \
+      jquanti-sse2.asm \
+      Optimize-sse2.asm
+
+OBJS= jccolor-sse2.o \
+      jfdctfst-sse2.o \
+      jquanti-sse2.o \
+      Optimize-sse2.o
+
+all:$(OBJS)
+
+NAFLAGS = -felf64 -DELF -D__x86_64__
+#NAFLAGS = -fmacho64 -DMACHO -D__x86_64__
+#NAFLAGS = -felf -DELF
+NASM=/Users/jumplux/bin/nasm-2.11.06/nasm
+
+%.o:%.asm
+	$(NASM) $(NAFLAGS) -o $(OUTDIR)/$@ $<
+
+%.o:%.c
+	$(CC) $(CFLAGS) -c -o $(OUTDIR)/$@ $<
+

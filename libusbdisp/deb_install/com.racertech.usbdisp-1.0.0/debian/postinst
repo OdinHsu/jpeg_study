@@ -1,0 +1,387 @@
+#!/bin/bash
+
+XORG_RUNNING=true
+lsb="$(lsb_release -is)"
+os_name_NFSChina="${lsb:0:8}"
+codename="$(lsb_release -cs)"
+platform="$(lsb_release -ics | sed '$!s/$/ /' | tr -d '\n')"
+kernel="$(uname -r)"
+xorg_conf_name="/etc/X11/xorg.conf.d/10-usbdisplay.conf"
+kernel_check="$(uname -r | egrep -o '[0-9]+\.[0-9]+')"
+max_kernel_version_supported="5.17"
+file_locate=$(pwd)
+xorg_vcheck="$(dpkg -l | grep "ii  xserver-xorg-core" | awk '{print $3}' | sed 's/[^,:]*://g')"
+min_xorg=1.18.3
+newgen_xorg=1.19.6
+#user_name=$(pwd | cut -d "/" -f3)
+
+
+function ver2int {
+echo "$@" | awk -F "." '{ printf("%03d%03d%03d\n", $1,$2,$3); }';
+}
+
+install_evdi()
+{
+  EVDI="$1"
+  ERRORS="$2"
+
+
+  echo "[[ Installing EVDI DKMS module ]]"
+  (
+    dkms install "${EVDI}/module"
+	depmod -a
+	modprobe evdi
+    local retval=$?
+
+    if [ $retval == 3 ]; then
+      echo "EVDI DKMS module already installed."
+    elif [ $retval != 0 ] ; then
+      echo "Failed to install evdi to the kernel tree." > "$ERRORS"
+      return 1
+    fi
+  ) || return 1
+  echo "[[ Installing module configuration files ]]"
+  cat > /etc/modules-load.d/evdi.conf <<EOF
+evdi
+EOF
+  cat > /etc/modprobe.d/evdi.conf <<EOF
+options evdi initial_device_count=4
+EOF
+cat > /etc/profile.d/usbdisp.sh <<EOF
+xrandr --setprovideroutputsource 1 0
+xrandr --setprovideroutputsource 2 0
+xrandr --setprovideroutputsource 3 0
+xrandr --setprovideroutputsource 4 0
+EOF
+  echo "[[ Installing EVDI library ]]"
+}
+
+install()
+{
+	echo "[ Installing EVDI ]"
+
+	local ERRORS
+	ERRORS=$(mktemp)
+	finish() {
+		rm -f "$ERRORS"
+	}
+	trap finish EXIT
+
+	cp -f /opt/apps/com.racertech.usbdisp/files/90-usbdisp.rules /etc/udev/rules.d/
+	if ! install_evdi "/opt/apps/com.racertech.usbdisp/files/evdi" "$ERRORS"; then
+		echo "ERROR: $(< "$ERRORS")" >&2
+		exit 1
+	fi
+  cat > /etc/systemd/system/usbdisp.service <<EOF
+[Unit]
+Description=usbdisp service
+
+[Service]
+Type=simple
+ExecStart=/opt/apps/com.racertech.usbdisp/files/bin/usb-disp
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+EOF
+  chmod 644 /etc/systemd/system/usbdisp.service
+  systemctl enable usbdisp
+  echo -e "\nInstallation complete!"
+  echo -e "\nPlease reboot your computer if intending to use Xorg."
+}
+
+message(){
+echo -e "\n---------------------------------------------------------------\n"
+echo -e "Unsupported platform: $platform"
+echo -e "\n---------------------------------------------------------------\n"
+}
+
+
+if [ "$lsb" == "Ubuntu" ] || [ "$lsb" == "Neon" ];
+then
+	if [ $codename == "trusty" ] || [ $codename == "vivid" ] || [ $codename == "wily" ] || [ $codename == "xenial" ] || [ $codename == "yakkety" ] || [ $codename == "zesty" ] || [ $codename == "artful" ] || [ $codename == "bionic" ] || [ $codename == "cosmic" ] || [ $codename == "disco" ] || [ $codename == "eoan" ] || [ $codename == "focal" ] || [ $codename == "groovy" ] || [ $codename == "hirsute" ] || [ $codename == "impish" ] || [ $codename == "jammy" ];
+	then
+		echo -e "\nSupported platform"
+	else
+		message
+		exit 1
+	fi
+# Debian
+elif [ "$lsb" == "Debian" ];
+then
+	if [ $codename == "jessie" ] || [ $codename == "stretch" ] || [ $codename == "buster" ] || [ $codename == "bullseye" ] || [ $codename == "bookworm" ] || [ $codename == "sid" ] || [ $codename == "n/a" ];
+	then
+		echo -e "\nSupported platform"
+	else
+		message
+		exit 1
+	fi
+elif [ "$os_name_NFSChina" == "NFSChina" ];
+then
+	if [ $codename == "4.0.0-G006" ];
+	then
+		echo -e "\nSupported platform"
+	else 
+		message
+		exit 1
+
+	fi
+elif [ "$lsb" == "AstraLinuxCE" ];
+then
+	if [ $codename == "orel" ];
+	then
+		echo -e "\nSupported platform"
+	else 
+		message
+		exit 1
+
+	fi
+elif [ "$lsb" == "Kylin" ] && [ -f "/etc/.kyinfo" ];
+then
+	echo -e "\nSupported platform"
+elif [ "$lsb" == "Uos" ]; then
+	echo -e "\nSupported platform"
+else
+	message
+	exit 1
+fi
+
+
+# setup xorg.conf depending on graphics card
+modesetting(){
+test ! -d /etc/X11/xorg.conf.d && mkdir -p /etc/X11/xorg.conf.d
+drv=$(lspci -nnk | grep -i vga -A3 | grep 'in use'|cut -d":" -f2|sed 's/ //g')
+drv_nvidia=$(lspci | grep -i '3d controller' | sed 's/^.*: //' | awk '{print $1}')
+cardsub=$(lspci -nnk | grep -i vga -A3|grep Subsystem|cut -d" " -f5)
+
+# intel Evdi xorg.conf
+xorg_intel(){
+cat > $xorg_conf_name <<EOL
+Section "Device"
+    Identifier  "Intel"
+    Driver      "intel"
+EndSection
+EOL
+}
+
+# modesetting Evdi xorg.conf
+xorg_modesetting(){
+cat > $xorg_conf_name <<EOL
+Section "Device"
+    Identifier  "RacerTech"
+    Driver      "modesetting"
+    Option      "PageFlip" "false"
+EndSection
+EOL
+}
+
+# modesetting Evdi xorg.conf
+xorg_modesetting_newgen(){
+cat > $xorg_conf_name <<EOL
+Section "OutputClass"
+    Identifier  "RacerTech"
+    MatchDriver "evdi"
+    Driver      "modesetting"
+    Option      "AccelMethod" "none"
+EndSection
+EOL
+}
+
+nvidia_pregame(){
+xsetup_loc="/usr/share/sddm/scripts/Xsetup"
+
+nvidia_xrandr(){
+cat >> $xsetup_loc << EOL
+
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+EOL
+}
+
+nvidia_xrandr_full(){
+cat >> $xsetup_loc << EOL
+#!/bin/sh
+# Xsetup - run as root before the login dialog appears
+
+if [ -e /sbin/prime-offload ]; then
+    echo running NVIDIA Prime setup /sbin/prime-offload
+    /sbin/prime-offload
+fi
+
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+EOL
+}
+
+# create Xsetup file if not there + make necessary changes (issue: #201, #206)
+if [ ! -f $xsetup_loc ];
+then
+    echo "$xsetup_loc not found, creating"
+		mkdir -p /usr/share/sddm/scripts/
+		touch $xsetup_loc
+		nvidia_xrandr_full
+		chmod +x $xsetup_loc
+		echo -e "Wrote changes to $xsetup_loc"
+fi
+
+# make necessary changes to Xsetup
+if ! grep -q "setprovideroutputsource modesetting" $xsetup_loc
+then
+		mv $xsetup_loc $xsetup_loc.org.bak
+		echo -e "\nMade backup of: $xsetup_loc file"
+		echo -e "\nLocation: $xsetup_loc.org.bak"
+		nvidia_xrandr
+		chmod +x $xsetup_loc
+		echo -e "Wrote changes to $xsetup_loc"
+fi
+
+# xorg.conf ops
+xorg_config="/etc/x11/xorg.conf"
+usr_xorg_conf_name="/usr/share/X11/xorg.conf.d/10-usbdisplay.conf"
+
+if [ -f $xorg_config ];
+then
+		mv $xorg_config $xorg_config.org.bak
+		echo -e "\nMade backup of: $xorg_config file"
+		echo -e "\nLocation: $xorg_config.org.bak"
+fi
+
+if [ -f $xorg_conf_name ];
+then
+		mv $xorg_conf_name $xorg_conf_name.org.bak
+		echo -e "\nMade backup of: $xorg_conf_name file"
+		echo -e "\nLocation: $xorg_conf_name.org.bak"
+fi
+
+if [ -f $usr_xorg_conf_name ];
+then
+		mv $usr_xorg_conf_name $usr_xorg_conf_name.org.bak
+		echo -e "\nMade backup of: $usr_xorg_conf_name file"
+		echo -e "\nLocation: $usr_xorg_conf_name.org.bak"
+fi
+}
+
+# nvidia Evdi xorg.conf (issue: 176)
+xorg_nvidia(){
+cat > $xorg_conf_name <<EOL
+Section "ServerLayout"
+    Identifier "layout"
+    Screen 0 "nvidia"
+    Inactive "intel"
+EndSection
+
+Section "Device"
+    Identifier "intel"
+    Driver "modesetting"
+    Option "AccelMethod" "None"
+EndSection
+
+Section "Screen"
+    Identifier "intel"
+    Device "intel"
+EndSection
+
+Section "Device"
+    Identifier "nvidia"
+    Driver "nvidia"
+    Option "ConstrainCursor" "off"
+EndSection
+
+Section "Screen"
+    Identifier "nvidia"
+    Device "nvidia"
+    Option "AllowEmptyInitialConfiguration" "on"
+    Option "IgnoreDisplayDevices" "CRT"
+EndSection
+EOL
+}
+
+# issue: 204, 216
+nvidia_hashcat(){
+echo "Installing hashcat-nvidia, 'contrib non-free' must be enabled in apt sources"
+apt-get install hashcat-nvidia
+}
+
+# amd Evdi xorg.conf
+xorg_amd(){
+cat > $xorg_conf_name <<EOL
+Section "Device"
+    Identifier "AMDGPU"
+    Driver     "modesetting" #AMD Ryzen 7 5700G bug in 2022/10/27
+    Option     "PageFlip" "false"
+EndSection
+EOL
+}
+
+# set xorg for Nvidia cards (issue: 176, 179, 211, 217, 596)
+if [ "$drv_nvidia" == "NVIDIA" ] || [[ $drv == *"nvidia"* ]];
+then
+		nvidia_pregame
+		xorg_nvidia
+		#nvidia_hashcat
+# set xorg for AMD cards (issue: 180)
+elif [ "$drv" == "amdgpu" ];
+then
+		xorg_amd
+# set xorg for Intel cards
+elif [ "$drv" == "i915" ];
+then
+		# set xorg modesetting for Intel cards (issue: 179, 68, 88, 192)
+		if [ "$cardsub" == "v2/3rd" ] || [ "$cardsub" == "HD" ] || [ "$cardsub" == "620" ] || [ "$cardsub" == "530" ] || [ "$cardsub" == "540" ] || [ "$cardsub" == "UHD" ] || [ "$cardsub" == "GT2" ];
+		then
+				if [ "$(ver2int $xorg_vcheck)" -gt "$(ver2int $newgen_xorg)" ];
+				then
+						# reference: issue #200
+						xorg_modesetting_newgen
+				else
+						xorg_modesetting
+				fi
+		# generic intel
+		else
+				xorg_intel
+		fi
+# default xorg modesetting
+else
+		if [ "$(ver2int $xorg_vcheck)" -gt "$(ver2int $newgen_xorg)" ];
+		then
+				# reference: issue #200
+				xorg_modesetting_newgen
+		else
+				xorg_modesetting
+		fi
+fi
+
+echo -e "Wrote X11 changes to: $xorg_conf_name"
+chown root: $xorg_conf_name
+chmod 644 $xorg_conf_name
+}
+
+function ver2int {
+echo "$@" | awk -F "." '{ printf("%03d%03d%03d\n", $1,$2,$3); }';
+}
+
+
+if [ $os_name_NFSChina == "NFSChina" ];then
+echo "create xorg and autostart xhost"
+xorg_modesetting
+cat > /opt/apps/com.racertech.usbdisp/files/user.log <<EOL
+$user_name
+EOL
+echo "crate user log"
+cp /opt/apps/com.racertech.usbdisp/files/xhost.desktop /home/$user_name/.config/autostart
+echo "cp xhost.desktop to /home/$user_name/.config/autostart"
+fi
+
+install
+
+# depending on X11 version start modesetting func
+if [ "$(ver2int $xorg_vcheck)" -gt "$(ver2int $min_xorg)" ];
+then
+	echo "Setup Evdi xorg.conf depending on graphics card"
+	modesetting
+else
+	echo "No need to disable PageFlip for modesetting"
+fi
+
+$(modprobe evdi)
+

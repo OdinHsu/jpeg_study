@@ -1,0 +1,8 @@
+*.deb
+*.changes
+*.buildinfo
+!dispinstall.run
+*.run
+usb-disp_bin
+libevdi.so.0
+libevdipp.a

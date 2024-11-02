@@ -1,0 +1,87 @@
+#!/bin/bash
+
+PRODUCT="USB-DISP"
+
+root_check(){
+# root check
+if (( $EUID != 0 ));
+then
+        echo -e "\nMust be run as root (i.e: 'sudo $0')."
+        exit 1
+fi
+}
+
+separator(){
+sep="\n-------------------------------------------------------------------"
+echo -e $sep
+}
+
+dep_check() {
+    deps=(unzip libev-dev libdrm-dev dkms)
+    for dep in ${deps[@]}
+    do
+        if ! dpkg -s $dep | grep "Status: install ok installed" > /dev/null 2>&1
+        then
+	    if ! apt-get update
+            then
+                echo "$dep installation failed.  Aborting."
+                exit 1
+            fi
+            if ! apt-get install -y $dep
+            then
+                echo "$dep installation failed.  Aborting."
+		exit 1
+            fi
+        else
+            echo "$dep is installed"
+        fi
+    done
+}
+
+check_preconditions()
+{
+  if [ -f /sys/devices/evdi/version ]; then
+    local V
+    V=$(< /sys/devices/evdi/version)
+
+    echo "Please reboot before attempting to re-install $PRODUCT." >&2
+    echo "Installation terminated." >&2
+    exit 1
+  fi
+  rm -rf /opt/apps/com.racertech.usbdisp/
+}
+
+missing_requirement()
+{
+  echo "Unsatisfied dependencies. Missing component: $1." >&2
+  echo "This is a fatal error, cannot install $PRODUCT." >&2
+  exit 1
+}
+
+version_lt()
+{
+  local left
+  left=$(echo "$1" | cut -d. -f-2)
+  local right
+  right=$(echo "$2" | cut -d. -f-2)
+
+  local greater
+  greater=$(echo -e "$left\n$right" | sort -Vr | head -1)
+
+  [ "$greater" != "$left" ]
+}
+
+check_requirements()
+{
+  # Required kernel version
+  KVER=$(uname -r)
+  KVER_MIN="4.15"
+  version_lt "$KVER" "$KVER_MIN" && missing_requirement "Kernel version $KVER is too old. At least $KVER_MIN is required"
+
+  # Linux headers
+  [ ! -d "/lib/modules/$KVER/build" ] && missing_requirement "Linux headers for running kernel, $KVER"
+}
+
+root_check
+check_requirements
+check_preconditions

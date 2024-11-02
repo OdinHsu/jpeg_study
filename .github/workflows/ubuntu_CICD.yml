@@ -1,0 +1,225 @@
+name: Ubuntu 20.04 CI
+
+on:
+  push:
+    branches: [ "master" ]
+    tags:
+      - "v*"
+
+  pull_request:
+    branches: [ "master" ]
+
+env:
+  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
+  BUILD_TYPE: Release
+
+jobs:
+  x86_64-build:
+    # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
+    # You can convert this to a matrix build if you need cross-platform coverage.
+    # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
+    
+    #if: github.ref_type == 'branch'
+    runs-on: ubuntu-20.04
+    
+    steps:
+    - name: Get current date
+      id: date
+      run: echo "::set-output name=date::$(date -u +'%Y-%m-%d %H:%M')"
+      
+    - name: Setup cmake
+      uses: jwlawson/actions-setup-cmake@v1.13.0
+      with:
+        cmake-version: '3.16.x'
+    - name: Use cmake
+      run: cmake --version
+
+    - name: clone project
+      uses: actions/checkout@v3
+
+    - name: Install packages
+      run: sudo apt-get install -y libev-dev cmake libdrm-dev unzip libghc-x11-dev gcc g++ dkms libusb-1.0-0-dev
+      
+    - name: Insert Build time
+      run: |
+        cd example
+        sed -i "$(($(cat -n example.cpp  | grep 'main' | awk '{print  $1}') + 2)) i printf(\"build time: ${{steps.date.outputs.date}}\\\n\");" example.cpp
+      
+    - name: Build
+      # Build your program with the given configuration
+      run: |
+        mkdir -p build
+        cd build 
+        cmake ..
+        make install
+        
+    - name: Install dh-make packages
+      run: sudo apt install -y dh-make
+ 
+    - name: Get commit message
+      id: commit_message
+      run: echo "::set-output name=message::commit:\ $(echo ${{ github.sha }} | cut -c1-7) message:\ $(echo ${{ github.event.commits[0].message }} | head -n 1 | sed 's/[_*[()~`>#+-={}.!]/\\\0/g' | sed 's/[]]/\\\0/g')"
+
+    - name: Making the run package
+      id: build
+      run: |
+        sed -i '/Usbdisp Driver info/a echo -e "build time: ${{steps.date.outputs.date}} \npackage installation time: $(date -u +\"%Y-%m-%d %H:%M\") \ntag: ${{ github.ref_name}} \n${{ steps.commit_message.outputs.message }}">> usbdisp_log/inxi.log' \
+        libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/usbdisp_log_tool
+        cd libusbdisp
+        make deb
+
+    - name: rename package to tag name
+      if: ${{ github.ref_type == 'tag' && startsWith( github.ref_name , 'v') }}
+      run: |
+        sudo apt install -y rename
+        cd libusbdisp/deb_install/
+        rename -v "s/_\d+_\d+_\d+_b_/_${{ github.ref_name}}_/" *_b_*.run
+
+    - uses: actions/upload-artifact@v3
+      if: success()
+      with:
+        name: x86_64-build
+        path: libusbdisp/deb_install/*.run
+        if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
+
+  aarch64-build:
+    #if: github.ref_type == 'branch'
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: Get current date
+      id: date
+      run: echo "::set-output name=date::$(date -u +'%Y-%m-%d %H:%M')"
+    
+    - name: Setup cmake
+      uses: jwlawson/actions-setup-cmake@v1.13.0
+      with:
+        cmake-version: '3.16.x'
+        
+    - name: Use cmake
+      run: cmake --version
+    
+    - name: clone project
+      uses: actions/checkout@v3
+
+    - name: Get commit message
+      id: commit_message
+      run: echo "::set-output name=message::commit:\ $(echo ${{ github.sha }} | cut -c1-7) message:\ $(echo ${{ github.event.commits[0].message }} | head -n 1 | sed 's/[_*[()~`>#+-={}.!]/\\\0/g' | sed 's/[]]/\\\0/g')"
+
+    - uses: uraimo/run-on-arch-action@v2
+      name: Build
+      id: build
+      with:
+        arch: aarch64
+        distro: ubuntu20.04
+
+        # Not required, but speeds up builds
+        githubToken: ${{ github.token }}
+
+        # The shell to run commands with in the container
+        shell: /bin/bash
+
+        # Install some dependencies in the container. This speeds up builds if
+        # you are also using githubToken. Any dependencies installed here will
+        # be part of the container image that gets cached, so subsequent
+        # builds don't have to re-install them. The image layer is cached
+        # publicly in your project's package repository, so it is vital that
+        # no secrets are present in the container state or logs.
+        install: |
+          apt-get update -q -y
+          apt-get install -y dh-make git libev-dev cmake libdrm-dev unzip libghc-x11-dev gcc g++ dkms libusb-1.0-0-dev
+          
+        # Produce a binary artifact and place it in the mounted volume
+        run: |
+          sed -i "$(($(cat -n example/example.cpp  | grep 'main' | awk '{print  $1}') + 2)) i printf(\"build time: ${{steps.date.outputs.date}}\\\n\");" example/example.cpp
+          mkdir -p build
+          cd build 
+          cmake ..
+          make install
+          cd ..
+          sed -i '/Usbdisp Driver info/a echo -e "build time: ${{steps.date.outputs.date}} \npackage installation time: $(date -u +\"%Y-%m-%d %H:%M\") \ntag: ${{ github.ref_name}} \n${{ steps.commit_message.outputs.message }}">> usbdisp_log/inxi.log' \
+          libusbdisp/deb_install/com.racertech.usbdisp-1.0.0/opt/apps/com.racertech.usbdisp/files/usbdisp_log_tool
+          cd libusbdisp
+          make deb
+
+    - name: rename package to tag name
+      if: ${{ github.ref_type == 'tag' && startsWith( github.ref_name , 'v') }}
+      run: |
+        sudo apt install -y rename
+        cd libusbdisp/deb_install/
+        rename -v "s/_\d+_\d+_\d+_b_/_${{ github.ref_name}}_/" *_b_*.run
+        
+    - uses: actions/upload-artifact@v3
+      if: success()
+      with:
+        name: aarch64-build
+        path: libusbdisp/deb_install/*.run
+        if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
+
+  release:
+    needs: [ x86_64-build, aarch64-build ]
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Get release date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y/%m/%d')"
+      
+      - uses: actions/download-artifact@v3
+        with:
+          name: x86_64-build
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: aarch64-build
+
+      - name: Telegram Bot release
+        if: ${{ github.ref_type == 'tag' && startsWith( github.ref_name , 'v') }} # or startsWith(github.ref, 'refs/tags/v')
+        run: |
+          symbol='`'
+          text="
+          *commits*
+          \`$(echo ${{ github.sha }} | cut -c1-7)$symbol $(echo ${{ github.event.head_commit.message }} | head -n 1 | sed 's/[_*[()~`>#+-={}.!]/\\\0/g' | sed 's/[]]/\\\0/g')"
+          tagname="$(echo ${{ github.ref_name }} | sed 's/[_*[()~`>#+-={}.!]/\\\0/g' | sed 's/[]]/\\\0/g')"
+          curl -X "POST" "https://api.telegram.org/bot5652449763:AAEtc8pQo4O_EWhLj8FKjdZKbSs9UBr2cK0/sendMessage" \
+          --data-urlencode "text=*Linux Driver release*    [tag: $tagname](${{ github.event.head_commit.url }})$text" \
+          --data-urlencode "chat_id=-899113560" \
+          --data-urlencode "disable_notification=true" \
+          --data-urlencode "disable_web_page_preview=false" \
+          --data-urlencode "parse_mode=MarkdownV2"
+          curl -X POST 'https://api.telegram.org/bot5652449763:AAEtc8pQo4O_EWhLj8FKjdZKbSs9UBr2cK0/sendMediaGroup' \
+          -F 'media="[
+          {
+          \"type\": \"document\",
+          \"media\": \"attach://file1\"
+          },
+          {
+          \"type\": \"document\",
+          \"media\": \"attach://file2\"
+          }
+          ]";type=application/json' \
+          -F "file1=@$(ls $(pwd)/*.run | sed -n '1p')" \
+          -F "file2=@$(ls $(pwd)/*.run | sed -n '2p')" \
+          -F chat_id='-899113560' -F disable_notification='true'
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        if: ${{ github.ref_type == 'branch' }}
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files: |
+            *.run
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        if: ${{ github.ref_type == 'tag' && startsWith( github.ref_name , 'v') }}
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "${{ github.ref_name }}"
+          prerelease: false
+          title: "Linux driver ${{steps.date.outputs.date}} ${{ github.ref_name }} release"
+          files: |
+            *.run

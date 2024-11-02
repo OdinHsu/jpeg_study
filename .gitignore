@@ -1,0 +1,15 @@
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Makefile
+cmake_install.cmake
+install_manifest.txt
+CTestTestfile.cmake
+build/
+.vscode/
+libusbdisp/deb_install/*.zip
+example/example
+example/github_evdi-prefix
+example/libevdipp
+example/usbdisp-prefix
+example/stage
